@@ -29,6 +29,7 @@ a:hover{
     --color-button-hover: rgb(235, 235, 235);
     --primary-font: 500 1rem/1.5 'Source Sans Pro', sans-serif;
     --serif-font: 500 1rem/1.5 'Crimson Text', serif;
+    --title-font: 400 1rem/1.5 'kingthings_spikelessregular', serif;
 }
 
 body{
@@ -36,7 +37,9 @@ body{
     width: 100%;
     margin: 0 auto;
     background-color: var(--background-color);
+    font: var(--primary-font);
     font-size: 16px;
+
 }
 
 .title-header{
@@ -46,8 +49,7 @@ body{
 }
 
 .title-header__h1{
-    font: var(--serif-font);
-    font-family: 'Times New Roman', Times, serif;
+    font: var(--title-font);
     font-size: 4rem;
 }
 
