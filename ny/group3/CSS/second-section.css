@@ -1,0 +1,84 @@
+.c-box__section2{
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.c-section2{
+    display: flex;
+    
+    width: 850px;
+    margin: 30px;
+    border-bottom: 1px solid #000000;
+}
+
+.c-live{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 30px 10px 30px 0px;    
+    line-height: 1;
+    width: 460px;    
+}
+img{
+    width:200px
+}
+.c-title__new{
+    font-weight: bold;   
+}
+
+.c-title__color{
+    color: #dd0505;
+    font-weight: bold;
+}
+
+.c-live__row{
+    flex-direction: row;  
+}
+
+.c-woman__flower{
+    width: 300px;
+}
+
+.c-live__row__item{
+    flex: 1;      
+}
+
+.c-other__link a{
+    text-decoration: none;
+    color: #000000;   
+}
+
+.c-img__new-britany{
+    width: 400px;
+}
+
+.c-img__new-arc{
+    width: 400px;    
+    height: 200px;
+}
+
+.c-img{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.c-opinion{
+    display: flex;
+    flex-wrap: wrap;        
+    justify-content: space-between;
+}
+
+.c-legend{
+    font-size: 9px;
+    color: #7c7c7c;
+}
+
+
+
+.c-opinion__collumn{    
+   flex: 1;    
+}
