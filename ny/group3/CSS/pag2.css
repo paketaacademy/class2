@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: #000000;
+
+}
+
+body{
+    height: 100vh;   
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#container h1, h3 {
+    text-align: center;
+    padding-top: 10px;
+}
+
+#container img {
+    padding: 20px 10px;
+    max-width: 590px;
+    max-height: 390px;
+}
+
