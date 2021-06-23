@@ -4,7 +4,7 @@
     src: url(fonts/OldeEnglish.ttf);
 }
 
-*{
+/**{
     margin: 0;
     padding: 0;
 }
@@ -14,10 +14,12 @@ body{
     width: 75%;
     margin: 10px auto;
     justify-items: center;
-    
 }
 
-
+.container-header {
+    display: flex;
+    justify-content: center;
+}*/
 .box-titulo{
     font-size: 30px;
     font-family: 'OldeEnglish';
@@ -47,8 +49,9 @@ body{
 }
 
 #nav-bar{
-    
-    margin: 0 0 0 20px;
+    display: flex;
+    justify-content: space-around;
+    /*margin: 0 0 0 20px;*/
     padding: 0;
     list-style: none;
     width: 100%;

@@ -1,5 +1,5 @@
-const factoryNews = (array) => {
-    elementNews = []
+const factoryNews = (array, div) => {
+    let elementNews = []
     for (let i = 0; i < array.length; i++) {
         elementNews.push(`
             <div>
@@ -9,7 +9,7 @@ const factoryNews = (array) => {
             </div>
         `)
     }
-    news.innerHTML = elementNews
+    div.innerHTML = elementNews
 }
 
 const NEWS = [
@@ -168,7 +168,6 @@ const LIVING = [
     }
 ]
 
-let elementNews = []
 let news = document.querySelector('#news')
 
-factoryNews(NEWS)
+factoryNews(NEWS, news)
