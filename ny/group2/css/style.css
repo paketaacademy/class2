@@ -114,3 +114,50 @@ body{
 .text-links-header__h3{
     font-weight: 700;
 }
+
+.first-page-news{
+    display: flex;
+    justify-content: space-between;
+}
+
+.principal-news{
+   
+}
+
+.live-updates{
+    
+}
+
+.some-other-news{   
+    
+}
+
+.live-news-opnion{
+    display: flex;
+    justify-content: space-between;
+}
+
+.live{
+    background-color: aquamarine;
+    width: 75%;
+
+}
+
+.live-new-first-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.live-big-col{
+    display: flex;
+    justify-content: space-between;
+}
+
+.live-small-col{
+
+}
+
+.opnion{
+    background-color: blueviolet;
+    width: 25%;
+}
