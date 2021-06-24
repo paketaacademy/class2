@@ -1,0 +1,131 @@
+.more_news * {
+    margin: 0;
+    padding: 0;
+}
+
+.more_news {
+    border-top: 1px solid black;
+    padding-top: 15px;
+}
+
+.more_news h5 {
+    margin-bottom: 15px;
+}
+
+.mn_content_container {
+    display: flex;
+}
+
+.mn_left_container {
+    width: calc(80% - 15px);
+    border-right: 1px solid #e2e2e2;
+    padding-right: 15px;
+}
+
+.mn_first_row {
+    display: flex;
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 15px;
+}
+
+.fr_first_content {
+    padding-right: 15px;
+}
+
+.fr_second_content {
+    border-left: 1px solid #e2e2e2;
+    padding-left: 15px;
+}
+
+.mn_second_row {
+    display: flex;
+}
+
+.news_title {
+    color: #121212;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    font-family: nyt-cheltenham;
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
+    font-weight: 700;
+}
+
+.news_description {
+    color: #666;
+    font-family: nyt-imperial;
+    font-size: 0.875rem;
+    letter-spacing: 0.1px;
+    line-height: 1.1875rem;
+    margin-top: 5px;
+}
+
+.mn_second_row {
+    padding-top: 15px;
+    margin-bottom: 50px;
+}
+
+.sr_small_title {
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    font-weight: 700;
+}
+
+.sr_first_content {
+    padding-right: 15px;
+}
+
+.sr_second_content {
+    padding-right: 15px;
+    border-right: 1px solid #e2e2e2;
+}
+
+.sr_third_content {
+    padding-left: 15px;
+}
+
+.news_subtitle {
+    color: #999;
+    font-family: nyt-cheltenham-small;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.6875rem;
+    line-height: 0.875rem;
+    -webkit-letter-spacing: 0.2px;
+    -moz-letter-spacing: 0.2px;
+    -ms-letter-spacing: 0.2px;
+    letter-spacing: 0.2px;
+    margin-top: 0px;
+    text-align: left;
+}
+
+.mn_right_container {
+    width: calc(20% - 15px);
+}
+
+.mn_link_title {
+    text-decoration: none;
+}
+
+.mn_link_title h3 {
+    font-style: normal;
+    margin: 0;
+    color: #121212;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    font-family: nyt-cheltenham;
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    font-weight: 700;
+    padding: 15px 0px;
+    margin-left: 15px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.mn_link_title:last-child h3 {
+    border-bottom: none;
+}
+
+a {
+    text-decoration: none;
+}
