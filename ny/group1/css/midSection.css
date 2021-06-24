@@ -103,11 +103,12 @@
 
 .left_third_container .post {
     display: flex;
-    margin-top: 15px;
+    margin: 15px 0px;
 }
 
 .left_third_container .category {
     margin-top: 10px;
+    color: black;
 }
 
 .left_third_container .left_content {
@@ -132,7 +133,7 @@
 
 .left_fourth_container .post {
     display: flex;
-    margin-top: 15px;
+    margin: 15px 0px;
 }
 
 .left_fourth_container .left_content {
@@ -200,7 +201,7 @@
 
 .left_seventh_container .post {
     display: flex;
-    margin-top: 15px;
+    margin: 15px 0px;
 }
 
 .left_seventh_container .left_content {
@@ -231,6 +232,11 @@
     border-bottom: 1px solid #e2e2e2;
 }
 
+.author_information .category {
+    text-decoration: none;
+    color: black;
+}
+
 .author_name {
     font-family: nyt-cheltenham;
     font-size: 0.8125rem;
@@ -257,7 +263,7 @@
     letter-spacing: 0.15px;
 }
 
-.author_img {
+.round {
     border-radius: 50%;
 }
 
@@ -314,8 +320,9 @@
     padding: 15px 0px 15px 0px;
 }
 
-.editors_container h5 {
+.editors_container a h5 {
     margin-bottom: 15px;
+    color: black;
 }
 
 .editors_subtitle {
