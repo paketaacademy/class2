@@ -1,5 +1,5 @@
-@import url("/class2/ny/group3/CSS/hero.css");
-@import url("/class2/ny/group3/CSS/second-section.css");
-@import url("/class2/ny/group3/CSS/morenews.css");
-@import url("/class2/ny/group3/HTML/Footer/style.css");
-@import url("/class2/ny/group3/CSS/news.css");
+@import url("hero.css");
+@import url("second-section.css");
+@import url("morenews.css");
+@import url("../HTML/Footer/style.css");
+@import url("news.css");
