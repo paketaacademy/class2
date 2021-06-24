@@ -1,0 +1,1 @@
+import { /*nome do arquivo que quero trazer*/} from //colocar o nome do diretório do js
