@@ -1,1 +1,2 @@
-import { /*nome do arquivo que quero trazer*/} from //colocar o nome do diretório do js
+import init from './hero.js'
+init()
