@@ -1,13 +1,19 @@
 @charset "utf-8";
+@font-face {
+    font-family: 'OldLondon';
+    src: url("/font/OldLondon.ttf");
+}
 
-header{
+
+.header{
     background-size: cover;
     display: flex;
     flex-direction: column;
     text-align: center;
     letter-spacing: 0.1em;
     margin-top: 3%;
-    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 hr{
@@ -19,7 +25,8 @@ hr{
     display: flex;
     justify-content: space-around;
     font-size: 0.6em;
-    padding-left: 5%;        
+    padding-left: 5%; 
+           
 }
 
 .header__top--title{
@@ -37,16 +44,29 @@ hr{
 }
 
 h1{
+
     font-size: 3.3em;
     font-family: OldLondon;
 }
 
 .header__top--bottom{
     display: flex;
-    padding: 5px;
+    padding: 1% 5%;
     justify-content: space-around;
-    padding-left: 5%;
-    padding-right: 5%;
     font-size: 0.8em;
 }
 
+.body__top--tabela{
+    padding: 0 5%;
+}
+
+.body__top{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.body__top img{
+    width: 50px;
+    height: 60px;
+    padding-top: 1rem;
+}
