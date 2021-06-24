@@ -6,13 +6,15 @@
     color: #000000; 
 }
 
-main {
+#main {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
 #Hero {
     display: flex; 
+    justify-content: center;
     margin-left: 70px;
     margin-right: 70px;  
     margin-top: 10px;
@@ -20,7 +22,6 @@ main {
     max-height: 580px;
     border-bottom: 1px solid gray;
     padding-bottom: 140px;
-
 }
 
 .hero-section1__right{
@@ -46,8 +47,6 @@ main {
     font: 500 0.8rem 'Arial', sans-serif;
     text-align: justify;
     line-height: 1.2rem;
-
-
 }
 
 .hero-section1__right h2{
@@ -70,7 +69,10 @@ main {
     text-align: justify;
 }
 
-.hero-section1__left h3, p {
+.hero-section1__left h3{
+  margin: 10px 25px;
+}
+.hero-section1__left p {
   margin: 10px 25px;
 }
 
