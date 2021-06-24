@@ -41,6 +41,7 @@ body {
 }
 .text__link {
     color: black;
+    text-decoration: none;
 }
 .text__link:hover {
     color: #535353;
@@ -93,35 +94,38 @@ hr {
     font-size: 14px;
     color: #5e5e5e;
 }
+.hero__link {
+    color: #000000;
+    text-decoration: none;
+}
 
 /*news people*/
 .news-people {
     display: flex;
     justify-content: space-between;
 }
-.people-1, .people-2, .people-3 {
+.people {
     display: flex;
     width: 33%;
-}
-.people-1{
     justify-content: space-around;
 }
-.people-2 {
+
+.people .border {
     border-left: 0.5px solid #aaaaaa;
     border-right: 0.5px solid #aaaaaa;
-    justify-content: space-around;
-}
-.people-3 {
-    justify-content: space-around;
 }
 .people__title {
     font-size: 14px;
 }
 .people__desc {
-    font-size: 14px;
+    font-size: 12px;
 }
 .people__img {
-    margin-top: 8px;
+    margin: 5px 5px;
+}
+.people__link {
+    color: #000000;
+    text-decoration: none;
 }
 
 /*news main*/

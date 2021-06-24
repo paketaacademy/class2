@@ -51,3 +51,21 @@ export const newDest = [
         ]
     }
 ]
+
+export const peoples = [
+    {
+        title: "Socialist Candidate Stuns Longtime Incumbent in Buffalo Mayor’s Race",
+        desc: "India Walton, a progressive challenger running her first campaign, is on track to become the first socialist mayor of a big city in 60 years.",
+        image: "http://lorempixel.com/120/120/"
+    },
+    {
+        title: "Bragg Holds Lead in Manhattan District Attorney Primary",
+        desc: "If elected, Alvin Bragg, a former federal prosecutor, would be the first Black person to hold the office.",
+        image: "http://lorempixel.com/120/120/"
+    },
+    {
+        title: "Inside Eric Adams’s Complicated Police Career (From June 19)",
+        desc: "Mr. Adams’s police credentials have helped him rise to the top of the New York mayor’s race. But his relationship with the department is complex.",
+        image: "http://lorempixel.com/120/120/"
+    }
+]
