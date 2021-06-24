@@ -3,22 +3,6 @@
     src: url(../statics/fonts/OldeEnglish.ttf);
 }
 
-/**{
-    margin: 0;
-    padding: 0;
-}
-
-body{
-    height: 100vh;
-    width: 75%;
-    margin: 10px auto;
-    justify-items: center;
-}
-
-.container-header {
-    display: flex;
-    justify-content: center;
-}*/
 
 .box-titulo {
     font-size: 30px;
