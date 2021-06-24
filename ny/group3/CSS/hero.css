@@ -69,7 +69,10 @@
     text-align: justify;
 }
 
-.hero-section1__left h3, p {
+.hero-section1__left h3{
+  margin: 10px 25px;
+}
+.hero-section1__left p {
   margin: 10px 25px;
 }
 
