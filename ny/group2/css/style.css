@@ -276,6 +276,232 @@ body{
 }
 
 .opnion{
-    background-color: blueviolet;
     width: 25%;
+
+}
+
+.opnion-first-row{
+    background-color: darkorchid;
+    display: flex;
+    justify-content: space-between;
+    height: 30%;
+}
+
+.opnion-rows{
+    background-color: darkseagreen;
+    display: flex;
+    justify-content: space-between;
+    height: 70%;
+}
+
+.editors{
+    background-color: rgb(243, 208, 120);
+    height: 50%;
+}
+
+.editors-one{
+    display: flex;
+   justify-content: space-between
+}
+
+.third-section-news{
+    background-color: brown;
+    width: 75%;
+}
+
+.third-section-one{
+   display: flex;
+   justify-content: space-between;
+}
+
+.third-section-two{
+    display: flex;
+    justify-content: space-between;
+}
+
+.third-section-three{
+    display: flex;
+    justify-content: space-between;
+}
+
+.third-section-four{
+    display: flex;
+    justify-content: space-between;
+}
+
+.more-news{ 
+    display: flex;
+    justify-content: space-between;
+}
+
+.more-news-first-col{
+    background-color: darkgoldenrod;
+}
+
+.more-news-second-col{
+    background-color: darkgreen;
+    width: 50%;
+}
+
+.more-news-third-col{
+    background-color: darkorchid;
+    width: 50%;
+
+}
+
+.more-news-full-row{
+    background-color: rgb(235, 21, 153);
+    height: 100%
+}
+
+.colum-one{
+   width: 75%; 
+}
+.colum-two{
+    width: 25%;
+}
+.colum-three{
+    display: flex;
+    justify-content: space-between;
+}
+.paid-post{
+    background-color: rgb(231, 235, 39);
+}
+.womans-healt{
+    background-color: rgb(46, 236, 29);
+    display: flex;
+    justify-content: space-between;
+}
+.features{
+    display: flex;
+    justify-content: space-between;
+}
+.features-main{
+    background-color: dimgrey;
+    width: 50%;
+}
+.features-right-side{
+    background-color: indianred;
+    width: 50%;
+}
+
+.features-right-side-one{
+    display: flex;
+    justify-content: space-between;
+}
+
+.features-right-side-two{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nyt-cooking{
+    display: flex;
+    justify-content: space-between;
+    background-color: khaki;
+}
+
+.science-and-health{
+ display: flex;
+ justify-content: space-between;
+}
+
+.first-col{
+    background-color: lightskyblue;
+    width: 50%;
+}
+
+.second-col{
+    background-color: limegreen;
+    width: 50%;
+}
+
+.third-col{
+    background-color: mediumorchid;
+}
+
+.full-row{
+    background-color: mediumturquoise;
+    height: 100%;
+}
+
+.science-and-health-one{
+    width: 75%;
+}
+
+.science-and-health-two{
+    width: 25%;
+}
+
+.science-and-health-three{
+    display: flex;
+    justify-content: space-between;
+}
+
+.play-section{
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-between;
+}
+
+.popular-in-the-times{
+    background-color: rgb(163, 222, 135);
+    display: flex;
+    justify-content: space-between;
+}
+
+.news{
+    background-color: coral;
+
+}
+
+.news-one{
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-two{
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-three{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+}
+.opnion-footer{
+    background-color: crimson;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arts{
+    background-color: darkcyan;
+}
+
+.arts-one{
+    display: flex;
+    justify-content: space-between;
+}
+
+.arts-two{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+}
+
+.living-section{
+    background-color: darkgoldenrod;
+}
+
+ .living-section-one{
+    display: flex;
+    justify-content: space-between;
+}
+
+.living-section-two{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
 }
