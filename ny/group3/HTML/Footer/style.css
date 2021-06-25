@@ -9,6 +9,12 @@
     src: url("OldLondon.ttf");
 }
 
+.section-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .Título p{
     font-family: OldLondon;
     padding-left: 5%;

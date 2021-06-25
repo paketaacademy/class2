@@ -6,7 +6,7 @@ const news = [
         "description2":"In the West, the Looted Bronzes are museum Pieces. In Nigeria, 'They are our Ancestors.",
         "author":"",
         "legend":"",
-        "image":"/class2/ny/group3/Imagens/news-police.jpg"
+        "image":"Imagens/news-police.jpg"
 },
     {
         "title":"U.S. News",
@@ -15,7 +15,7 @@ const news = [
         "description2":"Many parts of the U.S. needed persuading to Get Vaccinated. Not south Texas.",
         "author":"",
         "legend":"",
-        "image":"/class2/ny/group3/Imagens/news-womanFlowers.jpg"
+        "image":"Imagens/news-womanFlowers.jpg"
 },
     {
         "title":"U.S. Politics",
@@ -24,7 +24,7 @@ const news = [
         "description2":"The White House is expected to extend the federal moratorium on evictions for another month.",
         "author":"",
         "legend":"",
-        "image":"/class2/ny/group3/Imagens/news-politic.jpg"
+        "image":"Imagens/news-politic.jpg"
 },
     {
         "title":"New York",
@@ -33,7 +33,7 @@ const news = [
         "description2":"N.Y.C. mayoral race highlights: Adams leads in early results over Wiley and Garcia.",
         "author":"",
         "legend":"",
-        "image":"/class2/ny/group3/Imagens/news-election.png"
+        "image":"news-election.png"
 },
     {
         "title":"Business",
@@ -42,29 +42,63 @@ const news = [
         "description2":"Turn tech to your advantage in the New Hybrid workplace.",
         "author":"",
         "legend":"",
-        "image":"/class2/ny/group3/Imagens/news-meme.jpg"
+        "image":"Imagens/news-meme.jpg"
 }   
 ]
 
-
-function getRandNum(){
-    return Math.floor(Math.random() * 100)
-}
-
-function loadImages(numImages = 5){
-    let i = 0;
-    while(i < numImages){
-        const img = document.createElement('img')
-        img.src = `${URL}${getRandNum()}`
-        container.appendChild(img)
-        i++ 
-    }
-}
-
-loadImages()
-
 window.addEventListener('scroll', () => {
-    if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
-        loadImages()
+	
+	const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+	
+	if(scrollTop + clientHeight >= scrollHeight - 5) {
+		criarLaco()
+        console.log('top'+scrollTop)
+        console.log('heigth'+clientHeight)
+        console.log('scrolh'+scrollHeight)
+	}
+});
+
+
+
+const criarPost = (pos) => {
+    
+    
+    const item = news[pos]
+	const post  = `
+        <div class="container--first">
+            <a href="#">
+                <h5>World News</h5>
+            </a>
+            <a href="#"><img class="new-img" src="${item.image}" alt="Policiais"></a>
+            <ul>
+                <li>
+                    <a href="#"><span>${item.description}</span></a>
+                </li>
+                <li>
+                    <a href="#"><span>${item.description1}</span></a>
+                </li>
+                <li>
+                    <a href="#"><span>${item.description2}</span></a>
+                </li>
+            </ul>
+        </div>
+	`
+	document.getElementById("news").innerHTML = post
+    
+}
+
+
+const criarLaco = () => {
+    for(let cont; cont <= news.length; cont++){
+        criarPost(cont)
     }
-})
+}
+
+
+
+const newSection = () => {
+    criarLaco()
+    
+  }
+  
+  export default newSection
