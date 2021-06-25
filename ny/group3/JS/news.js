@@ -77,7 +77,7 @@ const criarPost = (news) => `
                 </li>
             </ul>
         </div>
-        
+    
         
 	    `
 const rendernews = () => {
