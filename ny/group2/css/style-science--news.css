@@ -1,0 +1,162 @@
+.news-div{
+    max-width: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+.news-div h2{
+    font-weight: bold;
+    height: 50px;
+}
+
+.news-div p{
+    padding: 15px 0 0 0;
+    font-weight: bold;
+}
+.science{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px;
+    font-weight: bold;
+}
+
+.science-and-health{
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-col{
+    border-right: 1px solid rgb(218, 218, 218);
+    width: 50%;
+}
+
+.second-col{
+ 
+    width: 50%;
+}
+
+.third-col{
+    border-top: 1px solid rgb(218, 218, 218);
+}
+
+.full-row{
+    width: 40%;
+}
+
+.science-img{
+    width: 60%;
+    padding: 35px;
+}
+
+.first-col h2{
+    font-size: 25px;
+    font-weight: normal;
+
+}
+
+.science-and-health{
+    margin-left: -30px;
+}
+
+.science-section h3{
+    font-weight: bold;
+    font-size: 15px;
+    border-top: 1px solid rgba(0, 0, 0);
+}
+
+.science-and-health-one{
+    width: 50%;
+    border-right: 1px solid rgb(218, 218, 218);
+}
+
+.science-and-health-two{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.science-and-health-three{
+    display: flex;
+    justify-content: space-between;
+}
+
+.science-img ul li{
+    list-style: none;
+}
+
+.science-updates__ul--img{
+    width: 300px;
+}
+
+.play-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.play-image-one ul li{
+    list-style: none;
+}
+
+.boxed-updates__ul--img{
+    width: 50px;
+}
+
+.play-section h3{
+    font-weight: bold;
+    font-size: 15px;
+    border-top: 1px solid rgba(0, 0, 0);
+}
+
+.play-section-one{
+    display: flex;
+    justify-content: space-between;
+}
+
+.popular-in-the-times{
+    border-top: 1px solid rgba(0, 0, 0);
+}
+.popular-in-the-times h3{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.pop-times{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 4px double rgba(0, 0, 0);    
+}
+
+.news{
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.news h3{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.news-one{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.news-two{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.news-three{
+    display: flex;
+    justify-content: space-between;
+    width: 78%;
+    margin-top: 30px;
+

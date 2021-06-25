@@ -346,7 +346,6 @@ body{
 .more-news-third-col{
     background-color: darkorchid;
     width: 50%;
-
 }
 
 .more-news-full-row{
@@ -402,74 +401,39 @@ body{
 }
 
 .science-and-health{
- display: flex;
- justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .first-col{
-    background-color: lightskyblue;
+    border-right: 1px solid rgb(218, 218, 218);
     width: 50%;
 }
 
 .second-col{
-    background-color: limegreen;
+ 
     width: 50%;
 }
 
 .third-col{
-    background-color: mediumorchid;
+    border-top: 1px solid rgb(218, 218, 218);
 }
 
 .full-row{
-    background-color: mediumturquoise;
-    height: 100%;
+    width: 40%;
 }
 
-.science-and-health-one{
-    width: 75%;
+.science-img{
+    width: 60%;
+    padding: 35px;
 }
 
-.science-and-health-two{
-    width: 25%;
-}
-
-.science-and-health-three{
-    display: flex;
-    justify-content: space-between;
-}
-
-.play-section{
-    background-color: burlywood;
-    display: flex;
-    justify-content: space-between;
-}
-
-.popular-in-the-times{
-    background-color: rgb(163, 222, 135);
-    display: flex;
-    justify-content: space-between;
-}
-
-.news{
-    background-color: coral;
+.first-col h2{
+    font-size: 25px;
+    font-weight: normal;
 
 }
 
-.news-one{
-    display: flex;
-    justify-content: space-between;
-}
-
-.news-two{
-    display: flex;
-    justify-content: space-between;
-}
-
-.news-three{
-    display: flex;
-    justify-content: space-between;
-    width: 75%;
-}
 .opnion-footer{
     background-color: crimson;
     display: flex;
@@ -495,7 +459,8 @@ body{
     background-color: darkgoldenrod;
 }
 
- .living-section-one{
+
+.living-section-one{
     display: flex;
     justify-content: space-between;
 }

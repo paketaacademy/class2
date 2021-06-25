@@ -437,29 +437,45 @@ export const NEWS_LIST = [
             },
         ],
 
-        scienceAndHealth: [
+        scienceAndHealthOne: [
             {
                 title: "How Glowing Bacteria ind the Dirt May One Day Save Lives",
                 new: `research in progressingon developing sensor that light up in 
                 the presence of a chemical linked to land mines and other deadly explosives`
             },
+        ],
+
+        scienceAndHealthTwo: [
             {
-                subtitle: "Morning People May Be at Lower Risk Of Depression",
+                title: "Morning People May Be at Lower Risk Of Depression",
                 new: `Going To Bed And Waking up eraly may help to provide 
                 some protection against depression, a new study suggest`
             },
+        ],
+
+        scienceAndHealthThree: [
             {
-                subtitle: "The US Betting on a Pill to treat Covid -19",
+                title: "The US Betting on a Pill to treat Covid -19",
                 new: `A $3.2 billion program will suppor development of 
                 antiviral, which could start arriving by the end of this year`
             },
+        ],
+
+        scienceAndHealthFour: [
             {
-                subtitle: "Maine Resident Fend Off Poisonous Caterpillars",
+                title: "Maine Resident Fend Off Poisonous Caterpillars",
                 new: `The Caterpillars, Known as browntail moths, have tiny 
                 hairs that can cause skin rashes and even breathing issues fo some people`,
                 imagem: "  "
             },
         ],
+
+        scienceImage: [
+            {
+                imageToUpdate: "https://static01.nyt.com/images/2021/06/14/world/14--xp-caterpillar-PRINT/13xp-caterpillars-thumbWide.jpg",
+                alt: "image1"
+            },
+        ],    
 
         play: [
             {
@@ -481,6 +497,25 @@ export const NEWS_LIST = [
                 title: "Vertex",
                 new: "Connect the dots to reveal the hidden picture",
                 imagem: " "
+            },
+        ],
+
+        boxedImage: [
+            {
+                imageToUpdate: "https://www.nytimes.com/games-assets/v2/assets/expansion-games/letter-boxed-card-icon.svg",
+                alt: "image1"
+            },
+            {
+                imageToUpdate: "https://www.nytimes.com/games-assets/v2/assets/mini-progress/mini-progress-0.svg",
+                alt: "image1"
+            },
+            {
+                imageToUpdate: "https://www.nytimes.com/games-assets/v2/assets/expansion-games/spelling-bee-card-icon.svg",
+                alt: "image1"
+            },
+            {
+                imageToUpdate: "https://www.nytimes.com/games-assets/v2/assets/expansion-games/tiles-card-icon.svg",
+                alt: "image1"
             },
         ],
 
@@ -553,6 +588,8 @@ export const NEWS_LIST = [
                   Googleexecutives see cracks in their company success`,
                 imagem: ""
             },
+        ],
+        newsFirst: [
             {
                 title: "Technology",
                 new: `Google internet adverstising dominance draws a fresh E.U antitrust inquiry. 
@@ -587,6 +624,8 @@ export const NEWS_LIST = [
                   The pandemic stimulus was front loaded. That could mean a bumpy year`,
                 imagem: " "
             },
+        ],
+        newsSecond: [
             {
                 title: "Climate And Environment",
                 new: ` U.n says great barrier reef is danger Autralia bitterly disagrees. 
@@ -616,6 +655,7 @@ export const NEWS_LIST = [
                 imagem: " "
             },
         ],
+
 
         opinion_02: [
             {
