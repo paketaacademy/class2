@@ -75,28 +75,33 @@ export const NEWS_LIST = [
                 voting rights bill. They are all but certain to fall. Here's the latest
                 from Washington.`,
                 image: "",
-                alt: "Some Woman Looking forward"
-            },
-            {
-                title: `A large liberal super PAC will pour $20 million into voting
-                rights efforts ahead of the 2022 election cycle.`,
-                subtitle: ``,
-                news: "",
-                image: "",
-                alt: "Some Woman Looking forward"
+                alt: ""
             }
         ],
 
-        liveNewsSection: [
+        liveNewsSecond: [
+            {
+                title: `A large liberal super PAC will pour $20 million into voting rights efforts ahead of the 2022 election cycle.`,
+                subtitle: "",
+                news: ``,
+                image: "",
+                alt: ""
+            }
+        ],
+
+        liveNewsSectionBigCol: [
             {
                 title: "She Fought to Reopen Schools, Becoming a Hero and a Villain",
                 subtitle: ``,
                 news: `The Economist Emily Oster offers loads of data-driven advice
                 about children and Covid-19. Many parents live by her words. Others
                 say she's dangerous`,
-                image: "Lorem picsum image",
+                image: "https://picsum.photos/350/225?random=10",
                 alt: "Some Woman Looking forward"
             },
+        ],
+
+        liveNewSectionSmallCol: [
             {
                 title: "India Tries to Jump Start Sluggish Vaccination Effort",
                 subtitle: "",
@@ -106,6 +111,9 @@ export const NEWS_LIST = [
                 image: "",
                 alt: "Some Woman Looking forward"
             },
+        ],
+
+        liveNewSectionRow: [
             {
                 title: `While many people in th U.S. need persuading to get
                 vaccinated, residents of South Texas need little prodding.`,
@@ -118,86 +126,87 @@ export const NEWS_LIST = [
 
         opnionFirstRow:
         {
-            nome: "Michelle Goldberg",
-            avatar: " ",
-            title: "Only the Women Can Save Us Now, New York",
-            news: `de impressos, e vem sendo utilizado desde o século XVI
-                , quando um impressor desconhecido pegou uma bandeja de tipos
-                 e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum 
-                 sobreviveu não só a cinco séculos, como`,
-            imagem: "  "
+            nome: "Bryce Covert",
+            avatar: "https://picsum.photos/30/30?random=1",
+            title: "Biden's Paid Leave Plan Is Years Out of Date",
+            news: `The president shoul look to his former rivals to
+            improve his family and child care policies`,
+            imagem: "https://picsum.photos/140/140?random=1",
+            alt: `Algum autor`
         },
 
         opnionRows: [
-
-            {
-                nome: "Bryce Covert",
-                avatar: " ",
-                title: "Bidens Paid leave Plan Is Year Out Of Date",
-                news: `The Predident Shold look to his former rivals to 
-                improve his family and child care policies`,
-            },
             {
                 nome: "Ross Douthat",
-                avatar: " ",
+                avatar: "https://picsum.photos/30/30?random=41",
                 title: "Only the Women Can Save Us Now, New York",
-                news: ` Both men leading the Democratic mayoral primary are disasters`
+                news: ` Both men leading the Democratic mayoral primary are disasters`,
+                alt: `Some Author`
             },
             {
                 nome: "Paul Krugman",
-                avatar: " ",
+                avatar: "https://picsum.photos/30/30?random=12",
                 title: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
                  mas a maioria sofreu algum tipo de altera`,
-                news: " "
+                news: " ",
+                alt: `Some Author`
             },
             {
                 nome: "Alexandra March",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
-                 mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor`
+                avatar: "https://picsum.photos/30/30?random=15",
+                title: "We Were Promised a Village: a Year in the Life of Pandemic-Baby Parents",
+                news: ``,
+                alt: `Some Author`
             },
             {
-                nome: "Peter Beinart",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
-                 mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor`
-            },
+                nome: "Paul Krugman",
+                avatar: "https://picsum.photos/30/30?random=14",
+                title: "The Week Inflation Panic Died",
+                news: ``,
+                alt: `Some Author`
+            }
+        ],
+
+        rightSideOpnions: [
             {
-                nome: "Bret Stephens",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
-                 mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor`
+                nome: "Bred Stephens",
+                avatar: "https://picsum.photos/30/30?random=21",
+                title: "Iran Bets on Religion, Repression and Revolution",
+                news: ``,
+                alt: `Some Author`
+
             },
             {
                 nome: "The Editorial Board",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
-                 mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor`
+                avatar: "https://picsum.photos/30/30?random=22",
+                title: "Kathryn Garcia Has Our Endorsement for New York City Mayor",
+                news: ``,
+                alt: `Some Author`
+
             },
             {
                 nome: "Rob Richie",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
-                 mas a maioria sofreu algum tipo de alteração, seja por inserçãode passagens com humo`
+                avatar: "https://picsum.photos/30/30?random=24",
+                title: "A Very Specific Guide to Ranking Candidates for N.Y.C. Mayor",
+                news: ``,
+                alt: `Some Author`
+
             },
             {
-                nome: "The Ezra Klein",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
-                 mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor`
+                nome: "The Ezra Klein Show",
+                avatar: "https://picsum.photos/30/30?random=27",
+                title: "This Activist Thinks You Should Embrace Conflict",
+                news: ``,
+                alt: `Some Author`
+
             },
             {
-                nome: "Kat Brien",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum, 
-                mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor`
+                nome: "Kat O'Brien",
+                avatar: "https://picsum.photos/30/30?random=29",
+                title: "I Am Breaking My Silence About Baseball Player Who Raped Me",
+                news: ``,
+                alt: `Some Author`
+
             }
         ],
 
