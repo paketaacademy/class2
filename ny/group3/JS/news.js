@@ -61,19 +61,19 @@ window.addEventListener('scroll', () => {
 
 const criarPost = (news) => `
         <div class="container--first">
-            <a href="#">
+        <a href="HTML/pag2.html" target="_blank">
                 <h5>${news.title}</h5>
             </a>
-            <a href="#"><img class="new-img" src="${news.image}" alt="Policiais"></a>
+            <a href="HTML/pag2.html" target="_blank""><img class="new-img" src="${news.image}" alt="Policiais"></a>
             <ul>
                 <li>
-                    <a href="#"><span>${news.description}</span></a>
+                <a href="HTML/pag2.html" target="_blank"><span>${news.description}</span></a>
                 </li>
                 <li>
-                    <a href="#"><span>${news.description1}</span></a>
+                <a href="HTML/pag2.html" target="_blank"><span>${news.description1}</span></a>
                 </li>
                 <li>
-                    <a href="#"><span>${news.description2}</span></a>
+                <a href="HTML/pag2.html" target="_blank"><span>${news.description2}</span></a>
                 </li>
             </ul>
         </div>

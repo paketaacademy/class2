@@ -40,14 +40,14 @@ const rendernews = () => {
 
     const item = news[0]
     const allItems = `
-    <a href="#"><span>
+    <a href="HTML/pag2.html" target="_blank""><span>
             <h2>${item.title}</h2>
         </span></a>
     <ul>
-        <a href="#">
+    <a href="HTML/pag2.html" target="_blank"">
             <li>${item.description}</li>
         </a>
-        <a href="#">
+        <a href="HTML/pag2.html" target="_blank">
             <li>${item.description}</li>
         </a>
     </ul>
@@ -65,11 +65,11 @@ export default init
 const rendernews2 = () => {
     const item = news[3]
     const allItems = `
-                <a class="section1__left--separation" href="#"><span>
+    <a href="HTML/pag2.html" target="_blank" class="section1__left--separation"><span>
                         <h3>${item.title}</h3>
                         <p>${item.description}</p>
                     </span></a>
-                <a href="#"><span>
+                    <a href="HTML/pag2.html" target="_blank"><span>
                         <h3>${item.title}</h3>
                         <p>${item.description}</p>
                     </span></a>
