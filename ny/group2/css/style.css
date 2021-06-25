@@ -470,38 +470,3 @@ body{
     justify-content: space-between;
     width: 75%;
 }
-.opnion-footer{
-    background-color: crimson;
-    display: flex;
-    justify-content: space-between;
-}
-
-.arts{
-    background-color: darkcyan;
-}
-
-.arts-one{
-    display: flex;
-    justify-content: space-between;
-}
-
-.arts-two{
-    display: flex;
-    justify-content: space-between;
-    width: 75%;
-}
-
-.living-section{
-    background-color: darkgoldenrod;
-}
-
- .living-section-one{
-    display: flex;
-    justify-content: space-between;
-}
-
-.living-section-two{
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-}

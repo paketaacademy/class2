@@ -1,0 +1,53 @@
+.opnion-footer{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.arts{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.arts-d{
+    padding: 0 8px 0 0;
+    max-width: 25%;
+    width: 100%;
+}
+
+.arts-one{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px 0 0;
+    max-width: 25%;
+    
+}
+
+.arts-two-d{
+    padding: 0 8px 0 0;
+    max-width: 25%;
+    width: 100%;
+}
+
+.arts-two{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.living-section{
+    background-color: darkgoldenrod;
+}
+
+ .living-section-one{
+    display: flex;
+    justify-content: space-between;
+}
+
+.living-section-two{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
