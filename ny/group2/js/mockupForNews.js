@@ -700,35 +700,41 @@ export const NEWS_LIST = [
                  pushed for years to end her conservatorship. 
                   orchestra veteran on music post pandemic future `
             },
-            {
-                title: "Theater",
-                imagem: "",
-                new: `Theater reality tv and what is stranger Than Fiction. 
-                Andre de shields Isn done with King Lear (or Hadestown). 
-                 music Man Names British produces to replace rudin`
-            },
-            {
-                title: "Dance",
-                imagem: "",
-                new: `Five pioneering black ballerinas: We have To have A voice. 
-                In the heights where the streets explode  with dance. 
-                A hip hop Dance crew frabjous reign las vegas`
-            },
-            {
-                title: "Books",
-                imagem: "",
-                new: `Yes no maybe so: A generation of thinkers grapples with notions of consent. 
-                Janet maicolm, a writer who emphasized the messiness of
-                 life with slyness and precision 19 lines that turn anguish into art`
-            },
-            {
-                title: "Book Review",
-                imagem: "",
-                new: `Brandon taylor filthy animals is a study in roque appetite.
-                 the one about bibi netanyahu father and the perils of diaspora. 
-                 Speaking truth to bothy the right and the left`
-            },
+            
+         
         ],
+
+        artsttwo: [
+        {   title: "Theater", 
+            imagem: "",
+            new: `Theater reality tv and what is stranger Than Fiction. 
+            Andre de shields Isn done with King Lear (or Hadestown). 
+             music Man Names British produces to replace rudin`
+        },
+        {
+            title: "Dance",
+            imagem: "",
+            new: `Five pioneering black ballerinas: We have To have A voice. 
+            In the heights where the streets explode  with dance. 
+            A hip hop Dance crew frabjous reign las vegas`
+        },
+        {
+            title: "Books",
+            imagem: "",
+            new: `Yes no maybe so: A generation of thinkers grapples with notions of consent. 
+            Janet maicolm, a writer who emphasized the messiness of
+             life with slyness and precision 19 lines that turn anguish into art`
+        },
+        {
+            title: "Book Review",
+            imagem: "",
+            new: `Brandon taylor filthy animals is a study in roque appetite.
+             the one about bibi netanyahu father and the perils of diaspora. 
+             Speaking truth to bothy the right and the left`
+        },
+        ],
+
+        
 
         living: [
             {
@@ -764,26 +770,28 @@ export const NEWS_LIST = [
                  bots and antiobodies are art material Brigid berlin, 
                  andy warhol most enduring friend`
             },
-            {
-                title: "Travel",
-                imagem: "",
-                new: `it summer in the ski towns 2.0 touring alaska in an R.V.
-                 Five things to know if your re road tripping this summer `
-            },
-            {
-                title: "Love",
-                imagem: "",
-                new: `This season wedding crashers cicadas finding light together after 
-                a very dark place. My 70-year old father joined tinder`
-            },
-            {
-                title: "Real Estate",
-                imagem: "",
-                new: `Three Hollywood Stars Recast
-                     Their Lives Deep in the Heart of texas
-                     Why the best Garden Have Something Extra
-                     Getting Married And Leaving a Roommate Behind `
-            },
-        ]
+        ],
+        livingTwo: [
+        {
+            title: "Travel",
+            imagem: "",
+            new: `it summer in the ski towns 2.0 touring alaska in an R.V.
+             Five things to know if your re road tripping this summer `
+        },
+        {
+            title: "Love",
+            imagem: "",
+            new: `This season wedding crashers cicadas finding light together after 
+            a very dark place. My 70-year old father joined tinder`
+        },
+        {
+            title: "Real Estate",
+            imagem: "",
+            new: `Three Hollywood Stars Recast
+                 Their Lives Deep in the Heart of texas
+                 Why the best Garden Have Something Extra
+                 Getting Married And Leaving a Roommate Behind `
+        },
+    ]
     }
 ]
