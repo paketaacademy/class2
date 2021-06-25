@@ -1,4 +1,4 @@
-[
+const news = [
     {
         "title":"How to Have the Hard Vaccination Conversations",
         "description":"Asking someone if they've had a Covid shot can be tricky. Here's how to navigate the new norms of health disclosure.",
@@ -35,3 +35,22 @@
         "image":""
 }
 ]
+
+const rendernews = () => {
+
+    const item = news[0]
+    const allItems = `
+            <a href="#">
+                <h3>${news.title}</h3>
+            </a>
+            <a href="#"><span>${news.description}</span>
+            </a>
+    `
+    document.getElementById("container__newsleft").innerHTML = allItems
+
+}
+const scienceandhealth = () => {
+  rendernews()
+}
+
+export default scienceandhealth
