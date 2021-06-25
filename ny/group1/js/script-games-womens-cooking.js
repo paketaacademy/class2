@@ -11,8 +11,8 @@ function factoryWomenCooking(array, div){
     for (let i = 0; i < array.length; i++){
         div.innerHTML += `
             <div class="box-news-womens-cooking">
-                <a href="#" class="link-womens-cooking"><img src="http://lorempixel.com/195/143/"></a>
-                <a href="#" class="link-womens-cooking"><h3 class="title-cooking-womens">${array[i].titulo}</h3></a>
+                <a href="post.html" class="link-womens-cooking"><img src="http://lorempixel.com/195/143/"></a>
+                <a href="post.html" class="link-womens-cooking"><h3 class="title-cooking-womens">${array[i].titulo}</h3></a>
             </div>
         `
     }
