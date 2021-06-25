@@ -6,6 +6,12 @@
     color: #000000; 
   }
 
+.section-6{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
 .section-news{
     display: flex;
     flex-wrap: wrap;
