@@ -28,29 +28,30 @@
 
 .box-nav-bar {
     display: flex;
-    justify-items: center;
+    justify-content: space-around;
 }
 
-#nav-bar {
+.nav-bar {
     display: flex;
     justify-content: space-around;
-    /*margin: 0 0 0 20px;*/
     padding: 0;
     list-style: none;
     width: 100%;
-    float: left;
-    justify-items: center;
+    list-style: none;
 }
 
-#nav-bar .link-nav-bar {
+.link-nav-bar {
     float: left;
+    align-items: center;
     justify-content: center;
+    text-decoration: none;
+    list-style: none;
 }
 
-#nav-bar .link-nav {
+.link-nav {
     margin: 2px;
     font-size: 12px;
-    display: block;
+    display: flex;
     padding: 2px 5px;
     text-decoration: none;
     color: black;
@@ -58,7 +59,7 @@
     align-items: center;
 }
 
-#nav-bar .link-nav:hover {
+.link-nav:hover {
     background: rgb(238, 237, 237);
     border-radius: 5px;
     transition: 1s;
