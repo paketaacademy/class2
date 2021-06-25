@@ -130,7 +130,7 @@ hr {
 
 /*news main*/
 
-#news, #opinion, #arts, #living {
+#news, #opinion, #arts, #living, #pop {
     display: flex;
     justify-content: start;
     flex-direction: row;
@@ -152,6 +152,16 @@ hr {
 }
 .element__desc {
     font-size: 12px;
+    width: 213px;
+}
+.element__title--pop {
+    font-size: 14px;
+    padding: 0;
+    padding-top: 10px;
+    margin: 3px;
+}
+.element__desc--pop {
+    font-size: 14px;
     width: 213px;
 }
 .element__link {

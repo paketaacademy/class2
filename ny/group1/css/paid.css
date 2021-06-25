@@ -1,0 +1,24 @@
+.paid{
+    background-color: rgba(231, 226, 226, 0.897);
+}
+
+.paid-link{
+    text-decoration: none;
+    color: #000;
+}
+
+.paid-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+
+.paid-txt{
+    padding: 0;
+    width: 246px;
+}
+
+.paid-anunce{
+    display: flex;
+    align-items: flex-end;
+}
