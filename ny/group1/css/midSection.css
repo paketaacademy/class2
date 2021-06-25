@@ -223,13 +223,22 @@
     width: calc(28% - 15px);
 }
 
+.opinion_content {
+    padding: 15px 0px 15px 0px;
+    margin-left: 15px;
+}
+
+.editor_content {
+    padding: 15px 0px 15px 0px;
+    margin-left: 15px;
+}
+
 .opinion_container {
     display: flex;
     align-items: center;
     width: 98%;
-    margin-left: 15px;
-    padding: 15px 0px 15px 0px;
     border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 15px;
 }
 
 .author_information .category {
@@ -316,7 +325,6 @@
 
 .editors_container {
     width: 98%;
-    margin-left: 15px;
     padding: 15px 0px 15px 0px;
 }
 
