@@ -12,10 +12,10 @@
 
 .c-section2{
     display: flex;
-    
     width: 750px;
     margin: 30px;
     border-bottom: 1px solid #000000;
+    padding-bottom: 20px;
 }
 
 .c-live{
@@ -25,6 +25,10 @@
     padding: 30px 10px 30px 0px;    
     line-height: 1;
     width: 460px;    
+}
+
+.c-section__borderNone{
+    border: none;
 }
 
 .c-title__new{
@@ -76,6 +80,8 @@
 .desc-text{
     font-size: 12px;
     color: #7c7c7c;
+    margin: 0;
+    padding-bottom: 20px;
 }
 
 .author-desc{
@@ -106,6 +112,8 @@
 .c-new__bordertop{
     border-top: 0.1px solid #7c7c7c;
     padding-top: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
 }
 
 .column_opinions{
@@ -122,11 +130,13 @@
 
 .c-column_news{
     display: flex;
+    margin-top: 20px;
 }
 
 .c-opinion{
     border-left: 1px solid #7c7c7c;
     padding-left: 20px;
+    padding-top: 20px;
 }
 
 .options__opinion{
@@ -144,17 +154,20 @@
 .c-opinion__collumn{
     border-bottom: 1px solid #7c7c7c;
     margin: 10px;
+    padding-bottom: 20px;
 }
 
 .column_opinions_item-top{
     border-bottom: 1px solid #7c7c7c;
-   padding-bottom: 20px;
+    margin: 10px;
+    padding-bottom: 20px;
     
 }
 
 .c-column_editor{
     display: flex;
     flex-direction: column;
+    padding-bottom: 20px;
     margin: 10px;
     border-bottom: 1px solid #7c7c7c;
 }
@@ -165,6 +178,7 @@
 
 .opinion__final{
     display: flex;
+    padding-top: 20px;
 }
 
 

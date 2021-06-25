@@ -1,4 +1,4 @@
-[
+const news = [
     {
         "title":"New Yorkers Vote in Acrimonious Mayoral Primary",
         "description":"New Yorkers vote today in a mayoral race defined by clashes over public safety, the economy and ethics that turned ugle in the final stretch.",
@@ -35,3 +35,49 @@
         "image":""
 }
 ]
+
+const rendernews = () => {
+
+    const item = news[0]
+    const allItems = `
+    <a href="#"><span>
+            <h2>${item.title}</h2>
+        </span></a>
+    <ul>
+        <a href="#">
+            <li>${item.description}</li>
+        </a>
+        <a href="#">
+            <li>${item.description}</li>
+        </a>
+    </ul>
+    `
+    document.getElementById("section-rigth").innerHTML = allItems
+
+}
+const init = () => {
+  rendernews()
+  rendernews2()
+}
+
+export default init
+
+const rendernews2 = () => {
+    const item = news[3]
+    const allItems = `
+                <a class="section1__left--separation" href="#"><span>
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                    </span></a>
+                <a href="#"><span>
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                    </span></a>
+    `
+    document.getElementById("section-left").innerHTML = allItems
+}
+
+
+
+
+

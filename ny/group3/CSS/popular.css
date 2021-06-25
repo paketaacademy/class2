@@ -1,0 +1,54 @@
+@charset "UTF-8"
+
+*{
+    color: black;
+}
+
+img{
+    max-width: 215px;
+    max-height: 140px;
+}
+
+div{
+    display: flex;
+}
+
+.title h3{
+    margin-left: 65px;
+    margin-top: 30px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.title{
+    margin-left: 45px;
+}
+
+.noticias{
+    display: flex;
+    max-width: 1200px;
+    margin: auto;  
+}
+
+strong:hover{
+    color:rgb(111,111,111);
+}
+
+li.paragrafo{
+    color: rgb(111, 111, 111);
+    line-height: 20px;
+    padding: 10px;
+}
+
+
+strong{
+    color: black;
+}
+
+li{
+    list-style: none;
+}
+
+
