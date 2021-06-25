@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   margin: 30px;
+  max-width: 1200px;
 }
 
 .container__title {
