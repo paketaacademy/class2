@@ -659,35 +659,35 @@ export const NEWS_LIST = [
         opinion_02: [
             {
                 title: " Opinion",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/24/multimedia/24xp-surfside-1a/merlin_189818946_a8b8c9b7-f22a-4277-ad7a-a53ae3179a83-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: `She was raped: The enduring trauma. Sarah schulman radical approach to conflict,
                  communication and change. We where prmised a village :
                   A year in the life of pandemic baby parents `
             },
             {
                 title: " Op-Ed Colunists",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/25/opinion/25krugman-newsletter-onsite-new/merlin_150652791_acb06a86-fd7d-4183-a00e-d1a3ab7a7132-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: `Sarah schulman radical approach conflict, communication and change. 
                 Only the Women can save US now , New York. 
                 Iran best on religion, repression and revolution`
             },
             {
                 title: " Editorials",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/30/dining/25cocktails1/merlin_189797574_b1dc077d-1c4f-42a0-92cd-b40234dc4c1b-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: `The two men blocking military sexual assult reform. 
                 One way forward on iran: A nuclear weapon free persian gulf. 
                 Dont overthink rancked choice voting new york city`
             },
             {
                 title: " Guest Essays",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/25/opinion/sunday/25McBee/25McBee-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: `We werw peomised a village: A year in the life of pandemic-baby parents.
                  The vacuos phrase at the core of biden foreign policy. 
                  Child care is not the place for biden to skimp`
             },
             {
                 title: " Sunday Review ",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/21/opinion/21douthat-final/19douthat-final-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: `The strange Death of liberal russophobia. 
                 the two men blocking military sexual assault reform.
                  A 14-year old bride, wed to her rapist , playing on a jungle gym`
@@ -698,34 +698,34 @@ export const NEWS_LIST = [
 
             {
                 title: " Arts",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/23/arts/23rita-moreno1/23rita-moreno1-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: `Britney spears quietly pushed for year to end her conservatorship.
                  Los Angels has a housing crisis. Can it design its way out?
                   How do you move a 30-ton Diego Rivera Fresco? Very carefully`
             },
             {
                 title: "Art And Design",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/24/arts/24medici-review-1/24medici-review-1-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: ` As money launderers buy dalis, U.S looks at lifting the veil on art sales.
                  The shakers are movers, too the enslaved artist whose pottery was an act of resistance`
             },
             {
                 title: "Movies",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/24/arts/24fast1/24fast1-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: ` In the heights and colorism : What is lost whwn afro-latinos are erased.
                  With in the heights jimmy smits sings a little but gave it a lot.
                   The Hunchback of notre dame at 25: The Most R-rated g you will ever see`
             },
             {
                 title: " Television",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/27/arts/27summer-catchup1/27summer-catchup1-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: `Inside No 9 returns with more cunning puzzles.
                  The 21 best tv comedies of the 24st century (so far).
                   Review: Evil Is good and it back for second satanic season`
             },
             {
                 title: "Music",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/24/arts/24Britney01/24Britney01-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: `50 reasons to love joni mitchell blue. Britney spears quietly
                  pushed for years to end her conservatorship. 
                   orchestra veteran on music post pandemic future `
@@ -735,31 +735,30 @@ export const NEWS_LIST = [
         ],
 
         artsttwo: [
-            {
-                title: "Theater",
-                imagem: "",
-                new: `Theater reality tv and what is stranger Than Fiction. 
+        {   title: "Theater", 
+            imagem: "https://static01.nyt.com/images/2021/06/25/arts/25off-broadway-review/25off-broadway-review-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
+            new: `Theater reality tv and what is stranger Than Fiction. 
             Andre de shields Isn done with King Lear (or Hadestown). 
              music Man Names British produces to replace rudin`
-            },
-            {
-                title: "Dance",
-                imagem: "",
-                new: `Five pioneering black ballerinas: We have To have A voice. 
+        },
+        {
+            title: "Dance",
+            imagem: "https://static01.nyt.com/images/2021/06/24/arts/24ailey-gala-1/24ailey-gala-1-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
+            new: `Five pioneering black ballerinas: We have To have A voice. 
             In the heights where the streets explode  with dance. 
             A hip hop Dance crew frabjous reign las vegas`
-            },
-            {
-                title: "Books",
-                imagem: "",
-                new: `Yes no maybe so: A generation of thinkers grapples with notions of consent. 
+        },
+        {
+            title: "Books",
+            imagem: "https://static01.nyt.com/images/2021/06/25/books/00JULY-BOOKS-COMBO/00JULY-BOOKS-COMBO-threeByTwoSmallAt2X-v2.jpg?quality=75&auto=webp&disable=upscale&width=400",
+            new: `Yes no maybe so: A generation of thinkers grapples with notions of consent. 
             Janet maicolm, a writer who emphasized the messiness of
              life with slyness and precision 19 lines that turn anguish into art`
-            },
-            {
-                title: "Book Review",
-                imagem: "",
-                new: `Brandon taylor filthy animals is a study in roque appetite.
+        },
+        {
+            title: "Book Review",
+            imagem: "https://static01.nyt.com/images/2021/06/25/books/review/25TBRCrossword/merlin_189828903_76a093ec-6f95-4131-a8fa-edd09b0af062-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
+            new: `Brandon taylor filthy animals is a study in roque appetite.
              the one about bibi netanyahu father and the perils of diaspora. 
              Speaking truth to bothy the right and the left`
             },
@@ -770,55 +769,55 @@ export const NEWS_LIST = [
         living: [
             {
                 title: "Style",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/04/fashion/OSAKA-FAME/OSAKA-FAME-threeByTwoSmallAt2X-v3.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: `Naomi Osaka and the language of fame. Symone is a love letter 
                 to blackness and queerness. the End of Wonder rug`
             },
             {
                 title: "Food",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/30/dining/25Appe1/merlin_189647289_8cad585a-fdbd-4ab8-b4cc-dcb995e0808e-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: `More than just takeout, frech fries and chapli kebabs,hot from the skillet 
                 grocery to table is a challenge for restaurants in the pandemic`
             },
             {
                 title: "Well",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/04/well/parkinsons-letters-1624402878495/parkinsons-letters-1624402878495-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: ` tThe secrets of cognitve super agers. 
                 Morning people may be at lower risk of depression than nigtht owls.
                  New homes, pets and dreams: Big Pandemic changes `
             },
             {
                 title: "The new York Times Magazine",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/27/magazine/27mag-clean/27mag-clean-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: `What if american democracy fails the climate crisis? 
                 the best way to clean your ears: 
                 with a spoon shoul hang out with someone whouse political views hate?`
             },
             {
                 title: "T Magazine",
-                imagem: "",
+                imagem: "https://static01.nyt.com/images/2021/06/25/t-magazine/25tmag-naudline-copy/25tmag-naudline-copy-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
                 new: `Lucy dacus takes confessional songwriting to a new level when
                  bots and antiobodies are art material Brigid berlin, 
                  andy warhol most enduring friend`
             },
         ],
         livingTwo: [
-            {
-                title: "Travel",
-                imagem: "",
-                new: `it summer in the ski towns 2.0 touring alaska in an R.V.
+        {
+            title: "Travel",
+            imagem: "https://static01.nyt.com/images/2021/06/27/travel/24SOBER-TRAVEL-1/oakImage-1624476417887-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
+            new: `it summer in the ski towns 2.0 touring alaska in an R.V.
              Five things to know if your re road tripping this summer `
-            },
-            {
-                title: "Love",
-                imagem: "",
-                new: `This season wedding crashers cicadas finding light together after 
+        },
+        {
+            title: "Love",
+            imagem: "https://static01.nyt.com/images/2021/06/27/fashion/25Vows-Philly1/25Vows-Philly1-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
+            new: `This season wedding crashers cicadas finding light together after 
             a very dark place. My 70-year old father joined tinder`
-            },
-            {
-                title: "Real Estate",
-                imagem: "",
-                new: `Three Hollywood Stars Recast
+        },
+        {
+            title: "Real Estate",
+            imagem: "https://static01.nyt.com/images/2021/06/27/realestate/25hobbies1/25hobbies1-threeByTwoSmallAt2X.jpg?quality=75&auto=webp&disable=upscale&width=400",
+            new: `Three Hollywood Stars Recast
                  Their Lives Deep in the Heart of texas
                  Why the best Garden Have Something Extra
                  Getting Married And Leaving a Roommate Behind `
