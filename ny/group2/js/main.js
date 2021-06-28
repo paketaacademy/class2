@@ -79,10 +79,15 @@ const opinionsfooter = () => { //nome da const
         m.opinion_02.map(s => ( //mockup
             opinionfooter.innerHTML += //variavel
             `
-            <div class="opinions-f-d" 
-            <h3 class="opinionsftitle">${s.title}</h3>
+            <div class="opinions-f-div">
+                <h3>${s.title}</h3>
+                <div>
+                    <img class="img1" src="${s.imagem}" alt="">
+                          
+                </div>                           
+                <div>${s.new}</div>
+            </div>`
             
-            <div class="opinionsfconteudo">${s.new}</div>`
         ))
     ))
 }
@@ -92,8 +97,11 @@ const art = () => {
         m.arts.map(s => (
             artsone.innerHTML += `
             <div class="arts-d">
-            <h3 class="arts-title">${s.title}</h3>                        
-            <p class="arts">${s.new}</p>
+                <h3>${s.title}</h3> 
+                <div>
+                    <img class="img2" src="${s.imagem}" alt=""> 
+                </div>                       
+                <p class="arts">${s.new}</p>
             </div>
             `
 
@@ -105,8 +113,11 @@ const twoarts = () => {
         m.artsttwo.map(s => (
             arttwo.innerHTML += `
             <div class="arts-two-d">
-            <h3 class="art-title">${s.title}<h3>
-            <p class="art-two">${s.new}<p>
+                <h3 class="art-title">${s.title}</h3>
+                <div>
+                    <img class="img3" src="${s.imagem}" alt="">
+                </div> 
+                <p class="art-two">${s.new}</p>
             </div>`
         ))
     ))
@@ -152,9 +163,12 @@ const livingOne = () => {
     mock.map(m => (
         m.living.map(s => (
             livingO.innerHTML += `
-            <div class="living-one-d">
-            <h3 calss="living">${s.title}</h3>
-            <p class="living-p">${s.new}</p>
+            <div class="living-one-div">
+                <h3 calss="living">${s.title}</h3>
+                <div>
+                    <img class="img4" src="${s.imagem}" alt="">
+                </div>
+                <p class="living-p">${s.new}</p>
             </div>`
         ))
     ))
@@ -176,9 +190,12 @@ const livingTw = () => {
     mock.map(m => (
         m.livingTwo.map(s => (
             livingT.innerHTML += `
-            <div class="living-two-d">
-            <h3 class="living-t">${s.title}</h3>
-            <p class="living-t-p">${s.new}</p>
+            <div class="living-two-div">
+                <h3 class="living-two-title">${s.title}</h3>
+                <div>
+                    <img class="img5" src="${s.imagem}" alt="">
+                </div>
+                <p class="living-two-p">${s.new}</p>
             </div>`
         ))
     ))
