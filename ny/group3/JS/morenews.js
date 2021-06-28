@@ -12,7 +12,7 @@ const news = [
     description: "",
     author: "",
     legend: "",
-    image: "/Imagens/keagan-henman--ndLL94OKYA-unsplash.jpg",
+    image: "Imagens/keagan-henman--ndLL94OKYA-unsplash.jpg",
   },
   {
     title: "Mark Peel, Who Helped Forge a New Culinary Path, Dies at 66",
