@@ -46,15 +46,20 @@ const news = [
     }
 ]
 
-
+let cont = 0
 window.addEventListener('scroll', () => {
-    const {scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
     if (scrollTop + clientHeight >= scrollHeight - 5) {
-        rendernews()
-            
+        if (cont < 4) {
+            rendernews()
+
+        } else {
+            window.removeEventListener('scroll', rendernews)
+        }
+        cont++
     }
-       
+
 });
 
 
@@ -81,20 +86,22 @@ const criarPost = (news) => `
         
 	    `
 const rendernews = () => {
+
+   
     const ele0 = news[0]
     const ele1 = news[1]
     const ele2 = news[2]
     const ele3 = news[3]
     const ele4 = news[4]
     const allElements = `
-    <div  class="news__container">
-                ${criarPost(ele0)}
-                ${criarPost(ele1)}
-                ${criarPost(ele2)}
-                ${criarPost(ele3)}
-                ${criarPost(ele4)}
-                </div>
-              `
+        <div  class="news__container">
+            ${criarPost(ele0)}
+            ${criarPost(ele1)}
+            ${criarPost(ele2)}
+            ${criarPost(ele3)}
+            ${criarPost(ele4)}
+        </div>
+    `
     console.log('ola')
 
     let objTo = document.getElementById('news');
