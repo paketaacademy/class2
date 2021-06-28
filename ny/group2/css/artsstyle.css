@@ -1,3 +1,9 @@
+h3.title {
+    font-size: 0.850rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
 .opnion-footer{
     display: flex;
     justify-content: space-between;
@@ -40,10 +46,6 @@
     max-width: 20%;
     padding: 10px 10px;
     margin-top: 25px;
-}
-
-.living-section-one h3{
-    height: 50px;
 }
 
 .img2{
@@ -89,5 +91,5 @@
 .living-two-div{
     width: 80%;
     max-width: 20%;
-    padding: 10px 10px;
+    
 }

@@ -1,16 +1,11 @@
 import { NEWS_LIST } from "./mockupForNews.js";
-
+import { initFourthSection } from "./opnionsFooter_to_Living.js";
 const mock = NEWS_LIST
 
 let principalNews = document.querySelector(".principal-news")
 let liveUpdatesImg = document.querySelectorAll(".live-updates__ul--img")
 let liveUpdatePrimaries = document.querySelector(".live-update-primaries")
 let someOtherNews = document.querySelector(".some-other-news")
-let opinionfooter = document.querySelector(".opnion-footer")
-let artsone = document.querySelector('.arts-one')
-let arttwo = document.querySelector('.arts-two')
-let livingO = document.querySelector('.living-section-one')
-let livingT = document.querySelector('.living-section-two')
 let liveNews = document.querySelector(".live-news-first-row-col")
 let liveNewsN2 = document.querySelector(".live-news-first-row-col2")
 let liveBigCol = document.querySelector(".live-big-col")
@@ -74,54 +69,9 @@ const generateSomeOtherNews = () => {
     ))
 }
 
-const opinionsfooter = () => { //nome da const
-    mock.map(m => (
-        m.opinion_02.map(s => ( //mockup
-            opinionfooter.innerHTML += //variavel
-            `
-            <div class="opinions-f-div">
-                <h3>${s.title}</h3>
-                <div>
-                    <img class="img1" src="${s.imagem}" alt="">
-                          
-                </div>                           
-                <div>${s.new}</div>
-            </div>`
-            
-        ))
-    ))
-}
 
-const art = () => {
-    mock.map(m => (
-        m.arts.map(s => (
-            artsone.innerHTML += `
-            <div class="arts-d">
-                <h3>${s.title}</h3> 
-                <div>
-                    <img class="img2" src="${s.imagem}" alt=""> 
-                </div>                       
-                <p class="arts">${s.new}</p>
-            </div>
-            `
 
-        ))
-    ))
-}
-const twoarts = () => {
-    mock.map(m => (
-        m.artsttwo.map(s => (
-            arttwo.innerHTML += `
-            <div class="arts-two-d">
-                <h3 class="art-title">${s.title}</h3>
-                <div>
-                    <img class="img3" src="${s.imagem}" alt="">
-                </div> 
-                <p class="art-two">${s.new}</p>
-            </div>`
-        ))
-    ))
-}
+
 const generateLiveNews = () => {
     mock.map(m => (
         m.liveNews.map(l => (
@@ -159,21 +109,6 @@ const generateLiveBigCol = () => {
     ))
 }
 
-const livingOne = () => {
-    mock.map(m => (
-        m.living.map(s => (
-            livingO.innerHTML += `
-            <div class="living-one-div">
-                <h3 calss="living">${s.title}</h3>
-                <div>
-                    <img class="img4" src="${s.imagem}" alt="">
-                </div>
-                <p class="living-p">${s.new}</p>
-            </div>`
-        ))
-    ))
-}
-
 const generateLiveSmallCol = () => {
     mock.map(m => (
         m.liveNewSectionSmallCol.map(l => (
@@ -185,22 +120,6 @@ const generateLiveSmallCol = () => {
         ))
     ))
 }
-
-const livingTw = () => {
-    mock.map(m => (
-        m.livingTwo.map(s => (
-            livingT.innerHTML += `
-            <div class="living-two-div">
-                <h3 class="living-two-title">${s.title}</h3>
-                <div>
-                    <img class="img5" src="${s.imagem}" alt="">
-                </div>
-                <p class="living-two-p">${s.new}</p>
-            </div>`
-        ))
-    ))
-}
-
 
 const generateOpnionFirstRow = () => {
     mock.map(m => (
@@ -268,11 +187,6 @@ firstPageNew()
 genereteImages()
 generateLiveUpdatesPrimaries()
 generateSomeOtherNews()
-opinionsfooter()
-art()
-twoarts()
-livingOne()
-livingTw()
 generateLiveNews()
 generateLiveNewsN2()
 generateLiveBigCol()
@@ -280,3 +194,4 @@ generateLiveSmallCol()
 generateOpnionFirstRow()
 generateLeftOpnions()
 generateRightOpnions()
+initFourthSection()

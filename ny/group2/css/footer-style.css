@@ -21,6 +21,10 @@ h3 {
     font-size: 20px;
 }
 
+li {
+    font-size: small;
+}
+
 footer{
     
     display: flex;
