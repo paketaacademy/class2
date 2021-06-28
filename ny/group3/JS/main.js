@@ -1,1 +1,9 @@
-import { /*nome do arquivo que quero trazer*/} from //colocar o nome do diretório do js
+import init from './hero.js'
+import firstnews from './second-section2.js'
+import newSection from './news.js'
+import morenews from './morenews.js'
+
+init()
+firstnews()
+newSection()
+morenews()

@@ -38,10 +38,6 @@
 
 }
 
-.science-and-health{
-    
-}
-
 .science-section__h3{
     font: var(--news-font);
     font-weight: bold;
@@ -141,10 +137,6 @@
 
 .news-div p{
     padding: 15px 0 0 0;
-}
-
-.news{
-
 }
 
 .news__h3{

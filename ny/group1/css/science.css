@@ -3,6 +3,10 @@
     justify-content: space-between;
 }
 
+.box-title-science{
+    margin-bottom: 0;
+}
+
 .science-3, .science-2, .science-1{
     height: 324px;
     margin: 0 5px 0 0;
@@ -18,6 +22,7 @@
 
 .img-science-2{
     width: 328px;
+    margin-left: 20px;
 }
 
 .science-news-2{
@@ -31,20 +36,30 @@
 
 .p-science-news-3{
     font-size: 0.875rem;
-    margin: 2px 0;
+    margin: 0;
 }
 
 .title-news-science-3{
-    margin: 0;
+    margin: 10px 0;
     font-size: 1rem; 
 }
 
 .p-science-1{
     width: 220px;
     height: 234px;
-    font-size: 0.875rem
+    font-size: 0.875rem;
 }
 
 .h-science-1{
     width: 220px;
+    margin: 10px 0;
+}
+
+.h5-science{
+    margin: 5px 0 10px 0; 
+}
+
+.link-science{
+    text-decoration: none;
+    color: #000;
 }

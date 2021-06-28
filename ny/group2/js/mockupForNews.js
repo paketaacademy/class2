@@ -75,28 +75,33 @@ export const NEWS_LIST = [
                 voting rights bill. They are all but certain to fall. Here's the latest
                 from Washington.`,
                 image: "",
-                alt: "Some Woman Looking forward"
-            },
-            {
-                title: `A large liberal super PAC will pour $20 million into voting
-                rights efforts ahead of the 2022 election cycle.`,
-                subtitle: ``,
-                news: "",
-                image: "",
-                alt: "Some Woman Looking forward"
+                alt: ""
             }
         ],
 
-        liveNewsSection: [
+        liveNewsSecond: [
+            {
+                title: `A large liberal super PAC will pour $20 million into voting rights efforts ahead of the 2022 election cycle.`,
+                subtitle: "",
+                news: ``,
+                image: "",
+                alt: ""
+            }
+        ],
+
+        liveNewsSectionBigCol: [
             {
                 title: "She Fought to Reopen Schools, Becoming a Hero and a Villain",
                 subtitle: ``,
                 news: `The Economist Emily Oster offers loads of data-driven advice
                 about children and Covid-19. Many parents live by her words. Others
                 say she's dangerous`,
-                image: "Lorem picsum image",
+                image: "https://picsum.photos/350/225?random=10",
                 alt: "Some Woman Looking forward"
             },
+        ],
+
+        liveNewSectionSmallCol: [
             {
                 title: "India Tries to Jump Start Sluggish Vaccination Effort",
                 subtitle: "",
@@ -106,6 +111,9 @@ export const NEWS_LIST = [
                 image: "",
                 alt: "Some Woman Looking forward"
             },
+        ],
+
+        liveNewSectionRow: [
             {
                 title: `While many people in th U.S. need persuading to get
                 vaccinated, residents of South Texas need little prodding.`,
@@ -118,103 +126,104 @@ export const NEWS_LIST = [
 
         opnionFirstRow:
         {
-            nome: "Michelle Goldberg",
-            avatar: " ",
-            title: "Only the Women Can Save Us Now, New York",
-            news: `de impressos, e vem sendo utilizado desde o século XVI
-                , quando um impressor desconhecido pegou uma bandeja de tipos
-                 e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum 
-                 sobreviveu não só a cinco séculos, como`,
-            imagem: "  "
+            nome: "Bryce Covert",
+            avatar: "https://picsum.photos/30/30?random=1",
+            title: "Biden's Paid Leave Plan Is Years Out of Date",
+            news: `The president shoul look to his former rivals to
+            improve his family and child care policies`,
+            imagem: "https://picsum.photos/140/140?random=1",
+            alt: `Algum autor`
         },
 
         opnionRows: [
-
-            {
-                nome: "Bryce Covert",
-                avatar: " ",
-                title: "Bidens Paid leave Plan Is Year Out Of Date",
-                news: `The Predident Shold look to his former rivals to 
-                improve his family and child care policies`,
-            },
             {
                 nome: "Ross Douthat",
-                avatar: " ",
+                avatar: "https://picsum.photos/30/30?random=41",
                 title: "Only the Women Can Save Us Now, New York",
-                news: ` Both men leading the Democratic mayoral primary are disasters`
+                news: ` Both men leading the Democratic mayoral primary are disasters`,
+                alt: `Some Author`
             },
             {
                 nome: "Paul Krugman",
-                avatar: " ",
+                avatar: "https://picsum.photos/30/30?random=12",
                 title: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
                  mas a maioria sofreu algum tipo de altera`,
-                news: " "
+                news: " ",
+                alt: `Some Author`
             },
             {
                 nome: "Alexandra March",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
-                 mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor`
+                avatar: "https://picsum.photos/30/30?random=15",
+                title: "We Were Promised a Village: a Year in the Life of Pandemic-Baby Parents",
+                news: ``,
+                alt: `Some Author`
             },
             {
-                nome: "Peter Beinart",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
-                 mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor`
-            },
+                nome: "Paul Krugman",
+                avatar: "https://picsum.photos/30/30?random=14",
+                title: "The Week Inflation Panic Died",
+                news: ``,
+                alt: `Some Author`
+            }
+        ],
+
+        rightSideOpnions: [
             {
-                nome: "Bret Stephens",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
-                 mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor`
+                nome: "Bred Stephens",
+                avatar: "https://picsum.photos/30/30?random=21",
+                title: "Iran Bets on Religion, Repression and Revolution",
+                news: ``,
+                alt: `Some Author`
+
             },
             {
                 nome: "The Editorial Board",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
-                 mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor`
+                avatar: "https://picsum.photos/30/30?random=22",
+                title: "Kathryn Garcia Has Our Endorsement for New York City Mayor",
+                news: ``,
+                alt: `Some Author`
+
             },
             {
                 nome: "Rob Richie",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
-                 mas a maioria sofreu algum tipo de alteração, seja por inserçãode passagens com humo`
+                avatar: "https://picsum.photos/30/30?random=24",
+                title: "A Very Specific Guide to Ranking Candidates for N.Y.C. Mayor",
+                news: ``,
+                alt: `Some Author`
+
             },
             {
-                nome: "The Ezra Klein",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum,
-                 mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor`
+                nome: "The Ezra Klein Show",
+                avatar: "https://picsum.photos/30/30?random=27",
+                title: "This Activist Thinks You Should Embrace Conflict",
+                news: ``,
+                alt: `Some Author`
+
             },
             {
-                nome: "Kat Brien",
-                avatar: " ",
-                title: "Only the Women Can Save Us Now, New York",
-                news: `Existem muitas variações disponíveis de passagens de Lorem Ipsum, 
-                mas a maioria sofreu algum tipo de alteração, seja por inserção de passagens com humor`
+                nome: "Kat O'Brien",
+                avatar: "https://picsum.photos/30/30?random=29",
+                title: "I Am Breaking My Silence About Baseball Player Who Raped Me",
+                news: ``,
+                alt: `Some Author`
+
             }
         ],
 
         editors: [
             {
-                imagem: "",
+                imagem: "https://picsum.photos/320/200?random=40",
                 title: "The Hunchback At 25: The Most R-Rated G You Will Ever See",
                 new: ` How did the ratings board overlook songs filled with lust and dammantion? 
                 Maybe we bamboozled them with gargoyles, one filmmaker said`
             },
             {
-                imagem: " ",
-                new: "for moray Eels"
+                imagem: "https://picsum.photos/150/80?random=41",
+                new: `For Moray Eels, a Sneaky Second Set of Jaws to Catch Prey`
             },
             {
-                imagem: " ",
-                new: " The Most Popular Prime "
+                imagem: "https://picsum.photos/150/80?random=49",
+                new: "The Most Popular Prime Day Deals (So Far)"
             }
         ],
 
@@ -222,44 +231,44 @@ export const NEWS_LIST = [
             {
                 title: `Britney Spears Quietly Pushed for Years to End Her
                 Conservatorship`,
-                subtitle: "",
-                news: `Records obtained by The Times reveal that the singer
+                subtitle: `Records obtained by The Times reveal that the singer
                 has urged changesto the arrangement that controls her life,
                 and her father’s role in leading it.`,
-                image: "Lorem Picsum",
+                news: ``,
+                image: "https://picsum.photos/450/325?random=18",
                 alt: "Britney driving with her father."
             },
             {
                 title: `Los Angeles Has a Housing Crisis. Can It Design
                 Its Way Out?`,
-                subtitle: "",
-                news: `As Angelenos grapple with ways to address affordable
+                subtitle: `As Angelenos grapple with ways to address affordable
                 housing and homelessness, a new architecture competition
                 looks to low-rise solutions, our critic writes.`,
-                image: "Lorem Picsum",
-                alt: `Louisa Van Leer and Antonio Castillo won first place in
+                news: `Louisa Van Leer and Antonio Castillo won first place in
                 an architecture competition in Los Angeles for their “Green
                 Alley Housing” proposal in the subdivision category. Louisa
-                Van Leer Architecture`
+                Van Leer Architecture`,
+                image: "https://picsum.photos/380/250?random=31",
+                alt: ``
             },
             {
                 title: `An Enginer Says He's Cracked the Zodiac. Online Sleuths
                 Are Skeptical.`,
-                subtitle: "",
-                news: `Fayçal Ziraoui said he cracked ciphers attributed to
+                subtitle: `Fayçal Ziraoui said he cracked ciphers attributed to
                 the Zodiac killer and identified him, causing an uproar and
                 potentially ending a 50-year-old quest.`,
-                image: "Lorem Picsum",
+                news: ``,
+                image: "https://picsum.photos/450/325?random=39",
                 alt: "Some man looking for the right side, with a jar on the table."
             },
             {
                 title: `Carl Nassib, the First Openly Gay N.F.L. Player, Has
                 Been a Football Everyman`,
-                subtitle: "",
-                news: `I’ve been meaning to do this for a while now,” the lineman
+                subtitle: `I’ve been meaning to do this for a while now,” the lineman
                 said of coming out. He comes from a football family and was a
                 standout at Penn State.`,
-                image: "Lorem Picsum",
+                news: `Carl Nassib Has Played for three NFL teams`,
+                image: "https://picsum.photos/380/250?random=34",
                 alt: "Carl Nassib image."
             },
         ],
@@ -272,37 +281,33 @@ export const NEWS_LIST = [
                 news: `The finding by researchers runs counter to a basic tenet
                 of climate change — that warming increases humidity. It’s also
                 bad news for fire seasons.`,
-                image: "Lorem Picsum",
+                image: "https://picsum.photos/380/250?random=31",
                 alt: "Dry plantation."
             },
             {
-                title: ``,
-                subtitle: `Mark Peel, Who Helped Forge a New Culinary Path, Dies at 66`,
+                title: `Mark Peel, Who Helped Forge a New Culinary Path, Dies at 66`,
+                subtitle: ``,
                 news: `A pillar of California’s pioneering food scene, he worked
                 at Spago and was a founder of the renowned Campanile and La Brea Bakery.`,
                 image: ``,
                 alt: ``
             },
             {
-                title: ``,
-                subtitle: `The Pandemic Stimulus Was Front-Loaded. That Could Mean a Bumpy Year.`,
+                title: `The Pandemic Stimulus Was Front-Loaded. That Could Mean a Bumpy Year.`,
+                subtitle: ``,
                 news: `There’s a risk that the affluent, who saved money by limiting things like
                 traveling and dining out, will sit on their cash rather than spend it.`,
                 image: ``,
                 alt: ``
             },
             {
-                title: ``,
-                subtitle: `Home Sales Slow as Shortage and Climbing Prices Limit Buyers.`,
-                news: `Buyers continued to leave cities in search of more space and
-                better work-from-home scenarios, leading to a spike in demand. Here’s
-                the latest on the economy.`,
+                title: `Mark Peel, Who Helped Forge a New Culinary Path, Dies at 66.`,
+                subtitle: ``,
+                news: `A pillar of California's pioneering food scene, he worked at Spago
+                and was a founder of the renowed Campanile and a La Brea Bakery.`,
                 image: ``,
                 alt: ``
-            }
-        ],
-
-        rightSideMoreNews: [
+            },
             {
                 title: ``,
                 subtitle: `Connecticut Legalizes Recreational Marijuana`,
@@ -351,63 +356,57 @@ export const NEWS_LIST = [
 
         womansHealth: [
             {
-                image: `perimenopause`,
+                image: `https://picsum.photos/240/125?random=18`,
                 title: `Why Is Perimenopause Still Such a Mystery?`
             },
             {
-                image: `uterus cartoon with woman's face`,
+                image: `https://picsum.photos/240/125?random=19`,
                 title: `Know Your Uterus`
             },
             {
-                image: `some woman thinking about the issues from postpartumn`,
+                image: `https://picsum.photos/240/125?random=20`,
                 title: `Postpartumn Body Changes You Should Know About`
             },
             {
-                image: `some cartoons head, with brains like a sava`,
+                image: `https://picsum.photos/240/125?random=21`,
                 title: `This Is Your Brain on Motherhood`
             },
             {
-                image: `some woman and some x-ray`,
+                image: `https://picsum.photos/240/125?random=22`,
                 title: `when Doctor's Downplay Woman's Health Concerns`
             },
         ],
 
-        featuresMain:
-        {
-            image: `Pan American Unity, a 30-ton, 74-foot-wide-by-22-foot
-                mural by Diego Rivera, being installed at SFMOMA as the culmination
-                of a four-year, multimillion-dollar undertaking involving
-                engineers, architects, art historians, art handlers and riggers
-                from the United States and Mexico. It will be on view starting Monday.`,
-            title: `How Do You Move a 30-ton Diego Rivera Fresco?`,
-            subtitle: `Diego Rivera's rarely seen "Pan American Unity" was carefully
-                extracted from its home at City College of San Francisco and moved across
-                town to SFMOMA`
-        },
-
-        featuresRightSide: [
+        features: [
             {
-                image: `3 Hollywood Stars sited and smilling`,
+                image: `https://picsum.photos/770/400?random=23`,
+                title: `How Do You Move a 30-ton Diego Rivera Fresco?`,
+                subtitle: `Diego Rivera's rarely seen "Pan American Unity" was carefully
+                    extracted from its home at City College of San Francisco and moved across
+                    town to SFMOMA`
+            },
+            {
+                image: `https://picsum.photos/240/125?random=24`,
                 title: `3 Hollywood Stars Recas Their Lives in Austin`,
                 subtitle: `As the pandemic upended Tinseltown, Jamie-Lynn Sigler,
                 Haylie Duff and Becca Tobin made a pact to join the mass migration
                 from California to Texas.`
             },
             {
-                image: `some lipsticks in the photo`,
+                image: `https://picsum.photos/240/125?random=25`,
                 title: `Does the Perfect 'MLBB' Lipstick exist?`,
                 subtitle: `As the masks come off, the search for the perfect
                 “my lips but better” shade continues, perhaps into perpetuity..`
             },
             {
-                image: `some old book named Americanon`,
+                image: `https://picsum.photos/240/125?random=26`,
                 title: `Review: America's Character, as Seen Its How-To Books`,
                 subtitle: `In “Americanon,” Jess McHugh catalogs the country’s
                 virtues and foibles by examining the history of almanacs,
                 dictionaries and other practical books.`
             },
             {
-                image: `a woman's cartoon holding his soons, computer and calendar`,
+                image: `https://picsum.photos/240/125?random=27`,
                 title: `Being ‘Always On’ Has Reached Its Limits, and Parents Need a Reset`,
                 subtitle: `What crisis-acquired habits should working parents break?
                 Daisy Dowling, the author of “Workparent,” weighs in.`
@@ -416,23 +415,23 @@ export const NEWS_LIST = [
 
         nytCooking: [
             {
-                image: `gazpacho`,
+                image: `https://picsum.photos/210/110?random=23`,
                 title: `Best Gazpacho`
             },
             {
-                image: `dutch baby`,
+                image: `https://picsum.photos/210/110?random=24`,
                 title: `Dutch Baby With Bacon and Runny Camembert`
             },
             {
-                image: `tofu and green beens`,
+                image: `https://picsum.photos/210/110?random=25`,
                 title: `Tofu and Green Beens With Chile Crisp`
             },
             {
-                image: `fresh strawberry`,
+                image: `https://picsum.photos/210/110?random=26`,
                 title: `Fresh Strawberry Bundt Cake`
             },
             {
-                image: `jalapeño`,
+                image: `https://picsum.photos/210/110?random=27`,
                 title: `Jalapeño Grilled Pork Chops`
             },
         ],
@@ -731,35 +730,42 @@ export const NEWS_LIST = [
                  pushed for years to end her conservatorship. 
                   orchestra veteran on music post pandemic future `
             },
+
+
+        ],
+
+        artsttwo: [
             {
                 title: "Theater",
                 imagem: "",
                 new: `Theater reality tv and what is stranger Than Fiction. 
-                Andre de shields Isn done with King Lear (or Hadestown). 
-                 music Man Names British produces to replace rudin`
+            Andre de shields Isn done with King Lear (or Hadestown). 
+             music Man Names British produces to replace rudin`
             },
             {
                 title: "Dance",
                 imagem: "",
                 new: `Five pioneering black ballerinas: We have To have A voice. 
-                In the heights where the streets explode  with dance. 
-                A hip hop Dance crew frabjous reign las vegas`
+            In the heights where the streets explode  with dance. 
+            A hip hop Dance crew frabjous reign las vegas`
             },
             {
                 title: "Books",
                 imagem: "",
                 new: `Yes no maybe so: A generation of thinkers grapples with notions of consent. 
-                Janet maicolm, a writer who emphasized the messiness of
-                 life with slyness and precision 19 lines that turn anguish into art`
+            Janet maicolm, a writer who emphasized the messiness of
+             life with slyness and precision 19 lines that turn anguish into art`
             },
             {
                 title: "Book Review",
                 imagem: "",
                 new: `Brandon taylor filthy animals is a study in roque appetite.
-                 the one about bibi netanyahu father and the perils of diaspora. 
-                 Speaking truth to bothy the right and the left`
+             the one about bibi netanyahu father and the perils of diaspora. 
+             Speaking truth to bothy the right and the left`
             },
         ],
+
+
 
         living: [
             {
@@ -795,25 +801,27 @@ export const NEWS_LIST = [
                  bots and antiobodies are art material Brigid berlin, 
                  andy warhol most enduring friend`
             },
+        ],
+        livingTwo: [
             {
                 title: "Travel",
                 imagem: "",
                 new: `it summer in the ski towns 2.0 touring alaska in an R.V.
-                 Five things to know if your re road tripping this summer `
+             Five things to know if your re road tripping this summer `
             },
             {
                 title: "Love",
                 imagem: "",
                 new: `This season wedding crashers cicadas finding light together after 
-                a very dark place. My 70-year old father joined tinder`
+            a very dark place. My 70-year old father joined tinder`
             },
             {
                 title: "Real Estate",
                 imagem: "",
                 new: `Three Hollywood Stars Recast
-                     Their Lives Deep in the Heart of texas
-                     Why the best Garden Have Something Extra
-                     Getting Married And Leaving a Roommate Behind `
+                 Their Lives Deep in the Heart of texas
+                 Why the best Garden Have Something Extra
+                 Getting Married And Leaving a Roommate Behind `
             },
         ]
     }
