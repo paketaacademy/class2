@@ -6,7 +6,7 @@ const news = [
         "legend": "",
         "image": ""
     },
-    {
+    {        
         "title": "",
         "description": "It will be the city's first mayoral elections that uses ranked-choice voting, a system that may delay the declaration of a winner for weeks.",
         "author": "",

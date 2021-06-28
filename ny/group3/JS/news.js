@@ -133,6 +133,69 @@ const news = [
         "author": "",
         "legend": "",
         "image": "Imagens/football-tres.jpg"
+    },
+    {
+        "title": "Obituaries",
+        "description": "The pianist and composer Frederic Rzewski in 2016. Mr. Rzewski’s anti-establishment thinking stood at the center of his music-making and influenced generations of musicians. Frederic Rzewski, Politically Committed Composer and Pianist, Dies at 83",
+        "description1": "Mike Gravel, Unconventional Two-Term Alaska Senator, Dies at 91",
+        "description2": "Jon Hassell, Trumpeter and ‘Fourth World’ Composer, Dies at 84",
+        "author": "",
+        "legend": "",
+        "image": "Imagens/pianista.jpg"
+    },
+    {
+        "title": "The Upshot",
+        "description": "Obamacare’s Survival Is Now Assured, but It Still Has One Big Problem",
+        "description1": "Do Chance Meetings at the Office Boost Innovation? There’s No Evidence of It.",
+        "description2": "A Bill Destined to Fail May Now Spawn More Plausible Options",
+        "author": "",
+        "legend": "",
+        "image": "Imagens/maps.png"
+    },
+    {
+        "title": "Climate and Environment",
+        "description": "Fawn Sharp, former president of the Quinault Nation and president of the National Congress of American Indians.",
+        "description1": "Dispossessed, Again: Climate Change Hits Native Americans Especially Hard",
+        "description2": "Bipartisan Infrastructure Deal Omits Big Climate Measures Wildfires Threaten Urban Water Supplies, Long After the Flames Are Out.",
+        "author": "",
+        "legend": "",
+        "image": "Imagens/woman-lagoa.jpg"
+    },
+    {
+        "title": "Education",
+        "description": "Studies continue to show that many young children have struggled to master fundamental reading and math skills.",
+        "description1": "Does It Hurt Children to Measure Pandemic Learning Loss?",
+        "description2": "Online Schools Are Here to Stay, Even After the Pandemic Why Students Are Logging In to Class From 7,000 Miles Away",
+        "author": "",
+        "legend": "",
+        "image": "Imagens/escola.jpg"
+    },
+    {
+        "title": "Health",
+        "description": "Pfizer and Moderna Vaccines Likely to Produce Lasting Immunity, Study Finds",
+        "description1": "Helping Drug Users Survive, Not Abstain: ‘Harm Reduction’ Gains Federal Support",
+        "description2": "As Parents Forbid Covid Shots, Defiant Teenagers Seek Ways to Get Them",
+        "author": "",
+        "legend": "",
+        "image": "Imagens/vacina.jpg"
+    },
+    {
+        "title": "Reader Center",
+        "description": "A portion of Wilkes-Barre’s Public Square as seen in a panoramic collage.",
+        "description1": "A Long Look at One Downtown",
+        "description2": "10 Million Data Requests: How Our Covid Team Tracked the Pandemic Behind One Pulitzer, Hundreds of Hands",
+        "author": "",
+        "legend": "",
+        "image": "Imagens/predio.jpg"
+    },
+    {
+        "title": "Guest Essays",
+        "description": "Carl Nassib Came Out. Coaches and Teammates Need to Step Up.",
+        "description1": "Dear Class of 2021: Don’t Do Your Homework. Live Your Life.",
+        "description2": "A Guy Fieri Pep Talk",
+        "author": "",
+        "legend": "",
+        "image": "Imagens/football-tres.jpg"
     }
 ]
 
@@ -152,11 +215,7 @@ window.addEventListener('scroll', () => {
         }
         cont++
     }
-
 });
-
-
-
 const criarPost = (news) => `
         <div class="container--first">
         <a href="HTML/pag2.html" target="_blank">
