@@ -215,7 +215,6 @@ window.addEventListener('scroll', () => {
         }
         cont++
     }
-
 });
 
 const criarPost = (news) => `
