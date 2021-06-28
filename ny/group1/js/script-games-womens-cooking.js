@@ -11,8 +11,8 @@ function factoryWomenCooking(array, div){
     for (let i = 0; i < array.length; i++){
         div.innerHTML += `
             <div class="box-news-womens-cooking">
-                <a href="#" class="link-womens-cooking"><img src="http://lorempixel.com/195/143/"></a>
-                <a href="#" class="link-womens-cooking"><h3 class="title-cooking-womens">${array[i].titulo}</h3></a>
+                <a href="post.html" class="link-womens-cooking"><img src="http://lorempixel.com/195/143/"></a>
+                <a href="post.html" class="link-womens-cooking"><h3 class="title-cooking-womens">${array[i].titulo}</h3></a>
             </div>
         `
     }
@@ -23,11 +23,11 @@ function factoryGame (array){
         games.innerHTML += `
             <div class="games-js">
                 <div class="description">
-                    <a href="#" class="link-games"> <h3 class="description-h">${array[i].titulo}</h3><a>
-                    <a href="#" class="link-games"> <p class="description-p">${array[i].description}</p><a>
+                    <a href="post.html" class="link-games"> <h3 class="description-h">${array[i].titulo}</h3><a>
+                    <a href="post.html" class="link-games"> <p class="description-p">${array[i].description}</p><a>
                 </div>
                 <div class="img-game">
-                    <a href="#" class="link-games"><img src="http://lorempixel.com/91/91/"></a>
+                    <a href="post.html" class="link-games"><img src="http://lorempixel.com/91/91/"></a>
                 </div>
             </div>
         `

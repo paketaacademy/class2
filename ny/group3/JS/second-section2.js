@@ -260,9 +260,9 @@ const rendernews12 = () => {
     const item = news6[1]
     const allItems12 = `
     <article class="c-new">
-        <a href="${item.image}" target="_blank">
+        <a href="HTML/pag2.html" target="_blank">
             <figure class="c-img c-img__right">
-                <img src="Imagens/football.jpg" class="c-img_football" alt="Football">
+                <img src="${item.image}" class="c-img_football" alt="Football">
                 <figcaption class="c-legend">${item.legend}
                 </figcaption>
             </figure>
