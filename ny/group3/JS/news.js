@@ -216,7 +216,6 @@ window.addEventListener('scroll', () => {
         cont++
     }
 });
-
 const criarPost = (news) => `
         <div class="container--first">
         <a href="HTML/pag2.html" target="_blank">
