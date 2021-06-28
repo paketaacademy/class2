@@ -212,18 +212,18 @@ export const NEWS_LIST = [
 
         editors: [
             {
-                imagem: "",
+                imagem: "https://picsum.photos/320/200?random=40",
                 title: "The Hunchback At 25: The Most R-Rated G You Will Ever See",
                 new: ` How did the ratings board overlook songs filled with lust and dammantion? 
                 Maybe we bamboozled them with gargoyles, one filmmaker said`
             },
             {
-                imagem: " ",
-                new: "for moray Eels"
+                imagem: "https://picsum.photos/150/80?random=41",
+                new: `For Moray Eels, a Sneaky Second Set of Jaws to Catch Prey`
             },
             {
-                imagem: " ",
-                new: " The Most Popular Prime "
+                imagem: "https://picsum.photos/150/80?random=49",
+                new: "The Most Popular Prime Day Deals (So Far)"
             }
         ],
 
@@ -231,44 +231,44 @@ export const NEWS_LIST = [
             {
                 title: `Britney Spears Quietly Pushed for Years to End Her
                 Conservatorship`,
-                subtitle: "",
-                news: `Records obtained by The Times reveal that the singer
+                subtitle: `Records obtained by The Times reveal that the singer
                 has urged changesto the arrangement that controls her life,
                 and her father’s role in leading it.`,
-                image: "Lorem Picsum",
+                news: ``,
+                image: "https://picsum.photos/450/325?random=18",
                 alt: "Britney driving with her father."
             },
             {
                 title: `Los Angeles Has a Housing Crisis. Can It Design
                 Its Way Out?`,
-                subtitle: "",
-                news: `As Angelenos grapple with ways to address affordable
+                subtitle: `As Angelenos grapple with ways to address affordable
                 housing and homelessness, a new architecture competition
                 looks to low-rise solutions, our critic writes.`,
-                image: "Lorem Picsum",
-                alt: `Louisa Van Leer and Antonio Castillo won first place in
+                news: `Louisa Van Leer and Antonio Castillo won first place in
                 an architecture competition in Los Angeles for their “Green
                 Alley Housing” proposal in the subdivision category. Louisa
-                Van Leer Architecture`
+                Van Leer Architecture`,
+                image: "https://picsum.photos/380/250?random=31",
+                alt: ``
             },
             {
                 title: `An Enginer Says He's Cracked the Zodiac. Online Sleuths
                 Are Skeptical.`,
-                subtitle: "",
-                news: `Fayçal Ziraoui said he cracked ciphers attributed to
+                subtitle: `Fayçal Ziraoui said he cracked ciphers attributed to
                 the Zodiac killer and identified him, causing an uproar and
                 potentially ending a 50-year-old quest.`,
-                image: "Lorem Picsum",
+                news: ``,
+                image: "https://picsum.photos/450/325?random=39",
                 alt: "Some man looking for the right side, with a jar on the table."
             },
             {
                 title: `Carl Nassib, the First Openly Gay N.F.L. Player, Has
                 Been a Football Everyman`,
-                subtitle: "",
-                news: `I’ve been meaning to do this for a while now,” the lineman
+                subtitle: `I’ve been meaning to do this for a while now,” the lineman
                 said of coming out. He comes from a football family and was a
                 standout at Penn State.`,
-                image: "Lorem Picsum",
+                news: `Carl Nassib Has Played for three NFL teams`,
+                image: "https://picsum.photos/380/250?random=34",
                 alt: "Carl Nassib image."
             },
         ],
@@ -281,37 +281,33 @@ export const NEWS_LIST = [
                 news: `The finding by researchers runs counter to a basic tenet
                 of climate change — that warming increases humidity. It’s also
                 bad news for fire seasons.`,
-                image: "Lorem Picsum",
+                image: "https://picsum.photos/380/250?random=31",
                 alt: "Dry plantation."
             },
             {
-                title: ``,
-                subtitle: `Mark Peel, Who Helped Forge a New Culinary Path, Dies at 66`,
+                title: `Mark Peel, Who Helped Forge a New Culinary Path, Dies at 66`,
+                subtitle: ``,
                 news: `A pillar of California’s pioneering food scene, he worked
                 at Spago and was a founder of the renowned Campanile and La Brea Bakery.`,
                 image: ``,
                 alt: ``
             },
             {
-                title: ``,
-                subtitle: `The Pandemic Stimulus Was Front-Loaded. That Could Mean a Bumpy Year.`,
+                title: `The Pandemic Stimulus Was Front-Loaded. That Could Mean a Bumpy Year.`,
+                subtitle: ``,
                 news: `There’s a risk that the affluent, who saved money by limiting things like
                 traveling and dining out, will sit on their cash rather than spend it.`,
                 image: ``,
                 alt: ``
             },
             {
-                title: ``,
-                subtitle: `Home Sales Slow as Shortage and Climbing Prices Limit Buyers.`,
-                news: `Buyers continued to leave cities in search of more space and
-                better work-from-home scenarios, leading to a spike in demand. Here’s
-                the latest on the economy.`,
+                title: `Mark Peel, Who Helped Forge a New Culinary Path, Dies at 66.`,
+                subtitle: ``,
+                news: `A pillar of California's pioneering food scene, he worked at Spago
+                and was a founder of the renowed Campanile and a La Brea Bakery.`,
                 image: ``,
                 alt: ``
-            }
-        ],
-
-        rightSideMoreNews: [
+            },
             {
                 title: ``,
                 subtitle: `Connecticut Legalizes Recreational Marijuana`,
@@ -360,63 +356,57 @@ export const NEWS_LIST = [
 
         womansHealth: [
             {
-                image: `perimenopause`,
+                image: `https://picsum.photos/240/125?random=18`,
                 title: `Why Is Perimenopause Still Such a Mystery?`
             },
             {
-                image: `uterus cartoon with woman's face`,
+                image: `https://picsum.photos/240/125?random=19`,
                 title: `Know Your Uterus`
             },
             {
-                image: `some woman thinking about the issues from postpartumn`,
+                image: `https://picsum.photos/240/125?random=20`,
                 title: `Postpartumn Body Changes You Should Know About`
             },
             {
-                image: `some cartoons head, with brains like a sava`,
+                image: `https://picsum.photos/240/125?random=21`,
                 title: `This Is Your Brain on Motherhood`
             },
             {
-                image: `some woman and some x-ray`,
+                image: `https://picsum.photos/240/125?random=22`,
                 title: `when Doctor's Downplay Woman's Health Concerns`
             },
         ],
 
-        featuresMain:
-        {
-            image: `Pan American Unity, a 30-ton, 74-foot-wide-by-22-foot
-                mural by Diego Rivera, being installed at SFMOMA as the culmination
-                of a four-year, multimillion-dollar undertaking involving
-                engineers, architects, art historians, art handlers and riggers
-                from the United States and Mexico. It will be on view starting Monday.`,
-            title: `How Do You Move a 30-ton Diego Rivera Fresco?`,
-            subtitle: `Diego Rivera's rarely seen "Pan American Unity" was carefully
-                extracted from its home at City College of San Francisco and moved across
-                town to SFMOMA`
-        },
-
-        featuresRightSide: [
+        features: [
             {
-                image: `3 Hollywood Stars sited and smilling`,
+                image: `https://picsum.photos/770/400?random=23`,
+                title: `How Do You Move a 30-ton Diego Rivera Fresco?`,
+                subtitle: `Diego Rivera's rarely seen "Pan American Unity" was carefully
+                    extracted from its home at City College of San Francisco and moved across
+                    town to SFMOMA`
+            },
+            {
+                image: `https://picsum.photos/240/125?random=24`,
                 title: `3 Hollywood Stars Recas Their Lives in Austin`,
                 subtitle: `As the pandemic upended Tinseltown, Jamie-Lynn Sigler,
                 Haylie Duff and Becca Tobin made a pact to join the mass migration
                 from California to Texas.`
             },
             {
-                image: `some lipsticks in the photo`,
+                image: `https://picsum.photos/240/125?random=25`,
                 title: `Does the Perfect 'MLBB' Lipstick exist?`,
                 subtitle: `As the masks come off, the search for the perfect
                 “my lips but better” shade continues, perhaps into perpetuity..`
             },
             {
-                image: `some old book named Americanon`,
+                image: `https://picsum.photos/240/125?random=26`,
                 title: `Review: America's Character, as Seen Its How-To Books`,
                 subtitle: `In “Americanon,” Jess McHugh catalogs the country’s
                 virtues and foibles by examining the history of almanacs,
                 dictionaries and other practical books.`
             },
             {
-                image: `a woman's cartoon holding his soons, computer and calendar`,
+                image: `https://picsum.photos/240/125?random=27`,
                 title: `Being ‘Always On’ Has Reached Its Limits, and Parents Need a Reset`,
                 subtitle: `What crisis-acquired habits should working parents break?
                 Daisy Dowling, the author of “Workparent,” weighs in.`
@@ -425,71 +415,106 @@ export const NEWS_LIST = [
 
         nytCooking: [
             {
-                image: `gazpacho`,
+                image: `https://picsum.photos/210/110?random=23`,
                 title: `Best Gazpacho`
             },
             {
-                image: `dutch baby`,
+                image: `https://picsum.photos/210/110?random=24`,
                 title: `Dutch Baby With Bacon and Runny Camembert`
             },
             {
-                image: `tofu and green beens`,
+                image: `https://picsum.photos/210/110?random=25`,
                 title: `Tofu and Green Beens With Chile Crisp`
             },
             {
-                image: `fresh strawberry`,
+                image: `https://picsum.photos/210/110?random=26`,
                 title: `Fresh Strawberry Bundt Cake`
             },
             {
-                image: `jalapeño`,
+                image: `https://picsum.photos/210/110?random=27`,
                 title: `Jalapeño Grilled Pork Chops`
             },
         ],
 
-        scienceAndHealth: [
+        scienceAndHealthOne: [
             {
                 title: "How Glowing Bacteria ind the Dirt May One Day Save Lives",
                 new: `research in progressingon developing sensor that light up in 
                 the presence of a chemical linked to land mines and other deadly explosives`
             },
+        ],
+
+        scienceAndHealthTwo: [
             {
-                subtitle: "Morning People May Be at Lower Risk Of Depression",
+                title: "Morning People May Be at Lower Risk Of Depression",
                 new: `Going To Bed And Waking up eraly may help to provide 
                 some protection against depression, a new study suggest`
             },
+        ],
+
+        scienceAndHealthThree: [
             {
-                subtitle: "The US Betting on a Pill to treat Covid -19",
+                title: "The US Betting on a Pill to treat Covid -19",
                 new: `A $3.2 billion program will suppor development of 
                 antiviral, which could start arriving by the end of this year`
             },
+        ],
+
+        scienceAndHealthFour: [
             {
-                subtitle: "Maine Resident Fend Off Poisonous Caterpillars",
+                title: "Maine Resident Fend Off Poisonous Caterpillars",
                 new: `The Caterpillars, Known as browntail moths, have tiny 
                 hairs that can cause skin rashes and even breathing issues fo some people`,
                 imagem: "  "
             },
         ],
 
+        scienceImage: [
+            {
+                imageToUpdate: "https://static01.nyt.com/images/2021/06/14/world/14--xp-caterpillar-PRINT/13xp-caterpillars-thumbWide.jpg",
+                alt: "image1"
+            },
+        ],    
+
         play: [
             {
                 title: "Try letter Boxed",
                 new: "create words using letters round the square. Starr solving",
-                imagem: ""
+                imagem: "https://www.nytimes.com/games-assets/v2/assets/expansion-games/letter-boxed-card-icon.svg"
             },
             {
                 title: "The Crossword",
                 new: "Solve the daily puzzle edited by Will Shortz",
-                imagem: " "
+                imagem: "https://static01.nyt.com/images/2020/03/23/crosswords/crossword-logo-nytgames-hires/crossword-logo-nytgames-hires-square640-v3.png?format=pjpg&quality=75&auto=webp&disable=upscale"
             },
             {
                 title: "Spelling Bee",
                 new: "Use 7 letters to make as many words as you can",
-                imagem: " "
+                imagem: "https://static01.nyt.com/images/2019/04/18/homepage/spelling-bee-logo-bulletin/spelling-bee-logo-bulletin-square640-v5.png?format=pjpg&quality=75&auto=webp&disable=upscale"
             },
             {
                 title: "Vertex",
                 new: "Connect the dots to reveal the hidden picture",
-                imagem: " "
+                imagem: "https://static01.nyt.com/images/2020/03/24/crosswords/vertex-nytgames-hi-res/vertex-nytgames-hi-res-square640-v5.png?format=pjpg&quality=75&auto=webp&disable=upscale"
+            },
+        ],
+
+        boxedImage: [
+            {
+                imageToUpdate: "https://www.nytimes.com/games-assets/v2/assets/expansion-games/letter-boxed-card-icon.svg",
+                alt: "image1"
+            },
+            {
+                imageToUpdate: "https://www.nytimes.com/games-assets/v2/assets/mini-progress/mini-progress-0.svg",
+                alt: "image1"
+            },
+            {
+                imageToUpdate: "https://www.nytimes.com/games-assets/v2/assets/expansion-games/spelling-bee-card-icon.svg",
+                alt: "image1"
+            },
+            {
+                imageToUpdate: "https://www.nytimes.com/games-assets/v2/assets/expansion-games/tiles-card-icon.svg",
+                alt: "image1"
             },
         ],
 
@@ -498,30 +523,30 @@ export const NEWS_LIST = [
                 title: "The Best Way To Clean Your Ears: With A Spoon",
                 new: `Doctors Strongly Discourage people from scraping inside their ears. 
                 But Knowing better and doing it anyway is part of what makes us human`,
-                imagem: ""
+                imagem: "https://picsum.photos/512/264?random=30"
             },
             {
                 title: "Three Hollywood Stars Recast Their Live Deep in the Heart of texas",
                 new: `As the pandemic upended tinseltown, Jamie Lynn Singles, Haylie Duff 
                 and Becca Tobin made a pact to abandon Los Angeles anda join the mass migration from California to Texas`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=31"
             },
             {
                 title: "Should I Hang Out With Someone Whose Political Viws I Hate",
                 new: `The magaxine Ethicist colummnist on Whether it hypocritical for a  
                 liberal to socialixe with an increasingly extreme conservative`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=32"
             },
             {
                 title: "No Witchcraft, but Specter of Covid Shaped a Classroom in Salem Mass",
                 new: `A third grade clas in historic town navigated a scholl year of loss 
                 and resilience shadowed by the pandemic`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=33"
             },
             {
                 title: "Why Did We Fall for the Angels?",
                 new: ` How The pomp And pageantry of Victoria Secret worked for so long`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=34"
             },
 
         ],
@@ -532,82 +557,86 @@ export const NEWS_LIST = [
                 new: `I ve Cracked Zodiac, a French Engeneer says. Online Sleuths Are Skeptical.
                  U.N Says Great Barrier Reef Is In Danger. Australia Bitterly Disagrees.Atacked 
                  and vulnerable, some afghans are forming their own armies`,
-                imagem: ""
+                imagem: "https://picsum.photos/512/264?random=35"
             },
             {
                 title: "U.S. News",
                 new: `She fought to reopen schools, becoming a hero and a villain. Californian 
                  a plan to pay the back rent for low income tenats all of it. Many parts of U.S
                   Needed Persuadinf to get vaccinated. Not south Texas`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=36"
             },
             {
                 title: "U.S Politics",
                 new: `White house Unveils strategy to combat domestic estremism. The white house will 
                 publicly acknowledge the U.S is likely ato miss biden july 4 vaccination goal.
                  Showld I hang out with someone whouse political views I hate?`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=37"
             },
             {
                 title: "New York",
                 new: `Live updates: Candidates hit the as new yorkes go thr polls. 
                 New York vote for mayor in race tinged eith acrimony and uncertainty. 
                 Here how new yorkers fell about ranjed choice voting`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=38"
             },
             {
                 title: "Business",
                 new: `Banks Slowly offer alternatives to overdraft fees, a bane of struggling spenders.
                  mobile home owners fear evictions as pandemic protections end.
                   Googleexecutives see cracks in their company success`,
-                imagem: ""
+                imagem: "https://picsum.photos/512/264?random=39"
             },
+        ],
+        newsFirst: [
             {
                 title: "Technology",
                 new: `Google internet adverstising dominance draws a fresh E.U antitrust inquiry. 
                 Google executives seee cracks in their company succss. 
                 Insede the deadly Serious World of e sport in south Korea`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=40"
             },
             {
                 title: " Science",
                 new: `Whwn an eel climbs a ramp to ea squid from a clamp, that a moray. 
                 Why geology is our destiny. How glowing bacteria in the may one day save lives`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=42"
             },
             {
                 title: "Sports",
                 new: `Glove hat and belt: M.L.B. Begins a new era of enforcement. 
                 China sun yang barred for  four years. Players of asian descent on the L.P.G.A.
                  tours lift silence on racism and sexism`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=43"
             },
             {
                 title: "Obituaries",
                 new: `Mark Pell, who helped forge a  new culinary path, dies at 66.
                  Consuewella africa 67 dies lost two Daughters is MOVE siege. 
                  Robert quackenbush creator of animal dective stories , dies at 91`,
-                imagem: ""
+                imagem: "https://picsum.photos/512/264?random=44"
             },
             {
                 title: "The Upshot",
                 new: `New drug cold cost the government as much as it spends on NASA.
                  Medicaid enrollment surpassed 80 million a record during the pandemic.
                   The pandemic stimulus was front loaded. That could mean a bumpy year`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=45"
             },
+        ],
+        newsSecond: [
             {
                 title: "Climate And Environment",
                 new: ` U.n says great barrier reef is danger Autralia bitterly disagrees. 
                  change Batters The West Beore Summer even begins. What is Megadrought?`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=46"
             },
             {
                 title: "Education",
                 new: ` Does It hurt children to measure pandemic learning loss? 
                 Online schools are o stay even after the pandemic.
                  Why students are logging in to class from 7,000 Miles away `,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=47"
             },
 
             {
@@ -615,16 +644,17 @@ export const NEWS_LIST = [
                 new: ` many Alzheimer expert say use of aduhen should be sharply limited.
                 Medicaid enrollment surpassed 80 million, a record, during the pandemic. 
                 Wondering if the Vaccine worked? Get the right test, at the right time`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=48"
             },
 
             {
                 title: "Reader Center",
                 new: ` behind one Pulitzer, hundreds of hands. I ve recovered from long covid. 
                 im One of the lucky ones. A dad and an audience of one`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=49"
             },
         ],
+
 
         opinion_02: [
             {
@@ -700,8 +730,8 @@ export const NEWS_LIST = [
                  pushed for years to end her conservatorship. 
                   orchestra veteran on music post pandemic future `
             },
-            
-         
+
+
         ],
 
         artsttwo: [
@@ -731,10 +761,10 @@ export const NEWS_LIST = [
             new: `Brandon taylor filthy animals is a study in roque appetite.
              the one about bibi netanyahu father and the perils of diaspora. 
              Speaking truth to bothy the right and the left`
-        },
+            },
         ],
 
-        
+
 
         living: [
             {
@@ -791,7 +821,7 @@ export const NEWS_LIST = [
                  Their Lives Deep in the Heart of texas
                  Why the best Garden Have Something Extra
                  Getting Married And Leaving a Roommate Behind `
-        },
-    ]
+            },
+        ]
     }
 ]

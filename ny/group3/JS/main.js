@@ -1,9 +1,9 @@
 import init from './hero.js'
 import firstnews from './second-section2.js'
 import newSection from './news.js'
-import scienceandhealth from './scienceandhealth'
+import morenews from './morenews.js'
 
 init()
 firstnews()
 newSection()
-scienceandhealth()
+morenews()

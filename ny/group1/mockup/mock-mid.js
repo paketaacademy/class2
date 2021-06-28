@@ -91,3 +91,4 @@ export const mid = [
         type: "1for1_sub"
     },
 ]
+
