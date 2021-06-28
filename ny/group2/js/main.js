@@ -1,4 +1,5 @@
 import { NEWS_LIST } from "./mockupForNews.js";
+import { initSecondSection } from "./womansHealth_to_features.js";
 
 const mock = NEWS_LIST
 
@@ -6,6 +7,7 @@ let principalNews = document.querySelector(".principal-news")
 let liveUpdatesImg = document.querySelectorAll(".live-updates__ul--img")
 let liveUpdatePrimaries = document.querySelector(".live-update-primaries")
 let someOtherNews = document.querySelector(".some-other-news")
+
 
 const firstPageNew = () => {
     mock.map(li => (
@@ -62,3 +64,4 @@ firstPageNew()
 genereteImages()
 generateLiveUpdatesPrimaries()
 generateSomeOtherNews()
+initSecondSection()

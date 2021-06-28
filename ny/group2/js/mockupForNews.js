@@ -351,63 +351,57 @@ export const NEWS_LIST = [
 
         womansHealth: [
             {
-                image: `perimenopause`,
+                image: `https://picsum.photos/240/125?random=18`,
                 title: `Why Is Perimenopause Still Such a Mystery?`
             },
             {
-                image: `uterus cartoon with woman's face`,
+                image: `https://picsum.photos/240/125?random=19`,
                 title: `Know Your Uterus`
             },
             {
-                image: `some woman thinking about the issues from postpartumn`,
+                image: `https://picsum.photos/240/125?random=20`,
                 title: `Postpartumn Body Changes You Should Know About`
             },
             {
-                image: `some cartoons head, with brains like a sava`,
+                image: `https://picsum.photos/240/125?random=21`,
                 title: `This Is Your Brain on Motherhood`
             },
             {
-                image: `some woman and some x-ray`,
+                image: `https://picsum.photos/240/125?random=22`,
                 title: `when Doctor's Downplay Woman's Health Concerns`
             },
         ],
 
-        featuresMain:
-        {
-            image: `Pan American Unity, a 30-ton, 74-foot-wide-by-22-foot
-                mural by Diego Rivera, being installed at SFMOMA as the culmination
-                of a four-year, multimillion-dollar undertaking involving
-                engineers, architects, art historians, art handlers and riggers
-                from the United States and Mexico. It will be on view starting Monday.`,
-            title: `How Do You Move a 30-ton Diego Rivera Fresco?`,
-            subtitle: `Diego Rivera's rarely seen "Pan American Unity" was carefully
-                extracted from its home at City College of San Francisco and moved across
-                town to SFMOMA`
-        },
-
-        featuresRightSide: [
+        features: [
             {
-                image: `3 Hollywood Stars sited and smilling`,
+                image: `https://picsum.photos/770/400?random=23`,
+                title: `How Do You Move a 30-ton Diego Rivera Fresco?`,
+                subtitle: `Diego Rivera's rarely seen "Pan American Unity" was carefully
+                    extracted from its home at City College of San Francisco and moved across
+                    town to SFMOMA`
+            },
+            {
+                image: `https://picsum.photos/240/125?random=24`,
                 title: `3 Hollywood Stars Recas Their Lives in Austin`,
                 subtitle: `As the pandemic upended Tinseltown, Jamie-Lynn Sigler,
                 Haylie Duff and Becca Tobin made a pact to join the mass migration
                 from California to Texas.`
             },
             {
-                image: `some lipsticks in the photo`,
+                image: `https://picsum.photos/240/125?random=25`,
                 title: `Does the Perfect 'MLBB' Lipstick exist?`,
                 subtitle: `As the masks come off, the search for the perfect
                 “my lips but better” shade continues, perhaps into perpetuity..`
             },
             {
-                image: `some old book named Americanon`,
+                image: `https://picsum.photos/240/125?random=26`,
                 title: `Review: America's Character, as Seen Its How-To Books`,
                 subtitle: `In “Americanon,” Jess McHugh catalogs the country’s
                 virtues and foibles by examining the history of almanacs,
                 dictionaries and other practical books.`
             },
             {
-                image: `a woman's cartoon holding his soons, computer and calendar`,
+                image: `https://picsum.photos/240/125?random=27`,
                 title: `Being ‘Always On’ Has Reached Its Limits, and Parents Need a Reset`,
                 subtitle: `What crisis-acquired habits should working parents break?
                 Daisy Dowling, the author of “Workparent,” weighs in.`
@@ -416,23 +410,23 @@ export const NEWS_LIST = [
 
         nytCooking: [
             {
-                image: `gazpacho`,
+                image: `https://picsum.photos/210/110?random=23`,
                 title: `Best Gazpacho`
             },
             {
-                image: `dutch baby`,
+                image: `https://picsum.photos/210/110?random=24`,
                 title: `Dutch Baby With Bacon and Runny Camembert`
             },
             {
-                image: `tofu and green beens`,
+                image: `https://picsum.photos/210/110?random=25`,
                 title: `Tofu and Green Beens With Chile Crisp`
             },
             {
-                image: `fresh strawberry`,
+                image: `https://picsum.photos/210/110?random=26`,
                 title: `Fresh Strawberry Bundt Cake`
             },
             {
-                image: `jalapeño`,
+                image: `https://picsum.photos/210/110?random=27`,
                 title: `Jalapeño Grilled Pork Chops`
             },
         ],

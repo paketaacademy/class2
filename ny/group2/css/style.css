@@ -364,42 +364,7 @@ body{
     display: flex;
     justify-content: space-between;
 }
-.paid-post{
-    background-color: rgb(231, 235, 39);
-}
-.womans-healt{
-    background-color: rgb(46, 236, 29);
-    display: flex;
-    justify-content: space-between;
-}
-.features{
-    display: flex;
-    justify-content: space-between;
-}
-.features-main{
-    background-color: dimgrey;
-    width: 50%;
-}
-.features-right-side{
-    background-color: indianred;
-    width: 50%;
-}
 
-.features-right-side-one{
-    display: flex;
-    justify-content: space-between;
-}
-
-.features-right-side-two{
-    display: flex;
-    justify-content: space-between;
-}
-
-.nyt-cooking{
-    display: flex;
-    justify-content: space-between;
-    background-color: khaki;
-}
 
 .science-and-health{
  display: flex;
