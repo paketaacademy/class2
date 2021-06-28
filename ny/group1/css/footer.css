@@ -2,6 +2,7 @@ footer {
     display: flex;
     flex-direction: column;
     font-family: nyt-franklin, helvetica, arial, sans-serif;
+    padding-top: 20px;
 }
 
 footer::before {

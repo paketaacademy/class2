@@ -125,14 +125,15 @@ hr {
     border-right: 0.5px solid #aaaaaa;
 }
 .people__title {
+    padding-top: 18px;
     font-size: 14px;
 }
 .people__desc {
     font-size: 12px;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 .people__img {
-    margin: 5px 5px;
+    margin: 10px 10px;
 }
 .people__link {
     color: #000000;
@@ -153,7 +154,7 @@ hr {
 }
 .topics__titles {
     font-size: 14px;
-    padding-top: 40px;
+    padding-top: 50px;
 }
 .element__title {
     font-size: 12px;
