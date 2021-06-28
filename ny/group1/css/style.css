@@ -172,3 +172,11 @@ hr {
     color: #686868;
     transition: 0.5s;
 }
+
+.title__popular,
+.title__news,
+.title__opinion,
+.title__arts,
+.title__living {
+    display: none;
+}
