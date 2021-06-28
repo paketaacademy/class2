@@ -14,18 +14,18 @@ const factoryFooter = (items, div) => {
     }
 }
 
-let news = document.querySelector('#footer-news')
-let opinion = document.querySelector('#footer-opinion')
-let arts = document.querySelector('#footer-arts')
-let living = document.querySelector('#footer-living')
-let more = document.querySelector('#footer-more')
-
-const init = () => {
+    let news = document.querySelector('#footer-news')
+    let opinion = document.querySelector('#footer-opinion')
+    let arts = document.querySelector('#footer-arts')
+    let living = document.querySelector('#footer-living')
+    let more = document.querySelector('#footer-more')
+    let footer = document.querySelector('footer')
+    
+export const initFooter = () => {
+    footer.classList.remove('footer_hidden');
     factoryFooter(newsItems, news)    
     factoryFooter(opinionItems, opinion)
     factoryFooter(artsItems, arts)
     factoryFooter(livingItems, living)
     factoryFooter(moreItems, more)
 }
-
-init()

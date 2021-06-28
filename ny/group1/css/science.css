@@ -40,7 +40,7 @@
 }
 
 .title-news-science-3{
-    margin: 0;
+    margin: 10px 0;
     font-size: 1rem; 
 }
 
@@ -52,11 +52,11 @@
 
 .h-science-1{
     width: 220px;
-    margin: 0;
+    margin: 10px 0;
 }
 
 .h5-science{
-    margin-bottom: 5px;
+    margin: 5px 0 10px 0; 
 }
 
 .link-science{

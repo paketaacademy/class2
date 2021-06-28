@@ -1,0 +1,124 @@
+
+
+.womans-healt{
+    border-top: 1px solid rgb(0, 0, 0);
+}
+
+.womans__h3{
+    display: block;
+    font-weight: 700;
+
+}
+
+.teste1{
+    display: flex;
+    flex-direction: column;
+    max-width: 20%;
+    width: 100%;
+    padding: 10px 5px;
+    border-left: 1px solid rgba(18, 18, 18, 0.191);
+}
+
+.woman{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+
+.womans-healt_h3{
+    font-weight: 700;
+    text-align:left; 
+}
+
+.features{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font: var(--news-title-font);
+}
+
+.features__h3{
+    display: block;
+    font-weight: 700;
+}
+
+.features-main-container{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.features-horizontal-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.features-main-container__h2{   
+    max-width: 375px;
+    font-size: 1.8rem;
+    align-self: center;
+    text-align: center;
+}
+
+.features-main-container__p{
+    max-width: 50%;
+    align-self: center;
+    text-align: center;
+    font: var(--serif-font);
+}
+
+.features-vertical-container__h3{
+    font-weight: 700;
+    text-align: left;
+}
+
+
+.features-right-side{
+
+    width: 50%;
+}
+
+.features-right-side-one{
+    display: flex;
+    justify-content: space-between;
+}
+
+.features-right-side-two{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nyt-cooking{
+    border-top: rgb(0, 0, 0);
+    padding-top: 20px;
+    
+}
+
+.nyt{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 20%;
+    padding: 10px 5px;
+    border-left: 1px solid rgba(18, 18, 18, 0.191)
+}
+
+.new-york__h3{
+    display: block;
+    font-weight: 700;
+
+}
+
+.nyt1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.nyt-cooking_h3{
+    font-weight: 700;
+    text-align: left;
+}

@@ -7,23 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="statics/images/favicon-32x32.png" type="image/x-icon">
     <title>The New York Times</title>
+    <link rel="stylesheet" href="css/principal.css">
     <link rel="stylesheet" href="https://g1.nyt.com/fonts/css/web-fonts.b1c035e4560e0216caf8f03326e0430712b61041.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/womencooking.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/games.css">
-    <link rel="stylesheet" href="css/science.css">
-    <link rel="stylesheet" href="css/midSection.css">
-    <link rel="stylesheet" href="css/more_news.css">
-    <link rel="stylesheet" href="css/feature.css">
-    <link rel="stylesheet" href="css/paid.css">
 </head>
 
 <body>
 
     <section class="container">
-        <header class="container">
+        <header class="top">
             <div class="box-top">
                 <div class="box-date">
                     data
@@ -103,7 +94,7 @@
                 </div>
             </div>
 
-
+            <hr>
             <div class="box-womens">
                 <div>
                     <h5 class="womens-title">Women’s Health</h5>
@@ -118,7 +109,7 @@
                     <h5 class="h5-feature">Feature</h5>
                 </div>
                 <div class="box-featuring-news">
-                    <a href="#" class="featuring">
+                    <a href="post.html" class="featuring">
                         <div class="big-news-feature">
                             <div class="sif">
 
@@ -132,7 +123,7 @@
 
                     <div class="small-news-feature">
                         <div class="">
-                            <a href="#" class="featuring">
+                            <a href="post.html" class="featuring">
                                 <div class="small-f-box">
                                     <div class="sif">
 
@@ -141,7 +132,7 @@
                                     <p class="small-txt pf"></p>
                                 </div>
                             </a>
-                            <a href="#" class="featuring">
+                            <a href="post.html" class="featuring">
                                 <div class="small-f-box">
                                     <div class="sif">
 
@@ -161,7 +152,7 @@
                                     <p class="small-txt pf"></p>
                                 </div>
                             </a>
-                            <a href="#" class="featuring">
+                            <a href="post.html" class="featuring">
                                 <div class="small-f-box">
                                     <div class="sif">
 
@@ -228,9 +219,8 @@
                     </div>
                 </div>
             </div>
-
+            <hr>
             <div class="box-games">
-                <hr>
                 <div>
                     <h5 class="games-title">Play</h5>
                 </div>
@@ -242,26 +232,26 @@
             <hr>
 
             <div class="topics-news">
-                <h2 class="topics__titles">Popular in The Times</h2>
+                <h2 class="topics__titles title__popular">Popular in The Times</h2>
                 <div id="pop"></div>
                 <hr>
                 <hr>
 
-                <h2 class="topics__titles">NEWS</h2>
+                <h2 class="topics__titles title__news">NEWS</h2>
                 <div id="news"></div>
 
-                <h2 class="topics__titles">OPINION</h2>
+                <h2 class="topics__titles title__opinion">OPINION</h2>
                 <div id="opinion"></div>
 
-                <h2 class="topics__titles">ARTS</h2>
+                <h2 class="topics__titles title__arts">ARTS</h2>
                 <div id="arts"></div>
 
-                <h2 class="topics__titles">LIVING</h2>
+                <h2 class="topics__titles title__living">LIVING</h2>
                 <div id="living"></div>
             </div>
         </main>
 
-        <footer>
+        <footer class="footer_hidden">
             <a href="post.html">
                 <img src="statics/images/logo.svg" alt="logo" width="184" height="44">
             </a>
@@ -353,10 +343,10 @@
                             <p>中文网</p>
                         </a>
                     </div>
-
+        
                 </div>
             </div>
-
+        
             <div class="footer_last_container">
                 <a class="footer_small_links" href="#">
                     <p>© 2021 The New York Times Company</p>
@@ -404,18 +394,7 @@
         </footer>
 
     </section>
-
-    <script type="module" src="js/nav-bar.js"></script>
-    <script type="module" src="js/paid.js"></script>
-    <script type="module" src="js/script-science-feature.js"></script>
-    <script type="module" src="js/script-games-womens-cooking.js"></script>
-    <script src="js/header.js"></script>
-    <script type="module" src="js/hero.js"></script>
-    <script type="module" src="js/script.js"></script>
-    <script type="module" src="js/quotes.js"></script>
-    <script type="module" src="js/rightMid.js"></script>
-    <script type="module" src="js/footer.js"></script>
-    <script type="module" src="js/moreNews.js"></script>
+    <script type="module" src="js/all.js"></script>
 </body>
 
 </html>

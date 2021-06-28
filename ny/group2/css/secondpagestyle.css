@@ -95,14 +95,6 @@ ul{
     
 }
 
-footer{
-    
-    display: flex;
-    padding: 10px;
-    justify-content: space-around;    
-
-}
-
 span{
     font-weight: bold;
 }
@@ -112,12 +104,27 @@ a{
     color: black;
 }
 
-hr{
-    padding: 0 60px;
-    border-top: 1px solid rgb(190, 190, 190);
-}
-
 h3 {
     margin-left: 40px;
     font-size: 20px;
 }
+
+li {
+    font-size: small;
+}
+
+footer{
+    
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;    
+
+}
+
+.border-footer{
+    padding: 0 60px;
+    border-top: 1px solid rgb(190, 190, 190);
+    margin-top: 10px;
+    padding: 10px;
+}
+
