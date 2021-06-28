@@ -9,23 +9,31 @@ header{
     margin-top: 3%;
     width: 100%;    
 }
-
+.cont-5{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 .container__section4{
     display: flex;
 }
-
-.tabela{
+.table{
     display: flex;
+    flex-direction: column;
 }
+
 .container__right{
-    padding-left: 2%;
-    padding-right: 5%;
-    display: table-column;    
+   width: 200px;
+    display: flex;  
+    flex-wrap: nowrap;  
+    margin: 0px 20px;
+    flex-direction: column;
 }
 
 .container__left{
-    padding-left: 5%;
-    padding-right: 2%;
+    width: 400px;
+    display: flex;
 }
 
 .container__txt{
@@ -131,8 +139,8 @@ h3{
 }
 
 .img__features{
-    width: 600px;
-    height: 500px;
+    width: 200px;
+    
 }
 
 .header__top--bottom{
@@ -227,6 +235,7 @@ h3{
     text-align: left;
     padding-right: 2;
 }
+
 
 
 
