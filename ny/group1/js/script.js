@@ -3,7 +3,7 @@ import { news } from "../mockup/mock-news.js"
 import { arts } from "../mockup/mock-arts.js"
 import { living } from "../mockup/mock-living.js"
 import { opinion } from "../mockup/mock-opinion.js"
-import { init } from "../js/footer.js"
+import { initFooter } from "../js/footer.js"
 
 const factoryNews = (array, div) => {
     array.map( (a) => {
@@ -49,7 +49,7 @@ let titleOpinion = document.querySelector('.title__opinion')
 let titleArts = document.querySelector('.title__arts')
 let titleLiving = document.querySelector('.title__living')
 
-window.addEventListener('scroll', () => {	
+export const scroll = window.addEventListener('scroll', () => {	
 	const { scrollTop, scrollHeight, clientHeight } = document.documentElement;	
 	if(scrollTop + clientHeight >= scrollHeight - 5) {
         if (cont == 0) {
@@ -68,7 +68,7 @@ window.addEventListener('scroll', () => {
             titleLiving.classList.remove('title__living')
             factoryNews(living, livingDiv)
         } else if (cont == 5) {
-            init()
+            initFooter()
         } else {
             window.removeEventListener('scroll', factoryPopular)
         }

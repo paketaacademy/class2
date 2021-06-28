@@ -21,7 +21,7 @@ const factoryFooter = (items, div) => {
     let more = document.querySelector('#footer-more')
     let footer = document.querySelector('footer')
     
-export const init = () => {
+export const initFooter = () => {
     footer.classList.remove('footer_hidden');
     factoryFooter(newsItems, news)    
     factoryFooter(opinionItems, opinion)

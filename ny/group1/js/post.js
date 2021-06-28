@@ -1,3 +1,3 @@
-import { init } from "../js/footer.js"
+import { initFooter } from "../js/footer.js"
 
-init()
+initFooter()

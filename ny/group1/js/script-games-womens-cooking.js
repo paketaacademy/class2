@@ -1,4 +1,3 @@
-
 import { cooking } from "../mockup/mock-games-womens-cooking.js"
 import { womensNews } from "../mockup/mock-games-womens-cooking.js"
 import { GAMES_LIST } from "../mockup/mock-games-womens-cooking.js"
@@ -37,11 +36,9 @@ function factoryGame (array){
 
 
 
-function init(){
+export function initSmallSec(){
     factoryWomenCooking(cooking, boxCooking)
     factoryWomenCooking(womensNews, newsWomens)
     factoryGame(GAMES_LIST)
 }
-
-init()
 
