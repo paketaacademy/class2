@@ -1,12 +1,18 @@
+#date{
+    font: var(--serif-font);
+    font-weight: 700;
+}
+
 .title-header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 30px 0; 
 }
 
 .title-header__h1{
     font: var(--title-font);
     font-size: 4rem;
+    align-self: center;
 }
 
 .navbar{
@@ -34,6 +40,7 @@
 
 .container-links-header{
     display: flex;
+    align-items: center;
     font-size: 14px; 
     padding: 8px 0;
     border-top: 1px solid rgb(0, 0, 0);
@@ -72,5 +79,12 @@
 }
 
 .text-links-header__h3{
+    font-size: initial;
+    margin: 0;
     font-weight: 700;
+}
+
+.text-links-header__p{
+    font: var(--serif-font);
+    font-size: 0.750rem;
 }

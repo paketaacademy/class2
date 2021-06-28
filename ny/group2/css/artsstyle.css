@@ -2,13 +2,13 @@ h3.title {
     font-size: 0.850rem;
     display: flex;
     justify-content: flex-start;
+    margin: 0;
 }
 
 .opnion-footer{
     display: flex;
     justify-content: space-between;
     margin-top: 25px;
-    
 }
 
 .img1{
