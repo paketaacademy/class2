@@ -112,3 +112,6 @@ footer::before {
 .footer_last_container a:hover {
     text-decoration: underline;
 }
+.footer_hidden {
+    display: none;
+}
