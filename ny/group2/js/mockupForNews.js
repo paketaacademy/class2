@@ -212,18 +212,18 @@ export const NEWS_LIST = [
 
         editors: [
             {
-                imagem: "",
+                imagem: "https://picsum.photos/320/200?random=40",
                 title: "The Hunchback At 25: The Most R-Rated G You Will Ever See",
                 new: ` How did the ratings board overlook songs filled with lust and dammantion? 
                 Maybe we bamboozled them with gargoyles, one filmmaker said`
             },
             {
-                imagem: " ",
-                new: "for moray Eels"
+                imagem: "https://picsum.photos/150/80?random=41",
+                new: `For Moray Eels, a Sneaky Second Set of Jaws to Catch Prey`
             },
             {
-                imagem: " ",
-                new: " The Most Popular Prime "
+                imagem: "https://picsum.photos/150/80?random=49",
+                new: "The Most Popular Prime Day Deals (So Far)"
             }
         ],
 
@@ -231,44 +231,44 @@ export const NEWS_LIST = [
             {
                 title: `Britney Spears Quietly Pushed for Years to End Her
                 Conservatorship`,
-                subtitle: "",
-                news: `Records obtained by The Times reveal that the singer
+                subtitle: `Records obtained by The Times reveal that the singer
                 has urged changesto the arrangement that controls her life,
                 and her father’s role in leading it.`,
-                image: "Lorem Picsum",
+                news: ``,
+                image: "https://picsum.photos/450/325?random=18",
                 alt: "Britney driving with her father."
             },
             {
                 title: `Los Angeles Has a Housing Crisis. Can It Design
                 Its Way Out?`,
-                subtitle: "",
-                news: `As Angelenos grapple with ways to address affordable
+                subtitle: `As Angelenos grapple with ways to address affordable
                 housing and homelessness, a new architecture competition
                 looks to low-rise solutions, our critic writes.`,
-                image: "Lorem Picsum",
-                alt: `Louisa Van Leer and Antonio Castillo won first place in
+                news: `Louisa Van Leer and Antonio Castillo won first place in
                 an architecture competition in Los Angeles for their “Green
                 Alley Housing” proposal in the subdivision category. Louisa
-                Van Leer Architecture`
+                Van Leer Architecture`,
+                image: "https://picsum.photos/380/250?random=31",
+                alt: ``
             },
             {
                 title: `An Enginer Says He's Cracked the Zodiac. Online Sleuths
                 Are Skeptical.`,
-                subtitle: "",
-                news: `Fayçal Ziraoui said he cracked ciphers attributed to
+                subtitle: `Fayçal Ziraoui said he cracked ciphers attributed to
                 the Zodiac killer and identified him, causing an uproar and
                 potentially ending a 50-year-old quest.`,
-                image: "Lorem Picsum",
+                news: ``,
+                image: "https://picsum.photos/450/325?random=39",
                 alt: "Some man looking for the right side, with a jar on the table."
             },
             {
                 title: `Carl Nassib, the First Openly Gay N.F.L. Player, Has
                 Been a Football Everyman`,
-                subtitle: "",
-                news: `I’ve been meaning to do this for a while now,” the lineman
+                subtitle: `I’ve been meaning to do this for a while now,” the lineman
                 said of coming out. He comes from a football family and was a
                 standout at Penn State.`,
-                image: "Lorem Picsum",
+                news: `Carl Nassib Has Played for three NFL teams`,
+                image: "https://picsum.photos/380/250?random=34",
                 alt: "Carl Nassib image."
             },
         ],
@@ -281,37 +281,33 @@ export const NEWS_LIST = [
                 news: `The finding by researchers runs counter to a basic tenet
                 of climate change — that warming increases humidity. It’s also
                 bad news for fire seasons.`,
-                image: "Lorem Picsum",
+                image: "https://picsum.photos/380/250?random=31",
                 alt: "Dry plantation."
             },
             {
-                title: ``,
-                subtitle: `Mark Peel, Who Helped Forge a New Culinary Path, Dies at 66`,
+                title: `Mark Peel, Who Helped Forge a New Culinary Path, Dies at 66`,
+                subtitle: ``,
                 news: `A pillar of California’s pioneering food scene, he worked
                 at Spago and was a founder of the renowned Campanile and La Brea Bakery.`,
                 image: ``,
                 alt: ``
             },
             {
-                title: ``,
-                subtitle: `The Pandemic Stimulus Was Front-Loaded. That Could Mean a Bumpy Year.`,
+                title: `The Pandemic Stimulus Was Front-Loaded. That Could Mean a Bumpy Year.`,
+                subtitle: ``,
                 news: `There’s a risk that the affluent, who saved money by limiting things like
                 traveling and dining out, will sit on their cash rather than spend it.`,
                 image: ``,
                 alt: ``
             },
             {
-                title: ``,
-                subtitle: `Home Sales Slow as Shortage and Climbing Prices Limit Buyers.`,
-                news: `Buyers continued to leave cities in search of more space and
-                better work-from-home scenarios, leading to a spike in demand. Here’s
-                the latest on the economy.`,
+                title: `Mark Peel, Who Helped Forge a New Culinary Path, Dies at 66.`,
+                subtitle: ``,
+                news: `A pillar of California's pioneering food scene, he worked at Spago
+                and was a founder of the renowed Campanile and a La Brea Bakery.`,
                 image: ``,
                 alt: ``
-            }
-        ],
-
-        rightSideMoreNews: [
+            },
             {
                 title: ``,
                 subtitle: `Connecticut Legalizes Recreational Marijuana`,
@@ -700,41 +696,42 @@ export const NEWS_LIST = [
                  pushed for years to end her conservatorship. 
                   orchestra veteran on music post pandemic future `
             },
-            
-         
+
+
         ],
 
         artsttwo: [
-        {   title: "Theater", 
-            imagem: "",
-            new: `Theater reality tv and what is stranger Than Fiction. 
+            {
+                title: "Theater",
+                imagem: "",
+                new: `Theater reality tv and what is stranger Than Fiction. 
             Andre de shields Isn done with King Lear (or Hadestown). 
              music Man Names British produces to replace rudin`
-        },
-        {
-            title: "Dance",
-            imagem: "",
-            new: `Five pioneering black ballerinas: We have To have A voice. 
+            },
+            {
+                title: "Dance",
+                imagem: "",
+                new: `Five pioneering black ballerinas: We have To have A voice. 
             In the heights where the streets explode  with dance. 
             A hip hop Dance crew frabjous reign las vegas`
-        },
-        {
-            title: "Books",
-            imagem: "",
-            new: `Yes no maybe so: A generation of thinkers grapples with notions of consent. 
+            },
+            {
+                title: "Books",
+                imagem: "",
+                new: `Yes no maybe so: A generation of thinkers grapples with notions of consent. 
             Janet maicolm, a writer who emphasized the messiness of
              life with slyness and precision 19 lines that turn anguish into art`
-        },
-        {
-            title: "Book Review",
-            imagem: "",
-            new: `Brandon taylor filthy animals is a study in roque appetite.
+            },
+            {
+                title: "Book Review",
+                imagem: "",
+                new: `Brandon taylor filthy animals is a study in roque appetite.
              the one about bibi netanyahu father and the perils of diaspora. 
              Speaking truth to bothy the right and the left`
-        },
+            },
         ],
 
-        
+
 
         living: [
             {
@@ -772,26 +769,26 @@ export const NEWS_LIST = [
             },
         ],
         livingTwo: [
-        {
-            title: "Travel",
-            imagem: "",
-            new: `it summer in the ski towns 2.0 touring alaska in an R.V.
+            {
+                title: "Travel",
+                imagem: "",
+                new: `it summer in the ski towns 2.0 touring alaska in an R.V.
              Five things to know if your re road tripping this summer `
-        },
-        {
-            title: "Love",
-            imagem: "",
-            new: `This season wedding crashers cicadas finding light together after 
+            },
+            {
+                title: "Love",
+                imagem: "",
+                new: `This season wedding crashers cicadas finding light together after 
             a very dark place. My 70-year old father joined tinder`
-        },
-        {
-            title: "Real Estate",
-            imagem: "",
-            new: `Three Hollywood Stars Recast
+            },
+            {
+                title: "Real Estate",
+                imagem: "",
+                new: `Three Hollywood Stars Recast
                  Their Lives Deep in the Heart of texas
                  Why the best Garden Have Something Extra
                  Getting Married And Leaving a Roommate Behind `
-        },
-    ]
+            },
+        ]
     }
 ]
