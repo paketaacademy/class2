@@ -1,26 +1,8 @@
-.news-div{
-    max-width: 20%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-right: 30px;
-}
-
-.news-div h2{
-    font-weight: bold;
-    height: 50px;
-}
-
-.news-div p{
-    padding: 15px 0 0 0;
-    font-weight: bold;
-}
 .science{
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 30px;
-    font-weight: bold;
+    padding: 30px 30px 30px 0px;
 }
 
 .science-and-health{
@@ -34,8 +16,7 @@
 }
 
 .second-col{
- 
-    width: 50%;
+    width: 290px;
 }
 
 .third-col{
@@ -43,7 +24,7 @@
 }
 
 .full-row{
-    width: 40%;
+    padding: 0px 0px 0px 30px;
 }
 
 .science-img{
@@ -58,13 +39,15 @@
 }
 
 .science-and-health{
-    margin-left: -30px;
+    
 }
 
-.science-section h3{
+.science-section__h3{
+    font: var(--news-font);
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
     border-top: 1px solid rgba(0, 0, 0);
+    padding: 20px 0px 0px 0px;
 }
 
 .science-and-health-one{
@@ -92,53 +75,83 @@
 }
 
 .play-section{
-    display: flex;
-    justify-content: space-between;
+    height: 200px;
+    height: 150px;
 }
 
 .play-image-one ul li{
     list-style: none;
 }
 
+.img-play{
+    width: 100px;
+    margin-right: 30px;
+}
+
+.container-play{
+    display: flex;
+    justify-content: space-between;
+}
+
 .boxed-updates__ul--img{
     width: 50px;
 }
 
-.play-section h3{
+.play-section__h3{
+    font: var(--news-font);
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
     border-top: 1px solid rgba(0, 0, 0);
+    padding: 20px 0px 0px 0px;
 }
 
 .play-section-one{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
+}
+
+.play__p{
+    font: var(--news-font);
 }
 
 .popular-in-the-times{
     border-top: 1px solid rgba(0, 0, 0);
 }
-.popular-in-the-times h3{
+
+.popular-in-the-times__h3{
+    font: var(--news-font);
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
+    padding: 20px 0px;
 }
 
 .pop-times{
     display: flex;
     justify-content: space-between;
-    font-size: 13px;
-    font-family: Arial, Helvetica, sans-serif;
     border-bottom: 4px double rgba(0, 0, 0);    
 }
 
-.news{
-  font-size: 13px;
-  font-family: Arial, Helvetica, sans-serif;
+.news-div{
+    max-width: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
 }
 
-.news h3{
+.news-div p{
+    padding: 15px 0 0 0;
+}
+
+.news{
+
+}
+
+.news__h3{
+    font: var(--news-font);
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
+    padding: 20px 0px;
 }
 
 .news-one{
@@ -157,6 +170,19 @@
 .news-three{
     display: flex;
     justify-content: space-between;
-    width: 78%;
+    width: 80%;
     margin-top: 30px;
+}
 
+.all-images{
+    width: 232px;
+}
+
+.other-news__h2{
+    font: var(--news-title-font);
+    font-weight: bold;
+}
+
+.other-news__p{
+    font: var(--news-font);
+}

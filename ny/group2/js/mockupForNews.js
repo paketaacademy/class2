@@ -481,22 +481,22 @@ export const NEWS_LIST = [
             {
                 title: "Try letter Boxed",
                 new: "create words using letters round the square. Starr solving",
-                imagem: ""
+                imagem: "https://www.nytimes.com/games-assets/v2/assets/expansion-games/letter-boxed-card-icon.svg"
             },
             {
                 title: "The Crossword",
                 new: "Solve the daily puzzle edited by Will Shortz",
-                imagem: " "
+                imagem: "https://static01.nyt.com/images/2020/03/23/crosswords/crossword-logo-nytgames-hires/crossword-logo-nytgames-hires-square640-v3.png?format=pjpg&quality=75&auto=webp&disable=upscale"
             },
             {
                 title: "Spelling Bee",
                 new: "Use 7 letters to make as many words as you can",
-                imagem: " "
+                imagem: "https://static01.nyt.com/images/2019/04/18/homepage/spelling-bee-logo-bulletin/spelling-bee-logo-bulletin-square640-v5.png?format=pjpg&quality=75&auto=webp&disable=upscale"
             },
             {
                 title: "Vertex",
                 new: "Connect the dots to reveal the hidden picture",
-                imagem: " "
+                imagem: "https://static01.nyt.com/images/2020/03/24/crosswords/vertex-nytgames-hi-res/vertex-nytgames-hi-res-square640-v5.png?format=pjpg&quality=75&auto=webp&disable=upscale"
             },
         ],
 
@@ -524,30 +524,30 @@ export const NEWS_LIST = [
                 title: "The Best Way To Clean Your Ears: With A Spoon",
                 new: `Doctors Strongly Discourage people from scraping inside their ears. 
                 But Knowing better and doing it anyway is part of what makes us human`,
-                imagem: ""
+                imagem: "https://picsum.photos/512/264?random=30"
             },
             {
                 title: "Three Hollywood Stars Recast Their Live Deep in the Heart of texas",
                 new: `As the pandemic upended tinseltown, Jamie Lynn Singles, Haylie Duff 
                 and Becca Tobin made a pact to abandon Los Angeles anda join the mass migration from California to Texas`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=31"
             },
             {
                 title: "Should I Hang Out With Someone Whose Political Viws I Hate",
                 new: `The magaxine Ethicist colummnist on Whether it hypocritical for a  
                 liberal to socialixe with an increasingly extreme conservative`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=32"
             },
             {
                 title: "No Witchcraft, but Specter of Covid Shaped a Classroom in Salem Mass",
                 new: `A third grade clas in historic town navigated a scholl year of loss 
                 and resilience shadowed by the pandemic`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=33"
             },
             {
                 title: "Why Did We Fall for the Angels?",
                 new: ` How The pomp And pageantry of Victoria Secret worked for so long`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=34"
             },
 
         ],
@@ -558,35 +558,35 @@ export const NEWS_LIST = [
                 new: `I ve Cracked Zodiac, a French Engeneer says. Online Sleuths Are Skeptical.
                  U.N Says Great Barrier Reef Is In Danger. Australia Bitterly Disagrees.Atacked 
                  and vulnerable, some afghans are forming their own armies`,
-                imagem: ""
+                imagem: "https://picsum.photos/512/264?random=35"
             },
             {
                 title: "U.S. News",
                 new: `She fought to reopen schools, becoming a hero and a villain. Californian 
                  a plan to pay the back rent for low income tenats all of it. Many parts of U.S
                   Needed Persuadinf to get vaccinated. Not south Texas`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=36"
             },
             {
                 title: "U.S Politics",
                 new: `White house Unveils strategy to combat domestic estremism. The white house will 
                 publicly acknowledge the U.S is likely ato miss biden july 4 vaccination goal.
                  Showld I hang out with someone whouse political views I hate?`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=37"
             },
             {
                 title: "New York",
                 new: `Live updates: Candidates hit the as new yorkes go thr polls. 
                 New York vote for mayor in race tinged eith acrimony and uncertainty. 
                 Here how new yorkers fell about ranjed choice voting`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=38"
             },
             {
                 title: "Business",
                 new: `Banks Slowly offer alternatives to overdraft fees, a bane of struggling spenders.
                  mobile home owners fear evictions as pandemic protections end.
                   Googleexecutives see cracks in their company success`,
-                imagem: ""
+                imagem: "https://picsum.photos/512/264?random=39"
             },
         ],
         newsFirst: [
@@ -595,34 +595,34 @@ export const NEWS_LIST = [
                 new: `Google internet adverstising dominance draws a fresh E.U antitrust inquiry. 
                 Google executives seee cracks in their company succss. 
                 Insede the deadly Serious World of e sport in south Korea`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=40"
             },
             {
                 title: " Science",
                 new: `Whwn an eel climbs a ramp to ea squid from a clamp, that a moray. 
                 Why geology is our destiny. How glowing bacteria in the may one day save lives`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=42"
             },
             {
                 title: "Sports",
                 new: `Glove hat and belt: M.L.B. Begins a new era of enforcement. 
                 China sun yang barred for  four years. Players of asian descent on the L.P.G.A.
                  tours lift silence on racism and sexism`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=43"
             },
             {
                 title: "Obituaries",
                 new: `Mark Pell, who helped forge a  new culinary path, dies at 66.
                  Consuewella africa 67 dies lost two Daughters is MOVE siege. 
                  Robert quackenbush creator of animal dective stories , dies at 91`,
-                imagem: ""
+                imagem: "https://picsum.photos/512/264?random=44"
             },
             {
                 title: "The Upshot",
                 new: `New drug cold cost the government as much as it spends on NASA.
                  Medicaid enrollment surpassed 80 million a record during the pandemic.
                   The pandemic stimulus was front loaded. That could mean a bumpy year`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=45"
             },
         ],
         newsSecond: [
@@ -630,14 +630,14 @@ export const NEWS_LIST = [
                 title: "Climate And Environment",
                 new: ` U.n says great barrier reef is danger Autralia bitterly disagrees. 
                  change Batters The West Beore Summer even begins. What is Megadrought?`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=46"
             },
             {
                 title: "Education",
                 new: ` Does It hurt children to measure pandemic learning loss? 
                 Online schools are o stay even after the pandemic.
                  Why students are logging in to class from 7,000 Miles away `,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=47"
             },
 
             {
@@ -645,14 +645,14 @@ export const NEWS_LIST = [
                 new: ` many Alzheimer expert say use of aduhen should be sharply limited.
                 Medicaid enrollment surpassed 80 million, a record, during the pandemic. 
                 Wondering if the Vaccine worked? Get the right test, at the right time`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=48"
             },
 
             {
                 title: "Reader Center",
                 new: ` behind one Pulitzer, hundreds of hands. I ve recovered from long covid. 
                 im One of the lucky ones. A dad and an audience of one`,
-                imagem: " "
+                imagem: "https://picsum.photos/512/264?random=49"
             },
         ],
 
