@@ -37,6 +37,7 @@
     font-weight: 200;
     width: 372px;
     height: 32px;
+    margin: 20px 0;
 }
 
 .big-txt{
@@ -46,6 +47,7 @@
     letter-spacing: 0.1px;
     width: 460px;
     height: 55px;
+    margin: 20px 0 10px;
 }
 
 .small-title{

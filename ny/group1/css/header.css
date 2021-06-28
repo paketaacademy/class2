@@ -3,6 +3,9 @@
     src: url(../statics/fonts/OldeEnglish.ttf);
 }
 
+.top{
+    display: block;
+}
 
 .box-titulo {
     font-size: 30px;
