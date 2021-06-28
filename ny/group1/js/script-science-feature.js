@@ -33,5 +33,7 @@ function factoryScience(array){
     imgsience.innerHTML = `<img src="http://lorempixel.com/380/253/" alt=""></img>`
 }
 
-factoryScience(LISTSCIENCE)
-factoryFeature(LISTFEATURE)
+export function initScience() {
+    factoryScience(LISTSCIENCE)
+    factoryFeature(LISTFEATURE)
+} 

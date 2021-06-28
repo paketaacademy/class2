@@ -171,8 +171,8 @@ const factoryEditor = (editors, container) => {
 
 const quotesContainer = document.querySelector(".opinion_content")
 const editorContainer = document.querySelector(".editor_content")
-factoryQuotes(quotes, quotesContainer)
-factoryEditor(editors, editorContainer)
 
-
-
+export function initMainRight() {
+    factoryQuotes(quotes, quotesContainer)
+    factoryEditor(editors, editorContainer)
+}

@@ -29,4 +29,6 @@ function factoryPaidTxt(array){
         </div>`
 }
 
-factoryPaidTxt(PAID)
+export function initPaid(){
+    factoryPaidTxt(PAID)
+}

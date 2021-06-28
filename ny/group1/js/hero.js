@@ -76,10 +76,8 @@ let itemsDiv = document.querySelector('.hero__row')
 let heroMain = document.querySelector('.hero__main')
 let peopleDiv = document.querySelector('.news-people')
 
-const init = () =>{
+export const initHero = () =>{
     factoryItems(items)
     featuredNews(newDest)
     factoryPeoples(peoples)
 }
-
-init()

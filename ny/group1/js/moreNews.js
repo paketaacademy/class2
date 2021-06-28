@@ -101,6 +101,8 @@ const factoryRightNews = (datas, container) => {
 }
 const leftContainer = document.querySelector(".mn_left_container")
 const rightContainer = document.querySelector(".mn_right_container")
-factoryLeftNews(moreNews, leftContainer)
-factoryRightNews(right_news, rightContainer)
 
+export function initMoreNews() {
+    factoryLeftNews(moreNews, leftContainer)
+    factoryRightNews(right_news, rightContainer)    
+}
