@@ -43,6 +43,30 @@ const genereteImages = () => {
     ))
 }
 
+const Slider = () => {
+    let time = 4000,
+        currentImageIndex = 0,
+        maxImages = liveUpdatesImg.length;
+
+    const nextImage = () => {
+        liveUpdatesImg[currentImageIndex].classList.remove('active')
+        currentImageIndex++
+        if (currentImageIndex >= maxImages) {
+            currentImageIndex = 0
+        }
+        liveUpdatesImg[currentImageIndex].classList.add('active')
+    }
+
+    const start = () => {
+        setInterval(() => {
+            nextImage()
+        }, time)
+    }
+
+    window.addEventListener('load', start())
+}
+
+
 const generateLiveUpdatesPrimaries = () => {
     mock.map(m => (
         m.liveUpdatePrimaries.map(l => (
@@ -285,6 +309,7 @@ const generateMoreNews = () => {
 export const init = () => {
     firstPageNew()
     genereteImages()
+    Slider()
     generateLiveUpdatesPrimaries()
     generateSomeOtherNews()
     generateLiveNews()
