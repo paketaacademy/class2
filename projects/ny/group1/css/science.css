@@ -1,0 +1,50 @@
+.box-news-science, .science-2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.science-3, .science-2, .science-1{
+    height: 324px;
+    margin: 0 5px 0 0;
+}
+
+.science-3{
+    width: 204px;
+}
+
+.science-1{
+    width: 258;
+}
+
+.img-science-2{
+    width: 328px;
+}
+
+.science-news-2{
+    width: 274.5px;
+}
+
+.news-science-3{
+    width: 183px;
+    height: 156px;
+}
+
+.p-science-news-3{
+    font-size: 0.875rem;
+    margin: 2px 0;
+}
+
+.title-news-science-3{
+    margin: 0;
+    font-size: 1rem; 
+}
+
+.p-science-1{
+    width: 220px;
+    height: 234px;
+    font-size: 0.875rem
+}
+
+.h-science-1{
+    width: 220px;
+}
