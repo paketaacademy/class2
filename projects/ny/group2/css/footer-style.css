@@ -1,0 +1,41 @@
+.Buttons {
+    padding: 20px;
+}
+
+ul{
+    list-style: none;
+    
+}
+
+span{
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+li {
+    font-size: small;
+}
+
+footer{
+    
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;    
+
+}
+
+.border-footer{
+    padding: 0 60px;
+    border-top: 1px solid rgb(190, 190, 190);
+    margin-top: 10px;
+    padding: 10px;
+}
+

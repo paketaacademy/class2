@@ -1,7 +1,9 @@
-import { news } from './file1.js'
+import init from './hero.js'
+import firstnews from './second-section2.js'
+import newSection from './news.js'
+import morenews from './morenews.js'
 
-import initiliaze from './init.js'
-
-initiliaze()
-
-console.log("Rataria", news)
+init()
+firstnews()
+newSection()
+morenews()

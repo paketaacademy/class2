@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    font-family: Arial;
+}
+
+.container {
+    width: 1200px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 6px;
+}
+
+.icons_container_header {
+    display: flex;
+    align-items: center;
+}
+
+.icons_container_header img {
+    margin-right: 8px;
+    padding: 8px 9px 9px;
+}
+
+.icons_container_header a {
+    font-size: 14.25px;
+    font-family: nyt-franklin, helvetica, arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    line-height: 19px;
+    color: black;
+    text-decoration: none;
+}
+
+.icons_container_header a:hover {
+    text-decoration: underline;
+}
+
+#btn_login {
+    background-color: #567b95;
+    border: 1px solid #326891;
+    color: #fff;
+    font-size: 11px;
+    line-height: 11px;
+    font-weight: 700;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: nyt-franklin, helvetica, arial, sans-serif;
+    padding: 11px 12px 8px;
+}
+
+#btn_login:hover {
+    border: 1px solid #326891;
+    background-color: #326891;
+}
+
+.content {
+    width: 610px;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    color: #121212;
+    font-family: nyt-cheltenham, georgia, 'times new roman', times, serif;
+    font-weight: 700;
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 1rem;
+    margin-top: 50px;
+}
+
+.content p {
+    font-size: 1.4375rem;
+    line-height: 1.875rem;
+    font-style: normal;
+    font-stretch: normal;
+    color: #333;
+    font-family: nyt-cheltenham, georgia, 'times new roman', times, serif;
+    font-weight: 300;
+    margin-bottom: 1.875rem;
+}
+
+.content_icons {
+    display: flex;
+    align-items: center;
+    margin: 30px 0px;
+}
+
+.content_icons img {
+    padding: 5px;
+    margin-right: 16px;
+    border-radius: 50%;
+    background-color: #e2e2e2;
+}
+
+.content_icons img:hover {
+    background-color: #b3b0b0;
+}
+
+hr {
+    height: 1px;
+    background-color: #e2e2e2;
+    border: 0px;
+}
+
+.a_center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.author_container {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.author_container img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.author_name_container {
+    display: flex;
+}
+
+.published_date {
+    display: flex;
+}
+
+.published_date p {
+    font-size: 16px;
+}
