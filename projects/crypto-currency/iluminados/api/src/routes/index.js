@@ -1,10 +1,13 @@
 import express from 'express';
 import cors from 'cors';
-import allDatas from './modules/get.js';
+import allMarket from './modules/allMarket.js';
 
-const app = express();
+const app = express()
 
 app.use(cors())
-app.use(allDatas)
+app.use(express.json())
+
+app.use(allMarket)
+
 
 export default app
