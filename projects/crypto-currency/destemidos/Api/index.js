@@ -1,29 +1,18 @@
-const express = require('express')
-const cors = require('cors')
+import feeds from './routes/feeds.js'
+import market from './routes/market.js'
+import influencers from './routes/influencer.js'
+
+import express from 'express'
+import cors from 'cors'
 const app = express()
-const axios = require("axios").default
 
 app.use(cors())
 app.use(express.json())
 
-const market =()=>{
-    return{
-    method: 'GET',
-    url: 'https://api.lunarcrush.com/v2?data=market&key=y7ze70q6n18xv9g0jlpjlo',
-    headers: {
-      'Key': 'y7ze70q6n18xv9g0jlpjlo',
-    }}
-  };
+app.use(feeds)
+app.use(market)
+app.use(influencers)
 
-app.get('/market', function(req, res){
 
-    axios.request(market()).then(function (response) {
-      let resp = response.data;
-      res.json(resp)
-      }).catch(function (error) {
-          console.error(error);
-      })
-  })
 
-  app.listen(3000)
-  
+app.listen(3000)
