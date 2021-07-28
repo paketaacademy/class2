@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
 
-function Feeds() {
+function Influencers() {
     return (
         <>
-           <Button color="primary">Hello World!</Button>;
+            <Button color="primary">Ola World!</Button>;
         </>
     )
 }
 
-export default Feeds;
+export default Influencers;

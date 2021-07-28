@@ -9,10 +9,10 @@ function Menu() {
                     <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/Feeds">Feed</Link>
+                    <Link to="/Influencers">Influencers</Link>
                 </li>
                 <li>
-                    <Link to="/users">Users</Link>
+                    <Link to="/Feeds">Feeds</Link>
                 </li>
             </ul>
         </nav>
