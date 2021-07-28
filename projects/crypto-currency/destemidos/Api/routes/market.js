@@ -1,10 +1,6 @@
-import express from 'express'
-import cors from 'cors'
+import app from './app_export.js'
 import axios from 'axios';
-const app = express()
 
-app.use(cors())
-app.use(express.json())
 
 
 const market =()=>{
@@ -19,7 +15,7 @@ const market =()=>{
 
 app.get('/market', function(req, res){
   
-    axios.request(market()).then(function (response) {
+    axios.request(market('market')).then(function (response) {
         let resp = response.data;
         res.json(resp)
         }).catch(function (error) {
