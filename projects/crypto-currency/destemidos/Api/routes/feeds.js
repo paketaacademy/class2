@@ -1,7 +1,5 @@
-import express from 'express'
-import cors from 'cors'
+import app from './app_export.js'
 import axios from 'axios';
-const app = express()
 
 const feeds = () => {
     return {
@@ -13,12 +11,11 @@ const feeds = () => {
     }
 };
 
-app.use(cors())
-app.use(express.json())
+
 
 app.get('/feeds', function (req, res) {
 
-    axios.request(feeds()).then(function (response) {
+    axios.request(feeds('feeds')).then(function (response) {
         let resp = response.data;
         res.json(resp)
     }).catch(function (error) {
