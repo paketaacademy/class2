@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core';
 function Feeds() {
     return (
         <>
-            return <Button color="primary">Hello World</Button>;
+            return <Button color="primary">Hello World!</Button>;
         </>
     )
 }
