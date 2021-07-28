@@ -1,7 +1,7 @@
 import axios from 'axios';
 import app from './config.js';
 
-const allMarket = () =>{
+const market = () =>{
     return{
     method: 'GET',
     url: 'https://api.lunarcrush.com/v2?data=market&key=lu4pa7jv6xmw1ny7jux9q&limit=20',
@@ -13,7 +13,7 @@ const allMarket = () =>{
 
 app.get('/market', function(req, res){
   
-    axios.request(allMarket('market')).then(function (response) {
+    axios.request(market('market')).then(function (response) {
         let resp = response.data;
         res.json(resp)
         }).catch(function (error) {
