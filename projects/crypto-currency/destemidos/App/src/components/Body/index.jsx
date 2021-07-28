@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 import Feeds from '../../pages/Feeds';
+import Influencers from '../../pages/Influencers';
 
 function Body() {
     return (
@@ -8,10 +9,10 @@ function Body() {
             <Route path="/Feeds">
                 <Feeds />
             </Route>
-            <Route path="/users">
-                <Feeds />
+            <Route path="/Influencers">
+                <Influencers />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
                 <Feeds />
             </Route>
         </Switch>
