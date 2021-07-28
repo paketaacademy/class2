@@ -1,19 +1,11 @@
 import axios from 'axios';
-import app from './config.js';
+import express from 'express'
+import { configuration } from './config.js';
+const app = express()
 
-const market = () =>{
-    return{
-    method: 'GET',
-    url: 'https://api.lunarcrush.com/v2?data=market&key=lu4pa7jv6xmw1ny7jux9q&limit=20',
-    headers: {
-      'Key': 'lu4pa7jv6xmw1ny7jux9q',
-    }}
-  };
-
-
-app.get('/market', function(req, res){
+app.get('/market', function(req, res) {
   
-    axios.request(market('market')).then(function (response) {
+    axios.request(configuration('market')).then(function (response) {
         let resp = response.data;
         res.json(resp)
         }).catch(function (error) {
