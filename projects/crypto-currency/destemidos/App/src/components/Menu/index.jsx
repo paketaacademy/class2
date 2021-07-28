@@ -6,6 +6,9 @@ function Menu() {
         <nav>
             <ul>
                 <li>
+                    <Link to="/SignIn">Login</Link>
+                </li>
+                <li>
                     <Link to="/">Home</Link>
                 </li>
                 <li>
