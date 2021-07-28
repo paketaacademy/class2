@@ -20,21 +20,27 @@
 //   </BrowserRouter>
 // );
 
-// export default Routes;
-import React from "react";
-import { 
-  Routes, 
-  Route,
-} from "react-router-dom";
+// export default Routes;]
 
-import SignIn from "./Pages/SignIn";
-import SignUp from "./Pages/SignUp";
 
-export default function MainRoutes() {
-  return (
-    <Routes>
-      <Route path="/" element={<SignIn />} />
-      <Route path="/signup" element={<SignUp />} />
-    </Routes>
-  );
-}
+
+// import React from "react";
+// import { 
+//   Routes, 
+//   Route,
+//   Switch,
+// } from "react-router-dom";
+
+// import SignIn from "./Pages/SignIn";
+// import SignUp from "./Pages/SignUp";
+
+// export default function MainRoutes() {
+//   return (
+//     <Switch>
+//       <Routes>
+//         <Route path="/" element={<SignIn />} />
+//         <Route path="/SignUp" element={<SignUp />} />
+//       </Routes>
+//     </Switch>
+//   );
+// }
