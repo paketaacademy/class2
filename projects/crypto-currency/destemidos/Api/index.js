@@ -1,6 +1,7 @@
 import feeds from './routes/feeds.js'
 import market from './routes/market.js'
 import influencers from './routes/influencer.js'
+import teste from './routes/teste.js'
 import singin from './routes/singin.js'
 import register from './routes/register.js'
 
@@ -13,9 +14,8 @@ app.use(express.json())
 app.use(feeds)
 app.use(market)
 app.use(influencers)
+app.use(teste)
 app.use(singin)
 app.use(register)
-
-
 
 app.listen(3000)
