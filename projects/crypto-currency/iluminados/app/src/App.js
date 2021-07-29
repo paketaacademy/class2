@@ -1,8 +1,8 @@
 import "./commons/global.css"
 import { ThemeProvider } from "@material-ui/core";
 import { theme } from "./commons/constants/theme";
-import { FormContainerLogin } from "./components/LoginContainer";
-import { FormContainerRegister } from "./components/RegisterContainer";
+import { Login } from "./components/Login";
+import { Register } from "./components/Register";
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,10 +17,10 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <FormContainerLogin />
+              <Login />
             </Route>
             <Route path="/register">
-              <FormContainerRegister />
+              <Register />
             </Route>
           </Switch>
         </Router>

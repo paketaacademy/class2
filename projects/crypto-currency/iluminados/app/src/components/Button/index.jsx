@@ -6,5 +6,6 @@ export const Btn = styled(Button)`
     color: ${({ color }) => color || '#FFF0FB'};
     letter-spacing: 1px;
     background-color: ${({ color }) => color || '#FFF0FB'};
+    font-family: var(--primary-font-family);
   }
 `

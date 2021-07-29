@@ -1,15 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Btn } from '../Button'
-import { Container, TxtField, FormContainer } from '../LoginContainer'
+import { FormContainer } from '../ContainerForms'
+import { TxtField } from '../TxtField'
+import { Container } from '../ContainerForms'
+import { DivContainerBtn } from './styles'
 
-const DivContainerBtn = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`
-
-export const FormContainerRegister = () => {
+export const Register = () => {
   return (
     <Container>
       <FormContainer>
