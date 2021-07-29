@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+import {Link} from 'react-router-dom'
 
 function Influencers() {
     return (
         <>
-            <Button color="primary">Ola World!</Button>;
+            <Link target={"_blank"} to="./Feeds">Your Link</Link>
         </>
     )
 }
