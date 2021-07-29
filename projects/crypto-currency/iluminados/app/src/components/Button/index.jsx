@@ -3,8 +3,8 @@ import { Button } from '@material-ui/core'
 
 export const Btn = styled(Button)`
   &&{
-    color: #FFF0FB;
+    color: ${({ color }) => color || '#FFF0FB'};
     letter-spacing: 1px;
-    background-color: ${({ color }) => color || '#ffff'};
+    background-color: ${({ color }) => color || '#FFF0FB'};
   }
 `

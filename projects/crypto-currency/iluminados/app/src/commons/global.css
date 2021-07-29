@@ -24,15 +24,15 @@ a{
 :root{
   --purple: #4A314D;
   --light-purple: #9001a0;
-  --black: #231A1A;
+  --black: #050301;
   --gray: rgb(131, 131, 131);
   --green: #02ff81;
-  --yellow: #ffc60a;
+  --yellow: #f59c17;
+  --yellow-hover: #ec8e00;
   --blue: #273cf5;
-  --red: #C3423F;
-  --light-red: #fd8684;
-  --white: #FFF0FB;
+  --red: #f72c28;
+  --light-red: #ff7370;
+  --white: #F7F4F3;
   --primary-font-family: 'Montserrat', sans-serif;
   --secondary-font-family: 'Martel', serif;
-  --gradient: linear-gradient(120deg, #C3423F, #4A314D);
 }

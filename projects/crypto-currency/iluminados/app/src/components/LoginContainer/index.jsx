@@ -2,17 +2,17 @@ import styled from "styled-components";
 import { TextField } from "@material-ui/core";
 import { Btn } from "../Button";
 
-export const GradientContainer = styled.div`
+export const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(248.66deg, #4A314D 0%, #C3423F 100%);
+  background: var(--black);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `
 
-const FormContainerLogin = styled.div`
+export const FormContainer = styled.div`
   max-width: 400px;
   width: 100%;
   background-color: var(--white);
@@ -21,7 +21,7 @@ const FormContainerLogin = styled.div`
   padding: 2rem;
   font-family: var(--secondary-font-family);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  .form-container-login--h2{
+  h2{
     font-family: var(--primary-font-family);
     font-size: 1.7rem;
     margin: 0 0 16px 0;
@@ -34,13 +34,13 @@ const FormContainerLogin = styled.div`
     strong{
       cursor: pointer;
       &:hover{
-        color: #7a7a7a;
+        color: var(--yellow);
       }
     }
   }
 `
 
-const TxtField = styled(TextField)`
+export const TxtField = styled(TextField)`
   &&{
     display: flex;
     margin-bottom: 16px;
@@ -52,8 +52,8 @@ const TxtField = styled(TextField)`
     }
     .Mui-focused fieldset,
     label.Mui-focused{
-      border-color: var(--gray);
-      color: var(--gray)
+      border-color: var(--black);
+      color: var(--black)
     }
   }
 `
@@ -66,26 +66,27 @@ const StyledBtn = styled(Btn)`
 `
 
 
-export const FormContainer = () => {
+export const FormContainerLogin = () => {
   return (
-    <GradientContainer>
-      <FormContainerLogin>
+    <Container>
+      <FormContainer>
         <h2 className="form-container-login--h2">Login</h2>
         <form action="POST" autoComplete="off">
           <TxtField
             id="standard-required"
-            label="Email"
+            label="E-mail"
             variant="outlined"
           />
           <TxtField
             id="standard-required"
-            label="Email"
+            label="Password"
             variant="outlined"
+            type="password"
           />
         </form>
         <StyledBtn variant="contained" color="primary">Login</StyledBtn>
         <span className="form-container-login--span">Não possui cadastro? <strong onClick={() => console.log("Clicou!")}>Registre-se</strong></span>
-      </FormContainerLogin>
-    </GradientContainer>
+      </FormContainer>
+    </Container>
   )
 }
