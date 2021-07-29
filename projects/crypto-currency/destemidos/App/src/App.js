@@ -1,11 +1,18 @@
-import React from 'react';
-import { Button } from '@material-ui/core';
-
-
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Menu from "./components/Menu";
+import Body from "./components/Body";
 
 function App() {
-  return <Button color="primary">Hello World</Button>;
+  return (
+    
+    <Router>
+      <div>
+        <Menu/>
+        <Body/>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
