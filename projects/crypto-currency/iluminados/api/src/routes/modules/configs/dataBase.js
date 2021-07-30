@@ -1,5 +1,4 @@
 import mongoose from 'mongoose'
-// import bcrypt from "bcryptjs"
 
 const params = {
   'useNewUrlParser': true,
@@ -13,12 +12,6 @@ const userSchema = new mongoose.Schema({
     password: String,
 }, { collection: 'users' }
 );
-
-// userSchema.pre('save', async (next) =>{
-//   const hash = await bcrypt.hash(this.password, 10) //o valor 10 é referente a quantidade de rounds para gerar a codificação da senha
-//   password = hash
-//   next()
-// })
 
 export { mongoose as Mongoose, userSchema as userSchema }
 
