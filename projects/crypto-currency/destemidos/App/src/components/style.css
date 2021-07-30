@@ -6,19 +6,17 @@
   background-color: rgb(50, 13, 85);
   width: 5em;
   height: 68em;
+  list-style-type: none;
+  position: fixed;
+  top: 0;  
 }
 
-nav a{
+.container--nav a{
   color: rgb(224, 210, 238);
   text-decoration: none;
   font-size: 0.5rem; 
   font-family: monospace; 
   font-weight: bold;
-}
-
-nav{
-  position: fixed;
-  top: 0;         
 }
 
 .swipe--paragraph{
@@ -28,34 +26,22 @@ nav{
   margin-bottom: 0;
 }
 
-
-h1{
-  margin-bottom: 0;
-}
-
-.container--nav ul{
+.container--nav--ul{
   padding-left: 0;
+  list-style-type: none;
 }
 
-ul{
-list-style-type: none;
-}
-
-li{
+.container--nav--ul--li{
   padding-top: 0.5em;
   text-align: center;
   padding-bottom: 0.5em;
+  border-bottom-width: 0.1em;
+  border-bottom-style: groove;
+  border-bottom-color:rgb(141, 120, 163);
 }
 
-li:hover{
+.container--nav--ul--li:hover{
   background-color: rgb(82, 46, 116);
-}
-
-.div{   
-  background-color: rgb(82, 46, 116);
-  border: none;
-  height: 1px;
-  margin: 0;
 }
 
 .lunar--logo{

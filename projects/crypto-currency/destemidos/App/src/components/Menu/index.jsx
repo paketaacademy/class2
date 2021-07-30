@@ -6,7 +6,7 @@ function Menu() {
   return (
       <nav className='container--nav'>
         <ul className='container--nav--ul'>
-          <li>
+          <li className='container--nav--ul--li'>
             <Link to="/destemidos">
               <div>
                 <img src="https://lunarcrush.com/assets/img/ui/lunarcrush-footer-icon-dark-retro.png" alt="lunar logo" className='lunar--logo' />
@@ -16,9 +16,8 @@ function Menu() {
               </div>
             </Link>
           </li>
-          <hr className="div"></hr>
-          <li>
-            <Link to="/markets">
+          <li className='container--nav--ul--li'>
+            <Link to="/mercado">
               <div>
                 <img src="https://static.thenounproject.com/png/685027-200.png" alt="market icon" className='market--icon' />
               </div>
@@ -27,9 +26,8 @@ function Menu() {
               </div>
             </Link>    
           </li>
-          <hr className="div"></hr>
-         <li>
-            <Link to="/influencers">
+          <li className='container--nav--ul--li'>
+            <Link to="/influencias">
               <div>
                 <img src="https://icons-for-free.com/iconfiles/png/512/people+users+icon-1320196278344550087.png" alt="influencer icon" className='influencer--icon' />
               </div>
@@ -38,9 +36,8 @@ function Menu() {
               </div>
             </Link>    
           </li>
-          <hr className="div"></hr>
-          <li>
-            <Link to="/feeds">
+          <li className='container--nav--ul--li'>
+            <Link to="/conteudo">
               <div>
                 <img src="https://img.icons8.com/small/452/hashtag-activity-feed.png" alt="feed icon" className='feed--icon' />
               </div>
@@ -49,9 +46,8 @@ function Menu() {
               </div>
             </Link>    
           </li>
-          <hr className="div"></hr>
-          <li>
-            <Link to="/signin">
+          <li className='container--nav--ul--li'>
+            <Link to="/conectar">
               <div>
                   <img src="https://static.thenounproject.com/png/178831-200.png" alt="login icon" className='login--icon' />
               </div>
@@ -60,9 +56,8 @@ function Menu() {
               </div>
             </Link>
           </li>
-          <hr className="div"></hr>
-          <li>
-            <Link to="/signup">
+          <li className='container--nav--ul--li'>
+            <Link to="/cadastrar">
               <div>
                 <img src="https://static.thenounproject.com/png/736543-200.png" alt="signup icon" className='signup--icon' />
               </div>

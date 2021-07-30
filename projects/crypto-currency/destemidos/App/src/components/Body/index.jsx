@@ -16,19 +16,19 @@ function Body() {
       <Route exact path="/">
         <Markets />
       </Route>
-      <Route path="/markets">
+      <Route path="/mercado">
         <Markets />
       </Route>
-      <Route path="/influencers">
+      <Route path="/influencias">
         <Influencers />
       </Route>
-      <Route path="/feeds">
+      <Route path="/conteudo">
         <Feeds />
       </Route>
-      <Route path="/signin">
+      <Route path="/conectar">
          <SignIn />
       </Route>
-      <Route path="/signup">
+      <Route path="/cadastrar">
         <SignUp />
       </Route>
     </Switch>
