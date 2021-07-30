@@ -3,7 +3,7 @@ import express from 'express'
 import { configuration } from './configs/lunarCrushApi.js'
 const app = express()
 
-app.get('/market', function(req, res) {
+app.get('/mercado', function(req, res) {
   
     axios.request(configuration('market')).then(function (response) {
         let resp = response.data

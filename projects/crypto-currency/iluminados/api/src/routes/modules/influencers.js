@@ -3,7 +3,7 @@ import express from 'express'
 import { configuration } from './configs/lunarCrushApi.js'
 const app = express()
 
-app.get('/influencers', function (req, res) {
+app.get('/influenciadores', function (req, res) {
     axios.request(configuration('influencers')).then(function (response){
         let resp = response.data
         res.json(resp)
