@@ -12,6 +12,9 @@ function Menu() {
                     <Link to="/">Home</Link>
                 </li>
                 <li>
+                    <Link to="/Markets">Markets</Link>
+                </li>
+                <li>
                     <Link to="/Influencers">Influencers</Link>
                 </li>
                 <li>
