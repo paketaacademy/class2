@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -47,6 +48,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignUp() {
+
+  const [inputs, setInputs] = useState({
+      email: '',
+      password: ''
+  });
+  function handleInputChange(event){
+      inputs[event.target.name] = event.target.value;
+      setInputs(inputs);
+  }
+
+  function handleFormSubmit(event){
+      event.preventDefault();
+      axios.post('http://localhost:3000/singin', inputs).then(response => {
+      alert('Cadastro realizado com sucesso!');
+    })
+  }
+  
   const classes = useStyles();
 
   return (
@@ -59,31 +77,8 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="fname"
-                name="firstName"
-                variant="outlined"
-                required
-                fullWidth
-                id="firstName"
-                label="First Name"
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="lname"
-              />
-            </Grid>
+        <form className={classes.form} onSubmit={handleFormSubmit} noValidate>
+          <Grid container spacing={2}>           
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -93,6 +88,7 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={handleInputChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -105,14 +101,9 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={handleInputChange}
               />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
-              />
-            </Grid>
+            </Grid>            
           </Grid>
           <Button
             type="submit"
