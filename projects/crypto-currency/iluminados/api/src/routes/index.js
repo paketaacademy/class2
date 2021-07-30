@@ -3,6 +3,7 @@ import cors from 'cors'
 import market from './modules/market.js'
 import coinOfTheDay from './modules/coinOfTheDay.js'
 import register from './modules/register.js'
+import influencers from './modules/influencers.js'
 
 const app = express()
 
@@ -12,5 +13,6 @@ app.use(register)
 
 app.use(market)
 app.use(coinOfTheDay)
+app.use(influencers)
 
 export default app
