@@ -10,19 +10,19 @@ import SignUp from '../../pages/SignUp';
 function Body() {
     return (
         <Switch>
-            <Route path="/SignIn">
+            <Route path="/entrar">
                 <SignIn />
             </Route>
-            <Route path="/SignUp">
+            <Route path="/sair">
                 <SignUp />
             </Route>
-            <Route path="/Feeds">
+            <Route path="/feed">
                 <Feeds />
             </Route>
-            <Route path="/Markets">
+            <Route path="/mercado">
                 <Markets />
             </Route>
-            <Route path="/Influencers">
+            <Route path="/influenciadores">
                 <Influencers />
             </Route>
             <Route exact path="/">
