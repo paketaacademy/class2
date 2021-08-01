@@ -26,14 +26,37 @@ function TBody(props) {
                             key={row.name}
 
                         >
-
                             <TableCell component="th" scope="row" padding="none">
-                                {row.name}
+                                {index}
                             </TableCell>
-                            <TableCell align="right">{row.calories}</TableCell>
-                            <TableCell align="right">{row.fat}</TableCell>
-                            <TableCell align="right">{row.carbs}</TableCell>
-                            <TableCell align="right">{row.protein}</TableCell>
+                            <TableCell align="right">{row.n}:{row.s}</TableCell>
+                            <TableCell align="right">+</TableCell>
+                            <TableCell align="right">{row.gs}</TableCell>
+                            <TableCell align="right">{row.acr}</TableCell>
+                            <TableCell align="right">{row.cr}</TableCell>
+                            <TableCell align="right">{row.p} || {row.p_btc}</TableCell>
+                            <TableCell align="right">{row.pch}</TableCell>
+                            <TableCell align="right">{row.pc}</TableCell>
+                            <TableCell align="right">--</TableCell>
+                            <TableCell align="right">{row.mc}</TableCell>
+                            <TableCell align="right">{row.v}</TableCell>
+                            <TableCell align="right">{row.d}</TableCell>
+                            <TableCell align="right">{row.vt}</TableCell>
+                            <TableCell align="right">--</TableCell>
+                            <TableCell align="right">{row.sv}</TableCell>
+                            <TableCell align="right">{row.ss}</TableCell>
+                            <TableCell align="right">{row.c}</TableCell>
+                            <TableCell align="right">{row.sd}</TableCell>
+                            <TableCell align="right">{row.as}</TableCell>
+                            <TableCell align="right">{row.bl}</TableCell>
+                            <TableCell align="right">{row.br}</TableCell>
+                            <TableCell align="right">{row.u}</TableCell>
+                            <TableCell align="right">{row.t}</TableCell>
+                            <TableCell align="right">{row.md}</TableCell>
+                            <TableCell align="right">{row.r}</TableCell>
+                            <TableCell align="right">{row.yt}</TableCell>
+                            <TableCell align="right">{row.na}</TableCell>
+                            <TableCell align="right">{row.sp}</TableCell>
                         </TableRow>
                     );
                 })}
