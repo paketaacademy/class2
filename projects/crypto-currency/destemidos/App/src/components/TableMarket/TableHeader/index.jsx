@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 
+import { TableCell } from '../styles'
 
 function THead(props) {
     const { classes, order, orderBy, onRequestSort, headCells } = props;
@@ -21,6 +21,7 @@ function THead(props) {
                         align={headCell.numeric ? 'right' : 'left'}
                         padding={headCell.disablePadding ? 'none' : 'normal'}
                         sortDirection={orderBy === headCell.id ? order : false}
+                        sticky={headCell.sticky}
                     >
                         <TableSortLabel
                             active={orderBy === headCell.id}
