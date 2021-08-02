@@ -4,7 +4,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 
-import { TableCell } from '../styles'
+import { TableCell } from '../styles.js'
 
 function THead(props) {
     const { classes, order, orderBy, onRequestSort, headCells } = props;

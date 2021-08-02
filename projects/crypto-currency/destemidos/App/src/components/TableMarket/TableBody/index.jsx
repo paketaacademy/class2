@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import { getComparator, stableSort, getColorOfNumber } from '../utils'
-import { TableCell, StyledP } from '../styles'
+import { TableCell, StyledP } from '../styles.js'
 
 
 
