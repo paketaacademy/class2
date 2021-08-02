@@ -1,11 +1,14 @@
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
 
+dotenv.config()
 const params = {
   'useNewUrlParser': true,
   'useUnifiedTopology': true
 }
 
-mongoose.connect('mongodb+srv://Iluminados:VfJmqXxKvxHdqqBk@cluster0.ytefl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', params);
+const { MONGO_URI } = process.env
+mongoose.connect(MONGO_URI, params);
 
 const userSchema = new mongoose.Schema({
     email: String,
