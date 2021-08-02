@@ -1,5 +1,5 @@
-import app from './configs_export/app_export.js'
-import { config } from './configs_export/config.js'
+import app from './configs/app.js'
+import { config } from './configs/api-lunarcrush.js'
 import axios from 'axios'
 
   app.get('/influencers', function(req, res){
