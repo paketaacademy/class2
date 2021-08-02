@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import market from './modules/market.js'
-import coinOfTheDay from './modules/coinOfTheDay.js'
+import coinOfTheDay from './modules/coin-of-the-day.js'
 import register from './modules/register.js'
 import influencers from './modules/influencers.js'
 

@@ -6,7 +6,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.post('/registro', async (req, res) => {
+app.post('/register', async (req, res) => {
  
     const email = req.body.email;
     const password = req.body.password;
@@ -17,7 +17,7 @@ app.post('/registro', async (req, res) => {
       await user.save();
       res.status(200).send('Cadastrado com sucesso')
     } catch (error) {
-      res.send(error);
+      res.status(400).send('Bad Request')
     }
   });
 
