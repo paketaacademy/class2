@@ -37,19 +37,28 @@ const headCells = [
 
 function Markets() {
     const [coins, setCoins] = useState([]);
-
+    const [isUpdate, setIsUpdate] = useState(false);
+    const [loading, setloading] = useState(false);
 
     useEffect(() => {
-        async function fetchApi() {
-            const response = await api.get('/market')
-            setCoins(response.data.data)
-        }
-        fetchApi()
-    }, [])
+        if (!isUpdate) {
+            setIsUpdate(true);
+            setloading(true);
+            api.get('/market').then((response) => {
+                setCoins(response.data.data)
+                console.log("teste", response);
+            }).finally(() => {
+                setloading(false);
+            })
 
+        }
+
+    }, [isUpdate])
 
     return (
         <>
+
+            <button onClick={() => setIsUpdate(false)}>{loading ? "atualizando" : "Atualizar Página"}</button>
             <TableMarket rows={coins} headCells={headCells} />
         </>
     )
