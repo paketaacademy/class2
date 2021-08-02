@@ -7,7 +7,7 @@ import THead from './TableHeader'
 import TBody from './TableBody'
 import Paper from '@material-ui/core/Paper';
 
-import { TablePagination } from './styles'
+import { TablePagination } from './styles.js'
 
 function TableMarket(props) {
     const { rows, headCells } = props;
@@ -35,6 +35,7 @@ function TableMarket(props) {
 
     return (
         <div>
+
             <Paper>
                 <TableContainer>
                     <Table
