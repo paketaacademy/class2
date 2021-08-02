@@ -4,7 +4,6 @@ function Destemidos() {
   return (
     <>
       <h1 className="destemidos">Destemidos</h1>
-      
     </>
   )
 }
