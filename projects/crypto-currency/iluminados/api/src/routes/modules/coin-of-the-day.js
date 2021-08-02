@@ -1,6 +1,6 @@
 import axios from 'axios'
 import express from 'express'
-import { configuration } from './configs/lunarCrushApi.js'
+import { configuration } from './configs/lunar-crush-api.js'
 const app = express()
 
 app.get('/coinoftheday', function(req, res) {

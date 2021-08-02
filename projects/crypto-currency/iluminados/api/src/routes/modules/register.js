@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import { Mongoose, userSchema } from './configs/dataBase.js'
+import { Mongoose, userSchema } from './configs/data-base.js'
 const app = express()
 
 app.use(cors())
