@@ -24,4 +24,8 @@ function stableSort(array, comparator) {
     return stabilizedThis.map((el) => el[0]);
 }
 
-export { descendingComparator, getComparator, stableSort };
+function getColorOfNumber(number) {
+    return number >= 0 ? 'rgb(58, 202, 96)' : 'rgb(245, 0, 87)'
+}
+
+export { descendingComparator, getComparator, stableSort, getColorOfNumber };
