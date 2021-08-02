@@ -99,20 +99,7 @@ export default function SignUp() {
                 autoComplete="current-password"
                 onChange={handleChange}
               />
-            </Grid>
-            {/* <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="confirmPassword"
-                label="Confirm Password"
-                type="password"
-                id="confirmPassword"
-                autoComplete="current-password"
-                onChange={handleChange}
-              />
-            </Grid>            */}
+            </Grid>            
           </Grid>
           <SubmitButton
             type="submit"

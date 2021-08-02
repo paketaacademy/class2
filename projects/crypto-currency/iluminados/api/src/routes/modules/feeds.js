@@ -3,8 +3,9 @@ import express from 'express'
 import { configuration } from './configs/lunar-crush-api.js'
 const app = express()
 
-app.get('/market', function(req, res) {
-    axios.request(configuration('market')).then(function (response) {
+app.get('/feeds', function (req, res) {
+
+    axios.request(configuration('feeds')).then(function (response){
         let resp = response.data
         res.json(resp)
         res.status(200).send('Requisição realizada com sucesso')

@@ -1,11 +1,14 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+import {Link} from 'react-router-dom'
+import InfluencersCards from '../components/Influencers/influencersCards';
+
 
 function Influencers() {
     return (
-        <>
-            <Button color="primary">Ola World!</Button>;
-        </>
+        <div>
+            <Link target={"_blank"} to="./Feeds">Your Link</Link>
+            <InfluencersCards />
+        </div>
     )
 }
 

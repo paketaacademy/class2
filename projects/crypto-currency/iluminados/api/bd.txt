@@ -1,0 +1,5 @@
+Usuário: Iluminados
+Senha: VfJmqXxKvxHdqqBk
+
+Rede BD:
+mongodb+srv://Iluminados:VfJmqXxKvxHdqqBk@cluster0.ytefl.mongodb.net/iluminadosTradeCoin?retryWrites=true&w=majority
