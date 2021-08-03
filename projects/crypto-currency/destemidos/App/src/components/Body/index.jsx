@@ -1,6 +1,5 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-
 import Destemidos from '../../pages/Destemidos'
 import Markets from '../../pages/Markets'
 import Influencers from '../../pages/Influencers/Influencers'
