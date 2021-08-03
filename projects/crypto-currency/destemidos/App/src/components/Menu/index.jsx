@@ -9,7 +9,7 @@ function Menu() {
                     <Link to="/SignIn">Login</Link>
                 </li>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/Home">Home</Link>
                 </li>
                 <li>
                     <Link to="/Influencers">Influencers</Link>
