@@ -24,7 +24,7 @@ function Copyright() {
       {new Date().getFullYear()}
       {'.'}
     </Typography>
-  );
+  )
 }
 
 export default function SignUp() {
@@ -55,7 +55,7 @@ export default function SignUp() {
   }
 
   const handleClose = (event) => {
-    setOpen(false);
+    setOpen(false)
   }
 
   return (
@@ -122,5 +122,5 @@ export default function SignUp() {
         <Copyright />
       </Box>
     </Container>
-  );
+  )
 }

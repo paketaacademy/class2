@@ -1,0 +1,7 @@
+*{
+  text-decoration: none;
+}
+
+.insert--underline:hover{
+  text-decoration: underline;
+}
