@@ -6,16 +6,19 @@ function Menu() {
         <nav>
             <ul>
                 <li>
-                    <Link to="/SignIn">Login</Link>
+                    <Link to="/entrar">Acessar</Link>
                 </li>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/">Início</Link>
                 </li>
                 <li>
-                    <Link to="/Influencers">Influencers</Link>
+                    <Link to="/mercado">Mercado</Link>
                 </li>
                 <li>
-                    <Link to="/Feeds">Feeds</Link>
+                    <Link to="/influenciadores">Influenciadores</Link>
+                </li>
+                <li>
+                    <Link to="/feeds">Feeds</Link>
                 </li>
             </ul>
         </nav>
