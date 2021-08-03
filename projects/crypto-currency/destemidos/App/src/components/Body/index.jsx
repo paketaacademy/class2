@@ -37,7 +37,6 @@ function Body() {
         <SignUp />
       </Route>
     </Switch>
-
     )
 }
 
