@@ -1,15 +1,14 @@
-import { config } from './configs_export/config.js'
-import app from './configs_export/app_export.js'
-import axios from 'axios';
-
+import { config } from './configs/api-lunarcrush.js'
+import app from './configs/app.js'
+import axios from 'axios'
 
 app.get('/feeds', function (req, res) {
 
-    axios.request(config('feeds')).then(function (response) {
-        let resp = response.data;
-        res.json(resp)
+  axios.request(config('feeds')).then(function (response) {
+    let resp = response.data
+      res.json(resp)
     }).catch(function (error) {
-        console.error(error);
+      console.error(error)
     })
 })
 
