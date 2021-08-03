@@ -11,7 +11,6 @@ import Container from '@material-ui/core/Container'
 import {PaperDiv, StyledAvatar, Form, SubmitButton, DivContainer} from './style.js'
 import './style.css'
 
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
