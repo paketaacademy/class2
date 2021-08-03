@@ -1,10 +1,12 @@
 import React from "react"
 import Inserir from "../../components/InserirCredito/Inserir"
-
+import { HomeContainer } from "./Style.js"
 function InserirCredito() {
 
   return (
-    <Inserir/>
+    <HomeContainer>
+      <Inserir/>
+    </HomeContainer>
   )
 }
 

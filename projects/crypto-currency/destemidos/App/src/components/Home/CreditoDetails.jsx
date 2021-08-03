@@ -10,7 +10,7 @@ function CreditoDetails() {
       <h4>Crédito em conta</h4>
       <div>R$ 3.000,00</div>
       <ButtonDiv>
-        <Link className="LinkButton" to='/InserirCredito'>
+        <Link className="LinkButton" to='/credito'>
           <StyledButton variant="contained" color="primary">
             Depositar<MonetizationOnIcon/>
           </StyledButton> 

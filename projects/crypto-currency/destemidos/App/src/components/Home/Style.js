@@ -9,8 +9,9 @@ export const ContainerDiv = styled.div`
     min-height: 200px;
     display: flex;
     justify-content: center;
+    align-items:center;
     flex-direction: column;
-    border: 1px solid #7c7c7c;
+    border: 1px solid #522e74;
     padding: 20px;
     border-radius: 10px;
     margin: 10px;

@@ -11,7 +11,7 @@ function BtcDetails() {
       <h4>Coins</h4>
       <div>0,09 BTC</div>      
       <ButtonDiv>
-        <Link className="LinkButton" to='/Market'>
+        <Link className="LinkButton" to='/mercado'>
           <StyledButton variant="contained" color="primary">
           Comprar<AddShoppingCartIcon/>
         </StyledButton></Link>

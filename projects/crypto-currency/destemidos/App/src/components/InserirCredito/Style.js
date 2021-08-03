@@ -5,13 +5,13 @@ import TextField from '@material-ui/core/TextField'
 
 export const BoxPage = styled.div`
   ${({ theme }) => `
-    max-width: 600px;
+    max-width: 900px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
     flex-direction: row;
-    border: 1px solid #7c7c7c;
+    border: 1px solid #522e74;
     border-radius: 10px;
     margin: 0 auto;   
     padding: 10px; 
@@ -23,6 +23,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 20px;
 
   `}
 `
@@ -33,6 +34,7 @@ export const ContainerRow = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    
   `}
 `
 
