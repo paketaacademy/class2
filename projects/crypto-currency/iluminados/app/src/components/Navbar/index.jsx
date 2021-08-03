@@ -5,9 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
-
 import Avatar from '@material-ui/core/Avatar';
-import Divider from '@material-ui/core/Divider';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ChatIcon from '@material-ui/icons/Chat';
 import CompareIcon from '@material-ui/icons/Compare';
@@ -22,9 +20,7 @@ export const MenuListComposition = () => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
-  
-    
-  
+       
     const handleClose = (event) => {
       if (anchorRef.current && anchorRef.current.contains(event.target)) {
         return;
@@ -50,29 +46,30 @@ export const MenuListComposition = () => {
     }, [open]);
 
 
-
-
-
-  return (
+    return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <MenuList>
-          <Avatar className={classes.logo} alt="Remy Sharp" src="https://lunarcrush.com/assets/img/ui/lunarcrush-footer-icon-dark-retro.png" />
-          <DashboardIcon className={classes.icon} />  
-          <MenuItem className={classes.fonte} >DASHBOARD</MenuItem>
-          <Divider  />
+        <MenuList>                   
+          <MenuItem className={classes.fonte} >
+          <DashboardIcon className={classes.icon} />
+            DASHBOARD
+          </MenuItem>        
+          <MenuItem className={classes.fonte}>
           <InsertChartIcon className={classes.icon} />
-          <MenuItem className={classes.fonte}>MARKETS</MenuItem>
-          <Divider /> 
-          <PeopleIcon className={classes.icon} /> 
-          <MenuItem className={classes.fonte}>INFLUENCERS</MenuItem>
-          <Divider />
+            MARKETS
+          </MenuItem>          
+          <MenuItem className={classes.fonte}>
+          <PeopleIcon className={classes.icon} />  
+            INFLUENCERS
+          </MenuItem>          
+          <MenuItem className={classes.fonte}>
           <ChatIcon className={classes.icon} /> 
-          <MenuItem className={classes.fonteFeeds}>FEEDS</MenuItem>
-          <Divider /> 
+            FEEDS
+          </MenuItem>
+          <MenuItem className={classes.fonte}>
           <CompareIcon className={classes.icon} />
-          <MenuItem className={classes.fonte}>COMPARE</MenuItem>
-          <Divider />
+            COMPARE
+          </MenuItem>
           <MenuItem><NotificationsIcon className={classes.notification} /></MenuItem>
           <MenuItem><SettingsIcon className={classes.uItens} /></MenuItem>
           <Avatar className={classes.avatar}>L</Avatar>                  
