@@ -5,6 +5,7 @@
 }
 .container--video{
   position: absolute;
+  z-index: -1;
 }
 
 .container--text{
@@ -29,6 +30,7 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  z-index: -1;
 }
 
 .login--button{
