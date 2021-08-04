@@ -54,7 +54,6 @@ export default function SignUp() {
   const handleSubmit = e => {
     e.preventDefault()
     axios.post(`${API}/register`, inputs).then(response => {
-      console.log(response.data)
       setResAPI(response.data)
       setSeverity('success')
       setOpen(true)
