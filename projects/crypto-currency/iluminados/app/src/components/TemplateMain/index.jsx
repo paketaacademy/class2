@@ -1,6 +1,6 @@
 import React from 'react'
-import { Navbar } from '../Navbar'
 import { ContentContainer } from './styles'
+import { Navbar } from '../Navbar'
 
 export const TemplateMain = ({ children }) => {
   return (

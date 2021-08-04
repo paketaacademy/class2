@@ -1,10 +1,15 @@
-import React from 'react';
-import { Button } from '@material-ui/core';
+import React from "react";
+import Posts from "../components/Feeds/Posts";
+
+
 
 function Feeds() {
     return (
         <>
-           <Button color="primary">Hello World!</Button>;
+           <div>  
+               ola                       
+               <Posts/>
+           </div>
         </>
     )
 }

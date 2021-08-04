@@ -1,22 +1,18 @@
 import axios from 'axios'
 import express from 'express'
-import cors from 'cors'
-import { configuration } from './config.js'
-
+import { configuration } from './configs/lunar-crush-api.js'
 const app = express()
-app.use(cors())
 
-app.get('/feed', async (req, res) => {
+app.get('/feeds', function (req, res) {
 
-  await axios.request(configuration("feeds"))
-    .then((response) => {
-      const { data } = response
-      console.log(data)
-      return res.json(data)
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+  axios.request(configuration('feeds')).then(function (response) {
+    let resp = response.data
+    res.json(resp)
+    res.status(200).send('Requisição realizada com sucesso')
+  }).catch(function (error) {
+    res.status(400).send('Bad Request')
+    console.error(error)
+  })
 })
 
 export default app

@@ -1,8 +1,7 @@
-import app from "./app_export.js";
+import app from "./configs/app.js"
 
-app.get('/singin', function (req, res) {
-    res.send('Usar para o login dos usuarios')
-
+app.get('/login', (req,res)=>{
+    res.send('Fazer o login')
 })
 
 export default app

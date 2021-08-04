@@ -1,37 +1,16 @@
 import "./commons/global.css"
+import { Feeds } from "./components/Feed"
+import { TemplateAuth } from "./components/TemplateAuth"
+import { TemplateMain } from "./components/TemplateMain"
 import { ThemeProvider } from "@material-ui/core"
 import { theme } from "./commons/constants/theme"
 import { Login } from "./components/Login"
 import { Register } from "./components/Register"
-import { Feeds } from "./components/Feed"
-import { TemplateAuth } from "./components/TemplateAuth"
-import { TemplateMain } from "./components/TemplateMain"
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from 'react-router-dom'
-
-// const PrivateRoute = ({ children, ...rest }) => {
-//   let auth = useAuth();
-//   return (
-//     <Route
-//       {...rest}
-//       render={({ location }) =>
-//         auth.user ? (
-//           children
-//         ) : (
-//           <Redirect
-//             to={{
-//               pathname: "/login",
-//               state: { from: location }
-//             }}
-//           />
-//         )
-//       }
-//     />
-//   );
-// }
 
 function App() {
 

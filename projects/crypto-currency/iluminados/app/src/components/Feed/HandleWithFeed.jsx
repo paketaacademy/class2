@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 export const HandleWithFeed = () => {
   const [list, setList] = useState([])
 
-  const url = "http://localhost:3030/feed"
+  const url = "http://localhost:3030/feeds"
   useEffect(() => {
     fetch(url)
       .then(async res => {

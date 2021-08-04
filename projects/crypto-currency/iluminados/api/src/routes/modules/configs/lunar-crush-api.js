@@ -3,10 +3,7 @@ export const configuration = (route, limit = 20, page = 1) => {
     method: 'GET',
     url: `https://api.lunarcrush.com/v2?data=${route}&key=l1k21q9bpmccoswx1ni3ao&limit=${limit}&page=${page}`,
     headers: {
-      'Key': 'l1k21q9bpmccoswx1ni3ao',
+      'Key': 'lu4pa7jv6xmw1ny7jux9q',
     }
   }
-};
-
-
-
+}
