@@ -9,7 +9,8 @@ export const theme = createTheme({
     },
     secondary: {
       main: '#f72c28',
-      dark: '#ff7370'
+      dark: '#ff7370',
+      contrastText: '#050301'
     }
   }
 })
