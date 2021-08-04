@@ -37,13 +37,14 @@ export default function SignUp() {
 
   const [open, setOpen] = useState(false)
   const [resAPI, setResAPI] = useState('')
-  const [teste, setTeste] = useState(true)
+  const [stateBtn, setStateBtn] = useState(true)
   const [severity, setSeverity] = useState('')
+  
   const handleChange = e => {
     inputs[e.target.name] = e.target.value
     setInputs(inputs)
 
-    inputs.password !== inputs.confirmPassword || inputs.password === '' ? setTeste(true) : setTeste(false)
+    inputs.password !== inputs.confirmPassword || inputs.password === '' ? setStateBtn(true) : setStateBtn(false)
   }
   
   const Alert = props => {
@@ -129,7 +130,7 @@ export default function SignUp() {
             fullWidth
             variant="contained"
             color="primary"
-            disabled={teste}
+            disabled={stateBtn}
           >
             Sign Up
           </SubmitButton>
