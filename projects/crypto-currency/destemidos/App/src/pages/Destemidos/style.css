@@ -1,16 +1,13 @@
 .video{
   width: 100%;
-  max-width: 93.5%;
-  margin-left: 5.5em;
 }
 .container--video{
   position: absolute;
-  z-index: -1;
+  margin-left: 5.5em;
 }
 
 .container--text{
   position: relative;
-  margin-left: 5em;
   color: white;
   font-family: -webkit-pictograph;
   padding: 1em 4em;
@@ -30,7 +27,7 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  z-index: -1;
+  margin-left: 5.5em;
 }
 
 .login--button{
