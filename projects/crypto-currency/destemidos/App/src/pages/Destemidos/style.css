@@ -1,0 +1,87 @@
+.video{
+  width: 100%;
+  max-width: 93.5%;
+  margin-left: 5.5em;
+}
+.container--video{
+  position: absolute;
+}
+
+.container--text{
+  position: relative;
+  margin-left: 5em;
+  color: white;
+  font-family: -webkit-pictograph;
+  padding: 1em 4em;
+}
+
+.first--text{
+  font-size: 3rem;
+  padding-bottom: 0.1em;
+}
+
+.third--text{
+  font-size: 1rem;
+  padding-top: 0.7em;
+}
+
+.container--info{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.login--button{
+  background-color: transparent;
+  color: white;
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-width: 0.01em;
+  border-color: rgb(134, 134, 134);
+  margin-top: 2em;
+  margin-right: 3em;
+  padding: 0.4em 0.6em 0.4em 0.6em;
+  border-radius: 0.4em;
+}
+
+.learn--button{
+  background-color: transparent;
+  color: white;
+  font-family: monospace;
+  font-size: 1rem;
+  cursor: pointer;
+  border-width: 0.01em;
+  border-color: rgb(134, 134, 134);
+  padding: 0.6em 0.8em 0.6em 0.8em;
+  border-radius: 0.3em;
+}
+
+.learn--button:hover{
+  color: #12c7ff;
+}
+
+.sign--button{
+  background-color: #12c7ff;
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  padding: 0.6em 0.8em 0.6em 0.8em;
+  border-radius: 0.3em;
+  margin-top: 2em;
+  margin-right: 2em;
+}
+
+.sign--button:hover{
+  background-color:#1e9dc4;
+}
+
+.table{
+  margin-left: 5em;
+  padding: 10em 10em 10em 10em;
+  color: white;
+}
