@@ -6,10 +6,10 @@ import PostCard from "./PostCard"
 function Posts() {
 
   const [list, setList] = useState([])
-
+  const API = process.env.REACT_APP_API_URL
   useEffect(() => {
     fetch(
-      `http://localhost:3000/feeds`,
+      `${API}/feeds`,
       { method: 'get' }
     )
       .then(async response => {

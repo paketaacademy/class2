@@ -7,12 +7,12 @@ import Typography from '@material-ui/core/Typography'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
 import TwitterIcon from '@material-ui/icons/Twitter'
-import {CardDiv, CardMediaDiv, StyledAvatar, TypographyDiv} from './Style.js'
+import { CardStyled, CardMediaStyled, StyledAvatar, TypographyStyled } from './style.js'
 
 const PostCardFull = ({ body, display_name, profile_image, social_score, retweets, likes }) => {
 
   return (
-      <CardDiv>
+      <CardStyled>
         <CardHeader
           avatar={
             <StyledAvatar aria-label="recipe">
@@ -32,7 +32,7 @@ const PostCardFull = ({ body, display_name, profile_image, social_score, retweet
             {body}
           </Typography>
         </CardContent>
-        <CardMediaDiv      
+        <CardMediaStyled      
           image='https://placedog.net/640/480?random'
          
         />
@@ -46,10 +46,10 @@ const PostCardFull = ({ body, display_name, profile_image, social_score, retweet
         </CardActions>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            <TypographyDiv><div>Social Score: {social_score}</div> <div>Retweets: {retweets}</div> <div>Likes: {likes}</div></TypographyDiv>
+            <TypographyStyled><div>Social Score: {social_score}</div> <div>Retweets: {retweets}</div> <div>Likes: {likes}</div></TypographyStyled>
           </Typography>
         </CardContent>
-      </CardDiv>
+      </CardStyled>
   )
 }
 

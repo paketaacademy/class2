@@ -12,7 +12,7 @@ export const ContainerRoot = styled.div`
   `}
 `
 
-export const PaperDiv = styled.div`
+export const PaperBox = styled.div`
   ${({ theme }) => `
     max-width: 600px;
     cursor: 'pointer';
@@ -27,7 +27,7 @@ export const PaperDiv = styled.div`
   `}
 `
 
-export const TypographyDiv = styled.div`
+export const TypographyStyled = styled.div`
   ${({ theme }) => `
     display: flex;
     justify-content: space-between;
@@ -36,7 +36,7 @@ export const TypographyDiv = styled.div`
   `}
 `
 
-export const CardDiv = styled.div`
+export const CardStyled= styled.div`
   ${({ theme }) => `
     max-width: 345px;
     cursor: 'pointer';
@@ -47,7 +47,7 @@ export const CardDiv = styled.div`
   `
 }`
 
-export const CardMediaDiv = styled.div`
+export const CardMediaStyled = styled.div`
   ${({ theme }) => `
     
     padding-top: 56.25%;
