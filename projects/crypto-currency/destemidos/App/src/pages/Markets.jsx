@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TableMarket from '../components/TableMarket';
-import api from '../api';
-
+import './style.css'
 
 const headCells = [
     { id: 'id', numeric: false, disablePadding: true, label: '#', sticky: true },
@@ -44,22 +43,30 @@ function Markets() {
         if (!isUpdate) {
             setIsUpdate(true);
             setloading(true);
-            api.get('/market').then((response) => {
-                setCoins(response.data.data)
-                console.log("teste", response);
+            fetch(
+                `http://localhost:3000/markets`,
+                { method: 'get' }
+            )
+            .then(async response => {
+                const { data } = await response.json()
+                setCoins(data)        
             }).finally(() => {
                 setloading(false);
             })
-        }
+        }                    
 
     }, [isUpdate])
 
     return (
-        <>
-
-            <button onClick={() => setIsUpdate(false)}>{loading ? "atualizando" : "Atualizar Página"}</button>
-            <TableMarket rows={coins} headCells={headCells} />
-        </>
+        <div className='container'>
+            <div className='SliderTitle'>
+                <h2>Markets</h2>
+            </div>
+            <div className='SliderView'>
+                <button onClick={() => setIsUpdate(false)}>{loading ? "atualizando" : "Atualizar Página"}</button>
+                <TableMarket rows={coins} headCells={headCells} />
+            </div>
+        </div>
     )
 
 }
