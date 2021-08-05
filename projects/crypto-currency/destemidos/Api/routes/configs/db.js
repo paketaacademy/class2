@@ -16,4 +16,3 @@ const userSchema = new mongoose.Schema({
 )
 
 export { mongoose as Mongoose, userSchema as UserSchema }
-
