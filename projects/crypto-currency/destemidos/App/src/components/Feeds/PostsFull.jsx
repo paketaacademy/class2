@@ -2,7 +2,8 @@ import React from "react"
 import { useState, useEffect } from "react"
 import { Link } from "@material-ui/core"
 import PostCardFull from "./PostCardFull"
-import {Container} from './style.js'
+import { Container } from './style.js'
+
 function PostsFull() {
 
   const [list, setList] = useState([])
