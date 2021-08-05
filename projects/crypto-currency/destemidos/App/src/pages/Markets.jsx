@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
 import TableMarket from '../components/TableMarket';
 import './style.css'
+
 
 const headCells = [
     { id: 'id', numeric: false, disablePadding: true, label: '#', sticky: true },
@@ -34,6 +36,8 @@ const headCells = [
     { id: 'spamVol', numeric: true, disablePadding: false, label: 'Spam Volume', sticky: false },
 ];
 
+const API = process.env.REACT_APP_API_URL
+
 function Markets() {
     const [coins, setCoins] = useState([]);
     const [isUpdate, setIsUpdate] = useState(false);
@@ -48,12 +52,13 @@ function Markets() {
                 `${API}/markets`,
                 { method: 'get' }
             )
-                .then(async response => {
-                    const { data } = await response.json()
-                    setCoins(data)
-                }).finally(() => {
-                    setloading(false);
-                })
+
+            .then(async response => {
+                const { data } = await response.json()
+                setCoins(data)
+            }).finally(() => {
+                setloading(false);
+            }
         }
 
     }, [isUpdate])
