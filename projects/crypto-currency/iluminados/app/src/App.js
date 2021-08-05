@@ -3,7 +3,8 @@ import { ThemeProvider } from "@material-ui/core";
 import { theme } from "./commons/constants/theme";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
-import { MenuListComposition } from "./components/Navbar"
+import { MenuListComposition } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,6 +26,7 @@ function App() {
             </Route>
             <Route  exact path="/">
               <MenuListComposition />
+              <Footer />
             </Route>
           </Switch>
         </Router>
