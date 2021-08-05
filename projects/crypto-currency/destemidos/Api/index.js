@@ -1,3 +1,4 @@
+import dotenv from 'dotenv'
 import feeds from './routes/feeds.js'
 import market from './routes/market.js'
 import influencers from './routes/influencer.js'
@@ -16,4 +17,4 @@ app.use(influencers)
 app.use(singin)
 app.use(singup)
 
-app.listen(3000)
+app.listen(process.env.DOOR)
