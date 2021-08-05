@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import TableSortLabel from '@material-ui/core/TableSortLabel';
-import { Link, useParams } from 'react-router-dom'
+import React from 'react'
+import PropTypes from 'prop-types'
+import TableHead from '@material-ui/core/TableHead'
+import TableRow from '@material-ui/core/TableRow'
+import TableSortLabel from '@material-ui/core/TableSortLabel'
+import { useParams } from 'react-router-dom'
 import { TableCell } from '../styles.js'
 
 function THead(props) {
@@ -41,7 +41,7 @@ function THead(props) {
                 ))}
             </TableRow>            
         </TableHead>
-    );
+    )
 }
 
 THead.propTypes = {
@@ -52,4 +52,4 @@ THead.propTypes = {
     headCells: PropTypes.array.isRequired
 };
 
-export default THead;
+export default THead

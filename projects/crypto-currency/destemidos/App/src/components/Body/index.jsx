@@ -1,6 +1,5 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Destemidos from '../../pages/Destemidos'
 import Markets from '../../pages/Markets'
 import Influencers from '../../pages/Influencers'
 import Feeds from '../../pages/Feeds'
@@ -8,8 +7,8 @@ import SignIn from '../../pages/SignIn'
 import SignUp from '../../pages/SignUp'
 import Home from '../../pages/Home'
 import InserirCredito from '../../pages/InserirCredito'
-import Comprar from '../../pages/Comprar'
 import NaoEncontrada from '../../pages/NaoEncontrada'
+import PurchaseDetails from '../../pages/PurchaseDetails'
 function Body() {
   return (
     <Switch>
@@ -25,9 +24,6 @@ function Body() {
       <Route path="/credito">
         <InserirCredito />
       </Route>
-      <Route path="/comprar">
-        <Comprar />
-      </Route>
       <Route path="/influencias">
         <Influencers />
       </Route>
@@ -40,8 +36,11 @@ function Body() {
       <Route path="/cadastrar">
         <SignUp />
       </Route>
-      <Route path="*">
+      {/* <Route path="*">
         <NaoEncontrada />
+      </Route> */}
+      <Route path="/comprar/:name/:price/:amountCoins" children={<PurchaseDetails />} >
+        <PurchaseDetails />
       </Route>
     </Switch>
     )

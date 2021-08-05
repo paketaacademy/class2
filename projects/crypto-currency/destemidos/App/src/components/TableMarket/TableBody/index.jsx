@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import TableBody from '@material-ui/core/TableBody';
-import TableRow from '@material-ui/core/TableRow';
+import React from 'react'
+import PropTypes from 'prop-types'
+import TableBody from '@material-ui/core/TableBody'
+import TableRow from '@material-ui/core/TableRow'
 import { getComparator, stableSort, getColorOfNumber } from '../utils'
 import { TableCell, StyledP } from '../styles.js'
 import { Link } from 'react-router-dom'
@@ -23,11 +23,11 @@ function TBody(props) {
                                 tabIndex={-1}
                                 key={index}
                             >
-                                <Link to='/comprar'>
+                                
                                 <TableCell sticky component="th" scope="row" padding="none">
                                     {index}
                                 </TableCell>
-                                <TableCell sticky borderRight align="right"><div className="t">{row.n}:{row.s}</div></TableCell>
+                                <TableCell sticky borderRight align="right"><div className="t"><Link to={`/comprar/${row.n}/${row.p}/${row.p_btc}`}>{row.n}:{row.s}</Link></div></TableCell>
                                 <TableCell align="right">+</TableCell>
                                 <TableCell align="right">{row.gs}</TableCell>
                                 <TableCell align="right">{row.acr}</TableCell>
@@ -60,7 +60,7 @@ function TBody(props) {
                                 <TableCell align="right">{row.yt}</TableCell>
                                 <TableCell align="right">{row.na}</TableCell>
                                 <TableCell align="right">{row.sp}</TableCell>
-                                </Link>
+                                
                             </TableRow>
                             
                     );
