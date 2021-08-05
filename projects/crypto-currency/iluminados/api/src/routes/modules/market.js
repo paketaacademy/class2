@@ -4,6 +4,7 @@ import { configuration } from './configs/lunar-crush-api.js'
 const app = express()
 
 app.get('/market', function(req, res) {
+    
     axios.request(configuration('market')).then(function (response) {
         let resp = response.data
         res.json(resp)
