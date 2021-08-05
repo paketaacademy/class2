@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import TableMarket from '../components/TableMarket';
-//import api from '../api';
 
 
 const headCells = [
