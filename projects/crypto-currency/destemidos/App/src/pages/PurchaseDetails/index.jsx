@@ -5,6 +5,7 @@ function PurchaseDetails() {
   return (
     <>
      <Purchase/>
+     
     </>
   )
 }
