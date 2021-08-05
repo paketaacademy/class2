@@ -1,15 +1,15 @@
-import React from 'react';
-import Popper from '@material-ui/core/Popper';
-import Fade from '@material-ui/core/Fade';
-import { PaperDiv } from '../../style';
+import React from 'react'
+import Popper from '@material-ui/core/Popper'
+import Fade from '@material-ui/core/Fade'
+import { PaperDiv } from '../../style'
 
 export default function TransitionsPopper() {
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(null)
 
   const handleClick = (event) => {
-    setAnchorEl(anchorEl ? null : event.currentTarget);
-  };
+    setAnchorEl(anchorEl ? null : event.currentTarget)
+  }
 
   const open = Boolean(anchorEl);
   const id = open ? 'transitions-popper' : undefined;
@@ -29,5 +29,5 @@ export default function TransitionsPopper() {
         )}
       </Popper>
     </>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
+import React from 'react'
+import Button from '@material-ui/core/Button'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
+import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state'
 import './style.css'
 
 export default function SignOut() {
@@ -24,5 +24,5 @@ export default function SignOut() {
         </React.Fragment>
       )}
     </PopupState>
-  );
+  )
 }
