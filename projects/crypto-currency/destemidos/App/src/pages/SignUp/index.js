@@ -31,15 +31,21 @@ export default function SignUp() {
 
   const [inputs, setInputs] = useState({
     email: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   })
 
   const [open, setOpen] = useState(false)
   const [resAPI, setResAPI] = useState('')
+  const [stateBtn, setStateBtn] = useState(true)
+  const [severity, setSeverity] = useState('')
+  
+  const editStateBtn = i => i.password !== i.confirmPassword || i.password === '' ? setStateBtn(true) : setStateBtn(false)
 
   const handleChange = e => {
     inputs[e.target.name] = e.target.value
     setInputs(inputs)
+    editStateBtn(inputs)
   }
   
   const Alert = props => {
@@ -48,8 +54,13 @@ export default function SignUp() {
   
   const handleSubmit = e => {
     e.preventDefault()
-    axios.post(`${API}/cadastro`, inputs).then(response => {
+    axios.post(`${API}/register`, inputs).then(response => {
       setResAPI(response.data)
+      setSeverity('success')
+      setOpen(true)
+    }).catch(err => {
+      setResAPI(err.response.data)
+      setSeverity('error')
       setOpen(true)
     })
   }
@@ -61,7 +72,7 @@ export default function SignUp() {
   return (
     <Container component="main" maxWidth="xs">
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert severity="success">
+        <Alert severity={severity}>
           {resAPI}
         </Alert>
       </Snackbar>
@@ -99,13 +110,27 @@ export default function SignUp() {
                 autoComplete="current-password"
                 onChange={handleChange}
               />
-            </Grid>            
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="confirmPassword"
+                label="Confirm Password"
+                type="password"
+                id="confirmPassword"
+                autoComplete="current-password"
+                onChange={handleChange}
+              />
+            </Grid>          
           </Grid>
           <SubmitButton
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
+            disabled={stateBtn}
           >
             Sign Up
           </SubmitButton>
