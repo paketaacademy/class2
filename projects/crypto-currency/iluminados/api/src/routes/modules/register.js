@@ -8,8 +8,7 @@ app.use(express.json())
 
 app.post('/register', async (req, res) => {
 
-  const email = req.body.email
-  const password = req.body.password
+  const { email, password } = req.body
   const Users = Mongoose.model('users', userSchema, 'users')
   const user = new Users({ email, password })
 

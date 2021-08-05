@@ -1,7 +1,8 @@
 import { Feed } from "./Feed"
 import React, { useState, useEffect } from 'react'
+import { Loading } from "../Loading"
 
-export const HandleWithFeed = () => {
+export const HandleWithFeed = (props) => {
   const [list, setList] = useState([])
 
   const url = "http://localhost:3030/feeds"
@@ -11,13 +12,11 @@ export const HandleWithFeed = () => {
         const { data } = await res.json()
         setList(data)
       })
-      .finally()
       .catch((err) => console.log(err))
   }, [])
 
   return (
     <>
-      {console.log(list)}
       {
         list.map((l, key) => {
           let timeInDays = Math.floor(l.time / (60 * 60 * 24 * 1000)) % 365

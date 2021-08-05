@@ -1,14 +1,14 @@
 import React from 'react'
-import { ContentContainer } from './styles'
+import { Content } from './styles'
 import { Navbar } from '../Navbar'
 
 export const TemplateMain = ({ children }) => {
   return (
     <>
       <Navbar />
-      <ContentContainer>
+      <Content>
         {children}
-      </ContentContainer>
+      </Content>
     </>
   )
 }

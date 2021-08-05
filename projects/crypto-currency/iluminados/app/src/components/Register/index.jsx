@@ -1,8 +1,8 @@
 import React from 'react'
-import { Btn } from '../Button'
+import { Button } from '../Button'
 import { Container, FormContainer } from '../ContainerForms'
 import { TxtField } from '../TxtField'
-import { DivContainerBtn } from './styles'
+import { ButtonContainer } from './styles'
 import { Link } from 'react-router-dom'
 
 export const Register = () => {
@@ -55,10 +55,10 @@ export const Register = () => {
           type="password"
           required
         />
-        <DivContainerBtn>
-          <Btn variant="contained" color="primary">Registrar</Btn>
-          <Link to="/logar"><Btn color="inherit">Cancelar</Btn></Link>
-        </DivContainerBtn>
+        <ButtonContainer>
+          <Button Variant="contained" Color="primary">Registrar</Button>
+          <Link to="/logar"><Button Color="transparent">Cancelar</Button></Link>
+        </ButtonContainer>
       </FormContainer>
     </Container>
   )
