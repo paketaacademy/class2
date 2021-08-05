@@ -40,11 +40,12 @@ export default function SignUp() {
   const [stateBtn, setStateBtn] = useState(true)
   const [severity, setSeverity] = useState('')
   
+  const editStateBtn = i => i.password !== i.confirmPassword || i.password === '' ? setStateBtn(true) : setStateBtn(false)
+
   const handleChange = e => {
     inputs[e.target.name] = e.target.value
     setInputs(inputs)
-
-    inputs.password !== inputs.confirmPassword || inputs.password === '' ? setStateBtn(true) : setStateBtn(false)
+    editStateBtn(inputs)
   }
   
   const Alert = props => {
