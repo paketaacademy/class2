@@ -1,13 +1,9 @@
-import React from 'react'
-import { Load } from './styles'
+import { LoadContainer, Load } from "./styles";
 
-export const Loading = ({ setDisplay }) => {
+export const Loading = () => {
   return (
-    <Load inputDisplay={setDisplay}>
-      <span className="loading"></span>
-      <span className="loading"></span>
-      <span className="loading"></span>
-      <span className="loading"></span>
-    </Load>
+    <LoadContainer>
+      <Load size={100} />
+    </LoadContainer>
   )
 }
