@@ -3,8 +3,7 @@ import { Mongoose, UserSchema } from './configs/db.js'
 
 app.post('/singin', async (req, res) => {
  
-  const email = req.body.email
-  const password = req.body.password
+  const { email, password } = req.body
   
   const Users = Mongoose.model('users', UserSchema, 'users')
   
@@ -13,7 +12,6 @@ app.post('/singin', async (req, res) => {
     
       if(foundUser) {
         res.status(200).send('Login realizado com sucesso')
-        
       } else {
           res.status(401).send('Login invalido')
       }
