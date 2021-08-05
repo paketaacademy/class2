@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import './Style.css'
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn'
 
-function CreditoDetails() {
+function CreditDetails() {
   return (
     <ContainerDiv>
       <h4>Crédito em conta</h4>
@@ -20,4 +20,4 @@ function CreditoDetails() {
   )
 }
 
-export default CreditoDetails
+export default CreditDetails

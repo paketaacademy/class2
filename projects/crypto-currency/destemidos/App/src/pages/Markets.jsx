@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import TableMarket from '../components/TableMarket';
+import React, { useState, useEffect } from 'react'
+import TableMarket from '../components/TableMarket'
 import './style.css'
 
 const headCells = [

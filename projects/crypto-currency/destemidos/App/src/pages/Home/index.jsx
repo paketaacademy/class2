@@ -1,16 +1,16 @@
 import React from "react"
 import UserDetails from "../../components/Home/UserDetails"
-import BtcDetails from "../../components/Home/BtcDetails"
+import CoinsDetails from "../../components/Home/CoinsDetails"
 import { HomeContainer } from "./Style.js"
-import CreditoDetails from "../../components/Home/CreditoDetails"
+import CreditDetails from "../../components/Home/CreditDetails"
 
 function Home() {
 
   return (
     <HomeContainer>
       <UserDetails /> 
-      <BtcDetails/>
-      <CreditoDetails/>
+      <CoinsDetails/>
+      <CreditDetails/>
     </HomeContainer>
   )
 }

@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
 import TwitterIcon from '@material-ui/icons/Twitter'
-import {CardDiv, CardMediaDiv, StyledAvatar, TypographyDiv} from './style.js'
+import { CardDiv, CardMediaDiv, StyledAvatar, TypographyDiv } from './style.js'
 
 const PostCardFull = ({ body, display_name, profile_image, social_score, retweets, likes }) => {
 

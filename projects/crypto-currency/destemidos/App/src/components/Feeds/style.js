@@ -50,7 +50,7 @@ export const CardDiv = styled.div`
 export const CardMediaDiv = styled.div`
   ${({ theme }) => `
     
-    padding-top: 56.25%;
+    padding-top: 200px;
     background-image: url('https://placedog.net/640/480?random');
     background-position:center;
     background-size: cover;
