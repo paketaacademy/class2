@@ -50,7 +50,6 @@ function Markets() {
             }).finally(() => {
                 setloading(false);
             })
-
         }
 
     }, [isUpdate])
