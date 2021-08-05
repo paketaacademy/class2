@@ -16,4 +16,4 @@ app.use(influencers)
 app.use(singin)
 app.use(singup)
 
-app.listen(5000)
+app.listen(3000)

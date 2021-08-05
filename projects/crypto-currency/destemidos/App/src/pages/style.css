@@ -1,3 +1,23 @@
-.feeds, .destemidos, .influencers, .markets{
+.feeds, .destemidos, .influencers, .markets {
   margin-left: 10em;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  align-self: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.SliderView {
+  width: 900px;
+  text-align: right;
+  margin: 0 auto;
+}
+
+.SliderTitle {
+  max-width: 900px;
+  text-align: left;
+  margin: 0 auto;
 }
