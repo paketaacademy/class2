@@ -10,11 +10,15 @@ app.post('/register', async (req, res) => {
   const password = cryptograf
   
   const Users = Mongoose.model('users', UserSchema, 'users')
-  const user = new Users({ email, password })
   
   try {
-    await user.save()
-    res.status(201).send('Cadastrado realizado com sucesso!')
+    const foundUser = await Users.findOne({ email: email }).exec()
+    if(foundUser) {
+      return res.status(409).send('E-mail já cadastrado!')
+    }
+      const user = new Users({ email, password })
+      await user.save()
+      res.status(201).send('Cadastro realizado com sucesso!')
   } catch (err) {
     res.send(err)
   }

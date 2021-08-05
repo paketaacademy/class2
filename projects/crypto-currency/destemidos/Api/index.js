@@ -11,10 +11,12 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+const { LISTEN_DOOR } = process.env
+
 app.use(feeds)
 app.use(market)
 app.use(influencers)
 app.use(singin)
 app.use(singup)
 
-app.listen(process.env.DOOR)
+app.listen(LISTEN_DOOR)
