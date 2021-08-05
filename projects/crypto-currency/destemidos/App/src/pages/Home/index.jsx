@@ -2,7 +2,7 @@ import React from "react"
 import UserDetails from "../../components/Home/UserDetails"
 import BtcDetails from "../../components/Home/BtcDetails"
 import { HomeContainer } from "./Style.js"
-import CreditoDetails from "../../components/Home/CreditoDetails"
+import CreditDetails from "../../components/Home/CreditDetails"
 
 function Home() {
 
@@ -10,7 +10,7 @@ function Home() {
     <HomeContainer>
       <UserDetails /> 
       <BtcDetails/>
-      <CreditoDetails/>
+      <CreditDetails/>
     </HomeContainer>
   )
 }
