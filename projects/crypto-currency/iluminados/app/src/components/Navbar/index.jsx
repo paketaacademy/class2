@@ -48,9 +48,10 @@ export const MenuListComposition = () => {
 
     return (
     <div className={classes.root}>
+      <div>
       <Paper className={classes.paper}>
         <MenuList>                   
-          <MenuItem className={classes.fonte} >
+          <MenuItem className={classes.fonte} link='./components/Login' >
           <DashboardIcon className={classes.icon} />
             DASHBOARD
           </MenuItem>        
@@ -70,11 +71,15 @@ export const MenuListComposition = () => {
           <CompareIcon className={classes.icon} />
             COMPARE
           </MenuItem>
-          <MenuItem><NotificationsIcon className={classes.notification} /></MenuItem>
-          <MenuItem><SettingsIcon className={classes.uItens} /></MenuItem>
-          <Avatar className={classes.avatar}>L</Avatar>                  
-        </MenuList>
-      </Paper>
+            <section className={classes.b}>
+            <MenuItem className={classes.a}><NotificationsIcon /></MenuItem>
+            <MenuItem className={classes.a}><SettingsIcon /></MenuItem>
+            <Avatar className={classes.a}>L</Avatar>  
+            </section>                
+          </MenuList>
+          </Paper>
+        </div>
+      
       <div>     
        
         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
@@ -85,7 +90,7 @@ export const MenuListComposition = () => {
             >              
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>Dashboard</MenuItem>
+                    <MenuItem link href="./components/login" onClick={handleClose} >Dashboard</MenuItem>
                     <MenuItem onClick={handleClose}>Markets </MenuItem>
                     <MenuItem onClick={handleClose}>Influencers</MenuItem>
                     <MenuItem onClick={handleClose}>Feeds</MenuItem>

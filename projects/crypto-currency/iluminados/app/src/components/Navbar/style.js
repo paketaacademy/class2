@@ -5,30 +5,30 @@ export const useStyles = makeStyles((theme) => ({
 
     root: {
       display: 'flex',
-      backgroundColor: ''        
+      backgroundColor: '' ,
+              
     },
     
     paper: {
-      marginRight: theme.spacing(2),
+      marginRight: theme.spacing(1),
       background: '#f59c17',
-      borderRadius: 3,
-      border: 0,
       color: 'white',
       height: '100vh',
-      boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-      width: '80px',  
-         
+      width: '90px',  
+      position: 'fixed',
+       
     },
+    
+    
       
     large: {
       width: theme.spacing(2),
       height: theme.spacing(2),
       marginTop: '20px',
-      
+      bordeRadius: '0px' 
     },
   
     icon: {
-      marginTop: '30px',
       height:'30px',
       margin: '0px 0px 8px 0'
   
@@ -51,14 +51,20 @@ export const useStyles = makeStyles((theme) => ({
     },
   
     fonte:{
-      fontSize: '9px',
-      paddingLeft: '5px;',
+      fontSize: '10px',
+      paddingLeft: '2px;',
       display: 'flex' ,
       flexDirection: 'column',
-      marginLeft: '6px'
+      
         
     },  
     
+    section: {
+      display: 'flex' ,
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'baseline'
+  },
    
     
   }));
