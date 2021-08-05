@@ -1,32 +1,8 @@
-.menu--config{
-  background-color: rgb(46, 46, 46);
-  color: white;
-}
-
-.menu--config:hover{
-  background-color: rgb(46, 46, 46);
-}
-
-.button--help{
-  background-color:rgb(46, 46, 46);
-  color: white;
-  cursor: pointer;
-  border: none;
-  font-size: 1em;
-  width: 100%;
-}
-
-.menu--sign{
-  background-color: rgb(46, 46, 46);
-  padding-left: 1.4em;
-  color: white;
-}
-
-.menu--sign:hover{
-  background-color: rgb(46, 46, 46);
-}
-
 .button--config{
-  margin-top: 28.7em;
+  margin-top: 21em;
   margin-left: 6.3em;
+  font-size: 1em;
+  font-family: monospace;
+  color: white;
+  background-color: rgb(50, 13, 85);
 }
