@@ -6,10 +6,11 @@ import PostCard from "./PostCard"
 function Posts() {
 
   const [list, setList] = useState([])
+  const API = process.env.REACT_APP_API_URL
 
   useEffect(() => {
     fetch(
-      `http://localhost:3000/feeds`,
+      `${API}/feeds`,
       { method: 'get' }
     )
       .then(async response => {
@@ -19,24 +20,28 @@ function Posts() {
       .catch(error => console.log(error))
   }, []);
 
+  const listView = () => {
+    return(
+    list.length > 0 && list.map((conteudo) => {
+      return (
+        <Link target={"_blank"}  to={conteudo.url}>
+          <PostCard
+            key={conteudo.asset_id}
+            body={conteudo.body}
+            social_score={conteudo.social_score}
+            retweets={conteudo.retweets}
+            likes={conteudo.likes}
+          />
+        </Link>
+      )
+    })
+    )
+  }
+
   return (
     <div>
+      {listView()}
       
-      {
-        list.length > 0 && list.map((conteudo) => {
-          return (
-            <Link target={"_blank"}  to={conteudo.url}>
-              <PostCard
-                key={conteudo.asset_id}
-                body={conteudo.body}
-                social_score={conteudo.social_score}
-                retweets={conteudo.retweets}
-                likes={conteudo.likes}
-              />
-            </Link>
-          )
-        })
-      }
     </div>
   )
 }

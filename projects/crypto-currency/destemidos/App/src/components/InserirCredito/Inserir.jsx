@@ -27,19 +27,23 @@ function Inserir() {
           <TextField            
             label="Número do Cartão"
             color="secondary"
+            disabled='true'
           />
           <TextField            
             label="Nome do Titular"
             color="secondary"
+            disabled='true'
           />
           <LinhaInserir>
           <Insert            
             label="Validade"
             color="secondary"
+            disabled='true'
           />
           <Insert            
             label="CVV"
             color="secondary"
+            disabled='true'
           />
           </LinhaInserir>    
             <TextField             
@@ -51,7 +55,7 @@ function Inserir() {
               step=".10"              
             />           
           <StyledButton variant="contained" color="primary">
-          Realizar pagamento<MonetizationOnIcon/>
+          Realizar pagamento{' '}<MonetizationOnIcon/>
         </StyledButton>
         </Container>        
       </form>

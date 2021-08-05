@@ -38,13 +38,14 @@ function Markets() {
     const [coins, setCoins] = useState([]);
     const [isUpdate, setIsUpdate] = useState(false);
     const [loading, setloading] = useState(false);
+    const API = process.env.REACT_APP_API_URL
 
     useEffect(() => {
         if (!isUpdate) {
             setIsUpdate(true);
             setloading(true);
             fetch(
-                `http://localhost:3000/markets`,
+                `${API}/markets`,
                 { method: 'get' }
             )
             .then(async response => {

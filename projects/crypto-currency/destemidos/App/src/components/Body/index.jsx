@@ -8,7 +8,8 @@ import SignIn from '../../pages/SignIn'
 import SignUp from '../../pages/SignUp'
 import Home from '../../pages/Home'
 import InserirCredito from '../../pages/InserirCredito'
-
+import Comprar from '../../pages/Comprar'
+import NaoEncontrada from '../../pages/NaoEncontrada'
 function Body() {
   return (
     <Switch>
@@ -24,6 +25,9 @@ function Body() {
       <Route path="/credito">
         <InserirCredito />
       </Route>
+      <Route path="/comprar">
+        <Comprar />
+      </Route>
       <Route path="/influencias">
         <Influencers />
       </Route>
@@ -35,6 +39,9 @@ function Body() {
       </Route>
       <Route path="/cadastrar">
         <SignUp />
+      </Route>
+      <Route path="*">
+        <NaoEncontrada />
       </Route>
     </Switch>
     )
