@@ -10,10 +10,12 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import CoinOfTheDay from "./components/Coinoftheday";
 
 function App() {
   return (
     <div className="App">
+      
       <ThemeProvider theme={theme}>
         <Router>
           <Switch>
@@ -23,12 +25,16 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
+            <Route path="/coinoftheday">
+              <CoinOfTheDay />
+            </Route>
             <Route  exact path="/">
               <MenuListComposition />
             </Route>
           </Switch>
         </Router>
       </ThemeProvider>
+      
     </div>
   );
 }

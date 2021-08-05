@@ -13,7 +13,7 @@ import InsertChartIcon from '@material-ui/icons/InsertChart';
 import PeopleIcon from '@material-ui/icons/People';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
-import { useStyles } from './style'
+import { useStyles } from './style.js'
 
 
 export const MenuListComposition = () => {
