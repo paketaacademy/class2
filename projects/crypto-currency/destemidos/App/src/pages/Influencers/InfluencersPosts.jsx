@@ -11,39 +11,39 @@ import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
 import useStyles from './Style/styles'
 
-export default function RecipeReviewCard({banner_image, profile_image, rank, twitter_screen_name, display_name}) {
-    const classes = useStyles();
+export default function RecipeReviewCard({ banner_image, profile_image, rank, twitter_screen_name, display_name }) {
+  const classes = useStyles();
 
-    return (
-        <Card className={classes.root}>
-            <CardHeader
-                avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                        <img src={profile_image} alt=""/>
-                    </Avatar>
-                }
-                
-                title={display_name}
-                subheader={twitter_screen_name}
-            />
-            <CardMedia
-                className={classes.media}
-                image={banner_image}
-                title=""
-            />
-            <CardContent>
-                <Typography variant="body2" color="textSecondary" component="h2">
-                    Influence Rank {rank} 
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                    <ShareIcon />
-                </IconButton>
-            </CardActions>
-        </Card>
-    );
+  return (
+    <Card className={classes.root}>
+      <CardHeader
+        avatar={
+          <Avatar aria-label="recipe" className={classes.avatar}>
+            <img src={profile_image} alt="" />
+          </Avatar>
+        }
+
+        title={display_name}
+        subheader={twitter_screen_name}
+      />
+      <CardMedia
+        className={classes.media}
+        image={banner_image}
+        title=""
+      />
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="h2">
+          Influence Rank {rank}
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+      </CardActions>
+    </Card>
+  );
 }

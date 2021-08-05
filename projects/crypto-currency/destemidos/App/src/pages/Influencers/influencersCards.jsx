@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import RecipeReviewCard from "./InfluencersPosts"
 import './Style/style.css'
 
+const APP = process.env.REACT_APP_API_URL
 
 function InfluencersCards() {
 
@@ -10,41 +11,42 @@ function InfluencersCards() {
 
   useEffect(() => {
     fetch(
-      `http://localhost:3000/influencers`,
+      `${APP}/influencers`,
       { method: 'get' }
     )
       .then(async response => {
         const { data } = await response.json()
         setList(data)
-        console.log(data)
       })
       .catch(error => console.log(error))
 
 
   }, [])
 
+  const mapContent = () =>{
+      return(
+        list.length > 0 && list.map((content) => {
+        return (
+          <div className="cards" key={content.identifier}>
+            <RecipeReviewCard 
+              rank={content.influencer_rank}
+              banner_image={content.banner_image}
+              profile_image={content.profile_image}
+              display_name={content.display_name}
+              twitter_screen_name={content.twitter_screen_name}
+            />
+          </div>
+        )
+      })
+      )
+  }
+
 
   return (
     <div className="container">
-      {console.log('oi', list)}
-      {console.log('teste', list.length)}
-      {
-
-        list.length > 0 && list.map((conteudo) => {
-          return (
-            <div className="cards">
-              <RecipeReviewCard 
-                key={conteudo.identifier}
-                rank={conteudo.influencer_rank}
-                banner_image={conteudo.banner_image}
-                profile_image={conteudo.profile_image}
-                display_name={conteudo.display_name}
-                twitter_screen_name={conteudo.twitter_screen_name}
-              />
-            </div>
-          )
-        })
-      }
+      
+      {mapContent()}
+      
     </div>
   )
 }
