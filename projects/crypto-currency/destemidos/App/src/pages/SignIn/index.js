@@ -44,6 +44,7 @@ export default function SignIn() {
   }
 
   const Alert = props => {
+
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
 
@@ -114,12 +115,7 @@ export default function SignIn() {
           <Grid container>
             <DivContainer>
               <div>
-                <Link className='insert--underline' href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </div>
-              <div>
-                <Link className='insert--underline' to="/signup" variant="body2">
+                <Link className='insert--underline' to="/cadastrar" variant="body2">
                   Don't have an account? Sign Up
                 </Link>
               </div>

@@ -31,4 +31,5 @@ const StyledP = styled.p`
     color: ${props => props.txtColor ? props.txtColor : '#fff'};
 `
 
+
 export { TableCell, StyledP, TablePagination }

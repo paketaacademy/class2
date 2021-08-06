@@ -26,7 +26,8 @@ app.post('/singin', async (req, res) => {
     expiresIn: 600
 })
   res.header('auth-token', token)
-  res.send('logou')
+  res.send('login feito com sucesso')
+
 })
 
 export default app
