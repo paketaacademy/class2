@@ -13,7 +13,9 @@ import InsertChartIcon from '@material-ui/icons/InsertChart';
 import PeopleIcon from '@material-ui/icons/People';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import { useStyles } from './style'
+import { Link } from 'react-router-dom'
 
 
 export const MenuListComposition = () => {
@@ -49,30 +51,56 @@ export const MenuListComposition = () => {
     return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <MenuList>                   
-          <MenuItem className={classes.fonte} >
+        <MenuList> 
+        <Link to="/Login">             
+          <MenuItem className={classes.fonte} >          
+          <AttachMoneyIcon className={classes.icon} />
+            Ravencoin 
+          <p>Con of the day</p>
+          </MenuItem>        
+          </Link> 
+
+
+          <Link to="#">             
+          <MenuItem className={classes.fonte} >          
           <DashboardIcon className={classes.icon} />
             DASHBOARD
           </MenuItem>        
-          <MenuItem className={classes.fonte}>
-          <InsertChartIcon className={classes.icon} />
+          </Link> 
+
+          <Link to="#">
+            <MenuItem className={classes.fonte}>
+            <InsertChartIcon className={classes.icon} />
             MARKETS
-          </MenuItem>          
+            </MenuItem> 
+          </Link>
+
+          <Link to="#">     
           <MenuItem className={classes.fonte}>
           <PeopleIcon className={classes.icon} />  
             INFLUENCERS
-          </MenuItem>          
+          </MenuItem>
+          </Link> 
+
+          <Link to="#">
           <MenuItem className={classes.fonte}>
           <ChatIcon className={classes.icon} /> 
             FEEDS
           </MenuItem>
+          </Link>
+
+          <Link to="#">
           <MenuItem className={classes.fonte}>
           <CompareIcon className={classes.icon} />
             COMPARE
           </MenuItem>
+          </Link>
+
+          <div className={classes.iconesb}>
           <MenuItem><NotificationsIcon className={classes.notification} /></MenuItem>
           <MenuItem><SettingsIcon className={classes.uItens} /></MenuItem>
-          <Avatar className={classes.avatar}>L</Avatar>                  
+          <Avatar className={classes.avatar}>L</Avatar> 
+          </div>                 
         </MenuList>
       </Paper>
       <div>     

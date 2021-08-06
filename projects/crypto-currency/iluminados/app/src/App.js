@@ -4,11 +4,13 @@ import { theme } from "./commons/constants/theme";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { MenuListComposition } from "./components/Navbar"
+
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  
 } from 'react-router-dom'
 
 function App() {
@@ -24,7 +26,7 @@ function App() {
               <Register />
             </Route>
             <Route  exact path="/">
-              <MenuListComposition />
+              <MenuListComposition />              
             </Route>
           </Switch>
         </Router>
