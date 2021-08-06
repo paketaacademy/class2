@@ -17,83 +17,83 @@ import { useStyles } from './style'
 
 
 export const MenuListComposition = () => {
-    const classes = useStyles();
-    const [open, setOpen] = React.useState(false);
-    const anchorRef = React.useRef(null);
-       
-    const handleClose = (event) => {
-      if (anchorRef.current && anchorRef.current.contains(event.target)) {
-        return;
-      }
-  
-      setOpen(false);
-    };
-  
-    function handleListKeyDown(event) {
-      if (event.key === 'Tab') {
-        event.preventDefault();
-        setOpen(false);
-      }
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef(null);
+
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
     }
-    
-    const prevOpen = React.useRef(open);
-    React.useEffect(() => {
-      if (prevOpen.current === true && open === false) {
-        anchorRef.current.focus();
-      }
-  
-      prevOpen.current = open;
-    }, [open]);
+
+    setOpen(false);
+  };
+
+  function handleListKeyDown(event) {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      setOpen(false);
+    }
+  }
+
+  const prevOpen = React.useRef(open);
+  React.useEffect(() => {
+    if (prevOpen.current === true && open === false) {
+      anchorRef.current.focus();
+    }
+
+    prevOpen.current = open;
+  }, [open]);
 
 
-    return (
+  return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <MenuList>                   
+        <MenuList>
           <MenuItem className={classes.fonte} >
-          <DashboardIcon className={classes.icon} />
+            <DashboardIcon className={classes.icon} />
             DASHBOARD
-          </MenuItem>        
+          </MenuItem>
           <MenuItem className={classes.fonte}>
-          <InsertChartIcon className={classes.icon} />
+            <InsertChartIcon className={classes.icon} />
             MARKETS
-          </MenuItem>          
+          </MenuItem>
           <MenuItem className={classes.fonte}>
-          <PeopleIcon className={classes.icon} />  
+            <PeopleIcon className={classes.icon} />
             INFLUENCERS
-          </MenuItem>          
+          </MenuItem>
           <MenuItem className={classes.fonte}>
-          <ChatIcon className={classes.icon} /> 
+            <ChatIcon className={classes.icon} />
             FEEDS
           </MenuItem>
           <MenuItem className={classes.fonte}>
-          <CompareIcon className={classes.icon} />
+            <CompareIcon className={classes.icon} />
             COMPARE
           </MenuItem>
           <MenuItem><NotificationsIcon className={classes.notification} /></MenuItem>
           <MenuItem><SettingsIcon className={classes.uItens} /></MenuItem>
-          <Avatar className={classes.avatar}>L</Avatar>                  
+          <Avatar className={classes.avatar}>L</Avatar>
         </MenuList>
       </Paper>
-      <div>     
-       
+      <div>
+
         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}
               style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-            >              
-                <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>Dashboard</MenuItem>
-                    <MenuItem onClick={handleClose}>Markets </MenuItem>
-                    <MenuItem onClick={handleClose}>Influencers</MenuItem>
-                    <MenuItem onClick={handleClose}>Feeds</MenuItem>
-                    <MenuItem onClick={handleClose}>Compare</MenuItem>
-                    <MenuItem onClick={handleClose}>Notificações</MenuItem>
-                    <MenuItem onClick={handleClose}>Configurações </MenuItem>
-                  </MenuList>
-                </ClickAwayListener>              
+            >
+              <ClickAwayListener onClickAway={handleClose}>
+                <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                  <MenuItem onClick={handleClose}>Dashboard</MenuItem>
+                  <MenuItem onClick={handleClose}>Markets </MenuItem>
+                  <MenuItem onClick={handleClose}>Influencers</MenuItem>
+                  <MenuItem onClick={handleClose}>Feeds</MenuItem>
+                  <MenuItem onClick={handleClose}>Compare</MenuItem>
+                  <MenuItem onClick={handleClose}>Notificações</MenuItem>
+                  <MenuItem onClick={handleClose}>Configurações </MenuItem>
+                </MenuList>
+              </ClickAwayListener>
             </Grow>
           )}
         </Popper>
