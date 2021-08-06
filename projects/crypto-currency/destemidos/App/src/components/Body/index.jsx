@@ -7,12 +7,9 @@ import Feeds from '../../pages/Feeds'
 import SignIn from '../../pages/SignIn'
 import SignUp from '../../pages/SignUp'
 import SignOut from '../../pages/SignOut'
-<<<<<<< HEAD
 import { isAuthenticated } from '../../Services/auth'
-=======
 import Home from '../../pages/Home'
 import InserirCredito from '../../pages/InserirCredito'
->>>>>>> b4664511720600993c89a51ec3474cfdefeba956
 
 function Body() {
   return (
