@@ -1,49 +1,49 @@
-import React from "react";
-import { useState, useEffect } from "react";
-
-import PostCard from "./PostCard";
+import React from "react"
+import { useState, useEffect } from "react"
+import { Link } from "@material-ui/core"
+import PostCard from "./PostCard"
 
 function Posts() {
 
   const [list, setList] = useState([])
+  const API = process.env.REACT_APP_API_URL
 
   useEffect(() => {
     fetch(
-      `http://localhost:3000/feeds`,
+      `${API}/feeds`,
       { method: 'get' }
     )
       .then(async response => {
         const { data } = await response.json()
-        setList(data)
-        console.log(data)
+        setList(data)        
       })
       .catch(error => console.log(error))
-
-
   }, []);
 
+  const listView = () => {
+    return(
+    list.length > 0 && list.map((conteudo) => {
+      return (
+        <Link target={"_blank"}  to={conteudo.url}>
+          <PostCard
+            key={conteudo.asset_id}
+            body={conteudo.body}
+            social_score={conteudo.social_score}
+            retweets={conteudo.retweets}
+            likes={conteudo.likes}
+          />
+        </Link>
+      )
+    })
+    )
+  }
 
   return (
     <div>
-      {console.log('oi', list)}
-      {console.log('teste', list.length)}
-      {
-
-        list.length > 0 && list.map((conteudo) => {
-          return (
-            <PostCard
-              key={conteudo.asset_id}
-              body={conteudo.body}
-              social_score={conteudo.social_score}
-              retweets={conteudo.retweets}
-              likes={conteudo.likes}
-            />
-          )
-        })
-      }
+      {listView()}
+      
     </div>
   )
 }
 
-
-export default Posts;
+export default Posts

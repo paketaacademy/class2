@@ -4,7 +4,7 @@
 
 .container--nav{
   background-color: rgb(50, 13, 85);
-  width: 5em;
+  width: 5.5em;
   height: 68em;
   list-style-type: none;
   position: fixed;
@@ -40,6 +40,12 @@
   border-bottom-color:rgb(141, 120, 163);
 }
 
+.container--nav--ul--li--last{
+  padding-top: 1em;
+  text-align: center;
+  padding-bottom: 0.5em;
+}
+
 .container--nav--ul--li:hover{
   background-color: rgb(82, 46, 116);
 }
@@ -47,26 +53,6 @@
 .lunar--logo{
   width: 5em;
   height: 5em;
-}
-
-.magnifying--glass--icon{
-  width: 2.5em;
-  height: 2.5em;
-  filter: invert(60%) sepia(57%) saturate(4221%) hue-rotate(224deg) brightness(92%) contrast(85%);
-}
-
-.swipe--icon{
-  width: 3.3em;
-  height: 3.3em;
-  background-color: white;
-  border-radius: 0.5em;
-  padding: 0.2em;
-}
-
-.moon--icon{
-  width: 2.7em;
-  height: 2.7em;
-  filter: invert(60%) sepia(57%) saturate(4221%) hue-rotate(224deg) brightness(92%) contrast(85%);
 }
 
 .market--icon{
@@ -87,18 +73,6 @@
   filter: invert(60%) sepia(57%) saturate(4221%) hue-rotate(224deg) brightness(92%) contrast(85%);
 }
 
-.compare--icon{
-  width: 3.3em;
-  height: 3.5em;
-  filter: invert(60%) sepia(57%) saturate(4221%) hue-rotate(224deg) brightness(92%) contrast(85%);
-}
-
-.sun--icon{
-  width: 4em;
-  height: 4em;
-  filter: invert(60%) sepia(57%) saturate(4221%) hue-rotate(224deg) brightness(92%) contrast(85%);
-}
-
 .login--icon{
   width: 4em;
   height: 4em;
@@ -107,17 +81,19 @@
 
 .signup--icon{
   width: 4em;
-  height: 3.8em;
+  height: 4em;
   filter: invert(63%) sepia(79%) saturate(2841%) hue-rotate(138deg) brightness(100%) contrast(101%);
 }
 
-.magnifying--glass--icon:hover, 
-.moon--icon:hover, 
+.signout--icon{
+  width: 2.8em;
+  height: 2.8em;
+  filter: invert(63%) sepia(79%) saturate(2841%) hue-rotate(138deg) brightness(100%) contrast(101%);
+}
+
 .market--icon:hover,
 .influencer--icon:hover,
-.feed--icon:hover,
-.compare--icon:hover,
-.sun--icon:hover
+.feed--icon:hover
 {
   filter: invert(1);
 } 
