@@ -32,9 +32,7 @@ if(!validPass) {
   .send('Invalid password')
 }
 
-const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET, {
-  expiresIn: 2
-})
+const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET, {expiresIn: 86400})
 res.header('auth-token', token)
 res.send('Logged in!')
 })
