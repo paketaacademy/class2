@@ -1,4 +1,5 @@
 import { Feed } from "./Feed"
+import { Loading } from "../Loading"
 import React, { useState, useEffect } from 'react'
 
 export const HandleWithFeed = (props) => {

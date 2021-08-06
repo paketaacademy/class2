@@ -24,7 +24,7 @@ export const Register = () => {
     console.log(userData)
     axios.post("http://localhost:3030/register", userData)
       .then((response) => {
-        history.push("/logar")
+        history.push("/")
       })
   }
   console.log("errors", errors)
