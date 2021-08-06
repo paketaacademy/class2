@@ -2,7 +2,7 @@ import app from "./configs/app.js"
 import { Mongoose, WalletSchema } from './configs/db.js'
 app.post('/buycoin', async (req, res) => {
  
-  const { id, nameCoin, buyPrice, priceCoin} = req.body
+  const { idUser, nameCoin, buyPrice, priceCoin} = req.body
 
   const Wallets = Mongoose.model('wallets', WalletSchema, 'wallets')
   
@@ -10,18 +10,18 @@ app.post('/buycoin', async (req, res) => {
 
     const buyQuant = buyPrice / priceCoin
 
-    const foundWallet = await Wallets.findOne({ id: id }).exec()
+    const foundWallet = await Wallets.findOne({ id: idUser }).exec()
     
     if(foundWallet){
       foundWallet.balance -= buyPrice
       if(foundWallet.balance < 0){
         return res.status(409).send('Saldo insuficiente para realizar a compra!')
       }
-      const hasCoin = await Wallets.findOne({ id: id,"cryptocurrencies.name": nameCoin }).exec()
+      const hasCoin = await Wallets.findOne({ id: idUser,"cryptocurrencies.name": nameCoin }).exec()
       
       if(hasCoin){
 
-        const filterCoin = { id: id }
+        const filterCoin = { id: idUser }
         foundWallet.cryptocurrencies.map(crypto => {
           if(crypto.name == nameCoin){
             crypto.quant += buyQuant
@@ -35,7 +35,7 @@ app.post('/buycoin', async (req, res) => {
         return res.status(201).send('Moeda comprada com sucesso! Sua quantidade da mesma foi atualizada!')
       }
 
-      const filterWallet = { id: id }
+      const filterWallet = { id: idUser }
 
       foundWallet.cryptocurrencies.push({name: nameCoin, quant: buyQuant})
 
