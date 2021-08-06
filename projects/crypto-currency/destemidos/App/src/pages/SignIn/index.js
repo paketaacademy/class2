@@ -46,7 +46,6 @@ export default function SignIn() {
   const Alert = props => {
 
     return <MuiAlert elevation={6} variant="filled" {...props} />
-  }
 
   const handleClose = (event) => {
     setOpen(false)
