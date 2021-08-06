@@ -1,9 +1,10 @@
 import React from "react"
 import { BrowserRouter as Router } from "react-router-dom"
 import { createTheme, StylesProvider } from "@material-ui/core/styles"
-import { ThemeProvider  } from "styled-components"
+import { ThemeProvider } from "styled-components"
 import Menu from "./components/Menu"
 import Body from "./components/Body"
+import Footer from './components/Footer'
 
 function App() {
 
@@ -14,8 +15,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <Router>
           <div>
-            <Menu/>
-            <Body/>
+            <Menu />
+            <Body />
+            <Footer />
           </div>
         </Router>
       </ThemeProvider>

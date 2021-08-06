@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TableMarket from '../components/TableMarket';
 import './style.css'
 
+
 const headCells = [
     { id: 'id', numeric: false, disablePadding: true, label: '#', sticky: true },
     { id: 'coin', numeric: false, disablePadding: true, label: 'Coin', sticky: true },
@@ -67,6 +68,7 @@ function Markets() {
                 <button onClick={() => setIsUpdate(false)}>{loading ? "atualizando" : "Atualizar Página"}</button>
                 <TableMarket rows={coins} headCells={headCells} />
             </div>
+
         </div>
     )
 
