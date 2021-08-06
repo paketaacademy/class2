@@ -9,7 +9,7 @@ function Home() {
   return (
     <HomeContainer>
       <UserDetails /> 
-      <CoinsDetails/>
+        <CoinsDetails/>
       <CreditDetails/>
     </HomeContainer>
   )
