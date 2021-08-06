@@ -1,10 +1,13 @@
 import app from "./configs/app.js"
 import { Mongoose, UserSchema } from './configs/db.js'
+import bcrypt from 'bcrypt'
 
 app.post('/register', async (req, res) => {
  
   const email = req.body.email
-  const password = req.body.password
+  const salt = await bcrypt.genSalt(10)
+  const cryptograf = await bcrypt.hash(req.body.password, salt)
+  const password = cryptograf
   
   const Users = Mongoose.model('users', UserSchema, 'users')
   
