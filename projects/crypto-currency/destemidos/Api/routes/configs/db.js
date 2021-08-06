@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
 )
 
 const walletSchema = new mongoose.Schema({
-    id: String,
+    idUser: String,
     balance: Number,
     cryptocurrencies: Array
   }, { collection: 'wallets' }
