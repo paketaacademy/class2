@@ -1,35 +1,41 @@
 import "./commons/global.css"
-import { ThemeProvider } from "@material-ui/core";
-import { theme } from "./commons/constants/theme";
-import { Login } from "./components/Login";
-import { Register } from "./components/Register";
-import { MenuListComposition } from "./components/Navbar"
+import { Feeds } from "./components/Feed"
+import { TemplateAuth } from "./components/TemplateAuth"
+import { TemplateMain } from "./components/TemplateMain"
+import { ThemeProvider } from "@material-ui/core"
+import { theme } from "./commons/constants/theme"
+import { Login } from "./components/Login"
+import { Register } from "./components/Register"
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom'
 
 function App() {
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
         <Router>
           <Switch>
-            <Route path="/login">
-              <Login />
+            <Route path="/noticias" >
+              <TemplateMain>
+                <Feeds />
+              </TemplateMain>
             </Route>
-            <Route path="/register">
-              <Register />
-            </Route>
-            <Route  exact path="/">
-              <MenuListComposition />
-            </Route>
+            <TemplateAuth>
+              <Route path="/logar" >
+                <Login />
+              </Route>
+              <Route path="/registrar" >
+                <Register />
+              </Route>
+            </TemplateAuth>
           </Switch>
         </Router>
       </ThemeProvider>
-    </div>
+    </div >
   );
 }
 
