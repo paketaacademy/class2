@@ -10,7 +10,7 @@ function UserDetails() {
       <div>João da Silva</div>
       <div>joao@gmail.com</div>
       <ButtonDiv>
-        <Button variant="contained">Sair<ExitToAppIcon/></Button>
+        <Button variant="contained">Sair{' '}<ExitToAppIcon/></Button>
       </ButtonDiv>    
     </ContainerDiv>
   )
