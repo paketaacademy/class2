@@ -1,20 +1,34 @@
 import express from 'express'
-import cors from 'cors'
+import bcrypt from 'bcryptjs'
+import { registerValidation } from './validation.js'
 import { Mongoose, userSchema } from './configs/data-base.js'
 const app = express()
 
-app.use(cors())
 app.use(express.json())
 
 app.post('/register', async (req, res) => {
+  const { error } = registerValidation(req.body)
+  if (error) {
+    return res
+      .status(400)
+      .send(error.details[0].message)
+  }
+  const { firstName, lastName, email } = req.body
+  const usersModel = Mongoose.model('users', userSchema, 'users')
 
-  const { email, password } = req.body
-  const Users = Mongoose.model('users', userSchema, 'users')
-  const user = new Users({ email, password })
+  const emailExist = await usersModel.findOne({ email })
+  if(emailExist) {
+    return res
+        .status(400)
+        .send('Email already exists.')
+  }
+
+  const salt = await bcrypt.genSalt(10)
+  const hashedPassword = await bcrypt.hash(req.body.password, salt)
 
   try {
-    await user.save()
-    res.status(200).send('Cadastrado com sucesso')
+    const userSaved = await usersModel.create({ firstName, lastName, email, password:hashedPassword })
+    res.send(userSaved)
   } catch (error) {
     res.status(400).send('Bad Request')
   }
