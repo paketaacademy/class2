@@ -51,8 +51,10 @@ function Markets() {
                 { method: 'get' }
             )
             .then(async response => {
-                const { data } = await response.json()                             
-                setCoins(data)                      
+                const { data } = await response.json()
+
+                setCoins(data)        
+
             }).finally(() => {
                 setloading(false);
             })
