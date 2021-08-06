@@ -7,6 +7,7 @@ import Feeds from '../../pages/Feeds/Feeds'
 import SignIn from '../../pages/SignIn'
 import SignUp from '../../pages/SignUp'
 import SignOut from '../../pages/SignOut'
+import { isAuthenticated } from '../../Services/auth'
 
 function Body() {
   return (
@@ -26,13 +27,16 @@ function Body() {
       <Route path="/conteudo">
         <Feeds />
       </Route>
-      <Route path="/conectar">
+      {!isAuthenticated() && <Route path="/conectar">
          <SignIn />
-      </Route>
+      </Route>}
+      {isAuthenticated() && <Route path="/conectar">
+         <Markets />
+      </Route>}
       <Route path="/cadastrar">
         <SignUp />
       </Route>
-      <Route path="/config">
+      <Route path="/sair">
         <SignOut />
       </Route>
     </Switch>

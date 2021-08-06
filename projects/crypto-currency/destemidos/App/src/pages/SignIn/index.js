@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import {PaperDiv, StyledAvatar, Form, SubmitButton, DivContainer} from './style.js'
 import './style.css'
+import { login } from '../../Services/auth.js'
 
 function Copyright() {
   return (
@@ -25,6 +26,9 @@ function Copyright() {
 }
 
 export default function SignIn() {
+  const handleSubmit = (e) => {
+    login('1234')
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -36,7 +40,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <Form noValidate>
+        <Form onSubmit={handleSubmit} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
