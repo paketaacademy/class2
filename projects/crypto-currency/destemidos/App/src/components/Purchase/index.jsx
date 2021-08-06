@@ -7,6 +7,7 @@ import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
 import { Container, BoxDetails } from "./style.js"
 import './style.css'
+
 function Purchase() {
   let { name, price, amountCoins } = useParams()
   const API = process.env.REACT_APP_API_URL
