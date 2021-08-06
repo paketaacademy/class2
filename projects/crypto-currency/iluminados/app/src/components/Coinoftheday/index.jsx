@@ -32,12 +32,9 @@ function CoinOfTheDay() {
               <h2>{coin.name}</h2>
               <h2>{coin.symbol}</h2>
               </div>
-
               <div className="coin">
                 <img className='img' src="https://image.flaticon.com/icons/png/128/1667/1667808.png" alt="coin" />
-              </div>
-
-              
+              </div>              
             </div>
           </div>
         )
