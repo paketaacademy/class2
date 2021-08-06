@@ -15,5 +15,11 @@ const userSchema = new mongoose.Schema({
   }, { collection: 'users' }
 )
 
-export { mongoose as Mongoose, userSchema as UserSchema }
+const walletSchema = new mongoose.Schema({
+    id: String,
+    balance: Number,
+    cryptocurrencies: Array
+  }, { collection: 'wallets' }
+)
 
+export { mongoose as Mongoose, userSchema as UserSchema, walletSchema as WalletSchema }

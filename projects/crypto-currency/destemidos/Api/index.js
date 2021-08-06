@@ -3,6 +3,7 @@ import market from './routes/market.js'
 import influencers from './routes/influencer.js'
 import singin from './routes/singin.js'
 import singup from './routes/singup.js'
+import balance from './routes/balance.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -15,5 +16,6 @@ app.use(market)
 app.use(influencers)
 app.use(singin)
 app.use(singup)
+app.use(balance)
 
-app.listen(5000)
+app.listen(3000)
