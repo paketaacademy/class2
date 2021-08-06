@@ -9,7 +9,6 @@ import Footer from './components/Footer'
 function App() {
 
   const theme = createTheme()
-
   return (
     <StylesProvider injectFirst>
       <ThemeProvider theme={theme}>

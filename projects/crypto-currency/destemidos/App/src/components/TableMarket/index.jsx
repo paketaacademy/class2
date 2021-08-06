@@ -1,36 +1,36 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import Table from '@material-ui/core/Table';
-import TableContainer from '@material-ui/core/TableContainer';
+import Table from '@material-ui/core/Table'
+import TableContainer from '@material-ui/core/TableContainer'
 import THead from './TableHeader'
 import TBody from './TableBody'
-import Paper from '@material-ui/core/Paper';
+import Paper from '@material-ui/core/Paper'
 
 import { TablePagination } from './styles.js'
 
 function TableMarket(props) {
     const { rows, headCells } = props;
-    const [order, setOrder] = React.useState('asc');
-    const [orderBy, setOrderBy] = React.useState('calories');
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const [order, setOrder] = React.useState('asc')
+    const [orderBy, setOrderBy] = React.useState('calories')
+    const [page, setPage] = React.useState(0)
+    const [rowsPerPage, setRowsPerPage] = React.useState(5)
 
     const handleRequestSort = (event, property) => {
-        const isAsc = orderBy === property && order === 'asc';
-        setOrder(isAsc ? 'desc' : 'asc');
-        setOrderBy(property);
+        const isAsc = orderBy === property && order === 'asc'
+        setOrder(isAsc ? 'desc' : 'asc')
+        setOrderBy(property)
     };
 
     const handleClick = (event, name) => { }
 
     const handleChangePage = (event, newPage) => {
-        setPage(newPage);
+        setPage(newPage)
     };
 
     const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 10));
-        setPage(0);
+        setRowsPerPage(parseInt(event.target.value, 10))
+        setPage(0)
     };
 
     return (
@@ -70,13 +70,13 @@ function TableMarket(props) {
                 />
             </Paper>
         </div>
-    );
+    )
 }
 
 TableMarket.propTypes = {
     rows: PropTypes.array.isRequired,
     headCells: PropTypes.array.isRequired
-};
+}
 
 
-export default TableMarket;
+export default TableMarket

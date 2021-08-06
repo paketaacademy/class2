@@ -25,14 +25,27 @@ a{
   --purple: #4A314D;
   --light-purple: #9001a0;
   --black: #050301;
-  --gray: rgb(131, 131, 131);
+  --black-light: #A6A6A6;
+  --gray: #838383;
   --green: #02ff81;
-  --yellow: #f59c17;
-  --yellow-hover: #ec8e00;
+  --yellow: #ff9900;
+  --yellow-hover: #fa8807;
   --blue: #273cf5;
   --red: #f72c28;
   --light-red: #ff7370;
-  --white: #F7F4F3;
+  --white: #f7f4f3;
+  --white-hover: #e6e5e4;
   --primary-font-family: 'Montserrat', sans-serif;
   --secondary-font-family: 'Martel', serif;
+}
+
+body{
+  background: var(--black);
+}
+
+.App{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: 1 2;
 }
