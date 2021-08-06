@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
 
+import React, { useState, useEffect } from 'react';
 import TableMarket from '../components/TableMarket';
 import './style.css'
-
 
 const headCells = [
     { id: 'id', numeric: false, disablePadding: true, label: '#', sticky: true },
@@ -55,11 +54,14 @@ function Markets() {
 
             .then(async response => {
                 const { data } = await response.json()
-                setCoins(data)
+
+                setCoins(data)        
+
             }).finally(() => {
                 setloading(false);
-            }
-        }
+
+            })
+        }                    
 
     }, [isUpdate])
 

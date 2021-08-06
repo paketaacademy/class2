@@ -66,6 +66,13 @@ function Menu() {
               </div>
             </Link>
           </li>
+          <li className='container--nav--ul--li--last'>
+            <Link to="/config">
+              <div>
+                <img src="https://www.pikpng.com/pngl/b/519-5199120_logout-icon-png-sign-out-icon-png-clipart.png" alt="signout icon" className='signout--icon' />
+              </div>
+            </Link>
+          </li>
         </ul>
       </nav>
   )

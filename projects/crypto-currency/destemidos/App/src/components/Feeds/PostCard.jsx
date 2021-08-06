@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography'
 import TwitterIcon from '@material-ui/icons/Twitter'
 import { ContainerRoot, PaperBox,TypographyStyled } from './style.js'
 
-const PostCard = ({body, social_score, retweets, likes}) => {
+const PostCard = ({ body, social_score, retweets, likes }) => {
 
   return (
     <ContainerRoot >
