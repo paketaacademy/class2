@@ -25,6 +25,9 @@ function Body() {
       <Route path="/credito">
         <InserirCredito />
       </Route>
+      <Route path="/comprar">
+        <Comprar />
+      </Route>
       <Route path="/influencias">
         <Influencers />
       </Route>
@@ -37,11 +40,9 @@ function Body() {
       <Route path="/cadastrar">
         <SignUp />
       </Route>
-      {/* <Route path="*">
-        <NaoEncontrada />
-      </Route> */}
       <Route path="/comprar/:name/:price/:amountCoins" children={<PurchaseDetails />} >
         <PurchaseDetails />
+
       <Route path="/config">
         <SignOut />
       </Route>

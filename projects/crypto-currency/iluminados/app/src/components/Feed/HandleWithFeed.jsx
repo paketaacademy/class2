@@ -4,6 +4,7 @@ import { Loading } from "../Loading"
 
 export const HandleWithFeed = (props) => {
   const [list, setList] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const url = "http://localhost:3030/feeds"
   useEffect(() => {
@@ -11,6 +12,7 @@ export const HandleWithFeed = (props) => {
       .then(async res => {
         const { data } = await res.json()
         setList(data)
+        setLoading(true)
       })
       .catch((err) => console.log(err))
   }, [])
@@ -18,21 +20,23 @@ export const HandleWithFeed = (props) => {
   return (
     <>
       {
-        list.map((l, key) => {
-          let timeInDays = Math.floor(l.time / (60 * 60 * 24 * 1000)) % 365
-          return (
-            <Feed
-              key={key}
-              symbol={l.symbol}
-              name={l.name}
-              time={`${timeInDays} d`}
-              body={l.body}
-              socialScore={l.social_score}
-              favorites={l.likes}
-              retweets={l.retweets}
-            />
-          )
-        })
+        loading ? (
+          list.map((l, key) => {
+            let timeInDays = Math.floor(l.time / (60 * 60 * 24 * 1000)) % 365
+            return (
+              <Feed
+                key={key}
+                symbol={l.symbol}
+                name={l.name}
+                time={`${timeInDays} d`}
+                body={l.body}
+                socialScore={l.social_score}
+                favorites={l.likes}
+                retweets={l.retweets}
+              />
+            )
+          })
+        ) : <Loading />
       }
     </>
   )
