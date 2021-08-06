@@ -8,11 +8,11 @@ const params = {
 }
 
 const { MONGO_URI } = process.env
-mongoose.connect(MONGO_URI, params);
+mongoose.connect(MONGO_URI, params)
 
 const userSchema = new mongoose.Schema({
-    email: String,
-    password: String,
+  email: String,
+  password: String,
 }, { collection: 'users' }
 );
 
