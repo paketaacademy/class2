@@ -1,4 +1,4 @@
-.feeds, .destemidos, .influencers, .markets{
+.feeds, .destemidos, .influencers, .markets {
   margin-left: 10em;
 }
 
@@ -9,6 +9,7 @@
   align-items: center;
   height: 100vh;
 }
+
 
 .SliderView{
   width: 900px;
