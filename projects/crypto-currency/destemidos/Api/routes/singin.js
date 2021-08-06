@@ -27,6 +27,7 @@ app.post('/singin', async (req, res) => {
 })
   res.header('auth-token', token)
   res.send('logou')
+
 })
 
 export default app
