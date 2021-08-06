@@ -25,7 +25,7 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-            <Route path="/coinoftheday">
+            <Route path="/moedadodia">
               <CoinOfTheDay />
             </Route>
             <Route  exact path="/">
