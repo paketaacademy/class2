@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background: var(--black);
+  background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,7 +18,7 @@ export const FormContainer = styled.div`
   flex-direction: column;
   padding: 2rem;
   font-family: var(--secondary-font-family);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
   h2{
     font-family: var(--primary-font-family);
     font-size: 1.7rem;

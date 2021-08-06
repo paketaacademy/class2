@@ -1,11 +1,12 @@
 import React from 'react'
-import { Btn } from '../Button'
-import { FormContainer } from '../ContainerForms'
+import { Button } from '../Button'
+import { Container, FormContainer } from '../ContainerForms'
 import { TxtField } from '../TxtField'
-import { Container } from '../ContainerForms'
-import { DivContainerBtn } from './styles'
+import { ButtonContainer } from './styles'
+import { Link } from 'react-router-dom'
 
 export const Register = () => {
+
   return (
     <Container>
       <FormContainer>
@@ -54,10 +55,10 @@ export const Register = () => {
           type="password"
           required
         />
-        <DivContainerBtn>
-          <Btn variant="contained" color="primary">Registrar</Btn>
-          <Btn color="inherit">Cancelar</Btn>
-        </DivContainerBtn>
+        <ButtonContainer>
+          <Button Variant="contained" Color="primary">Registrar</Button>
+          <Link to="/logar"><Button Color="transparent">Cancelar</Button></Link>
+        </ButtonContainer>
       </FormContainer>
     </Container>
   )

@@ -8,7 +8,6 @@ import Body from "./components/Body"
 function App() {
 
   const theme = createTheme()
-
   return (
     <StylesProvider injectFirst>
       <ThemeProvider theme={theme}>
