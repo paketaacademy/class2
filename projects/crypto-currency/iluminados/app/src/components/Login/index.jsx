@@ -1,7 +1,8 @@
-import { TxtField } from "../TxtField";
-import { Btn } from "../Button";
+import { TxtField } from "../TxtField"
+import { Button } from "../Button"
 import { Container, FormContainer } from "../ContainerForms"
-import { DivContainerBtn } from "./styles";
+import { DivContainerBtn } from "./styles"
+import { Link } from "react-router-dom"
 
 
 export const Login = () => {
@@ -23,9 +24,9 @@ export const Login = () => {
           />
         </form>
         <DivContainerBtn>
-          <Btn StyledBtn variant="contained" color="primary">Login</Btn>
+          <Button StyledBtn Variant="contained" Color="primary">Login</Button>
         </DivContainerBtn>
-        <span className="form-container-login--span">Não possui cadastro? <strong onClick={() => console.log("Clicou!")}>Registre-se</strong></span>
+        <span className="form-container-login--span">Não possui cadastro? <Link to="/registrar"><strong>Registre-se</strong></Link></span>
       </FormContainer>
     </Container>
   )
