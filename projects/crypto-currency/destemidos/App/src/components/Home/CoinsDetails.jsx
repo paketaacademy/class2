@@ -3,9 +3,9 @@ import { ContainerDiv, ButtonDiv, StyledButton } from './Style.js'
 import { Link } from 'react-router-dom'
 import './Style.css'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart'
-import CompareArrowsIcon from '@material-ui/icons/CompareArrows';
+import CompareArrowsIcon from '@material-ui/icons/CompareArrows'
 
-function BtcDetails() {
+function CoinsDetails() {
   return (
     <ContainerDiv>
       <h4>Coins</h4>
@@ -23,4 +23,4 @@ function BtcDetails() {
   )
 }
 
-export default BtcDetails
+export default CoinsDetails
