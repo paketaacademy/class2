@@ -80,6 +80,7 @@ function Purchase() {
           />
           <Button className="StyledSpace" type="submit" variant="contained" color="primary">
             Comprar
+            
           </Button>
         </form>
       </BoxDetails>

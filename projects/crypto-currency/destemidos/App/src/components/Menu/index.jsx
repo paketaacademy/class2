@@ -7,7 +7,7 @@ function Menu() {
       <nav className='container--nav'>
         <ul className='container--nav--ul'>
           <li className='container--nav--ul--li'>
-            <Link to="/destemidos">
+            <Link to="/home">
               <div>
                 <img src="https://lunarcrush.com/assets/img/ui/lunarcrush-footer-icon-dark-retro.png" alt="lunar logo" className='lunar--logo' />
               </div>    
