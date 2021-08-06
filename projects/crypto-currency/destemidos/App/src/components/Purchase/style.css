@@ -1,0 +1,9 @@
+.StyledPositions{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.StyledSpace{
+  margin-top: 10px;
+}
