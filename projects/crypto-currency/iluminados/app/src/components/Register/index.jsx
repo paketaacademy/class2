@@ -6,13 +6,13 @@ import { TxtField } from '../TxtField'
 import { Container } from '../ContainerForms'
 import { ButtonContainer } from './styles'
 import { useForm, Controller } from 'react-hook-form'
-import { passwordSchema } from '../../Validations/PasswordValidation'
+import { registerSchema } from '../../Validations/RegisterValidation'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useHistory } from 'react-router-dom'
 
 export const Register = () => {
   let history = useHistory()
-  const { control, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(passwordSchema) })
+  const { control, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(registerSchema) })
 
   const handleSubmitForm = (data) => {
     let userData = {
@@ -45,7 +45,8 @@ export const Register = () => {
                 label="Nome"
                 variant="outlined"
                 size="small"
-
+                error={errors.name}
+                helperText={errors.name?.message}
               />
             }
           />
@@ -60,6 +61,8 @@ export const Register = () => {
                 label="Sobrenome"
                 variant="outlined"
                 size="small"
+                error={errors.lastName}
+                helperText={errors.lastName?.message}
               />
             }
           />
@@ -74,6 +77,8 @@ export const Register = () => {
                 label="E-mail"
                 variant="outlined"
                 size="small"
+                error={errors.emailV}
+                helperText={errors.email?.message}
               />
             }
           />
@@ -88,6 +93,8 @@ export const Register = () => {
                 label="Cofirmar e-mail"
                 variant="outlined"
                 size="small"
+                error={errors.confirmEmail}
+                helperText={errors.confirmEmail?.message}
               />
             }
           />
