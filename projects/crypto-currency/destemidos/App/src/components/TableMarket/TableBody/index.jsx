@@ -14,9 +14,7 @@ function TBody(props) {
             {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-
-                    return (
-                        
+                    return (                        
                             <TableRow
                                 hover
                                 onClick={(event) => onClickRow(event, row.name)}

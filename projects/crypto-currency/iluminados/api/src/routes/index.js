@@ -8,6 +8,7 @@ import influencers from './modules/influencers.js'
 import login from './modules/login.js'
 import validationToken from './modules/configs/validation-token.js'
 import logout from './modules/logout.js'
+import feeds from './modules/feeds.js'
 
 const app = express()
 dotenv.config()
@@ -22,5 +23,6 @@ app.use(validationToken)
 app.use(market)
 app.use(coinOfTheDay)
 app.use(influencers)
+app.use(feeds)
 
 export default app

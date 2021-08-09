@@ -1,12 +1,11 @@
-.container{
-  width: 100%;
+.container{ 
   margin: 0 auto;
   align-self: center;
   align-items: center;  
 }
 
 .SliderView{
-  width: 100%;
+  width: 1000px;
   text-align: right;
   margin: 0 auto;
 }

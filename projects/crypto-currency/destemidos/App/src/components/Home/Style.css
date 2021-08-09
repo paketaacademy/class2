@@ -1,3 +1,103 @@
 .LinkButton{
   text-decoration: none;
 }
+
+.rowCredit{
+  display: flex;
+  flex-direction: column;
+}
+
+.titleCredit{
+  font-size: 12px;
+  font-weight: bold;  
+  text-align: center;
+  padding: 10px 0;   
+}
+
+.creditUser{
+  width: 130px;
+  background: #dfdfdf;  
+  border-radius: 5px;
+  padding: 8px 8px;
+  text-align: center;
+}
+
+.StyledCredit{
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  align-self: center;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-left: 200px;
+}
+
+.boxContainer{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.StyledView{
+  border:1px solid #aaa;
+  table-layout: fixed;
+  box-sizing: border-box; 
+  max-width:900px;
+  overflow: scroll;
+  max-height: 800px;
+}
+
+.styledIndex{
+  z-index: 0;
+}
+
+.boxView{
+  margin-top: 30px;
+  max-width:600px;
+  overflow: scroll;
+  max-height: 400px;
+}
+
+
+.StyledButtonVender{
+    width: 120px;  
+    z-index: 0;
+    background: #f50057;
+    border: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px #9E9E9E;
+    color: #fff;  
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.StyledButtonVender:hover{
+  background: #e00451;
+}
+
+.StyledViewBody{
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+}
+
+.StyledViewBody:nth-of-type(odd){
+  background: #dad9d9;
+}
+
+.StyledCellRow{
+  background: #522e74;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  position: sticky;
+  top: 0;
+  padding: 20px;
+}

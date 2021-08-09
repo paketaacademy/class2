@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import TableMarket from '../components/TableMarket'
+
+import React, { useState, useEffect } from 'react';
+import TableMarket from '../components/TableMarket';
 import './style.css'
 
 const headCells = [
@@ -50,6 +51,7 @@ function Markets() {
                 `${API}/markets`,
                 { method: 'get' }
             )
+
             .then(async response => {
                 const { data } = await response.json()
 
@@ -57,6 +59,7 @@ function Markets() {
 
             }).finally(() => {
                 setloading(false);
+
             })
         }                    
 
