@@ -10,8 +10,16 @@ const { MONGODB } = process.env
 mongoose.connect(MONGODB, params);
 
 const userSchema = new mongoose.Schema({
-    email: String,
-    password: String
+    email: {
+      type: String,
+      required: true,
+      min: 9
+    },
+    password: {
+      type: String,
+      required: true,
+      min: 6
+    }
   }, { collection: 'users' }
 )
 

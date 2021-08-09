@@ -51,6 +51,6 @@ function Body() {
         <SignOut />
       </Route>
     </Switch>
-}
+  )}
 
 export default Body
