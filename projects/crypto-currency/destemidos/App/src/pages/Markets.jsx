@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import TableMarket from '../components/TableMarket'
 
+import React, { useState, useEffect } from 'react';
+import TableMarket from '../components/TableMarket';
+import './style.css'
 
 const headCells = [
     { id: 'id', numeric: false, disablePadding: true, label: '#', sticky: true },
@@ -40,6 +41,7 @@ function Markets() {
     const [coins, setCoins] = useState([]);
     const [isUpdate, setIsUpdate] = useState(false);
     const [loading, setloading] = useState(false);
+    const API = process.env.REACT_APP_API_URL
 
     useEffect(() => {
         if (!isUpdate) {
@@ -49,22 +51,31 @@ function Markets() {
                 `${API}/markets`,
                 { method: 'get' }
             )
+
             .then(async response => {
                 const { data } = await response.json()
-                setCoins(data)
+
+                setCoins(data)        
+
             }).finally(() => {
                 setloading(false);
+
             })
-        }
+        }                    
 
     }, [isUpdate])
 
     return (
-        <>
-
-            <button onClick={() => setIsUpdate(false)}>{loading ? "atualizando" : "Atualizar Página"}</button>
-            <TableMarket rows={coins} headCells={headCells} />
-        </>
+        <div className='container'>
+            <div className='SliderTitle'>
+                <h2>Markets</h2>
+                <h4>Clique no nome da cryptmoeda para realizar a compra</h4>
+            </div>
+            <div className='SliderView'>
+                <button onClick={() => setIsUpdate(false)}>{loading ? "atualizando" : "Atualizar Página"}</button>
+                <TableMarket rows={coins} headCells={headCells} />
+            </div>
+        </div>
     )
 
 }

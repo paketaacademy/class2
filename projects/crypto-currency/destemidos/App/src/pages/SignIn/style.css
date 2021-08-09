@@ -5,3 +5,7 @@
 .insert--underline:hover{
   text-decoration: underline;
 }
+
+.insert--underline {
+  font-family: sans-serif;
+}
