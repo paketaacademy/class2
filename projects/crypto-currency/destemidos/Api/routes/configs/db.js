@@ -7,7 +7,7 @@ const params = {
 
 const { MONGODB } = process.env
 
-mongoose.connect(MONGODB, params);
+mongoose.connect(MONGODB, params)
 
 const userSchema = new mongoose.Schema({
     email: {
