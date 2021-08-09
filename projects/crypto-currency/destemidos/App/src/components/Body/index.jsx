@@ -40,6 +40,9 @@ function Body() {
       <Route path="/conectar">
         <Markets />
       </Route>
+      <Route path="/conectar">
+         <Markets />
+      </Route>
       <Route path="/cadastrar">
         <SignUp />
       </Route>
@@ -50,7 +53,7 @@ function Body() {
         <SignOut />
       </Route>
     </Switch>
-  )
-}
+  )}
+
 
 export default Body
