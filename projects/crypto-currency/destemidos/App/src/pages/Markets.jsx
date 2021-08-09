@@ -48,7 +48,7 @@ function Markets() {
             setIsUpdate(true);
             setloading(true);
             fetch(
-                `${API}/markets/`,
+                `${API}/markets`,
                 { method: 'get' }
             )
 
