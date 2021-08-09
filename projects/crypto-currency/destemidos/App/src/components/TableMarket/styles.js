@@ -1,6 +1,7 @@
-import TableCellUi from '@material-ui/core/TableCell';
-import TablePaginationUi from '@material-ui/core/TablePagination';
-import styled from "styled-components";
+import TableCellUi from '@material-ui/core/TableCell'
+import TablePaginationUi from '@material-ui/core/TablePagination'
+import styled from "styled-components"
+import { Link } from 'react-router-dom'
 
 
 const TableCell = styled(TableCellUi)`
@@ -30,5 +31,6 @@ const TablePagination = styled(TablePaginationUi)`
 const StyledP = styled.p`
     color: ${props => props.txtColor ? props.txtColor : '#fff'};
 `
+
 
 export { TableCell, StyledP, TablePagination }

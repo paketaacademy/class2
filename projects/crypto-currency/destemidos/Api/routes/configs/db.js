@@ -7,12 +7,27 @@ const params = {
 
 const { MONGODB } = process.env
 
-mongoose.connect(MONGODB, params);
+mongoose.connect(MONGODB, params)
 
 const userSchema = new mongoose.Schema({
-    email: String,
-    password: String
+    email: {
+      type: String,
+      required: true,
+      min: 9
+    },
+    password: {
+      type: String,
+      required: true,
+      min: 6
+    }
   }, { collection: 'users' }
 )
 
-export { mongoose as Mongoose, userSchema as UserSchema }
+const walletSchema = new mongoose.Schema({
+    idUser: String,
+    balance: Number,
+    cryptocurrencies: Array
+  }, { collection: 'wallets' }
+)
+
+export { mongoose as Mongoose, userSchema as UserSchema, walletSchema as WalletSchema }
