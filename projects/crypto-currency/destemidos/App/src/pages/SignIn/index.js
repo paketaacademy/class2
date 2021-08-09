@@ -12,6 +12,7 @@ import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
 import { PaperDiv, StyledAvatar, Form, SubmitButton, DivContainer } from './style.js'
 import './style.css'
+import { login } from '../../Services/auth.js'
 
 const API = process.env.REACT_APP_API_URL
 
