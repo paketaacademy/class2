@@ -8,43 +8,50 @@ import SignUp from '../../pages/SignUp'
 import SignOut from '../../pages/SignOut'
 import Home from '../../pages/Home'
 import InserirCredito from '../../pages/InserirCredito'
-import NaoEncontrada from '../../pages/NaoEncontrada'
 import PurchaseDetails from '../../pages/PurchaseDetails'
+import AccountUser from '../../pages/AccountUser'
+import './style.css'
+
 function Body() {
   return (
-    <Switch>
-     <Route exact path='/'>
-        <Markets />
-      </Route>
-      <Route path="/home">
-        <Home />
-      </Route> 
-      <Route path="/mercado">
-        <Markets />
-      </Route>
-      <Route path="/credito">
-        <InserirCredito />
-      </Route>
-      <Route path="/influencias">
-        <Influencers />
-      </Route>
-      <Route path="/conteudo">
-        <Feeds />
-      </Route>
-      <Route path="/conectar">
-         <SignIn />
-      </Route>
-      <Route path="/cadastrar">
-        <SignUp />
-      </Route>
-      <Route path="/comprar/:name/:price/:amountCoins" children={<PurchaseDetails />} >
-        <PurchaseDetails />
-      </Route>
-      <Route path="/config">
-        <SignOut />
-      </Route>
-    </Switch>
-    )
+    <div className='Container'>
+      <Switch>
+        <Route exact path='/'>
+          <SignIn />
+        </Route>
+        <Route path="/perfil">
+          <AccountUser />
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/mercado">
+          <Markets />
+        </Route>
+        <Route path="/credito">
+          <InserirCredito />
+        </Route>
+        <Route path="/influencias">
+          <Influencers />
+        </Route>
+        <Route path="/conteudo">
+          <Feeds />
+        </Route>
+        <Route path="/conectar">
+          <SignIn />
+        </Route>
+        <Route path="/cadastrar">
+          <SignUp />
+        </Route>
+        <Route path="/comprar/:name/:price/:amountCoins" children={<PurchaseDetails />} >
+          <PurchaseDetails />
+        </Route>
+        <Route path="/config">
+          <SignOut />
+        </Route>
+      </Switch>
+    </div>
+  )
 }
 
 export default Body

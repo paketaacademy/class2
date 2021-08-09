@@ -2,10 +2,10 @@ import React from "react"
 import { BrowserRouter as Router } from "react-router-dom"
 import { createTheme, StylesProvider } from "@material-ui/core/styles"
 import { ThemeProvider } from "styled-components"
-import Menu from "./components/Menu"
-import Body from "./components/Body"
+import Menu from "../../components/Menu"
+import Body from "../../components/Body"
 
-function App() {
+function AccountUser() {
 
   const theme = createTheme()
   return (
@@ -13,11 +13,11 @@ function App() {
       <ThemeProvider theme={theme}>
         <Router>
             <Menu />
-            <Body />                        
+            <Body />
         </Router>
       </ThemeProvider>
     </StylesProvider>
   )
 }
 
-export default App
+export default AccountUser

@@ -62,8 +62,7 @@ export default function SignIn() {
       setSeverity('error')
       setOpen(true)
     })
-  }
-  
+}
   return (
     <Container component="main" maxWidth="xs">
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>

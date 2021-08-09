@@ -28,7 +28,7 @@ function TBody(props) {
                                 <TableCell sticky component="th" scope="row" padding="none">
                                     {index}
                                 </TableCell>
-                                <TableCell sticky borderRight align="right"><div className="t"><Link className='StyledColor' to={`/comprar/${row.n}/${row.p}/${row.p_btc}`}>{row.n}:{row.s}</Link></div></TableCell>
+                                <TableCell sticky borderRight align="right"><div className="t"><Link className='StyledColor' to={`/comprar/${row.id}/${row.p}/${row.p_btc}`}>{row.n}:{row.s}</Link></div></TableCell>
                                 <TableCell align="right">+</TableCell>
                                 <TableCell align="right">{row.gs}</TableCell>
                                 <TableCell align="right">{row.acr}</TableCell>

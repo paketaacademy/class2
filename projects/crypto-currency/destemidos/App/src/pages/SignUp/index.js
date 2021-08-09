@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
-import Link from '@material-ui/core/Link'
+import { Link } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
@@ -39,7 +39,7 @@ export default function SignUp() {
   const [resAPI, setResAPI] = useState('')
   const [stateBtn, setStateBtn] = useState(true)
   const [severity, setSeverity] = useState('')
-  
+
   const editStateBtn = i => i.password !== i.confirmPassword || i.password === '' ? setStateBtn(true) : setStateBtn(false)
 
   const handleChange = e => {
@@ -47,11 +47,11 @@ export default function SignUp() {
     setInputs(inputs)
     editStateBtn(inputs)
   }
-  
+
   const Alert = props => {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
-  
+
   const handleSubmit = e => {
     e.preventDefault()
     axios.post(`${API}/register`, inputs).then(response => {
@@ -85,7 +85,7 @@ export default function SignUp() {
           Sign up
         </Typography>
         <Form onSubmit={handleSubmit} noValidate>
-          <Grid container spacing={2}>           
+          <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -123,7 +123,7 @@ export default function SignUp() {
                 autoComplete="current-password"
                 onChange={handleChange}
               />
-            </Grid>          
+            </Grid>
           </Grid>
           <SubmitButton
             type="submit"
@@ -136,7 +136,7 @@ export default function SignUp() {
           </SubmitButton>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link className='insert--underline' to="/" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
