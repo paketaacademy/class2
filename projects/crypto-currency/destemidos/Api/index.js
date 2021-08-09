@@ -7,7 +7,6 @@ import singup from './routes/singup.js'
 import balance from './routes/balance.js'
 import buyCoin from './routes/buy-coin.js'
 
-
 import express from 'express'
 import cors from 'cors'
 const app = express()
