@@ -10,11 +10,15 @@ import Home from '../../pages/Home'
 import InserirCredito from '../../pages/InserirCredito'
 import NaoEncontrada from '../../pages/NaoEncontrada'
 import PurchaseDetails from '../../pages/PurchaseDetails'
+
 function Body() {
   return (
     <Switch>
-     <Route exact path='/'>
-        <Markets />
+      <Route exact path='/'>
+        <Home />
+      </Route>
+      <Route path="/home">
+        <Home />
       </Route>
       <Route path="/home">
         <Home />
@@ -34,6 +38,9 @@ function Body() {
       <Route path="/conectar">
          <SignIn />
       </Route>
+      <Route path="/conectar">
+         <Markets />
+      </Route>
       <Route path="/cadastrar">
         <SignUp />
       </Route>
@@ -44,7 +51,6 @@ function Body() {
         <SignOut />
       </Route>
     </Switch>
-    )
 }
 
 export default Body
