@@ -58,6 +58,7 @@ export default function SignUp() {
       setResAPI(response.data)
       setSeverity('success')
       setOpen(true)
+      
     }).catch(err => {
       setResAPI(err.response.data)
       setSeverity('error')
