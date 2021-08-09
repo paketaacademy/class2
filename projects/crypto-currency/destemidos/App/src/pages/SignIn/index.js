@@ -47,7 +47,7 @@ export default function SignIn() {
   const Alert = props => {
 
     return <MuiAlert elevation={6} variant="filled" {...props} />
-
+  }
   const handleClose = (event) => {
     setOpen(false)
   }
@@ -63,7 +63,8 @@ export default function SignIn() {
       setSeverity('error')
       setOpen(true)
     })
-}
+  }
+  
   return (
     <Container component="main" maxWidth="xs">
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>

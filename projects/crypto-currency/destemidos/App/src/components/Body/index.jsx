@@ -20,14 +20,14 @@ function Body() {
       <Route path="/home">
         <Home />
       </Route>
+      <Route path="/home">
+        <Home />
+      </Route> 
       <Route path="/mercado">
         <Markets />
       </Route>
       <Route path="/credito">
         <InserirCredito />
-      </Route>
-      <Route path="/comprar">
-        <Comprar />
       </Route>
       <Route path="/influencias">
         <Influencers />

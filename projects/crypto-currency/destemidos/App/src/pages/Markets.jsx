@@ -69,6 +69,7 @@ function Markets() {
         <div className='container'>
             <div className='SliderTitle'>
                 <h2>Markets</h2>
+                <h4>Clique no nome da cryptmoeda para realizar a compra</h4>
             </div>
             <div className='SliderView'>
                 <button onClick={() => setIsUpdate(false)}>{loading ? "atualizando" : "Atualizar Página"}</button>
