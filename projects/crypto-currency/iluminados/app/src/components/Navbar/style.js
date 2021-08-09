@@ -26,27 +26,12 @@ export const useStyles = makeStyles((theme) => ({
       
     },
   
-    icon: {
+    icons: {
       height:'30px',
       margin: '0px 0px 8px 0'
   
-    },
+    },   
       
-    notification: {
-      marginTop: '80px',
-      marginLeft: '8px'
-      
-    },
-  
-    avatar: {
-      marginTop: '10px',
-      marginLeft: '15px'
-    },
-  
-    uItens: {
-      marginTop: '8px',
-      marginLeft: '8px'
-    },
   
     fonte:{
       fontSize: '10px',
@@ -59,14 +44,12 @@ export const useStyles = makeStyles((theme) => ({
         
     },  
 
-    iconesb:{
-      paddingTop: '0;5em',
-      textAlign: 'center',
-      paddingBottom: '0.5em',
-      borderBottomStyle: '0.1em',
-      borderBottomStyle: ''
-    }
-    
+    lastIcons: {
+      marginTop: '10px',
+      marginLeft: '13px'
+    },
+
+       
    
     
   }));

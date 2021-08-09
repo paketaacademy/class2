@@ -1,8 +1,8 @@
 import "./commons/global.css"
-import { ThemeProvider } from "@material-ui/core";
-import { theme } from "./commons/constants/theme";
-import { Login } from "./components/Login";
-import { Register } from "./components/Register";
+import { ThemeProvider } from "@material-ui/core"
+import { theme } from "./commons/constants/theme"
+import { Login } from "./components/Login"
+import { Register } from "./components/Register"
 import { MenuListComposition } from "./components/Navbar"
 
 
