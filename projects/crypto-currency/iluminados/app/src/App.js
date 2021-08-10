@@ -3,6 +3,9 @@ import { ThemeProvider } from "@material-ui/core";
 import { theme } from "./commons/constants/theme";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
+import { Feeds } from "./components/Feed";
+import { TemplateAuth } from "./components/TemplateAuth"
+import { TemplateMain } from "./components/TemplateMain"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
@@ -11,12 +14,19 @@ function App() {
       <ThemeProvider theme={theme}>
         <Router>
           <Switch>
-            <Route exact path="/">
-              <Login />
+            <Route path="/noticias">
+              <TemplateMain>
+                <Feeds />
+              </TemplateMain>
             </Route>
-            <Route path="/register">
-              <Register />
-            </Route>
+            <TemplateAuth>
+              <Route exact path="/">
+                <Login />
+              </Route>
+              <Route path="/registrar">
+                <Register />
+              </Route>
+            </TemplateAuth>
           </Switch>
         </Router>
       </ThemeProvider>
