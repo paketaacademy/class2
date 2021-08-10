@@ -59,6 +59,10 @@ export default function SignUp() {
       setResAPI(response.data)
       setSeverity('success')
       setOpen(true)
+      setTimeout(()=>{
+        window.location.href = `/conectar`
+      },2000)
+      
     }).catch(err => {
       setResAPI(err.response.data)
       setSeverity('error')
