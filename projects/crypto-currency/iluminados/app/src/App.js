@@ -12,6 +12,7 @@ import { Feeds } from "./components/Feed";
 import { TemplateAuth } from "./components/TemplateAuth"
 import { TemplateMain } from "./components/TemplateMain"
 import Market from "./components/Market";
+import { Wallet } from "./components/Wallet"
 
 function App() {
   return (
@@ -24,9 +25,14 @@ function App() {
                 <Feeds />
               </TemplateMain>
             </Route>
-            <Route>
+            <Route path="/mercado">
               <TemplateMain>
-                <Market/>
+                <Market />
+              </TemplateMain>
+            </Route>
+            <Route path="/carteira">
+              <TemplateMain>
+                <Wallet />
               </TemplateMain>
             </Route>
             <TemplateAuth>
