@@ -1,8 +1,11 @@
 import app from "./configs/app.js"
 import { Mongoose, WalletSchema } from './configs/db.js'
-app.post('/balance', async (req, res) => {
+import tokenValidation from "./configs/token-validation.js"
+
+app.post('/balance', tokenValidation, async (req, res) => {
  
   const { idUser, balance} = req.body
+  console.log(req.user._id)
 
   const Wallets = Mongoose.model('wallets', WalletSchema, 'wallets')
   

@@ -12,7 +12,6 @@ function Purchase() {
   let { id } = useParams()
   const API = process.env.REACT_APP_API_URL
 
-  const [list, setList] = useState([])
   const [idCripto, setIdCripto] = useState(0)
   const [nameCripto, setNameCripto] = useState('')
   const [priceCripto, setPriceCripto] = useState(0)
@@ -20,10 +19,10 @@ function Purchase() {
 
   const [value, setValue] = useState({
     id: '117',
-    idCripto: {idCripto},
-    nameCoin: {nameCripto},
+    idCripto: { idCripto },
+    nameCoin: { nameCripto },
     buyPrice: 0,
-    priceCoin: {priceCripto}
+    priceCoin: { priceCripto }
   })
 
   const [open, setOpen] = useState(false)
@@ -47,23 +46,19 @@ function Purchase() {
     )
       .then(async response => {
         const { data } = await response.json()
-        setList(data)  
-        await list.filter(number => {
+        data.map(number => {
           if (number.id == id) {
-            console.log('entrou no if')  
+            console.log('entrou no if')
             setIdCripto(number.id)
             setPriceCripto(number.p)
             setPriceBtcCripto(number.p_btc)
-            setNameCripto(number.n)            
+            setNameCripto(number.n)
           }
-        })   
+        })
       })
       .catch(error => console.log(error))
   }, []);
 
-  
-
-  console.log(idCripto)
   const handleSubmit = e => {
     e.preventDefault()
     axios.post(`${API}/buycoin`, value).then(response => {
@@ -83,10 +78,10 @@ function Purchase() {
 
   const listItems = () => {
     return (
-      
+
       <div index={idCripto}>
         <div >
-          <h3>Tipo de Criptomoeda:</h3>      
+          <h3>Nome da Criptomoeda:</h3>
           {nameCripto}
         </div>
         <div>
@@ -100,7 +95,6 @@ function Purchase() {
       </div>
     )
   }
-
   return (
     <Container>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
@@ -117,8 +111,8 @@ function Purchase() {
             color="secondary"
             type="number"
             onChange={handleChange}
-            id="priceCoin"
-            name="priceCoin"
+            id="buyPrice"
+            name="buyPrice"
             min="1"
           />
           <Button className="StyledSpace" type="submit" variant="contained" color="primary">

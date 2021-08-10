@@ -22,7 +22,6 @@ app.post('/singin', async (req, res) => {
     .status(400).send('email não encontrado')
   }
 
-
   const validPass = await bcrypt.compare(password, user.password)
 
   if(!validPass){

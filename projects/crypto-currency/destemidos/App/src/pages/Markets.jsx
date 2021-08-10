@@ -34,8 +34,6 @@ const headCells = [
   { id: 'spamVol', numeric: true, disablePadding: false, label: 'Spam Volume', sticky: false },
 ]
 
-const API = process.env.REACT_APP_API_URL
-
 function Markets() {
   const [coins, setCoins] = useState([])
   const [isUpdate, setIsUpdate] = useState(false)
@@ -58,12 +56,11 @@ function Markets() {
 
         }).finally(() => {
           setloading(false)
-
         })
     }
 
   }, [isUpdate])
-
+  
   return (
     <div className='box'>
       <h2>Markets</h2>

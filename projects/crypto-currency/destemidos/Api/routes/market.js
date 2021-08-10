@@ -8,7 +8,7 @@ app.get('/markets', function(req, res){
     res.json(resp)
     }).catch(function (error) {
       console.error(error)
-    })
+    })  
 })
 
 export default app
