@@ -1,7 +1,3 @@
-.LinkButton{
-  text-decoration: none;
-}
-
 .rowCredit{
   display: flex;
   flex-direction: column;
@@ -54,11 +50,10 @@
 
 .boxView{
   margin-top: 30px;
-  max-width:600px;
+  max-width:1000px;
   overflow: scroll;
   max-height: 400px;
 }
-
 
 .StyledButtonVender{
     width: 120px;  
@@ -69,6 +64,7 @@
     text-transform: uppercase;
     padding: 5px;
     border-radius: 4px;
+    margin: 5px 0;
     box-shadow: 1px 1px 3px #9E9E9E;
     color: #fff;  
     align-items: center;
@@ -76,6 +72,10 @@
     flex-direction: row;
     justify-content: space-around;
     cursor: pointer;
+}
+
+.PositionText{
+  text-align: right;
 }
 
 .StyledButtonVender:hover{

@@ -49,7 +49,7 @@ export default function SignUp() {
   }
 
   const Alert = props => {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
+    return <MuiAlert elevation={6} variant="filled" {...props} />
   }
 
   const handleSubmit = e => {

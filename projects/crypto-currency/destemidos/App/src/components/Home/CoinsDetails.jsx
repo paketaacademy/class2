@@ -5,9 +5,8 @@ import CompareArrowsIcon from '@material-ui/icons/CompareArrows'
 import { Link } from 'react-router-dom'
 import './Style.css'
 
-//linhas 10 até 61 vão ser retiradas, foram colocadas apenas a fim de visualização do layout
 function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+  return { name, calories, fat, carbs, protein }
 }
 
 const rows = [
@@ -74,8 +73,8 @@ export default function CustomizedTables() {
                 {row.name}
               </td>
               <td>{row.calories}</td>
-              <td>
-                <Link to='/mercado' className="LinkButton">
+              <td align='center'>
+                <Link to='/mercado'>
                   <button className='StyledButtonVender'>
                     <div>Vender</div><div><CompareArrowsIcon /></div>
                   </button>

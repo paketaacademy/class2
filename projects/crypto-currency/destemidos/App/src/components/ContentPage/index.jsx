@@ -43,7 +43,7 @@ function Body() {
       <Route path="/cadastrar">
         <SignUp />
       </Route>
-      <Route path="/comprar/:name/:price/:amountCoins" children={<PurchaseDetails />} >
+      <Route path="/comprar/:id" children={<PurchaseDetails />} >
         <PurchaseDetails />
       </Route>
       <Route path="/config">
