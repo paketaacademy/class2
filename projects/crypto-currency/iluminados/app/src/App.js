@@ -7,6 +7,7 @@ import { Feeds } from "./components/Feed";
 import { TemplateAuth } from "./components/TemplateAuth"
 import { TemplateMain } from "./components/TemplateMain"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Market from "./components/Market";
 
 function App() {
   return (
@@ -17,6 +18,11 @@ function App() {
             <Route path="/noticias">
               <TemplateMain>
                 <Feeds />
+              </TemplateMain>
+            </Route>
+            <Route>
+              <TemplateMain>
+                <Market/>
               </TemplateMain>
             </Route>
             <TemplateAuth>
