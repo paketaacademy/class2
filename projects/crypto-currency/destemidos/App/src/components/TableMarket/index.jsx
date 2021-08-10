@@ -34,6 +34,15 @@ function TableMarket(props) {
   return (
     <div>
       <Paper>
+        <TablePagination
+          rowsPerPageOptions={[5, 10, 25]}
+          component="div"
+          count={rows.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
         <TableContainer>
           <Table
             aria-labelledby="tableTitle"
@@ -56,15 +65,6 @@ function TableMarket(props) {
             />
           </Table>
         </TableContainer>
-          <TablePagination
-            rowsPerPageOptions={[5, 10, 25]}
-            component="div"
-            count={rows.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
       </Paper>
     </div>
   )
