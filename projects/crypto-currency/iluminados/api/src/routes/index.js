@@ -10,6 +10,8 @@ import logout from './modules/logout.js'
 import bank from './modules/bank.js'
 import updateBank from './modules/update-bank.js'
 import wallet from './modules/wallets-buy.js'
+import feeds from './modules/feeds.js'
+
 
 const app = express()
 dotenv.config()
@@ -26,5 +28,6 @@ app.use(wallet)
 app.use(market)
 app.use(coinOfTheDay)
 app.use(influencers)
+app.use(feeds)
 
 export default app

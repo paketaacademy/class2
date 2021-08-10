@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../style.css'
+import { isAuthenticated } from '../../Services/auth'
 
 function Menu() {
   return (
       <nav className='container--nav'>
         <ul className='container--nav--ul'>
           <li className='container--nav--ul--li'>
-            <Link to="/destemidos">
+            <Link to="/home">
               <div>
                 <img src="https://lunarcrush.com/assets/img/ui/lunarcrush-footer-icon-dark-retro.png" alt="lunar logo" className='lunar--logo' />
               </div>    
@@ -46,7 +47,7 @@ function Menu() {
               </div>
             </Link>    
           </li>
-          <li className='container--nav--ul--li'>
+          {!isAuthenticated() && <li className='container--nav--ul--li'>
             <Link to="/conectar">
               <div>
                   <img src="https://static.thenounproject.com/png/178831-200.png" alt="login icon" className='login--icon' />
@@ -55,8 +56,8 @@ function Menu() {
                 <h1>LOG IN</h1>
               </div>
             </Link>
-          </li>
-          <li className='container--nav--ul--li'>
+          </li>}
+          {!isAuthenticated() && <li className='container--nav--ul--li'>
             <Link to="/cadastrar">
               <div>
                 <img src="https://static.thenounproject.com/png/736543-200.png" alt="signup icon" className='signup--icon' />
@@ -65,14 +66,14 @@ function Menu() {
                 <h1>SING UP</h1>
               </div>
             </Link>
-          </li>
-          <li className='container--nav--ul--li--last'>
-            <Link to="/config">
+          </li>}
+          {isAuthenticated() && <li className='container--nav--ul--li--last'>
+            <Link to="/sair">
               <div>
                 <img src="https://www.pikpng.com/pngl/b/519-5199120_logout-icon-png-sign-out-icon-png-clipart.png" alt="signout icon" className='signout--icon' />
               </div>
             </Link>
-          </li>
+          </li>}
         </ul>
       </nav>
   )
