@@ -78,5 +78,5 @@ TBody.propTypes = {
     page: PropTypes.number.isRequired,
 };
 
-export default TBody;
+export default TBody
 
