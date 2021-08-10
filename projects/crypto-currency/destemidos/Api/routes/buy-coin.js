@@ -35,7 +35,7 @@ app.post('/buycoin', async (req, res) => {
         return res.status(201).send('Moeda comprada com sucesso! Sua quantidade da mesma foi atualizada!')
       }
 
-      const filterWallet = { idUser: idUser }
+      const filterWallet = { id: idUser }
 
       foundWallet.cryptocurrencies.push({name: nameCoin, quant: buyQuant})
 

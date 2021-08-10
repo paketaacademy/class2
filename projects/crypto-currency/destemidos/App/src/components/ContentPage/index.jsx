@@ -10,14 +10,11 @@ import Home from '../../pages/Home'
 import InserirCredito from '../../pages/InserirCredito'
 import PurchaseDetails from '../../pages/PurchaseDetails'
 
-function Body() {
+function ContentPage() {
   return (
     <Switch>
       <Route exact path='/'>
-        <Home />
-      </Route>
-      <Route path="/home">
-        <Home />
+        <SignIn />
       </Route>
       <Route path="/home">
         <Home />
@@ -40,17 +37,20 @@ function Body() {
       <Route path="/conectar">
         <Markets />
       </Route>
+      <Route path="/conectar">
+         <Markets />
+      </Route>
       <Route path="/cadastrar">
         <SignUp />
       </Route>
       <Route path="/comprar/:id" children={<PurchaseDetails />} >
         <PurchaseDetails />
       </Route>
-      <Route path="/config">
+      <Route path="/sair">
         <SignOut />
       </Route>
     </Switch>
   )
 }
 
-export default Body
+export default ContentPage

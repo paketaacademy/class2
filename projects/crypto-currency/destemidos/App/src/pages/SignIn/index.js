@@ -58,12 +58,15 @@ export default function SignIn() {
       setResAPI(response.data)
       setSeverity('success')
       setOpen(true)
+      let myHeaders = response.headers['auth-token']
+      login(myHeaders)
     }).catch(err => {
       setResAPI(err.response.data)
       setSeverity('error')
       setOpen(true)
     })
-}
+  }
+  
   return (
     <Container component="main" maxWidth="xs">
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
@@ -114,11 +117,9 @@ export default function SignIn() {
           </SubmitButton>
           <Grid container>
             <DivContainer>
-              <div>
-                <Link className='insert--underline' to="/cadastrar" variant="body2">
-                  Don't have an account? Sign Up
-                </Link>
-              </div>
+              <Link className='insert--underline' to="/cadastrar" variant="body2">
+                Don't have an account? Sign Up
+              </Link>
             </DivContainer>
           </Grid>
         </Form>
