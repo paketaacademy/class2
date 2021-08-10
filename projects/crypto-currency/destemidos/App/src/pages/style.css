@@ -2,6 +2,10 @@
   margin-left: 10em;
 }
 
+.feeds, .destemidos, .influencers, .markets {
+  margin-left: 10em;
+}
+
 .box{
   width: 90vw;
   height: 100vh;
@@ -24,5 +28,4 @@
   height: 25px;
   color: #fff;
   background: #11121b;
-  
 }
