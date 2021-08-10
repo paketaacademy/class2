@@ -46,7 +46,6 @@ function CoinOfTheDay() {
       {day()}
     </div>
   )
-
 }
 
 export default CoinOfTheDay
