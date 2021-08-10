@@ -1,6 +1,6 @@
 
-import React, { useState, useEffect } from 'react';
-import TableMarket from '../components/TableMarket';
+import React, { useState, useEffect } from 'react'
+import TableMarket from '../components/TableMarket'
 import './style.css'
 
 const headCells = [
@@ -33,20 +33,20 @@ const headCells = [
   { id: 'youtubeVol', numeric: true, disablePadding: false, label: 'Youtube Volume', sticky: false },
   { id: 'newsVol', numeric: true, disablePadding: false, label: 'News Volume', sticky: false },
   { id: 'spamVol', numeric: true, disablePadding: false, label: 'Spam Volume', sticky: false },
-];
+]
 
 const API = process.env.REACT_APP_API_URL
 
 function Markets() {
-  const [coins, setCoins] = useState([]);
-  const [isUpdate, setIsUpdate] = useState(false);
-  const [loading, setloading] = useState(false);
+  const [coins, setCoins] = useState([])
+  const [isUpdate, setIsUpdate] = useState(false)
+  const [loading, setloading] = useState(false)
   const API = process.env.REACT_APP_API_URL
 
   useEffect(() => {
     if (!isUpdate) {
-      setIsUpdate(true);
-      setloading(true);
+      setIsUpdate(true)
+      setloading(true)
       fetch(
         `${API}/markets`,
         { method: 'get' }
@@ -58,7 +58,7 @@ function Markets() {
           setCoins(data)
 
         }).finally(() => {
-          setloading(false);
+          setloading(false)
 
         })
     }
@@ -77,4 +77,4 @@ function Markets() {
   )
 }
 
-export default Markets;
+export default Markets
