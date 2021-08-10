@@ -11,6 +11,7 @@ import Container from '@material-ui/core/Container'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
 import { PaperDiv, StyledAvatar, Form, SubmitButton } from './style.js'
+import './style'
 
 const API = process.env.REACT_APP_API_URL
 
@@ -140,7 +141,7 @@ export default function SignUp() {
           </SubmitButton>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link className='insert--underline' to="/" variant="body2">
+              <Link className='insert--underline' to='/conectar' variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>

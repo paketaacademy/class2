@@ -14,10 +14,7 @@ function Body() {
   return (
     <Switch>
       <Route exact path='/'>
-        <Home />
-      </Route>
-      <Route path="/home">
-        <Home />
+        <SignIn />
       </Route>
       <Route path="/home">
         <Home />
@@ -49,11 +46,12 @@ function Body() {
       <Route path="/comprar/:name/:price/:amountCoins" children={<PurchaseDetails />} >
         <PurchaseDetails />
       </Route>
-      <Route path="/config">
+      <Route path="/sair">
         <SignOut />
       </Route>
     </Switch>
-  )}
+  )
+}
 
 
 export default Body
