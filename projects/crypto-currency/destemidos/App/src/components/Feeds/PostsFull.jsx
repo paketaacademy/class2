@@ -3,10 +3,12 @@ import { useState, useEffect } from "react"
 import { Link } from "@material-ui/core"
 import PostCardFull from "./PostCardFull"
 import { Container } from './style.js'
+
 function PostsFull() {
 
   const [list, setList] = useState([])
   const API = process.env.REACT_APP_API_URL
+
   useEffect(() => {
     fetch(
       `${API}/feeds`,
@@ -19,9 +21,9 @@ function PostsFull() {
       .catch(error => console.log(error))
   }, [])
 
-  return (
-    <Container>    
-      {
+  const listView = () => {
+    return(
+      
         list.length > 0 && list.map((conteudo) => {
           return (
             <Link target={"_blank"} to={conteudo.url}>
@@ -37,7 +39,13 @@ function PostsFull() {
             </Link>
           )
         })
-      }
+      
+    )
+  }
+
+  return (
+    <Container>    
+     {listView()}
     </Container>
   )
 }

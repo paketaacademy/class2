@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles'
 
 
 export const useStyles = makeStyles((theme) => ({
@@ -9,12 +9,14 @@ export const useStyles = makeStyles((theme) => ({
     },
     
     paper: {
-      marginRight: theme.spacing(2),
-      background: '#f59c17',
-      color: 'white',
-      height: '100%',
-      width: '100px',  
-      position: 'fixed'
+    marginRight: theme.spacing(2),
+    background: '#f59c17',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: '100vh',
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    width: '80px',
          
     },
       
@@ -26,9 +28,10 @@ export const useStyles = makeStyles((theme) => ({
       
     },
   
-    icons: {
-      height:'30px',
-      margin: '0px 0px 8px 0'
+    icon: {
+    marginTop: '30px',
+    height: '30px',
+    margin: '0px 0px 8px 0'
   
     },   
       
@@ -52,6 +55,5 @@ export const useStyles = makeStyles((theme) => ({
        
    
     
-  }));
+  })); 
 
-  
