@@ -1,4 +1,3 @@
-import "./commons/global.css"
 import { ThemeProvider } from "@material-ui/core"
 import { theme } from "./commons/constants/theme"
 import { Login } from "./components/Login"
@@ -14,7 +13,7 @@ import "./commons/global.css";
 import { Feeds } from "./components/Feed";
 import { TemplateAuth } from "./components/TemplateAuth"
 import { TemplateMain } from "./components/TemplateMain"
-
+import Market from "./components/Market";
 
 function App() {
   return (
@@ -31,6 +30,11 @@ function App() {
             <Route path="/noticias">
               <TemplateMain>
                 <Feeds />
+              </TemplateMain>
+            </Route>
+            <Route>
+              <TemplateMain>
+                <Market/>
               </TemplateMain>
             </Route>
             <TemplateAuth>
