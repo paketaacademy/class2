@@ -45,8 +45,8 @@ export const Register = () => {
                 label="Nome"
                 variant="outlined"
                 size="small"
-                error={errors.name}
-                helperText={errors.name?.message}
+                error={!!errors.firstName}
+                helperText={errors.firstName?.message}
               />
             }
           />
@@ -61,7 +61,7 @@ export const Register = () => {
                 label="Sobrenome"
                 variant="outlined"
                 size="small"
-                error={errors.lastName}
+                error={!!errors.lastName}
                 helperText={errors.lastName?.message}
               />
             }
@@ -77,7 +77,7 @@ export const Register = () => {
                 label="E-mail"
                 variant="outlined"
                 size="small"
-                error={errors.emailV}
+                error={!!errors.email}
                 helperText={errors.email?.message}
               />
             }
@@ -93,7 +93,7 @@ export const Register = () => {
                 label="Cofirmar e-mail"
                 variant="outlined"
                 size="small"
-                error={errors.confirmEmail}
+                error={!!errors.confirmEmail}
                 helperText={errors.confirmEmail?.message}
               />
             }
@@ -110,7 +110,7 @@ export const Register = () => {
                 variant="outlined"
                 size="small"
                 type="password"
-                error={errors.password}
+                error={!!errors.password}
                 helperText={errors.password?.message}
               />
             }
