@@ -12,24 +12,39 @@ app.post("/login", async (req, res) => {
   if (error) {
     return res.status(400).send(error.details[0].message);
   }
+  
+  const { error } = loginValidation(req.body)
+  if (error) {
+    return res
+      .status(400)
+      .send(error.details[0].message)
+  }
 
-  const { email } = req.body;
-  const usersModel = Mongoose.model("users", userSchema, "users");
-  const user = await usersModel.findOne({ email });
+  const { email } = req.body
+  const usersModel = Mongoose.model('users', userSchema, 'users')
+  const user = await usersModel.findOne({ email })
   if (!user) {
-    return res.status(400).send("Email is not found");
+    return res
+      .status(400)
+      .send({
+        emailError: 'Email is not found'
+      })
   }
 
-  const validPass = await bcrypt.compare(req.body.password, user.password);
+  const validPass = await bcrypt.compare(req.body.password, user.password)
   if (!validPass) {
-    return res.status(400).send("Invalid password");
+    return res
+      .status(400)
+      .send({
+        passwordError: 'Invalid password'
+      })
   }
 
-  const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET, {
-    expiresIn: 86400,
-  });
-  res.header("auth-token", token);
-  res.send("Logged in!");
-});
+  const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET, { expiresIn: 86400 })
+  res.header('auth-token', token)
+  res.send({
+    msg: 'Logged in!'
+  })
+})
 
-export default app;
+export default app
