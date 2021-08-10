@@ -24,7 +24,7 @@ app.post("/bank", verifyToken, async (req, res) => {
       return res
           .status(400)
           .send({
-            error:'Account bank already exists.'
+            error:'Conta já existente'
           })
     }
     await bankModel.create({

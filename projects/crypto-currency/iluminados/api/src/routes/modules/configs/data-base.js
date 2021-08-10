@@ -40,16 +40,20 @@ const userSchema = new mongoose.Schema({
 )
 
 const walletSchema = new mongoose.Schema({
+    user: {
+        type:String,
+        required:true
+    },
     coinName: {
         type: String,
         required: true
     },
     coinPrice: {
-        type: String,
+        type: Number,
         required: true
     },
     coinQuantity: {
-        type: String,
+        type: Number,
         required: true
     },
     
