@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
-import Link from '@material-ui/core/Link'
+import { Link } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
@@ -11,6 +11,7 @@ import Container from '@material-ui/core/Container'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
 import { PaperDiv, StyledAvatar, Form, SubmitButton } from './style.js'
+import './style'
 
 const API = process.env.REACT_APP_API_URL
 
@@ -58,6 +59,10 @@ export default function SignUp() {
       setResAPI(response.data)
       setSeverity('success')
       setOpen(true)
+      setTimeout(()=>{
+        window.location.href = `/conectar`
+      },2000)
+      
     }).catch(err => {
       setResAPI(err.response.data)
       setSeverity('error')
@@ -136,7 +141,7 @@ export default function SignUp() {
           </SubmitButton>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link className='insert--underline' to='/conectar' variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>

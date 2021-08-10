@@ -8,12 +8,10 @@ app.get("/market", function (req, res) {
     .request(configuration("market"))
     .then(function (response) {
       let resp = response.data;
-      res.json(resp);
-      res.status(200).send("Requisição realizada com sucesso");
+      res.json(resp).status(200);
     })
     .catch(function (error) {
       res.status(400).send("Bad Request");
-      console.error(error);
     });
 });
 

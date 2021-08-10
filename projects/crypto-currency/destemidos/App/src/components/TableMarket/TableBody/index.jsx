@@ -5,6 +5,7 @@ import TableRow from '@material-ui/core/TableRow'
 import { getComparator, stableSort, getColorOfNumber } from '../utils'
 import { TableCell, StyledP } from '../styles.js'
 import { Link } from 'react-router-dom'
+import './style.css'
 
 function TBody(props) {
     const { order, orderBy, rows, rowsPerPage, page, onClickRow } = props;
@@ -27,7 +28,7 @@ function TBody(props) {
                                 <TableCell sticky component="th" scope="row" padding="none">
                                     {index}
                                 </TableCell>
-                                <TableCell sticky borderRight align="right"><div className="t"><Link to={`/comprar/${row.n}/${row.p}/${row.p_btc}`}>{row.n}:{row.s}</Link></div></TableCell>
+                                <TableCell sticky borderRight align="right"><div className="t"><Link className='StyledColor' to={`/comprar/${row.n}/${row.p}/${row.p_btc}`}>{row.n}:{row.s}</Link></div></TableCell>
                                 <TableCell align="right">+</TableCell>
                                 <TableCell align="right">{row.gs}</TableCell>
                                 <TableCell align="right">{row.acr}</TableCell>

@@ -13,7 +13,7 @@ export const PaperDiv = styled.div`
 export const StyledAvatar = styled(Avatar)`
   ${({ theme }) => `
     margin: ${theme.spacing(1)}px;
-    background-color: ${theme.palette.secondary.main};
+    background-color: rgb(98, 45, 148);
   `}
 `
 export const Form = styled.form`
@@ -25,5 +25,6 @@ export const Form = styled.form`
 export const SubmitButton = styled(Button)`
   ${({ theme }) => `
     margin: ${theme.spacing(3, 0, 2)};
+    background-color: #12c7ff;
   `}
 `

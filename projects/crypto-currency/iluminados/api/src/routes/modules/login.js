@@ -1,14 +1,18 @@
-import express from 'express'
-import bcrypt from 'bcryptjs'
-import jwt from 'jsonwebtoken'
-import { loginValidation } from './validation.js'
-import { Mongoose, userSchema } from './configs/data-base.js'
-const app = express()
+import express from "express";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import { loginValidation } from "./validation.js";
+import { Mongoose, userSchema } from "./configs/data-base.js";
+const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
-app.post('/login', async (req, res) => {
-
+app.post("/login", async (req, res) => {
+  const { error } = loginValidation(req.body);
+  if (error) {
+    return res.status(400).send(error.details[0].message);
+  }
+  
   const { error } = loginValidation(req.body)
   if (error) {
     return res

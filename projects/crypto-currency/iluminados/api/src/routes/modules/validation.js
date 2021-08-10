@@ -1,4 +1,4 @@
-import Joi from '@hapi/joi'
+import Joi from "@hapi/joi";
 
 const registerValidation = (data) => {
   const schema = Joi.object({
@@ -18,4 +18,25 @@ const loginValidation = (data) => {
   return schema.validate(data)
 }
 
-export { registerValidation, loginValidation }
+const walletValidation = (data) => {
+  const schema = Joi.object({
+    coinName: Joi.string().min(1).required().lowercase(),
+    coinPrice: Joi.string().min(1).required(),
+    coinQuantity: Joi.string().min(1).required(),
+  });
+  return schema.validate(data);
+};
+
+const bankValidation = (data) => {
+  const schema = Joi.object({
+    balance: Joi.number().min(1).required(),
+  });
+  return schema.validate(data);
+};
+
+export {
+  registerValidation,
+  loginValidation,
+  walletValidation,
+  bankValidation,
+};
