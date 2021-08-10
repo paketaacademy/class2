@@ -10,6 +10,10 @@ import buyCoin from './routes/buy-coin.js'
 import express from 'express'
 import cors from 'cors'
 const app = express()
+const corsOptions = {
+  exposedHeaders: 'auth-token'
+}
+app.use(cors(corsOptions))
 app.use(cors())
 app.use(express.json())
 
