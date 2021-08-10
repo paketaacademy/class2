@@ -8,17 +8,13 @@ import SignUp from '../../pages/SignUp'
 import SignOut from '../../pages/SignOut'
 import Home from '../../pages/Home'
 import InserirCredito from '../../pages/InserirCredito'
-import NaoEncontrada from '../../pages/NaoEncontrada'
 import PurchaseDetails from '../../pages/PurchaseDetails'
 
 function Body() {
   return (
     <Switch>
       <Route exact path='/'>
-        <Home />
-      </Route>
-      <Route path="/home">
-        <Home />
+        <SignIn />
       </Route>
       <Route path="/home">
         <Home />
@@ -47,10 +43,11 @@ function Body() {
       <Route path="/comprar/:name/:price/:amountCoins" children={<PurchaseDetails />} >
         <PurchaseDetails />
       </Route>
-      <Route path="/config">
+      <Route path="/sair">
         <SignOut />
       </Route>
     </Switch>
+  )
 }
 
 export default Body
