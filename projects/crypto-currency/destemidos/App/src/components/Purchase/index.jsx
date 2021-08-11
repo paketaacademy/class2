@@ -47,10 +47,8 @@ function Purchase() {
     )
       .then(async response => {
         const { data } = await response.json()
-        setList(data)  
-        await list.filter(number => {
+        data.filter(number => {
           if (number.id == id) {
-            console.log('entrou no if')  
             setIdCripto(number.id)
             setPriceCripto(number.p)
             setPriceBtcCripto(number.p_btc)
