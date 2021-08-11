@@ -12,10 +12,13 @@ import bank from './modules/bank.js'
 import updateBank from './modules/update-bank.js'
 import feeds from './modules/feeds.js'
 
+const corsOption = {
+  exposedHeaders: 'auth-token'
+}
 
 const app = express()
 dotenv.config()
-app.use(cors())
+app.use(cors(corsOption))
 app.use(express.json())
 
 app.use(register)

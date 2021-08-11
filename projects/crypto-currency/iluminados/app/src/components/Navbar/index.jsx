@@ -62,7 +62,7 @@ export const Navbar = () => {
             <Link to="#">
               <MenuItem className={classes.fonte} >
                 <DashboardIcon className={classes.icons} />
-                DASHBOARD
+                WALLET
               </MenuItem>
             </Link>
             <Link to="#">

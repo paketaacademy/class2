@@ -6,16 +6,17 @@ import { ThemeProvider } from "@material-ui/core"
 import { theme } from "./commons/constants/theme"
 import { Login } from "./components/Login"
 import { Register } from "./components/Register"
-import { Navbar } from "./components/Navbar"
 import {
   BrowserRouter as Router,
   Switch,
-  Route } from 'react-router-dom'
+  Route,
+} from 'react-router-dom'
 import "./commons/global.css";
 import { Feeds } from "./components/Feed";
 import { TemplateAuth } from "./components/TemplateAuth"
 import { TemplateMain } from "./components/TemplateMain"
 import Market from "./components/Market";
+import { Wallet } from "./components/Wallet"
 
 function App() {
   return (
@@ -35,15 +36,20 @@ function App() {
             </Route>
             <Route  exact path="/">
               <MenuListComposition />  
-            </Route>  
+            </Route>
             <Route path="/noticias">
               <TemplateMain>
                 <Feeds />
               </TemplateMain>
             </Route>
-            <Route>
+            <Route path="/mercado">
               <TemplateMain>
-                <Market/>
+                <Market />
+              </TemplateMain>
+            </Route>
+            <Route path="/carteira">
+              <TemplateMain>
+                <Wallet />
               </TemplateMain>
             </Route>
             <TemplateAuth>
