@@ -56,7 +56,7 @@ function Purchase() {
           {resAPI}
         </Alert>
       </Snackbar>
-      <h1>Detalhes da Cryptomoeda</h1>
+      <h1>Detalhes da Criptomoeda</h1>
       <BoxDetails>
         <div>
           <h3>Tipo de Criptomoeda:</h3>
