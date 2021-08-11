@@ -16,7 +16,7 @@ export default function SignOut() {
         className='button--config' 
         variant="contained"
       >
-        SIGN OUT
+        SAIR
       </Button>
     </>
   )

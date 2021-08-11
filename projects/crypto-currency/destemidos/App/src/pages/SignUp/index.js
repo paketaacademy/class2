@@ -87,7 +87,7 @@ export default function SignUp() {
           <LockOutlinedIcon />
         </StyledAvatar>
         <Typography component="h1" variant="h5">
-          Sign up
+          Registre-se
         </Typography>
         <Form onSubmit={handleSubmit} noValidate>
           <Grid container spacing={2}>           
@@ -97,7 +97,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Email"
                 name="email"
                 autoComplete="email"
                 onChange={handleChange}
@@ -109,7 +109,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Senha"
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -122,7 +122,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 name="confirmPassword"
-                label="Confirm Password"
+                label="Confirme Senha"
                 type="password"
                 id="confirmPassword"
                 autoComplete="current-password"
@@ -137,12 +137,12 @@ export default function SignUp() {
             color="primary"
             disabled={stateBtn}
           >
-            Sign Up
+            Registrar
           </SubmitButton>
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link className='insert--underline' to='/conectar' variant="body2">
-                Already have an account? Sign in
+                Já possui uma conta? Faça o login
               </Link>
             </Grid>
           </Grid>

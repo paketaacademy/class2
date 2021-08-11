@@ -16,7 +16,7 @@ const PostCard = ({ body, social_score, retweets, likes }) => {
               </Grid>
               <Grid item xs zeroMinWidth>
                 <Typography noWrap><h2>{body}</h2></Typography>
-                <Typography noWrap><TypographyStyled><div>Social Score: {social_score}</div> <div>Retweets: {retweets}</div> <div>Likes: {likes}</div></TypographyStyled></Typography>
+                <Typography noWrap><TypographyStyled><div>Pontuação Social: {social_score}</div> <div>Retweets: {retweets}</div> <div>Likes: {likes}</div></TypographyStyled></Typography>
               </Grid>                  
           </Grid>        
       </PaperBox>

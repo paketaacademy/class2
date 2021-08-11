@@ -5,34 +5,33 @@ import Destemidos from '../../components/Destemidos'
 
 const headCells = [
   { id: 'id', numeric: false, disablePadding: true, label: '#', sticky: true },
-  { id: 'coin', numeric: false, disablePadding: true, label: 'Coin', sticky: true },
-  { id: 'alerts', numeric: true, disablePadding: false, label: 'Alerts', sticky: false },
-  { id: 'galaxyScore', numeric: true, disablePadding: false, label: 'Galaxy Score™', sticky: false },
-  { id: 'altRank', numeric: true, disablePadding: false, label: 'AltRank™', sticky: false },
-  { id: 'correlationRank', numeric: true, disablePadding: false, label: 'Correlation Rank', sticky: false },
-  { id: 'price', numeric: true, disablePadding: false, label: 'Price', sticky: false },
-  { id: '1hChangeUSD', numeric: true, disablePadding: false, label: '1H % Change (USD)', sticky: false },
-  { id: '24hChangeUSD', numeric: true, disablePadding: false, label: '24H % Change (USD)', sticky: false },
-  { id: '24hChangeBTC', numeric: true, disablePadding: false, label: '24H % Change (BTC)', sticky: false },
-  { id: 'marketCap', numeric: true, disablePadding: false, label: 'Market Cap', sticky: false },
-  { id: 'marketVolume', numeric: true, disablePadding: false, label: 'Market Volume', sticky: false },
-  { id: 'marketDominance', numeric: true, disablePadding: false, label: 'Market Dominance', sticky: false },
-  { id: 'volatily', numeric: true, disablePadding: false, label: 'Volatility', sticky: false },
-  { id: 'circulatingSupply', numeric: true, disablePadding: false, label: 'Circulating Supply', sticky: false},
-  { id: 'socialVol', numeric: true, disablePadding: false, label: 'Social Volume', sticky: false },
-  { id: 'socialEng', numeric: true, disablePadding: false, label: 'Social Engagement', sticky: false },
-  { id: 'socialCont', numeric: true, disablePadding: false, label: 'Social Contributors', sticky: false },
-  { id: 'socialDom', numeric: true, disablePadding: false, label: 'Social Dominance', sticky: false },
-  { id: 'averageSent', numeric: true, disablePadding: false, label: 'Average Sentiment', sticky: false },
-  { id: 'bullishSent', numeric: true, disablePadding: false, label: 'Bullish Sentiment', sticky: false },
-  { id: 'bearishSent', numeric: true, disablePadding: false, label: 'Bearish Sentiment', sticky: false },
-  { id: 'sharedLinks', numeric: true, disablePadding: false, label: 'Shared Links', sticky: false },
-  { id: 'twitterVol', numeric: true, disablePadding: false, label: 'Twitter Volume', sticky: false },
-  { id: 'redditVol', numeric: true, disablePadding: false, label: 'Reddit Volume', sticky: false },
-  { id: 'mediumVol', numeric: true, disablePadding: false, label: 'Medium Volume', sticky: false },
-  { id: 'youtubeVol', numeric: true, disablePadding: false, label: 'Youtube Volume', sticky: false },
-  { id: 'newsVol', numeric: true, disablePadding: false, label: 'News Volume', sticky: false },
-  { id: 'spamVol', numeric: true, disablePadding: false, label: 'Spam Volume', sticky: false },
+  { id: 'coin', numeric: false, disablePadding: true, label: 'Moeda', sticky: true },
+  { id: 'alerts', numeric: true, disablePadding: false, label: 'Alertas', sticky: false },
+  { id: 'galaxyScore', numeric: true, disablePadding: false, label: 'Pontuação Galatica™', sticky: false },
+  { id: 'correlationRank', numeric: true, disablePadding: false, label: 'Classificação Correlacionada', sticky: false },
+  { id: 'price', numeric: true, disablePadding: false, label: 'Preço em USD', sticky: false },
+  { id: '1hChangeUSD', numeric: true, disablePadding: false, label: 'Variação(%) em 1H(USD)', sticky: false },
+  { id: '24hChangeUSD', numeric: true, disablePadding: false, label: 'Variação(%) em 24H(USD)', sticky: false },
+  { id: '24hChangeBTC', numeric: true, disablePadding: false, label: 'Variação(%) em 24H(BTC)', sticky: false },
+  { id: 'marketCap', numeric: true, disablePadding: false, label: 'Capitalização do Mercado', sticky: false },
+  { id: 'marketVolume', numeric: true, disablePadding: false, label: 'Volume no Mercado', sticky: false },
+  { id: 'marketDominance', numeric: true, disablePadding: false, label: 'Dominancia no Mercado', sticky: false },
+  { id: 'volatily', numeric: true, disablePadding: false, label: 'Volatilidade do preço', sticky: false },
+  { id: 'circulatingSupply', numeric: true, disablePadding: false, label: 'Suprimento de Circulação', sticky: false},
+  { id: 'socialVol', numeric: true, disablePadding: false, label: 'Volume Social', sticky: false },
+  { id: 'socialEng', numeric: true, disablePadding: false, label: 'Engajamento Social', sticky: false },
+  { id: 'socialCont', numeric: true, disablePadding: false, label: 'Contribuição Social', sticky: false },
+  { id: 'socialDom', numeric: true, disablePadding: false, label: 'Dominancia Social', sticky: false },
+  { id: 'averageSent', numeric: true, disablePadding: false, label: 'Avaliação Media', sticky: false },
+  { id: 'bullishSent', numeric: true, disablePadding: false, label: 'Avaliação de Alta da Moeda', sticky: false },
+  { id: 'bearishSent', numeric: true, disablePadding: false, label: 'Avaliação de Baixa da Moeda', sticky: false },
+  { id: 'sharedLinks', numeric: true, disablePadding: false, label: 'Links Compartilhados', sticky: false },
+  { id: 'twitterVol', numeric: true, disablePadding: false, label: 'Movimentação Social no Twitter', sticky: false },
+  { id: 'redditVol', numeric: true, disablePadding: false, label: 'Movimentação Social no Reddit', sticky: false },
+  { id: 'mediumVol', numeric: true, disablePadding: false, label: 'Movimentação Social Média', sticky: false },
+  { id: 'youtubeVol', numeric: true, disablePadding: false, label: 'Movimentação Social no Youtube', sticky: false },
+  { id: 'newsVol', numeric: true, disablePadding: false, label: 'Movimentação de noticias', sticky: false },
+  { id: 'spamVol', numeric: true, disablePadding: false, label: 'Volume de Spam', sticky: false },
 ]
 
 const API = process.env.REACT_APP_API_URL
@@ -68,9 +67,9 @@ function Markets() {
   return (
     <>
       <Destemidos />
-        <div className='container'>
-          <div className='SliderView'>
-            <button onClick={() => setIsUpdate(false)}>{loading ? "atualizando" : "Atualizar Página"}</button>
+        <div className='box'>
+          <div className='box-table'>
+            <button className="btn-market-refrsh" onClick={() => setIsUpdate(false)}>{loading ? "atualizando" : "Atualizar Página"}</button>
             <TableMarket rows={coins} headCells={headCells} />
           </div>
         </div>

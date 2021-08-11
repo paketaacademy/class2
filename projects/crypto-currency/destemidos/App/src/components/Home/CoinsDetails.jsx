@@ -8,7 +8,7 @@ import CompareArrowsIcon from '@material-ui/icons/CompareArrows'
 function CoinsDetails() {
   return (
     <ContainerDiv>
-      <h4>Coins</h4>
+      <h4>Moedas</h4>
       <div>0,09 BTC</div>      
       <ButtonDiv>
         <Link className="LinkButton" to='/mercado'>
