@@ -3,16 +3,13 @@ import PropTypes from 'prop-types'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import TableSortLabel from '@material-ui/core/TableSortLabel'
-import { Link, useParams } from 'react-router-dom'
 import { TableCell } from '../styles.js'
 
 function THead(props) {
-  const { classes, order, orderBy, onRequestSort, headCells } = props
+  const { classes, order, orderBy, onRequestSort, headCells } = props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
-  const id = useParams()
-
   return (
     <TableHead>
       <TableRow>

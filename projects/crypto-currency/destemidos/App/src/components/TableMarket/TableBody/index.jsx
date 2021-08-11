@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import './style.css'
 
 function TBody(props) {
-  const { order, orderBy, rows, rowsPerPage, page, onClickRow } = props
+  const { order, orderBy, rows, rowsPerPage, page, onClickRow } = props;
   return (
     <TableBody on>
       {stableSort(rows, getComparator(order, orderBy))
@@ -78,6 +78,5 @@ TBody.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
   page: PropTypes.number.isRequired,
 }
-
 
 export default TBody

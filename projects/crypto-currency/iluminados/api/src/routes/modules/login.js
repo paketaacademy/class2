@@ -12,13 +12,6 @@ app.post("/login", async (req, res) => {
   if (error) {
     return res.status(400).send(error.details[0].message);
   }
-  
-  const { error } = loginValidation(req.body)
-  if (error) {
-    return res
-      .status(400)
-      .send(error.details[0].message)
-  }
 
   const { email } = req.body
   const usersModel = Mongoose.model('users', userSchema, 'users')

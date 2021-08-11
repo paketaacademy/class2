@@ -18,7 +18,7 @@ function Posts() {
         setList(data)        
       })
       .catch(error => console.log(error))
-  }, []);
+  },[]);
 
   const listView = () => {
     return(
