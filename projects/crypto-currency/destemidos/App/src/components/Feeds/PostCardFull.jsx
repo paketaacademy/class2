@@ -25,7 +25,7 @@ const PostCardFull = ({ body, display_name, profile_image, social_score, retweet
             </IconButton>
           }
           title={display_name}
-          subheader="September 14, 2016"
+          subheader="Agosto 10, 2021"
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -46,7 +46,7 @@ const PostCardFull = ({ body, display_name, profile_image, social_score, retweet
         </CardActions>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            <TypographyStyled><div>Social Score: {social_score}</div> <div>Retweets: {retweets}</div> <div>Likes: {likes}</div></TypographyStyled>
+            <TypographyStyled><div>Pontuação Social: {social_score}</div> <div>Retweets: {retweets}</div> <div>Likes: {likes}</div></TypographyStyled>
           </Typography>
         </CardContent>
       </CardStyled>
