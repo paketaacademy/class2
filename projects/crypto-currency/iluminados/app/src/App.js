@@ -1,3 +1,7 @@
+
+import { MenuListComposition } from "./components/Navbar"
+import CoinOfTheDay from "./components/Coinoftheday"
+import "./commons/global.css";
 import { ThemeProvider } from "@material-ui/core"
 import { theme } from "./commons/constants/theme"
 import { Login } from "./components/Login"
@@ -6,9 +10,7 @@ import { Navbar } from "./components/Navbar"
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-
-} from 'react-router-dom'
+  Route } from 'react-router-dom'
 import "./commons/global.css";
 import { Feeds } from "./components/Feed";
 import { TemplateAuth } from "./components/TemplateAuth"
@@ -18,6 +20,7 @@ import Market from "./components/Market";
 function App() {
   return (
     <div className="App">
+      
       <ThemeProvider theme={theme}>
         <Router>
           <Switch>
@@ -27,6 +30,12 @@ function App() {
             <Route path="/registrar">
               <Register />
             </Route>
+            <Route path="/moedadodia">
+              <CoinOfTheDay />
+            </Route>
+            <Route  exact path="/">
+              <MenuListComposition />  
+            </Route>  
             <Route path="/noticias">
               <TemplateMain>
                 <Feeds />
@@ -40,14 +49,12 @@ function App() {
             <TemplateAuth>
               <Route exact path="/">
                 <Login />
-              </Route>
-              <Route path="/registrar">
-                <Register />
-              </Route>
+              </Route> 
             </TemplateAuth>
           </Switch>
         </Router>
       </ThemeProvider>
+      
     </div>
   );
 }
