@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8d910541de69bedcf03a9faf477112de6f6f01d4
 import React, { useState, useEffect } from 'react'
 import TableMarket from '../components/TableMarket'
 import './style.css'
