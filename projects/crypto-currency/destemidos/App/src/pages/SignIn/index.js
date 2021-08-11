@@ -47,84 +47,84 @@ export default function SignIn() {
 
     return <MuiAlert elevation={6} variant="filled" {...props} />
 
-  const handleClose = (event) => {
-    setOpen(false)
-  }
+    const handleClose = (event) => {
+      setOpen(false)
+    }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    axios.post(`${API}/singin`, inputs).then(response => {
-      setResAPI(response.data)
-      setSeverity('success')
-      setOpen(true)
-    }).catch(err => {
-      setResAPI(err.response.data)
-      setSeverity('error')
-      setOpen(true)
-    })
-}
-  return (
-    <Container component="main" maxWidth="xs">
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert severity={severity}>
-          {resAPI}
-        </Alert>
-      </Snackbar>
-      <CssBaseline />
-      <PaperDiv>
-        <StyledAvatar>
-          <LockOutlinedIcon />
-        </StyledAvatar>
-        <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
-        <Form onSubmit={handleSubmit} noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-            onChange={handleChange}
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-            onChange={handleChange}
-          />
-          <SubmitButton
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-          >
-            Sign In
-          </SubmitButton>
-          <Grid container>
-            <DivContainer>
-              <div>
-                <Link className='insert--underline' to="/cadastrar" variant="body2">
-                  Don't have an account? Sign Up
-                </Link>
-              </div>
-            </DivContainer>
-          </Grid>
-        </Form>
-      </PaperDiv>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
-    </Container>
-  )
-}
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      axios.post(`${API}/singin`, inputs).then(response => {
+        setResAPI(response.data)
+        setSeverity('success')
+        setOpen(true)
+      }).catch(err => {
+        setResAPI(err.response.data)
+        setSeverity('error')
+        setOpen(true)
+      })
+    }
+    return (
+      <Container component="main" maxWidth="xs">
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Alert severity={severity}>
+            {resAPI}
+          </Alert>
+        </Snackbar>
+        <CssBaseline />
+        <PaperDiv>
+          <StyledAvatar>
+            <LockOutlinedIcon />
+          </StyledAvatar>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <Form onSubmit={handleSubmit} noValidate>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+              onChange={handleChange}
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              onChange={handleChange}
+            />
+            <SubmitButton
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+            >
+              Sign In
+            </SubmitButton>
+            <Grid container>
+              <DivContainer>
+                <div>
+                  <Link className='insert--underline' to="/cadastrar" variant="body2">
+                    Don't have an account? Sign Up
+                  </Link>
+                </div>
+              </DivContainer>
+            </Grid>
+          </Form>
+        </PaperDiv>
+        <Box mt={8}>
+          <Copyright />
+        </Box>
+      </Container>
+    )
+  }}

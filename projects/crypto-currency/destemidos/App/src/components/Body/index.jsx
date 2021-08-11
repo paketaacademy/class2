@@ -10,24 +10,25 @@ import Home from '../../pages/Home'
 import InserirCredito from '../../pages/InserirCredito'
 import NaoEncontrada from '../../pages/NaoEncontrada'
 import PurchaseDetails from '../../pages/PurchaseDetails'
+
 function Body() {
   return (
-    <Switch>
-      <Route exact path='/'>
-        <Destemidos />
+    <Switch >
+      {/* <Route exact path='/'>
+        <Destemidos /> 
       </Route>
       <Route path="/destemidos">
-        <Destemidos />
-      </Route>
+        <Destemidos /> 
+      </Route> */}
       <Route path="/mercado">
         <Markets />
       </Route>
       <Route path="/credito">
         <InserirCredito />
       </Route>
-      <Route path="/comprar">
+      {/* <Route path="/comprar">
         <Comprar />
-      </Route>
+      </Route> */}
       <Route path="/influencias">
         <Influencers />
       </Route>
@@ -35,19 +36,19 @@ function Body() {
         <Feeds />
       </Route>
       <Route path="/conectar">
-         <SignIn />
+        <SignIn />
       </Route>
       <Route path="/cadastrar">
         <SignUp />
       </Route>
-      <Route path="/comprar/:name/:price/:amountCoins" children={<PurchaseDetails />} >
-        <PurchaseDetails />
+      <Route path="/comprar/:name/:price/:amountCoins" children={<PurchaseDetails />}></Route >
+
 
       <Route path="/config">
         <SignOut />
       </Route>
     </Switch>
-    )
+  )
 }
 
-export default Body
+export default Body;
