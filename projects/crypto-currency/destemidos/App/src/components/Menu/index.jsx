@@ -24,7 +24,7 @@ function Menu() {
                 <img src="https://static.thenounproject.com/png/685027-200.png" alt="market icon" className='market--icon' />
               </div>
               <div>
-                <h1>MARKETS</h1>
+                <h1>MERCADO</h1>
               </div>
             </Link>    
           </li>

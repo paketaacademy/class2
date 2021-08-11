@@ -2,10 +2,6 @@
   margin-left: 10em;
 }
 
-.feeds, .destemidos, .influencers, .markets {
-  margin-left: 10em;
-}
-
 .box{
   width: 90vw;
   height: 100vh;
@@ -14,7 +10,6 @@
   text-align: center;
   margin: 0 0 0 100px;
   padding: 10px;
-
 }
 
 .box-table{

@@ -12,15 +12,13 @@ export default function SignOut() {
 
   return (
     <>
-      {isAuthenticated() && 
-        <Button 
-          onClick={handleLogout} 
-          className='button--config' 
-          variant="contained"
-        >
-          SIGN OUT
-        </Button>
-      }
+      <Button 
+        onClick={handleLogout} 
+        className='button--config' 
+        variant="contained"
+      >
+        SAIR
+      </Button>
     </>
   )
 }

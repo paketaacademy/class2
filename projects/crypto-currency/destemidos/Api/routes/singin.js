@@ -28,9 +28,8 @@ app.post('/singin', async (req, res) => {
     return res.status(400).send('Senha invalida')
   }
 
-
   const token = jwt.sign({_id: user._id}, process.env.SECRET, { 
-    expiresIn: 600
+    expiresIn: 1200
 })
   res.header('auth-token', token)
   res.send('logou')

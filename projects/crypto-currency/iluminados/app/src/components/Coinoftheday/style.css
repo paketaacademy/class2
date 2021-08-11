@@ -1,0 +1,32 @@
+.page{
+    height: 100vh;
+    margin: 0 auto;
+    align-self: center;
+    display: flex;
+}
+
+.coin{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 30px;
+    margin: 30px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid #7c7c7c;
+    max-width: 400px;
+    border-radius: 10px;
+    margin: 0 auto;   
+    align-self: center;
+    padding: 20px;
+}
+
+.img{
+    width: 80px;
+    height: 80px;
+}

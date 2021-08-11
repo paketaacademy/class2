@@ -9,4 +9,8 @@
 .cards{
     margin: 40px 0;
 }
+.page-title{
+    align-self: center;
+    text-align: center;
+}
 
