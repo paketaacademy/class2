@@ -12,7 +12,6 @@ function Purchase() {
   let { id } = useParams()
   const API = process.env.REACT_APP_API_URL
 
-  const [list, setList] = useState([])
   const [idCripto, setIdCripto] = useState(0)
   const [nameCripto, setNameCripto] = useState('')
   const [priceCripto, setPriceCripto] = useState(0)

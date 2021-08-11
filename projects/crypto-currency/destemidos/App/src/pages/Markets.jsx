@@ -44,8 +44,8 @@ function Markets() {
 
   useEffect(() => {
     if (!isUpdate) {
-      setIsUpdate(true);
-      setloading(true);
+      setIsUpdate(true)
+      setloading(true)
       fetch(
         `${API}/markets`,
         { method: 'get' }
