@@ -1,8 +1,11 @@
 import app from "./configs/app.js"
+import dotenv from 'dotenv'
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
 import { Mongoose, UserSchema } from './configs/db.js'
 import { singinValidation } from './configs/users-validation.js'
+
+dotenv.config()
 
 app.post('/singin', async (req, res) => {
   const { error } = singinValidation(req.body)

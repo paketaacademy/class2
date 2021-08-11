@@ -1,9 +1,6 @@
 import app from "./configs/app.js"
-import dotenv from 'dotenv'
 import { Mongoose, UserSchema, WalletSchema } from './configs/db.js'
 import tokenValidation from './configs/token-validation.js'
-
-dotenv.config()
 
 app.get('/profile', tokenValidation, async (req, res) => {
   
