@@ -1,0 +1,23 @@
+.boxRowTop{
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: 1px solid #522e74;
+  /*box-shadow: 2px 2px 5px #7c7c7c;*/  
+  width: 100%;
+  padding: 5px;  
+  background: #fff;
+}
+
+.boxContainter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;    
+}

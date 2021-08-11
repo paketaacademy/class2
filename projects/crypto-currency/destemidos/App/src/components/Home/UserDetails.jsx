@@ -1,18 +1,19 @@
 import React from 'react'
-import { ContainerDiv, StyledAvatar, ButtonDiv } from './Style.js'
-import Button from '@material-ui/core/Button'
-import ExitToAppIcon from '@material-ui/icons/ExitToApp'
+import { ContainerStyled, BoxStyled } from './Style.js'
+import Avatar from '@material-ui/core/Avatar'
 
 function UserDetails() {
   return (
-    <ContainerDiv>
-      <StyledAvatar>U</StyledAvatar>
+    <ContainerStyled>
+      <BoxStyled>
       <div>João da Silva</div>
       <div>joao@gmail.com</div>
-      <ButtonDiv>
-        <Button variant="contained">Sair{' '}<ExitToAppIcon/></Button>
-      </ButtonDiv>    
-    </ContainerDiv>
+      
+      </BoxStyled>
+      <BoxStyled>
+      <Avatar>U</Avatar>
+      </BoxStyled>    
+    </ContainerStyled>
   )
 }
 

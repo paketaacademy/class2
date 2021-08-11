@@ -1,45 +1,50 @@
 import styled from 'styled-components'
-import { Avatar } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 
-export const ContainerDiv = styled.div`
+export const ContainerStyled = styled.div`
   ${({ theme }) => `
     text-align: center;
-    max-width: 300px;
-    min-height: 200px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items:center;
-    flex-direction: column;
+    align-self: center;
+    flex-direction: row;
     border: 1px solid #522e74;
-    padding: 20px;
+    padding: 5px;
     border-radius: 10px;
     margin: 10px;
   `}
 `
-
-export const StyledAvatar = styled(Avatar)`
-  ${({ theme }) => `    
-    align-self: center;
-    margin-bottom: 10px;
-  `
-}`
-
-export const ButtonDiv = styled.div`
+export const BoxStyled = styled.div`
   ${({ theme }) => `
     max-width: 300px;
     align-self: center;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: row;
+    margin: 10px;
     justify-content: space-between;
   `
 }`
 
-export const StyledButton = styled(Button)`
+export const StyledButtonComprar = styled(Button)`
   ${({ theme }) => `
-    width: 140px;
-    margin: 10px
+    width: 140px;  
+    z-index: 0;
   `
 }`
 
+export const StyledTitle = styled.th`
+  ${({ theme }) => `
+  background-color: #522e74,
+  color: ${theme.palette.common.white},
+  text-align: center,
+  font-size: 14px,
+  `
+}`
+
+export const StyledRow = styled.tbody`
+  ${({ theme }) => `
+  &:nth-of-type(odd): {
+    backgroundColor: ${theme.palette.action.hover},
+  },
+  text-align: center,
+  `
+}`

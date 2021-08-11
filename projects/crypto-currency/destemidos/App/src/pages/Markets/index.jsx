@@ -67,12 +67,14 @@ function Markets() {
   return (
     <>
       <Destemidos />
-        <div className='box'>
-          <div className='box-table'>
-            <button className="btn-market-refrsh" onClick={() => setIsUpdate(false)}>{loading ? "atualizando" : "Atualizar Página"}</button>
-            <TableMarket rows={coins} headCells={headCells} />
-          </div>
-        </div>
+      <div className='box'>
+      <h2>Markets</h2>
+      <h4>Clique no nome da cryptmoeda para realizar a compra</h4>
+      <div className='box-table'>
+        <button className="btn-market-refrsh" onClick={() => setIsUpdate(false)}>{loading ? "atualizando" : "Atualizar Página"}</button>
+        <TableMarket rows={coins} headCells={headCells} />
+      </div>
+    </div>
     </>
   )
 }

@@ -11,15 +11,15 @@ import InserirCredito from '../../pages/InserirCredito'
 import PurchaseDetails from '../../pages/PurchaseDetails'
 import { isAuthenticated } from '../../Services/auth'
 
-function Body() {
+function ContentPage() {
   return (
     <Switch>
       <Route exact path='/'>
         <SignIn />
       </Route>
-      <Route path="/home">
+      {isAuthenticated() &&<Route path="/home">
         <Home />
-      </Route> 
+      </Route>}
       {isAuthenticated() &&<Route path="/mercado">
         <Markets />
       </Route>}
@@ -35,13 +35,10 @@ function Body() {
       <Route path="/conectar">
          <SignIn />
       </Route>
-      <Route path="/conectar">
-         <Markets />
-      </Route>
       <Route path="/cadastrar">
         <SignUp />
       </Route>
-      {isAuthenticated() &&<Route path="/comprar/:name/:price/:amountCoins" children={<PurchaseDetails />} >
+      {isAuthenticated() &&<Route path="/comprar/:id" children={<PurchaseDetails />} >
         <PurchaseDetails />
       </Route>}
       <Route path="/sair">
@@ -51,4 +48,4 @@ function Body() {
   )
 }
 
-export default Body
+export default ContentPage

@@ -8,7 +8,6 @@ export const HomeContainer = styled.div`
     justify-content: center;
     align-items: center;
     align-self: center;
-    max-width: 800px;
     height: 100vh;
   `}
 `

@@ -40,7 +40,7 @@ export default function SignUp() {
   const [resAPI, setResAPI] = useState('')
   const [stateBtn, setStateBtn] = useState(true)
   const [severity, setSeverity] = useState('')
-  
+
   const editStateBtn = i => i.password !== i.confirmPassword || i.password === '' ? setStateBtn(true) : setStateBtn(false)
 
   const handleChange = e => {
@@ -48,11 +48,11 @@ export default function SignUp() {
     setInputs(inputs)
     editStateBtn(inputs)
   }
-  
+
   const Alert = props => {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
+    return <MuiAlert elevation={6} variant="filled" {...props} />
   }
-  
+
   const handleSubmit = e => {
     e.preventDefault()
     axios.post(`${API}/register`, inputs).then(response => {
@@ -90,7 +90,7 @@ export default function SignUp() {
           Registre-se
         </Typography>
         <Form onSubmit={handleSubmit} noValidate>
-          <Grid container spacing={2}>           
+          <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -128,7 +128,7 @@ export default function SignUp() {
                 autoComplete="current-password"
                 onChange={handleChange}
               />
-            </Grid>          
+            </Grid>
           </Grid>
           <SubmitButton
             type="submit"
