@@ -20,6 +20,7 @@ const loginValidation = (data) => {
 
 const walletValidation = (data) => {
   const schema = Joi.object({
+    coinInitials: Joi.string().min(1).required().lowercase(),
     coinName: Joi.string().min(1).required().lowercase(),
     coinPrice: Joi.number().min(1).required(),
     coinQuantity: Joi.number().min(1).required(),

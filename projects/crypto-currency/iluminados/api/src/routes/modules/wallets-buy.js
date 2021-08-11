@@ -16,7 +16,7 @@ app.post('/wallet/buy', verifyToken, async (req, res) =>{
   
   try{
     const bankModel = Mongoose.model("bank", bankSchema, "bank")
-    const { coinName, coinPrice, coinQuantity } = req.body
+    const { coinInitials, coinName, coinPrice, coinQuantity } = req.body
     const walletModel = Mongoose.model('wallet', walletSchema, 'wallet')
 
     const totalPrice = coinPrice * coinQuantity
@@ -40,7 +40,6 @@ app.post('/wallet/buy', verifyToken, async (req, res) =>{
   
     const currentCoin = await walletModel.findOne({ coinName, user: userId })
     if(currentCoin){
-      console.log(currentCoin)
       await walletModel.updateOne ({
         user: userId,
         coinName,
@@ -50,6 +49,7 @@ app.post('/wallet/buy', verifyToken, async (req, res) =>{
     } else {
       await walletModel.create ({
         user: userId,
+        coinInitials,
         coinName,
         coinPrice,
         coinQuantity,

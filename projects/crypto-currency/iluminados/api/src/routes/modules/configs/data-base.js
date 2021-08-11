@@ -44,6 +44,10 @@ const walletSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    coinInitials: {
+        type: String,
+        required: true
+    },
     coinName: {
         type: String,
         required: true
@@ -55,7 +59,7 @@ const walletSchema = new mongoose.Schema({
     coinQuantity: {
         type: Number,
         required: true
-    },
+    }
     
 }, { collection: 'wallet' }
 )
