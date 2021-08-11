@@ -113,7 +113,9 @@ function Purchase() {
             onChange={handleChange}
             id="buyPrice"
             name="buyPrice"
-            min="1"
+            inputProps={{
+              min: 0,
+            }}          
           />
           <Button className="StyledSpace" type="submit" variant="contained" color="primary">
             Comprar
