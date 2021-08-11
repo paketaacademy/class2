@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import TableMarket from '../components/TableMarket';
+import React, { useState, useEffect } from 'react'
+import TableMarket from '../components/TableMarket'
 import './style.css'
 
 const headCells = [
@@ -42,8 +42,8 @@ function Markets() {
 
   useEffect(() => {
     if (!isUpdate) {
-      setIsUpdate(true);
-      setloading(true);
+      setIsUpdate(true)
+      setloading(true)
       fetch(
         `${API}/markets`,
         { method: 'get' }
