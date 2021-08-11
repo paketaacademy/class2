@@ -14,9 +14,7 @@ function TBody(props) {
       {stableSort(rows, getComparator(order, orderBy))
         .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
         .map((row, index) => {
-
           return (
-
             <TableRow
               hover
               onClick={(event) => onClickRow(event, row.name)}
@@ -24,18 +22,22 @@ function TBody(props) {
               tabIndex={-1}
               key={index}
             >
-
               <TableCell sticky component="th" scope="row" padding="none">
-                {row.acr}
+                {index}
               </TableCell>
-              <TableCell sticky borderRight align="right"><div className="t"><Link className='StyledColor' to={`/comprar/${row.id}`}>{row.n}:{row.s}</Link></div></TableCell>
+              <TableCell sticky borderRight align="right">
+                <div>
+                  <Link className='StyledColor' to={`/comprar/${row.id}`}>{row.n}:{row.s}</Link>
+                </div>
+              </TableCell>
               <TableCell align="right">+</TableCell>
               <TableCell align="right">{row.gs}</TableCell>
+              <TableCell align="right">{row.acr}</TableCell>
               <TableCell align="right">{row.cr}</TableCell>
               <TableCell align="right">
                 <p>{row.p}</p>
                 <StyledP txtColor={getColorOfNumber(row.p_btc)}>
-                  {row.p_btc.toFixed(9)}
+                  {row.p_btc}
                 </StyledP>
               </TableCell>
               <TableCell align="right" txtColor={getColorOfNumber(row.pch)}>{row.pch}</TableCell>
@@ -60,14 +62,12 @@ function TBody(props) {
               <TableCell align="right">{row.yt}</TableCell>
               <TableCell align="right">{row.na}</TableCell>
               <TableCell align="right">{row.sp}</TableCell>
-
             </TableRow>
-
-          );
+          )
         })}
 
     </TableBody>
-  );
+  )
 }
 
 TBody.propTypes = {
@@ -77,6 +77,6 @@ TBody.propTypes = {
   rows: PropTypes.array.isRequired,
   rowsPerPage: PropTypes.number.isRequired,
   page: PropTypes.number.isRequired,
-};
+}
 
 export default TBody
