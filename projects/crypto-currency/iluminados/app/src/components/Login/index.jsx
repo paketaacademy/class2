@@ -9,19 +9,23 @@ import axios from "axios";
 
 export const Login = () => {
   const { control, handleSubmit } = useForm()
+  let err = ""
   let history = useHistory()
 
-  const handleWithLogin = (data) => {
+  const HandleWithLogin = (data) => {
     const userData = {
       email: data.email,
       password: data.password
     }
-    console.log(userData)
-
     axios.post("http://localhost:3030/login", userData)
       .then((response) => {
-        console.log(response)
         history.push("/noticias")
+      })
+      .then((res) => {
+      })
+      .catch((e) => {
+        err = e.response.data
+        console.log(err)
       })
 
   }
@@ -29,7 +33,7 @@ export const Login = () => {
     <Container>
       <FormContainer>
         <h2>Login</h2>
-        <form onSubmit={handleSubmit(handleWithLogin)}>
+        <form onSubmit={handleSubmit(HandleWithLogin)}>
           <Controller
             name="email"
             control={control}
@@ -58,6 +62,9 @@ export const Login = () => {
               />
             }
           />
+          {err &&
+            <span>{err}</span>
+          }
           <DivContainerBtn>
             <Button Variant="contained" Color="primary" Type="submit">Login</Button>
           </DivContainerBtn>

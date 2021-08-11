@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Markets from '../../pages/Markets'
+import Markets from '../../pages/Markets/index'
 import Influencers from '../../pages/Influencers'
 import Feeds from '../../pages/Feeds'
 import SignIn from '../../pages/SignIn'
@@ -9,6 +9,7 @@ import SignOut from '../../pages/SignOut'
 import Home from '../../pages/Home'
 import InserirCredito from '../../pages/InserirCredito'
 import PurchaseDetails from '../../pages/PurchaseDetails'
+import { isAuthenticated } from '../../Services/auth'
 
 function Body() {
   return (
@@ -16,21 +17,21 @@ function Body() {
       <Route exact path='/'>
         <SignIn />
       </Route>
-      <Route path="/home">
+      {isAuthenticated() &&<Route path="/home">
         <Home />
-      </Route>
-      <Route path="/mercado">
+      </Route>}
+      {isAuthenticated() &&<Route path="/mercado">
         <Markets />
-      </Route>
-      <Route path="/credito">
+      </Route>}
+      {isAuthenticated() &&<Route path="/credito">
         <InserirCredito />
-      </Route>
-      <Route path="/influencias">
+      </Route>}
+      {isAuthenticated() && <Route path="/influencias">
         <Influencers />
-      </Route>
-      <Route path="/conteudo">
+      </Route>}
+      {isAuthenticated() &&<Route path="/conteudo">
         <Feeds />
-      </Route>
+      </Route>}
       <Route path="/conectar">
         <SignIn />
       </Route>
@@ -43,9 +44,9 @@ function Body() {
       <Route path="/cadastrar">
         <SignUp />
       </Route>
-      <Route path="/comprar/:name/:price/:amountCoins" children={<PurchaseDetails />} >
+      {isAuthenticated() &&<Route path="/comprar/:name/:price/:amountCoins" children={<PurchaseDetails />} >
         <PurchaseDetails />
-      </Route>
+      </Route>}
       <Route path="/sair">
         <SignOut />
       </Route>
