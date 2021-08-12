@@ -17,19 +17,19 @@ function ContentPage() {
       <Route exact path='/'>
         <SignIn />
       </Route>
-      {isAuthenticated() &&<Route path="/home">
+      {isAuthenticated() && <Route path="/home">
         <Home />
       </Route>}
-      {isAuthenticated() &&<Route path="/mercado">
+      {isAuthenticated() && <Route path="/mercado">
         <Markets />
       </Route>}
-      {isAuthenticated() &&<Route path="/credito">
+      {isAuthenticated() && <Route path="/credito">
         <InserirCredito />
       </Route>}
       {isAuthenticated() && <Route path="/influencias">
         <Influencers />
       </Route>}
-      {isAuthenticated() &&<Route path="/conteudo">
+      {isAuthenticated() && <Route path="/conteudo">
         <Feeds />
       </Route>}
       <Route path="/conectar">
@@ -38,7 +38,7 @@ function ContentPage() {
       <Route path="/cadastrar">
         <SignUp />
       </Route>
-      {isAuthenticated() &&<Route path="/comprar/:id" children={<PurchaseDetails />} >
+      {isAuthenticated() && <Route path="/comprar/:id" children={<PurchaseDetails />} >
         <PurchaseDetails />
       </Route>}
       <Route path="/sair">
