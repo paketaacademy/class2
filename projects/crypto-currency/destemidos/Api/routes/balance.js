@@ -4,8 +4,8 @@ import tokenValidation from "./configs/token-validation.js"
 
 app.post('/balance', tokenValidation, async (req, res) => {
  
-  const { idUser, balance} = req.body
-  console.log(req.user._id)
+  const { balance } = req.body
+  const idUser = req.user._id
 
   if(balance > 0){
 
@@ -24,12 +24,9 @@ app.post('/balance', tokenValidation, async (req, res) => {
         })
 
         return res.status(201).send('Saldo inserido com sucesso!')
-      }    
+      }
 
-      const wallet = new Wallets({ idUser, balance })
-      await wallet.save()
-      return res.status(201).send('Carteira criada e Saldo inserido com sucesso!')
-
+      return res.status(404).send('Carteira não encontrada!')
     } catch (err) {
       res.send(err)
     }
