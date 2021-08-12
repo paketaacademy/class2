@@ -23,7 +23,7 @@ function TBody(props) {
               key={index}
             >
               <TableCell sticky component="th" scope="row" padding="none">
-                {index}
+                {row.acr}
               </TableCell>
               <TableCell sticky borderRight align="right">
                 <div>
@@ -60,7 +60,6 @@ function TBody(props) {
               <TableCell align="right">{row.md}</TableCell>
               <TableCell align="right">{row.r}</TableCell>
               <TableCell align="right">{row.yt}</TableCell>
-              <TableCell align="right">{row.na}</TableCell>
               <TableCell align="right">{row.sp}</TableCell>
             </TableRow>
           )

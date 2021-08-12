@@ -1,12 +1,13 @@
 import React from 'react'
 import InfluencersCards from './influencersCards'
 import './Style/style.css'
+import Destemidos from '../../components/Destemidos'
 
 
 function Influencers() {
     return (
         <div>
-            <h2 className="page-title">Influencers</h2>
+            <Destemidos text="Principais Influencers" />
             <InfluencersCards />
         </div>
     )

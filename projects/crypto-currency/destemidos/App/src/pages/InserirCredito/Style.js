@@ -10,5 +10,7 @@ export const HomeContainer = styled.div`
     align-self: center;
     max-width: 800px;
     height: 100vh;
+    padding: 0;
+    background: #11121b;
   `}
 `
