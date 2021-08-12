@@ -22,7 +22,6 @@ export default function RecipeReviewCard({ banner_image, profile_image, rank, tw
             <img src={profile_image} alt="" />
           </Avatar>
         }
-
         title={display_name}
         subheader={twitter_screen_name}
       />

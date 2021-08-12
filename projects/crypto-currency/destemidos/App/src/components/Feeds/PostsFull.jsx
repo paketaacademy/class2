@@ -22,8 +22,7 @@ function PostsFull() {
   },[API, setList])
 
   const listView = () => {
-    return(
-      
+    return(      
         list.length > 0 && list.map((conteudo) => {
           return (
             <Link target={"_blank"} to={conteudo.url}>

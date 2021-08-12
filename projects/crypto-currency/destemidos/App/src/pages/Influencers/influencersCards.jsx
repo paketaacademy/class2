@@ -20,7 +20,6 @@ function InfluencersCards() {
       })
       .catch(error => console.log(error))
 
-
   }, [APP, setList])
 
   const mapContent = () =>{
