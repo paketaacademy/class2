@@ -9,8 +9,10 @@ import { theme } from "./commons/constants/theme"
 import { Login } from "./components/Login"
 import { Register } from "./components/Register"
 import { MenuListComposition } from "./components/Navbar"
+
 import { Footer } from "./components/Footer"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+
 
 import {
   BrowserRouter as Router,
@@ -75,10 +77,13 @@ function App() {
                 <Login />
               </Route> 
             </TemplateAuth>
-          </Switch>
-        </Router>
-      </ThemeProvider>
+
+          </Route>
+        </Switch>
+      </Router>
+    </ThemeProvider>     
       
+
     </div>
   );
 }
