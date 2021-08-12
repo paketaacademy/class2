@@ -3,8 +3,8 @@ import { BrowserRouter as Router } from "react-router-dom"
 import { createTheme, StylesProvider } from "@material-ui/core/styles"
 import { ThemeProvider } from "styled-components"
 import Menu from "./components/Menu"
-import Body from "./components/Body"
 import Footer from './components/Footer'
+import ContentPage from "./components/ContentPage"
 
 function App() {
 
@@ -13,11 +13,9 @@ function App() {
     <StylesProvider injectFirst>
       <ThemeProvider theme={theme}>
         <Router>
-          <div>
-            <Menu />
-            <Body />
-            <Footer />
-          </div>
+          <Menu />
+          <ContentPage />
+          <Footer />
         </Router>
       </ThemeProvider>
     </StylesProvider>

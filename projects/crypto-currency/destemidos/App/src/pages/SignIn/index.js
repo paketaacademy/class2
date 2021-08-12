@@ -12,6 +12,7 @@ import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
 import { PaperDiv, StyledAvatar, Form, SubmitButton, DivContainer } from './style.js'
 import './style.css'
+import { login } from '../../Services/auth.js'
 
 const API = process.env.REACT_APP_API_URL
 
@@ -46,85 +47,86 @@ export default function SignIn() {
   const Alert = props => {
 
     return <MuiAlert elevation={6} variant="filled" {...props} />
+  }
+  const handleClose = (event) => {
+    setOpen(false)
+  }
 
-    const handleClose = (event) => {
-      setOpen(false)
-    }
-
-    const handleSubmit = (e) => {
-      e.preventDefault()
-      axios.post(`${API}/singin`, inputs).then(response => {
-        setResAPI(response.data)
-        setSeverity('success')
-        setOpen(true)
-      }).catch(err => {
-        setResAPI(err.response.data)
-        setSeverity('error')
-        setOpen(true)
-      })
-    }
-    return (
-      <Container component="main" maxWidth="xs">
-        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-          <Alert severity={severity}>
-            {resAPI}
-          </Alert>
-        </Snackbar>
-        <CssBaseline />
-        <PaperDiv>
-          <StyledAvatar>
-            <LockOutlinedIcon />
-          </StyledAvatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <Form onSubmit={handleSubmit} noValidate>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-              onChange={handleChange}
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              onChange={handleChange}
-            />
-            <SubmitButton
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-            >
-              Sign In
-            </SubmitButton>
-            <Grid container>
-              <DivContainer>
-                <div>
-                  <Link className='insert--underline' to="/cadastrar" variant="body2">
-                    Don't have an account? Sign Up
-                  </Link>
-                </div>
-              </DivContainer>
-            </Grid>
-          </Form>
-        </PaperDiv>
-        <Box mt={8}>
-          <Copyright />
-        </Box>
-      </Container>
-    )
-  }}
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post(`${API}/singin`, inputs).then(response => {
+      setResAPI(response.data)
+      setSeverity('success')
+      setOpen(true)
+      let myHeaders = response.headers['auth-token']
+      login(myHeaders)
+    }).catch(err => {
+      setResAPI(err.response.data)
+      setSeverity('error')
+      setOpen(true)
+    })
+  }
+  
+  return (
+    <Container component="main" maxWidth="xs">
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert severity={severity}>
+          {resAPI}
+        </Alert>
+      </Snackbar>
+      <CssBaseline />
+      <PaperDiv>
+        <StyledAvatar>
+          <LockOutlinedIcon />
+        </StyledAvatar>
+        <Typography component="h1" variant="h5">
+          Faça o login
+        </Typography>
+        <Form onSubmit={handleSubmit} noValidate>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            onChange={handleChange}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Senha"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            onChange={handleChange}
+          />
+          <SubmitButton
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+          >
+            Entrar
+          </SubmitButton>
+          <Grid container>
+            <DivContainer>
+              <Link className='insert--underline' to="/cadastrar" variant="body2">
+                Não tem uma conta? Registre-se
+              </Link>
+            </DivContainer>
+          </Grid>
+        </Form>
+      </PaperDiv>
+      <Box mt={8}>
+        <Copyright />
+      </Box>
+    </Container>
+  )
+}

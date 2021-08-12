@@ -1,22 +1,26 @@
 import React from 'react'
-import { ContainerDiv, ButtonDiv, StyledButton } from './Style.js'
+import { ContainerStyled, BoxStyled, StyledButtonComprar } from './Style.js'
 import { Link } from 'react-router-dom'
 import './Style.css'
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn'
 
 function CreditDetails() {
   return (
-    <ContainerDiv>
-      <h4>Crédito em conta</h4>
-      <div>R$ 3.000,00</div>
-      <ButtonDiv>
-        <Link className="LinkButton" to='/credito'>
-          <StyledButton variant="contained" color="primary">
-            Depositar<MonetizationOnIcon/>
-          </StyledButton> 
-        </Link>       
-      </ButtonDiv>    
-    </ContainerDiv>
+    <div className='boxContainer'>
+      <span className='titleCredit'>Saldo em conta</span>
+      <div className='StyledCredit'>
+        <div className='rowCredit'>
+          <div className='creditUser'>US$ 3.000,00</div>
+        </div>
+        <div className='rowCredit'>
+          <Link className="LinkButton" to='/credito'>
+            <StyledButtonComprar variant="contained" color="primary">
+              Depositar<MonetizationOnIcon />
+            </StyledButtonComprar>
+          </Link>
+        </div>
+      </div>
+    </div>
   )
 }
 

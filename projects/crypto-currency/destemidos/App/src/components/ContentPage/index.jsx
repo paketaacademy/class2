@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Markets from '../../pages/Markets'
+import Markets from '../../pages/Markets/index'
 import Influencers from '../../pages/Influencers'
 import Feeds from '../../pages/Feeds'
 import SignIn from '../../pages/SignIn'
@@ -8,47 +8,44 @@ import SignUp from '../../pages/SignUp'
 import SignOut from '../../pages/SignOut'
 import Home from '../../pages/Home'
 import InserirCredito from '../../pages/InserirCredito'
-import NaoEncontrada from '../../pages/NaoEncontrada'
 import PurchaseDetails from '../../pages/PurchaseDetails'
+import { isAuthenticated } from '../../Services/auth'
 
-function Body() {
+function ContentPage() {
   return (
-    <Switch >
-      {/* <Route exact path='/'>
-        <Destemidos /> 
+    <Switch>
+      <Route exact path='/'>
+        <SignIn />
       </Route>
-      <Route path="/destemidos">
-        <Destemidos /> 
-      </Route> */}
-      <Route path="/mercado">
+      {isAuthenticated() &&<Route path="/home">
+        <Home />
+      </Route>}
+      {isAuthenticated() &&<Route path="/mercado">
         <Markets />
-      </Route>
-      <Route path="/credito">
+      </Route>}
+      {isAuthenticated() &&<Route path="/credito">
         <InserirCredito />
-      </Route>
-      {/* <Route path="/comprar">
-        <Comprar />
-      </Route> */}
-      <Route path="/influencias">
+      </Route>}
+      {isAuthenticated() && <Route path="/influencias">
         <Influencers />
-      </Route>
-      <Route path="/conteudo">
+      </Route>}
+      {isAuthenticated() &&<Route path="/conteudo">
         <Feeds />
-      </Route>
+      </Route>}
       <Route path="/conectar">
         <SignIn />
       </Route>
       <Route path="/cadastrar">
         <SignUp />
       </Route>
-      <Route path="/comprar/:name/:price/:amountCoins" children={<PurchaseDetails />}></Route >
-
-
-      <Route path="/config">
+      {isAuthenticated() &&<Route path="/comprar/:id" children={<PurchaseDetails />} >
+        <PurchaseDetails />
+      </Route>}
+      <Route path="/sair">
         <SignOut />
       </Route>
     </Switch>
   )
 }
 
-export default Body;
+export default ContentPage

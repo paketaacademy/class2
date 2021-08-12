@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import Button from '@material-ui/core/Button'
 import Avatar from '@material-ui/core/Avatar'
 
-
 export const PaperDiv = styled.div`
 ${({ theme }) => `
   margin-top: ${theme.spacing(8)}px;

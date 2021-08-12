@@ -1,33 +1,40 @@
 import app from "./configs/app.js"
 import { Mongoose, WalletSchema } from './configs/db.js'
-app.post('/balance', async (req, res) => {
+import tokenValidation from "./configs/token-validation.js"
+
+app.post('/balance', tokenValidation, async (req, res) => {
  
-  const { id, balance} = req.body
+  const { idUser, balance} = req.body
+  console.log(req.user._id)
 
-  const Wallets = Mongoose.model('wallets', WalletSchema, 'wallets')
-  
-  try {
-    const foundWallet = await Wallets.findOne({ id: id }).exec()
+  if(balance > 0){
+
+    const Wallets = Mongoose.model('wallets', WalletSchema, 'wallets')
     
-    if(foundWallet){
+    try {
+      const foundWallet = await Wallets.findOne({ idUser: idUser }).exec()
+      
+      if(foundWallet){
 
-      const filter = { id: id }
-      const update = { balance: foundWallet.balance ? balance + foundWallet.balance : balance};
+        const filter = { idUser: idUser }
+        const update = { balance: foundWallet.balance ? balance + foundWallet.balance : balance};
 
-      await Wallets.updateOne(filter, update, {
-        returnOriginal: false
-      })
+        await Wallets.updateOne(filter, update, {
+          returnOriginal: false
+        })
 
-      return res.status(201).send('Saldo inserido com sucesso!')
-    }    
+        return res.status(201).send('Saldo inserido com sucesso!')
+      }    
 
-    const wallet = new Wallets({ id, balance })
-    await wallet.save()
-    res.status(201).send('Carteira criada e Saldo inserido com sucesso!')
+      const wallet = new Wallets({ idUser, balance })
+      await wallet.save()
+      return res.status(201).send('Carteira criada e Saldo inserido com sucesso!')
 
-  } catch (err) {
-    res.send(err)
+    } catch (err) {
+      res.send(err)
+    }
   }
+  res.status(404).send('O valor do saldo deve ser maior que 0!')
 })
 
 export default app

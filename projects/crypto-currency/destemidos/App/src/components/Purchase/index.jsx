@@ -2,34 +2,125 @@ import React, { useState, useEffect } from 'react'
 import TextField from '@material-ui/core/TextField'
 import { useParams } from "react-router"
 import Button from '@material-ui/core/Button'
+import axios from 'axios'
+import Snackbar from '@material-ui/core/Snackbar'
+import MuiAlert from '@material-ui/lab/Alert'
 import { Container, BoxDetails } from "./style.js"
-function Purchase() {
-  let { name, price, amountCoins } = useParams()
+import './style.css'
 
-  return (
-    <Container>
-      <h1>Detalhes da Cryptomoeda</h1>
-      <BoxDetails>
-        <div>
-          <h3>Tipo de Criptomoeda:</h3>
-          {name}
+function Purchase() {
+  let { id } = useParams()
+  const API = process.env.REACT_APP_API_URL
+
+  const [idCripto, setIdCripto] = useState(0)
+  const [nameCripto, setNameCripto] = useState('')
+  const [priceCripto, setPriceCripto] = useState(0)
+  const [priceBtcCripto, setPriceBtcCripto] = useState(0)
+
+  const [value, setValue] = useState({
+    id: '117',
+    idCripto: { idCripto },
+    nameCoin: { nameCripto },
+    buyPrice: 0,
+    priceCoin: { priceCripto }
+  })
+
+  const [open, setOpen] = useState(false)
+  const [resAPI, setResAPI] = useState('')
+  const [severity, setSeverity] = useState('')
+
+  const handleChange = e => {
+    value[e.target.name] = e.target.value
+    setValue(value)
+  }
+
+  const Alert = props => {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+  }
+
+
+  useEffect(() => {
+    fetch(
+      `${API}/markets`,
+      { method: 'get' }
+    )
+      .then(async response => {
+        const { data } = await response.json()
+        data.filter(number => {
+          if (number.id == id) {
+            setIdCripto(number.id)
+            setPriceCripto(number.p)
+            setPriceBtcCripto(number.p_btc)
+            setNameCripto(number.n)
+          }
+        })
+      })
+      .catch(error => console.log(error))
+  }, []);
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    axios.post(`${API}/buycoin`, value).then(response => {
+      setResAPI(response.data)
+      setSeverity('success')
+      setOpen(true)
+    }).catch(err => {
+      setResAPI(err.response.data)
+      setSeverity('error')
+      setOpen(true)
+    })
+  }
+
+  const handleClose = (event) => {
+    setOpen(false)
+  }
+
+  const listItems = () => {
+    return (
+
+      <div index={idCripto}>
+        <div >
+          <h3>Nome da Criptomoeda:</h3>
+          {nameCripto}
         </div>
         <div>
           <h3>Preço da Criptomoeda (US$):</h3>
-          {price}
+          {priceCripto}
         </div>
         <div>
-          <h3>Quantidade de Criptomoeda:</h3>
-          {amountCoins}
+          <h3>Preço da Criptomoeda (BTC):</h3>
+          {priceBtcCripto}
         </div>
-        <TextField
-          label="Insere o valor em US$"
-          color="secondary"
-          type='number'
-        />
-        <Button variant="contained" color="primary">
-          Comprar
-        </Button>
+      </div>
+    )
+  }
+  return (
+    <Container>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert severity={severity}>
+          {resAPI}
+        </Alert>
+      </Snackbar>
+      <h1>Detalhes da Cryptomoeda</h1>
+      <BoxDetails index={id}>
+        {listItems()}
+        <form className="StyledPositions" onSubmit={handleSubmit}>
+          <TextField
+            label="Insere o valor em US$"
+            color="secondary"
+            type="number"
+            onChange={handleChange}
+            id="buyPrice"
+            name="buyPrice"
+            inputProps={{
+              min: 0,
+            }}          
+          />
+          <Button className="StyledSpace" type="submit" variant="contained" color="primary">
+            Comprar
+
+          </Button>
+        </form>
       </BoxDetails>
     </Container>
   )
