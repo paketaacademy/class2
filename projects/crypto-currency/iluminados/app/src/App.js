@@ -13,6 +13,8 @@ import { TemplateAuth } from "./components/TemplateAuth"
 import { TemplateMain } from "./components/TemplateMain"
 import Market from "./components/Market";
 import { Wallet } from "./components/Wallet"
+import { CryptoCoin } from "./components/CryptoCoin"
+import { InsertCredit } from "./components/InsertCredit"
 
 function App() {
   return (
@@ -25,14 +27,24 @@ function App() {
                 <Feeds />
               </TemplateMain>
             </Route>
-            <Route path="/mercado">
+            <Route path="/mercado" exact>
               <TemplateMain>
                 <Market />
+              </TemplateMain>
+            </Route>
+            <Route path="/mercado/:id" exact>
+              <TemplateMain>
+                <CryptoCoin />
               </TemplateMain>
             </Route>
             <Route path="/carteira">
               <TemplateMain>
                 <Wallet />
+              </TemplateMain>
+            </Route>
+            <Route path="/adicionarsaldo">
+              <TemplateMain>
+                <InsertCredit />
               </TemplateMain>
             </Route>
             <TemplateAuth>

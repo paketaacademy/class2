@@ -59,25 +59,25 @@ export const Navbar = () => {
                 <p>Con of the day</p>
               </MenuItem>
             </Link>
-            <Link to="#">
+            <Link to="/carteira">
               <MenuItem className={classes.fonte} >
                 <DashboardIcon className={classes.icons} />
                 WALLET
               </MenuItem>
             </Link>
-            <Link to="#">
+            <Link to="/mercado">
               <MenuItem className={classes.fonte}>
                 <InsertChartIcon className={classes.icons} />
                 MARKETS
               </MenuItem>
             </Link>
-            <Link to="#">
+            <Link to="/influencers">
               <MenuItem className={classes.fonte}>
                 <PeopleIcon className={classes.icons} />
                 INFLUENCERS
               </MenuItem>
             </Link>
-            <Link to="#">
+            <Link to="/noticias">
               <MenuItem className={classes.fonte}>
                 <ChatIcon className={classes.icon} />
                 FEEDS
