@@ -2,6 +2,7 @@ import app from "./configs/app.js"
 import { Mongoose, WalletSchema } from './configs/db.js'
 import tokenValidation from './configs/token-validation.js'
 
+
 app.post('/buycoin', tokenValidation, async (req, res) => {
  
   const { idCoin, nameCoin, buyPrice, priceCoin} = req.body
@@ -10,7 +11,7 @@ app.post('/buycoin', tokenValidation, async (req, res) => {
   if(buyPrice > 0 && priceCoin > 0){
 
     const Wallets = Mongoose.model('wallets', WalletSchema, 'wallets')
-    console.log('idUser: ', idUser)
+
     try {
 
       const buyQuant = buyPrice / priceCoin
