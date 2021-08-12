@@ -14,16 +14,15 @@ function PostsFull() {
       `${API}/feeds`,
       { method: 'get' }
     )
-      .then(response => {
-        const { data } = response.json()
+      .then(async response => {
+        const { data } = await response.json()
         setList(data)
       })
       .catch(error => console.log(error))
   },[API, setList])
 
   const listView = () => {
-    return(
-      
+    return(      
         list.length > 0 && list.map((conteudo) => {
           return (
             <Link target={"_blank"} to={conteudo.url}>

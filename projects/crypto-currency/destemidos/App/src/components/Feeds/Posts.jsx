@@ -12,8 +12,8 @@ function Posts() {
       `${API}/feeds`,
       { method: 'get' }
     )
-      .then( response => {
-        const { data } = response.json()
+      .then( async response => {
+        const { data } = await response.json()
         setList(data)        
       })
       .catch(error => console.log(error))
