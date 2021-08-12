@@ -10,6 +10,7 @@ import {
   TableStyled,
   User
 } from './styles'
+import { Link } from 'react-router-dom'
 
 export const Wallet = () => {
   return (
@@ -20,7 +21,9 @@ export const Wallet = () => {
           <h3 className="balance__h3">
             Saldo R$:<strong> 3.000,00</strong>
           </h3>
-          <AddBoxIcon className="balance-add__icon" />
+          <Link to="/adicionarsaldo">
+            <AddBoxIcon className="balance-add__icon" />
+          </Link>
         </div>
       </Balance>
       <Content>
