@@ -7,3 +7,16 @@
 .StyledSpace{
   margin-top: 10px;
 }
+
+.containerCredit{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 100px;
+  align-items: center;
+  text-align: center;
+}
+
+.titleContainerCredit{
+  margin-bottom: -5px;
+}

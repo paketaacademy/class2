@@ -10,13 +10,14 @@ app.post("/bank", verifyToken, async (req, res) => {
   const { error } = bankValidation(req.body)
   if (error) {
     return res
-    .status(400)
-    .send(error.details[0].message)
+      .status(400)
+      .send(error.details[0].message)
   }
-  
+
   try {
     const { balance } = req.body
     const bankModel = Mongoose.model("bank", bankSchema, "bank")
+
     const userId = req.user._id
     const currentUser = await bankModel.findOne({ user: userId })
     
@@ -32,7 +33,7 @@ app.post("/bank", verifyToken, async (req, res) => {
       balance,
     })
     return res.status(201).send("Saldo inserido")
-    
+
   } catch (error) {
     return res.status(400).send({
       error: `Ocorreu um erro - ${error}`,

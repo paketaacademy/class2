@@ -74,7 +74,7 @@ export default function CustomizedTables() {
               </td>
               <td>{row.calories}</td>
               <td align='center'>
-                <Link to='/mercado'>
+                <Link to='/vender'>
                   <button className='StyledButtonVender'>
                     <div>Vender</div><div><CompareArrowsIcon /></div>
                   </button>

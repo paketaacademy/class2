@@ -10,6 +10,7 @@ import Home from '../../pages/Home'
 import InserirCredito from '../../pages/InserirCredito'
 import PurchaseDetails from '../../pages/PurchaseDetails'
 import { isAuthenticated } from '../../Services/auth'
+import Sell from '../Sell'
 
 function ContentPage() {
   return (
@@ -22,6 +23,9 @@ function ContentPage() {
       </Route>}
       {isAuthenticated() &&<Route path="/mercado">
         <Markets />
+      </Route>}
+      {isAuthenticated() &&<Route path="/vender">
+        <Sell />
       </Route>}
       {isAuthenticated() &&<Route path="/credito">
         <InserirCredito />

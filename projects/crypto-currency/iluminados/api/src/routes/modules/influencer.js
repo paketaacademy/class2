@@ -5,8 +5,9 @@ const app = express();
 
 app.get("/influencer", function (req, res) {
   axios
-    .request(configuration("influencer"))
+    .request(configuration("influencers"))
     .then(function (response) {
+      let resp = response.data
       res.json(resp).status(200);
     })
     .catch(function (error) {
@@ -14,4 +15,4 @@ app.get("/influencer", function (req, res) {
     });
 });
 
-export default app;
+export default app
