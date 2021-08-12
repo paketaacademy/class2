@@ -1,56 +1,63 @@
 import app from "./configs/app.js"
 import { Mongoose, WalletSchema } from './configs/db.js'
-app.post('/buycoin', async (req, res) => {
+import tokenValidation from './configs/token-validation.js'
+
+app.post('/buycoin', tokenValidation, async (req, res) => {
  
-  const { idUser, nameCoin, buyPrice, priceCoin} = req.body
+  const { idCoin, nameCoin, buyPrice, priceCoin} = req.body
+  const idUser = req.user._id
 
-  const Wallets = Mongoose.model('wallets', WalletSchema, 'wallets')
-  
-  try {
+  if(buyPrice > 0 && priceCoin > 0){
 
-    const buyQuant = buyPrice / priceCoin
+    const Wallets = Mongoose.model('wallets', WalletSchema, 'wallets')
+    console.log('idUser: ', idUser)
+    try {
 
-    const foundWallet = await Wallets.findOne({ idUser: idUser }).exec()
-    
-    if(foundWallet){
-      foundWallet.balance -= buyPrice
-      if(foundWallet.balance < 0){
-        return res.status(409).send('Saldo insuficiente para realizar a compra!')
-      }
-      const hasCoin = await Wallets.findOne({ idUser: idUser,"cryptocurrencies.name": nameCoin }).exec()
+      const buyQuant = buyPrice / priceCoin
+
+      const foundWallet = await Wallets.findOne({ idUser: idUser }).exec()
       
-      if(hasCoin){
+      if(foundWallet){
+        foundWallet.balance -= buyPrice
+        if(foundWallet.balance < 0){
+          return res.status(409).send('Saldo insuficiente para realizar a compra!')
+        }
+        const hasCoin = await Wallets.findOne({ idUser: idUser,"cryptocurrencies.id": idCoin }).exec()
+        
+        if(hasCoin){
 
-        const filterCoin = { idUser: idUser }
-        foundWallet.cryptocurrencies.map(crypto => {
-          if(crypto.name == nameCoin){
-            crypto.quant += buyQuant
-          }
-          return crypto})
+          const filterCoin = { idUser: idUser }
+          foundWallet.cryptocurrencies.map(crypto => {
+            if(crypto.id == idCoin){
+              crypto.quant += buyQuant
+            }
+            return crypto})
 
-        await Wallets.updateOne(filterCoin, foundWallet, {
+          await Wallets.updateOne(filterCoin, foundWallet, {
+            returnOriginal: false
+          })
+
+          return res.status(201).send('Moeda comprada com sucesso! Sua quantidade da mesma foi atualizada!')
+        }
+
+        const filterWallet = { idUser: idUser }
+
+        foundWallet.cryptocurrencies.push({id: idCoin, name: nameCoin, quant: buyQuant})
+
+        await Wallets.updateOne(filterWallet, foundWallet, {
           returnOriginal: false
         })
 
-        return res.status(201).send('Moeda comprada com sucesso! Sua quantidade da mesma foi atualizada!')
-      }
+        return res.status(201).send('Moeda comprada e inserida em sua carteira com sucesso!')
+      }    
 
-      const filterWallet = { id: idUser }
+      return res.status(404).send('Carteira não encontrada!')
 
-      foundWallet.cryptocurrencies.push({name: nameCoin, quant: buyQuant})
-
-      await Wallets.updateOne(filterWallet, foundWallet, {
-        returnOriginal: false
-      })
-
-      return res.status(201).send('Moeda comprada e inserida em sua carteira com sucesso!')
-    }    
-
-    res.status(404).send('Carteira não encontrada!')
-
-  } catch (err) {
-    res.send(err)
+    } catch (err) {
+      res.send(err)
+    }
   }
+  res.status(404).send('Os valores precisam ser maiores que 0!')
 })
 
 export default app

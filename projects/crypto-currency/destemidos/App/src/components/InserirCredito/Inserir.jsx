@@ -5,13 +5,13 @@ import axios from 'axios'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
 import { Container, Imagem, BoxPage, StyledButton, LinhaInserir, Insert } from './Style.js'
+import { getToken } from '../../Services/auth.js'
 
 function Inserir() {
 
   const API = process.env.REACT_APP_API_URL
 
   const [value, setValue] = useState({
-    id: '119',
     balance: 0
   })
 
@@ -30,7 +30,13 @@ function Inserir() {
 
   const handleSubmit = e => {
     e.preventDefault()
-    axios.post(`${API}/balance`, value).then(response => {
+    axios.post(`${API}/balance`,value,
+    {      
+      headers: {
+        'auth-token': getToken(),          
+      }
+    })
+    .then(response => {
       setResAPI(response.data)
       setSeverity('success')
       setOpen(true)

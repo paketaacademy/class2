@@ -101,3 +101,9 @@
   top: 0;
   padding: 20px;
 }
+
+.StyledMSGSaldo{
+  padding: 10px;
+  text-align: center;
+  color: #e00451;
+}

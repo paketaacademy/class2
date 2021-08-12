@@ -4,49 +4,52 @@ import tokenValidation from './configs/token-validation.js'
 
 app.post('/salecoin', tokenValidation, async (req, res) => {
 
-  const { priceCoin, quantSaleCoin, nameCoin } = req.body
+  const { priceCoin, quantSaleCoin, idCoin } = req.body
   const idUser = req.user._id
 
-  const Wallets = Mongoose.model('wallets', WalletSchema, 'wallets')
-  const foundWallet = await Wallets.findOne({ idUser: idUser }).exec()
+  if(quantSaleCoin > 0){
 
-  if(foundWallet) {
-    const hasCoin = foundWallet.cryptocurrencies.find(crypto => {
-      return crypto.name == nameCoin
-    })
+    const Wallets = Mongoose.model('wallets', WalletSchema, 'wallets')
+    const foundWallet = await Wallets.findOne({ idUser: idUser }).exec()
 
-    if(hasCoin) {
+    if(foundWallet) {
+      const hasCoin = foundWallet.cryptocurrencies.find(crypto => {
+        return crypto.id == idCoin
+      })
 
-      if(hasCoin.quant < quantSaleCoin){
-        return res.status(404).send('Quantidade insuficiente de moeda para venda!')
-      }
+      if(hasCoin) {
 
-      const newCryptocurrencies = foundWallet.cryptocurrencies.map(crypto => {
-        if(crypto.name == nameCoin){
-          crypto.quant -= quantSaleCoin
+        if(hasCoin.quant < quantSaleCoin){
+          return res.status(404).send('Quantidade insuficiente de moeda para venda!')
         }
-        return crypto
-      })
 
-      foundWallet.cryptocurrencies = newCryptocurrencies.filter(crypto => { 
-        return crypto.quant > 0
-      })            
+        const newCryptocurrencies = foundWallet.cryptocurrencies.map(crypto => {
+          if(crypto.id == idCoin){
+            crypto.quant -= quantSaleCoin
+          }
+          return crypto
+        })
 
-      const newBalance = foundWallet.balance + quantSaleCoin * priceCoin
+        foundWallet.cryptocurrencies = newCryptocurrencies.filter(crypto => { 
+          return crypto.quant > 0
+        })            
 
-      const filterCoin = { idUser: idUser }
-      foundWallet.balance = newBalance      
+        const newBalance = foundWallet.balance + quantSaleCoin * priceCoin
 
-      await Wallets.updateOne(filterCoin, foundWallet, {
-        returnOriginal: false
-      })
+        const filterCoin = { idUser: idUser }
+        foundWallet.balance = newBalance      
 
-      return res.status(201).send('Moeda Vendida com sucesso! Quantia e Saldo atualizados!')
-    }   
-    return res.status(404).send('Moeda não encontrada!')
+        await Wallets.updateOne(filterCoin, foundWallet, {
+          returnOriginal: false
+        })
+
+        return res.status(201).send('Moeda Vendida com sucesso! Quantia e Saldo atualizados!')
+      }   
+      return res.status(404).send('Moeda não encontrada!')
+    }
+    return res.status(404).send('Carteira não encontrada!')
   }
-  res.status(404).send('Carteira não encontrada!')
-  
+  res.status(404).send('Digite uma quantidade para venda maior que 0!')
 })
 
 export default app

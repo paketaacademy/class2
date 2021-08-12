@@ -1,3 +1,4 @@
+  
 import React, { useState, useEffect } from 'react'
 import TextField from '@material-ui/core/TextField'
 import { useParams } from "react-router"
@@ -6,6 +7,7 @@ import axios from 'axios'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
 import { Container, BoxDetails } from "./style.js"
+import { getToken } from '../../Services/auth.js'
 import './style.css'
 
 function Purchase() {
@@ -18,12 +20,31 @@ function Purchase() {
   const [priceBtcCripto, setPriceBtcCripto] = useState(0)
 
   const [value, setValue] = useState({
-    id: '117',
     idCoin: { idCripto },
     nameCoin: { nameCripto },
     buyPrice: 0,
     priceCoin: { priceCripto }
   })
+
+  const [list, setList] = useState({})
+
+
+  useEffect(() => {
+    fetch(
+      `${API}/profile`,
+      {
+        method: 'get',
+        headers: new Headers({
+          'auth-token': getToken(),
+        })
+      },
+    )
+      .then(async response => {
+        const data = await response.json()
+        setList(data)
+      })
+      .catch(error => console.log(error))
+  }, [API, setList])
 
   const [open, setOpen] = useState(false)
   const [resAPI, setResAPI] = useState('')
@@ -38,7 +59,6 @@ function Purchase() {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
 
-
   useEffect(() => {
     fetch(
       `${API}/markets`,
@@ -46,9 +66,8 @@ function Purchase() {
     )
       .then(async response => {
         const { data } = await response.json()
-        data.map(number => {
+        data.filter(number => {
           if (number.id == id) {
-            console.log('entrou no if')
             setIdCripto(number.id)
             setPriceCripto(number.p)
             setPriceBtcCripto(number.p_btc)
@@ -61,7 +80,13 @@ function Purchase() {
 
   const handleSubmit = e => {
     e.preventDefault()
-    axios.post(`${API}/buycoin`, value).then(response => {
+    axios.post(`${API}/buycoin`, value,
+    {      
+      headers: {
+        'auth-token': getToken(),          
+      }
+    }
+    ).then(response => {
       setResAPI(response.data)
       setSeverity('success')
       setOpen(true)
@@ -126,7 +151,7 @@ function Purchase() {
               <span className='titleCredit'>Saldo em conta (Crédito)</span>
             </div>
             <div>
-              <div className='creditUser'>US$ 3.000,00</div>
+              <div className='creditUser'>US$ {list.balanceUser}</div>
             </div>
           </div>
         </form>

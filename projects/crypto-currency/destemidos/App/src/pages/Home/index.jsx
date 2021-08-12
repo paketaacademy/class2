@@ -3,6 +3,7 @@ import UserDetails from "../../components/Home/UserDetails"
 import CoinsDetails from "../../components/Home/CoinsDetails"
 import { HomeContainer } from "./Style.js"
 import CreditDetails from "../../components/Home/CreditDetails"
+
 import './style.css'
 
 function Home() {

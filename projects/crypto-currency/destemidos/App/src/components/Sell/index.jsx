@@ -1,12 +1,33 @@
+import React, { useState, useEffect } from 'react'
 import TextField from '@material-ui/core/TextField'
 import { useParams } from "react-router"
 import CompareArrowsIcon from '@material-ui/icons/CompareArrows'
 import { Container, BoxDetails } from "./style.js"
+import { getToken } from '../../Services/auth.js'
 import './style.css'
 
 function Sell() {
   let { id } = useParams()
+  const API = process.env.REACT_APP_API_URL
+  const [list, setList] = useState({})
 
+  useEffect(() => {
+    fetch(
+      `${API}/profile`,
+      {
+        method: 'get',
+        headers: new Headers({
+          'auth-token': getToken(),
+        })
+      },
+    )
+      .then(async response => {
+        const data = await response.json()
+        setList(data)
+      })
+      .catch(error => console.log(error))
+  }, [API, setList])
+  
   const listItems = () => {
     return (
 
@@ -33,7 +54,7 @@ function Sell() {
         {listItems()}
         <form className="StyledPositions">
           <TextField
-            label="Insere o valor em US$"
+            label="Valor em criptomoeda"
             color="secondary"
             type="number"
             id="buyPrice"

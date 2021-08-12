@@ -1,5 +1,4 @@
-import React from "react"
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "@material-ui/core"
 import PostCard from "./PostCard"
 
@@ -13,12 +12,12 @@ function Posts() {
       `${API}/feeds`,
       { method: 'get' }
     )
-      .then(async response => {
-        const { data } = await response.json()
+      .then( response => {
+        const { data } = response.json()
         setList(data)        
       })
       .catch(error => console.log(error))
-  },[]);
+  },[API, setList]);
 
   const listView = () => {
     return(

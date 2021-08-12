@@ -14,12 +14,12 @@ function PostsFull() {
       `${API}/feeds`,
       { method: 'get' }
     )
-      .then(async response => {
-        const { data } = await response.json()
+      .then(response => {
+        const { data } = response.json()
         setList(data)
       })
       .catch(error => console.log(error))
-  },[])
+  },[API, setList])
 
   const listView = () => {
     return(

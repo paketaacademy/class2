@@ -3,10 +3,10 @@ import { useState, useEffect } from "react"
 import RecipeReviewCard from "./InfluencersPosts"
 import './Style/style.css'
 
-const APP = process.env.REACT_APP_API_URL
+
 
 function InfluencersCards() {
-
+  const APP = process.env.REACT_APP_API_URL
   const [list, setList] = useState([])
 
   useEffect(() => {
@@ -14,14 +14,14 @@ function InfluencersCards() {
       `${APP}/influencers`,
       { method: 'get' }
     )
-      .then(async response => {
-        const { data } = await response.json()
+      .then(response => {
+        const { data } = response.json()
         setList(data)
       })
       .catch(error => console.log(error))
 
 
-  }, [])
+  }, [APP, setList])
 
   const mapContent = () =>{
       return(

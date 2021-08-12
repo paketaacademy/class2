@@ -7,6 +7,7 @@ import singup from './routes/singup.js'
 import balance from './routes/balance.js'
 import buyCoin from './routes/buy-coin.js'
 import saleCoin from './routes/sale-coin.js'
+import profile from './routes/profile.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -28,5 +29,6 @@ app.use(singup)
 app.use(balance)
 app.use(buyCoin)
 app.use(saleCoin)
+app.use(profile)
 
 app.listen(LISTEN_DOOR)
