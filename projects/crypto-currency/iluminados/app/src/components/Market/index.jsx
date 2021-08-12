@@ -1,30 +1,22 @@
-import React, {useState,useEffect} from 'react'
-import Table from '../Table/TableC' 
-
-
+import React, { useState, useEffect } from 'react'
+import Table from '../Table/TableC'
 
 const Market = () => {
-
-  const [market,setMarket]= useState()
-   console.log('---',market)
-    useEffect(()=>{
-      fetch('http://localhost:3030/market')
-      .then((response)=>{
-        console.log(response)
+  const [market, setMarket] = useState()
+  console.log('---', market)
+  useEffect(() => {
+    fetch('http://localhost:3030/market')
+      .then((response) => {
         return response.json()
-      }).then((response)=>{
+      }).then((response) => {
         setMarket(response.data)
       })
-    },[])
-
-
-  return (   
+  }, [])
+  return (
     <>
-      {market && <Table data={market}/>}
+      {market && <Table data={market} />}
     </>
   )
 }
-
-
 
 export default Market
