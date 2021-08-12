@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken'
 
 export default function tokenValidation(req, res, next) {
   try {
+    console.log(req)
     const token = req.header("auth-token")
     if (!token) {
       return res.status(401).send("Acesso invalido")
