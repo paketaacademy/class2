@@ -17,7 +17,6 @@ function CoinOfTheDay() {
       })
       .catch(error => console.log(error))
   },
-  )
 
   const day = () => {
     return list.map((coin, index) => {
@@ -27,10 +26,12 @@ function CoinOfTheDay() {
 
           <div key={index} className="container">
             <div className="coin">
+
               <h1>Activity</h1>
               <hr />
               <h2>{coin.name}</h2>
               <h2>{coin.symbol}</h2>
+
             </div>
             <div className="coin">
               <img className='img' src="https://image.flaticon.com/icons/png/128/1667/1667808.png" alt="coin" />
@@ -39,6 +40,7 @@ function CoinOfTheDay() {
         </div>
       )
     })
+
   }
 
   return (

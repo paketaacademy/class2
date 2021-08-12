@@ -10,7 +10,7 @@ import Home from '../../pages/Home'
 import InserirCredito from '../../pages/InserirCredito'
 import PurchaseDetails from '../../pages/PurchaseDetails'
 import { isAuthenticated } from '../../Services/auth'
-import Sell from '../Sell'
+import SellDetails from '../../pages/SellDetails'
 
 function ContentPage() {
   return (
@@ -24,8 +24,8 @@ function ContentPage() {
       {isAuthenticated() &&<Route path="/mercado">
         <Markets />
       </Route>}
-      {isAuthenticated() &&<Route path="/vender">
-        <Sell />
+      {isAuthenticated() &&<Route path="/vender/:id">
+        <SellDetails />
       </Route>}
       {isAuthenticated() &&<Route path="/credito">
         <InserirCredito />

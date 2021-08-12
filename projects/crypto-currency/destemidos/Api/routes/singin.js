@@ -29,7 +29,9 @@ app.post('/singin', async (req, res) => {
   }
 
   const token = jwt.sign({_id: user._id}, process.env.SECRET, { 
-    expiresIn: 1200
+
+    expiresIn: 10000
+
 })
   res.header('auth-token', token)
   res.send('logou')

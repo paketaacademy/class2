@@ -14,6 +14,7 @@ app.get('/profile', tokenValidation, async (req, res) => {
     const foundUser = await Users.findOne({ _id: idUser }).exec()
 
     if(foundUser){
+
       
       const foundWallet = await Wallets.findOne({ idUser: idUser }).exec()
       
@@ -31,6 +32,7 @@ app.get('/profile', tokenValidation, async (req, res) => {
 
   } catch (err) {
     return res.send(err)
+
   }  
 
 })

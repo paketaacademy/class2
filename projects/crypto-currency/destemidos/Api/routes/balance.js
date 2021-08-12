@@ -27,6 +27,7 @@ app.post('/balance', tokenValidation, async (req, res) => {
       }
 
       return res.status(404).send('Carteira não encontrada!')
+
     } catch (err) {
       res.send(err)
     }
