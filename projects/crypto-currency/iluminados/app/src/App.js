@@ -1,18 +1,26 @@
 
+import "./commons/global.css"
 import { MenuListComposition } from "./components/Navbar"
 import CoinOfTheDay from "./components/Coinoftheday"
 import "./commons/global.css";
+
 import { ThemeProvider } from "@material-ui/core"
 import { theme } from "./commons/constants/theme"
 import { Login } from "./components/Login"
 import { Register } from "./components/Register"
 import { MenuListComposition } from "./components/Navbar"
 
+import { Footer } from "./components/Footer"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+
+  Link
+
 } from 'react-router-dom'
 import "./commons/global.css";
 import { Feeds } from "./components/Feed";
@@ -20,6 +28,7 @@ import { TemplateAuth } from "./components/TemplateAuth"
 import { TemplateMain } from "./components/TemplateMain"
 import Market from "./components/Market";
 import { Wallet } from "./components/Wallet"
+
 
 function App() {
   return (
@@ -45,6 +54,13 @@ function App() {
                 <Feeds />
               </TemplateMain>
             </Route>
+
+            <Route  exact path="/">
+              <MenuListComposition />
+              <Footer />
+            </Route>
+
+
             <Route path="/mercado">
               <TemplateMain>
                 <Market />
@@ -55,6 +71,7 @@ function App() {
                 <Wallet />
               </TemplateMain>
             </Route>
+
             <TemplateAuth>
               <Route exact path="/">
                 <Login />
