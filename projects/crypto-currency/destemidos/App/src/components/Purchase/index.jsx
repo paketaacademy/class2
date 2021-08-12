@@ -19,7 +19,7 @@ function Purchase() {
 
   const [value, setValue] = useState({
     id: '117',
-    idCripto: { idCripto },
+    idCoin: { idCripto },
     nameCoin: { nameCripto },
     buyPrice: 0,
     priceCoin: { priceCripto }
@@ -114,12 +114,20 @@ function Purchase() {
             name="buyPrice"
             inputProps={{
               min: 0,
-            }}          
+            }}
           />
+
           <Button className="StyledSpace" type="submit" variant="contained" color="primary">
             Comprar
-
           </Button>
+          <div className='containerCredit'>
+            <div className='titleContainerCredit'>
+              <span className='titleCredit'>Saldo em conta (Crédito)</span>
+            </div>
+            <div>
+              <div className='creditUser'>US$ 3.000,00</div>
+            </div>
+          </div>
         </form>
       </BoxDetails>
     </Container>
