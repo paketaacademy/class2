@@ -5,7 +5,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { Border,Table_, TableHead_, TableRowOne, TableRowTwo, TableCellOne, TableCellTwo, TableCellThree, TableCellThreeP, TableContainerM } from './styles'
+import { Border, Table_, TableHead_, TableRowOne, TableRowTwo, TableCellOne, TableCellTwo, TableCellThree, TableCellThreeP, TableContainerM } from './styles'
 import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
@@ -16,7 +16,6 @@ const Table = ({ data }) => {
     current: 0, pages: data.length / 5, items:
       data.slice(currentPage * 5, currentPage * 5 + 5)
   }
-
   const RenderPaginationButton = () => {
     const buttonList = []
     for (let i = 0; i < pagination.pages; i++) {
@@ -25,13 +24,13 @@ const Table = ({ data }) => {
     return buttonList
   }
   const OnClickTableRow = (e, id) => {
+    console.log(e)
     window.location = `/mercado/${id}`
   }
   const classes = {};
   console.log(data)
   return (
     <Border>
-
       <TableContainerM component={Paper}>
         <Table_ className={classes.table} aria-label="simple table">
           <TableHead_>
@@ -94,7 +93,5 @@ const Table = ({ data }) => {
     </Border>
   );
 }
-
-
 
 export default Table

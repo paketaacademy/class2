@@ -13,6 +13,8 @@ import PeopleIcon from '@material-ui/icons/People'
 import NotificationsIcon from '@material-ui/icons/Notifications'
 import SettingsIcon from '@material-ui/icons/Settings'
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn'
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney'
+import Avatar from '@material-ui/core/Avatar'
 import { useStyles } from './style'
 import { Link } from 'react-router-dom'
 
@@ -51,11 +53,11 @@ export const Navbar = () => {
       <div className={classes.root}>
         <Paper className={classes.paper}>
           <MenuList>
-            <Link to="#">
+            <Link to="/moedadodia">
               <MenuItem className={classes.fonte} >
                 <AttachMoneyIcon className={classes.icons} />
                 Ravencoin
-                <p>Con of the day</p>
+                <p>Coin of the day</p>
               </MenuItem>
             </Link>
             <Link to="/carteira">
