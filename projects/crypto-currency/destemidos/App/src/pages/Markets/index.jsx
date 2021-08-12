@@ -66,7 +66,6 @@ function Markets() {
 
   return (
     <>
-      {/* <Destemidos /> */}
       <div className='box'>
         <h1>Mercado</h1>
         <h2>Clique no nome da cryptmoeda para realizar a compra</h2>
