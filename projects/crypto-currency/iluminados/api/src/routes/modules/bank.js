@@ -18,17 +18,18 @@ app.post("/bank", verifyToken, async (req, res) => {
     const { balance } = req.body
     const bankModel = Mongoose.model("bank", bankSchema, "bank")
 
-    const user = req.user._id
-
-    if (user) {
+    const userId = req.user._id
+    const currentUser = await bankModel.findOne({ user: userId })
+    
+    if(currentUser) {
       return res
-        .status(400)
-        .send({
-          error: 'Account bank already exists.'
-        })
+          .status(400)
+          .send({
+            error:'Conta já existente'
+          })
     }
     await bankModel.create({
-      user,
+      user: userId,
       balance,
     })
     return res.status(201).send("Saldo inserido")

@@ -2,6 +2,7 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import './style.css'
 import { logout } from '../../Services/auth'
+import { isAuthenticated } from '../../Services/auth'
 
 export default function SignOut() {
 
@@ -16,7 +17,7 @@ export default function SignOut() {
         className='button--config' 
         variant="contained"
       >
-        SIGN OUT
+        SAIR
       </Button>
     </>
   )

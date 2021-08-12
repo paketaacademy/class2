@@ -1,11 +1,14 @@
+import CoinOfTheDay from "./components/Coinoftheday"
 import { ThemeProvider } from "@material-ui/core"
 import { theme } from "./commons/constants/theme"
 import { Login } from "./components/Login"
 import { Register } from "./components/Register"
+import { Navbar } from "./components/Navbar"
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link
 } from 'react-router-dom'
 import "./commons/global.css";
 import { Feeds } from "./components/Feed";
@@ -19,15 +22,19 @@ import { InsertCredit } from "./components/InsertCredit"
 function App() {
   return (
     <div className="App">
+      
       <ThemeProvider theme={theme}>
         <Router>
           <Switch>
+            <Route path="/moedadodia">
+              <CoinOfTheDay />
+            </Route>
             <Route path="/noticias">
               <TemplateMain>
                 <Feeds />
               </TemplateMain>
             </Route>
-            <Route path="/mercado" exact>
+            <Route path="/mercado">
               <TemplateMain>
                 <Market />
               </TemplateMain>
@@ -57,7 +64,7 @@ function App() {
             </TemplateAuth>
           </Switch>
         </Router>
-      </ThemeProvider>
+      </ThemeProvider>   
     </div>
   );
 }
