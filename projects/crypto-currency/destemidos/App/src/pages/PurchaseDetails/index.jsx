@@ -4,8 +4,7 @@ import Purchase from '../../components/Purchase'
 function PurchaseDetails() {
   return (
     <>
-     <Purchase/>
-     
+      <Purchase />
     </>
   )
 }

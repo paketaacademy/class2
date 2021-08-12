@@ -89,6 +89,9 @@ function Inserir() {
             onChange={handleChange}
             id="balance"
             name="balance"
+            inputProps={{
+              min: 0,
+            }}  
           />
           <StyledButton type="submit" variant="contained" color="primary">
             Realizar pagamento{' '}<MonetizationOnIcon />

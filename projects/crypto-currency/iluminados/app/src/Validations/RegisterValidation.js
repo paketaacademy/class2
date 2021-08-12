@@ -1,19 +1,19 @@
 import * as yup from 'yup'
 
 export const registerSchema = yup.object().shape({
-  name: yup.string().min(3).required().matches(/'[aA-zZ]+$'/, 'Name only can contain letters'),
-  lastName: yup.string().min(3).required().matches(/'[aA-zZ]+$'/, 'Last name only can contain letters'),
-  email: yup.string().min(10).max(64).required().email().matches(
+  firstName: yup.string().min(3, "Nome não pode ter menos que 3 letras").matches(/[a-zA-Z]+$/, 'Nome pode conter apenas letras').required("Nome necessário"),
+  lastName: yup.string().min(3, "Seu sobrenome não pode ter menos que 3 letras").matches(/[a-zA-Z]+$/, 'Sobrenome pode conter apenas letras').required("Sobrenome necessário"),
+  email: yup.string().min(10, "Seu email não pode ter menos que 10 caracteres").max(64).matches(
     /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b/,
-    'Invalid email'
-  ),
+    'Email inválido'
+  ).required("Email necessário"),
   confirmEmail: yup.string()
-    .test('confirmEmail', 'Email must match', function (value) {
+    .test('confirmEmail', 'Email diferente', function (value) {
       return this.parent.email === value
     }),
-  password: yup.string().min(6).max(12).required(),
+  password: yup.string().min(6, "Sua senha precisa ter no mínimo 6 caracteres").max(12, "Sua senha não pode ter mais que 12 caracteres").required("Password necessário"),
   confirmPassword: yup.string()
-    .test('confirmPassword', 'Password must match', function (value) {
+    .test('confirmPassword', 'Senha inválida', function (value) {
       return this.parent.password === value
     })
 })

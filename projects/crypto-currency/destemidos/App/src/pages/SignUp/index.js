@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
-import Link from '@material-ui/core/Link'
+import { Link } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
@@ -11,6 +11,7 @@ import Container from '@material-ui/core/Container'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
 import { PaperDiv, StyledAvatar, Form, SubmitButton } from './style.js'
+import './style'
 
 const API = process.env.REACT_APP_API_URL
 
@@ -39,7 +40,7 @@ export default function SignUp() {
   const [resAPI, setResAPI] = useState('')
   const [stateBtn, setStateBtn] = useState(true)
   const [severity, setSeverity] = useState('')
-  
+
   const editStateBtn = i => i.password !== i.confirmPassword || i.password === '' ? setStateBtn(true) : setStateBtn(false)
 
   const handleChange = e => {
@@ -47,11 +48,11 @@ export default function SignUp() {
     setInputs(inputs)
     editStateBtn(inputs)
   }
-  
+
   const Alert = props => {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
+    return <MuiAlert elevation={6} variant="filled" {...props} />
   }
-  
+
   const handleSubmit = e => {
     e.preventDefault()
     axios.post(`${API}/register`, inputs).then(response => {
@@ -86,17 +87,17 @@ export default function SignUp() {
           <LockOutlinedIcon />
         </StyledAvatar>
         <Typography component="h1" variant="h5">
-          Sign up
+          Registre-se
         </Typography>
         <Form onSubmit={handleSubmit} noValidate>
-          <Grid container spacing={2}>           
+          <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Email"
                 name="email"
                 autoComplete="email"
                 onChange={handleChange}
@@ -108,7 +109,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Senha"
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -121,13 +122,13 @@ export default function SignUp() {
                 required
                 fullWidth
                 name="confirmPassword"
-                label="Confirm Password"
+                label="Confirme Senha"
                 type="password"
                 id="confirmPassword"
                 autoComplete="current-password"
                 onChange={handleChange}
               />
-            </Grid>          
+            </Grid>
           </Grid>
           <SubmitButton
             type="submit"
@@ -136,12 +137,12 @@ export default function SignUp() {
             color="primary"
             disabled={stateBtn}
           >
-            Sign Up
+            Registrar
           </SubmitButton>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
-                Already have an account? Sign in
+              <Link className='insert--underline' to='/conectar' variant="body2">
+                Já possui uma conta? Faça o login
               </Link>
             </Grid>
           </Grid>

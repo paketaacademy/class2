@@ -1,14 +1,18 @@
 import { TxtField } from "../TxtField"
 import { Button } from "../Button"
 import { Container, FormContainer } from "../ContainerForms"
-import { DivContainerBtn } from "./styles";
+import { DivContainerBtn, InvalidAuth } from "./styles";
 import { Link } from "react-router-dom"
 import { useForm, Controller } from 'react-hook-form'
 import { useHistory } from "react-router-dom";
+import { useState } from "react";
 import axios from "axios";
+import { login } from "../../Services/auth";
 
 export const Login = () => {
   const { control, handleSubmit } = useForm()
+  const [resp, setResp] = useState("")
+  const [error, setError] = useState(false)
   let history = useHistory()
 
   const handleWithLogin = (data) => {
@@ -16,12 +20,18 @@ export const Login = () => {
       email: data.email,
       password: data.password
     }
-    console.log(userData)
 
     axios.post("http://localhost:3030/login", userData)
       .then((response) => {
-        console.log(response)
+        setResp(response.data)
+        let headers = response.headers['auth-token']
+        login(headers)
+        console.log(headers)
         history.push("/noticias")
+      })
+      .catch((err) => {
+        setError(true)
+        console.log(resp)
       })
 
   }
@@ -58,6 +68,9 @@ export const Login = () => {
               />
             }
           />
+          {error === true &&
+            <InvalidAuth>Email ou senha inválido</InvalidAuth>
+          }
           <DivContainerBtn>
             <Button Variant="contained" Color="primary" Type="submit">Login</Button>
           </DivContainerBtn>

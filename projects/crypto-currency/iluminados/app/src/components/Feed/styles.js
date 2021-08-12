@@ -27,6 +27,7 @@ export const FeedContainer = styled(Grid)`
     border-radius: 10px;
     max-width: 300px;
     min-width: 250px;
+    min-height: 330px;
     width: 100%;
     display: flex;
     flex-direction: column;
