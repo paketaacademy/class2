@@ -2,33 +2,21 @@
 import "./commons/global.css"
 //import { MenuListComposition } from "./components/Navbar"
 import CoinOfTheDay from "./components/Coinoftheday"
-import "./commons/global.css";
-
+import "./commons/global.css"
 import { ThemeProvider } from "@material-ui/core"
 import { theme } from "./commons/constants/theme"
 import { Login } from "./components/Login"
 import { Register } from "./components/Register"
 import { Navbar } from "./components/Navbar"
-
 //import { Footer } from "./components/Footer"
 //import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-
-  Link
-
-} from 'react-router-dom'
-import { Feeds } from "./components/Feed";
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { Feeds } from "./components/Feed"
 import { TemplateAuth } from "./components/TemplateAuth"
 import { TemplateMain } from "./components/TemplateMain"
-import Market from "./components/Market";
+import Market from "./components/Market"
 import { Wallet } from "./components/Wallet"
-import Influencer from "./components/Influencer";
-
+import Influencer from "./components/Influencer"
 
 function App() {
   return (
@@ -67,7 +55,6 @@ function App() {
               < />              
             </Route> */}
 
-
             <Route path="/mercado">
               <TemplateMain>
                 <Market />
@@ -85,12 +72,10 @@ function App() {
                 <Login />
               </Route> 
             </TemplateAuth>
-
             
           </Switch>
         </Router>
-      </ThemeProvider>   
-      
+      </ThemeProvider>         
 
     </div>
   );
