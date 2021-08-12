@@ -80,7 +80,7 @@ export default function SignIn() {
           <LockOutlinedIcon />
         </StyledAvatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Faça o login
         </Typography>
         <Form onSubmit={handleSubmit} noValidate>
           <TextField
@@ -89,7 +89,7 @@ export default function SignIn() {
             required
             fullWidth
             id="email"
-            label="Email Address"
+            label="Email"
             name="email"
             autoComplete="email"
             autoFocus
@@ -101,7 +101,7 @@ export default function SignIn() {
             required
             fullWidth
             name="password"
-            label="Password"
+            label="Senha"
             type="password"
             id="password"
             autoComplete="current-password"
@@ -113,12 +113,12 @@ export default function SignIn() {
             variant="contained"
             color="primary"
           >
-            Sign In
+            Entrar
           </SubmitButton>
           <Grid container>
             <DivContainer>
               <Link className='insert--underline' to="/cadastrar" variant="body2">
-                Don't have an account? Sign Up
+                Não tem uma conta? Registre-se
               </Link>
             </DivContainer>
           </Grid>

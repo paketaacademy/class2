@@ -32,7 +32,9 @@ app.post('/register', async (req, res) => {
     const userSaved = await usersModel.create({ firstName, lastName, email, password:hashedPassword })
     res.send(userSaved)
   } catch (error) {
-    res.status(400).send('Bad Request')
+    return res.status(400).send({
+      error: `Ocorreu um erro - ${error}`,
+    })
   }
 })
 
