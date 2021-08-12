@@ -1,30 +1,31 @@
-import React ,{useState}from 'react';
+import React, { useState } from 'react';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import {Table_, TableHead_, TableRowOne, TableRowTwo, TableCellOne, TableCellTwo, TableCellThree,TableCellThreeP, TableContainerM } from './styles'
+import { Border,Table_, TableHead_, TableRowOne, TableRowTwo, TableCellOne, TableCellTwo, TableCellThree, TableCellThreeP, TableContainerM } from './styles'
 import { Button } from '@material-ui/core';
 
+const Table = ({ data }) => {
+  const [currentPage, setCurrentPage] = useState(0)
+  const pagination = {
+    current: 0, pages: data.length / 5, items:
+      data.slice(currentPage * 5, currentPage * 5 + 5)
+  }
 
-  
-    const Table= ({data}) => {
-      const [currentPage,setCurrentPage] = useState(0)
-      const pagination = {current:0 , pages: data.length/100 , items: 
-        data.slice(currentPage*100,currentPage*100+100)}
-
-        const RenderPaginationButton = () => {
-          const buttonList = []
-          for(let i = 0; i < pagination.pages ; i++) {
-            buttonList.push(<Button onClick={()=> setCurrentPage(i)}>{i+1}</Button>)
-          }
-          return buttonList
-        }
-    const classes = {};
-        console.log(data)
-    return (
+  const RenderPaginationButton = () => {
+    const buttonList = []
+    for (let i = 0; i < pagination.pages; i++) {
+      buttonList.push(<Button onClick={() => setCurrentPage(i)}>{i + 1}</Button>)
+    }
+    return buttonList
+  }
+  const classes = {};
+  console.log(data)
+  return (
+    <Border>
       <TableContainerM component={Paper}>
         <Table_ className={classes.table} aria-label="simple table">
           <TableHead_>
@@ -41,7 +42,6 @@ import { Button } from '@material-ui/core';
               <TableCellOne align="right"></TableCellOne>
               <TableCellOne align="right">DATA OPTIONS</TableCellOne>
               <TableCellOne align="right"> 27 OF 27 METRICS</TableCellOne>
-                                     
             </TableRowOne>
 
             <TableRowTwo>
@@ -59,18 +59,14 @@ import { Button } from '@material-ui/core';
               <TableCellTwo align="right">Social Engagement</TableCellTwo>
               <TableCellTwo align="right">Social Contributors</TableCellTwo>
               <TableCellTwo align="right">Social Dominance</TableCellTwo>
-              
 
-
-
-                         
             </TableRowTwo>
-
           </TableHead_>
+
           <TableBody>
             {console.log(data)}
             {pagination.items.map((row) => (
-             
+
               <TableRow key={row.n}>
                 <TableCellThree component="th" scope="row">
                   {row.n}
@@ -87,20 +83,17 @@ import { Button } from '@material-ui/core';
                 <TableCellThree align="right">{row.ss}</TableCellThree>
                 <TableCellThree align="right">{row.c}</TableCellThree>
                 <TableCellThree align="right">{row.sd}</TableCellThree>
-                
               </TableRow>
-
-              
             ))}
           </TableBody>
-
         </Table_>
-           <RenderPaginationButton/>   
+        <RenderPaginationButton />
       </TableContainerM>
+    </Border>
 
-    );
-      }
+  );
+}
 
 
 
-  export default Table
+export default Table
