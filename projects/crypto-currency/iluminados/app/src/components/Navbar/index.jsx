@@ -72,7 +72,7 @@ export const Navbar = () => {
                 MARKETS
               </MenuItem>
             </Link>
-            <Link to="/influencers">
+            <Link to="/influenciadores">
               <MenuItem className={classes.fonte}>
                 <PeopleIcon className={classes.icons} />
                 INFLUENCERS

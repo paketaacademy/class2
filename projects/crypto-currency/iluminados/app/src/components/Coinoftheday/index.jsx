@@ -19,9 +19,9 @@ function CoinOfTheDay() {
   },
   )
 
-  const rendercoin = () => {
+  const renderCoin = () => {
     return list.map((coin, index) => {
-      console.log(coin)
+     
       return (
         <div className="page">
 
@@ -43,7 +43,7 @@ function CoinOfTheDay() {
 
   return (
     <div>
-      {rendercoin()}
+      {renderCoin()}
     </div>
   )
 }
