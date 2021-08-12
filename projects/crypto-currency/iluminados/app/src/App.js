@@ -1,6 +1,6 @@
 
 import "./commons/global.css"
-import { MenuListComposition } from "./components/Navbar"
+//import { MenuListComposition } from "./components/Navbar"
 import CoinOfTheDay from "./components/Coinoftheday"
 import "./commons/global.css";
 
@@ -8,10 +8,10 @@ import { ThemeProvider } from "@material-ui/core"
 import { theme } from "./commons/constants/theme"
 import { Login } from "./components/Login"
 import { Register } from "./components/Register"
-import { MenuListComposition } from "./components/Navbar"
+import { Navbar } from "./components/Navbar"
 
-import { Footer } from "./components/Footer"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+//import { Footer } from "./components/Footer"
+//import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
 
 import {
@@ -37,28 +37,32 @@ function App() {
       <ThemeProvider theme={theme}>
         <Router>
           <Switch>
+
             <Route path="/logar">
               <Login />
             </Route>
+
             <Route path="/registrar">
               <Register />
             </Route>
+
             <Route path="/moedadodia">
               <CoinOfTheDay />
             </Route>
+
             <Route  exact path="/">
-              <MenuListComposition />  
+              <Navbar />  
             </Route>
+
             <Route path="/noticias">
               <TemplateMain>
                 <Feeds />
               </TemplateMain>
             </Route>
 
-            <Route  exact path="/">
-              <MenuListComposition />
-              <Footer />
-            </Route>
+            {/* <Route  exact path="/">
+              < />              
+            </Route> */}
 
 
             <Route path="/mercado">
@@ -66,6 +70,7 @@ function App() {
                 <Market />
               </TemplateMain>
             </Route>
+
             <Route path="/carteira">
               <TemplateMain>
                 <Wallet />
@@ -78,10 +83,10 @@ function App() {
               </Route> 
             </TemplateAuth>
 
-          </Route>
-        </Switch>
-      </Router>
-    </ThemeProvider>     
+            
+          </Switch>
+        </Router>
+      </ThemeProvider>   
       
 
     </div>

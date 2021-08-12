@@ -5,16 +5,14 @@ import Paper from '@material-ui/core/Paper'
 import Popper from '@material-ui/core/Popper'
 import MenuItem from '@material-ui/core/MenuItem'
 import MenuList from '@material-ui/core/MenuList'
-import Avatar from '@material-ui/core/Avatar'
 import DashboardIcon from '@material-ui/icons/Dashboard'
 import ChatIcon from '@material-ui/icons/Chat'
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney'
 import CompareIcon from '@material-ui/icons/Compare'
 import InsertChartIcon from '@material-ui/icons/InsertChart'
 import PeopleIcon from '@material-ui/icons/People'
 import NotificationsIcon from '@material-ui/icons/Notifications'
 import SettingsIcon from '@material-ui/icons/Settings'
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn'
 import { useStyles } from './style'
 import { Link } from 'react-router-dom'
 
@@ -54,9 +52,9 @@ export const Navbar = () => {
       <Paper className={classes.paper}>
 
         <MenuList> 
-        <Link to="#">             
+        <Link to="CoinOfTheDay /">             
           <MenuItem className={classes.fonte} >          
-          <AttachMoneyIcon className={classes.icons} />
+          <MonetizationOnIcon className={classes.icons} />
             Ravencoin 
           <p>Coin of the day</p>
           </MenuItem>        
@@ -69,7 +67,7 @@ export const Navbar = () => {
           </MenuItem>        
           </Link> 
 
-          <Link to="#">
+          <Link to="Market /">
             <MenuItem className={classes.fonte}>
             <InsertChartIcon className={classes.icons} />
             MARKETS
@@ -128,6 +126,6 @@ export const Navbar = () => {
           )}
         </Popper>    
       </div>
-    </>
+    </div>
   )
 }
