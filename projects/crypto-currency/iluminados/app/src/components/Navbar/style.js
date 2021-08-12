@@ -25,8 +25,6 @@ export const useStyles = makeStyles((theme) => ({
       height: theme.spacing(2),
       marginTop: '20px',
 
-  
-=======
       borderRadius: 'none'
       
     },
