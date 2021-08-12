@@ -12,6 +12,7 @@ import InsertChartIcon from '@material-ui/icons/InsertChart'
 import PeopleIcon from '@material-ui/icons/People'
 import NotificationsIcon from '@material-ui/icons/Notifications'
 import SettingsIcon from '@material-ui/icons/Settings'
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import { useStyles } from './style'
 import { Link } from 'react-router-dom'
 
@@ -54,10 +55,9 @@ export const Navbar = () => {
           <MenuItem className={classes.fonte} >          
           <AttachMoneyIcon className={classes.icons} />
             Ravencoin 
-          <p>Con of the day</p>
+          <p>Coin of the day</p>
           </MenuItem>        
           </Link> 
-
 
           <Link to="#">             
           <MenuItem className={classes.fonte} >          
@@ -80,47 +80,28 @@ export const Navbar = () => {
           </MenuItem>
           </Link> 
 
-          <Link to="#">
-          <MenuItem className={classes.fonte}>
-          <ChatIcon className={classes.icons} /> 
-
-        <MenuList>
-          <MenuItem className={classes.fonte} >
-            <DashboardIcon className={classes.icon} />
-            DASHBOARD
-          </MenuItem>
-          <MenuItem className={classes.fonte}>
-            <InsertChartIcon className={classes.icon} />
-            MARKETS
-          </MenuItem>
-          <MenuItem className={classes.fonte}>
-            <PeopleIcon className={classes.icon} />
-            INFLUENCERS
-          </MenuItem>
-          <MenuItem className={classes.fonte}>
-            <ChatIcon className={classes.icon} />
-            FEEDS
-          </MenuItem>
+          
+          <Link to="Feeds /"> 
+            <MenuItem className={classes.fonte}>
+              <ChatIcon className={classes.icons} />
+              FEEDS
+            </MenuItem>
           </Link>
 
           <Link to="#">
-          <MenuItem className={classes.fonte}>
-          <CompareIcon className={classes.icons} />
-            COMPARE
-          </MenuItem>
+            <MenuItem className={classes.fonte}>
+            <CompareIcon className={classes.icons} />
+              COMPARE
+            </MenuItem>
           </Link>
           
           <MenuItem><NotificationsIcon className={classes.lastIcons} /></MenuItem>
-          <MenuItem><SettingsIcon className={classes.lastIcons} /></MenuItem>                                   
+          <MenuItem><SettingsIcon className={classes.lastIcons} /></MenuItem>                           
 
-            <CompareIcon className={classes.icon} />
-            COMPARE
-          </MenuItem>
-          <MenuItem><NotificationsIcon className={classes.notification} /></MenuItem>
-          <MenuItem><SettingsIcon className={classes.uItens} /></MenuItem>
-          <Avatar className={classes.avatar}>L</Avatar>
+            
         </MenuList>
       </Paper>
+      
       <div>
 
         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>

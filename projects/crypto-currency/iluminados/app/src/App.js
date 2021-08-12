@@ -4,6 +4,7 @@ import { theme } from "./commons/constants/theme"
 import { Login } from "./components/Login"
 import { Register } from "./components/Register"
 import { MenuListComposition } from "./components/Navbar"
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,10 +12,6 @@ import {
   
 } from 'react-router-dom'
 import "./commons/global.css";
-import { ThemeProvider } from "@material-ui/core";
-import { theme } from "./commons/constants/theme";
-import { Login } from "./components/Login";
-import { Register } from "./components/Register";
 import { Feeds } from "./components/Feed";
 import { TemplateAuth } from "./components/TemplateAuth"
 import { TemplateMain } from "./components/TemplateMain"
@@ -50,9 +47,10 @@ function App() {
                 <Register />
               </Route>
             </TemplateAuth>
-          </Switch>
-        </Router>
-      </ThemeProvider>
+          </Route>
+        </Switch>
+      </Router>
+    </ThemeProvider>
     </div>
   );
 }
