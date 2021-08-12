@@ -22,7 +22,7 @@ import { InsertCredit } from "./components/InsertCredit"
 function App() {
   return (
     <div className="App">
-      
+
       <ThemeProvider theme={theme}>
         <Router>
           <Switch>
@@ -34,7 +34,7 @@ function App() {
                 <Feeds />
               </TemplateMain>
             </Route>
-            <Route path="/mercado">
+            <Route path="/mercado" exact>
               <TemplateMain>
                 <Market />
               </TemplateMain>
@@ -64,7 +64,7 @@ function App() {
             </TemplateAuth>
           </Switch>
         </Router>
-      </ThemeProvider>   
+      </ThemeProvider>
     </div>
   );
 }
