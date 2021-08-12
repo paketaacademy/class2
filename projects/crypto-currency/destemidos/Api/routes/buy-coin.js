@@ -10,7 +10,7 @@ app.post('/buycoin', tokenValidation, async (req, res) => {
   if(buyPrice > 0 && priceCoin > 0){
 
     const Wallets = Mongoose.model('wallets', WalletSchema, 'wallets')
-    console.log('idUser: ', idUser)
+
     try {
 
       const buyQuant = buyPrice / priceCoin

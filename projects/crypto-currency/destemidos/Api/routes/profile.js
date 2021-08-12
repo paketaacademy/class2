@@ -14,19 +14,23 @@ app.get('/profile', tokenValidation, async (req, res) => {
     const foundUser = await Users.findOne({ _id: idUser }).exec()
 
     if(foundUser){
-      const emailUser = foundUser.email
-
+      
       const foundWallet = await Wallets.findOne({ idUser: idUser }).exec()
-      if(foundWallet){
-        const balanceUser = foundWallet.balance
-        const cryptoUser = foundWallet.cryptocurrencies
-        
-        res.status(200).send({emailUser, balanceUser, cryptoUser})
+      
+      if(!foundWallet) {
+        return res.status(404).send('Carteira não encontrada!')
       }
+
+      const user = {
+        email: foundUser.email,
+        balance: foundWallet.balance,
+        cryptocurrencies: foundWallet.cryptocurrencies
+      }
+      return res.status(200).send(user)
     }
 
   } catch (err) {
-    res.send(err)
+    return res.send(err)
   }  
 
 })

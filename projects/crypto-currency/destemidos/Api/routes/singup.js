@@ -1,5 +1,5 @@
 import app from "./configs/app.js"
-import { Mongoose, UserSchema } from './configs/db.js'
+import { Mongoose, UserSchema, WalletSchema } from './configs/db.js'
 import bcrypt from 'bcrypt'
 import { singupValidation } from './configs/users-validation.js'
 
@@ -15,6 +15,7 @@ app.post('/register', async (req, res) => {
   const password = cryptograf
   
   const Users = Mongoose.model('users', UserSchema, 'users')
+  const Wallets = Mongoose.model('wallets', WalletSchema, 'wallets')
   
   try {
     const foundUser = await Users.findOne({ email: email }).exec()
@@ -22,7 +23,11 @@ app.post('/register', async (req, res) => {
       return res.status(409).send('E-mail já cadastrado!')
     }
       const user = new Users({ email, password })
-      await user.save()
+      const createdUser = await user.save()
+
+      const wallet = new Wallets({ idUser: createdUser._id, balance: 0 })
+      await wallet.save()
+
       res.status(201).send('Cadastro realizado com sucesso!')
   } catch (err) {
     res.send(err)
