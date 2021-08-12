@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    margin: 0 auto ;
+    justify-content: space-between;
+}
+
+.box{
+    margin: 40px 0;
+}
+
+.title{
+    align-self: center;
+    text-align: center;
+}

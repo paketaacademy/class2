@@ -17,9 +17,9 @@ function CoinOfTheDay() {
       })
       .catch(error => console.log(error))
   },
-    [])
+  )
 
-  const day = () => {
+  const rendercoin = () => {
     return list.map((coin, index) => {
         console.log(coin)
         return (
@@ -43,7 +43,7 @@ function CoinOfTheDay() {
 
   return (
     <div>
-      {day()}
+      {rendercoin()}
     </div>
   )
 }

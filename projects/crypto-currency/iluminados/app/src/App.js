@@ -11,12 +11,12 @@ import {
   Switch,
   Route,
 } from 'react-router-dom'
-import "./commons/global.css";
 import { Feeds } from "./components/Feed";
 import { TemplateAuth } from "./components/TemplateAuth"
 import { TemplateMain } from "./components/TemplateMain"
 import Market from "./components/Market";
 import { Wallet } from "./components/Wallet"
+import Influencer from "./components/Influencer";
 
 function App() {
   return (
@@ -33,6 +33,9 @@ function App() {
             </Route>
             <Route path="/moedadodia">
               <CoinOfTheDay />
+            </Route>
+            <Route path="/influenciadores">
+              <Influencer />
             </Route>
             <Route  exact path="/">
               <MenuListComposition />  

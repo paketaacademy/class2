@@ -3,9 +3,9 @@ import express from "express";
 import { configuration } from "./configs/lunar-crush-api.js";
 const app = express();
 
-app.get("/influencers", function (req, res) {
+app.get("/influencer", function (req, res) {
   axios
-    .request(configuration("influencers"))
+    .request(configuration("influencer"))
     .then(function (response) {
       res.json(resp).status(200);
     })
