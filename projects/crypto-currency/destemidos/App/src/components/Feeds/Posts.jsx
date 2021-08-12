@@ -18,13 +18,13 @@ function Posts() {
         setList(data)        
       })
       .catch(error => console.log(error))
-  }, []);
+  },[]);
 
   const listView = () => {
     return(
     list.length > 0 && list.map((conteudo) => {
       return (
-        <Link target={"_blank"}  to={conteudo.url}>
+        <Link to={conteudo.url}>
           <PostCard
             key={conteudo.asset_id}
             body={conteudo.body}

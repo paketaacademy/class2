@@ -14,10 +14,13 @@ import walletsBuy from './modules/wallets-buy.js'
 import walletsSell  from './modules/wallets-sell.js'
 import walletResp from './modules/wallet-resp.js'
 
+const corsOption = {
+  exposedHeaders: 'auth-token'
+}
 
 const app = express()
 dotenv.config()
-app.use(cors())
+app.use(cors(corsOption))
 app.use(express.json())
 
 app.use(register)
