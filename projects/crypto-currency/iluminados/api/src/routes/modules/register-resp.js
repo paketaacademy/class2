@@ -13,10 +13,14 @@ app.get('/register', verifyToken, async function (req, res) {
     const { userId } = req.user
 
     const response = await usersModel.findOne({ user:userId }).exec()
-    
-    console.log(response)
 
-    return res.send(response).status(200)
+    const user ={
+      firstName: response.firstName,
+      lastName: response.lastName,
+      email: response.email,
+    }
+    
+    return res.send(user).status(200)
 
   } catch (error) {
     return res.status(400).send({
