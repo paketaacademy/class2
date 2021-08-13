@@ -19,60 +19,78 @@ import Market from "./components/Market"
 import { Wallet } from "./components/Wallet"
 import { CryptoCoin } from "./components/CryptoCoin"
 import { InsertCredit } from "./components/InsertCredit"
+import { isAuthenticated } from "./Services/auth"
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <div className="App">
 
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Switch>
-            <Route path="/moedadodia">
-              <TemplateMain>
-                <CoinOfTheDay />
-              </TemplateMain>
-            </Route>
-            <Route path="/influenciadores">
-              <TemplateMain>
-                <Influencer />
-              </TemplateMain>
-            </Route>
-            <Route path="/noticias">
-              <TemplateMain>
-                <Feeds />
-              </TemplateMain>
-            </Route>
-            <Route path="/mercado" exact>
-              <TemplateMain>
-                <Market />
-              </TemplateMain>
-            </Route>
-            <Route path="/mercado/:id" exact>
-              <TemplateMain>
-                <CryptoCoin />
-              </TemplateMain>
-            </Route>
-            <Route path="/carteira">
-              <TemplateMain>
-                <Wallet />
-              </TemplateMain>
-            </Route>
-            <Route path="/adicionarsaldo">
-              <TemplateMain>
-                <InsertCredit />
-              </TemplateMain>
-            </Route>
-            <TemplateAuth>
-              <Route exact path="/">
-                <Login />
-              </Route>
-              <Route path="/registrar">
-                <Register />
-              </Route>
-            </TemplateAuth>
-          </Switch>
-        </Router>
-      </ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <Router>
+            <Switch>
+              {isAuthenticated() &&
+                <Route path="/moedadodia">
+                  <TemplateMain>
+                    <CoinOfTheDay />
+                  </TemplateMain>
+                </Route>
+              }
+              {isAuthenticated() &&
+                <Route path="/influenciadores">
+                  <TemplateMain>
+                    <Influencer />
+                  </TemplateMain>
+                </Route>
+              }
+              {isAuthenticated() &&
+                <Route path="/noticias">
+                  <TemplateMain>
+                    <Feeds />
+                  </TemplateMain>
+                </Route>
+              }
+              {isAuthenticated() &&
+                <Route path="/mercado" exact>
+                  <TemplateMain>
+                    <Market />
+                  </TemplateMain>
+                </Route>
+              }
+              {isAuthenticated() &&
+                <Route path="/mercado/:id" exact>
+                  <TemplateMain>
+                    <CryptoCoin />
+                  </TemplateMain>
+                </Route>
+              }
+              {isAuthenticated() &&
+                <Route path="/carteira">
+                  <TemplateMain>
+                    <Wallet />
+                  </TemplateMain>
+                </Route>
+              }
+              {isAuthenticated() &&
+                <Route path="/adicionarsaldo">
+                  <TemplateMain>
+                    <InsertCredit />
+                  </TemplateMain>
+                </Route>
+              }
+              <TemplateAuth>
+                <Route exact path="/">
+                  <Login />
+                </Route>
+                <Route path="/registrar">
+                  <Register />
+                </Route>
+              </TemplateAuth>
+            </Switch>
+          </Router>
+        </ThemeProvider>
+      </div>
+
     </div>
   );
 }

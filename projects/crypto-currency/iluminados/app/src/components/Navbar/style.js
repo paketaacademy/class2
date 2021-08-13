@@ -27,14 +27,8 @@ export const useStyles = makeStyles((theme) => ({
 
       borderRadius: 'none'
       
-    },
-  
-    icon: {
-    marginTop: '30px',
-    height: '30px',
-    margin: '0px 0px 8px 0'
-  
-    },   
+    }, 
+     
       
   
     fonte:{
@@ -50,7 +44,7 @@ export const useStyles = makeStyles((theme) => ({
 
     lastIcons: {
       marginTop: '10px',
-      marginLeft: '13px'
+      marginLeft: '9px'
     },
 
        
