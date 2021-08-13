@@ -52,12 +52,6 @@ white-space: nowrap;
 export const TableCellThree= styled(TableCell)`
 color :black;
 text-align: center;
-white-space: nowrap;
-  
-  &:hover {
-    background: gray;
-    
-  }
 
 `
 
