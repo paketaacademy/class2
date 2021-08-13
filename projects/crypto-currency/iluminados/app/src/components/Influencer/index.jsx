@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import './style.css'
+import { Link } from "@material-ui/core"
+import "./style-inf.css"
 
 function Influencer() {
 
@@ -8,40 +9,53 @@ function Influencer() {
 
   useEffect(() => {
     fetch(
-      `${API}influencers`,
+      `${API}influencer`,
       { method: 'get' }
     )
       .then(async response => {
         const { data } = await response.json()
-        setList([data])
+        setList(data)
       })
       .catch(error => console.log(error))
-  },
+  }, [API, setList]
   )
 
   const renderInfluencer = () => {
     return list.map((influencer, index) => {
-      
-      return (
-        <div className="page">
 
-          <div key={index} className="container">
-            <div className="box">
-              <h1>Influencers</h1>              
-              <h2>{influencer.twitter_screen_name}</h2>
-              <h2>{influencer.display_name}</h2>              
+      return (
+        <div className="container-inf" key="index">
+
+          <div classname="box-title">
+            <div>
+              <img className="img-user" src={influencer.profile_image} />
             </div>
-            <div className="box">
-            <img className='img' src={influencer.profile_image}/>
+
+            <div>
+              <h2>{influencer.display_name}</h2>
             </div>
           </div>
+
+          <div>
+            <Link to="#">
+            <img className="img-profile" src={influencer.banner_image} />
+            </Link>
+            
+          </div>
+
+          <div className="txt">
+            <h3>Engagement: {influencer.engagement}</h3>
+            <h3>Followers: {influencer.followers}</h3>
+            <h3>Following: {influencer.following}</h3>
+          </div>
+
         </div>
       )
     })
   }
 
   return (
-    <div>
+    <div className="box-card">
       {renderInfluencer()}
     </div>
   )

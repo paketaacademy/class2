@@ -1,4 +1,5 @@
 import CoinOfTheDay from "./components/Coinoftheday"
+import Influencer from "./components/Influencer"
 import { ThemeProvider } from "@material-ui/core"
 import { theme } from "./commons/constants/theme"
 import { Login } from "./components/Login"
@@ -16,7 +17,6 @@ import { TemplateAuth } from "./components/TemplateAuth"
 import { TemplateMain } from "./components/TemplateMain"
 import Market from "./components/Market"
 import { Wallet } from "./components/Wallet"
-import Influencer from "./components/Influencer"
 import { CryptoCoin } from "./components/CryptoCoin"
 import { InsertCredit } from "./components/InsertCredit"
 
