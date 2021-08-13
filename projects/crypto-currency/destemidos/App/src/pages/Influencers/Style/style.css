@@ -7,10 +7,13 @@
 }
 
 .cards{
-    margin: 40px 0;
-}
-.page-title{
-    align-self: center;
-    text-align: center;
+    margin: 70px 0;
 }
 
+.StyledSkeleton{
+    margin: 10px
+}
+
+.StyledBoxSkeleton{
+    margin: 70px 0;
+}

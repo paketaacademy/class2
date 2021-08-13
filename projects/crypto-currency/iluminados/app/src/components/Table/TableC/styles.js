@@ -5,9 +5,12 @@ import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 
+
+export const Border=styled.div`
+margin-top:200px;
+border`
+
 export const Table_= styled(Table)`
-margin-top: 200px;
-margin-left:100px;
 border-color:black;
 max-width: 60%;
 `

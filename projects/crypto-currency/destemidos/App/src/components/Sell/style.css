@@ -1,0 +1,54 @@
+.StyledPositions{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.StyledSpace{
+  margin-top: 10px;
+}
+
+.containerCredit{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 100px;
+  align-items: center;
+  text-align: center;
+}
+
+.titleContainerCredit{
+  margin-bottom: -5px;
+}
+
+.StyledButtonVender{
+  width: 120px;  
+  z-index: 0;
+  background: #f50057;
+  border: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 5px;
+  border-radius: 4px;
+  margin: 5px 0;
+  box-shadow: 1px 1px 3px #9E9E9E;
+  color: #fff;  
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.creditCoin{
+  width: 200px;
+  background: #dfdfdf;  
+  border-radius: 5px;
+  padding: 8px 8px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}

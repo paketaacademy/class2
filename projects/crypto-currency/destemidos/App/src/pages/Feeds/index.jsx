@@ -7,6 +7,7 @@ import PostsFull from "../../components/Feeds/PostsFull"
 import ViewModuleIcon from '@material-ui/icons/ViewModule'
 import ViewStreamIcon from '@material-ui/icons/ViewStream'
 import './Styles.css'
+import Destemidos from '../../components/Destemidos'
 
 function Feeds() {
   const [component, setComponent] = useState('PostsFull')
@@ -16,7 +17,7 @@ function Feeds() {
   return (
     <div>
       <div className='SliderTitle'>
-        <h2>Feeds</h2>
+        <Destemidos text="Twittis Da Comunidade" />
       </div>
       <div className='SliderView'>
         <ButtonGroup>

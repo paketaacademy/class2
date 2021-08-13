@@ -17,7 +17,7 @@ export default function TransitionsPopper() {
   return (
     <>
       <button className='learn--button'aria-describedby={id} type="button" onClick={handleClick}>
-        LEARN MORE ABOUT LUNARCRUSH
+        MAIS CONTEUDO SOBRE A COMUNIDADE
       </button>
       <Popper id={id} open={open} anchorEl={anchorEl} transition>
         {({ TransitionProps }) => (

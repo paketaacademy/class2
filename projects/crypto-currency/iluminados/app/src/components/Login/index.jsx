@@ -24,7 +24,7 @@ export const Login = () => {
     axios.post("http://localhost:3030/login", userData)
       .then((response) => {
         setResp(response.data)
-        let headers = response.headers['auth-token']
+        let headers = response.headers['Authorization']
         login(headers)
         console.log(headers)
         history.push("/noticias")

@@ -5,15 +5,16 @@ import Paper from '@material-ui/core/Paper'
 import Popper from '@material-ui/core/Popper'
 import MenuItem from '@material-ui/core/MenuItem'
 import MenuList from '@material-ui/core/MenuList'
-import Avatar from '@material-ui/core/Avatar'
 import DashboardIcon from '@material-ui/icons/Dashboard'
 import ChatIcon from '@material-ui/icons/Chat'
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney'
 import CompareIcon from '@material-ui/icons/Compare'
 import InsertChartIcon from '@material-ui/icons/InsertChart'
 import PeopleIcon from '@material-ui/icons/People'
 import NotificationsIcon from '@material-ui/icons/Notifications'
 import SettingsIcon from '@material-ui/icons/Settings'
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn'
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney'
+import Avatar from '@material-ui/core/Avatar'
 import { useStyles } from './style'
 import { Link } from 'react-router-dom'
 
@@ -48,36 +49,36 @@ export const Navbar = () => {
 
 
   return (
-    <>
+    
       <div className={classes.root}>
         <Paper className={classes.paper}>
           <MenuList>
-            <Link to="#">
+            <Link to="/moedadodia">
               <MenuItem className={classes.fonte} >
                 <AttachMoneyIcon className={classes.icons} />
                 Ravencoin
-                <p>Con of the day</p>
+                <p>Coin of the day</p>
               </MenuItem>
             </Link>
-            <Link to="#">
+            <Link to="/carteira">
               <MenuItem className={classes.fonte} >
                 <DashboardIcon className={classes.icons} />
                 WALLET
               </MenuItem>
             </Link>
-            <Link to="#">
+            <Link to="/mercado">
               <MenuItem className={classes.fonte}>
                 <InsertChartIcon className={classes.icons} />
                 MARKETS
               </MenuItem>
             </Link>
-            <Link to="#">
+            <Link to="/influenciadores">
               <MenuItem className={classes.fonte}>
                 <PeopleIcon className={classes.icons} />
                 INFLUENCERS
               </MenuItem>
             </Link>
-            <Link to="#">
+            <Link to="/noticias">
               <MenuItem className={classes.fonte}>
                 <ChatIcon className={classes.icon} />
                 FEEDS
@@ -117,6 +118,5 @@ export const Navbar = () => {
           </Popper>
         </div>
       </div>
-    </>
   )
 }

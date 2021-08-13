@@ -19,11 +19,12 @@ export const useStyles = makeStyles((theme) => ({
     width: '80px',
          
     },
-      
+
     large: {
       width: theme.spacing(2),
       height: theme.spacing(2),
       marginTop: '20px',
+
       borderRadius: 'none'
       
     },
@@ -56,4 +57,5 @@ export const useStyles = makeStyles((theme) => ({
    
     
   })); 
+
 
