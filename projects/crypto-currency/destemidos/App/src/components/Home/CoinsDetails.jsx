@@ -5,15 +5,18 @@ import TableBody from '@material-ui/core/TableBody'
 import CompareArrowsIcon from '@material-ui/icons/CompareArrows'
 import { Link } from 'react-router-dom'
 import { getToken } from '../../Services/auth.js'
-
+import Skeleton from '@material-ui/lab/Skeleton'
 import './Style.css'
 
 export default function CustomizedTables() {
 
   const [list, setList] = useState({})
   const API = process.env.REACT_APP_API_URL
+  const [loading, setLoading] = useState(true)
+
 
   useEffect(() => {
+    setLoading(true)
     fetch(
       `${API}/profile`,
       {
@@ -25,64 +28,76 @@ export default function CustomizedTables() {
     )
       .then(async response => {
         const data = await response.json()
-        setList(data)
+        setList(data.cryptocurrencies)
+        setLoading(false)
       })
       .catch(error => console.log(error))
   }, [API, setList])
 
-  const listView = () => {
+  const renderSkeleton = () => {
     return (
-      list.cryptoUser.map((row) => {
-        console.log('entrei')
+      new Array(5).fill().map((row, i) => {
         return (
-          <tr className='StyledViewBody' key={row.name}>
-            <td>
-
-              {row.name}
-            </td>
-            <td>{row.quant}</td>
-            <td align='center'>
-              <Link to={`/vender/${row.id}`}>
-                <button className='StyledButtonVender'>
-                  <div>Vender</div><div><CompareArrowsIcon /></div>
-                </button>
-              </Link>
-            </td>
+          <tr className='StyledViewBody' key={i}>
+            <td align='center' ><Skeleton width={140} height={30} /></td>
+            <td align='center'><Skeleton width={180} height={30} /></td>
+            <td align='center'><Skeleton width={120} height={50} /></td>
           </tr>
         )
       })
     )
   }
 
+  const listView = () => {
+    if (list == '') {
+      console.log('if vazio')
+      return (
+        <TableBody>
+          <div className='StyledMSGSaldo'>Não possui critomoedas</div>
+        </TableBody>
+      )
+    } else {
+      return (
+        list.length > 0 && list.map((row) => {
+          return (
+            <tr className='StyledViewBody' key={row.id}>
+              <td>
+                {row.name}
+              </td>
+              <td>{row.quant}</td>
+              <td align='center'>
+                <Link to={`/vender/${row.id}`}>
+                  <button className='StyledButtonVender'>
+                    <div>Vender</div><div><CompareArrowsIcon /></div>
+                  </button>
+                </Link>
+              </td>
+            </tr>
+          )
+        })
+      )
+    }
+  }
+
   const listTHView = () => {
     return (
       <tr className='StyledCellRow'>
         <td className='StyledCellRow'>Nome da Criptomoeda</td>
-        <td className='StyledCellRow' align="right">Saldo</td>
+        <td className='StyledCellRow' align="right">Quantidade</td>
         <td className='StyledCellRow' align="right">Vender</td>
       </tr>
     )
   }
 
-  if (!list.cryptoUser != '') {
-    return (
+  return (
+    <div className='boxView'>
       <Table className='StyledView'>
         {listTHView()}
         <TableBody>
-          <div className='StyledMSGSaldo'>Não possui critomoedas</div>
+          {loading ? renderSkeleton() : listView()}
         </TableBody>
       </Table>
-    )
-  } else {
-    return (
-      <div className='boxView'>
-        <Table className='StyledView'>
-          {listTHView()}
-          <TableBody>
-            {listView()}
-          </TableBody>
-        </Table>
-      </div>
-    )
-  }
+    </div >
+  )
+
 }
