@@ -16,7 +16,7 @@ function CoinOfTheDay() {
         setList([data])
       })
       .catch(error => console.log(error))
-  },
+  },)
 
   const renderCoin = () => {
     return list.map((coin, index) => {
