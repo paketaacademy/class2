@@ -8,7 +8,6 @@ app.use(express.json())
 app.get('/wallet', verifyToken, async function (req, res) {
 
   try {
-
     const walletModel = await Mongoose.model('wallet', walletSchema, 'wallet')
     const { userId } = req.user._id
     console.log(userId)
