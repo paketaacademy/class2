@@ -10,7 +10,7 @@
   position: relative;
   color: white;
   font-family: -webkit-pictograph;
-  padding: 1em 4em;
+  padding: 2em 0 0 1em;
 }
 
 .first--text{
@@ -31,16 +31,16 @@
 }
 
 .learn--button{
+  width: 150px;
   background-color: transparent;
   color: white;
   font-family: monospace;
   font-size: 1rem;
   cursor: pointer;
-  border-width: 0.01em;
   border-color: rgb(134, 134, 134);
-  padding: 0.6em 0.8em 0.6em 0.8em;
+  padding: 0.6em 0 0 0;
   border-radius: 0.3em;
-  margin-left: 54em;
+  margin-left: 68em;
 }
 
 .learn--button:hover{

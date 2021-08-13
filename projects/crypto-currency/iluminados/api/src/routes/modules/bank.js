@@ -7,6 +7,7 @@ const app = express()
 app.use(express.json())
 
 app.post("/bank", verifyToken, async (req, res) => {
+  console.log(req)
   const { error } = bankValidation(req.body)
   if (error) {
     return res
@@ -14,19 +15,20 @@ app.post("/bank", verifyToken, async (req, res) => {
       .send(error.details[0].message)
   }
 
+
   try {
     const { balance } = req.body
     const bankModel = Mongoose.model("bank", bankSchema, "bank")
 
     const userId = req.user._id
     const currentUser = await bankModel.findOne({ user: userId })
-    
-    if(currentUser) {
+
+    if (currentUser) {
       return res
-          .status(400)
-          .send({
-            error:'Conta já existente'
-          })
+        .status(400)
+        .send({
+          error: 'Conta já existente'
+        })
     }
     await bankModel.create({
       user: userId,

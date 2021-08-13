@@ -12,7 +12,8 @@ import InsertChartIcon from '@material-ui/icons/InsertChart'
 import PeopleIcon from '@material-ui/icons/People'
 import NotificationsIcon from '@material-ui/icons/Notifications'
 import SettingsIcon from '@material-ui/icons/Settings'
-import MonetizationOnIcon from '@material-ui/icons/MonetizationOn'
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney'
+import { isAuthenticated } from '../../Services/auth'
 import { useStyles } from './style'
 import { Link } from 'react-router-dom'
 
@@ -47,15 +48,15 @@ export const Navbar = () => {
 
 
   return (
-    <>
-      <div className={classes.root}>
+      <div>
+      {isAuthenticated() &&  <div className={classes.root}>
         <Paper className={classes.paper}>
           <MenuList>
-            <Link to="#">
+            <Link to="/moedadodia">
               <MenuItem className={classes.fonte} >
                 <AttachMoneyIcon className={classes.icons} />
                 Ravencoin
-                <p>Con of the day</p>
+                <p>Coin of the day</p>
               </MenuItem>
             </Link>
             <Link to="/carteira">
@@ -70,7 +71,7 @@ export const Navbar = () => {
                 MARKETS
               </MenuItem>
             </Link>
-            <Link to="/influencers">
+            <Link to="/influenciadores">
               <MenuItem className={classes.fonte}>
                 <PeopleIcon className={classes.icons} />
                 INFLUENCERS
@@ -78,7 +79,7 @@ export const Navbar = () => {
             </Link>
             <Link to="/noticias">
               <MenuItem className={classes.fonte}>
-                <ChatIcon className={classes.icon} />
+                <ChatIcon className={classes.icons} />
                 FEEDS
               </MenuItem>
             </Link>
@@ -89,11 +90,10 @@ export const Navbar = () => {
               </MenuItem>
             </Link>
             <MenuItem><NotificationsIcon className={classes.lastIcons} /></MenuItem>
-            <MenuItem><SettingsIcon className={classes.lastIcons} /></MenuItem>
-            <Avatar className={classes.avatar}>L</Avatar>
+            <MenuItem><SettingsIcon className={classes.lastIcons} /></MenuItem>            
           </MenuList>
         </Paper>
-        <div>
+        <div> 
           <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
             {({ TransitionProps, placement }) => (
               <Grow
@@ -116,6 +116,8 @@ export const Navbar = () => {
           </Popper>
         </div>
       </div>
-    </div>
+       }
+      </div>  
+            
   )
 }

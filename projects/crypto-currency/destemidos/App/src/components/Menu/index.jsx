@@ -2,6 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../style.css'
 import { isAuthenticated } from '../../Services/auth'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import BallotIcon from '@material-ui/icons/Ballot';
+import GroupIcon from '@material-ui/icons/Group';
+import StorefrontIcon from '@material-ui/icons/Storefront';
 
 function Menu() {
   return (
@@ -21,7 +25,7 @@ function Menu() {
           <li className='container--nav--ul--li'>
             <Link to="/mercado">
               <div>
-                <img src="https://static.thenounproject.com/png/685027-200.png" alt="market icon" className='market--icon' />
+                <StorefrontIcon />
               </div>
               <div>
                 <h1>MERCADO</h1>
@@ -31,7 +35,7 @@ function Menu() {
           <li className='container--nav--ul--li'>
             <Link to="/influencias">
               <div>
-                <img src="https://icons-for-free.com/iconfiles/png/512/people+users+icon-1320196278344550087.png" alt="influencer icon" className='influencer--icon' />
+                <GroupIcon />
               </div>
               <div>
                 <h1>INFLUENCERS</h1>
@@ -41,7 +45,7 @@ function Menu() {
           <li className='container--nav--ul--li'>
             <Link to="/conteudo">
               <div>
-                <img src="https://img.icons8.com/small/452/hashtag-activity-feed.png" alt="feed icon" className='feed--icon' />
+                <BallotIcon />
               </div>
               <div>
                 <h1>FEEDS</h1>
@@ -51,7 +55,10 @@ function Menu() {
           <li className='container--nav--ul--li--last'>
             <Link to="/sair">
               <div>
-                <img src="https://www.pikpng.com/pngl/b/519-5199120_logout-icon-png-sign-out-icon-png-clipart.png" alt="signout icon" className='signout--icon' />
+                <ExitToAppIcon/>
+              </div>
+              <div>
+                <h1>Sair</h1>
               </div>
             </Link>
           </li>

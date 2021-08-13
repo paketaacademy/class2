@@ -5,7 +5,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { Border,Table_, TableHead_, TableRowOne, TableRowTwo, TableCellOne, TableCellTwo, TableCellThree, TableCellThreeP, TableContainerM } from './styles'
+import { Border, Table_, TableHead_, TableRowOne, TableRowTwo, TableCellOne, TableCellTwo, TableCellThree, TableCellThreeP, TableContainerM } from './styles'
 import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
@@ -16,13 +16,6 @@ const Table = ({ data }) => {
     current: 0, pages: data.length / 5, items:
       data.slice(currentPage * 5, currentPage * 5 + 5)
   }
-
-const Table = ({ data }) => {
-  const [currentPage, setCurrentPage] = useState(0)
-  const pagination = {
-    current: 0, pages: data.length / 100, items:
-      data.slice(currentPage * 100, currentPage * 100 + 100)
-  }
   const RenderPaginationButton = () => {
     const buttonList = []
     for (let i = 0; i < pagination.pages; i++) {
@@ -31,13 +24,13 @@ const Table = ({ data }) => {
     return buttonList
   }
   const OnClickTableRow = (e, id) => {
+    console.log(e)
     window.location = `/mercado/${id}`
   }
   const classes = {};
   console.log(data)
   return (
     <Border>
-
       <TableContainerM component={Paper}>
         <Table_ className={classes.table} aria-label="simple table">
           <TableHead_>
@@ -57,7 +50,6 @@ const Table = ({ data }) => {
             </TableRowOne>
             <TableRowTwo>
               <TableCellTwo>Coin</TableCellTwo>
-              <TableCellTwo align="right">Galaxy Score</TableCellTwo>
               <TableCellTwo align="right">AltRank</TableCellTwo>
               <TableCellTwo align="right">Price</TableCellTwo>
               <TableCellTwo align="right">1H % Change(USD)</TableCellTwo>
@@ -65,9 +57,10 @@ const Table = ({ data }) => {
               <TableCellTwo align="right">Market Cap</TableCellTwo>
               <TableCellTwo align="right">Market Dominance</TableCellTwo>
               <TableCellTwo align="right">Volatility</TableCellTwo>
-              -<TableCellTwo align="right">Circulating Supply</TableCellTwo>
+              <TableCellTwo align="right">Circulating Supply</TableCellTwo>
               <TableCellTwo align="right">Social Volume</TableCellTwo>
               <TableCellTwo align="right">Social Engagement</TableCellTwo>
+              <TableCellTwo align="right">Galaxy Score</TableCellTwo>
               <TableCellTwo align="right">Social Contributors</TableCellTwo>
               <TableCellTwo align="right">Social Dominance</TableCellTwo>
             </TableRowTwo>
@@ -79,7 +72,6 @@ const Table = ({ data }) => {
                 <TableCellThree component="th" scope="row">
                   {row.n}
                 </TableCellThree>
-                <TableCellThree align="right">{row.qs}</TableCellThree>
                 <TableCellThree align="right">{row.acr}</TableCellThree>
                 <TableCellThree align="right">{row.p}</TableCellThree>
                 <TableCellThreeP primary={row.pch > 0} align="right">{row.pch}</TableCellThreeP>
@@ -89,6 +81,7 @@ const Table = ({ data }) => {
                 <TableCellThree align="right">{row.vt}</TableCellThree>
                 <TableCellThree align="right">{row.sv}</TableCellThree>
                 <TableCellThree align="right">{row.ss}</TableCellThree>
+                <TableCellThree align="right">{row.qs}</TableCellThree>
                 <TableCellThree align="right">{row.c}</TableCellThree>
                 <TableCellThree align="right">{row.sd}</TableCellThree>
               </TableRow>
@@ -100,7 +93,5 @@ const Table = ({ data }) => {
     </Border>
   );
 }
-
-
 
 export default Table

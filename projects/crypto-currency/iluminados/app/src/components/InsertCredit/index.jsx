@@ -10,20 +10,21 @@ export const InsertCredit = () => {
   const { control, handleSubmit } = useForm()
   const [balance, setBalance] = useState(0)
   const onSubmit = (data) => {
-    console.log("dados", data)
-    setBalance(parseInt(data.balance))
+    setBalance(data.balance)
     axios.request({
-      method: "post",
+      method: "POST",
       url: "http://localhost:3030/bank",
-      headers: { "Authorization": `Bearer ${getToken()}` },
-      data: balance
+      headers: { "auth-token": getToken() },
+      data
     })
       .then(response => {
         console.log(response)
+        console.log(balance)
       })
       .catch(err => {
-        console.log(err.data)
+        console.log(err)
       })
+    console.log(balance)
   }
 
   return (

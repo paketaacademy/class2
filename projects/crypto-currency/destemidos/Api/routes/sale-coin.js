@@ -6,8 +6,8 @@ app.post('/salecoin', tokenValidation, async (req, res) => {
 
   const { priceCoin, quantSaleCoin, idCoin } = req.body
   const idUser = req.user._id
-
-  if(quantSaleCoin > 0){
+  
+  if(quantSaleCoin >= 0){
 
     const Wallets = Mongoose.model('wallets', WalletSchema, 'wallets')
     const foundWallet = await Wallets.findOne({ idUser: idUser }).exec()
