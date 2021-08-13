@@ -7,11 +7,12 @@ app.get('/feeds', function (req, res) {
   axios
     .request(configuration("feeds"))
     .then(function (response) {
-      res.json(resp).status(200);
+      let resp = response.data
+      res.json(resp).status(200)
     })
     .catch(function (error) {
-      res.status(400).send("Bad Request");
-    });
-});
+      res.status(400).send("Bad Request")
+    })
+})
 
 export default app

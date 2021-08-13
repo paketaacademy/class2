@@ -12,7 +12,7 @@ app.get('/wallet', verifyToken, async function (req, res) {
     const walletModel = await Mongoose.model('wallet', walletSchema, 'wallet')
     const { userId } = req.user._id
 
-    const response = await walletModel.find({ userId })
+    const response = await walletModel.findOne({ user: userId }).exec()
     return res.send(response).status(200)
 
   } catch (error) {

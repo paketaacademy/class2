@@ -13,6 +13,8 @@ import bankUpdate from './modules/bank-update.js'
 import walletsBuy from './modules/wallets-buy.js'
 import walletsSell  from './modules/wallets-sell.js'
 import walletResp from './modules/wallet-resp.js'
+import bankResp from './modules/bank-resp.js'
+import registerResp from './modules/register-resp.js'
 
 const corsOption = {
   exposedHeaders: 'auth-token'
@@ -36,5 +38,7 @@ app.use(coinOfTheDay)
 app.use(influencers)
 app.use(feeds)
 app.use(walletResp)
+app.use(bankResp)
+app.use(registerResp)
 
 export default app
