@@ -8,7 +8,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 
 export const Border=styled.div`
 margin-top:200px;
-border`
+`
 
 export const Table_= styled(Table)`
 border-color:black;
