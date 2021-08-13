@@ -3,13 +3,16 @@ import { useState, useEffect } from 'react'
 import { ContainerStyled, BoxStyled } from './Style.js'
 import Avatar from '@material-ui/core/Avatar'
 import { getToken } from '../../Services/auth.js'
+import Skeleton from '@material-ui/lab/Skeleton'
 
 function UserDetails() {
 
-  const [list, setList] = useState({})
+  const [list, setList] = useState('')
+  const [loading, setLoading] = useState(true)
   const API = process.env.REACT_APP_API_URL
 
   useEffect(() => {
+    setLoading(true)
     fetch(
       `${API}/profile`,
       {
@@ -21,17 +24,16 @@ function UserDetails() {
     )
       .then(async response => {
         const data = await response.json()
-        console.log('data', data)
-        setList(data)
-
+        setList(data.email)
+        setLoading(false)
       })
       .catch(error => console.log(error))
-  }, [API, setList]);
-
+  }, [API, setList])
+  
   return (
     <ContainerStyled>
       <BoxStyled>
-        <div>{list.emailUser}</div>
+        <div>{loading ? <Skeleton width={200}  height={25} /> : list}</div>
       </BoxStyled>
       <BoxStyled>
         <Avatar>U</Avatar>

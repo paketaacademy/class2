@@ -17,7 +17,7 @@ app.post('/balance', tokenValidation, async (req, res) => {
       if(foundWallet){
 
         const filter = { idUser: idUser }
-        const update = { balance: foundWallet.balance ? balance + foundWallet.balance : balance};
+        const update = { balance: foundWallet.balance ? new Number(balance) + foundWallet.balance : new Number(balance)};
 
         await Wallets.updateOne(filter, update, {
           returnOriginal: false

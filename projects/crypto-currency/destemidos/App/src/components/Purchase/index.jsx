@@ -1,4 +1,4 @@
-  
+
 import React, { useState, useEffect } from 'react'
 import TextField from '@material-ui/core/TextField'
 import { useParams } from "react-router"
@@ -14,20 +14,7 @@ function Purchase() {
   let { id } = useParams()
   const API = process.env.REACT_APP_API_URL
 
-  const [idCripto, setIdCripto] = useState(0)
-  const [nameCripto, setNameCripto] = useState('')
-  const [priceCripto, setPriceCripto] = useState(0)
-  const [priceBtcCripto, setPriceBtcCripto] = useState(0)
-
-  const [value, setValue] = useState({
-    idCoin: { idCripto },
-    nameCoin: { nameCripto },
-    buyPrice: 0,
-    priceCoin: { priceCripto }
-  })
-
   const [list, setList] = useState({})
-
 
   useEffect(() => {
     fetch(
@@ -51,13 +38,24 @@ function Purchase() {
   const [severity, setSeverity] = useState('')
 
   const handleChange = e => {
-    value[e.target.name] = e.target.value
-    setValue(value)
+    setBuyCoin({
+      ...buyCoin,
+      [e.target.name]: e.target.value
+      
+    })
   }
 
   const Alert = props => {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
+
+  const [buyCoin, setBuyCoin] = useState({
+    idCoin: 0,
+    nameCoin: '',
+    buyPrice: 0,
+    priceBTC:0,
+    priceCoin: 0
+  })
 
   useEffect(() => {
     fetch(
@@ -68,24 +66,27 @@ function Purchase() {
         const { data } = await response.json()
         data.filter(number => {
           if (number.id == id) {
-            setIdCripto(number.id)
-            setPriceCripto(number.p)
-            setPriceBtcCripto(number.p_btc)
-            setNameCripto(number.n)
+
+            setBuyCoin({
+              idCoin: number.id,
+              nameCoin: number.n,
+              priceCoin: number.p,
+              priceBTC: number.p_btc
+            })
           }
         })
       })
       .catch(error => console.log(error))
-  }, []);
+  }, [])
 
   const handleSubmit = e => {
     e.preventDefault()
-    axios.post(`${API}/buycoin`, value,
-    {      
-      headers: {
-        'auth-token': getToken(),          
+    axios.post(`${API}/buycoin`, buyCoin,
+      {
+        headers: {
+          'auth-token': getToken(),
+        }
       }
-    }
     ).then(response => {
       setResAPI(response.data)
       setSeverity('success')
@@ -104,22 +105,23 @@ function Purchase() {
   const listItems = () => {
     return (
 
-      <div index={idCripto}>
+      <div index={buyCoin.id}>
         <div >
           <h3>Nome da Criptomoeda:</h3>
-          {nameCripto}
+          {buyCoin.nameCoin}
         </div>
         <div>
           <h3>Preço da Criptomoeda (US$):</h3>
-          {priceCripto}
+          {buyCoin.priceCoin}
         </div>
         <div>
           <h3>Preço da Criptomoeda (BTC):</h3>
-          {priceBtcCripto}
+          {buyCoin.priceBTC}
         </div>
       </div>
     )
   }
+
   return (
     <Container>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
@@ -151,13 +153,14 @@ function Purchase() {
               <span className='titleCredit'>Saldo em conta (Crédito)</span>
             </div>
             <div>
-              <div className='creditUser'>US$ {list.balanceUser}</div>
+              <div className='creditUser'>US$ {list.balance}</div>
             </div>
           </div>
         </form>
       </BoxDetails>
     </Container>
   )
+
 }
 
 export default Purchase
