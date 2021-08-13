@@ -5,7 +5,7 @@ import tokenValidation from './configs/token-validation.js'
 
 app.post('/buycoin', tokenValidation, async (req, res) => {
  
-  const { idCoin, nameCoin, buyPrice, priceCoin} = req.body
+  const { idCoin, nameCoin, buyPrice, priceCoin, symbolCoin} = req.body
   const idUser = req.user._id
 
   if(buyPrice > 0 && priceCoin > 0){
@@ -43,7 +43,7 @@ app.post('/buycoin', tokenValidation, async (req, res) => {
 
         const filterWallet = { idUser: idUser }
 
-        foundWallet.cryptocurrencies.push({id: idCoin, name: nameCoin, quant: buyQuant})
+        foundWallet.cryptocurrencies.push({id: idCoin, name: nameCoin, quant: buyQuant, symbol: symbolCoin})
 
         await Wallets.updateOne(filterWallet, foundWallet, {
           returnOriginal: false
