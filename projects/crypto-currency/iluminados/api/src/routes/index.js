@@ -11,7 +11,7 @@ import logout from './modules/logout.js'
 import bank from './modules/bank.js'
 import bankUpdate from './modules/bank-update.js'
 import walletsBuy from './modules/wallets-buy.js'
-import walletsSell  from './modules/wallets-sell.js'
+import walletsSell from './modules/wallets-sell.js'
 import walletResp from './modules/wallet-resp.js'
 
 const corsOption = {

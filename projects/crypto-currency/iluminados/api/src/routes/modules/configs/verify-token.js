@@ -2,11 +2,12 @@ import jwt from "jsonwebtoken"
 
 function verifyToken(req, res, next) {
   try {
-    const token = req.headers["Authorization"] || req.headers["authorization"]
+    const token = req.headers["auth-token"]
     if (!token) {
       return res.status(401).send("Access Denied")
     }
     const verified = jwt.verify(token, process.env.TOKEN_SECRET)
+    console.log(verified)
     req.user = verified;
     next();
   } catch (error) {

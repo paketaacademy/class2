@@ -1,6 +1,9 @@
 import { Feed } from "./Feed"
 import { Loading } from "../Loading"
 import React, { useState, useEffect } from 'react'
+import axios from "axios"
+import { get } from "react-hook-form"
+import { getToken } from "../../Services/auth"
 
 export const HandleWithFeed = (props) => {
   const [list, setList] = useState([])
@@ -8,13 +11,17 @@ export const HandleWithFeed = (props) => {
 
   const url = "http://localhost:3030/feeds"
   useEffect(() => {
-    fetch(url)
+    fetch(url, { method: "GET" })
       .then(async res => {
         const { data } = await res.json()
+        console.log(data)
         setList(data)
         setLoading(true)
       })
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        console.log(err)
+        setLoading(true)
+      })
   }, [])
 
   return (

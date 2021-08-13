@@ -7,7 +7,8 @@ app.get('/feeds', function (req, res) {
   axios
     .request(configuration("feeds"))
     .then(function (response) {
-      res.json(resp).status(200);
+      let resp = response.data
+      res.status(200).json(resp);
     })
     .catch(function (error) {
       res.status(400).send("Bad Request");
