@@ -50,7 +50,6 @@ const Table = ({ data }) => {
             </TableRowOne>
             <TableRowTwo>
               <TableCellTwo>Coin</TableCellTwo>
-              <TableCellTwo align="right">Galaxy Score</TableCellTwo>
               <TableCellTwo align="right">AltRank</TableCellTwo>
               <TableCellTwo align="right">Price</TableCellTwo>
               <TableCellTwo align="right">1H % Change(USD)</TableCellTwo>
@@ -58,9 +57,10 @@ const Table = ({ data }) => {
               <TableCellTwo align="right">Market Cap</TableCellTwo>
               <TableCellTwo align="right">Market Dominance</TableCellTwo>
               <TableCellTwo align="right">Volatility</TableCellTwo>
-              -<TableCellTwo align="right">Circulating Supply</TableCellTwo>
+              <TableCellTwo align="right">Circulating Supply</TableCellTwo>
               <TableCellTwo align="right">Social Volume</TableCellTwo>
               <TableCellTwo align="right">Social Engagement</TableCellTwo>
+              <TableCellTwo align="right">Galaxy Score</TableCellTwo>
               <TableCellTwo align="right">Social Contributors</TableCellTwo>
               <TableCellTwo align="right">Social Dominance</TableCellTwo>
             </TableRowTwo>
@@ -72,7 +72,6 @@ const Table = ({ data }) => {
                 <TableCellThree component="th" scope="row">
                   {row.n}
                 </TableCellThree>
-                <TableCellThree align="right">{row.qs}</TableCellThree>
                 <TableCellThree align="right">{row.acr}</TableCellThree>
                 <TableCellThree align="right">{row.p}</TableCellThree>
                 <TableCellThreeP primary={row.pch > 0} align="right">{row.pch}</TableCellThreeP>
@@ -82,6 +81,7 @@ const Table = ({ data }) => {
                 <TableCellThree align="right">{row.vt}</TableCellThree>
                 <TableCellThree align="right">{row.sv}</TableCellThree>
                 <TableCellThree align="right">{row.ss}</TableCellThree>
+                <TableCellThree align="right">{row.qs}</TableCellThree>
                 <TableCellThree align="right">{row.c}</TableCellThree>
                 <TableCellThree align="right">{row.sd}</TableCellThree>
               </TableRow>
