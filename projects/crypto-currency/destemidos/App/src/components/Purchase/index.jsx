@@ -14,13 +14,6 @@ function Purchase() {
   let { id } = useParams()
   const API = process.env.REACT_APP_API_URL
 
-  // const [value, setValue] = useState({
-  //   idCoin: { idCripto },
-  //   nameCoin: { nameCripto },
-  //   buyPrice: 0,
-  //   priceCoin: { priceCripto }
-  // })
-
   const [list, setList] = useState({})
 
   useEffect(() => {
@@ -45,16 +38,12 @@ function Purchase() {
   const [severity, setSeverity] = useState('')
 
   const handleChange = e => {
-    //value[e.target.name] = e.target.value
     setBuyCoin({
       ...buyCoin,
       [e.target.name]: e.target.value
       
     })
-    console.log('input', buyCoin)
   }
-
-  
 
   const Alert = props => {
     return <MuiAlert elevation={6} variant="filled" {...props} />;

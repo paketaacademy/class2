@@ -26,7 +26,6 @@ function CreditDetails() {
     )
       .then(async response => {
         const data = await response.json()
-        console.log('data', data)
         setList(data.balance)
         setLoading(false)
       })

@@ -50,7 +50,6 @@ export default function CustomizedTables() {
 
   const listView = () => {
     if (list == '') {
-      console.log('if vazio')
       return (
         <TableBody>
           <div className='StyledMSGSaldo'>Não possui critomoedas</div>

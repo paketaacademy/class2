@@ -24,7 +24,6 @@ function UserDetails() {
     )
       .then(async response => {
         const data = await response.json()
-        console.log('data', data)
         setList(data.email)
         setLoading(false)
       })
