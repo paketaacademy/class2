@@ -65,7 +65,7 @@ export default function CustomizedTables() {
               </td>
               <td>{row.quant}</td>
               <td align='center'>
-                <Link to={`/vender/${row.id}`}>
+                <Link to={`/vender/${row.symbol}`}>
                   <button className='StyledButtonVender'>
                     <div>Vender</div><div><CompareArrowsIcon /></div>
                   </button>

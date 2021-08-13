@@ -24,7 +24,7 @@ function ContentPage() {
       {isAuthenticated() &&<Route path="/mercado">
         <Markets />
       </Route>}
-      {isAuthenticated() &&<Route path="/vender/:id">
+      {isAuthenticated() &&<Route path="/vender/:symbol">
         <SellDetails />
       </Route>}
       {isAuthenticated() &&<Route path="/credito">
