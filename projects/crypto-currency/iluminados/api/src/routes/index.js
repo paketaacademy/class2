@@ -3,9 +3,9 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import market from './modules/market.js'
 import feeds from './modules/feeds.js'
-import coinOfTheDay from './modules/coin-of-the-day.js'
+import CoinOfTheDay from './modules/CoinOfTheDay.js'
 import register from './modules/register.js'
-import influencers from './modules/influencers.js'
+import Influencer from './modules/Influencer.js'
 import login from './modules/login.js'
 import logout from './modules/logout.js'
 import bank from './modules/bank.js'
@@ -32,8 +32,8 @@ app.use(walletsBuy)
 app.use(walletsSell)
 
 app.use(market)
-app.use(coinOfTheDay)
-app.use(influencers)
+app.use(CoinOfTheDay)
+app.use(Influencer)
 app.use(feeds)
 app.use(walletResp)
 

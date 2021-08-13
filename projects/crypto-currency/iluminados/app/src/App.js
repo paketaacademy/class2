@@ -14,8 +14,9 @@ import "./commons/global.css";
 import { Feeds } from "./components/Feed";
 import { TemplateAuth } from "./components/TemplateAuth"
 import { TemplateMain } from "./components/TemplateMain"
-import Market from "./components/Market";
+import Market from "./components/Market"
 import { Wallet } from "./components/Wallet"
+import Influencer from "./components/Influencer"
 import { CryptoCoin } from "./components/CryptoCoin"
 import { InsertCredit } from "./components/InsertCredit"
 
@@ -27,7 +28,14 @@ function App() {
         <Router>
           <Switch>
             <Route path="/moedadodia">
-              <CoinOfTheDay />
+              <TemplateMain>
+                <CoinOfTheDay />
+              </TemplateMain>
+            </Route>
+            <Route path="/influenciadores">
+              <TemplateMain>
+                <Influencer />
+              </TemplateMain>
             </Route>
             <Route path="/noticias">
               <TemplateMain>
