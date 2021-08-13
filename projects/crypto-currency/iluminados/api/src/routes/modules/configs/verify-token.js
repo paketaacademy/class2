@@ -8,7 +8,7 @@ function verifyToken(req, res, next) {
     }
     const verified = jwt.verify(token, process.env.TOKEN_SECRET)
     req.user = verified;
-    next();
+    next()
   } catch (error) {
     return res.status(400).send({
       error: `Ocorreu um erro - ${error}`,

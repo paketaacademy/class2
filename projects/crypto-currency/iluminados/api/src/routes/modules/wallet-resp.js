@@ -14,7 +14,7 @@ app.get('/wallet', verifyToken, async function (req, res) {
   try {
 
     const response = await walletModel.findOne({ user: userId }).exec()
-    console.log("Response", response)
+
     return res.send(response).status(200)
 
   } catch (error) {

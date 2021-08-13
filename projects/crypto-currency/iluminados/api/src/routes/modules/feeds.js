@@ -11,8 +11,8 @@ app.get('/feeds', function (req, res) {
       res.status(200).json(resp);
     })
     .catch(function (error) {
-      res.status(400).send("Bad Request");
-    });
-});
+      res.status(400).send("Bad Request")
+    })
+})
 
 export default app
