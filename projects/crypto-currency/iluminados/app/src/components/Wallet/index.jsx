@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AddBoxIcon from '@material-ui/icons/AddBox'
 import {
   Balance,
@@ -11,8 +11,25 @@ import {
   User
 } from './styles'
 import { Link } from 'react-router-dom'
+import axios from "axios"
+import { getToken } from '../../Services/auth'
 
 export const Wallet = () => {
+  const [user, setUser] = useState(
+    {
+      firstName: "",
+      lastName: "",
+      balance: 0
+    }
+  )
+  axios.request({
+    method: "GET",
+    url: "http://localhost:3030/wallet",
+    headers: { "auth-token": getToken() }
+  })
+    .then(response => {
+      console.log(response)
+    })
   return (
     <>
       <User><strong>Alisson Honostorio</strong></User>

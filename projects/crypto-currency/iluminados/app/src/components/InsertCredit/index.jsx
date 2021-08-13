@@ -12,17 +12,19 @@ export const InsertCredit = () => {
   const onSubmit = (data) => {
     setBalance(data.balance)
     axios.request({
-      method: "post",
+      method: "POST",
       url: "http://localhost:3030/bank",
-      headers: { "Authorization": `Bearer ${getToken()}` },
-      data: parseInt(balance)
+      headers: { "auth-token": getToken() },
+      data
     })
       .then(response => {
         console.log(response)
+        console.log(balance)
       })
       .catch(err => {
-        console.log(err.data)
+        console.log(err)
       })
+    console.log(balance)
   }
 
   return (
