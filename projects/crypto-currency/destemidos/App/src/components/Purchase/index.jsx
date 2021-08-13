@@ -14,7 +14,7 @@ function Purchase() {
   let { id } = useParams()
   const API = process.env.REACT_APP_API_URL
 
-  const [list, setList] = useState({})
+  const [list, setList] = useState(0)
 
   useEffect(() => {
     fetch(
@@ -28,7 +28,7 @@ function Purchase() {
     )
       .then(async response => {
         const data = await response.json()
-        setList(data)
+        setList(data.balance)
       })
       .catch(error => console.log(error))
   }, [API, setList])
@@ -54,7 +54,8 @@ function Purchase() {
     nameCoin: '',
     buyPrice: 0,
     priceBTC:0,
-    priceCoin: 0
+    priceCoin: 0,
+    symbolCoin: ''
   })
 
   useEffect(() => {
@@ -71,7 +72,8 @@ function Purchase() {
               idCoin: number.id,
               nameCoin: number.n,
               priceCoin: number.p,
-              priceBTC: number.p_btc
+              priceBTC: number.p_btc,
+              symbolCoin: number.s
             })
           }
         })
@@ -153,7 +155,7 @@ function Purchase() {
               <span className='titleCredit'>Saldo em conta (Crédito)</span>
             </div>
             <div>
-              <div className='creditUser'>US$ {list.balance}</div>
+              <div className='creditUser'>US$ {list.toFixed(2)}</div>
             </div>
           </div>
         </form>

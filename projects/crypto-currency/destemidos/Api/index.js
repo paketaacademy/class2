@@ -8,6 +8,7 @@ import balance from './routes/balance.js'
 import buyCoin from './routes/buy-coin.js'
 import saleCoin from './routes/sale-coin.js'
 import profile from './routes/profile.js'
+import datacoin from './routes/datacoin.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -30,5 +31,6 @@ app.use(balance)
 app.use(buyCoin)
 app.use(saleCoin)
 app.use(profile)
+app.use(datacoin)
 
 app.listen(LISTEN_DOOR)

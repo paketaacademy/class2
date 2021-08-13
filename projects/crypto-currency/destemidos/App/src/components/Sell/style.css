@@ -42,3 +42,13 @@
   justify-content: space-around;
   cursor: pointer;
 }
+
+.creditCoin{
+  width: 200px;
+  background: #dfdfdf;  
+  border-radius: 5px;
+  padding: 8px 8px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}

@@ -37,7 +37,7 @@ function CreditDetails() {
       <span className='titleCredit'>Saldo em conta</span>
       <div className='StyledCredit'>
         <div className='rowCredit'>
-          <div className='creditUser'> {loading ? <Skeleton variant='text' width={100} height={25} /> : `US$ ${list}`}</div>
+          <div className='creditUser'> {loading ? <Skeleton variant='text' width={100} height={25} /> : `US$ ${list.toFixed(2)}`}</div>
         </div>
         <div className='rowCredit'>
           <Link className="LinkButton" to='/credito'>
