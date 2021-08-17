@@ -1,3 +1,8 @@
-import routes from "..";
+import { Router } from "express";
 
-routes.post('/register', validationToken, RegisterController)
+const routes = Router()
+routes.get('/', (req, res)=>{
+    res.send('funcionou')
+})
+
+export default routes

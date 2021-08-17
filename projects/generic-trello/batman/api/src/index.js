@@ -1,13 +1,27 @@
+import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import express from 'express'
-const routes = express()
+import routes from './routes/index.js'
+const app = express()
 const corsOpition = {
   exposedHeaders: 'auth-token'
 }
 
 dotenv.config()
-routes.use(express.json())
-routes.use(cors(corsOpition))
+app.use(express.json())
+app.use(cors(corsOpition))
+app.use(routes)
 
-export default routes
+const params = {
+    'useNewUrlParser': true,
+    'useUnifiedTopology': true
+}
+
+const { MONGO_URI } = process.env
+mongoose.connect(MONGO_URI, params, () => console.log ('Connect to dataBase'))
+
+export { mongoose as Mongoose }
+
+export default app
+
