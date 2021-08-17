@@ -1,6 +1,7 @@
 import { BrowserRouter as Router } from "react-router-dom"
 import { createTheme, StylesProvider } from "@material-ui/core/styles"
 import { ThemeProvider } from "styled-components"
+import ContentPage from "./components/ContentPage"
 
 function App() {
   const theme = createTheme()
@@ -9,7 +10,8 @@ function App() {
       <ThemeProvider theme={theme}>
         <Router>
             
-            Olá!                       
+            {/* <Menu /> */}
+            <ContentPage/>                       
         </Router>
       </ThemeProvider>
     </StylesProvider>
