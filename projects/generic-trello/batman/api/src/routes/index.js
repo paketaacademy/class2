@@ -1,8 +1,7 @@
-import { Router } from "express";
+import { Router } from "express"
+import UserRegister from "../controllers/Users/post.js"
 
 const routes = Router()
-routes.get('/', (req, res)=>{
-    res.send('funcionou')
-})
+routes.post('/register', verifyToken, UserRegister.creatUser)
 
 export default routes

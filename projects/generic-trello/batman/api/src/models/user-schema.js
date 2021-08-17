@@ -20,7 +20,11 @@ const userSchema = new Mongoose.Schema({
       type: String,
       required: true,
       min: 6
-    }
+    },
+    date: {
+      type: Date,
+      default: Date.now
+  }
   }, { collection: 'users' }
 )
 
