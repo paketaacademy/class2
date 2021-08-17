@@ -2,7 +2,7 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
