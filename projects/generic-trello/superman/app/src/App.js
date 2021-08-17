@@ -1,10 +1,18 @@
-import './App.css'
+import { BrowserRouter as Router } from "react-router-dom"
+import { createTheme, StylesProvider } from "@material-ui/core/styles"
+import { ThemeProvider } from "styled-components"
 
 function App() {
+  const theme = createTheme()
   return (
-    <div className="App">
-      Olá!
-    </div>
+    <StylesProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <Router>
+            
+            Olá!                       
+        </Router>
+      </ThemeProvider>
+    </StylesProvider>
   )
 }
 
