@@ -27,7 +27,7 @@ const listsColumn = {
       return res
       .status(400)
       .send({
-        messagem: 'Falha ao tentar criar a lista'
+        message: 'Falha ao tentar criar a lista'
       })
     }
   }

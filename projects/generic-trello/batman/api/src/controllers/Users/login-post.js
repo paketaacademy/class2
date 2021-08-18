@@ -39,7 +39,7 @@ const UserLogin = {
         header('auth-token', token)
         res.
         send({
-            messagem:'Login realizado com sucesso!'
+            message:'Login realizado com sucesso!'
         })
       }
 }
