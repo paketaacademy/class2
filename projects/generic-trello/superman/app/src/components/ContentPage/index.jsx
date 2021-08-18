@@ -4,6 +4,7 @@ import Login from '../../pages/Login'
 import Board from '../../pages/Board'
 import Profile from '../../pages/Profile'
 import SingUp from '../../pages/SingUp'
+import { isAuthenticated } from '../../Services/auth'
 
 function ContentPage() {
   return (
@@ -11,15 +12,16 @@ function ContentPage() {
       <Route exact path='/'>
         <Login />
       </Route>
+      
       <Route exact path='/cadastrar'>
         <SingUp />
       </Route>
-      <Route exact path='/perfil'>
+      {isAuthenticated() &&<Route exact path='/perfil'>
         <Profile />
-      </Route>
-      <Route exact path='/quadro'>
+      </Route>}
+      {isAuthenticated() &&<Route exact path='/quadro'>
         <Board />
-      </Route>
+      </Route>}
       
     </Switch>
   )
