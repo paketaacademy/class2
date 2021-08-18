@@ -1,8 +1,6 @@
 import React from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import Checkbox from '@material-ui/core/Checkbox'
 import Link from '@material-ui/core/Link'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
@@ -57,7 +55,7 @@ export default function SignInSide() {
             </Submit>
             <Grid container>              
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/cadastrar" variant="body2">
                   {"Não tem cadastro? cadastre-se aqui!"}
                 </Link>
               </Grid>
