@@ -53,8 +53,6 @@ export default function SignInSide() {
     })
   }
 
-  console.log(inputs)
-
   return (
     <Container>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
