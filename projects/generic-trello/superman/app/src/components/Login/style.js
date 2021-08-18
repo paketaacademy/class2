@@ -12,6 +12,7 @@ ${({ theme }) =>`
   height: 100vh;
   `}
   `
+
 export const Image = styled.div`
     ${({ theme }) =>`
     background-image: url(https://cdn.pixabay.com/photo/2019/06/27/19/34/boy-4302994_960_720.jpg);
@@ -22,6 +23,7 @@ export const Image = styled.div`
     width:50%;
     `}
     `
+
 export const BoxPapper = styled.div`
   ${({ theme }) =>`
     margin: ${theme.spacing(8, 4)}px;
@@ -30,18 +32,21 @@ export const BoxPapper = styled.div`
     align-items: center;
     `}
     `
+    
 export const AvatarLogin = styled(Avatar)`
   ${({ theme }) =>`
     margin: ${theme.spacing(1)}px;
     background-color: ${theme.palette.secondary.main};
     `}
     `
+
 export const Form = styled.form`
   ${({ theme }) =>`
     width: 50%;
     margin-top: ${theme.spacing(1)};
     `}
     `
+
 export const Submit = styled(Button)`
   ${({ theme }) =>`
    margin: ${theme.spacing(3, 0, 2)}px;

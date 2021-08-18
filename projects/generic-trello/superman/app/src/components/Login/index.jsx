@@ -10,7 +10,6 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import { Container, Image, BoxPapper, AvatarLogin, Form, Submit } from './style.js'
 
-
 export default function SignInSide() {
 
   return (
@@ -59,7 +58,7 @@ export default function SignInSide() {
             <Grid container>              
               <Grid item>
                 <Link href="#" variant="body2">
-                  {"NÃ£o tem registro? Registre-se aqui!"}
+                  {"Não tem cadastro? cadastre-se aqui!"}
                 </Link>
               </Grid>
             </Grid>
