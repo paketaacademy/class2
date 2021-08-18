@@ -3,12 +3,12 @@ import { Mongoose } from "../index.js"
 const userSchema = new Mongoose.Schema({
     firstName: {
         type: String,
-        require: true,
+        required: true,
         min: 3
     },
     lastName:{
         type: String,
-        require: true,
+        required: true,
         min: 3
     },
     email: {
