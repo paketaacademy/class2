@@ -20,7 +20,7 @@ function Copyright() {
       {new Date().getFullYear()}
       {'.'}
     </Typography>
-  );
+  )
 }
 
 export default function SignUp() {
@@ -85,5 +85,5 @@ export default function SignUp() {
         <Copyright />
       </Box>
     </Container>
-  );
+  )
 }
