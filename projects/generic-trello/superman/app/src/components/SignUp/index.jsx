@@ -45,11 +45,13 @@ export default function SignUp() {
   const handleSubmit = e => {
     e.preventDefault()
     axios.post(`${API}/register`, inputs).then(response => {
+
       setResAPI(response.data)
       setSeverity('success')
       setOpen(true)
+      
       setTimeout(() => {
-        window.location.href = '/conectar'
+        window.location.href = '/'
       }, 2000)
 
     }).catch(err => {
@@ -89,6 +91,7 @@ export default function SignUp() {
                 fullWidth
                 id="name"
                 label="Nome Completo"
+                onChange={handleChange}
                 autoFocus
               />
             </Grid>
@@ -101,6 +104,7 @@ export default function SignUp() {
                 id="email"
                 label="E-mail"
                 name="email"
+                onChange={handleChange}
                 autoComplete="email"
               />
             </Grid>
