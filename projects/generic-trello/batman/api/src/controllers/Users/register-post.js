@@ -1,11 +1,12 @@
 import userSchema from "../../models/user-schema.js"
 import { Mongoose } from "../../index.js"
 import bcrypt from 'bcrypt'
+import { registerValidation } from '../../config/validation.js'
 
 const UserRegister ={
 
   async creatUser(req, res) {
-    const { error } = registerValidation
+    const { error } = registerValidation(req.body)
     if(error){
       return res
       .status(400)
