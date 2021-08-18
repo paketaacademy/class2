@@ -20,6 +20,7 @@ function ContentPage() {
       <Route exact path='/quadro'>
         <Board />
       </Route>
+      
     </Switch>
   )
 }
