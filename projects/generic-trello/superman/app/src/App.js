@@ -9,9 +9,7 @@ function App() {
     <StylesProvider injectFirst>
       <ThemeProvider theme={theme}>
         <Router>
-            
-            {/* <Menu /> */}
-            <ContentPage/>                       
+          <ContentPage />                      
         </Router>
       </ThemeProvider>
     </StylesProvider>
