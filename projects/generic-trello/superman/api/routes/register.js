@@ -18,12 +18,12 @@ app.post('/register', validateUser(userSchema), async (req, res) => {
     const foundUser = await Users.findOne({ email: userData.email })
     
     if(foundUser) {
-      return res.status(409).send('E-mail já cadastrado!')
+      return res.status(409).send({ msg: 'E-mail já cadastrado!' })
     }
       const user = new Users({ name: userData.name, email: userData.email, password: userData.password })
       await user.save()
 
-      res.status(201).send('Cadastro realizado com sucesso!')
+      res.status(201).send({ msg: 'Cadastro realizado com sucesso!' })
   } catch (err) {
     res.send(err)
   }
