@@ -1,5 +1,5 @@
 import app from "./configs/app.js"
-import { Mongoose, UserSchema } from './configs/mongo.js'
+import { Mongoose, UsersSchema } from './configs/mongo.js'
 import bcrypt from 'bcrypt'
 import { userSchema } from './configs/user-validation.js'
 import { validateUser } from "./configs/user-validade.js"
@@ -11,7 +11,7 @@ app.post('/register', validateUser(userSchema), async (req, res) => {
   const salt = await bcrypt.genSalt(10)
   userData.password = await bcrypt.hash(req.body.password, salt)
 
-  const Users = Mongoose.model('users', UserSchema, 'users')
+  const Users = Mongoose.model('users', UsersSchema, 'users')
   
   try {
     
