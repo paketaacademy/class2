@@ -1,7 +1,7 @@
 import { Mongoose } from "../index.js"
 
 const Board = new Mongoose.Schema({
-  name: {
+  title: {
     type: String,
     required: true,
     min: 3
