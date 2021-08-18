@@ -5,12 +5,14 @@ import { Mongoose } from "../../index.js"
 const listsColumn = {
 
   async createList(req, res) {
-    
+    const boardId = req.board._id
+    console.log(boardId)
+
     const { title, users } = (req.body)
     const Boards = Mongoose.model('board', Board, 'board')
     
     try {
-      const foundBoard = await Boards.findOne({ _id: _id })
+      const foundBoard = await Boards.findOne({ _id: boardId })
       if(!foundBoard){
         return res.send('Não foi possivel criar a lista, board não encontrado')
       }
