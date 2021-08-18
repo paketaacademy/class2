@@ -27,7 +27,7 @@ const UserRegister ={
         return res
         .status(409)
         .send({
-          menssagem: 'E-mail já cadastrado!'
+          messagem: 'E-mail já cadastrado!'
         })
       }
         const user = new Users({ firstName, lastName, email, password: password })
@@ -36,13 +36,13 @@ const UserRegister ={
         res
         .status(201)
         .send({
-          menssagem: 'Cadastro realizado com sucesso!'
+          messagem: 'Cadastro realizado com sucesso!'
         })
     } catch (error) {
        return res
        .status(400)
        .send({
-         menssagem: `Ocorreu um erro ${error}.`
+         messagem: `Ocorreu um erro ${error}.`
        })
     }
   }
