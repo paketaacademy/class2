@@ -19,7 +19,7 @@ routes.post('/creat-lists', verifyToken, listsColumn.createList)
 routes.delete('/delete-lists', verifyToken, deleteListColunm.DeleteList)
 routes.post('/register', validateUser(UserSchema), UserRegister.creatUser)
 routes.post('/login', validateLogin(LoginSchema), UserLogin.loginUser)
-routes.post("/create-board", validateBoard(BoardSchema), verifyToken, BoardControllerPost.createBoard)
+routes.post("/create-board", validateBoard(BoardSchema), verifyToken, BoardControllerPost.CreateBoard)
 routes.patch("/update-board", verifyToken, BoardControllerUpdate.UpdateBoard)
 routes.delete("/delete-board", verifyToken, BoardControllerDelete.DeleteBoard)
 
