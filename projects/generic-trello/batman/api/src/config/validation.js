@@ -10,6 +10,15 @@ const registerValidation = (data) => {
     return schema.validate(data)
 }
 
+const loginValidation = (data) => {
+  const schema = yup.object().shape({
+    email: yup.string().min(6).email().required(),
+    password: yup.string().min(6).required(),
+    })
+    return schema.validate(data)
+}
+
 export {
+  loginValidation,
   registerValidation
 }
