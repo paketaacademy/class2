@@ -1,17 +1,10 @@
 import userSchema from "../../models/user-schema.js"
 import { Mongoose } from "../../index.js"
 import bcrypt from 'bcrypt'
-import { registerValidation } from '../../config/validation.js'
 
 const UserRegister ={
 
   async creatUser(req, res) {
-    const { error } = registerValidation(req.body)
-    if(error){
-      return res
-      .status(400)
-      .send(error.details[0].message)
-    }
 
     const { firstName, lastName, email } = req.body
 
