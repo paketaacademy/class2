@@ -1,8 +1,8 @@
 import app from "./configs/app.js"
 import { Mongoose, UsersSchema } from './configs/mongo.js'
 import bcrypt from 'bcrypt'
-import { userSchema } from './configs/user-validation.js'
-import { validateUser } from "./configs/user-validade.js"
+import { userSchema } from './configs/yupValidation.js'
+import { validateUser } from "./configs/validation.js"
 
 
 app.post('/register', validateUser(userSchema), async (req, res) => {
