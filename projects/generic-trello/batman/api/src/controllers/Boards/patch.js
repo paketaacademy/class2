@@ -1,4 +1,4 @@
-import { Mongoose } from "../../index.js";
+import { Mongoose } from "../../index.js"
 
 export const BoardControllerUpdate = {
   async UpdateBoard(req, res) {

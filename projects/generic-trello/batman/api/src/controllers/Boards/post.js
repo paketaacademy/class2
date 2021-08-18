@@ -6,11 +6,10 @@ export const BoardControllerPost = {
     const { title, description, users } = req.body
 
     try {
-      const boardCreate = await (await Mongoose.model('board', Board, 'board').create({ title, description, users }))
+      const boardCreate = await Mongoose.model('board', Board, 'board').create({ title, description, users })
       return res
         .status(200)
         .send(boardCreate)
-
     } catch (error) {
       return res
         .status(400)
