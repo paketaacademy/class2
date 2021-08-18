@@ -10,47 +10,49 @@ const { MONGODB } = process.env
 mongoose.connect(MONGODB, params)
 
 const usersSchema = new mongoose.Schema({
-    name: {
-      type: String,
-      required: true,
-      min: 9
-    },
-    email: {
-      type: String,
-      required: true,
-      min: 9
-    },
-    password: {
-      type: String,
-      required: true,
-      min: 6
-    },
-    boards: {
-      type: Array
-    }
-  }, { collection: 'users' }
-)
+  name: {
+    type: String,
+    required: true,
+    min: 9
+  },
+  email: {
+    type: String,
+    required: true,
+    min: 9
+  },
+  password: {
+    type: String,
+    required: true,
+    min: 6
+  }
+}, { collection: 'users' })
 
 const boardsSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
-    min: 9
+    min: 5
   },
-  lists: {
+  description: {
+    type: String
+  },
+  members: {
     type: Array
+  },
+  idUser: {
+    type: String
   }
-  }, { collection: 'boards' }
-)
+}, { collection: 'boards' })
 
 const listsSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
-    min: 9
+    min: 5
   },
-  tasks: {
-    type: Array
+  idBoard: {
+    type: String,
+    required: true
   }
   }, { collection: 'lists' }
 )
@@ -59,18 +61,19 @@ const tasksSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
-    min: 9
+    min: 4
   },
   description: {
     type: String,
-    required: false,
-    min: 9
+    required: false
   },
   members: {
     type: Array,
     required:false
+  },
+  idList: {
+    type: String
   }
-  }, { collection: 'tasks' }
-)
+}, { collection: 'tasks' })
 
 export { mongoose as Mongoose, usersSchema as UsersSchema, boardsSchema as BoardsSchema, listsSchema as ListsSchema, tasksSchema as TasksSchema }
