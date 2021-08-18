@@ -18,7 +18,7 @@ const UserLogin = {
           return res
           .status(400)
           .send({
-              menssagem:'email não encontrado'
+              messagem:'email não encontrado'
             })
         }
       
@@ -28,7 +28,7 @@ const UserLogin = {
           return res
           .status(400)
           .send({
-              menssagem:'Senha invalida'
+              messagem:'Senha invalida'
             })
         }
       
@@ -39,7 +39,7 @@ const UserLogin = {
         header('auth-token', token)
         res.
         send({
-            menssagem:'Login realizado com sucesso!'
+            message:'Login realizado com sucesso!'
         })
       }
 }
