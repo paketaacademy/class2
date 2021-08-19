@@ -14,8 +14,7 @@ app.get('/board', async (req, res) => {
 
     if (foundUser) {
       
-      const foundBoard = await Boards.find({ members: idUser })
-      console.log(foundBoard)
+      const foundBoard = await Boards.find({ members: idUser })      
       
       if (foundBoard.length == 0) {      
         return res.status(404).send('Você ainda não possui nenhum quadro!')

@@ -53,5 +53,5 @@ export default function ModalCreateBoard() {
         </Fade>
       </ModalBox>
     </div>
-  );
+  )
 }
