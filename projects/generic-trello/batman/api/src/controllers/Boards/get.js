@@ -1,19 +1,25 @@
 import { Mongoose } from "../../index.js"
+import Board from "../../models/board-schema.js"
 
 export const BoardControllerGet = {
   async GetBoard(req, res) {
-    const userId = req.Board.user
+    const userId = req.user._id
 
-    const boards = Mongoose.Model()
     try {
-      await boards.find({}).exec(boards.find({ user: userId }))
+      const findBoard = await Mongoose.model('board', Board, 'board').find({ owner: userId })
+      if (!findBoard) {
+        return res
+          .status(400)
+          .send({ message: `Usuário não está registrado em nenhum board registrado!` })
+      }
+
       return res
         .status(200)
-        .send(boards)
+        .send(findBoard)
     } catch (error) {
       return res
         .status(400)
-        .send({ menssagem: `Erro ao tentar encontrar os boards - ${error}` })
+        .send({ message: `Erro ao tentar encontrar os boards - ${error}` })
     }
   }
 }
