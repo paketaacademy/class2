@@ -76,4 +76,4 @@ const tasksSchema = new mongoose.Schema({
   }
 }, { collection: 'tasks' })
 
-export { mongoose as Mongoose, usersSchema as UsersSchema, boardsSchema as BoardsSchema, listsSchema as ListsSchema, tasksSchema as TasksSchema }
+export { mongoose as Mongoose, usersSchema as UsersSchema, boardsSchema as BoardsSchema, listsSchema as ListsSchema, tasksSchema as TasksSchema,}

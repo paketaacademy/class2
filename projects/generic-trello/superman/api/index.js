@@ -1,4 +1,5 @@
 import home from './routes/home.js'
+import profile from './routes/profile.js'
 import register from './routes/register.js'
 import login from './routes/login.js'
 import express from 'express'
@@ -15,7 +16,9 @@ const corsOptions = {
 app.use(cors(corsOptions))
 app.use(express.json())
 app.use(home)
+app.use(profile)
 app.use(register)
 app.use(login)
+
 
 app.listen(LISTEN_DOOR)
