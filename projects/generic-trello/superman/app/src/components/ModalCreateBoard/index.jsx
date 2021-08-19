@@ -12,11 +12,11 @@ export default function ModalCreateBoard() {
 
   const handleOpen = () => {
     setOpen(true)
-  };
+  }
 
   const handleClose = () => {
     setOpen(false)
-  };
+  }
 
   return (
     <div>
