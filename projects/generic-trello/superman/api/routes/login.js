@@ -2,30 +2,25 @@ import app from "./configs/app.js"
 import dotenv from 'dotenv'
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
-import { Mongoose, UserSchema } from './configs/mongo.js'
-import { LoginValidation } from './configs/users-validation.js'
+import { Mongoose, UsersSchema } from './configs/mongo.js'
 
 dotenv.config()
 
 app.post('/login', async (req, res) => {
-  const { error } = LoginValidation(req.body)
-  if (error) {
-    return res.status(400).send(error.details[0].message)
-  }
  
   const{ email, password } = req.body
-  const userModel = Mongoose.model('users', UserSchema, 'users')
+  const userModel = Mongoose.model('users', UsersSchema, 'users')
 
   const user = await userModel.findOne({ email })
   if(!user){
     return res
-    .status(400).send('E-mail não encontrado')
+    .status(400).send('E-mail ou senha inváildo!')
   }
 
   const validPass = await bcrypt.compare(password, user.password)
 
   if(!validPass){
-    return res.status(400).send('Senha inválida')
+    return res.status(400).send('E-mail ou senha inváildo!')
   }
 
   const token = jwt.sign({_id: user._id}, process.env.SECRET, { 
@@ -34,7 +29,7 @@ app.post('/login', async (req, res) => {
 
 })
   res.header('auth-superman', token)
-  res.send('Logou')
+  res.send('Login realizado com sucesso!')
 })
 
 export default app
