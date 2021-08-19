@@ -13,10 +13,12 @@ import { BoardControllerPost } from "../controllers/Boards/post.js"
 import { BoardControllerUpdate } from "../controllers/Boards/patch.js"
 import { BoardControllerDelete } from "../controllers/Boards/delete.js"
 import deleteListColunm from "../controllers/lists/delete.js"
+import ChangeLists from "../controllers/lists/patch.js"
 
 const routes = Router()
-routes.post('/creat-lists', verifyToken, listsColumn.createList)
-routes.delete('/delete-lists', verifyToken, deleteListColunm.DeleteList)
+routes.patch('/list/:id', verifyToken, ChangeLists.UpdateList)
+routes.post('/list/:id', verifyToken, listsColumn.createList)
+routes.delete('/list/:id', verifyToken, deleteListColunm.DeleteList)
 routes.post('/register', validateUser(UserSchema), UserRegister.creatUser)
 routes.post('/login', validateLogin(LoginSchema), UserLogin.loginUser)
 routes.post("/create-board", validateBoard(BoardSchema), verifyToken, BoardControllerPost.CreateBoard)
