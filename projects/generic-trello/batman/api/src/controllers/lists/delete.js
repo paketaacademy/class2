@@ -1,13 +1,14 @@
 import { Mongoose } from '../../index.js'
+import listSchema from '../../models/list-schema.js'
 
 const deleteListColunm ={
 
     async DeleteList(req, res) {
-        const listId = req.list._id
+        const listId = '611d84e7b037bf1dd8407654'
 
         try{
             const List = await Mongoose.model('list', listSchema, 'list')
-            const foundList = await List.findOne(listId)
+            const foundList = await List.findOne({_id: listId})
             if(!foundList){
                 return res
                 .status(400)
