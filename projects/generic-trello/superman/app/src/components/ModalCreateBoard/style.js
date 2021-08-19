@@ -27,3 +27,4 @@ export const BoxDetails = styled.div`
     justify-content: center;
   `
   }`
+  
