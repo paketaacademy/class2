@@ -22,5 +22,4 @@ app.use(register)
 app.use(login)
 app.use(board)
 
-
 app.listen(LISTEN_DOOR)

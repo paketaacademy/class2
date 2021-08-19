@@ -13,14 +13,14 @@ app.get('/board', async (req, res) => {
     const foundUser = await Users.findOne({ _id: idUser })
 
     if (foundUser) {
-      
-      const foundBoard = await Boards.find({ members: idUser })      
-      
-      if (foundBoard.length == 0) {      
+
+      const foundBoard = await Boards.find({ members: idUser })
+
+      if (foundBoard.length == 0) {
         return res.status(404).send('Você ainda não possui nenhum quadro!')
       }
 
-      res.status(200).send(foundBoard) 
+      res.status(200).send(foundBoard)
     }
 
 
@@ -29,6 +29,25 @@ app.get('/board', async (req, res) => {
     return res.status(404).send('Usuário não encontrado')
 
   }
+})
+
+app.delete("/boards", async (req, res) => {
+  const { idBoard } = req.body
+
+  const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
+
+  Boards.deleteOne({ _id: idBoard }, (err) => {
+
+    if (err) return res.status(400).json({
+      error: true,
+      message: "Erro quadro não encontrado"
+    })
+
+    return res.json({
+      error: false,
+      message: "Quadro apagado com sucesso!"
+    })
+  })
 })
 
 export default app
