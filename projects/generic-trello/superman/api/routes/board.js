@@ -23,7 +23,6 @@ app.get('/board', async (req, res) => {
       res.status(200).send(foundBoard)
     }
 
-
   } catch (err) {
 
     return res.status(404).send('Usuário não encontrado')
