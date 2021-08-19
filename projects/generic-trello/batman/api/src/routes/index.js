@@ -8,7 +8,7 @@ import { UserSchema } from "../validation/user-validation.js"
 import { validateLogin } from "../middlewares/login-validate.js"
 import { LoginSchema } from "../validation/login-validation.js"
 import { validateBoard } from "../middlewares/board-validate.js"
-import { BoardSchema } from "../validation/board-validation.js"
+import { BoardSchema, BoardUpdateSchema } from "../validation/board-validation.js"
 import { BoardControllerPost } from "../controllers/Boards/post.js"
 import { BoardControllerUpdate } from "../controllers/Boards/patch.js"
 import { BoardControllerDelete } from "../controllers/Boards/delete.js"
@@ -21,8 +21,10 @@ routes.post('/list/:id', verifyToken, listsColumn.createList)
 routes.delete('/list/:id', verifyToken, deleteListColunm.DeleteList)
 routes.post('/register', validateUser(UserSchema), UserRegister.creatUser)
 routes.post('/login', validateLogin(LoginSchema), UserLogin.loginUser)
-routes.post("/create-board", validateBoard(BoardSchema), verifyToken, BoardControllerPost.CreateBoard)
-routes.patch("/update-board", verifyToken, BoardControllerUpdate.UpdateBoard)
-routes.delete("/delete-board", verifyToken, BoardControllerDelete.DeleteBoard)
+
+routes.post("/board", verifyToken, validateBoard(BoardSchema), BoardControllerPost.CreateBoard)
+routes.patch("/board/:id", verifyToken, validateBoard(BoardUpdateSchema), BoardControllerUpdate.UpdateBoard)
+routes.delete("/board/:id", verifyToken, BoardControllerDelete.DeleteBoard)
+
 
 export default routes

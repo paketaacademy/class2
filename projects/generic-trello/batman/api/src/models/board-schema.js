@@ -10,10 +10,12 @@ const Board = new Mongoose.Schema({
     type: String,
     min: 3
   },
+  owner: {
+    type: String,
+    required: true
+  },
   users: {
-    type: Array,
-    required: true,
-    min: 1
+    type: Array
   }
 },
   { collection: "board" }
