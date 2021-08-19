@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
 import TextField from '@material-ui/core/TextField'
@@ -8,11 +8,11 @@ import { ModalBox, PaperBox, BoxDetails } from './style.js'
 
 export default function ModalCreateBoard() {
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
 
   const handleOpen = () => {
     setOpen(true)
-  };
+  }
 
   const handleClose = () => {
     setOpen(false)
