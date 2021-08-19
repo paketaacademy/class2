@@ -1,17 +1,10 @@
 import userSchema from "../../models/user-schema.js"
 import { Mongoose } from "../../index.js"
 import bcrypt from 'bcrypt'
-import { registerValidation } from '../../config/validation.js'
 
 const UserRegister ={
 
   async creatUser(req, res) {
-    const { error } = registerValidation(req.body)
-    if(error){
-      return res
-      .status(400)
-      .send(error.details[0].message)
-    }
 
     const { firstName, lastName, email } = req.body
 
@@ -27,7 +20,7 @@ const UserRegister ={
         return res
         .status(409)
         .send({
-          menssagem: 'E-mail já cadastrado!'
+          message: 'E-mail já cadastrado!'
         })
       }
         const user = new Users({ firstName, lastName, email, password: password })
@@ -36,13 +29,13 @@ const UserRegister ={
         res
         .status(201)
         .send({
-          menssagem: 'Cadastro realizado com sucesso!'
+          message: 'Cadastro realizado com sucesso!'
         })
     } catch (error) {
        return res
        .status(400)
        .send({
-         menssagem: `Ocorreu um erro ${error}.`
+         message: `Ocorreu um erro ${error}.`
        })
     }
   }

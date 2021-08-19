@@ -3,19 +3,12 @@ import { Mongoose } from "../../index.js"
 import bcrypt from 'bcrypt'
 import dotenv from 'dotenv'
 import jwt from "jsonwebtoken"
-import { loginValidation } from '../../config/validation.js'
 
 dotenv.config()
 
 const UserLogin = {
 
     async loginUser (req, res) {
-        const { error } = loginValidation(req.body)
-        if (error) {
-          return res
-          .status(400)
-          .send(error.details[0].message)
-        }
        
         const{ email, password } = req.body
         const userBd = Mongoose.model('users', userSchema, 'users')
@@ -25,7 +18,7 @@ const UserLogin = {
           return res
           .status(400)
           .send({
-              menssagem:'email não encontrado'
+              messagem:'email não encontrado'
             })
         }
       
@@ -35,7 +28,7 @@ const UserLogin = {
           return res
           .status(400)
           .send({
-              menssagem:'Senha invalida'
+              messagem:'Senha invalida'
             })
         }
       
@@ -46,7 +39,7 @@ const UserLogin = {
         header('auth-token', token)
         res.
         send({
-            menssagem:'Login realizado com sucesso!'
+            message:'Login realizado com sucesso!'
         })
       }
 }
