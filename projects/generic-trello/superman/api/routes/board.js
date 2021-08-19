@@ -3,13 +3,13 @@ import { Mongoose, BoardsSchema } from './configs/mongo.js'
 
 app.post('/board', async (req, res) => {
 
-  const boardData = req.body
+  const  { title, description, idUser, members } = req.body
 
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
   
   try {
 
-    const board = new Boards({ title: boardData.title, description: boardData.description, idUser: boardData.idUser, members: boardData.members })
+    const board = new Boards({ title, description, idUser, members })
     await board.save()
 
       res.status(201).send('Cadastro realizado com sucesso!')
