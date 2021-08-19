@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
 import Link from '@material-ui/core/Link'
@@ -7,6 +8,8 @@ import Box from '@material-ui/core/Box'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
+import Snackbar from '@material-ui/core/Snackbar'
+import MuiAlert from '@material-ui/lab/Alert'
 import { PaperDiv, StyledAvatar, Form, SubmitButton } from './styles'
 import './styles'
 
@@ -23,9 +26,51 @@ function Copyright() {
   )
 }
 
-export default function SignUp() {
+export default function SignInSide() {
+
+  const [inputs, setInputs] = useState({
+    email: '',
+    password: ''
+  })
+
+  const [open, setOpen] = useState(false)
+  const [resAPI, setResAPI] = useState('')
+  const [severity, setSeverity] = useState('')
+
+  const handleChange = (e) => {
+    inputs[e.target.name] = e.target.value
+    setInputs(inputs)
+  }
+
+  const Alert = props => {
+
+    return <MuiAlert elevation={6} variant="filled" {...props} />
+  }
+  const handleClose = (event) => {
+    setOpen(false)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post('htttp://localhost:3030/', inputs).then(response => {
+      setResAPI(response.messagem)
+      setSeverity('success')
+      setOpen(true)
+      
+    }).catch(err => {
+      setResAPI(err.message)
+      setSeverity('error')
+      setOpen(true)
+    })
+  }
+
   return (
     <Container component="main" maxWidth="xs">
+       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert severity={severity}>
+          {resAPI}
+        </Alert>
+      </Snackbar>
       <CssBaseline />
       <PaperDiv>
         <StyledAvatar>
@@ -34,7 +79,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <Form noValidate>
+        <Form onSubmit={handleSubmit} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -44,6 +89,7 @@ export default function SignUp() {
             label="Email"
             name="email"
             autoComplete="email"
+            onChange={handleChange}
             autoFocus
           />
           <TextField
@@ -56,6 +102,7 @@ export default function SignUp() {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={handleChange}
           />
 
           <SubmitButton
@@ -68,13 +115,10 @@ export default function SignUp() {
             Fazer Login
           </SubmitButton>
           <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Esqueceu sua senha?
-              </Link>
+            <Grid item xs>              
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/registrar" variant="body2">
                 {"Não possui cadastro? Cadastrar-se"}
               </Link>
             </Grid>
