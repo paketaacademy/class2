@@ -9,8 +9,8 @@ export const BoardControllerGet = {
       const findBoard = await Mongoose.model('board', Board, 'board').find({ owner: userId })
       if (!findBoard) {
         return res
-          .status(400)
-          .send({ message: `Usuário não está registrado em nenhum board registrado!` })
+          .status(404)
+          .send({ message: `O usuário não possui boards vinculádos` })
       }
 
       return res
