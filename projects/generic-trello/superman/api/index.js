@@ -3,6 +3,7 @@ import profile from './routes/profile.js'
 import register from './routes/register.js'
 import login from './routes/login.js'
 import boards from './routes/board.js'
+import card from './routes/card.js'
 import express from 'express'
 import cors from 'cors'
 
@@ -21,6 +22,6 @@ app.use(profile)
 app.use(register)
 app.use(login)
 app.use(boards)
-
+app.use(card)
 
 app.listen(LISTEN_DOOR)
