@@ -20,7 +20,6 @@ app.get('/profile', async (req, res) => {
   } catch (err) {
     return res.send(err)
   }  
-
 })
 
 export default app
