@@ -1,7 +1,7 @@
 import { Mongoose } from '../../index.js'
 import listSchema from '../../models/list-schema.js'
 
-const ChangeLists = {
+const changeLists = {
 
   async UpdateList(req, res) {
     const listId = req.params.id
@@ -35,4 +35,4 @@ const ChangeLists = {
   }
 }
 
-export default ChangeLists
+export default changeLists
