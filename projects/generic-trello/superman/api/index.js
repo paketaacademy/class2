@@ -4,6 +4,7 @@ import profile from './routes/profile.js'
 import home from './routes/home.js'
 import board from './routes/board.js'
 import list from './routes/list.js'
+import card from './routes/card.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -25,5 +26,6 @@ app.use(profile)
 app.use(home)
 app.use(board)
 app.use(list)
+app.use(card)
 
 app.listen(LISTEN_DOOR)
