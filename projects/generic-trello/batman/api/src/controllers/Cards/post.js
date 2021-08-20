@@ -6,9 +6,7 @@ const cardController = {
 
   async createCard(req, res) {
     const list  = req.params.id
-    console.log('ola', list)
     const { title, description, assign } = req.body
-    console.log('hey', req.body)
     const List = Mongoose.model('list', listSchema, 'list')
 
     try {
@@ -23,7 +21,6 @@ const cardController = {
           })
         }
       const card = await Mongoose.model('cards', cardSchema, 'cards').create({ title, description, assign, list })
-      console.log('ei', card)
       return res
         .status(201)
         .send(card)

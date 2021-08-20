@@ -17,6 +17,7 @@ import cardController from "../controllers/Cards/post.js"
 import changeLists from "../controllers/lists/patch.js"
 import getLists from "../controllers/lists/get.js"
 import { BoardAssignControllerPatch } from "../controllers/Boards/assign-patch.js"
+import { cardControllerDelete } from "../controllers/Cards/delete.js"
 
 const routes = Router()
 routes.get('/list/:id', verifyToken, getLists.AllLists)
@@ -32,7 +33,7 @@ routes.patch("/board/:id", verifyToken, validateBoard(BoardUpdateSchema), BoardC
 routes.patch("/board/:id/:email", verifyToken, validateAssign(BoardAssignSchema), BoardAssignControllerPatch.BoardAssign)
 routes.delete("/board/:id", verifyToken, BoardControllerDelete.DeleteBoard)
 
-
+routes.delete('/card/:id', verifyToken, cardControllerDelete.deleteCard)
 routes.post('/card/:id', verifyToken, cardController.createCard)
 
 
