@@ -47,7 +47,7 @@ app.get('/list', async (req, res) => {
 
   } catch (err) {
 
-    return res.status(404).send('Usuário não encontrado')
+    return res.status(404).send('Quadro não encontrado')
 
   }
 })
