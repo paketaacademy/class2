@@ -4,8 +4,8 @@ import { Mongoose } from "../../index.js"
 
 const listsColumn = {
 
-  async createList(req, res) {
-    const { idBoard } = req.params
+  async CreateList(req, res) {
+    const idBoard = req.params.id
     const { title } = (req.body)
     const Boards = Mongoose.model('board', Board, 'board')
     

@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Login from '../../pages/Login'
 import Register from '../../pages/Register'
-import Home from '../../components/Home'
+import HomePage from '../../pages/HomePage'
 import Out from '../../pages/Out'
 
 function page() {
@@ -12,7 +12,7 @@ function page() {
         <Login />
       </Route>
       <Route path='/home'>
-        <Home />
+        <HomePage />
       </Route>
       <Route path='/conectar'>
         <Login />
