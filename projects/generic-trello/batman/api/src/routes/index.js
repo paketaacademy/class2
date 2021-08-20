@@ -14,6 +14,7 @@ import { BoardControllerUpdate } from "../controllers/Boards/patch.js"
 import { BoardControllerDelete } from "../controllers/Boards/delete.js"
 import deleteListColunm from "../controllers/lists/delete.js"
 import ChangeLists from "../controllers/lists/patch.js"
+import cardController from "../controllers/Cards/post.js"
 
 const routes = Router()
 routes.patch('/list/:id', verifyToken, ChangeLists.UpdateList)
@@ -25,6 +26,9 @@ routes.post('/login', validateLogin(LoginSchema), UserLogin.loginUser)
 routes.post("/board", verifyToken, validateBoard(BoardSchema), BoardControllerPost.CreateBoard)
 routes.patch("/board/:id", verifyToken, validateBoard(BoardUpdateSchema), BoardControllerUpdate.UpdateBoard)
 routes.delete("/board/:id", verifyToken, BoardControllerDelete.DeleteBoard)
+
+
+routes.post('/card/:id', verifyToken, cardController.createCard)
 
 
 export default routes
