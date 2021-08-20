@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
+import { login } from '../../Services/auth'
 import { PaperDiv, StyledAvatar, Form, SubmitButton } from './styles'
 import './styles'
 
@@ -52,9 +53,11 @@ export default function SignInSide() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('htttp://localhost:3030/', inputs).then(response => {
-      setResAPI(response.messagem)
+    axios.post('http://localhost:3030/login', inputs).then(response => {
+      setResAPI(response.data)
       setSeverity('success')
+      let myHeaders = response.headers['auth-token']
+      login(myHeaders)
       setOpen(true)
       
     }).catch(err => {
