@@ -5,11 +5,16 @@ import Avatar from '@material-ui/core/Avatar'
 export const Container = styled.div`
 ${({ theme }) =>`
   display: flex;
-  flex-dorection: row;
+  flex-direction: row;
   margin: 0;
+  align-items: center:
+  align-self: center:
   justify-content: center;
   width: 100%;
   height: 100vh;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
   `}
   `
 
@@ -20,16 +25,18 @@ export const Image = styled.div`
     background-color: ${theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900]};
     background-size: cover;
     background-position: center;
-    width:50%;
+    width:60%;
     `}
     `
 
 export const BoxPapper = styled.div`
   ${({ theme }) =>`
-    margin: ${theme.spacing(8, 4)}px;
+    margin: 50px 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    align-self: center;
     `}
     `
     
@@ -49,6 +56,6 @@ export const Form = styled.form`
 
 export const Submit = styled(Button)`
   ${({ theme }) =>`
-   margin: ${theme.spacing(3, 0, 2)}px;
+   margin: 10px 0;
    `}
    `

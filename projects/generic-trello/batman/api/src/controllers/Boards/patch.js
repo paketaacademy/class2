@@ -1,19 +1,25 @@
 import { Mongoose } from "../../index.js";
+import Board from "../../models/board-schema.js";
 
 export const BoardControllerUpdate = {
   async UpdateBoard(req, res) {
-    const { title, description, users } = req.body
-
+    const boardID = req.params.id
+    const update = req.body
     try {
-      const boardId = req.board._id
-      const boardUpdate = Mongoose.Model.updateOne({ _id: boardId }, { title: title, description: description, users: users })
+      const findBoard = await Mongoose.model('board', Board, 'board').findById(boardID)
+      if (!findBoard) {
+        return res
+          .status(400)
+          .send({ message: `Board não encontrado!` })
+      }
+      const boardUpdate = await findBoard.updateOne(update)
       return res
         .status(200)
         .send(boardUpdate)
     } catch (error) {
       return res
         .status(400)
-        .send({ menssagem: `Erro ao tentar atualizar usuário ${error}` })
+        .send({ message: `Erro ao tentar atualizar board ${error}` })
     }
   }
 }

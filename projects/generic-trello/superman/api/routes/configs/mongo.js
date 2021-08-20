@@ -57,7 +57,7 @@ const listsSchema = new mongoose.Schema({
   }, { collection: 'lists' }
 )
 
-const tasksSchema = new mongoose.Schema({
+const cardsSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -74,6 +74,6 @@ const tasksSchema = new mongoose.Schema({
   idList: {
     type: String
   }
-}, { collection: 'tasks' })
+}, { collection: 'cards' })
 
-export { mongoose as Mongoose, usersSchema as UsersSchema, boardsSchema as BoardsSchema, listsSchema as ListsSchema, tasksSchema as TasksSchema,}
+export { mongoose as Mongoose, usersSchema as UsersSchema, boardsSchema as BoardsSchema, listsSchema as ListsSchema, cardsSchema as CardsSchema,}

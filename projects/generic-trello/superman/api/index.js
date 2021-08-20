@@ -1,8 +1,11 @@
-import home from './routes/home.js'
-import profile from './routes/profile.js'
 import register from './routes/register.js'
-import board from './routes/board.js'
 import login from './routes/login.js'
+import profile from './routes/profile.js'
+import home from './routes/home.js'
+import board from './routes/board.js'
+import list from './routes/list.js'
+import card from './routes/card.js'
+
 import express from 'express'
 import cors from 'cors'
 
@@ -16,10 +19,13 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 app.use(express.json())
-app.use(home)
-app.use(profile)
+
 app.use(register)
-app.use(board)
 app.use(login)
+app.use(profile)
+app.use(home)
+app.use(board)
+app.use(list)
+app.use(card)
 
 app.listen(LISTEN_DOOR)
