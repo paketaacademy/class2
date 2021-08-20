@@ -30,8 +30,6 @@ const Profile = () => {
       .catch(error => console.log(error))
   }, [API, setBoards])
 
-  console.log('board', boards)
-
   const BoardView = () => {
     return (
       boards.length > 0 && boards.map((conteudo, index) => {
