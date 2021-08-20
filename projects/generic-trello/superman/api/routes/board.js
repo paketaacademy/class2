@@ -1,9 +1,11 @@
 import app from "./configs/app.js"
 import { Mongoose, UsersSchema, BoardsSchema } from './configs/mongo.js'
+import validationToken from './configs/validationToken.js'
 
-app.get('/board', async (req, res) => {
 
-  const { idUser } = req.body
+app.get('/board', validationToken, async (req, res) => {
+
+  const idUser = req.user._id
 
   const Users = Mongoose.model('users', UsersSchema, 'users')
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
