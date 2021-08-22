@@ -8,7 +8,7 @@ import { ModalBox, PaperBox, BoxDetails } from './style.js'
 
 export default function ModalCreateBoard() {
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
 
   const handleOpen = () => {
     setOpen(true)
