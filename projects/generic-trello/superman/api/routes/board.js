@@ -33,28 +33,30 @@ app.get('/board', validationToken, async (req, res) => {
 })
 
 app.delete('/board', async (req, res) => {
-  const { idBoard } = req.body
+  const { idBoard, idUser } = req.body
 
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
 
-  Boards.deleteOne({ _id: idBoard }, (err) => {
+  const foundBoards = await Boards.findOne({ _id: idBoard })
 
-    if (err) return res.status(400).json({
-      error: true,
-      message: "Erro quadro não encontrado"
-    })
+  if (foundBoards) {
+    if (foundBoards.idUser == idUser) {
+      Boards.deleteOne({ _id: idBoard }).exec()
 
-    return res.json({
-      error: false,
-      message: "Quadro apagado com sucesso!"
-    })
-  })
+      return res.status(200).json({
+        error: false,
+        message: "Quadro apagado com sucesso!"
+      })
+    }
+    return res.status(404).send('Somente o dono do quadro pode deletar')
+  }
+  return res.status(404).send('Quadro Não encontrado')
 })
 
 app.patch('/boardtitle', async (req, res) => {
   const { idBoard, title } = req.body
 
-  if(title.length < 5){
+  if (title.length < 5) {
     return res.status(400).send('Título deve possuir no mínimo 5 caracteres!')
   }
 
@@ -64,14 +66,14 @@ app.patch('/boardtitle', async (req, res) => {
 
     const foundBoard = await Boards.findOne({ _id: idBoard })
 
-    if(foundBoard){
+    if (foundBoard) {
       await foundBoard.updateOne({ title })
       return res.status(200).send('Título atualizado com sucesso!')
     }
 
     return res.status(404).send('Quadro não encontrado!')
 
-  } catch(err) {
+  } catch (err) {
     return res.status(400).send(err)
   }
 })
@@ -86,34 +88,34 @@ app.patch('/boardmembers', async (req, res) => {
 
     const foundBoard = await Boards.findOne({ _id: idBoard })
 
-    if(foundBoard){
+    if (foundBoard) {
 
-      const foundMembers = await Users.find({ _id: { $in: members }})
-      
-        if(foundMembers.length != 0){
+      const foundMembers = await Users.find({ _id: { $in: members } })
 
-          const newMembers = foundMembers.map((member) => {
-            return member._id.toString()
-          }).filter((member) => {
-            return !foundBoard.members.includes(member)
-          })
-          
-          if(newMembers.length == 0){
-            return res.status(404).send('Membro já faz parte desde quadro!')    
-          }
+      if (foundMembers.length != 0) {
 
-          foundBoard.members.push(...newMembers)          
+        const newMembers = foundMembers.map((member) => {
+          return member._id.toString()
+        }).filter((member) => {
+          return !foundBoard.members.includes(member)
+        })
 
-          await foundBoard.updateOne({ members: foundBoard.members })
-          return res.status(200).send('Novos membros inseridos com sucesso!')
+        if (newMembers.length == 0) {
+          return res.status(404).send('Membro já faz parte desde quadro!')
         }
-          
-        return res.status(404).send('Membro não encontrado!')      
+
+        foundBoard.members.push(...newMembers)
+
+        await foundBoard.updateOne({ members: foundBoard.members })
+        return res.status(200).send('Novos membros inseridos com sucesso!')
+      }
+
+      return res.status(404).send('Membro não encontrado!')
     }
 
     return res.status(404).send('Quadro não encontrado!')
 
-  } catch(err) {
+  } catch (err) {
     return res.status(400).send(err)
   }
 })
