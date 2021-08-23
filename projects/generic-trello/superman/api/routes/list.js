@@ -80,7 +80,6 @@ app.patch('/list', async (req, res) => {
 
     const foundList = await Lists.findOne({ _id: idList })
 
-    console.log('foundList:', foundList)
     if(foundList){
       await foundList.updateOne({ title })
       return res.status(200).send('Título atualizado com sucesso!')
