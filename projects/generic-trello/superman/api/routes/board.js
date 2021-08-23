@@ -5,6 +5,7 @@ import validationToken from './configs/validationToken.js'
 app.post('/board', async (req, res) => {
 
   const  { title, description, user, members } = req.body
+  members.push(user)
 
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
   
@@ -56,7 +57,7 @@ app.delete('/board', async (req, res) => {
   const foundBoards = await Boards.findOne({ _id: idBoard })
 
   if (foundBoards) {
-    if (foundBoards.idUser == idUser) {
+    if (foundBoards.user == idUser) {
       Boards.deleteOne({ _id: idBoard }).exec()
 
       return res.status(200).json({
