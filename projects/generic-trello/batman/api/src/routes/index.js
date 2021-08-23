@@ -13,13 +13,20 @@ import { BoardControllerPost } from "../controllers/Boards/post.js"
 import { BoardControllerUpdate } from "../controllers/Boards/patch.js"
 import { BoardControllerDelete } from "../controllers/Boards/delete.js"
 import deleteListColunm from "../controllers/lists/delete.js"
-import ChangeLists from "../controllers/lists/patch.js"
+import cardController from "../controllers/Cards/post.js"
+import changeLists from "../controllers/lists/patch.js"
+import getLists from "../controllers/lists/get.js"
 import { BoardAssignControllerPatch } from "../controllers/Boards/assign-patch.js"
+import { cardControllerUpdate } from "../controllers/Cards/patch.js"
+import { cardControllerDelete } from "../controllers/Cards/delete.js"
+
 
 const routes = Router()
-routes.patch('/list/:id', verifyToken, ChangeLists.UpdateList)
-routes.post('/list/:id', verifyToken, listsColumn.createList)
+routes.get('/list/:id', verifyToken, getLists.AllLists)
+routes.post('/list/:id', verifyToken, listsColumn.CreateList)
+routes.patch('/list/:id',verifyToken, changeLists.UpdateList)
 routes.delete('/list/:id', verifyToken, deleteListColunm.DeleteList)
+
 routes.post('/register', validateUser(UserSchema), UserRegister.creatUser)
 routes.post('/login', validateLogin(LoginSchema), UserLogin.loginUser)
 
@@ -27,6 +34,11 @@ routes.post("/board", verifyToken, validateBoard(BoardSchema), BoardControllerPo
 routes.patch("/board/:id", verifyToken, validateBoard(BoardUpdateSchema), BoardControllerUpdate.UpdateBoard)
 routes.patch("/board/:id/:email", verifyToken, validateAssign(BoardAssignSchema), BoardAssignControllerPatch.BoardAssign)
 routes.delete("/board/:id", verifyToken, BoardControllerDelete.DeleteBoard)
+
+routes.delete('/card/:id', verifyToken, cardControllerDelete.deleteCard)
+routes.post('/card/:id', verifyToken, cardController.createCard)
+routes.patch('/card/:id', verifyToken, cardControllerUpdate.updateCard)
+
 
 
 export default routes

@@ -50,14 +50,14 @@ export default function SignUp() {
   
   const handleSubmit = e => {
     e.preventDefault()
-    axios.post('htttp://localhost:3030/register', inputs).then(response => {
+    axios.post('http://localhost:3030/register', inputs).then(response => {
 
-      setResAPI(response.data)
+      setResAPI(response)
       setSeverity('success')
       setOpen(true)
 
     }).catch(err => {
-      setResAPI(err.mensagem)
+      setResAPI(err)
       setSeverity('error')
       setOpen(true)
     })
