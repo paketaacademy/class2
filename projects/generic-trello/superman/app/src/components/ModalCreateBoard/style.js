@@ -11,19 +11,19 @@ export const ModalBox = styled(Modal)`
 
 export const PaperBox = styled.div`
   ${({ theme }) => `    
-    background-color: ${theme.palette.background.paper};
+    background-color: #fff;
     border: 2px solid #000;
-    box-shadow: ${theme.shadows[5]}px;
-    padding: ${theme.spacing(2, 4, 3)}px;
+    box-shadow: 0.625rem 0.313rem 0.313rem #a8a1a1;   
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 0.938rem;
   `
   }`
 export const BoxDetails = styled.div`
   ${({ theme }) => `    
-    margin: 10px;
+    margin: 0.625rem;
     display: flex;
     justify-content: center;
   `
   }`
+  

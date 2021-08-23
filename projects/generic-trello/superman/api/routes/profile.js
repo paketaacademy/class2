@@ -8,7 +8,7 @@ app.get('/profile', async (req, res) => {
 
   try{
 
-    const foundUser = await Users.findOne({ _id: idUser})
+    const foundUser = await Users.findOne({ id: idUser})
 
     if(foundUser){
       return res.status(200).send(foundUser.name)
