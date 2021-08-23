@@ -39,7 +39,7 @@ const boardsSchema = new mongoose.Schema({
   members: {
     type: Array
   },
-  idUser: {
+  user: {
     type: String
   }
 }, { collection: 'boards' })
