@@ -22,7 +22,7 @@ function ContentPage() {
       {isAuthenticated() &&<Route path='/quadro'>
         <Board />
       </Route>}
-      
+         
     </Switch>
   )
 }

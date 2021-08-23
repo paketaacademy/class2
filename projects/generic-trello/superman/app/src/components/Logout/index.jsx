@@ -14,7 +14,7 @@ export default function Logout() {
         onClick={handleLogout} 
         variant="contained"
       >
-        <LineSingOut>SAIR</LineSingOut>        
+        <LineSingOut>Sair</LineSingOut>        
         <IconSingOut><ExitToAppIcon /></IconSingOut>
       </SingOut>    
   )
