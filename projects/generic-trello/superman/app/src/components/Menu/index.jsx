@@ -27,7 +27,7 @@ function Menu() {
       })
       .catch(error => console.log(error))
   }, [API, setList])
-  console.log(list)
+  
   return (
 
     <NavBar>
