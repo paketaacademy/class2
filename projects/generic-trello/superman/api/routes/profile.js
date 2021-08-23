@@ -1,17 +1,18 @@
 import app from "./configs/app.js"
 import { Mongoose,UsersSchema} from './configs/mongo.js'
+import validationToken from './configs/validationToken.js'
 
-app.get('/profile', async (req, res) => {
+app.get('/profile', validationToken, async (req, res) => {
   
-  const { idUser } = req.body
+  const idUser = req.user._id
   const Users = Mongoose.model('users', UsersSchema, 'users')
 
   try{
 
-    const foundUser = await Users.findOne({ id: idUser})
+    const foundUser = await Users.findOne({ _id: idUser})
 
     if(foundUser){
-      return res.status(200).send(foundUser.name)
+      return res.status(200).send(foundUser)
 
     }
 

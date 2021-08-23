@@ -12,7 +12,7 @@ export const ModalBox = styled(Modal)`
 export const PaperBox = styled.div`
   ${({ theme }) => `    
     background-color: #fff;
-    border: 2px solid #000;
+    border: 0.125rem solid #000;
     box-shadow: 0.625rem 0.313rem 0.313rem #a8a1a1;   
     display: flex;
     flex-direction: column;

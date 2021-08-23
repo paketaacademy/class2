@@ -8,9 +8,12 @@ export const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
-    width: 100%;
     height: 100vh;
-    padding: 1.875rem;    
+    margin: 0 auto;
+    @media (max-width: 34.375rem) {
+      flex-direction: column;
+      align-items: center;
+    }
   `
 }`
 
@@ -22,7 +25,8 @@ export const Box = styled(Paper)`
     display: flex;
     justify-content: space-evenly;
     align-items: center;    
-    padding: 1.25rem;  
+    padding: 0.313rem;  
+    cursor: pointer;
   `
 }`
 
