@@ -1,6 +1,13 @@
-function Profile() {
+import React from "react"
+import Logout from "../../components/Logout"
+import Perfil from "../../components/Perfil"
+
+const Profile = () => {
   return (
-    <></>
+    <>
+      <Logout />
+      <Perfil />
+    </>
   )
 }
 
