@@ -20,9 +20,15 @@ import { BoardAssignControllerPatch } from "../controllers/Boards/assign-patch.j
 import { cardControllerUpdate } from "../controllers/Cards/patch.js"
 import { cardControllerDelete } from "../controllers/Cards/delete.js"
 import { cardControllerGet } from "../controllers/Cards/get.js"
-
+import swaggerUi from 'swagger-ui-express'
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const swaggerFile = require("../swagger-output.json");
 
 const routes = Router()
+
+routes.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+
 routes.get('/list/:id', verifyToken, getLists.AllLists)
 routes.post('/list/:id', verifyToken, listsColumn.CreateList)
 routes.patch('/list/:id',verifyToken, changeLists.UpdateList)
@@ -40,6 +46,5 @@ routes.delete('/card/:id', verifyToken, cardControllerDelete.deleteCard)
 routes.post('/card/:id', verifyToken, cardController.createCard)
 routes.patch('/card/:id', verifyToken, cardControllerUpdate.updateCard)
 routes.get('/card/:id', verifyToken, cardControllerGet.getCard)
-
 
 export default routes
