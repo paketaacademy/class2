@@ -46,7 +46,7 @@ export default function SignUp() {
     e.preventDefault()
     axios.post(`${API}/register`, inputs).then(response => {
 
-      setResAPI(response.data)
+      setResAPI(response.data.message)
       setSeverity('success')
       setOpen(true)
       
@@ -55,7 +55,7 @@ export default function SignUp() {
       }, 2000)
 
     }).catch(err => {
-      setResAPI(err.response.data)
+      setResAPI(err.response.data.message)
       setSeverity('error')
       setOpen(true)
     })
