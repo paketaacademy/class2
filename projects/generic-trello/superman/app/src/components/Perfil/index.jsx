@@ -34,7 +34,7 @@ const Profile = () => {
     return (
       boards.length > 0 && boards.map((conteudo, index) => {
         return (
-          <Redirect to={`/quadro/${conteudo.id}`}>
+          <Redirect to={`/quadro/${conteudo._id}`}>
             <Box elevation={3}>
               <BoxContent>{conteudo.title}</BoxContent>
             </Box>
@@ -49,7 +49,7 @@ const Profile = () => {
       new Array(5).fill().map((row, i) => {
         return (
           <>
-            <Skeleton className='StyledSkeleton' variant="rect" width={50} height={120} />
+            <Skeleton className='StyledSkeleton' variant="rect" width={50} height={100} />
           </>
         )
       })
