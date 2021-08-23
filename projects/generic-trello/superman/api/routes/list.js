@@ -60,13 +60,36 @@ app.get('/list', async (req, res) => {
       }
 
       res.status(200).send(foundList)
-
     }
-
   } catch (err) {
 
     return res.status(404).send('Quadro não encontrado')
+  }
+})
 
+app.patch('/list', async (req, res) => {
+  const { idList, title } = req.body
+
+  if(title.length < 5){
+    return res.status(400).send('Título deve possuir no mínimo 5 caracteres!')
+  }
+
+  const Lists = Mongoose.model('lists', ListsSchema, 'lists')
+
+  try {
+
+    const foundList = await Lists.findOne({ _id: idList })
+
+    console.log('foundList:', foundList)
+    if(foundList){
+      await foundList.updateOne({ title })
+      return res.status(200).send('Título atualizado com sucesso!')
+    }
+
+    return res.status(404).send('Lista não encontrada!')
+
+  } catch(err) {
+    return res.status(400).send(err)
   }
 })
 
