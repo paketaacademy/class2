@@ -21,8 +21,16 @@ import getLists from "../controllers/lists/get.js"
 import { cardControllerUpdate } from "../controllers/Cards/patch.js"
 import { cardControllerDelete } from "../controllers/Cards/delete.js"
 import { cardControllerGet } from "../controllers/Cards/get.js"
+import swaggerUi from 'swagger-ui-express'
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const swaggerFile = require("../swagger-output.json");
+
 
 const routes = Router()
+
+routes.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+
 routes.get('/list/:id', verifyToken, getLists.AllLists)
 routes.post('/list/:id', verifyToken, listsColumn.CreateList)
 routes.patch('/list/:id', verifyToken, changeLists.UpdateList)
