@@ -25,8 +25,7 @@ function Menu() {
             })
             .catch(error => console.log(error))
     }, [API, setUser])
-    console.log(user,'oi')
-
+    
     return (
       
             <NavBar>
