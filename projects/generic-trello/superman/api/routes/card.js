@@ -26,6 +26,24 @@ app.post('/card', async (req, res) => {
   }
 })
 
+app.delete("/card", async (req, res) => {
+  const { idList, idCard } = req.body
+
+  const Cards = Mongoose.model('cards', CardsSchema, 'cards')
+
+  const foundCards = await Cards.findOne({ _id: idCard })
+
+  if (foundCards && foundCards.idList == idList) {
+    Cards.deleteOne({ _id: idCard }).exec()
+
+    return res.status(200).json({
+      error: false,
+      message: "Card apagado com sucesso!"
+    })
+  }
+  return res.status(404).send('Card não encontrado')
+})
+
 app.get('/card', async (req, res) => {
 
   const { idList } = req.body
