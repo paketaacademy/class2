@@ -19,6 +19,7 @@ import getLists from "../controllers/lists/get.js"
 import { BoardAssignControllerPatch } from "../controllers/Boards/assign-patch.js"
 import { cardControllerUpdate } from "../controllers/Cards/patch.js"
 import { cardControllerDelete } from "../controllers/Cards/delete.js"
+import { cardControllerGet } from "../controllers/Cards/get.js"
 
 
 const routes = Router()
@@ -38,7 +39,7 @@ routes.delete("/board/:id", verifyToken, BoardControllerDelete.DeleteBoard)
 routes.delete('/card/:id', verifyToken, cardControllerDelete.deleteCard)
 routes.post('/card/:id', verifyToken, cardController.createCard)
 routes.patch('/card/:id', verifyToken, cardControllerUpdate.updateCard)
-
+routes.get('/card/:id', verifyToken, cardControllerGet.getCard)
 
 
 export default routes
