@@ -18,6 +18,7 @@ import deleteListColunm from "../controllers/lists/delete.js"
 import cardController from "../controllers/Cards/post.js"
 import changeLists from "../controllers/lists/patch.js"
 import getLists from "../controllers/lists/get.js"
+import Terms from "../controllers/Terms-Of-Services/get.js"
 import { cardControllerUpdate } from "../controllers/Cards/patch.js"
 import { cardControllerDelete } from "../controllers/Cards/delete.js"
 import { cardControllerGet } from "../controllers/Cards/get.js"
@@ -31,10 +32,12 @@ const routes = Router()
 
 routes.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
-routes.get('/list/:id', verifyToken, getLists.AllLists)
-routes.post('/list/:id', verifyToken, listsColumn.CreateList)
-routes.patch('/list/:id', verifyToken, changeLists.UpdateList)
-routes.delete('/list/:id', verifyToken, deleteListColunm.DeleteList)
+routes.get('/terms', Terms.TermsOfServices)
+
+routes.get('/list', verifyToken, getLists.AllLists)
+routes.post('/list', verifyToken, listsColumn.CreateList)
+routes.patch('/list', verifyToken, changeLists.UpdateList)
+routes.delete('/list', verifyToken, deleteListColunm.DeleteList)
 
 routes.post('/register', validateUser(UserSchema), UserRegister.creatUser)
 routes.post('/login', validateLogin(LoginSchema), UserLogin.loginUser)

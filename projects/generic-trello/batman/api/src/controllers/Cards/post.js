@@ -11,7 +11,6 @@ const cardController = {
 
     try {
       const foundList = await List.findOne({ _id: list })
-      console.log('ola', foundList)
 
       if (!foundList){
         return res
