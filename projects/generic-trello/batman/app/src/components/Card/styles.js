@@ -6,40 +6,28 @@ export const Container = styled.div`
   border-radius: 5px;
   margin-bottom: 10px;
   padding: 5px;
-  cursor: grab;
-  
-  .header--card{
+  cursor: grab;`
+
+export const Header = styled.div`
     position: absolute; 
     top: -16px;
     left: 0; 
-  }
+  `
 
-  .text--card{
+export const P = styled.p`
     font-weight: 500;
     line-height: 15px; 
-  }
+  `
 
-  .img--card{
+export const Image = styled.img`
     width: 24px;
     height: 24px;
     border-radius: 2px;
     margin-left: 250px;
-  }
+    `
 
-  ${props => props.isDragging && css `
-    border: 1px dashed rgba(0,0,0,0.3 );
-    padding-top: 31px;
-    background: rgb(238 232 170);
-    box-shadow: none;
-    cursor: grabbing; //não funciona
 
-    .text--card, 
-    .img--card, 
-    .header--card {
-      opacity: 0;
-    }
-  `}
-`
+
 
 export const Label = styled.span`
   width: 50px;
@@ -47,4 +35,19 @@ export const Label = styled.span`
   border-radius: 5px;
   display: inline-block;
   background: ${props => props.color};
+
+
+  ${props => props.isDragging && css`
+    border: 1px dashed rgba(0,0,0,0.3 );
+    padding-top: 31px;
+    background: rgb(238 232 170);
+    box-shadow: none;
+    cursor: grabbing; //não funciona
+
+    P, 
+    .img--card, 
+    Header {
+      opacity: 0;
+    }
+  `}
 `

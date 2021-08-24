@@ -21,20 +21,20 @@ export const Container = styled.div`
     background: #dad7d7;
     border-radius: 10px;
   }
-
-  .header--card{
+`
+export const Header = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 42px;
+    height: 42px;`
 
-    .title--card{
+export const Title = styled.h1`
       font-weight: 500;
       font-size:16px;
       padding: 0 10px;
-    }
+      `
 
-    .button--add{
+export const Button = styled.button`
       width: 42px;
       height: 42px;
       border-radius: 10px;
@@ -43,12 +43,10 @@ export const Container = styled.div`
       cursor: pointer;
       margin-top: 30px;
       margin-right: 10px;
-    }
-  }
+  `
 
-  .ul--list{
+export const Ul = styled.ul`
     margin-top: 30px;
     padding-left: 10px;
     padding-right: 10px;
-  }
 `
