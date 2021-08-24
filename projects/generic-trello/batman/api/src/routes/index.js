@@ -24,6 +24,7 @@ import { cardControllerDelete } from "../controllers/Cards/delete.js"
 import { cardControllerGet } from "../controllers/Cards/get.js"
 import swaggerUi from 'swagger-ui-express'
 import { createRequire } from "module";
+import { UsersControllerGet } from "../controllers/Users/get.js"
 const require = createRequire(import.meta.url);
 const swaggerFile = require("../swagger-output.json");
 
@@ -44,6 +45,7 @@ routes.delete('/list/:id', verifyToken, deleteListColunm.DeleteList)
 
 routes.post('/register', validateUser(UserSchema), UserRegister.creatUser)
 routes.post('/login', validateLogin(LoginSchema), UserLogin.loginUser)
+routes.get('/users', verifyToken, UsersControllerGet.GetUsers)
 
 routes.post("/board", verifyToken, validateBoard(BoardSchema), BoardControllerPost.CreateBoard)
 routes.get("/board", verifyToken, BoardControllerGet.GetBoard)
