@@ -8,13 +8,12 @@ import { validateUser } from "../middlewares/user-validate.js"
 import { UserSchema } from "../validation/user-validation.js"
 import { validateLogin } from "../middlewares/login-validate.js"
 import { LoginSchema } from "../validation/login-validation.js"
-import { validateAssign, validateBoard } from "../middlewares/board-validate.js"
-import { BoardAssignSchema, BoardSchema, BoardUpdateSchema } from "../validation/board-validation.js"
+import { validateBoard } from "../middlewares/board-validate.js"
+import { BoardSchema, BoardUpdateSchema } from "../validation/board-validation.js"
 import { BoardControllerPost } from "../controllers/Boards/post.js"
 import { BoardControllerUpdate } from "../controllers/Boards/patch.js"
 import { BoardControllerDelete } from "../controllers/Boards/delete.js"
 import { BoardControllerGet } from "../controllers/Boards/get.js"
-import { BoardAssignControllerPatch } from "../controllers/Boards/assign-patch.js"
 import deleteListColunm from "../controllers/lists/delete.js"
 import cardController from "../controllers/Cards/post.js"
 import changeLists from "../controllers/lists/patch.js"
@@ -53,7 +52,6 @@ routes.get('/users', verifyToken, UsersControllerGet.GetUsers)
 routes.post("/board", verifyToken, validateBoard(BoardSchema), BoardControllerPost.CreateBoard)
 routes.get("/board", verifyToken, BoardControllerGet.GetBoard)
 routes.patch("/board/:id", verifyToken, validateBoard(BoardUpdateSchema), BoardControllerUpdate.UpdateBoard)
-routes.patch("/board/:id/:email", verifyToken, validateAssign(BoardAssignSchema), BoardAssignControllerPatch.BoardAssign)
 routes.delete("/board/:id", verifyToken, BoardControllerDelete.DeleteBoard)
 
 routes.delete('/card/:id', verifyToken, cardControllerDelete.deleteCard)
