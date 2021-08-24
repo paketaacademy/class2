@@ -18,9 +18,7 @@ export const validateBoard = (schema) => {
 
 export const validateAssign = (schema) => {
   return async (req, res, next) => {
-    console.log(req.body)
     const email = { email: req.body.users }
-    console.log("email: ", email)
     try {
       const validateBody = await schema.validate(email)
       next()
