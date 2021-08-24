@@ -19,7 +19,7 @@ function ContentPage() {
       {isAuthenticated() &&<Route path='/perfil'>
         <Profile />
       </Route>}
-      {isAuthenticated() &&<Route path='/quadro'>
+      {isAuthenticated() &&<Route path='/quadro/:id'>
         <Board />
       </Route>}
          

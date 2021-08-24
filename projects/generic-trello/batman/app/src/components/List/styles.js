@@ -39,11 +39,15 @@ export const Container = styled.div`
       width: 42px;
       height: 42px;
       border-radius: 10px;
-      background: #DAA520;
+      background: rgb(218 165 32);
       border: 0;
       cursor: pointer;
       margin-top: 30px;
       margin-right: 10px;
+
+      &:hover{
+        background: rgb(238 221 130);
+      }
     }
   }
 
@@ -51,5 +55,30 @@ export const Container = styled.div`
     margin-top: 30px;
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  @media screen and (max-width: 800px) and (min-width: 416px) { 
+    height: 422px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 800px) and (min-width: 416px) { 
+    height: 422px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 415px) and (min-width: 340px) { 
+    height: 370px;
+
+    .button--add{
+      width: 20px;
+      height: 20px; 
+    }
+  }
+
+  @media screen and (max-width: 339px) and (min-width: 228px) { 
+    height: 370px;
+    width: 100%;
+    max-width: 270px;
   }
 `
