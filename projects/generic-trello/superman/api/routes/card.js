@@ -73,7 +73,7 @@ app.get('/card', async (req, res) => {
 })
 
 app.patch('/card', async (req, res) => {
-  const { idCard, title, description, members } = req.body
+  const { idCard, title, description, members, idList } = req.body
   
   const Cards = Mongoose.model('cards', CardsSchema, 'cards')
 
@@ -85,6 +85,7 @@ app.patch('/card', async (req, res) => {
       return res.status(404).send('Card não encontrado!')
     }
     
+    foundCard.idList = idList ? idList : foundCard.idList
     foundCard.title = title ? title : foundCard.title
     foundCard.description = description ? description : foundCard.description
     if(members.length){
