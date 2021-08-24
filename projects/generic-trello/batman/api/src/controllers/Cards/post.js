@@ -10,7 +10,6 @@ const cardController = {
 
     try {
       const foundList = await List.findOne({ _id: listId })
-
       if (!foundList){
         return res
           .status(404)
