@@ -100,4 +100,30 @@ app.patch('/card', async (req, res) => {
   }
 })
 
+app.patch('/cardremovemember', async (req, res) => {
+  const { idCard, user } = req.body
+
+  const Cards = Mongoose.model('cards', CardsSchema, 'cards')
+
+  try {
+
+    const foundCard = await Cards.findOne({ _id: idCard })
+
+    if (foundCard) {
+
+      const newMembers = foundCard.members.filter((member) => {
+        return member != user
+      })
+
+      await foundCard.updateOne({ members: newMembers })
+      return res.status(200).send('Membro removido com sucesso!')
+    }
+
+    return res.status(404).send('Card não encontrado!')
+
+  } catch (err) {
+    return res.status(400).send(err)
+  }
+})
+
 export default app
