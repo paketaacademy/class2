@@ -1,12 +1,11 @@
-import { Mongoose } from "../../index.js";
-import Board from "../../models/board-schema.js";
-import userSchema from "../../models/user-schema.js";
+import { Mongoose } from "../../index.js"
+import Board from "../../models/board-schema.js"
+import userSchema from "../../models/user-schema.js"
 
 export const BoardControllerUpdate = {
   async UpdateBoard(req, res) {
     const boardID = req.params.id
     const { title, description, users } = req.body
-    console.log(users)
     try {
       const findBoard = await Mongoose.model('board', Board, 'board').findById(boardID)
       const User = await Mongoose.model('users', userSchema, 'users')
