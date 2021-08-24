@@ -327,7 +327,7 @@
         }
       }
     },
-    "/card/{id}": {
+    "/card": {
       "delete": {
         "tags": [
           "card"
@@ -405,7 +405,9 @@
           "400": "Failed to modify card",
           "200": "Modified card"
         }
-      },
+      }
+    },
+    "/card/{id}": {
       "get": {
         "tags": [
           "card"

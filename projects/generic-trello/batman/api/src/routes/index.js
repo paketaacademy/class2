@@ -58,7 +58,7 @@ routes.delete("/board/:id", verifyToken, BoardControllerDelete.DeleteBoard)
 
 routes.delete('/card/:id', verifyToken, cardControllerDelete.deleteCard)
 routes.post('/card', verifyToken, cardController.createCard)
-routes.patch('/card/:id', verifyToken, cardControllerUpdate.updateCard)
+routes.patch('/card', verifyToken, cardControllerUpdate.updateCard)
 routes.get('/card/:id', verifyToken, cardControllerGet.getCard)
 
 export default routes
