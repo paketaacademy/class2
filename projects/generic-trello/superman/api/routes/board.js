@@ -8,9 +8,7 @@ app.post('/board', validationToken, async (req, res) => {
   const user = req.user._id
   const members = []
   members.push(user)
-  console.log('req', req.body)
-
-
+  
     const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
 
     try {
