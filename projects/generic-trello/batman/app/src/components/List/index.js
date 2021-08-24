@@ -3,7 +3,7 @@ import { Container } from './styles'
 import { MdAdd } from 'react-icons/md'
 import Card from '../Card'
 
-export default function List({ data, index: listIndex }) {
+export default function List({ data, index: listIndex }) {  
   return (
     <Container done={data.done}>   
       <header className='header--card'>
