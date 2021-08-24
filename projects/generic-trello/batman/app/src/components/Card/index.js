@@ -56,7 +56,8 @@ export default function Card({ data, index, listIndex }) {
         {data.labels.map(label => <Label key={label} color={label}/> )}
       </header>
       <p className='text--card'>{data.content}</p>
-      { data.user && <img className='img--card' src={data.user} alt='people image'/> }
+      { data.user && <img className='img--card' src="https://iconarchive.com/download/i90143/icons8/windows-8/Cinema-Batman-New.ico"  alt='Morcego - Batman'/> }
     </Container>   
+    
   )
 }

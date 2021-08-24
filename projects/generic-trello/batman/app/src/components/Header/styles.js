@@ -8,3 +8,15 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 `
+
+export const Image = styled.img`
+  height: 60px;
+  
+  
+` 
+
+export const Title = styled.h1`
+    font-family: cursive;
+    margin-left: 20px;
+
+`
