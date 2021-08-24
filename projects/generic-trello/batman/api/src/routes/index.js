@@ -52,7 +52,7 @@ routes.patch("/board/:id/:email", verifyToken, validateAssign(BoardAssignSchema)
 routes.delete("/board/:id", verifyToken, BoardControllerDelete.DeleteBoard)
 
 routes.delete('/card/:id', verifyToken, cardControllerDelete.deleteCard)
-routes.post('/card/:id', verifyToken, cardController.createCard)
+routes.post('/card', verifyToken, cardController.createCard)
 routes.patch('/card/:id', verifyToken, cardControllerUpdate.updateCard)
 routes.get('/card/:id', verifyToken, cardControllerGet.getCard)
 

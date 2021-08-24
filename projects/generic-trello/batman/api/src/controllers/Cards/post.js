@@ -5,13 +5,11 @@ import listSchema from "../../models/list-schema.js"
 const cardController = {
 
   async createCard(req, res) {
-    const list  = req.params.id
-    const { title, description, assign } = req.body
+    const { title, description, assign, listId } = req.body
     const List = Mongoose.model('list', listSchema, 'list')
 
     try {
-      const foundList = await List.findOne({ _id: list })
-      console.log('ola', foundList)
+      const foundList = await List.findOne({ _id: listId })
 
       if (!foundList){
         return res
@@ -20,7 +18,7 @@ const cardController = {
             message: 'Não foi possível criar o cartão, lista não encontrada.'
           })
         }
-      const card = await Mongoose.model('cards', cardSchema, 'cards').create({ title, description, assign, list })
+      const card = await Mongoose.model('cards', cardSchema, 'cards').create({ title, description, assign, listId })
       return res
         .status(201)
         .send(card)
