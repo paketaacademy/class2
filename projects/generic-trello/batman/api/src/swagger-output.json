@@ -1,0 +1,431 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Batman-Trello",
+    "description": "This api is a project similar to Trello, a task manager, where you can create a board, add, remove and modify tasks, all divided into lists. This is a project done by the class at Paketa Academy 2021",
+    "TermOfService":"http://localhost:3030/terms"
+  },
+  "host": "localhost:3030",
+  "basePath": "/",
+  "tags": [
+    "board",
+    "users",
+    "register-user",
+    "creat-user",
+    "register",
+    "login",
+    "list",
+    "card"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json; charset=utf-8"
+  ],
+  "produces": [
+    "json"
+  ],
+  "paths": {
+    "/list": {
+      "get": {
+        "tags": [
+          "list"
+        ],
+        "description": "rote will pull the lists created for the separation of tasks",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": "Acesso Negado",
+          "400": "This Board has no lists",
+          "200": "Lists found"
+        }
+      },
+      "post": {
+        "tags": [
+          "list"
+        ],
+        "description": "Route to create the list to separate the tasks",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "body",
+            "schema": {
+              "type": "string",
+              "properties": {
+                "title": {
+                  "example": "List"
+                },
+                "idBoard":{
+                  "example": "611e5b4d78e51e19acfbb635"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": "Access denied",
+          "404": "Unable to create list, board not found",
+          "400": "Failed to create list",
+          "201": "Created list"
+        }
+      },
+      "patch": {
+        "tags": [
+          "list"
+        ],
+        "description": "Route to modify the list to separate the tasks",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "body",
+            "schema": {
+              "type": "string",
+              "properties": {
+                "title": {
+                  "example": "New list"
+                },
+                "listId":{
+                  "example":"611fa1c25932bb3c2cd31592"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": "Access denied",
+          "404": "Unable to modify, list not found",
+          "400": "Failed to modify list",
+          "200": "Modified list"
+        }
+      },
+      "delete": {
+        "tags": [
+          "list"
+        ],
+        "description": "Route to delete the list to separate the tasks",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": "Access denied",
+          "404": "Unable to delete, list not found",
+          "400": "Failed to delete list",
+          "200": "Deleted list"
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "register",
+          "register-user",
+          "creat-user",
+          "user"
+        ],
+        "description": "Dedicated route to register a new user",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "example": "123456"
+                },
+                "firstName": {
+                  "example": "Paketa"
+                },
+                "lastName": {
+                  "example": "Academy"
+                },
+                "email": {
+                  "example": "paketa.academy@gmail.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "409": "E-mail já cadastrado!",
+          "201": "Registration successful!",
+          "400": "Unable to register"
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "login",
+          "login-user",
+          "user"
+        ],
+        "description": "Dedicated route to login a user",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "paketa.academy@gmail.com"
+                },
+                "password": {
+                  "example": "123456"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "message 1": "Email not found",
+            "message 2": "Wrong password"
+          },
+          "200": "Login successfully"
+        }
+      }
+    },
+    "/board": {
+      "post": {
+        "tags": [
+          "board"
+        ],
+        "description": "Route to create a board that will contain the lists and tasks",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "Projects Academy"
+                },
+                "description": {
+                  "example": "Board for the activities of Paketa Academy class"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": "Access denied",
+          "400": "Failed to create board",
+          "201": "Deleted list"
+        }
+      }
+    },
+    "/board/{id}": {
+      "patch": {
+        "tags": [
+          "board"
+        ],
+        "description": "Route to modify a board that will contain the lists and tasks",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "Academy Projects"
+                },
+                "description": {
+                  "example": "New Board for the activities of Paketa Academy class"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": "Access denied",
+          "404": "Unable to modify, board not found",
+          "400": "Failed to modify board",
+          "200": "modified board"
+        }
+      },
+      "delete": {
+        "tags": [
+          "board"
+        ],
+        "description": "Route to delete the board of tasks",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": "Access denied",
+          "404": "Unable to delete, board not found",
+          "400": "Failed to delete board",
+          "200": "Deleted board"
+        }
+      }
+    },
+    "/board/{id}/{email}": {
+      "patch": {
+        "tags": [
+          "board"
+        ],
+        "description": "Route to add a member to the board",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": "Access denied",
+          "404": {
+            "message-board": "Unable to add a user, board not found",
+            "message-user": "User not found"
+          },
+          "400": "Failed to add user to the board",
+          "200": "User add to the board"
+        }
+      }
+    },
+    "/card/{id}": {
+      "delete": {
+        "tags": [
+          "card"
+        ],
+        "description": "Route to delete a task card",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": "Access denied",
+          "404": "Unable to delete, card not found",
+          "400": "Failed to delete card",
+          "200": "Deleted card"
+        }
+      },
+      "post": {
+        "tags": [
+          "card"
+        ],
+        "description": "Route to create a task card in the list",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "Create back-end structure"
+                },
+                "description": {
+                  "example": "Create the backend folder structure and dependencies"
+                },
+                "assign": {
+                  "example": "{id user}"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": "Access denied",
+          "404": "Unable to create card, list not found",
+          "400": "Failed to create card",
+          "200": "Created card"
+        }
+      },
+      "patch": {
+        "tags": [
+          "card"
+        ],
+        "description": "Route to modify a task card in the list",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": "Access denied",
+          "404": "Unable to modify, card not found",
+          "400": "Failed to modify card",
+          "200": "Modified card"
+        }
+      },
+      "get": {
+        "tags": [
+          "card"
+        ],
+        "description": "Route that will pull all cards related to a given list",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": "Access denied",
+          "404": "Card not found",
+          "400": "Failed to get the card",
+          "200": "Card found"
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "informações": {
+    "título": "Batman-Trello",
+    "descrição": "Esta api é um projeto semelhante ao Trello, um gerenciador de tarefas, onde você pode criar um quadro, adicionar, remover e modificar tarefas, tudo dividido em listas. Este é um projeto realizado pela turma da Paketa Academy 2021",
+    "TermoDeServiço":"http://localhost:3030/terms"
+  },
+  "esquemas": [
+    "http"
+  ]
+}

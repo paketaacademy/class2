@@ -6,28 +6,26 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 export const Container = styled.div`
   ${({ theme }) => `
     display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    width: 100%;
-    height: 100vh;
-    padding: 30px;
-    & > *: {
-      margin: ${theme.spacing(1)}px;
-      width: ${theme.spacing(16)}px;
-      height: ${theme.spacing(16)}px,
-    },
+    flex-wrap: wrap;        
+    margin: 0 auto;
+    flex-direction: row;
+    @media (max-width: 34.375rem) {
+      flex-direction: column;
+      align-items: center;
+    }
   `
 }`
 
 export const Box = styled(Paper)`
   ${({ theme }) => `    
-    width: 200px;
-    height: 80px;
-    margin: 10px;  
+    width: 12.5rem;
+    height: 5rem;
+    margin: 0.625rem;  
     display: flex;
     justify-content: space-evenly;
     align-items: center;    
-    padding: 20px;  
+    padding: 0.313rem;  
+    cursor: pointer;
   `
 }`
 
@@ -37,7 +35,7 @@ export const BoxContent = styled.div`
     justify-content: center;
     align-items: center;
     align-self: center;  
-    padding: 10px;
+    padding: 0.625rem;
   `
 }`
 
@@ -50,6 +48,7 @@ export const Redirect = styled(Link)`
 
 export const Icon = styled(AddCircleIcon)`
   ${({ theme }) => `    
-    font-size: 40px;
+    font-size: 2.5rem;
+    color: #303f9f;
   `
 }`

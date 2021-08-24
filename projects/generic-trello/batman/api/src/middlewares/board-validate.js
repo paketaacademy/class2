@@ -1,8 +1,10 @@
 export const validateBoard = (schema) => {
   return async (req, res, next) => {
-    const owner = { owner: req.user._id }
+    const owner = req.user._id
+    const { title, description } = req.body
     try {
-      const validateBody = await schema.validate(req.body, owner)
+      const validateBody = await schema.validate({ owner, title, description })
+      req.body = validateBody
       next()
     } catch (error) {
       res

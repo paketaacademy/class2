@@ -4,14 +4,14 @@ import listSchema from '../../models/list-schema.js'
 const deleteListColunm = {
 
   async DeleteList(req, res) {
-    const { listId } = req.params
+    const { listId } = req.body
 
     try {
       const List = await Mongoose.model('list', listSchema, 'list')
       const foundList = await List.findOne({ _id: listId })
       if (!foundList) {
         return res
-          .status(400)
+          .status(404)
           .send({
             message: 'Não existe essa lista'
           })

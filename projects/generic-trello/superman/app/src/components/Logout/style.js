@@ -4,8 +4,9 @@ export const SingOut = styled.div`
   ${({ theme }) => `    
     width: 5.625rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content:center ;
     flex-direction: row;
+    align-items:center;
     cursor: pointer;  
   },
   `
@@ -13,15 +14,15 @@ export const SingOut = styled.div`
 
 export const LineSingOut = styled.div`
   ${({ theme }) => `
-   margin: 0.625rem;   
+   font-size:0.938rem;
   },
   `
 }`
 
 export const IconSingOut = styled.div`
   ${({ theme }) => `
-   margin: 0.625rem; 
-   color: #23466e;
+   color: #fff;
+   font-size:2.188rem;
   },
   `
 }`

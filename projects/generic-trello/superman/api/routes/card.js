@@ -26,6 +26,24 @@ app.post('/card', async (req, res) => {
   }
 })
 
+app.delete("/card", async (req, res) => {
+  const { idList, idCard } = req.body
+
+  const Cards = Mongoose.model('cards', CardsSchema, 'cards')
+
+  const foundCards = await Cards.findOne({ _id: idCard })
+
+  if (foundCards && foundCards.idList == idList) {
+    Cards.deleteOne({ _id: idCard }).exec()
+
+    return res.status(200).json({
+      error: false,
+      message: "Card apagado com sucesso!"
+    })
+  }
+  return res.status(404).send('Card não encontrado')
+})
+
 app.get('/card', async (req, res) => {
 
   const { idList } = req.body
@@ -51,6 +69,34 @@ app.get('/card', async (req, res) => {
 
   } catch (err) {
     return res.status(404).send('Lista não encontrada!')
+  }
+})
+
+app.patch('/card', async (req, res) => {
+  const { idCard, title, description, members, idList } = req.body
+  
+  const Cards = Mongoose.model('cards', CardsSchema, 'cards')
+
+  try {
+
+    const foundCard = await Cards.findOne({ _id: idCard })
+
+    if(!foundCard) {
+      return res.status(404).send('Card não encontrado!')
+    }
+    
+    foundCard.idList = idList ? idList : foundCard.idList
+    foundCard.title = title ? title : foundCard.title
+    foundCard.description = description ? description : foundCard.description
+    if(members.length){
+      foundCard.members.push(...members)
+    }
+
+    await foundCard.update( foundCard )
+    return res.status(200).send('Card atualizado com sucesso!')
+
+  } catch(err) {
+    return res.status(400).send(err)
   }
 })
 
