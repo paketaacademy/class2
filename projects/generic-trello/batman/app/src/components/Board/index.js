@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import List from '../List'
 import { Container } from './styles'
-import { loadLists } from '../../Services/api.js'
+import { loadLists } from '../../Services/api'
 import BoardContext from './context'
 import produce from 'immer'
 

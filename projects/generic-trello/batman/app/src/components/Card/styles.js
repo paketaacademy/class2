@@ -12,11 +12,19 @@ export const Container = styled.div`
     position: absolute; 
     top: -16px;
     left: 0; 
+    
+    
   }
 
   .text--card{
     font-weight: 500;
     line-height: 15px; 
+    
+    
+  }
+
+  .title--card{
+    color: red;
   }
 
   .img--card{
