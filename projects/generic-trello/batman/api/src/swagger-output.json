@@ -55,12 +55,6 @@
         "description": "Route to create the list to separate the tasks",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "title",
             "in": "body",
             "schema": {
@@ -80,7 +74,7 @@
           "401": "Access denied",
           "404": "Unable to create list, board not found",
           "400": "Failed to create list",
-          "200": "Created list"
+          "201": "Created list"
         }
       },
       "patch": {
@@ -89,12 +83,6 @@
         ],
         "description": "Route to modify the list to separate the tasks",
         "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "title",
             "in": "body",
@@ -126,7 +114,7 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
+            "in": "body",
             "required": true,
             "type": "string"
           }
@@ -238,7 +226,7 @@
         "responses": {
           "401": "Access denied",
           "400": "Failed to create board",
-          "200": "Deleted list"
+          "201": "Deleted list"
         }
       }
     },

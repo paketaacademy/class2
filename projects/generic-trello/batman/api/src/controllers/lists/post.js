@@ -21,7 +21,7 @@ const listsColumn = {
       const List = await Mongoose.model('list', listSchema, 'list').create({ title, idBoard })
 
       return res
-        .status(200)
+        .status(201)
         .send(List)
     
     }catch (error) {
