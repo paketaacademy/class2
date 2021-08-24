@@ -58,9 +58,8 @@ export default function SignInSide() {
       setSeverity('success')
       let myHeaders = response.headers['auth-token']
       login(myHeaders)
-      setOpen(true)
-      
     }).catch(err => {
+      console.log(err)
       setResAPI(err.message)
       setSeverity('error')
       setOpen(true)
@@ -69,7 +68,7 @@ export default function SignInSide() {
 
   return (
     <Container component="main" maxWidth="xs">
-       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert severity={severity}>
           {resAPI}
         </Alert>
@@ -118,7 +117,7 @@ export default function SignInSide() {
             Fazer Login
           </SubmitButton>
           <Grid container>
-            <Grid item xs>              
+            <Grid item xs>
             </Grid>
             <Grid item>
               <Link href="/registrar" variant="body2">
