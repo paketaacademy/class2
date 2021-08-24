@@ -56,7 +56,7 @@ routes.patch("/board/:id", verifyToken, validateBoard(BoardUpdateSchema), BoardC
 routes.patch("/board/:id/:email", verifyToken, validateAssign(BoardAssignSchema), BoardAssignControllerPatch.BoardAssign)
 routes.delete("/board/:id", verifyToken, BoardControllerDelete.DeleteBoard)
 
-routes.delete('/card/:id', verifyToken, cardControllerDelete.deleteCard)
+routes.delete('/card', verifyToken, cardControllerDelete.deleteCard)
 routes.post('/card', verifyToken, cardController.createCard)
 routes.patch('/card', verifyToken, cardControllerUpdate.updateCard)
 routes.get('/card/:id', verifyToken, cardControllerGet.getCard)
