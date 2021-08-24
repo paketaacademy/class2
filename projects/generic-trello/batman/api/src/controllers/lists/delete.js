@@ -5,12 +5,10 @@ const deleteListColunm = {
 
   async DeleteList(req, res) {
     const { listId } = req.body
-    console.log(listId)
 
     try {
       const List = await Mongoose.model('list', listSchema, 'list')
       const foundList = await List.findOne({ _id: listId })
-      console.log(foundList)
       if (!foundList) {
         return res
           .status(404)
