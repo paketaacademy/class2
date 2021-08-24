@@ -6,10 +6,9 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 export const Container = styled.div`
   ${({ theme }) => `
     display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    height: 100vh;
+    flex-wrap: wrap;        
     margin: 0 auto;
+    flex-direction: row;
     @media (max-width: 34.375rem) {
       flex-direction: column;
       align-items: center;
