@@ -11,7 +11,7 @@ const cardSchema = new Mongoose.Schema({
     required: true,
     max: 500
   },
-  list: {
+  listId: {
     type: String,
     required: true
   },
