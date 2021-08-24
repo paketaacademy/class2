@@ -140,4 +140,30 @@ app.patch('/boardmembers', async (req, res) => {
   }
 })
 
+app.patch('/boardremovemember', async (req, res) => {
+  const { idBoard, user } = req.body
+
+  const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
+
+  try {
+
+    const foundBoard = await Boards.findOne({ _id: idBoard })
+
+    if (foundBoard) {
+
+      const newMembers = foundBoard.members.filter((member) => {
+        return member != user
+      })
+
+      await foundBoard.updateOne({ members: newMembers })
+      return res.status(200).send('Membro removido com sucesso!')
+    }
+
+    return res.status(404).send('Quadro não encontrado!')
+
+  } catch (err) {
+    return res.status(400).send(err)
+  }
+})
+
 export default app
