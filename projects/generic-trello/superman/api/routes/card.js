@@ -72,4 +72,31 @@ app.get('/card', async (req, res) => {
   }
 })
 
+app.patch('/card', async (req, res) => {
+  const { idCard, title, description, members } = req.body
+  
+  const Cards = Mongoose.model('cards', CardsSchema, 'cards')
+
+  try {
+
+    const foundCard = await Cards.findOne({ _id: idCard })
+
+    if(!foundCard) {
+      return res.status(404).send('Card não encontrado!')
+    }
+    
+    foundCard.title = title ? title : foundCard.title
+    foundCard.description = description ? description : foundCard.description
+    if(members.length){
+      foundCard.members.push(...members)
+    }
+
+    await foundCard.update( foundCard )
+    return res.status(200).send('Card atualizado com sucesso!')
+
+  } catch(err) {
+    return res.status(400).send(err)
+  }
+})
+
 export default app
