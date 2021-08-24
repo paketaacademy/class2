@@ -6,7 +6,7 @@ const getLists = {
 
     async AllLists(req, res){
         
-        const { idBoard } = req.body
+        const idBoard = req.params.id
 
         const Boards = Mongoose.model('board', Board, 'board')
         const Lists = Mongoose.model('list', listSchema, 'list')

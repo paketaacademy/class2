@@ -41,7 +41,7 @@ routes.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 routes.get('/terms', Terms.TermsOfServices)
 
-routes.get('/list', verifyToken, getLists.AllLists)
+routes.get('/list/:id', verifyToken, getLists.AllLists)
 routes.post('/list', verifyToken, listsColumn.CreateList)
 routes.patch('/list', verifyToken, changeLists.UpdateList)
 routes.delete('/list', verifyToken, deleteListColunm.DeleteList)

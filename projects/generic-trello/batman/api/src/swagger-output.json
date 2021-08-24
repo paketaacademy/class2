@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "title": "Batman-Trello",
     "description": "This api is a project similar to Trello, a task manager, where you can create a board, add, remove and modify tasks, all divided into lists. This is a project done by the class at Paketa Academy 2021",
-    "TermOfService":"http://localhost:3030/terms"
+    "TermOfService": "http://localhost:3030/terms"
   },
   "host": "localhost:3030",
   "basePath": "/",
@@ -28,7 +28,7 @@
     "json"
   ],
   "paths": {
-    "/list": {
+    "/list/{id}": {
       "get": {
         "tags": [
           "list"
@@ -47,7 +47,9 @@
           "400": "This Board has no lists",
           "200": "Lists found"
         }
-      },
+      }
+    },
+    "/list": {
       "post": {
         "tags": [
           "list"
@@ -63,8 +65,8 @@
                 "title": {
                   "example": "List"
                 },
-                "idBoard":{
-                  "example": "611e5b4d78e51e19acfbb635"
+                "idBoard": {
+                  "example": "6123a26a0702642a4cd63da6"
                 }
               }
             }
@@ -92,8 +94,8 @@
                 "title": {
                   "example": "New list"
                 },
-                "listId":{
-                  "example":"611fa1c25932bb3c2cd31592"
+                "listId": {
+                  "example": "611fa1c25932bb3c2cd31592"
                 }
               }
             }
@@ -116,7 +118,14 @@
             "name": "id",
             "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "string",
+              "properties": {
+                "listId": {
+                  "example": "61252cfc532cfc1d089222e6"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -423,7 +432,7 @@
   "informações": {
     "título": "Batman-Trello",
     "descrição": "Esta api é um projeto semelhante ao Trello, um gerenciador de tarefas, onde você pode criar um quadro, adicionar, remover e modificar tarefas, tudo dividido em listas. Este é um projeto realizado pela turma da Paketa Academy 2021",
-    "TermoDeServiço":"http://localhost:3030/terms"
+    "TermoDeServiço": "http://localhost:3030/terms"
   },
   "esquemas": [
     "http"
