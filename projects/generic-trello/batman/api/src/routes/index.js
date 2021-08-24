@@ -23,10 +23,11 @@ import { cardControllerUpdate } from "../controllers/Cards/patch.js"
 import { cardControllerDelete } from "../controllers/Cards/delete.js"
 import { cardControllerGet } from "../controllers/Cards/get.js"
 import swaggerUi from 'swagger-ui-express'
-import { createRequire } from "module";
+import { createRequire } from "module"
 import { UsersControllerGet } from "../controllers/Users/get.js"
-const require = createRequire(import.meta.url);
-const swaggerFile = require("../swagger-output.json");
+import { BoardControllerUnassign } from "../controllers/Boards/patch-unassign-user.js"
+const require = createRequire(import.meta.url)
+const swaggerFile = require("../swagger-output.json")
 
 const routes = Router()
 
@@ -52,6 +53,7 @@ routes.get('/users', verifyToken, UsersControllerGet.GetUsers)
 routes.post("/board", verifyToken, validateBoard(BoardSchema), BoardControllerPost.CreateBoard)
 routes.get("/board", verifyToken, BoardControllerGet.GetBoard)
 routes.patch("/board/:id", verifyToken, validateBoard(BoardUpdateSchema), BoardControllerUpdate.UpdateBoard)
+routes.patch("/board/:id/unassign", verifyToken, BoardControllerUnassign.UnassignUser)
 routes.delete("/board/:id", verifyToken, BoardControllerDelete.DeleteBoard)
 
 routes.delete('/card', verifyToken, cardControllerDelete.deleteCard)
