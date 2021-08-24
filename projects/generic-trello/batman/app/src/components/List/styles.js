@@ -56,26 +56,26 @@ export const Container = styled.div`
     padding-right: 10px;
   }
 
-  @media screen and (max-width: 800px) and (min-width: 416px) { //tablet
+  @media screen and (max-width: 800px) and (min-width: 416px) { 
     height: 422px;
     margin-bottom: 20px;
   }
 
-  @media screen and (max-width: 800px) and (min-width: 416px) { //tablet
+  @media screen and (max-width: 800px) and (min-width: 416px) { 
     height: 422px;
     margin-bottom: 20px;
   }
 
-  @media screen and (max-width: 415px) and (min-width: 340px) { //celular grande
+  @media screen and (max-width: 415px) and (min-width: 340px) { 
     height: 370px;
 
     .button--add{
       width: 20px;
-      height: 20px; //nao funciona
+      height: 20px; 
     }
   }
 
-  @media screen and (max-width: 339px) and (min-width: 228px) { //celular pequeno
+  @media screen and (max-width: 339px) and (min-width: 228px) { 
     height: 370px;
     width: 100%;
     max-width: 270px;
