@@ -7,7 +7,7 @@ export const Container = styled.div`
   margin-bottom: 10px;
   padding: 5px;
   cursor: grab;
-  
+
   .header--card{
     position: absolute; 
     top: -16px;
@@ -26,12 +26,17 @@ export const Container = styled.div`
     margin-left: 250px;
   }
 
+  @media screen and (max-width: 339px) and (min-width: 228px) {
+    .img--card{
+      margin-left: 200px;
+    }
+  }
+
   ${props => props.isDragging && css `
     border: 1px dashed rgba(0,0,0,0.3 );
     padding-top: 31px;
     background: rgb(238 232 170);
     box-shadow: none;
-    cursor: grabbing; //não funciona
 
     .text--card, 
     .img--card, 
