@@ -7,4 +7,11 @@ export const Container = styled.div`
   color: rgb(54 54 54);
   display: flex;
   align-items: center;
+
+  .MuiSvgIcon-root{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    margin-left: 1140px;
+  }
 `
