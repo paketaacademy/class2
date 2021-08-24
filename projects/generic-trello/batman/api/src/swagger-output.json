@@ -28,7 +28,7 @@
     "json"
   ],
   "paths": {
-    "/list/{id}": {
+    "/list": {
       "get": {
         "tags": [
           "list"
@@ -68,6 +68,9 @@
               "properties": {
                 "title": {
                   "example": "List"
+                },
+                "idBoard":{
+                  "example": "611e5b4d78e51e19acfbb635"
                 }
               }
             }
@@ -100,6 +103,9 @@
               "properties": {
                 "title": {
                   "example": "New list"
+                },
+                "listId":{
+                  "example":"611fa1c25932bb3c2cd31592"
                 }
               }
             }
