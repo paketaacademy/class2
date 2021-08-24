@@ -10,7 +10,6 @@ export const BoardControllerUnassign = {
     try {
       const queryBoard = await Mongoose.model('board', Board, 'board').findById(boardID)
       const queryUser = await Mongoose.model('users', userSchema, 'users').findOne({ email: userToRemove })
-      console.log("Query User: ", queryUser)
       if (!queryBoard) {
         return res
           .status(404)
@@ -22,7 +21,6 @@ export const BoardControllerUnassign = {
           .send({ message: "Usuário não encontrado!" })
       }
 
-      console.log("Query user Email: ", queryUser.email)
 
       const newUsers = queryBoard.users.filter(q => {
         return q !== userToRemove
