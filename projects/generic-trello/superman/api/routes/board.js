@@ -2,22 +2,25 @@ import app from "./configs/app.js"
 import { Mongoose, UsersSchema, BoardsSchema } from './configs/mongo.js'
 import validationToken from './configs/validationToken.js'
 
-app.post('/board', async (req, res) => {
+app.post('/board', validationToken, async (req, res) => {
 
-  const  { title, description, user, members } = req.body
+  const { title } = req.body
+  const user = req.user._id
+  const members = []
   members.push(user)
-
-  const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
   
-  try {
+    const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
 
-    const board = new Boards({ title, description, user, members })
-    await board.save()
+    try {
 
-      res.status(201).send('Cadastro realizado com sucesso!')
-  } catch (err) {
-    res.send(err)
-  }
+      const board = new Boards({ title, user, members })
+      await board.save()
+      
+      res.status(201).send({message: 'Cadastro realizado com sucesso!', id: board._id })
+    } catch (err) {
+      res.send(err)
+    }
+ 
 })
 
 app.get('/board', validationToken, async (req, res) => {
@@ -128,6 +131,32 @@ app.patch('/boardmembers', async (req, res) => {
       }
 
       return res.status(404).send('Membro não encontrado!')
+    }
+
+    return res.status(404).send('Quadro não encontrado!')
+
+  } catch (err) {
+    return res.status(400).send(err)
+  }
+})
+
+app.patch('/boardremovemember', async (req, res) => {
+  const { idBoard, user } = req.body
+
+  const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
+
+  try {
+
+    const foundBoard = await Boards.findOne({ _id: idBoard })
+
+    if (foundBoard) {
+
+      const newMembers = foundBoard.members.filter((member) => {
+        return member != user
+      })
+
+      await foundBoard.updateOne({ members: newMembers })
+      return res.status(200).send('Membro removido com sucesso!')
     }
 
     return res.status(404).send('Quadro não encontrado!')

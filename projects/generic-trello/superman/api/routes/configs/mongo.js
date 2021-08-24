@@ -31,10 +31,7 @@ const boardsSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
-    min: 5
-  },
-  description: {
-    type: String
+    minlength: 5
   },
   members: {
     type: Array

@@ -10,7 +10,7 @@ export const cardControllerGet = {
       const cards = await Mongoose.model('cards', cardSchema, 'cards').findById(cardId)
       if (!cards) {
         return res
-          .status(400)
+          .status(404)
           .send({ message: `Card não encontrado!` })
       }
       return res

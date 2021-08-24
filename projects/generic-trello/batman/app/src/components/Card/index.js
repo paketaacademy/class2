@@ -58,5 +58,6 @@ export default function Card({ data, index, listIndex }) {
       <P>{data.content}</P>
       { data.user && <Image src={data.user} alt='people image'/> }
     </Container>   
+    
   )
 }

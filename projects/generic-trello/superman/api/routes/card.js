@@ -72,4 +72,58 @@ app.get('/card', async (req, res) => {
   }
 })
 
+app.patch('/card', async (req, res) => {
+  const { idCard, title, description, members, idList } = req.body
+  
+  const Cards = Mongoose.model('cards', CardsSchema, 'cards')
+
+  try {
+
+    const foundCard = await Cards.findOne({ _id: idCard })
+
+    if(!foundCard) {
+      return res.status(404).send('Card não encontrado!')
+    }
+    
+    foundCard.idList = idList ? idList : foundCard.idList
+    foundCard.title = title ? title : foundCard.title
+    foundCard.description = description ? description : foundCard.description
+    if(members.length){
+      foundCard.members.push(...members)
+    }
+
+    await foundCard.update( foundCard )
+    return res.status(200).send('Card atualizado com sucesso!')
+
+  } catch(err) {
+    return res.status(400).send(err)
+  }
+})
+
+app.patch('/cardremovemember', async (req, res) => {
+  const { idCard, user } = req.body
+
+  const Cards = Mongoose.model('cards', CardsSchema, 'cards')
+
+  try {
+
+    const foundCard = await Cards.findOne({ _id: idCard })
+
+    if (foundCard) {
+
+      const newMembers = foundCard.members.filter((member) => {
+        return member != user
+      })
+
+      await foundCard.updateOne({ members: newMembers })
+      return res.status(200).send('Membro removido com sucesso!')
+    }
+
+    return res.status(404).send('Card não encontrado!')
+
+  } catch (err) {
+    return res.status(400).send(err)
+  }
+})
+
 export default app

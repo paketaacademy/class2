@@ -1,7 +1,10 @@
 import app from './index.js'
+import cors from 'cors'
 
 const { DOOR } = process.env
 
-app.listen(DOOR, ()=>{
+app.use(cors())
+
+app.listen(DOOR, () => {
     console.log('Server on')
 })

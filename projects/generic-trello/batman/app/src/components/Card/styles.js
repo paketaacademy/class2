@@ -16,8 +16,7 @@ export const Header = styled.div`
 
 export const P = styled.p`
     font-weight: 500;
-    line-height: 15px; 
-  `
+    line-height: 15px; `
 
 export const Image = styled.img`
     width: 24px;
@@ -25,9 +24,6 @@ export const Image = styled.img`
     border-radius: 2px;
     margin-left: 250px;
     `
-
-
-
 
 export const Label = styled.span`
   width: 50px;
@@ -38,11 +34,17 @@ export const Label = styled.span`
 
 
   ${props => props.isDragging && css`
+  @media screen and (max-width: 339px) and (min-width: 228px) {
+    .img--card{
+      margin-left: 200px;
+    }
+  }
+
+  ${props => props.isDragging && css `
     border: 1px dashed rgba(0,0,0,0.3 );
     padding-top: 31px;
     background: rgb(238 232 170);
     box-shadow: none;
-    cursor: grabbing; //não funciona
 
     P, 
     .img--card, 

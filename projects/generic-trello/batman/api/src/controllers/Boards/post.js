@@ -11,7 +11,7 @@ export const BoardControllerPost = {
       const boardCreate = await Mongoose.model('board', Board, 'board')
         .create({ title, description, owner })
       return res
-        .status(200)
+        .status(201)
         .send(boardCreate)
 
     } catch (error) {

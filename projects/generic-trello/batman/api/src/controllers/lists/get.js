@@ -17,7 +17,7 @@ const getLists = {
                 const foundLists = await Lists.find({ idBoard: idBoard })
                 if(foundLists.length == 0){
                     return res
-                    .status(200)
+                    .status(400)
                     .send({
                         message: "Esse Board não possui lista"
                     })
