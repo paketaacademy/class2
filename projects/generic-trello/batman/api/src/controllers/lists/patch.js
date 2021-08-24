@@ -6,12 +6,10 @@ const changeLists = {
   async UpdateList(req, res) {
     const { listId } = req.body
     const title = req.body.title
-    console.log(title)
 
     try {
       const List = await Mongoose.model('list', listSchema, 'list')
       const foundList = await List.findOne({ _id: listId })
-      console.log(foundList)
 
       if (!foundList) {
         return res
