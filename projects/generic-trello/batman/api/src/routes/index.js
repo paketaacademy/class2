@@ -1,4 +1,5 @@
 import { Router } from "express"
+import cors from 'cors'
 import listsColumn from "../controllers/lists/post.js"
 import UserRegister from "../controllers/Users/register-post.js"
 import UserLogin from "../controllers/Users/login-post.js"
@@ -27,8 +28,13 @@ import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 const swaggerFile = require("../swagger-output.json");
 
-
 const routes = Router()
+
+const corsOpition = {
+  exposedHeaders: 'auth-token',
+}
+
+routes.use(cors(corsOpition))
 
 routes.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
@@ -49,7 +55,7 @@ routes.patch("/board/:id/:email", verifyToken, validateAssign(BoardAssignSchema)
 routes.delete("/board/:id", verifyToken, BoardControllerDelete.DeleteBoard)
 
 routes.delete('/card/:id', verifyToken, cardControllerDelete.deleteCard)
-routes.post('/card/:id', verifyToken, cardController.createCard)
+routes.post('/card', verifyToken, cardController.createCard)
 routes.patch('/card/:id', verifyToken, cardControllerUpdate.updateCard)
 routes.get('/card/:id', verifyToken, cardControllerGet.getCard)
 
