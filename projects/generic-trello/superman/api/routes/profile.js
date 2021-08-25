@@ -23,19 +23,4 @@ app.get('/profile', validationToken, async (req, res) => {
   }  
 })
 
-app.get('/users', validationToken, async (req, res) => {
-  
-  const Users = Mongoose.model('users', UsersSchema, 'users')
-
-  try{
-
-    const users = await Users.find()
-
-    return res.status(200).send(users)
-
-  } catch (err) {
-    return res.send(err)
-  }  
-})
-
 export default app
