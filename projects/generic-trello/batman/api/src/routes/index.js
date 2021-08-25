@@ -28,6 +28,7 @@ import { UsersControllerGet } from "../controllers/Users/get.js"
 import { BoardControllerUnassign } from "../controllers/Boards/patch-unassign-user.js"
 import { Profile } from "../controllers/Users/profile.js"
 import UsersFromBoard from "../controllers/Boards/users-bord.js"
+import cardList from "../controllers/Cards/cards-list.js"
 const require = createRequire(import.meta.url)
 const swaggerFile = require("../swagger-output.json")
 
@@ -47,6 +48,7 @@ routes.get('/list/:id', verifyToken, getLists.AllLists)
 routes.post('/list', verifyToken, listsColumn.CreateList)
 routes.patch('/list', verifyToken, changeLists.UpdateList)
 routes.delete('/list', verifyToken, deleteListColunm.DeleteList)
+routes.get('/card/list/:id', verifyToken, cardList.getCardList)
 
 routes.post('/register', validateUser(UserSchema), UserRegister.creatUser)
 routes.post('/login', validateLogin(LoginSchema), UserLogin.loginUser)
@@ -64,5 +66,6 @@ routes.delete('/card', verifyToken, cardControllerDelete.deleteCard)
 routes.post('/card', verifyToken, cardController.createCard)
 routes.patch('/card', verifyToken, cardControllerUpdate.updateCard)
 routes.get('/card/:id', verifyToken, cardControllerGet.getCard)
+
 
 export default routes
