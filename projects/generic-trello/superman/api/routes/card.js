@@ -175,7 +175,6 @@ app.get('/card/notmembers', async (req, res) => {
       })
 
       const foundUsers = await Users.find({ _id: { $in: membersBoard } })
-      console.log('foundUsers', foundUsers)
 
       const cardNotMembers = foundUsers.map((member) => {
         return { name: member.name, id: member._id}
