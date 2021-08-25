@@ -73,7 +73,7 @@ app.delete('/board', async (req, res) => {
   return res.status(404).send('Quadro Não encontrado')
 })
 
-app.patch('/boardtitle', async (req, res) => {
+app.patch('/board/title', async (req, res) => {
   const { idBoard, title } = req.body
 
   if (title.length < 5) {
@@ -98,7 +98,7 @@ app.patch('/boardtitle', async (req, res) => {
   }
 })
 
-app.patch('/boardmembers', async (req, res) => {
+app.patch('/board/members', async (req, res) => {
   const { idBoard, members } = req.body
 
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
@@ -140,7 +140,7 @@ app.patch('/boardmembers', async (req, res) => {
   }
 })
 
-app.patch('/boardremovemember', async (req, res) => {
+app.patch('/board/removemember', async (req, res) => {
   const { idBoard, user } = req.body
 
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
@@ -164,6 +164,61 @@ app.patch('/boardremovemember', async (req, res) => {
   } catch (err) {
     return res.status(400).send(err)
   }
+})
+
+app.get('/board/members', async (req, res) => {
+
+  const { idBoard } = req.body
+
+  const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
+  const Users = Mongoose.model('users', UsersSchema, 'users')
+
+  try{
+    
+    const foundBoard = await Boards.findOne({ _id: idBoard })
+    
+    if(foundBoard){      
+      const foundUsers = await Users.find({ _id: { $in: foundBoard.members } })
+
+      const boardMembers = foundUsers.map((member) => {
+        return { name: member.name, id: member._id }
+      })   
+      
+      return res.status(200).send(boardMembers)
+    }
+    return res.status(404).send('Quadro não encontrado!')
+
+  } catch (err) {
+    return res.send(err)
+  }  
+})
+
+app.get('/board/notmembers/', async (req, res) => {
+
+  const { idBoard } = req.body
+  
+  const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
+  const Users = Mongoose.model('users', UsersSchema, 'users')
+
+  try{
+
+    const foundBoard = await Boards.findOne({ _id: idBoard })
+
+    if(foundBoard){      
+
+      const foundUsers = await Users.find({ _id: { $nin: foundBoard.members } })
+
+      const boardNotMembers = foundUsers.map((member) => {
+        return { name: member.name, id: member._id }
+      })      
+      
+      return res.status(200).send(boardNotMembers)
+    }
+    return res.status(404).send('Quadro não encontrado!')
+
+  } catch (err) {
+    return res.send(err)
+  }  
 })
 
 export default app
