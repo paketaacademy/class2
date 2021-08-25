@@ -1,21 +1,21 @@
 import React from 'react'
-import { Container } from './styles'
+import { Container , Header , Title , Button , Ul} from './styles'
 import { MdAdd } from 'react-icons/md'
 import Card from '../Card'
 
 export default function List({ data, index: listIndex }) {  
   return (
     <Container done={data.done}>   
-      <header className='header--card'>
-        <h2 className='title--card'>{data.title}</h2>
+      <Header>
+        <Title>{data.title}</Title>
         {data.creatable && (
-          <button className='button--add' type='button'>
+          <Button type='button'>
             <MdAdd size={24} color='#fff' /> 
-          </button>
+          </Button>
         )}
-      </header>
+      </Header>
 
-      <ul className='ul--list'>
+      <Ul>
         {data.cards.map((card, index) => (
         <Card 
           key={card.id} 
@@ -24,7 +24,7 @@ export default function List({ data, index: listIndex }) {
           data={card}
         /> 
         ))}
-      </ul>
+      </Ul>
     </Container>
   )
 }
