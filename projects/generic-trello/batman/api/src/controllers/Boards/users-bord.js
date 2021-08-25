@@ -9,7 +9,6 @@ const UsersFromBoard ={
 
         try{
             const foundBoard = await Boards.findOne({ _id: boardId })
-            console.log(foundBoard)
             if(!foundBoard){
                 return res
                 .status(404)
