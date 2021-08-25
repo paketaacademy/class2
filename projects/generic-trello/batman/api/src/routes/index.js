@@ -26,6 +26,7 @@ import swaggerUi from 'swagger-ui-express'
 import { createRequire } from "module"
 import { UsersControllerGet } from "../controllers/Users/get.js"
 import { BoardControllerUnassign } from "../controllers/Boards/patch-unassign-user.js"
+import { Profile } from "../controllers/Users/profile.js"
 const require = createRequire(import.meta.url)
 const swaggerFile = require("../swagger-output.json")
 
@@ -48,6 +49,7 @@ routes.delete('/list', verifyToken, deleteListColunm.DeleteList)
 
 routes.post('/register', validateUser(UserSchema), UserRegister.creatUser)
 routes.post('/login', validateLogin(LoginSchema), UserLogin.loginUser)
+routes.get('/profile', verifyToken, Profile.ProfileUser)
 routes.get('/users', verifyToken, UsersControllerGet.GetUsers)
 
 routes.post("/board", verifyToken, validateBoard(BoardSchema), BoardControllerPost.CreateBoard)
