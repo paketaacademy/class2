@@ -52,7 +52,7 @@ app.get('/board', validationToken, async (req, res) => {
   }
 })
 
-app.delete('/board', async (req, res) => {
+app.delete('/board', validationToken, async (req, res) => {
   const { idBoard, idUser } = req.body
 
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
@@ -73,7 +73,7 @@ app.delete('/board', async (req, res) => {
   return res.status(404).send('Quadro Não encontrado')
 })
 
-app.patch('/board/title', async (req, res) => {
+app.patch('/board/title', validationToken, async (req, res) => {
   const { idBoard, title } = req.body
 
   if (title.length < 5) {
@@ -98,7 +98,7 @@ app.patch('/board/title', async (req, res) => {
   }
 })
 
-app.patch('/board/members', async (req, res) => {
+app.patch('/board/members', validationToken, async (req, res) => {
   const { idBoard, members } = req.body
 
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
@@ -140,7 +140,7 @@ app.patch('/board/members', async (req, res) => {
   }
 })
 
-app.patch('/board/removemember', async (req, res) => {
+app.patch('/board/removemember', validationToken, async (req, res) => {
   const { idBoard, user } = req.body
 
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
@@ -166,7 +166,7 @@ app.patch('/board/removemember', async (req, res) => {
   }
 })
 
-app.get('/board/members', async (req, res) => {
+app.get('/board/members', validationToken, async (req, res) => {
 
   const { idBoard } = req.body
 
@@ -193,7 +193,7 @@ app.get('/board/members', async (req, res) => {
   }  
 })
 
-app.get('/board/notmembers/', async (req, res) => {
+app.get('/board/notmembers/', validationToken, async (req, res) => {
 
   const { idBoard } = req.body
   

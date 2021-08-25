@@ -1,7 +1,8 @@
 import app from "./configs/app.js"
 import { Mongoose, ListsSchema, CardsSchema, UsersSchema, BoardsSchema } from './configs/mongo.js'
+import validationToken from './configs/validationToken.js'
 
-app.post('/card', async (req, res) => {
+app.post('/card', validationToken, async (req, res) => {
 
   const { title, description, members, idList } = req.body
 
@@ -26,7 +27,7 @@ app.post('/card', async (req, res) => {
   }
 })
 
-app.delete("/card", async (req, res) => {
+app.delete("/card", validationToken, async (req, res) => {
   const { idList, idCard } = req.body
 
   const Cards = Mongoose.model('cards', CardsSchema, 'cards')
@@ -44,7 +45,7 @@ app.delete("/card", async (req, res) => {
   return res.status(404).send('Card não encontrado')
 })
 
-app.get('/card', async (req, res) => {
+app.get('/card', validationToken, async (req, res) => {
 
   const { idList } = req.body
 
@@ -72,7 +73,7 @@ app.get('/card', async (req, res) => {
   }
 })
 
-app.patch('/card', async (req, res) => {
+app.patch('/card', validationToken, async (req, res) => {
   const { idCard, title, description, members, idList } = req.body
   
   const Cards = Mongoose.model('cards', CardsSchema, 'cards')
@@ -100,7 +101,7 @@ app.patch('/card', async (req, res) => {
   }
 })
 
-app.patch('/card/removemember', async (req, res) => {
+app.patch('/card/removemember', validationToken, async (req, res) => {
   const { idCard, user } = req.body
 
   const Cards = Mongoose.model('cards', CardsSchema, 'cards')
@@ -126,7 +127,7 @@ app.patch('/card/removemember', async (req, res) => {
   }
 })
 
-app.get('/card/members', async (req, res) => {
+app.get('/card/members', validationToken, async (req, res) => {
 
   const { idCard } = req.body
 
@@ -154,7 +155,7 @@ app.get('/card/members', async (req, res) => {
   }  
 })
 
-app.get('/card/notmembers', async (req, res) => {
+app.get('/card/notmembers', validationToken, async (req, res) => {
 
   const { idCard, idBoard } = req.body
 
