@@ -1,6 +1,6 @@
 import React, { useRef, useContext } from 'react'
 import { useDrag, useDrop } from 'react-dnd'
-import { Container, Label } from './styles'
+import { Container, Label , Header , P , Image} from './styles'
 import BoardContext from '../Board/context'
 
 export default function Card({ data, index, listIndex }) {
@@ -52,11 +52,11 @@ export default function Card({ data, index, listIndex }) {
   
   return (
     <Container ref={ref} isDragging={isDragging}>
-      <header className='header--card'>
+      <Header>
         {data.labels.map(label => <Label key={label} color={label}/> )}
-      </header>
-      <p className='text--card'>{data.content}</p>
-      { data.user && <img className='img--card' src="https://iconarchive.com/download/i90143/icons8/windows-8/Cinema-Batman-New.ico"  alt='Morcego - Batman'/> }
+      </Header>
+      <P contenteditable="true">{data.content}</P>
+      { data.user && <Image src={data.user} alt='people image'/> }
     </Container>   
     
   )

@@ -1,7 +1,8 @@
 import app from "./configs/app.js"
 import { Mongoose, BoardsSchema, ListsSchema } from './configs/mongo.js'
+import validationToken from './configs/validationToken.js'
 
-app.delete("/list", async (req, res) => {
+app.delete("/list", validationToken, async (req, res) => {
   const { idList, idBoard } = req.body
 
   const Lists = Mongoose.model('lists', ListsSchema, 'lists')
@@ -19,7 +20,7 @@ app.delete("/list", async (req, res) => {
   return res.status(404).send('Lista ou Quadro não encontrados')
 })
 
-app.post('/list', async (req, res) => {
+app.post('/list', validationToken, async (req, res) => {
 
   const { title, idBoard } = req.body
 
@@ -40,7 +41,7 @@ app.post('/list', async (req, res) => {
   }
 })
 
-app.get('/list', async (req, res) => {
+app.get('/list', validationToken, async (req, res) => {
 
   const { idBoard } = req.body
 
@@ -67,7 +68,7 @@ app.get('/list', async (req, res) => {
   }
 })
 
-app.patch('/list', async (req, res) => {
+app.patch('/list', validationToken, async (req, res) => {
   const { idList, title } = req.body
 
   if(title.length < 5){
@@ -88,7 +89,7 @@ app.patch('/list', async (req, res) => {
     return res.status(404).send('Lista não encontrada!')
 
   } catch(err) {
-    return res.status(400).send(err)
+    return res.status(400).send({ message: `Erro: ${err}`})
   }
 })
 

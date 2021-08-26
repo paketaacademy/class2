@@ -25,27 +25,101 @@
     "application/json; charset=utf-8"
   ],
   "produces": [
-    "json"
+    "application/json"
   ],
   "paths": {
+    "/terms": {
+      "get": {
+        "tags": [
+          "responsability"
+        ],
+        "description": "route that contains the terms of responsibility of the api and the contact of its creators",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Bead request",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Message",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/list/card": {
+      "get": {
+        "tags": [
+          "list"
+        ],
+        "description": "Route that will recive a array of lists id and return the cards that are linked to thoes lists",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idLists": {
+                  "example": ["612670c39a319d27b8bec4ed", "612670bb9a319d27b8bec4ea"]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "List not found / Card not found",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Return the cards not found",
+            "content": "application/json"
+          }
+        }
+      }
+    },
     "/list/{id}": {
       "get": {
         "tags": [
           "list"
         ],
-        "description": "rote will pull the lists created for the separation of tasks",
+        "description": "Route will pull the lists created for the separation of tasks",
         "parameters": [
           {
-            "name": "id",
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "idBoard",
             "in": "path",
             "required": true,
             "type": "string"
           }
         ],
         "responses": {
-          "401": "Acesso Negado",
-          "400": "This Board has no lists",
-          "200": "Lists found"
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "This Board has no lists",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Lists found",
+            "content": "application/json"
+          }
         }
       }
     },
@@ -56,6 +130,11 @@
         ],
         "description": "Route to create the list to separate the tasks",
         "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "title",
             "in": "body",
@@ -73,10 +152,22 @@
           }
         ],
         "responses": {
-          "401": "Access denied",
-          "404": "Unable to create list, board not found",
-          "400": "Failed to create list",
-          "201": "Created list"
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Unable to create list, board not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Failed to create list",
+            "content": "application/json"
+          },
+          "201": {
+            "description": "Created list",
+            "content": "application/json"
+          }
         }
       },
       "patch": {
@@ -85,6 +176,11 @@
         ],
         "description": "Route to modify the list to separate the tasks",
         "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "title",
             "in": "body",
@@ -102,10 +198,22 @@
           }
         ],
         "responses": {
-          "401": "Access denied",
-          "404": "Unable to modify, list not found",
-          "400": "Failed to modify list",
-          "200": "Modified list"
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Unable to modify, list not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Failed to modify list",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Modified list",
+            "content": "application/json"
+          }
         }
       },
       "delete": {
@@ -114,6 +222,11 @@
         ],
         "description": "Route to delete the list to separate the tasks",
         "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "id",
             "in": "body",
@@ -129,20 +242,68 @@
           }
         ],
         "responses": {
-          "401": "Access denied",
-          "404": "Unable to delete, list not found",
-          "400": "Failed to delete list",
-          "200": "Deleted list"
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Unable to delete, list not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Failed to delete list",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Deleted list",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/card/list/{id}": {
+      "get": {
+        "tags": [
+          "card"
+        ],
+        "description": "Route that will return all the cards related to the list",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "List not found / Card not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Cards returned",
+            "content": "application/json"
+          }
         }
       }
     },
     "/register": {
       "post": {
         "tags": [
-          "register",
-          "register-user",
-          "creat-user",
-          "user"
+          "register"
         ],
         "description": "Dedicated route to register a new user",
         "parameters": [
@@ -169,18 +330,25 @@
           }
         ],
         "responses": {
-          "409": "E-mail já cadastrado!",
-          "201": "Registration successful!",
-          "400": "Unable to register"
+          "409": {
+            "description": "E-mail already registered!",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Unable to register",
+            "content": "application/json"
+          },
+          "201": {
+            "description": "Registration successful!",
+            "content": "application/json"
+          }
         }
       }
     },
     "/login": {
       "post": {
         "tags": [
-          "login",
-          "login-user",
-          "user"
+          "login"
         ],
         "description": "Dedicated route to login a user",
         "parameters": [
@@ -202,10 +370,79 @@
         ],
         "responses": {
           "400": {
-            "message 1": "Email not found",
-            "message 2": "Wrong password"
+            "description": "Email not found / Wrong password",
+            "content": "application/json"
           },
-          "200": "Login successfully"
+          "200": {
+            "description": "Login successfully",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/profile": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "description": "Wil return the datas of the user",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Failed to found user",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Return user datas",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "description": "Will return the users in de DataBank",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Failed to found user",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Return user datas",
+            "content": "application/json"
+          }
         }
       }
     },
@@ -214,8 +451,13 @@
         "tags": [
           "board"
         ],
-        "description": "Route to create a board that will contain the lists and tasks",
+        "description": "",
         "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "obj",
             "in": "body",
@@ -233,9 +475,49 @@
           }
         ],
         "responses": {
-          "401": "Access denied",
-          "400": "Failed to create board",
-          "201": "Deleted list"
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Failed to create board",
+            "content": "application/json"
+          },
+          "201": {
+            "description": "Created board",
+            "content": "application/json"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "board"
+        ],
+        "description": "Will get the board linked to the owner user",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "User don't have any bord",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Return bords ",
+            "content": "application/json"
+          }
         }
       }
     },
@@ -244,8 +526,13 @@
         "tags": [
           "board"
         ],
-        "description": "Route to modify a board that will contain the lists and tasks",
+        "description": "Route to modify a board that will contain the lists and tasks, add users to that board",
         "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "id",
             "in": "path",
@@ -263,16 +550,31 @@
                 },
                 "description": {
                   "example": "New Board for the activities of Paketa Academy class"
+                },
+                "user": {
+                  "example": "matheus@gmail.com"
                 }
               }
             }
           }
         ],
         "responses": {
-          "401": "Access denied",
-          "404": "Unable to modify, board not found",
-          "400": "Failed to modify board",
-          "200": "modified board"
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Unable to modify, board not found / User already added / User not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Failed to modify board",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Modified board",
+            "content": "application/json"
+          }
         }
       },
       "delete": {
@@ -282,6 +584,11 @@
         "description": "Route to delete the board of tasks",
         "parameters": [
           {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
             "name": "id",
             "in": "path",
             "required": true,
@@ -289,20 +596,74 @@
           }
         ],
         "responses": {
-          "401": "Access denied",
-          "404": "Unable to delete, board not found",
-          "400": "Failed to delete board",
-          "200": "Deleted board"
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Unable to delete, board not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Failed to delete board",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Delete board",
+            "content": "application/json"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "board"
+        ],
+        "description": "Will return the users in that board",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Board not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Users from that board",
+            "content": "application/json"
+          }
         }
       }
     },
-    "/board/{id}/{email}": {
+    "/board/{id}/unassign": {
       "patch": {
         "tags": [
           "board"
         ],
-        "description": "Route to add a member to the board",
+        "description": "Route responsible for removing a user",
         "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "id",
             "in": "path",
@@ -310,20 +671,35 @@
             "type": "string"
           },
           {
-            "name": "email",
-            "in": "path",
-            "required": true,
-            "type": "string"
+            "name": "email user",
+            "in": "body",
+            "schema": {
+              "type": "string",
+              "properties": {
+                "user": {
+                  "example": "matheus@gmail.com"
+                }
+              }
+            }
           }
         ],
         "responses": {
-          "401": "Access denied",
-          "404": {
-            "message-board": "Unable to add a user, board not found",
-            "message-user": "User not found"
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
           },
-          "400": "Failed to add user to the board",
-          "200": "User add to the board"
+          "404": {
+            "description": "Board not found / User not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Failed to remove the user",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "User removed",
+            "content": "application/json"
+          }
         }
       }
     },
@@ -335,17 +711,40 @@
         "description": "Route to delete a task card",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cardId": {
+                  "example": "61239a4bf1bfb04440a00d06"
+                }
+              }
+            }
           }
         ],
         "responses": {
-          "401": "Access denied",
-          "404": "Unable to delete, card not found",
-          "400": "Failed to delete card",
-          "200": "Deleted card"
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Unable to delete, card not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Failed to delete card",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Deleted card",
+            "content": "application/json"
+          }
         }
       },
       "post": {
@@ -355,10 +754,9 @@
         "description": "Route to create a task card in the list",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
+            "name": "auth-token",
+            "in": "header",
+            "required": true
           },
           {
             "name": "obj",
@@ -374,16 +772,31 @@
                 },
                 "assign": {
                   "example": "{id user}"
+                },
+                "listId": {
+                  "example": "{id list}"
                 }
               }
             }
           }
         ],
         "responses": {
-          "401": "Access denied",
-          "404": "Unable to create card, list not found",
-          "400": "Failed to create card",
-          "200": "Created card"
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Unable to create card, list not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Failed to create card",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Created card",
+            "content": "application/json"
+          }
         }
       },
       "patch": {
@@ -393,17 +806,40 @@
         "description": "Route to modify a task card in the list",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cardId": {
+                  "example": "61239a4bf1bfb04440a00d06"
+                }
+              }
+            }
           }
         ],
         "responses": {
-          "401": "Access denied",
-          "404": "Unable to modify, card not found",
-          "400": "Failed to modify card",
-          "200": "Modified card"
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Unable to modify, card not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Failed to modify card",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Modified card",
+            "content": "application/json"
+          }
         }
       }
     },
@@ -415,6 +851,11 @@
         "description": "Route that will pull all cards related to a given list",
         "parameters": [
           {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
             "name": "id",
             "in": "path",
             "required": true,
@@ -422,10 +863,22 @@
           }
         ],
         "responses": {
-          "401": "Access denied",
-          "404": "Card not found",
-          "400": "Failed to get the card",
-          "200": "Card found"
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Card not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Failed to get the card",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Card found",
+            "content": "application/json"
+          }
         }
       }
     }

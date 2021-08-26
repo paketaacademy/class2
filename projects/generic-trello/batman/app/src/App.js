@@ -3,6 +3,7 @@ import Home from './components/Home'
 import { BrowserRouter as Router } from "react-router-dom"
 import GlobalStyle from './styles/global'
 import { createTheme, StylesProvider } from "@material-ui/core/styles" 
+
 import { ThemeProvider } from "styled-components"
 
 function App() {

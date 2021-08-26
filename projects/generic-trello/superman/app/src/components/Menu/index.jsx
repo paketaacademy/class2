@@ -4,11 +4,9 @@ import { NavBar, Item, TitleBox, Home, Linked, DetailsUser, Image, BoxUser } fro
 import { getToken } from '../../Services/auth'
 import Logout from '../Logout'
 
-
 function Menu() {
 
   const API = process.env.REACT_APP_API_URL
-
   const [list, setList] = useState('')
 
   useEffect(() => {
@@ -27,40 +25,30 @@ function Menu() {
       })
       .catch(error => console.log(error))
   }, [API, setList])
-  
+
   return (
 
     <NavBar>
-
       <Item>
         <Linked to='/perfil'>
           <Home />
         </Linked>
-      </Item>
-
-      <Item>
         <TitleBox>
           SuperTrello
         </TitleBox>
       </Item>
-
       <Item>
         <DetailsUser>
           <BoxUser>
-            <Image>U</Image>
+            <Image />
             <div>
               {list.name}
-            </div>
-            <div>
-              {list.email}
             </div>
           </BoxUser>
           <Logout />
         </DetailsUser>
       </Item>
     </NavBar>
-
-
   )
 }
 

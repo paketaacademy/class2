@@ -25,11 +25,11 @@ app.post('/login', async (req, res) => {
 
   const token = jwt.sign({_id: user._id}, process.env.SECRET, { 
 
-    expiresIn: 10000
+    expiresIn: 100000
 
 })
   res.header('auth-superman', token)
-  res.send('Login realizado com sucesso!')
+  res.status(200).send('Login realizado com sucesso!')
 })
 
 export default app

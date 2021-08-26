@@ -8,6 +8,7 @@ import { logout } from '../../Services/auth'
 
 export default function Header() {
   const theme = useTheme()
+
   const handleLogout = (e) => {
     logout()
   }
@@ -15,7 +16,7 @@ export default function Header() {
     <Container>
       <Image src="https://image.flaticon.com/icons/png/128/280/280772.png" alt="Icone do Batman"></Image>
       <Title>Bat-Trello</Title>
-      
+    
         <SubmitButton   
           
           style={(theme)}
@@ -26,7 +27,7 @@ export default function Header() {
           
         </SubmitButton>
       
-      <ExitToAppIcon
+     <ExitToAppIcon
         onClick={handleLogout}>
       </ExitToAppIcon>
     </Container>

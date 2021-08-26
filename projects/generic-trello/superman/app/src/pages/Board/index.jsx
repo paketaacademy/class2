@@ -1,9 +1,14 @@
-import List from "../../components/List/list"
+import BoardBox from '../../components/Board'
+import DetailsBoard from '../../components/DetailsBoard'
+import Menu from "../../components/Menu"
 
 function Board() {
-
-  return (
-    <List/>
+  return (    
+    <>
+      <Menu />
+      <DetailsBoard />
+      <BoardBox />      
+    </>
   )
 }
 
