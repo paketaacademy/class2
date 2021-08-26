@@ -3,11 +3,13 @@ import { useParams } from "react-router"
 import Avatar from '@material-ui/core/Avatar';
 import AvatarGroup from '@material-ui/lab/AvatarGroup'
 import { getToken } from '../../Services/auth.js'
-import { ContainerTitle, Details, BoxModal, BoxModalOn, UserItem, AvatarMembers, DetailsBtn } from './style.js'
+import { ButtonEdit, ContainerTitle, Details, BoxModal, BoxModalOn, UserItem, AvatarMembers, DetailsBtn } from './style.js'
 import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
 import AddMembers from './AddMembers.jsx'
 import RemoveMembers from './RemoveMembers.jsx'
+import CreateIcon from '@material-ui/icons/Create'
+import ButtonEditTitle from './buttonEditTitle.jsx';
 
 const DetailsBoard = () => {
 
@@ -98,7 +100,10 @@ const DetailsBoard = () => {
 
   return (
     <ContainerTitle>
-      <Details>{boards.title}</Details>
+      <Details>
+        {boards.title}
+        <ButtonEditTitle titleBoard={boards.title}/>
+        </Details>
       <Details>
         <DetailsBtn>
           <AvatarMembers onClick={handleOpen}>

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Modal from '@material-ui/core/Modal';
+import Modal from '@material-ui/core/Modal'
 
 export const ModalBox = styled(Modal)`
   ${({ theme }) => `

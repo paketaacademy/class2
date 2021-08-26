@@ -167,12 +167,13 @@ export default function Board() {
                   const list = data.lists[listId]
                   return <List list={list} key={listId} index={index} /> */}
                 {/* })} */}
-
-                {
+                
+                {console.log(listAll),
                   listAll.length > 0 && listAll.map((item, index) => {
-                    return <List list={item} key={item._id} index={index} />
+                    return <List list={item} idList={item._id} titleList={item.title} key={item._id} index={index} />
                   }
                   )
+                  
                 }
                 <InputContainer id={id} type="list" />
                 {provided.placeholder}

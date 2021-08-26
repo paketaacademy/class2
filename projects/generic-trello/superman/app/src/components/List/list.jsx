@@ -7,6 +7,7 @@ import Card from '../Card'
 import InputContainer from '../Input/inputContainer'
 import { getToken } from '../../Services/auth'
 import { Droppable, Draggable } from 'react-beautiful-dnd'
+import ButtonEditTitleList from './buttonEditTitleList.jsx'
 
 export default function List({ list, index }) {
 
@@ -38,7 +39,8 @@ export default function List({ list, index }) {
           <ContainerList {...provided.dragHandleProps}>
             <CssBaseline />
 
-            <Title title={list.title} listId={list._id} />
+            <Title title={list.title} listId={list._id} />        
+            <ButtonEditTitleList listId={list._id} titleList={list.title} />    
             <Droppable droppableId={list._id}>
               {(provided) => (
                 <ContainerCard
