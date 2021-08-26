@@ -12,7 +12,6 @@ const ListsCards = {
         
         try{
             const foundList = await Lists.find({ _id: { $in: idLists } })
-            console.log(foundList)
             if(!foundList){
                 return res
                 .status(404)
@@ -21,7 +20,6 @@ const ListsCards = {
                 })
             }
             const foundCards = await Cards.find({ listId: { $in: idLists }})
-            console.log(foundCards)
             if(foundCards.length === 0){
                 return res
                 .status(404)
