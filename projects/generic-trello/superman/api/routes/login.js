@@ -29,7 +29,7 @@ app.post('/login', async (req, res) => {
 
 })
   res.header('auth-superman', token)
-  res.send('Login realizado com sucesso!')
+  res.status(200).send('Login realizado com sucesso!')
 })
 
 export default app

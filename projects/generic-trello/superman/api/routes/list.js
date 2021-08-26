@@ -41,9 +41,9 @@ app.post('/list', validationToken, async (req, res) => {
   }
 })
 
-app.get('/list', validationToken, async (req, res) => {
+app.get('/list/:idBoard', validationToken, async (req, res) => {
 
-  const { idBoard } = req.body
+  const { idBoard } = req.params
 
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
   const Lists = Mongoose.model('lists', ListsSchema, 'lists')
@@ -89,7 +89,7 @@ app.patch('/list', validationToken, async (req, res) => {
     return res.status(404).send('Lista não encontrada!')
 
   } catch(err) {
-    return res.status(400).send(err)
+    return res.status(400).send({ message: `Erro: ${err}`})
   }
 })
 

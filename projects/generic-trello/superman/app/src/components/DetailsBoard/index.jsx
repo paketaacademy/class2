@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router"
-import Avatar from '@material-ui/core/Avatar'
+import Avatar from '@material-ui/core/Avatar';
 import AvatarGroup from '@material-ui/lab/AvatarGroup'
 import { getToken } from '../../Services/auth.js'
-import { ContainerTitle, Details, BoxModal, BoxModalOn, UserItem, AvatarMembers } from './style.js'
+import { ContainerTitle, Details, BoxModal, BoxModalOn, UserItem, AvatarMembers, DetailsBtn } from './style.js'
 import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
 import AddMembers from './AddMembers.jsx'
@@ -40,7 +40,7 @@ const DetailsBoard = () => {
         const data = await response.json()
         setMembers(data)
       })
-      .catch(error => console.log(error))  
+      .catch(error => console.log(error))
   }, [])
 
   useEffect(() => {
@@ -74,7 +74,7 @@ const DetailsBoard = () => {
       <AvatarGroup max={3}>
         {members != null && members.map((row) => {
           return (
-            <Avatar/>
+            <Avatar />
           )
         })}
       </AvatarGroup>
@@ -100,11 +100,17 @@ const DetailsBoard = () => {
     <ContainerTitle>
       <Details>{boards.title}</Details>
       <Details>
-        <AvatarMembers onClick={handleOpen}>
-          {Members()}
-        </AvatarMembers>
-        <AddMembers />
-        <RemoveMembers />
+        <DetailsBtn>
+          <AvatarMembers onClick={handleOpen}>
+            {Members()}
+          </AvatarMembers>
+        </DetailsBtn>
+        <DetailsBtn>
+          <AddMembers />
+        </DetailsBtn>
+        <DetailsBtn>
+          <RemoveMembers />
+        </DetailsBtn>
       </Details>
       <BoxModal
         aria-labelledby="transition-modal-title"

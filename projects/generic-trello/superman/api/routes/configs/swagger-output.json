@@ -1,0 +1,732 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Super Trello",
+    "description": "Simulando as rotas utilizadas pelo Trello"
+  },
+  "host": "localhost: 3001",
+  "basePath": "/",
+  "tags": ["Base URL"],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/register": {
+      "post": {
+        "tags": ["Register"],
+        "description": "Cadastro de usuários",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userData": {
+                  "example": {
+                    "name": "Fulado de tal",
+                    "email": "fulado@hotmail.com",
+                    "password": "q0dZb^9K92w"
+                  }                
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Cadastro realizado com sucesso!",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Erro: (Descrição do erro)",
+            "content": "application/json"
+          },
+          "409": {
+            "description": "E-mail já cadastrado!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": ["Login"],
+        "description": "Autenticação do usuário no Sistema",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "fulado@hotmail.com"
+                },
+                "password": {
+                  "example": "q0dZb^9K92w"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Login realizado com sucesso!",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "E-mail ou senha inváildo!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/profile": {
+      "get": {
+        "tags": ["Profile"],
+        "description": "Retorna informações do usuário logado, como nome e e-mail",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Usuário não encontrado!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/board": {
+      "post": {
+        "tags": ["Board"],
+        "description": "Cria um novo quadro",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "Lista de tarefas a fazer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Cadastro realizado com sucesso!",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Erro: (Descrição do erro)",
+            "content": "application/json"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Board"],
+        "description": "Retorna todos os quadros no qual o usuário logado faz parte",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Você ainda não possui nenhum quadro! / Usuário não encontrado",
+            "content": "application/json"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Board"],
+        "description": "Apaga o quadro",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idBoard": {
+                  "example": "6123dc412ca60567006a32e9"
+                },
+                "idUser": {
+                  "example": "611fb28d6852a047ac1b5e60"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Quadro apagado com sucesso!",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "'Somente o dono do quadro pode deletar / Quadro Não encontrado!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/board/title": {
+      "patch": {
+        "tags": ["Board"],
+        "description": "Atualizar o título do quadro",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idBoard": {
+                  "example": "6123dc1fe25e1c05945b9d5f"
+                },
+                "title": {
+                  "example": "Projeto da faculdade"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Título atualizado com sucesso!",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Título deve possuir no mínimo 5 caracteres! / Erro",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Quadro não encontrado!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/board/members": {
+      "patch": {
+        "tags": ["Board"],
+        "description": "Insere membros no quadro",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idBoard": {
+                  "example": "6123dc1fe25e1c05945b9d5f"
+                },
+                "members": {
+                  "example": ["611fb28d6852a047ac1b5e60", "611dd75a9ac8891e54853a24", "611d42bef20812556c90a6ab"]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Novos membros inseridos com sucesso!",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Membro não encontrado! / Quadro não encontrado!",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Membro já faz parte desde quadro!",
+            "content": "application/json"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Board"],
+        "description": "Retorna todos membros do quadro",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idBoard": {
+                  "example": "6123dc1fe25e1c05945b9d5f"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Quadro não encontrado!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/board/removemember": {
+      "patch": {
+        "tags": ["Board"],
+        "description": "Remove membro do quadro",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idBoard": {
+                  "example": "6123dc1fe25e1c05945b9d5f"
+                },
+                "user": {
+                  "example": "611fb28d6852a047ac1b5e60"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Membro removido com sucesso!",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Erro: (Descrição do erro)",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Quadro não encontrado!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/board/notmembers/": {
+      "get": {
+        "tags": ["Board"],
+        "description": "Retorna todos usuários que não são membros do quadro",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idBoard": {
+                  "example": "6123dc1fe25e1c05945b9d5f"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Quadro não encontrado!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/list": {
+      "delete": {
+        "tags": ["List"],
+        "description": "Deletar a Lista",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idList": {
+                  "example": "611fc19f3b54640e643a72f9"
+                },
+                "idBoard": {
+                  "example": "611d66c2b443087c6c90f876"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista apagada com sucesso!",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Lista ou Quadro não encontrados",
+            "content": "application/json"
+          }
+        }
+      },
+      "post": {
+        "tags": ["List"],
+        "description": "Cria uma nova lista",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "Em Revisão"
+                },
+                "idBoard": {
+                  "example": "6123dc1fe25e1c05945b9d5f"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Lista inserida com sucesso!",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Quadro não encontrado!",
+            "content": "application/json"
+          }
+        }
+      },
+      "get": {
+        "tags": ["List"],
+        "description": "Retorna todas listas pertencentes ao quadro",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idBoard": {
+                  "example": "6123dc1fe25e1c05945b9d5f"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "O quadro não possui nenhuma lista!",
+            "content": "application/json"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["List"],
+        "description": "Atualiza o título da lista",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idList": {
+                  "example": "6123ad5a955d823ca451e702"
+                },
+                "title": {
+                  "example": "Tarefas em andamento"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Título atualizado com sucesso!",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Erro: (Descrição do erro)",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Lista não encontrada!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/card": {
+      "post": {
+        "tags": ["Card"],
+        "description": "Cadastro de um Card dentro de uma List",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "Formulário de cadastro"
+                },
+                "description": {
+                  "example": "Formulário para receber os dados do usuário"
+                },
+                "members": {
+                  "example": ["611d42bef20812556c90a6ab", "611fb28d6852a047ac1b5e60"]
+                },
+                "idList": {
+                  "example": "6123ad5a955d823ca451e702"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Card inserido com sucesso!",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Título é obrigatório!",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Lista não encontrada!",
+            "content": "application/json"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Card"],
+        "description": "Deletar um Card",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idList": {
+                  "example": "6123ad5a955d823ca451e702"
+                },
+                "idCard": {
+                  "example": "611eadcbcda548592c2c75dd"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Card apagado com sucesso!",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Card não encontrado'",
+            "content": "application/json"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Card"],
+        "description": "Retorna todos os Cards pertencentes a Lista",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idList": {
+                  "example": "6123ad5a955d823ca451e702"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "A lista não possui nenhuma cartão!",
+            "content": "application/json"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Card"],
+        "description": "Rota que atualiza o título, descrição, membros e a lista na qual o Card pertence, passar apenas os parametros que quer alterar, não são todos obrigatórios",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idCard": {
+                  "example": "611ead84cda548592c2c75d8"
+                },
+                "title": {
+                  "example": "A fazer"
+                },
+                "description": {
+                  "example": "Lista de tarefas a fazer"
+                },
+                "members": {
+                  "example": ["611d42bef20812556c90a6ab","611fb28d6852a047ac1b5e60","6123bc327962ff2038d53469"]
+                },
+                "idList": {
+                  "example": "6123ad5f955d823ca451e705"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Card atualizado com sucesso!",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Erro: (Descrição do erro)",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Card não encontrado!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/card/removemember": {
+      "patch": {
+        "tags": ["Card"],
+        "description": "Remover membros do Card",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idCard": {
+                  "example": "611ead84cda548592c2c75d8"
+                },
+                "user": {
+                  "example": ["611d6f679f25ea63244eeb8b", "611d6fa24748891104105251"]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Membro removido com sucesso!",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Erro: (Descrição do erro)",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Card não encontrado!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/card/members": {
+      "get": {
+        "tags": ["Card"],
+        "description": "Retorna todos os membros do Card",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idCard": {
+                  "example": "611ea615cda548592c2c75d3"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Card não encontrado!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/card/notmembers": {
+      "get": {
+        "tags": ["Card"],
+        "description": "Retorna todos os usuários que são membros do quadro mas não são membros do Card",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "idCard": {
+                  "example": "611eadcbcda548592c2c75dd"
+                },
+                "idBoard": {
+                  "example": "611d66c2b443087c6c90f876"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Card não encontrado!",
+            "content": "application/json"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "informações": {
+    "título": "Super Trello",
+    "descrição": "Simulando as rotas utilizadas pelo Trello"
+  },
+  "esquemas": [
+    "http"
+  ]
+}

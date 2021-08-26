@@ -6,9 +6,8 @@ export const Container = styled.div`
   border-radius: 5px;
   margin-bottom: 10px;
   padding: 5px;
-  cursor: grab;
+  cursor: pointer;
 `
-
 export const Header = styled.div`
   position: absolute; 
   top: -16px;

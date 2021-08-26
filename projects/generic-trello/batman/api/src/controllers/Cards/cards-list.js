@@ -24,6 +24,11 @@ export const cardList = {
           .status(200)
           .send(foundCard)
       }
+      return res
+        .status(404)
+        .send({
+          message: "Lista não encontrado"
+        })
 
     } catch (error) {
       return res

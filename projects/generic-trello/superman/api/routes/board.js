@@ -18,7 +18,7 @@ app.post('/board', validationToken, async (req, res) => {
       
       res.status(201).send({message: 'Cadastro realizado com sucesso!', id: board._id })
     } catch (err) {
-      res.send(err)
+      res.status(400).send({ message: `Erro: ${err}`})
     }
  
 })
@@ -70,7 +70,7 @@ app.delete('/board', validationToken, async (req, res) => {
     }
     return res.status(404).send('Somente o dono do quadro pode deletar')
   }
-  return res.status(404).send('Quadro Não encontrado')
+  return res.status(404).send('Quadro Não encontrado!')
 })
 
 app.patch('/board/title', validationToken, async (req, res) => {
@@ -94,7 +94,7 @@ app.patch('/board/title', validationToken, async (req, res) => {
     return res.status(404).send('Quadro não encontrado!')
 
   } catch (err) {
-    return res.status(400).send(err)
+    return res.status(400).send({ message: `Erro: ${err}`})
   }
 })
 
@@ -164,7 +164,7 @@ app.patch('/board/removemember', validationToken, async (req, res) => {
     return res.status(404).send('Quadro não encontrado!')
 
   } catch (err) {
-    return res.status(400).send(err)
+    return res.status(400).send({ message: `Erro: ${err}`})
   }
 })
 

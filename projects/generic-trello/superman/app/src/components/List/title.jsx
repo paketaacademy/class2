@@ -1,30 +1,41 @@
-import React, {useState} from 'react'
+import React, { useState, useContext } from 'react'
 import { InputBase } from '@material-ui/core'
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
-import { EditableTitleContainer, EditableTitle } from './style.js'
+import storeApi from '../../utils/storeApi'
 
-export default function Title() {
+export default function Title({ title, listId }) {
   const [open, setOpen] = useState(false)
+  const [newTitle, setNewTitle] = useState(title)
+  const { updateListTitle } = useContext(storeApi)
+  const handleOnChange = (e) => {
+    setNewTitle(e.target.value)
+  }
 
+  const handleOnBlur = () => {
+    updateListTitle(newTitle, listId)
+    setOpen(false)
+  }
   return (
     <div>
       {open ? (
         <div>
           <InputBase
+            onChange={handleOnChange}
             autoFocus
-            value="To do"
-            inputProps={{
-              //className: classes.input,
-            }}
+            value={newTitle}
             fullWidth
-            onBlur={() => setOpen(!open)}
+            onBlur={handleOnBlur}
           />
         </div>
       ) : (
-        <EditableTitleContainer>
-          <EditableTitle onClick={() => setOpen(!open)}> To do </EditableTitle>
+        <editableTitleContainer >
+          <editableTitle
+            onClick={() => setOpen(!open)}
+          >
+            {title}
+          </editableTitle>
           <MoreHorizIcon />
-        </EditableTitleContainer>
+        </editableTitleContainer>
       )}
     </div>
   )
