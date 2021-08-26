@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router"
 import axios from 'axios'
-import { useHistory } from 'react-router-dom'
 import Avatar from '@material-ui/core/Avatar'
 import { getToken } from '../../Services/auth.js'
-import { ContainerTitle, BoxModal, BoxModalOn, ContainerList, FixedBtn, ListAdd } from './style.js'
+import { ContainerTitle, BoxModal, BoxModalOn, ContainerList, FixedBtn, ListMembers } from './style.js'
 import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
 import Button from '@material-ui/core/Button'
@@ -17,11 +16,8 @@ import Checkbox from '@material-ui/core/Checkbox'
 const AddMembers = () => {
 
   let { id } = useParams()
-  const history = useHistory()
   const API = process.env.REACT_APP_API_URL
   const [members, setMembers] = useState([])
-
-  
   const [open, setOpen] = useState(false)
 
   const handleOpen = () => {
@@ -33,16 +29,7 @@ const AddMembers = () => {
   }
 
   const [checked, setChecked] = useState([])
-  // const [ data, setData] = useState({
-  //   idBoard: id,
-  //   members: []
-  // })
   const [resAPI, setResAPI] = useState('')
-  
-  // const handleChange = e => {
-  //   checked[e.target.name] = e.target.value
-  //   setData(...checked)
-  // }
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value)
@@ -77,21 +64,19 @@ const AddMembers = () => {
   const handleSubmit = e => {
     e.preventDefault()
     axios.patch(`${API}/board/members`, { idBoard: id, members: checked },
-    {
+      {
         headers: {
           'auth-superman': getToken(),
-        }}
+        }
+      }
     )
-    
       .then(response => {
         setResAPI(response.data)
-        // handleClose()
-        // history.push(`/quadro/${id}`)
         window.location.reload()
-        
-    }).catch(err => {
-          setResAPI(err.response.data.message)
-        })
+
+      }).catch(err => {
+        setResAPI(err.response.data.message)
+      })
   }
 
   const MembersNameAdd = () => {
@@ -139,7 +124,7 @@ const AddMembers = () => {
         <Fade in={open}>
           <BoxModalOn>
             <FixedBtn><Button variant="contained" type="submit" color="primary" onClick={handleSubmit}>Adicionar</Button></FixedBtn>
-            <ListAdd>{MembersNameAdd()}</ListAdd>
+            <ListMembers>{MembersNameAdd()}</ListMembers>
           </BoxModalOn>
         </Fade>
       </BoxModal>

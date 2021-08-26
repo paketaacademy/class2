@@ -3,7 +3,7 @@ import { useParams } from "react-router"
 import axios from 'axios'
 import Avatar from '@material-ui/core/Avatar'
 import { getToken } from '../../Services/auth.js'
-import { ContainerTitle, BoxModal, BoxModalOn, ContainerList, FixedBtn, ListAdd } from './style.js'
+import { ContainerTitle, BoxModal, BoxModalOn, ContainerList, FixedBtn, ListMembers } from './style.js'
 import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
 import Button from '@material-ui/core/Button'
@@ -53,13 +53,9 @@ const RemoveMembers = () => {
         }
       }
     )
-
       .then(response => {
         setResAPI(response.data)
-        // handleClose()
-        // history.push(`/quadro/${id}`)
         window.location.reload()
-
       }).catch(err => {
         setResAPI(err.response.data.message)
       })
@@ -86,19 +82,19 @@ const RemoveMembers = () => {
     return (
 
       <ContainerList dense>
-        {members != null && members.map((members) => {
-          const labelId = `checkbox-list-secondary-label-${members.id}`
+        {members != null && members.map((member) => {
+          const labelId = `checkbox-list-secondary-label-${member.id}`
           return (
-            <ListItem key={members.id} button>
+            <ListItem key={member.id} button>
               <ListItemAvatar>
                 <Avatar />
               </ListItemAvatar>
-              <ListItemText id={members.id} primary={members.name} />
+              <ListItemText id={member.id} primary={member.name} />
               <ListItemSecondaryAction>
                 <Checkbox
                   edge="end"
-                  onChange={handleToggle(members.id)}
-                  checked={checked.indexOf(members.id) !== -1}
+                  onChange={handleToggle(member.id)}
+                  checked={checked.indexOf(member.id) !== -1}
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
               </ListItemSecondaryAction>
@@ -126,7 +122,7 @@ const RemoveMembers = () => {
         <Fade in={open}>
           <BoxModalOn>
             <FixedBtn><Button variant="contained" type="submit" color="secondary" onClick={handleSubmit}>Remover</Button></FixedBtn>
-            <ListAdd>{MembersNameRemove()}</ListAdd>
+            <ListMembers>{MembersNameRemove()}</ListMembers>
           </BoxModalOn>
         </Fade>
       </BoxModal>

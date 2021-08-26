@@ -101,7 +101,7 @@ export const FixedBtn = styled.div`
   `
   }`
 
-export const ListAdd = styled.div`
+export const ListMembers = styled.div`
   ${({ theme }) => `
   margin-top: 2.5rem;
   `
