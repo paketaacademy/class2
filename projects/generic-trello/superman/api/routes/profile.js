@@ -16,7 +16,7 @@ app.get('/profile', validationToken, async (req, res) => {
 
     }
 
-    return res.status(404).send('Usuário não encontrado')
+    return res.status(404).send('Usuário não encontrado!')
 
   } catch (err) {
     return res.send(err)
