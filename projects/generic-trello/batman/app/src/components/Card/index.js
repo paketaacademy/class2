@@ -55,7 +55,7 @@ export default function Card({ data, index, listIndex }) {
       <header className='header--card'>
         {data.labels.map(label => <Label key={label} color={label}/> )}
       </header>
-      <p className='text--card'>{data.content}</p>
+      <p contenteditable="true" className='text--card'>{data.content}</p>
       { data.user && <img className='img--card' src={data.user} alt='people image'/> }
     </Container>   
   )
