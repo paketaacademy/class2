@@ -25,7 +25,7 @@ app.post('/register', validateUser(userSchema), async (req, res) => {
 
       res.status(201).send({ message: 'Cadastro realizado com sucesso!' })
   } catch (err) {
-    res.send(err)
+    res.status(400).send({ message: `Erro: ${err}`})
   }
 })
 

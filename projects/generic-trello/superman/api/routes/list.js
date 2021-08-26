@@ -89,7 +89,7 @@ app.patch('/list', validationToken, async (req, res) => {
     return res.status(404).send('Lista não encontrada!')
 
   } catch(err) {
-    return res.status(400).send(err)
+    return res.status(400).send({ message: `Erro: ${err}`})
   }
 })
 

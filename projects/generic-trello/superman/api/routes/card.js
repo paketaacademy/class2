@@ -14,7 +14,7 @@ app.post('/card', validationToken, async (req, res) => {
     await Lists.findOne({ _id: idList })
 
     if(title === ''){
-      return res.status(404).send('Título é obrigatório!')  
+      return res.status(400).send('Título é obrigatório!')  
     }
 
       const card = new Cards({ title, description, members, idList })
@@ -97,7 +97,7 @@ app.patch('/card', validationToken, async (req, res) => {
     return res.status(200).send('Card atualizado com sucesso!')
 
   } catch(err) {
-    return res.status(400).send(err)
+    return res.status(400).send({ message: `Erro: ${err}`})
   }
 })
 
@@ -123,7 +123,7 @@ app.patch('/card/removemember', validationToken, async (req, res) => {
     return res.status(404).send('Card não encontrado!')
 
   } catch (err) {
-    return res.status(400).send(err)
+    return res.status(400).send({ message: `Erro: ${err}`})
   }
 })
 
