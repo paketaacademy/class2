@@ -26,8 +26,8 @@ function page() {
           <Register />
         </Route>
 
-        <Route path='/board'>
-          <Board />
+        <Route path='/hp/:id'>
+          <HomePage />
         </Route>
       </Switch>
     </BrowserRouter>

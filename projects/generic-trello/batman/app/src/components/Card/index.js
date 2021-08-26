@@ -2,6 +2,7 @@ import React, { useRef, useContext } from 'react'
 import { useDrag, useDrop } from 'react-dnd'
 import { Container, Label , Header , P , Image} from './styles'
 import BoardContext from '../Board/context'
+import { green } from '@material-ui/core/colors'
 
 export default function Card({ data, index, listIndex }) {
   const ref = useRef()
@@ -53,10 +54,10 @@ export default function Card({ data, index, listIndex }) {
   return (
     <Container ref={ref} isDragging={isDragging}>
       <Header>
-        {data.labels.map(label => <Label key={label} color={label}/> )}
+        <Label key={"green"} color={"green"}/>
       </Header>
-      <P contenteditable="true">{data.content}</P>
-      { data.user && <Image src={data.user} alt='people image'/> }
+      <P contenteditable="true">{data.title}</P>
+      {/* { data.users && <Image src={data.users} alt='people image'/> } */}
     </Container>   
     
   )
