@@ -99,6 +99,7 @@ app.patch('/board/title', validationToken, async (req, res) => {
 })
 
 app.patch('/board/members', validationToken, async (req, res) => {
+  
   const { idBoard, members } = req.body
 
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
@@ -141,7 +142,8 @@ app.patch('/board/members', validationToken, async (req, res) => {
 })
 
 app.patch('/board/removemember', validationToken, async (req, res) => {
-  const { idBoard, user } = req.body
+  
+  const { idBoard, members } = req.body
 
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
 
@@ -152,7 +154,7 @@ app.patch('/board/removemember', validationToken, async (req, res) => {
     if (foundBoard) {
 
       const newMembers = foundBoard.members.filter((member) => {
-        return member != user
+        return !members.includes(member)
       })
 
       await foundBoard.updateOne({ members: newMembers })
@@ -166,10 +168,10 @@ app.patch('/board/removemember', validationToken, async (req, res) => {
   }
 })
 
-app.get('/board/members', validationToken, async (req, res) => {
+app.get('/board/:idBoard/members', validationToken, async (req, res) => {
 
-  const { idBoard } = req.body
-
+  const { idBoard } = req.params
+  
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
   const Users = Mongoose.model('users', UsersSchema, 'users')
 
@@ -193,9 +195,9 @@ app.get('/board/members', validationToken, async (req, res) => {
   }  
 })
 
-app.get('/board/notmembers/', validationToken, async (req, res) => {
+app.get('/board/:idBoard/notmembers/', validationToken, async (req, res) => {
 
-  const { idBoard } = req.body
+  const { idBoard } = req.params
   
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
   const Users = Mongoose.model('users', UsersSchema, 'users')

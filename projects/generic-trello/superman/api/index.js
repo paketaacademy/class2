@@ -1,7 +1,6 @@
 import register from './routes/register.js'
 import login from './routes/login.js'
 import profile from './routes/profile.js'
-import home from './routes/home.js'
 import board from './routes/board.js'
 import list from './routes/list.js'
 import card from './routes/card.js'
@@ -23,7 +22,6 @@ app.use(express.json())
 app.use(register)
 app.use(login)
 app.use(profile)
-app.use(home)
 app.use(board)
 app.use(list)
 app.use(card)
