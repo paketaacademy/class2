@@ -1,4 +1,5 @@
-import React from 'react'
+import React , { useState } from 'react'
+import axios from 'axios'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
@@ -6,8 +7,11 @@ import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import { Link } from 'react-router-dom'
+import Snackbar from '@material-ui/core/Snackbar'
+import MuiAlert from '@material-ui/lab/Alert'
 import './style'
 import { PaperDiv, StyledAvatar, Form, SubmitButton } from './style.js'
+
 
 function Copyright() {
   return (
@@ -24,18 +28,62 @@ function Copyright() {
 
 export default function SignUp() {
 
+  const handleChange = e => {
+    inputs[e.target.name] = e.target.value
+    setInputs(inputs)
+   
+  }
+
+  const [open, setOpen] = useState(false)
+  const [resAPI, setResAPI] = useState('')
+  const [severity, setSeverity] = useState('')
+  const [inputs, setInputs] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: ''    
+  })
+
+  const Alert = props => {
+    return <MuiAlert elevation={6} variant="filled" {...props} />
+  }
+  
+  const handleSubmit = e => {
+    e.preventDefault()
+    axios.post('http://localhost:3030/register', inputs).then(response => {
+
+      setResAPI(response)
+      setSeverity('success')
+      setOpen(true)
+
+    }).catch(err => {
+      setResAPI(err)
+      setSeverity('error')
+      setOpen(true)
+    })
+  }
+
+  const handleClose = (event) => {
+    setOpen(false)
+  }
+
   return (
     <Container component="main" maxWidth="xs">
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert severity={severity}>
+          {resAPI}
+        </Alert>
+      </Snackbar>
       <CssBaseline />
       <PaperDiv>
         <StyledAvatar />
         <Typography component="h1" variant="h5">
           Cadastro
         </Typography>
-        <Form noValidate>
+        <Form onSubmit={handleSubmit} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
-              <TextField
+              <TextField 
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
@@ -44,6 +92,7 @@ export default function SignUp() {
                 id="firstName"
                 label="Primeiro Nome"
                 autoFocus
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -55,6 +104,7 @@ export default function SignUp() {
                 label="Sobrenome"
                 name="lastName"
                 autoComplete="lname"
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -66,6 +116,7 @@ export default function SignUp() {
                 label="Endereço de E-mail"
                 name="email"
                 autoComplete="email"
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -78,6 +129,7 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={handleChange}
               />
             </Grid>
           </Grid>

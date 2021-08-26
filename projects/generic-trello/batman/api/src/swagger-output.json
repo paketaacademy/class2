@@ -1,0 +1,942 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Batman-Trello",
+    "description": "This api is a project similar to Trello, a task manager, where you can create a board, add, remove and modify tasks, all divided into lists. This is a project done by the class at Paketa Academy 2021",
+    "TermOfService": "http://localhost:3030/terms"
+  },
+  "host": "localhost:3030",
+  "basePath": "/",
+  "tags": [
+    "board",
+    "users",
+    "register-user",
+    "creat-user",
+    "register",
+    "login",
+    "list",
+    "card"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json; charset=utf-8"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/list/{id}": {
+      "get": {
+        "tags": [
+          "list"
+        ],
+        "description": "rote will pull the lists created for the separation of tasks",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/middlewares/verify-token.js"
+            },
+            "required": true
+          },
+          {
+            "name": "idBoard",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "This Board has no lists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Lists found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/list": {
+      "post": {
+        "tags": [
+          "list"
+        ],
+        "description": "Route to create the list to separate the tasks",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/middlewares/verify-token.js"
+            },
+            "required": true
+          },
+          {
+            "name": "title",
+            "in": "body",
+            "schema": {
+              "type": "string",
+              "properties": {
+                "title": {
+                  "example": "List"
+                },
+                "idBoard": {
+                  "example": "6123a26a0702642a4cd63da6"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unable to create list, board not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to create list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "list"
+        ],
+        "description": "Route to modify the list to separate the tasks",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/middlewares/verify-token.js"
+            },
+            "required": true
+          },
+          {
+            "name": "title",
+            "in": "body",
+            "schema": {
+              "type": "string",
+              "properties": {
+                "title": {
+                  "example": "New list"
+                },
+                "listId": {
+                  "example": "611fa1c25932bb3c2cd31592"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unable to modify, list not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to modify list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Modified list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "list"
+        ],
+        "description": "Route to delete the list to separate the tasks",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/middlewares/verify-token.js"
+            },
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "properties": {
+                "listId": {
+                  "example": "61252cfc532cfc1d089222e6"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unable to delete, list not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to delete list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Deleted list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/list-schema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "register"
+        ],
+        "description": "Dedicated route to register a new user",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "example": "123456"
+                },
+                "firstName": {
+                  "example": "Paketa"
+                },
+                "lastName": {
+                  "example": "Academy"
+                },
+                "email": {
+                  "example": "paketa.academy@gmail.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "409": {
+            "description": "E-mail already registered!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/user-schema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unable to register",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/user-schema"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Registration successful!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/user-schema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "login"
+        ],
+        "description": "Dedicated route to login a user",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "paketa.academy@gmail.com"
+                },
+                "password": {
+                  "example": "123456"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Email not found / Wrong password",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/user-schema"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Login successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/user-schema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/board": {
+      "post": {
+        "tags": [
+          "board"
+        ],
+        "description": "Route to create a board that will contain the lists and tasks",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/middlewares/verify-token.js"
+            },
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "Projects Academy"
+                },
+                "description": {
+                  "example": "Board for the activities of Paketa Academy class"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/board-schema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to create board",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/board-schema"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created board",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/board-schema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/board/{id}": {
+      "patch": {
+        "tags": [
+          "board"
+        ],
+        "description": "Route to modify a board that will contain the lists and tasks, add users to that board",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "Academy Projects"
+                },
+                "description": {
+                  "example": "New Board for the activities of Paketa Academy class"
+                },
+                "user": {
+                  "example": "matheus@gmail.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Unable to modify, board not found / User already added / User not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Failed to modify board",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Modified board",
+            "content": "application/json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "board"
+        ],
+        "description": "Route to delete the board of tasks",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/middlewares/verify-token.js"
+            },
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/board-schema"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unable to delete, board not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/board-schema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to delete board",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/board-schema"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Delete board",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/board-schema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/board/{id}/unassign": {
+      "patch": {
+        "tags": [
+          "board"
+        ],
+        "description": "Route responsible for removing a user",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email user",
+            "in": "body",
+            "schema": {
+              "type": "string",
+              "properties": {
+                "user": {
+                  "example": "matheus@gmail.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Board not found / User not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Failed to remove the user",
+            "content":
+              "application/json"
+          },
+          "200": {
+            "description": "User removed",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/card": {
+      "delete": {
+        "tags": [
+          "card"
+        ],
+        "description": "Route to delete a task card",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/middlewares/verify-token.js"
+            },
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unable to delete, card not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to delete card",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Deleted card",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "card"
+        ],
+        "description": "Route to create a task card in the list",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/middlewares/verify-token.js"
+            },
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "Create back-end structure"
+                },
+                "description": {
+                  "example": "Create the backend folder structure and dependencies"
+                },
+                "assign": {
+                  "example": "{id user}"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unable to create card, list not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to create card",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Created card",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "card"
+        ],
+        "description": "Route to modify a task card in the list",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/middlewares/verify-token.js"
+            },
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unable to modify, card not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to modify card",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Modified card",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/card/{id}": {
+      "get": {
+        "tags": [
+          "card"
+        ],
+        "description": "Route that will pull all cards related to a given list",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "schema": {
+              "$ref": "#/middlewares/verify-token.js"
+            },
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Card not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed to get the card",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Card found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/models/card-schema"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "informações": {
+    "título": "Batman-Trello",
+    "descrição": "Esta api é um projeto semelhante ao Trello, um gerenciador de tarefas, onde você pode criar um quadro, adicionar, remover e modificar tarefas, tudo dividido em listas. Este é um projeto realizado pela turma da Paketa Academy 2021",
+    "TermoDeServiço": "http://localhost:3030/terms"
+  },
+  "esquemas": [
+    "http"
+  ]
+}
