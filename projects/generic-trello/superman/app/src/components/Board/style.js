@@ -10,7 +10,7 @@ listContainer: {
 
 export const ContainerBoard = styled.div`
   min-height: 100vh;
-  background: green;
+  background: #fff;
   overflow-y: auto;
   display: flex;
   flex-direction: row;
