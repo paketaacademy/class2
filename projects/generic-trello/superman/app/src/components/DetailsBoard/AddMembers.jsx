@@ -3,7 +3,7 @@ import { useParams } from "react-router"
 import axios from 'axios'
 import Avatar from '@material-ui/core/Avatar'
 import { getToken } from '../../Services/auth.js'
-import { ContainerTitle, BoxModal, BoxModalOn, ContainerList, FixedBtn, ListMembers } from './style.js'
+import { ContainerTitle, BoxModal, BoxModalOn, ContainerList, FixedBtn, ListMembers, ButtonEstyled } from './style.js'
 import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
 import Button from '@material-ui/core/Button'
@@ -109,7 +109,7 @@ const AddMembers = () => {
 
   return (
     <ContainerTitle>
-      <Button variant="contained" onClick={handleOpen}>Adicionar</Button>
+      <ButtonEstyled variant="contained" onClick={handleOpen}>Adicionar</ButtonEstyled>
       <BoxModal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
