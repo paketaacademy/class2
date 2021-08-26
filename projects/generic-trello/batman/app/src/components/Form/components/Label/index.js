@@ -1,6 +1,5 @@
 import React from 'react'
 import InputLabel from '@material-ui/core/InputLabel'
-// import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
 import { Control, MenuItemOne, MenuItemTwo, MenuItemThree, MenuItemFour } from './style.js'
 
