@@ -7,15 +7,14 @@ import InputContainer from '../Input/InputContainer'
 import { DragDropContext } from 'react-beautiful-dnd'
 import { ContainerBoard, ListContainer, DropList } from './style.js'
 
-
 export default function Board() {
   const [data, setData] = useState(store)
   const addMoreCard = (title, listId) => {
-    const newCardId = uuid();
+    const newCardId = uuid()
     const newCard = {
       id: newCardId,
       title,
-    };
+    }
 
     const list = data.lists[listId]
     list.cards = [...list.cards, newCard]
@@ -26,26 +25,26 @@ export default function Board() {
         ...data.lists,
         [listId]: list,
       },
-    };
-    setData(newState);
-  };
+    }
+    setData(newState)
+  }
 
   const addMoreList = (title) => {
-    const newListId = uuid();
+    const newListId = uuid()
     const newList = {
       id: newListId,
       title,
       cards: [],
-    };
+    }
     const newState = {
       listIds: [...data.listIds, newListId],
       lists: {
         ...data.lists,
         [newListId]: newList,
       },
-    };
-    setData(newState);
-  };
+    }
+    setData(newState)
+  }
 
   const updateListTitle = (title, listId) => {
     const list = data.lists[listId]
@@ -57,9 +56,9 @@ export default function Board() {
         ...data.lists,
         [listId]: list,
       },
-    };
-    setData(newState);
-  };
+    }
+    setData(newState)
+  }
 
   const onDragEnd = (result) => {
     const { destination, source, draggableId, type } = result
@@ -68,28 +67,28 @@ export default function Board() {
       return
     }
     if (type === 'list') {
-      const newListIds = data.listIds;
-      newListIds.splice(source.index, 1);
-      newListIds.splice(destination.index, 0, draggableId);
+      const newListIds = data.listIds
+      newListIds.splice(source.index, 1)
+      newListIds.splice(destination.index, 0, draggableId)
       return
     }
 
-    const sourceList = data.lists[source.droppableId];
-    const destinationList = data.lists[destination.droppableId];
+    const sourceList = data.lists[source.droppableId]
+    const destinationList = data.lists[destination.droppableId]
     const draggingCard = sourceList.cards.filter(
       (card) => card.id === draggableId
     )[0]
 
     if (source.droppableId === destination.droppableId) {
-      sourceList.cards.splice(source.index, 1);
-      destinationList.cards.splice(destination.index, 0, draggingCard);
+      sourceList.cards.splice(source.index, 1)
+      destinationList.cards.splice(destination.index, 0, draggingCard)
       const newSate = {
         ...data,
         lists: {
           ...data.lists,
           [sourceList.id]: destinationList,
         },
-      };
+      }
       setData(newSate)
     } else {
       sourceList.cards.splice(source.index, 1)

@@ -1,6 +1,6 @@
 import React from 'react'
 import { BoxCard } from './style.js'
-import { Draggable } from 'react-beautiful-dnd';
+import { Draggable } from 'react-beautiful-dnd'
 
 export default function Card({ card, index }) {
 

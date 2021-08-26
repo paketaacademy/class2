@@ -27,7 +27,6 @@ export default function List({ list, index }) {
                 </ContainerCard>
               )}
             </Droppable>
-
             <InputContainer listId={list.id} type="card" />
           </ContainerList>
         </div>

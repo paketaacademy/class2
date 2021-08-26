@@ -3,7 +3,6 @@ import { Paper } from '@material-ui/core'
 import { Typography } from '@material-ui/core'
 import { InputBase } from '@material-ui/core'
 
-
 export const ContainerList = styled.div`
   max-width: 300px;
   background: #efefef;  

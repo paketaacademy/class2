@@ -1,42 +1,39 @@
 import React, { useState, useContext } from 'react'
 import { InputBase, IconButton } from '@material-ui/core'
 import ClearIcon from '@material-ui/icons/Clear'
-import { boxCard, Confirm, BoxConfirm} from './style.js'
+import { BoxCard, Confirm, BoxConfirm } from './style.js'
 import storeApi from '../../utils/storeApi'
-
 
 export default function InputCard({ setOpen, listId, type }) {
 
-  const { addMoreCard, addMoreList } = useContext(storeApi);
-  const [title, setTitle] = useState('');
+  const { addMoreCard, addMoreList } = useContext(storeApi)
+  const [title, setTitle] = useState('')
 
   const handleOnChange = (e) => {
-    setTitle(e.target.value);
-  };
+    setTitle(e.target.value)
+  }
+
   const handleBtnConfirm = () => {
     if (type === 'card') {
-      addMoreCard(title, listId);
-      setTitle('');
-      setOpen(false);
+      addMoreCard(title, listId)
+      setTitle('')
+      setOpen(false)
     } else {
-      addMoreList(title);
-      setTitle('');
-      setOpen(false);
+      addMoreList(title)
+      setTitle('')
+      setOpen(false)
     }
   }
 
   return (
     <div>
       <div>
-        <boxCard>
+        <BoxCard>
           <InputBase
             onChange={handleOnChange}
             multiline
             onBlur={() => setOpen(false)}
             fullWidth
-            inputProps={{
-              // className: classes.input,
-            }}
             value={title}
             placeholder={
               type === 'card'
@@ -44,7 +41,7 @@ export default function InputCard({ setOpen, listId, type }) {
                 : 'Insira o título da lista...'
             }
           />
-        </boxCard>
+        </BoxCard>
       </div>
       <BoxConfirm >
         <Confirm onClick={handleBtnConfirm}>

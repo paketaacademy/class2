@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Paper, Button } from '@material-ui/core'
 
-export const boxCard = styled(Paper)`
+export const BoxCard = styled(Paper)`
   width: 280px;
   margin: 10px;
   padding-bottom: 10px;

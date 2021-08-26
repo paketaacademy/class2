@@ -11,7 +11,7 @@ const cards = [
     id: 'card-3',
     title: 'Taking the trash out',
   },
-];
+]
 
 const data = {
   lists: {
@@ -27,6 +27,6 @@ const data = {
     },
   },
   listIds: ['list-1', 'list-2'],
-};
+}
 
-export default data;
+export default data
