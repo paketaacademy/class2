@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Typography, Collapse } from '@material-ui/core'
-import InputCard from './InputCard.jsx'
+import InputCard from './inputCard.jsx'
 import { Container, ContainerAdd } from './style.js'
 
 export default function InputContainer({ listId, type }) {

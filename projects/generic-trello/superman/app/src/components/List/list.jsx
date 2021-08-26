@@ -1,9 +1,9 @@
 import React from 'react'
 import { CssBaseline } from '@material-ui/core'
 import { ContainerList, ContainerCard } from './style.js'
-import Title from './Title'
+import Title from './title'
 import Card from '../Card'
-import InputContainer from '../Input/InputContainer'
+import InputContainer from '../Input/inputContainer'
 import { Droppable, Draggable } from 'react-beautiful-dnd'
 
 export default function List({ list, index }) {

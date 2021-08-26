@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid'
-import List from '../List/List'
+import List from '../List/list'
 import store from '../../utils/store.js'
 import StoreApi from '../../utils/storeApi'
-import InputContainer from '../Input/InputContainer'
+import InputContainer from '../Input/inputContainer'
 import { DragDropContext } from 'react-beautiful-dnd'
 import { ContainerBoard, ListContainer, DropList } from './style.js'
 

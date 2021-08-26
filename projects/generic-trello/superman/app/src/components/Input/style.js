@@ -11,7 +11,7 @@ export const Confirm = styled(Button)`
   background: #5AAC44;
   color: #fff;
   &:hover: {
-    background: #5AAC44';
+    background: #5AAC44;
   }
 `
 
