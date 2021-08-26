@@ -1,9 +1,9 @@
-import List from "../../components/List/list"
+import BoardBox from '../../components/Board'
 
 function Board() {
 
   return (
-    <List/>
+    <BoardBox />
   )
 }
 
