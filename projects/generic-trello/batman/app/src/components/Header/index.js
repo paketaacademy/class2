@@ -2,7 +2,7 @@ import React from "react"
 import { Container, Image, Title } from './styles'
 import './styles'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-import { logout } from '../../services/auth'
+import { logout } from '../../Services/auth'
 
 export default function Header() {
   const handleLogout = (e) => {
