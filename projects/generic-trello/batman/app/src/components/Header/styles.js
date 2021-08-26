@@ -1,4 +1,19 @@
-import styled from 'styled-components'
+import styled from 'styled-components' 
+import Button from '@material-ui/core/Button' 
+
+export const SubmitButton = styled(Button)`
+  ${({ theme }) => `
+  margin: ${theme.spacing(1)}px;
+ 
+  
+  font-family: cursive;
+    margin-left: 60px;
+    width: 30px;
+    pointer-events: visiblefill;
+    background: #ffd600;
+    margin-left: auto;
+ 
+`}`
 
 export const Container = styled.div`
   height: 50px;
@@ -8,18 +23,19 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+`
 
 export const Image = styled.img`
   height: 60px;  
   
 ` 
-
 export const Title = styled.h1`
     font-family: cursive;
     margin-left: 20px;
-
-  width: auto;
+    width: auto;
+    margin-right: auto;
+    font-size: 20px;
+    
 
   @media screen and (max-width: 415px) and (min-width: 320px) {
     font-size: 14px;
@@ -45,3 +61,4 @@ export const Title = styled.h1`
   }
 
 `
+
