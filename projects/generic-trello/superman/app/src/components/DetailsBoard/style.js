@@ -1,18 +1,18 @@
 import styled from 'styled-components'
 import Modal from '@material-ui/core/Modal'
-import ListItem from '@material-ui/core/ListItem';
+import ListItem from '@material-ui/core/ListItem'
+import Button from '@material-ui/core/Button'
 import List from '@material-ui/core/List'
 
 export const ContainerTitle = styled.div`
-  ${({ theme }) => `
-    
+  ${({ theme }) => `    
     width: 100%;
     background: #77a7ef;
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 0.313rem 4.375rem;
+    padding: 0.313rem 0;
     @media (max-width: 46.875rem) {
       flex-direction: column;
       padding: 0.313rem;
@@ -27,14 +27,22 @@ export const Details = styled.div`
     font-weight: bold;
     display: flex;
     flex-direction: row;
+    margin: 0 4.375rem;
+    justify-content: center;
     align-items: center;
     @media (max-width: 37.5rem) {
       flex-direction: column;
-      margin: 0.313rem;
-      justify-content: space-between;
+      margin: 0.313rem;      
     }
   `
   }`
+
+export const DetailsBtn = styled.div`
+  margin: 0.188rem;
+  @media (max-width: 37.5rem) {   
+    margin: 0.008rem;      
+  }
+`
 
 export const boxButton = styled.div`
   ${({ theme }) => `
@@ -104,5 +112,11 @@ export const FixedBtn = styled.div`
 export const ListMembers = styled.div`
   ${({ theme }) => `
   margin-top: 2.5rem;
+  `
+  }`
+
+export const ButtonEstyled = styled(Button)`
+  ${({ theme }) => `
+    max-width: 6.25rem;
   `
   }`
