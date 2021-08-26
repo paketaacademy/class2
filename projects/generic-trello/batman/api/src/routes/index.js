@@ -29,6 +29,7 @@ import { BoardControllerUnassign } from "../controllers/Boards/patch-unassign-us
 import { Profile } from "../controllers/Users/profile.js"
 import UsersFromBoard from "../controllers/Boards/users-bord.js"
 import cardList from "../controllers/Cards/cards-list.js"
+import ListsCards from "../controllers/lists/get-card-lists.js"
 const require = createRequire(import.meta.url)
 const swaggerFile = require("../swagger-output.json")
 
@@ -44,6 +45,7 @@ routes.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 routes.get('/terms', Terms.TermsOfServices)
 
+routes.get('/list/card', verifyToken, ListsCards.getListsCard)
 routes.get('/list/:id', verifyToken, getLists.AllLists)
 routes.post('/list', verifyToken, listsColumn.CreateList)
 routes.patch('/list', verifyToken, changeLists.UpdateList)
