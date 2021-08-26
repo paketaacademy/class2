@@ -13,16 +13,16 @@ function ContentPage() {
         <Login />
       </Route>
       
-      <Route exact path='/cadastrar'>
+      <Route path='/cadastrar'>
         <SingUp />
       </Route>
-      {isAuthenticated() &&<Route exact path='/perfil'>
+      {isAuthenticated() &&<Route path='/perfil'>
         <Profile />
       </Route>}
-      {isAuthenticated() &&<Route exact path='/quadro'>
+      {isAuthenticated() &&<Route path='/quadro/:id'>
         <Board />
       </Route>}
-      
+         
     </Switch>
   )
 }

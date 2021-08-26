@@ -1,0 +1,108 @@
+import styled from 'styled-components'
+import Modal from '@material-ui/core/Modal'
+import ListItem from '@material-ui/core/ListItem';
+import List from '@material-ui/core/List'
+
+export const ContainerTitle = styled.div`
+  ${({ theme }) => `
+    
+    width: 100%;
+    background: #77a7ef;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.313rem 4.375rem;
+    @media (max-width: 46.875rem) {
+      flex-direction: column;
+      padding: 0.313rem;
+    }
+  `
+  }`
+
+export const Details = styled.div`
+  ${({ theme }) => `
+    color: #000;
+    font-size: 1.125rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @media (max-width: 37.5rem) {
+      flex-direction: column;
+      margin: 0.313rem;
+      justify-content: space-between;
+    }
+  `
+  }`
+
+export const boxButton = styled.div`
+  ${({ theme }) => `
+    display: flex;
+    flex-direction: row;
+  `
+  }`
+
+export const BoxModal = styled(Modal)`
+  ${({ theme }) => `
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `
+  }`
+
+export const BoxModalMember = styled(Modal)`
+  ${({ theme }) => `
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    `
+  }`
+
+export const BoxModalOn = styled.div`
+  ${({ theme }) => `
+    background: #fff;
+    border: 0.125rem solid #000;
+    box-shadow: 0.625ren 0.625rem 0.625rem #7c7c7c;
+    padding: 0.625rem;
+    min-width: 18.75rem;
+    max-height: 18.75rem;
+    overflow: auto;
+  `
+  }`
+
+export const UserItem = styled(ListItem)`
+  ${({ theme }) => `
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+  `
+  }`
+
+export const ContainerList = styled(List)`
+  ${({ theme }) => `
+  width: 100%;
+  max-width: 22.5rem;
+  background: #fff;
+  `
+  }`
+
+export const AvatarMembers = styled.div`
+  ${({ theme }) => `
+    cursor: pointer;
+  `
+  }`
+
+export const FixedBtn = styled.div`
+  ${({ theme }) => `
+  position: fixed;
+  z-index: 1;
+  `
+  }`
+
+export const ListMembers = styled.div`
+  ${({ theme }) => `
+  margin-top: 2.5rem;
+  `
+  }`
