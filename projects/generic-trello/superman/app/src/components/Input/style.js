@@ -25,9 +25,9 @@ export const Container = styled.div`
 `
 
 export const ContainerAdd = styled(Paper)`
-  padding: 50px;
-  margin: 50px;
-  background: #EBECF0;
+  padding: 5px;
+  margin: 5px;
+  background: #e5e5e5;
   &:hover: {
     background-color: #000;
   }

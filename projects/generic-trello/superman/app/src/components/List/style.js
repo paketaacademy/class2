@@ -5,7 +5,7 @@ import { InputBase } from '@material-ui/core'
 
 export const ContainerList = styled.div`
   max-width: 300px;
-  background: #efefef;  
+  background: #cfe1fc;  
   margin: 0.625rem;
   border-radius: 0.188rem;
 `

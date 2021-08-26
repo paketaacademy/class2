@@ -45,9 +45,10 @@ app.delete("/card", validationToken, async (req, res) => {
   return res.status(404).send('Card não encontrado')
 })
 
-app.get('/card', validationToken, async (req, res) => {
+app.get('/card/:idList', validationToken, async (req, res) => {
 
-  const { idList } = req.body
+  const { idList } = req.params
+  console.log('lista', idList)
 
   const Lists = Mongoose.model('lists', ListsSchema, 'lists')
   const Cards = Mongoose.model('cards', CardsSchema, 'cards')

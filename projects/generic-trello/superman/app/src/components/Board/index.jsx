@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useParams } from "react-router"
 import { v4 as uuid } from 'uuid'
 import List from '../List/list'
 import store from '../../utils/store.js'
@@ -6,6 +7,7 @@ import StoreApi from '../../utils/storeApi'
 import InputContainer from '../Input/inputContainer'
 import { DragDropContext } from 'react-beautiful-dnd'
 import { ContainerBoard, ListContainer, DropList } from './style.js'
+import { getToken } from '../../Services/auth'
 
 export default function Board() {
   const [data, setData] = useState(store)
@@ -106,20 +108,51 @@ export default function Board() {
     }
   }
 
+
+  let { id } = useParams()
+  const API = process.env.REACT_APP_API_URL
+  const [listAll, setListAll] = useState([])
+
+  useEffect(() => {
+    fetch(
+      `${API}/list/${id}`,
+      {
+        method: 'get',
+        headers: new Headers({
+          'auth-superman': getToken(),
+        })
+      },
+    )
+      .then(async response => {
+        const data = await response.json()
+        setListAll(data)
+      })
+      .catch(error => console.log(error))
+  }, [API, setListAll])
+  console.log('fora',listAll)
+
   return (
     <StoreApi.Provider value={{ addMoreCard, addMoreList, updateListTitle }}>
       <ContainerBoard>
         <DragDropContext onDragEnd={onDragEnd}>
           <DropList droppableId="app" type="list" direction="horizontal">
             {(provided) => (
-              <ListContainer style={{display:"flex"}}              
+              <ListContainer style={{ display: "flex" }}
                 ref={provided.innerRef}
                 {...provided.droppableProps}
               >
-                {data.listIds.map((listId, index) => {
+                {/* {data.listIds.map((listId, index) => {
                   const list = data.lists[listId]
-                  return <List list={list} key={listId} index={index} />
-                })}
+                  return <List list={list} key={listId} index={index} /> */}
+                {/* })} */}
+                
+                {console.log('antes do map', listAll.length),
+                  listAll.length > 0 && listAll.map((item, index) => {
+                    console.log('dentro', item)
+                    return <List list={item} key={item.id} index={index} />
+                  }
+                  )
+                }
                 <InputContainer type="list" />
                 {provided.placeholder}
               </ListContainer>
