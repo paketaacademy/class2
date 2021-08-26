@@ -4,11 +4,11 @@ import cardSchema from "../../models/card-schema.js"
 export const cardControllerUpdate = {
 
   async updateCard(req, res) {
-    const cardId = req.params.id
+    const { cardId } = req.body
     const update = req.body
 
     try {
-      const findCard = await Mongoose.model('cards', cardSchema, 'cards').findById(cardId)
+      const findCard = await Mongoose.model('cards', cardSchema, 'cards').findById({ _id: cardId })
       if (!findCard) {
         return res
           .status(400)

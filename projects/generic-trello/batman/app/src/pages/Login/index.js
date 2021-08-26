@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
-import { login } from '../../Services/auth'
+import { login } from '../../services/auth'
 import { PaperDiv, StyledAvatar, Form, SubmitButton } from './styles'
 import './styles'
 
