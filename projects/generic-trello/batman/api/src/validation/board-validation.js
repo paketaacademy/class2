@@ -9,8 +9,5 @@ export const BoardSchema = yup.object().shape({
 export const BoardUpdateSchema = yup.object().shape({
   title: yup.string().min(3, 'Mínimo de três letras'),
   description: yup.string().max(500, 'Máximo de 500 caracteres.'),
-})
-
-export const BoardAssignSchema = yup.object().shape({
-  email: yup.string().email().required('Email requerido')
+  email: yup.string().email()
 })

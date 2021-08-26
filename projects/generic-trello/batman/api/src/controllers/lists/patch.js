@@ -4,7 +4,8 @@ import listSchema from '../../models/list-schema.js'
 const changeLists = {
 
   async UpdateList(req, res) {
-    const { listId, title } = req.body
+    const { listId } = req.body
+    const title = req.body.title
 
     try {
       const List = await Mongoose.model('list', listSchema, 'list')
@@ -17,11 +18,11 @@ const changeLists = {
             message: `Não foi possivel fazer a alteração, lista não encontrada`
           })
       }
-      const updateList = await List.updateOne(foundList, title)
+      const updateList = await List.updateOne(foundList, { title } )
       return res
         .status(200)
         .send({
-          message: `Lista alterada com sucesso ${updateList}`
+          message: `Lista alterada com sucesso`
         })
 
     } catch (error) {

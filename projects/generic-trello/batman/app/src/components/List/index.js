@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from './styles'
+import { Container , Header , Title , Button , Ul} from './styles'
 import { MdAdd } from 'react-icons/md'
 import Card from '../Card'
 import Form from '../Form'
@@ -19,12 +19,12 @@ export default function List({ data, index: listIndex }) {
   
   return (
     <Container done={data.done}>   
-      <header className='header--card'>
-        <h2 className='title--card'>{data.title}</h2>
+      <Header>
+        <Title>{data.title}</Title>
         {data.creatable && (
-          <button className='button--add' type='button' onClick={handleClickOpen}>
+          <Button type='button' onClick={handleClickOpen}>
             <MdAdd size={24} color='#fff' /> 
-          </button>
+          </Button>
         )}
         <Dialog
         open={open}
@@ -33,9 +33,9 @@ export default function List({ data, index: listIndex }) {
         aria-describedby="alert-dialog-description">
           <Form open={open} />
          </Dialog> 
-      </header>
+      </Header>
 
-      <ul className='ul--list'>
+      <Ul>
         {data.cards.map((card, index) => (
         <Card 
           key={card.id} 
@@ -44,7 +44,7 @@ export default function List({ data, index: listIndex }) {
           data={card}
         /> 
         ))}
-      </ul>
+      </Ul>
     </Container>
   )
 }

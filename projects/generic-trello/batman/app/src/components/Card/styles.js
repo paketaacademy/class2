@@ -7,25 +7,35 @@ export const Container = styled.div`
   margin-bottom: 10px;
   padding: 5px;
   cursor: pointer;
+`
 
-  .header--card{
+
+export const Header = styled.div`
     position: absolute; 
     top: -16px;
     left: 0; 
-  }
+  `
 
-  .text--card{
+export const P = styled.p`
     font-weight: 500;
-    line-height: 15px; 
-  }
+    line-height: 15px; `
 
-  .img--card{
+export const Image = styled.img`
     width: 24px;
     height: 24px;
     border-radius: 2px;
     margin-left: 250px;
-  }
+    `
 
+export const Label = styled.span`
+  width: 50px;
+  height: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  background: ${props => props.color};
+
+
+  ${props => props.isDragging && css`
   @media screen and (max-width: 339px) and (min-width: 228px) {
     .img--card{
       margin-left: 200px;
@@ -38,18 +48,10 @@ export const Container = styled.div`
     background: rgb(238 232 170);
     box-shadow: none;
 
-    .text--card, 
+    P, 
     .img--card, 
-    .header--card {
+    Header {
       opacity: 0;
     }
   `}
-`
-
-export const Label = styled.span`
-  width: 50px;
-  height: 10px;
-  border-radius: 5px;
-  display: inline-block;
-  background: ${props => props.color};
 `

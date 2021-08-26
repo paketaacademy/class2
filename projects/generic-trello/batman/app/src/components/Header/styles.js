@@ -8,6 +8,17 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+` 
+
+export const Image = styled.img`
+  height: 60px;  
+  
+` 
+
+export const Title = styled.h1`
+    font-family: cursive;
+    margin-left: 20px;
+
   width: auto;
 
   @media screen and (max-width: 415px) and (min-width: 320px) {
@@ -32,4 +43,5 @@ export const Container = styled.div`
       color: rgb(238 221 130);
     }
   }
+
 `

@@ -4,8 +4,7 @@ import cardSchema from "../../models/card-schema.js"
 export const cardControllerDelete = {
 
   async deleteCard (req, res) {
-    const cardId  = req.params.id
-
+    const { cardId } = req.body
     try {
       const card = await Mongoose.model('cards', cardSchema, 'cards')
       const foundCard = await card.findById({ _id: cardId })
