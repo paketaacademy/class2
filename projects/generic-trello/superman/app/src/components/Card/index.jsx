@@ -5,7 +5,7 @@ import { Draggable } from 'react-beautiful-dnd'
 export default function Card({ card, index }) {
 
   return (
-    <Draggable draggableId={card.id} index={index}>
+    <Draggable draggableId={card._id} index={index}>
       {(provided) => (
         <div
           ref={provided.innerRef}

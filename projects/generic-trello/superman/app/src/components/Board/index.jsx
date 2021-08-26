@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router"
 import { v4 as uuid } from 'uuid'
+import axios from 'axios'
 import List from '../List/list'
 import store from '../../utils/store.js'
 import StoreApi from '../../utils/storeApi'
@@ -10,7 +11,8 @@ import { ContainerBoard, ListContainer, DropList } from './style.js'
 import { getToken } from '../../Services/auth'
 
 export default function Board() {
-  const [data, setData] = useState(store)
+  const [data, setData] = useState([])
+
   const addMoreCard = (title, listId) => {
     const newCardId = uuid()
     const newCard = {
@@ -18,7 +20,7 @@ export default function Board() {
       title,
     }
 
-    const list = data.lists[listId]
+    const list = data.find((list) => list._id == listId)
     list.cards = [...list.cards, newCard]
 
     const newState = {
@@ -68,44 +70,63 @@ export default function Board() {
     if (!destination) {
       return
     }
-    if (type === 'list') {
-      const newListIds = data.listIds
-      newListIds.splice(source.index, 1)
-      newListIds.splice(destination.index, 0, draggableId)
-      return
+
+    if (type != 'list') {
+      axios.patch(`${API}/card`, { idCard: draggableId, idList: destination.droppableId },
+        {
+          headers: {
+            'auth-superman': getToken(),
+          }
+        }
+      )
+        .then(response => {
+          window.location.reload()
+        }).catch(err => {
+          console.log(err.response.data.message)
+        })
     }
 
-    const sourceList = data.lists[source.droppableId]
-    const destinationList = data.lists[destination.droppableId]
-    const draggingCard = sourceList.cards.filter(
-      (card) => card.id === draggableId
-    )[0]
+    // if (type === 'list') {
+    //   const newListIds = data.listIds
+    //   newListIds.splice(source.index, 1)
+    //   newListIds.splice(destination.index, 0, draggableId)
+    //   return
+    // }
 
-    if (source.droppableId === destination.droppableId) {
-      sourceList.cards.splice(source.index, 1)
-      destinationList.cards.splice(destination.index, 0, draggingCard)
-      const newSate = {
-        ...data,
-        lists: {
-          ...data.lists,
-          [sourceList.id]: destinationList,
-        },
-      }
-      setData(newSate)
-    } else {
-      sourceList.cards.splice(source.index, 1)
-      destinationList.cards.splice(destination.index, 0, draggingCard)
+    // const sourceList = data.lists[source.droppableId]
+    // const destinationList = data.lists[destination.droppableId]
+    // console.log('card23', sourceList)
+    // const draggingCard = sourceList.cards.filter(
+    //   (card) => card.id === draggableId
+    // )[0]
 
-      const newState = {
-        ...data,
-        lists: {
-          ...data.lists,
-          [sourceList.id]: sourceList,
-          [destinationList.id]: destinationList,
-        },
-      }
-      setData(newState)
-    }
+
+
+    // if (source.droppableId === destination.droppableId) {
+    //   sourceList.cards.splice(source.index, 1)
+    //   destinationList.cards.splice(destination.index, 0, draggingCard)
+    //   const newSate = {
+    //     ...data,
+    //     lists: {
+    //       ...data.lists,
+    //       [sourceList.id]: destinationList,
+    //     },
+    //   }
+    //   setData(newSate)
+    // } else {
+    //   sourceList.cards.splice(source.index, 1)
+    //   destinationList.cards.splice(destination.index, 0, draggingCard)
+
+    //   const newState = {
+    //     ...data,
+    //     lists: {
+    //       ...data.lists,
+    //       [sourceList.id]: sourceList,
+    //       [destinationList.id]: destinationList,
+    //     },
+    //   }
+    //   setData(newState)
+    // }
   }
 
 
@@ -126,10 +147,11 @@ export default function Board() {
       .then(async response => {
         const data = await response.json()
         setListAll(data)
+        setData(data)
+
       })
       .catch(error => console.log(error))
   }, [API, setListAll])
-  console.log('fora',listAll)
 
   return (
     <StoreApi.Provider value={{ addMoreCard, addMoreList, updateListTitle }}>
@@ -145,15 +167,14 @@ export default function Board() {
                   const list = data.lists[listId]
                   return <List list={list} key={listId} index={index} /> */}
                 {/* })} */}
-                
-                {console.log('antes do map', listAll.length),
+
+                {
                   listAll.length > 0 && listAll.map((item, index) => {
-                    console.log('dentro', item)
-                    return <List list={item} key={item.id} index={index} />
+                    return <List list={item} key={item._id} index={index} />
                   }
                   )
                 }
-                <InputContainer type="list" />
+                <InputContainer id={id} type="list" />
                 {provided.placeholder}
               </ListContainer>
             )}

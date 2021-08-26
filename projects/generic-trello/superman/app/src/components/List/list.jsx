@@ -14,7 +14,6 @@ export default function List({ list, index }) {
   const [cardAll, setCardAll] = useState([])
   const listId = list._id
 
-  console.log('lista', listId)
   useEffect(() => {
     fetch(
       `${API}/card/${listId}`,
@@ -31,31 +30,30 @@ export default function List({ list, index }) {
       })
       .catch(error => console.log(error))
   }, [API, setCardAll])
-
-  console.log('card', cardAll)
-
+  
   return (
-    <Draggable draggableId={list.id} index={index}>
+    <Draggable draggableId={list._id} index={index}>
       {(provided) => (
         <div {...provided.draggableProps} ref={provided.innerRef}>
           <ContainerList {...provided.dragHandleProps}>
             <CssBaseline />
 
-            <Title title={list.title} listId={list.id} />
-            <Droppable droppableId={list.id}>
+            <Title title={list.title} listId={list._id} />
+            <Droppable droppableId={list._id}>
               {(provided) => (
                 <ContainerCard
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                 >
-                  {cardAll.length > 0 && cardAll.map((card, index) => (
-                    <Card key={card.id} card={card} index={index} />
+                  {
+                  cardAll.length > 0 && cardAll.map((card, index) => (
+                    <Card key={card._id} card={card} index={index} />
                   ))}
                   {provided.placeholder}
                 </ContainerCard>
               )}
             </Droppable>
-            <InputContainer listId={list.id} type="card" />
+            <InputContainer id={list._id} type="card" />
           </ContainerList>
         </div>
       )}

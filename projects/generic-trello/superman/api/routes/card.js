@@ -5,7 +5,6 @@ import validationToken from './configs/validationToken.js'
 app.post('/card', validationToken, async (req, res) => {
 
   const { title, description, members, idList } = req.body
-
   const Lists = Mongoose.model('lists', ListsSchema, 'lists')
   const Cards = Mongoose.model('cards', CardsSchema, 'cards')
 
@@ -48,7 +47,6 @@ app.delete("/card", validationToken, async (req, res) => {
 app.get('/card/:idList', validationToken, async (req, res) => {
 
   const { idList } = req.params
-  console.log('lista', idList)
 
   const Lists = Mongoose.model('lists', ListsSchema, 'lists')
   const Cards = Mongoose.model('cards', CardsSchema, 'cards')
@@ -76,7 +74,6 @@ app.get('/card/:idList', validationToken, async (req, res) => {
 
 app.patch('/card', validationToken, async (req, res) => {
   const { idCard, title, description, members, idList } = req.body
-  
   const Cards = Mongoose.model('cards', CardsSchema, 'cards')
 
   try {
@@ -90,7 +87,8 @@ app.patch('/card', validationToken, async (req, res) => {
     foundCard.idList = idList ? idList : foundCard.idList
     foundCard.title = title ? title : foundCard.title
     foundCard.description = description ? description : foundCard.description
-    if(members.length){
+    if(members && members.length){
+      
       foundCard.members.push(...members)
     }
 
