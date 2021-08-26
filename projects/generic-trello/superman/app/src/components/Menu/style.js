@@ -16,7 +16,7 @@ export const NavBar = styled.div`
   display:flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 1.25rem 4.375rem;  
+  padding: 10px 4.375rem;  
   background-color:#02317c;
   color:#fff;
   align-items: center;
@@ -64,12 +64,13 @@ export const DetailsUser = styled.div`
 export const Image = styled(Avatar)`
   width: 1.563rem;
   height: 1.563rem;
+  margin-right: 10px;
 `
 
 export const BoxUser = styled.div`
   padding: 0 0.625rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 `

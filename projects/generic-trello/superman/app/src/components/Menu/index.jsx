@@ -47,12 +47,9 @@ function Menu() {
       <Item>
         <DetailsUser>
           <BoxUser>
-            <Image>U</Image>
+            <Image />
             <div>
               {list.name}
-            </div>
-            <div>
-              {list.email}
             </div>
           </BoxUser>
           <Logout />
