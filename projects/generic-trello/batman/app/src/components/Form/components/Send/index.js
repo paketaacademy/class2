@@ -3,7 +3,11 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import SaveIcon from '@material-ui/icons/Save'
 import { SubmitButton } from './style.js' 
 
-export default function Send() {
+export default function Send(props) {
+
+  const handleClick =()=>{
+
+  }
 
   return (
     <>
@@ -11,6 +15,8 @@ export default function Send() {
         variant="contained"
         size="small"
         startIcon={<SaveIcon />}
+        type={props.type}
+        onClick={handleClick}
       >
         Salvar
       </SubmitButton>

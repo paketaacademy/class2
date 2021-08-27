@@ -57,6 +57,7 @@ export default function Card({ data, index, listIndex }) {
         <Label key={"green"} color={"green"}/>
       </Header>
       <P contenteditable="true">{data.title}</P>
+      <P contentEditable="true">{data.description}</P>
       {/* { data.users && <Image src={data.users} alt='people image'/> } */}
     </Container>   
     

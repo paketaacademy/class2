@@ -8,7 +8,7 @@ import axios from 'axios'
 import { getToken } from '../../services/auth'
 
 export default function List({ data, idList: listIndex }) {
-  console.log("data", data._id)
+  
   const [cards, setCards] = useState([])
   const urlCards= `http://localhost:3030/card/list/${data._id}`
 
@@ -16,7 +16,6 @@ export default function List({ data, idList: listIndex }) {
     axios.get(urlCards,{ headers: { "auth-token": getToken() } })
     .then(response=>{
       const responseAboutCards = response.data
-      console.log("cards",responseAboutCards)
       setCards(responseAboutCards)
     }).catch(
       (error)=>{
@@ -40,7 +39,7 @@ export default function List({ data, idList: listIndex }) {
       <Header>
         <Title>{data.title}</Title>
         {true && (
-          <Button type='button' onClick={handleClickOpen}>
+          <Button type='button'  onClick={handleClickOpen} >
             <MdAdd size={24} color='#fff' /> 
           </Button>
         )}
@@ -48,8 +47,9 @@ export default function List({ data, idList: listIndex }) {
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description">
-          <Form open={open} />
+        aria-describedby="alert-dialog-description"
+        >
+          <Form open={open} idlist={ data._id } handleClose={handleClose} />
          </Dialog> 
       </Header>
 

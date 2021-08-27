@@ -21,7 +21,6 @@ export default function Board() {
     axios.get(urlList, { headers: { "auth-token": getToken() } })
       .then(response => {
         const responseAboutListData = response.data
-        console.log(responseAboutListData)
         setLists(responseAboutListData)
         setLoad(true)
   })
@@ -33,13 +32,15 @@ export default function Board() {
   function move(fromList, toList, from, to) {
     setLists(produce(lists, draft => {
       console.log(`fromList: ${fromList} - toList: ${toList} - from: ${from} - to: ${to}`)
+      // const dragged = [fromList].cards[from]  
+      // draft[fromList].cards.splice(from, 1) 
+      // draft[fromList].cards.splica(to, 0, dragged)
     }))
   }
 
   return (
     <BoardContext.Provider value={{ lists, move }}>
       <Container>
-        {console.log("ola", lists)}
         {lists.map((list, index) => <List key={list.title} index={index} data={list} />)}
       </Container>
     </BoardContext.Provider>
