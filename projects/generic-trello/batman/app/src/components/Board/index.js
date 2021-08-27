@@ -7,10 +7,9 @@ import BoardContext from './context'
 import produce from 'immer'
 import { getToken } from '../../services/auth'
 
-
-
 export default function Board() {
   const [lists, setLists] = useState([])
+  const [lista2, setLista2] = useState([])
   const [load, setLoad] = useState(false)
   const { id } = useParams()
   const urlList= `http://localhost:3030/list/${id}`
@@ -25,23 +24,31 @@ export default function Board() {
         setLoad(true)
   })
   },[])
-  
-  
-  
+  let list_id = ''
+  lists.map(lm => {
+    list_id = lm._id
+  })
+  console.log(list_id)
+  useEffect(() => {
+    axios.get('http://localhost:3030/card/list/6127e9c22d10ed34f889b901', { headers: { "auth-token": getToken() } })
+    .then(response => {
+      const responseList = response.data
+      setLista2(responseList)
+      console.log('teste:', response.data)
 
-  function move(fromList, toList, from, to) {
-    setLists(produce(lists, draft => {
-      console.log(`fromList: ${fromList} - toList: ${toList} - from: ${from} - to: ${to}`)
-      // const dragged = [fromList].cards[from]  
-      // draft[fromList].cards.splice(from, 1) 
-      // draft[fromList].cards.splica(to, 0, dragged)
-    }))
+    }).catch(error => {
+      console.log('carol:',error.message)
+    })
+  },[])
+  
+  function move(targetList, cardId) {
+    
   }
 
   return (
     <BoardContext.Provider value={{ lists, move }}>
       <Container>
-        {lists.map((list, index) => <List key={list.title} index={index} data={list} />)}
+        {lists.map((list, index) => <List key={list.title} index={index} data={list} idList={list._id} />)}
       </Container>
     </BoardContext.Provider>
   )

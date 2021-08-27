@@ -7,6 +7,8 @@ export const Container = styled.div`
   height: 475px;
   overflow-y: scroll;
   border-radius: 10px;
+  min-width: 300px;
+  min-height: 300px;
 
   ::-webkit-scrollbar-track {
     background-color: #F4F4F4;
