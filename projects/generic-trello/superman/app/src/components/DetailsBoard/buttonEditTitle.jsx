@@ -5,25 +5,24 @@ import Fade from '@material-ui/core/Fade'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import axios from 'axios'
+import { useParams } from "react-router"
 import Snackbar from '@material-ui/core/Snackbar'
 import { getToken } from '../../Services/auth.js'
 import MuiAlert from '@material-ui/lab/Alert'
-import { Box, BoxContent, Icon } from '../Perfil/style.js'
-import { ModalBox, PaperBox, BoxDetails } from './style.js'
+import { ModalBox, PaperBox, BoxDetails, EditPencil } from './style.js'
 
-export default function ModalCreateBoard() {
+export default function ButtonEditTitle({ titleBoard }) {
 
-  const history = useHistory()
+  let { id } = useParams()
   const [open, setOpen] = useState(false)
   const API = process.env.REACT_APP_API_URL
-
-  const [title, setTitle] = useState('')
-
-  const [openMSG, setOpenMSG] = useState(false)
-  const [resAPI, setResAPI] = useState('')
+  const history = useHistory()
+  const [title, setTitle] = useState(titleBoard)
   const [severity, setSeverity] = useState('')
+  const [resAPI, setResAPI] = useState('')
+  const [openMSG, setOpenMSG] = useState(false)
 
-  const handleChange = e => {    
+  const handleChange = e => {
     setTitle(e.target.value)
   }
 
@@ -32,24 +31,39 @@ export default function ModalCreateBoard() {
   }
 
   const handleSubmit = e => {
-    e.preventDefault()    
-    axios.post(`${API}/board`, { title },
+    e.preventDefault()
+    axios.patch(`${API}/board/title`, { idBoard: id, title: title },
       {
         headers: {
           'auth-superman': getToken(),
         }
       })
       .then(response => {
-        const { id, message} = response.data        
-        setResAPI(message)
-        setSeverity('success')
-        setOpenMSG(true)
-        history.push(`/quadro/${id}`)        
+        window.location.reload()        
       }).catch(err => {
-        setResAPI(err.response.data.message)       
+        setResAPI(err.response.data.message)
+        setOpen(false)
         setSeverity('error')
         setOpenMSG(true)
+      })
+  }
+
+  const handleDelete = e => {
+    e.preventDefault()    
+    axios.delete(`${API}/board`,
+      {
+        headers: {
+          'auth-superman': getToken(),
+        },
+        data: {idBoard: id }
+      })
+      .then(response => {   
+        history.push(`/perfil`)
+      }).catch(err => {
+        setResAPI(err.response.data)
         setOpen(false)
+        setSeverity('error')
+        setOpenMSG(true)
       })
   }
 
@@ -72,9 +86,7 @@ export default function ModalCreateBoard() {
           {resAPI}
         </Alert>
       </Snackbar>
-      <Box elevation={3} onClick={handleOpen} >
-        <BoxContent>Adicionar um novo quadro</BoxContent><Icon />
-      </Box>
+      <EditPencil onClick={handleOpen} />
       <ModalBox
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -87,9 +99,8 @@ export default function ModalCreateBoard() {
         }}
       >
         <Fade in={open}>
-
           <PaperBox>
-            <form onSubmit={handleSubmit}>
+            <form >
               <BoxDetails>
                 <TextField
                   id="title"
@@ -97,12 +108,16 @@ export default function ModalCreateBoard() {
                   label="Nome do Quadro"
                   variant="outlined"
                   color="secondary"
+                  defaultValue={titleBoard}
                   onChange={handleChange}
                 />
               </BoxDetails>
               <BoxDetails>
-                <Button type="submit" variant="contained" color="primary">
-                  Criar
+                <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>
+                  Salvar
+                </Button>
+                <Button type="submit" variant="contained" color="secondary" onClick={handleDelete}>
+                  Excluir
                 </Button>
               </BoxDetails>
             </form>

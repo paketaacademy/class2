@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react'
 import { InputBase } from '@material-ui/core'
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
 import storeApi from '../../utils/storeApi'
 
 export default function Title({ title, listId }) {
@@ -34,7 +33,6 @@ export default function Title({ title, listId }) {
           >
             {title}
           </editableTitle>
-          <MoreHorizIcon />
         </editableTitleContainer>
       )}
     </div>
