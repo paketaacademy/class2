@@ -27,13 +27,13 @@ app.post('/card', validationToken, async (req, res) => {
 })
 
 app.delete("/card", validationToken, async (req, res) => {
-  const { idList, idCard } = req.body
-
+  const { idCard } = req.body
+  
   const Cards = Mongoose.model('cards', CardsSchema, 'cards')
 
   const foundCards = await Cards.findOne({ _id: idCard })
 
-  if (foundCards && foundCards.idList == idList) {
+  if (foundCards) {
     Cards.deleteOne({ _id: idCard }).exec()
 
     return res.status(200).json({

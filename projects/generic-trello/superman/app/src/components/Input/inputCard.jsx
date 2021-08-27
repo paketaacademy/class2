@@ -49,12 +49,10 @@ export default function InputCard({ setOpen, id, type }) {
 
   const handleBtnConfirm = () => {
     if (type === 'card') {
-      // addMoreCard(title, id)
       setTitle('')
       setOpen(false)
       addCard()
     } else {
-      // addMoreList(title)
       setTitle('')
       setOpen(false)
       addList()
