@@ -47,21 +47,21 @@ export default function List({ data, idList: listIndex }) {
 
   return (
     <>
-    <ButtonNew type="button" onClick={handleClickOpenList}>
-            <MdAdd size={24} color='#fff' />
-          </ButtonNew>
-          <Modal
-            open={openList}
-            onClose={handleCloseList}
-            aria-labelledby="simple-modal-title"
-            aria-describedby="simple-modal-description"
-          >
-            <FormList open={openList} idBoard={data.idBoard} handleClose={handleClose} />
-          </Modal>
+      <ButtonNew type="button" onClick={handleClickOpenList}>
+        <MdAdd size={24} color='#fff' />
+      </ButtonNew>
+      <Modal
+        open={openList}
+        onClose={handleCloseList}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        <FormList open={openList} idBoard={data.idBoard} handleClose={handleClose} />
+      </Modal>
       <Container done={true}>
-        
+
         <Header>
-          
+
           <Title>{data.title}</Title>
           {true && (
             <Button type='button' onClick={handleClickOpen} >
