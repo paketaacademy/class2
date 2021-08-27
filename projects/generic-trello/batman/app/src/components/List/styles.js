@@ -33,6 +33,7 @@ export const Title = styled.h1`
       font-size:16px;
       padding: 0 10px;
       font-family: cursive;
+      text-transform: uppercase;
     `
 
 
