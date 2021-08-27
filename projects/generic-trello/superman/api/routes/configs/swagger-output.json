@@ -5,7 +5,7 @@
     "title": "Super Trello",
     "description": "Simulando as rotas utilizadas pelo Trello"
   },
-  "host": "localhost: 3001",
+  "host": "localhost:3001",
   "basePath": "/",
   "tags": ["Base URL"],
   "schemes": [
@@ -89,7 +89,13 @@
       "get": {
         "tags": ["Profile"],
         "description": "Retorna informações do usuário logado, como nome e e-mail",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -107,6 +113,11 @@
         "tags": ["Board"],
         "description": "Cria um novo quadro",
         "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "obj",
             "in": "body",
@@ -134,7 +145,13 @@
       "get": {
         "tags": ["Board"],
         "description": "Retorna todos os quadros no qual o usuário logado faz parte",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -151,6 +168,11 @@
         "description": "Apaga o quadro",
         "parameters": [
           {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
+          {
             "name": "obj",
             "in": "body",
             "schema": {
@@ -158,10 +180,7 @@
               "properties": {
                 "idBoard": {
                   "example": "6123dc412ca60567006a32e9"
-                },
-                "idUser": {
-                  "example": "611fb28d6852a047ac1b5e60"
-                }
+                }                
               }
             }
           }
@@ -183,6 +202,11 @@
         "tags": ["Board"],
         "description": "Atualizar o título do quadro",
         "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "obj",
             "in": "body",
@@ -221,16 +245,21 @@
         "description": "Insere membros no quadro",
         "parameters": [
           {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },          
+          {
             "name": "obj",
             "in": "body",
             "schema": {
               "type": "object",
-              "properties": {
-                "idBoard": {
-                  "example": "6123dc1fe25e1c05945b9d5f"
-                },
+              "properties": {                
                 "members": {
                   "example": ["611fb28d6852a047ac1b5e60", "611dd75a9ac8891e54853a24", "611d42bef20812556c90a6ab"]
+                },
+                "idBoard": {
+                  "example": "6123dc1fe25e1c05945b9d5f"
                 }
               }
             }
@@ -255,6 +284,11 @@
         "tags": ["Board"],
         "description": "Retorna todos membros do quadro",
         "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "obj",
             "in": "body",
@@ -285,6 +319,11 @@
         "tags": ["Board"],
         "description": "Remove membro do quadro",
         "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "obj",
             "in": "body",
@@ -317,23 +356,23 @@
         }
       }
     },
-    "/board/notmembers/": {
+    "/board/{idBoard}/notmembers/": {
       "get": {
         "tags": ["Board"],
         "description": "Retorna todos usuários que não são membros do quadro",
         "parameters": [
           {
-            "name": "obj",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "idBoard": {
-                  "example": "6123dc1fe25e1c05945b9d5f"
-                }
-              }
-            }
-          }
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "idBoard",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "example": "6123dc1fe25e1c05945b9d5f"
+          }         
         ],
         "responses": {
           "200": {
@@ -352,6 +391,11 @@
         "tags": ["List"],
         "description": "Deletar a Lista",
         "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "obj",
             "in": "body",
@@ -384,6 +428,11 @@
         "description": "Cria uma nova lista",
         "parameters": [
           {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
+          {
             "name": "obj",
             "in": "body",
             "schema": {
@@ -409,39 +458,16 @@
             "content": "application/json"
           }
         }
-      },
-      "get": {
-        "tags": ["List"],
-        "description": "Retorna todas listas pertencentes ao quadro",
-        "parameters": [
-          {
-            "name": "obj",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "idBoard": {
-                  "example": "6123dc1fe25e1c05945b9d5f"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": "application/json"
-          },
-          "404": {
-            "description": "O quadro não possui nenhuma lista!",
-            "content": "application/json"
-          }
-        }
-      },
+      },      
       "patch": {
         "tags": ["List"],
         "description": "Atualiza o título da lista",
         "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "obj",
             "in": "body",
@@ -474,11 +500,46 @@
         }
       }
     },
+    "/list/{idBoard}": {
+      "get": {
+        "tags": ["List"],
+        "description": "Retorna todas listas pertencentes ao quadro",
+        "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "idBoard",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "example": "6123dc1fe25e1c05945b9d5f"
+          }          
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "O quadro não possui nenhuma lista!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
     "/card": {
       "post": {
         "tags": ["Card"],
         "description": "Cadastro de um Card dentro de uma List",
         "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "obj",
             "in": "body",
@@ -521,6 +582,11 @@
         "description": "Deletar um Card",
         "parameters": [
           {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
+          {
             "name": "obj",
             "in": "body",
             "schema": {
@@ -546,39 +612,16 @@
             "content": "application/json"
           }
         }
-      },
-      "get": {
-        "tags": ["Card"],
-        "description": "Retorna todos os Cards pertencentes a Lista",
-        "parameters": [
-          {
-            "name": "obj",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "idList": {
-                  "example": "6123ad5a955d823ca451e702"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": "application/json"
-          },
-          "404": {
-            "description": "A lista não possui nenhuma cartão!",
-            "content": "application/json"
-          }
-        }
-      },
+      },      
       "patch": {
         "tags": ["Card"],
         "description": "Rota que atualiza o título, descrição, membros e a lista na qual o Card pertence, passar apenas os parametros que quer alterar, não são todos obrigatórios",
         "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "obj",
             "in": "body",
@@ -620,11 +663,46 @@
         }
       }
     },
+    "/card/{idList}": {
+      "get": {
+        "tags": ["Card"],
+        "description": "Retorna todos os Cards pertencentes a Lista",
+        "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "idList",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "example": "6123ad5a955d823ca451e702"
+          }          
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "A lista não possui nenhuma cartão!",
+            "content": "application/json"
+          }
+        }
+      }
+    },
     "/card/removemember": {
       "patch": {
         "tags": ["Card"],
         "description": "Remover membros do Card",
         "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "obj",
             "in": "body",
@@ -663,6 +741,11 @@
         "description": "Retorna todos os membros do Card",
         "parameters": [
           {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
+          {
             "name": "obj",
             "in": "body",
             "schema": {
@@ -692,6 +775,11 @@
         "tags": ["Card"],
         "description": "Retorna todos os usuários que são membros do quadro mas não são membros do Card",
         "parameters": [
+          {
+            "name": "auth-superman",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "obj",
             "in": "body",

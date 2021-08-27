@@ -9,7 +9,7 @@ listContainer: {
 `
 
 export const ContainerBoard = styled.div`
-  min-height: 78vh;
+  min-height: 100vh;
   background: #fff;
   overflow-y: auto;
   display: flex;

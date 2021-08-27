@@ -8,14 +8,15 @@ import { useParams } from "react-router"
 import Snackbar from '@material-ui/core/Snackbar'
 import { getToken } from '../../Services/auth.js'
 import MuiAlert from '@material-ui/lab/Alert'
-import { ModalBox, PaperBox, BoxDetails, StyledContentMore } from './style.js'
+import { ModalBox, PaperBox, BoxDetails, StyledContentMore, TextDexcription } from './style.js'
 
-export default function ButtonEditTitleCard({ cardId, titleCard, listId }) {
+export default function ButtonEditTitleCard({ cardId, titleCard, descriptionCard, listId }) {
 
   let { id } = useParams()
   const [open, setOpen] = useState(false)
   const API = process.env.REACT_APP_API_URL
   const [title, setTitle] = useState(titleCard)
+  const [description, setDescription] = useState(descriptionCard)
   const [severity, setSeverity] = useState('')
   const [resAPI, setResAPI] = useState('')
   const [openMSG, setOpenMSG] = useState(false)
@@ -23,13 +24,16 @@ export default function ButtonEditTitleCard({ cardId, titleCard, listId }) {
   const handleChange = e => {    
     setTitle(e.target.value)
   }
+  const handleChangeDescription = e => {    
+    setDescription(e.target.value)
+  }
 
   const Alert = props => {
     return <MuiAlert elevation={6} variant="filled" {...props} />
   }
   const handleSubmit = e => {
     e.preventDefault()    
-    axios.patch(`${API}/card`, { idCard: cardId, title: title },
+    axios.patch(`${API}/card`, { idCard: cardId, title: title, description: description },
       {
         headers: {
           'auth-superman': getToken(),
@@ -106,11 +110,24 @@ export default function ButtonEditTitleCard({ cardId, titleCard, listId }) {
                 <TextField
                   id="title"
                   name="title"
-                  label="Nome do Quadro"
+                  label="Nome do Card"
                   variant="outlined"
                   color="secondary"
                   defaultValue = {titleCard}
                   onChange={handleChange}
+                />                
+              </BoxDetails>
+              <BoxDetails>
+                <TextDexcription
+                  id="title"
+                  name="title"
+                  label="Descrição"
+                  variant="outlined"
+                  color="secondary"
+                  multiline
+                  rows={10}
+                  defaultValue = {descriptionCard}
+                  onChange={handleChangeDescription}
                 />
               </BoxDetails>
               <BoxDetails>
