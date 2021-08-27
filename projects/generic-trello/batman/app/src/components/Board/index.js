@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 import List from '../List'
 import { Container } from './styles'
@@ -12,9 +12,9 @@ export default function Board() {
   const [lista2, setLista2] = useState([])
   const [load, setLoad] = useState(false)
   const { id } = useParams()
-  const urlList= `http://localhost:3030/list/${id}`
-  useEffect(()=>{
-    if(load){
+  const urlList = `http://localhost:3030/list/${id}`
+  useEffect(() => {
+    if (load) {
       return
     }
     axios.get(urlList, { headers: { "auth-token": getToken() } })
@@ -22,27 +22,23 @@ export default function Board() {
         const responseAboutListData = response.data
         setLists(responseAboutListData)
         setLoad(true)
-  })
-  },[])
-  let list_id = ''
-  lists.map(lm => {
-    list_id = lm._id
-  })
-  console.log(list_id)
-  useEffect(() => {
-    axios.get('http://localhost:3030/card/list/6127e9c22d10ed34f889b901', { headers: { "auth-token": getToken() } })
-    .then(response => {
-      const responseList = response.data
-      setLista2(responseList)
-      console.log('teste:', response.data)
+      })
+  }, [])
 
-    }).catch(error => {
-      console.log('carol:',error.message)
-    })
-  },[])
-  
   function move(targetList, cardId) {
-    
+    console.log("targetList: ", targetList)
+    console.log("CardID", cardId)
+    const data = {
+      listId: targetList,
+      cardId: cardId
+    }
+    axios.patch("http://localhost:3030/card", data, { headers: { "auth-token": getToken() } })
+      .then(response => {
+        console.log("Resposta Board", response)
+        window.location.reload()
+      }).catch(error => {
+        console.log(error)
+      })
   }
 
   return (
