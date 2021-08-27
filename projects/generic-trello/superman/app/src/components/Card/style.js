@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Paper } from '@material-ui/core'
 import Modal from '@material-ui/core/Modal'
+import TextField from '@material-ui/core/TextField'
 
 export const ModalBox = styled(Modal)`
   ${({ theme }) => `
@@ -38,4 +39,8 @@ export const BoxCard = styled(Paper)`
 export const StyledContentMore = styled.div`
   font-size: 1.125rem;
   font-weight: bold;
+  padding: 10px;
+`
+export const TextDexcription = styled(TextField)`
+  width: 29.5ch;
 `

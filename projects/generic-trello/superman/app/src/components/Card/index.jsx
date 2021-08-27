@@ -15,7 +15,7 @@ export default function Card({ card, index, listId }) {
         >
           <BoxCard>
             <div>{card.title}</div>
-            <ButtonEditTitleCard listId={listId} cardId={card._id} titleCard={card.title} />
+            <ButtonEditTitleCard listId={listId} cardId={card._id} titleCard={card.title} descriptionCard={card.description} />
           </BoxCard>
         </div>
       )}
