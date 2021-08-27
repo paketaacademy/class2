@@ -6,7 +6,6 @@ export const cardList = {
 
   async getCardList(req, res) {
     const listId = req.params.id
-    console.log("oioi",req.params)
     const Card = await Mongoose.model('cards', cardSchema, 'cards')
     const List = await Mongoose.model('list', listSchema, 'list')
 

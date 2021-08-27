@@ -33,9 +33,6 @@ export default function Board() {
   function move(fromList, toList, from, to) {
     setLists(produce(lists, draft => {
       console.log(`fromList: ${fromList} - toList: ${toList} - from: ${from} - to: ${to}`)
-      // const dragged = draft[fromList].cards[from]
-      // draft[fromList].cards.splice(from, 1)
-      // draft[toList].cards.splice(to, 0, dragged)
     }))
   }
 
