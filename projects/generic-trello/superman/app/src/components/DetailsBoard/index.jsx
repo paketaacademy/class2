@@ -8,7 +8,6 @@ import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
 import AddMembers from './AddMembers.jsx'
 import RemoveMembers from './RemoveMembers.jsx'
-import CreateIcon from '@material-ui/icons/Create'
 import ButtonEditTitle from './buttonEditTitle.jsx';
 
 const DetailsBoard = () => {
@@ -101,7 +100,7 @@ const DetailsBoard = () => {
   return (
     <ContainerTitle>
       <Details>
-        {boards.title}
+        <div>{boards.title}</div>
         <ButtonEditTitle titleBoard={boards.title}/>
         </Details>
       <Details>

@@ -12,15 +12,18 @@ app.post('/board', validationToken, async (req, res) => {
     const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
 
     try {
-
+      if(title.length < 5){
+        return res.status(400).send({ message: 'O nome do quadro deve possuir no mínimo 5 caracteres!'})
+      }else if(title.length > 30){
+        return res.status(400).send({ message: 'O nome do quadro não pode ter mais que 30 caracteres!'})
+      }
       const board = new Boards({ title, user, members })
       await board.save()
       
       res.status(201).send({message: 'Cadastro realizado com sucesso!', id: board._id })
     } catch (err) {
-      res.status(400).send({ message: `Erro: ${err}`})
-    }
- 
+        console.error(err)
+    } 
 })
 
 app.get('/board', validationToken, async (req, res) => {
@@ -53,8 +56,9 @@ app.get('/board', validationToken, async (req, res) => {
 })
 
 app.delete('/board', validationToken, async (req, res) => {
-  const { idBoard, idUser } = req.body
-
+  const { idBoard } = req.body
+  const idUser = req.user._id
+  
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')
 
   const foundBoards = await Boards.findOne({ _id: idBoard })
@@ -75,9 +79,11 @@ app.delete('/board', validationToken, async (req, res) => {
 
 app.patch('/board/title', validationToken, async (req, res) => {
   const { idBoard, title } = req.body
-
-  if (title.length < 5) {
-    return res.status(400).send('Título deve possuir no mínimo 5 caracteres!')
+ 
+  if(title.length < 5){
+    return res.status(400).send({ message: 'O nome do quadro deve possuir no mínimo 5 caracteres!'})
+  }else if(title.length > 30){
+    return res.status(400).send({ message: 'O nome do quadro não pode ter mais que 30 caracteres!'})
   }
 
   const Boards = Mongoose.model('boards', BoardsSchema, 'boards')

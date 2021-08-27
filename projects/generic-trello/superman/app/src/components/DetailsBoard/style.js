@@ -3,6 +3,7 @@ import Modal from '@material-ui/core/Modal'
 import ListItem from '@material-ui/core/ListItem'
 import Button from '@material-ui/core/Button'
 import List from '@material-ui/core/List'
+import CreateIcon from '@material-ui/icons/Create';
 
 export const ContainerTitle = styled.div`
   ${({ theme }) => `    
@@ -12,6 +13,7 @@ export const ContainerTitle = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    align-self: center;
     padding: 0.313rem 0;
     @media (max-width: 46.875rem) {
       flex-direction: column;
@@ -28,7 +30,7 @@ export const Details = styled.div`
     display: flex;
     flex-direction: row;
     margin: 0 4.375rem;
-    justify-content: center;
+    
     align-items: center;
     @media (max-width: 37.5rem) {
       flex-direction: column;
@@ -123,8 +125,8 @@ export const ButtonEstyled = styled(Button)`
 
 export const ButtonEdit = styled(Button)`
   ${({ theme }) => `
-    width: 10px;
-    margin-left: 10px;
+    width: 0.625rem;
+    margin-left: 0.625rem;
   `
   }`
 
@@ -147,11 +149,21 @@ export const PaperBox = styled.div`
     padding: 0.938rem;
   `
   }`
+
 export const BoxDetails = styled.div`
   ${({ theme }) => `    
     margin: 0.625rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+  `
+  }`
+
+export const EditPencil = styled(CreateIcon)`
+  ${({ theme }) => `    
+    font-size: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    
   `
   }`
   

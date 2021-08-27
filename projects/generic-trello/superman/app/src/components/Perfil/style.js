@@ -36,6 +36,7 @@ export const BoxContent = styled.div`
     align-items: center;
     align-self: center;  
     padding: 0.625rem;
+    overflow: hidden;
   `
 }`
 

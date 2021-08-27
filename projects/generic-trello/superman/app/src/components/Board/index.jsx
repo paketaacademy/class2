@@ -3,7 +3,6 @@ import { useParams } from "react-router"
 import { v4 as uuid } from 'uuid'
 import axios from 'axios'
 import List from '../List/list'
-import store from '../../utils/store.js'
 import StoreApi from '../../utils/storeApi'
 import InputContainer from '../Input/inputContainer'
 import { DragDropContext } from 'react-beautiful-dnd'
@@ -85,50 +84,7 @@ export default function Board() {
           console.log(err.response.data.message)
         })
     }
-
-    // if (type === 'list') {
-    //   const newListIds = data.listIds
-    //   newListIds.splice(source.index, 1)
-    //   newListIds.splice(destination.index, 0, draggableId)
-    //   return
-    // }
-
-    // const sourceList = data.lists[source.droppableId]
-    // const destinationList = data.lists[destination.droppableId]
-    // console.log('card23', sourceList)
-    // const draggingCard = sourceList.cards.filter(
-    //   (card) => card.id === draggableId
-    // )[0]
-
-
-
-    // if (source.droppableId === destination.droppableId) {
-    //   sourceList.cards.splice(source.index, 1)
-    //   destinationList.cards.splice(destination.index, 0, draggingCard)
-    //   const newSate = {
-    //     ...data,
-    //     lists: {
-    //       ...data.lists,
-    //       [sourceList.id]: destinationList,
-    //     },
-    //   }
-    //   setData(newSate)
-    // } else {
-    //   sourceList.cards.splice(source.index, 1)
-    //   destinationList.cards.splice(destination.index, 0, draggingCard)
-
-    //   const newState = {
-    //     ...data,
-    //     lists: {
-    //       ...data.lists,
-    //       [sourceList.id]: sourceList,
-    //       [destinationList.id]: destinationList,
-    //     },
-    //   }
-    //   setData(newState)
-    // }
   }
-
 
   let { id } = useParams()
   const API = process.env.REACT_APP_API_URL
@@ -162,18 +118,12 @@ export default function Board() {
               <ListContainer style={{ display: "flex" }}
                 ref={provided.innerRef}
                 {...provided.droppableProps}
-              >
-                {/* {data.listIds.map((listId, index) => {
-                  const list = data.lists[listId]
-                  return <List list={list} key={listId} index={index} /> */}
-                {/* })} */}
-                
-                {console.log(listAll),
+              >                
+                {
                   listAll.length > 0 && listAll.map((item, index) => {
                     return <List list={item} idList={item._id} titleList={item.title} key={item._id} index={index} />
                   }
-                  )
-                  
+                  )                  
                 }
                 <InputContainer id={id} type="list" />
                 {provided.placeholder}

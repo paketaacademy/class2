@@ -9,21 +9,20 @@ import { useParams } from "react-router"
 import Snackbar from '@material-ui/core/Snackbar'
 import { getToken } from '../../Services/auth.js'
 import MuiAlert from '@material-ui/lab/Alert'
-import CreateIcon from '@material-ui/icons/Create';
-import { ModalBox, PaperBox, BoxDetails, ButtonEdit } from './style.js'
+import { ModalBox, PaperBox, BoxDetails, EditPencil } from './style.js'
 
-export default function ButtonEditTitle({titleBoard}) {
+export default function ButtonEditTitle({ titleBoard }) {
 
   let { id } = useParams()
   const [open, setOpen] = useState(false)
   const API = process.env.REACT_APP_API_URL
-
+  const history = useHistory()
   const [title, setTitle] = useState(titleBoard)
   const [severity, setSeverity] = useState('')
   const [resAPI, setResAPI] = useState('')
   const [openMSG, setOpenMSG] = useState(false)
 
-  const handleChange = e => {    
+  const handleChange = e => {
     setTitle(e.target.value)
   }
 
@@ -32,18 +31,39 @@ export default function ButtonEditTitle({titleBoard}) {
   }
 
   const handleSubmit = e => {
-    e.preventDefault()    
+    e.preventDefault()
     axios.patch(`${API}/board/title`, { idBoard: id, title: title },
       {
         headers: {
           'auth-superman': getToken(),
         }
       })
-      .then(response => {     
-        window.location.reload()
+      .then(response => {
+        window.location.reload()        
       }).catch(err => {
-        console.log(err.response.data)       
+        setResAPI(err.response.data.message)
+        setOpen(false)
+        setSeverity('error')
+        setOpenMSG(true)
+      })
+  }
 
+  const handleDelete = e => {
+    e.preventDefault()    
+    axios.delete(`${API}/board`,
+      {
+        headers: {
+          'auth-superman': getToken(),
+        },
+        data: {idBoard: id }
+      })
+      .then(response => {   
+        history.push(`/perfil`)
+      }).catch(err => {
+        setResAPI(err.response.data)
+        setOpen(false)
+        setSeverity('error')
+        setOpenMSG(true)
       })
   }
 
@@ -58,7 +78,7 @@ export default function ButtonEditTitle({titleBoard}) {
   const handleClose = () => {
     setOpen(false)
   }
-  console.log("title", titleBoard)
+
   return (
     <div>
       <Snackbar open={openMSG} autoHideDuration={6000} onClose={handleCloseMSG}>
@@ -66,9 +86,7 @@ export default function ButtonEditTitle({titleBoard}) {
           {resAPI}
         </Alert>
       </Snackbar>
-      <ButtonEdit variant="contained" color="secondary" onClick={handleOpen}>
-          <CreateIcon />
-        </ButtonEdit>
+      <EditPencil onClick={handleOpen} />
       <ModalBox
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -81,9 +99,8 @@ export default function ButtonEditTitle({titleBoard}) {
         }}
       >
         <Fade in={open}>
-
           <PaperBox>
-            <form onSubmit={handleSubmit}>
+            <form >
               <BoxDetails>
                 <TextField
                   id="title"
@@ -91,13 +108,16 @@ export default function ButtonEditTitle({titleBoard}) {
                   label="Nome do Quadro"
                   variant="outlined"
                   color="secondary"
-                  defaultValue = {titleBoard}
+                  defaultValue={titleBoard}
                   onChange={handleChange}
                 />
               </BoxDetails>
               <BoxDetails>
-                <Button type="submit" variant="contained" color="primary">
+                <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>
                   Salvar
+                </Button>
+                <Button type="submit" variant="contained" color="secondary" onClick={handleDelete}>
+                  Excluir
                 </Button>
               </BoxDetails>
             </form>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { CssBaseline } from '@material-ui/core'
-import { ContainerList, ContainerCard } from './style.js'
+import { ContainerList, ContainerCard, TitleStyled } from './style.js'
 import Title from './title'
 import Card from '../Card'
 import InputContainer from '../Input/inputContainer'
@@ -31,16 +31,17 @@ export default function List({ list, index }) {
       })
       .catch(error => console.log(error))
   }, [API, setCardAll])
-  
+
   return (
     <Draggable draggableId={list._id} index={index}>
       {(provided) => (
         <div {...provided.draggableProps} ref={provided.innerRef}>
           <ContainerList {...provided.dragHandleProps}>
             <CssBaseline />
-
-            <Title title={list.title} listId={list._id} />        
-            <ButtonEditTitleList listId={list._id} titleList={list.title} />    
+            <TitleStyled>
+              <Title title={list.title} listId={list._id} />
+              <ButtonEditTitleList listId={list._id} titleList={list.title} />
+            </TitleStyled>
             <Droppable droppableId={list._id}>
               {(provided) => (
                 <ContainerCard
@@ -48,9 +49,9 @@ export default function List({ list, index }) {
                   {...provided.droppableProps}
                 >
                   {
-                  cardAll.length > 0 && cardAll.map((card, index) => (
-                    <Card key={card._id} card={card} index={index} />
-                  ))}
+                    cardAll.length > 0 && cardAll.map((card, index) => (
+                      <Card key={card._id} listId={list._id} descrCard={card.description} card={card} index={index} />
+                    ))}
                   {provided.placeholder}
                 </ContainerCard>
               )}

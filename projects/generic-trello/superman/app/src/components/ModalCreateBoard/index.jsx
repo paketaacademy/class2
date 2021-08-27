@@ -46,9 +46,10 @@ export default function ModalCreateBoard() {
         setOpenMSG(true)
         history.push(`/quadro/${id}`)        
       }).catch(err => {
-        setResAPI(err.response.data)       
+        setResAPI(err.response.data.message)       
         setSeverity('error')
         setOpenMSG(true)
+        setOpen(false)
       })
   }
 

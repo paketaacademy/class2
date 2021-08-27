@@ -1,23 +1,32 @@
 import app from "./configs/app.js"
-import { Mongoose, BoardsSchema, ListsSchema } from './configs/mongo.js'
+import { Mongoose, BoardsSchema, ListsSchema, CardsSchema } from './configs/mongo.js'
 import validationToken from './configs/validationToken.js'
 
 app.delete("/list", validationToken, async (req, res) => {
   const { idList, idBoard } = req.body
 
   const Lists = Mongoose.model('lists', ListsSchema, 'lists')
+  const Cards = Mongoose.model('cards', CardsSchema, 'cards')
 
   const foundLists = await Lists.findOne({ _id: idList })
+  try {
+    if (foundLists && foundLists.idBoard == idBoard) {
+      const foundCards = await Cards.find({ idList: idList })
+      if (foundCards) {
+        Cards.deleteMany({ idList: idList }).exec()
+      }
 
-  if (foundLists && foundLists.idBoard == idBoard) {
-    Lists.deleteOne({ _id: idList }).exec()
+      Lists.deleteOne({ _id: idList }).exec()
 
-    return res.status(200).json({
-      error: false,
-      message: "Lista apagada com sucesso!"
-    })
+      return res.status(200).json({
+        error: false,
+        message: "Lista apagada com sucesso!"
+      })
+    }
+    return res.status(404).send('Lista ou Quadro não encontrados')
+  } catch(err) {
+    return res.status(500).send(err)
   }
-  return res.status(404).send('Lista ou Quadro não encontrados')
 })
 
 app.post('/list', validationToken, async (req, res) => {
@@ -71,7 +80,7 @@ app.get('/list/:idBoard', validationToken, async (req, res) => {
 app.patch('/list', validationToken, async (req, res) => {
   const { idList, title } = req.body
 
-  if(title.length < 5){
+  if (title.length < 5) {
     return res.status(400).send('Título deve possuir no mínimo 5 caracteres!')
   }
 
@@ -81,15 +90,15 @@ app.patch('/list', validationToken, async (req, res) => {
 
     const foundList = await Lists.findOne({ _id: idList })
 
-    if(foundList){
+    if (foundList) {
       await foundList.updateOne({ title })
       return res.status(200).send('Título atualizado com sucesso!')
     }
 
     return res.status(404).send('Lista não encontrada!')
 
-  } catch(err) {
-    return res.status(400).send({ message: `Erro: ${err}`})
+  } catch (err) {
+    return res.status(400).send({ message: `Erro: ${err}` })
   }
 })
 

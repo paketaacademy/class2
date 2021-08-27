@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Backdrop from '@material-ui/core/Backdrop'
-import { useHistory } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
@@ -9,10 +8,9 @@ import { useParams } from "react-router"
 import Snackbar from '@material-ui/core/Snackbar'
 import { getToken } from '../../Services/auth.js'
 import MuiAlert from '@material-ui/lab/Alert'
-import CreateIcon from '@material-ui/icons/Create';
-import { ModalBox, PaperBox, BoxDetails } from './style.js'
+import { ModalBox, PaperBox, BoxDetails, StyledContentMore } from './style.js'
 
-export default function ButtonEditTitleList({ CardId, titleCard }) {
+export default function ButtonEditTitleCard({ cardId, titleCard, listId }) {
 
   let { id } = useParams()
   const [open, setOpen] = useState(false)
@@ -31,7 +29,7 @@ export default function ButtonEditTitleList({ CardId, titleCard }) {
   }
   const handleSubmit = e => {
     e.preventDefault()    
-    axios.patch(`${API}/card`, { idCard: CardId, title: title },
+    axios.patch(`${API}/card`, { idCard: cardId, title: title },
       {
         headers: {
           'auth-superman': getToken(),
@@ -40,8 +38,30 @@ export default function ButtonEditTitleList({ CardId, titleCard }) {
       .then(response => {     
         window.location.reload()
       }).catch(err => {
-        console.log(err.response.data)       
+        setResAPI(err.response.data)       
+        setSeverity('error')
+        setOpen(false)
+        setOpenMSG(true)       
+      })
+  }
 
+  const handleRemove = e => {
+    e.preventDefault()   
+    axios.delete(`${API}/card`,
+      {
+        headers: {
+          'auth-superman': getToken(),
+        },
+        data: { idCard: cardId }
+      })
+      .then(response => {     
+       console.log('Excluido',response) 
+        window.location.reload()
+      }).catch(err => {
+        setResAPI(err.response.data)       
+        setSeverity('error')
+        setOpen(false)
+        setOpenMSG(true)
       })
   }
 
@@ -64,9 +84,9 @@ export default function ButtonEditTitleList({ CardId, titleCard }) {
           {resAPI}
         </Alert>
       </Snackbar>
-      <div onClick={handleOpen}>
+      <StyledContentMore onClick={handleOpen}>
           ...
-        </div>
+        </StyledContentMore>
       <ModalBox
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -81,7 +101,7 @@ export default function ButtonEditTitleList({ CardId, titleCard }) {
         <Fade in={open}>
 
           <PaperBox>
-            <form onSubmit={handleSubmit}>
+            <form >
               <BoxDetails>
                 <TextField
                   id="title"
@@ -94,8 +114,11 @@ export default function ButtonEditTitleList({ CardId, titleCard }) {
                 />
               </BoxDetails>
               <BoxDetails>
-                <Button type="submit" variant="contained" color="primary">
+                <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>
                   Salvar
+                </Button>
+                <Button type="submit" variant="contained" color="secondary" onClick={handleRemove}>
+                  Excluir
                 </Button>
               </BoxDetails>
             </form>

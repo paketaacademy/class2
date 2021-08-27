@@ -3,7 +3,7 @@ import { BoxCard } from './style.js'
 import { Draggable } from 'react-beautiful-dnd'
 import ButtonEditTitleCard from '../Card/buttonEditTitleCard.jsx'
 
-export default function Card({ card, index }) {
+export default function Card({ card, index, listId }) {
 
   return (
     <Draggable draggableId={card._id} index={index}>
@@ -13,8 +13,9 @@ export default function Card({ card, index }) {
           {...provided.dragHandleProps}
           {...provided.draggableProps}
         >
-          <BoxCard>{card.title}
-            <ButtonEditTitleCard CardId={card._id} titleCard={card.title} />
+          <BoxCard>
+            <div>{card.title}</div>
+            <ButtonEditTitleCard listId={listId} cardId={card._id} titleCard={card.title} />
           </BoxCard>
         </div>
       )}

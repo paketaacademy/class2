@@ -24,11 +24,18 @@ export const BoxDetails = styled.div`
   ${({ theme }) => `    
     margin: 0.625rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
   `
   }`
 
 export const BoxCard = styled(Paper)`
-  padding: 0.625rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.938rem;
   margin: 0.625rem;
+  align-items: center;
+`
+export const StyledContentMore = styled.div`
+  font-size: 1.125rem;
+  font-weight: bold;
 `
