@@ -29,6 +29,7 @@ export default function BasicTextFields({ idlist, handleClose }) {
         console.log(error)
       }).finally(()=>{
         handleClose()
+        window.location.reload()
       })
 
 
