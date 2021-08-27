@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   flex: 0 0 320px;
-  opacity: ${props => props.done ? 0.6 : 1};
   background-color: rgb(250 250 200);
   height: 475px;
   overflow-y: scroll;
   border-radius: 10px;
+  margin-left: 50px;
 
   ::-webkit-scrollbar-track {
     background-color: #F4F4F4;
@@ -48,6 +48,24 @@ export const Button = styled.button`
       &:hover{
         background: rgb(238 221 130);
       }
+    }
+  }
+`
+export const ButtonNew = styled.button`
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgb(218 165 32);
+      border: 0;
+      cursor: pointer;
+      margin-top: 20px;
+      margin-right: 10px;
+      &:hover{
+        background: rgb(238 221 130);
+      }
+      display: block;
+      position: fixed;
+
     }
   }
 `

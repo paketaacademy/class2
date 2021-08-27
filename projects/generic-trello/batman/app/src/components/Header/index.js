@@ -18,14 +18,14 @@ export default function Header() {
       <Image src="https://image.flaticon.com/icons/png/128/280/280772.png" alt="Icone do Batman"></Image>
       <Title>Bat-Trello</Title>
     
-        <SubmitButton   
+        {/* <SubmitButton   
           style={(theme)}
           color="botton"
           variant="outlined" 
           startIcon={<PostAddIcon />}
         >
           
-        </SubmitButton>
+        </SubmitButton> */}
       
      <ExitToAppIcon
         onClick={handleLogout}>
