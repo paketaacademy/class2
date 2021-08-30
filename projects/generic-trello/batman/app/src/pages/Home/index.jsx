@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { getToken } from '../../services/auth.js'
 import Header from '../../components/Header'
 import { BoardCtn, Container, UserBoards, UserDatas } from './styles'
+import { ModalBoard } from '../../components/ModalBoard/index.jsx'
 
 export const Home = () => {
   const [userData, setUserData] = useState({
@@ -39,8 +40,6 @@ export const Home = () => {
   }, [])
 
   const onClick = (e, id) => {
-
-    console.log(id)
     window.location = `/board/${id}`
   }
 
@@ -58,12 +57,17 @@ export const Home = () => {
     <>
       <Header />
       <Container>
-        <UserDatas>
-          <div className="user-data">
-            <h2 className="user-data--h2">{`${userData.user}`}</h2>
-            <h3 className="user-data--h3">{userData.email}</h3>
+        <div className="user-data-container">
+          <UserDatas>
+            <div className="user-data">
+              <h2 className="user-data--h2">{`${userData.user}`}</h2>
+              <h3 className="user-data--h3">{userData.email}</h3>
+            </div>
+          </UserDatas>
+          <div>
+            <ModalBoard />
           </div>
-        </UserDatas>
+        </div>
         <UserBoards>
           {boards.length > 0 &&
             boards.map(renderBoards)}

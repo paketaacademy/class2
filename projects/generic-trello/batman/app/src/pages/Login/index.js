@@ -58,6 +58,7 @@ export default function SignInSide() {
       setSeverity('success')
       let myHeaders = response.headers['auth-token']
       login(myHeaders)
+      window.location = "/home"
     }).catch(err => {
       console.log(err)
       setResAPI(err.message)
