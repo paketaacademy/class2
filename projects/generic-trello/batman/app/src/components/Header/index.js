@@ -1,6 +1,6 @@
 import React from "react"
 import { Container, Image, Title, Exit } from './styles.js'
-import { logout } from '../../services/auth'
+import { logout } from '../../Services/auth'
 import { Link } from "react-router-dom"
 
 export default function Header() {

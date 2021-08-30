@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { getToken } from '../../services/auth.js'
+import { getToken } from '../../Services/auth.js'
 import Header from '../../components/Header'
 import { BoardCtn, Container, UserBoards, UserDatas } from './styles'
 import { ModalBoard } from '../../components/ModalBoard/index.jsx'

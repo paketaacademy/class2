@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { getToken } from '../../services/auth'
+import { getToken } from '../../Services/auth'
 import SendNewList from './Send'
 import { FormBox, Title, TextList } from './style'
 

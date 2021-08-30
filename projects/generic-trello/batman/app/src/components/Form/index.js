@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { getToken } from '../../services/auth'
+import { getToken } from '../../Services/auth'
 import SelectLabel from './components/Label'
 import SelectMembers from './components/Members'
 import Send from './components/Send'

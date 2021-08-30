@@ -5,6 +5,7 @@ import Register from '../../pages/Register'
 import HomePage from '../../pages/HomePage'
 import { Home } from '../../pages/Home'
 import Board from '../Board'
+import { isAuthenticated } from '../../Services/auth'
 
 function page() {
   return (
@@ -13,11 +14,11 @@ function page() {
         <Route exact path='/'>
           <Login />
         </Route>
-
-        <Route path='/home'>
-          <Home />
-        </Route>
-
+        {isAuthenticated() &&
+          <Route path='/home'>
+            <Home />
+          </Route>
+        }
         <Route path='/conectar'>
           <Login />
         </Route>
@@ -25,10 +26,11 @@ function page() {
         <Route path='/registrar'>
           <Register />
         </Route>
-
-        <Route path='/board/:id'>
-          <HomePage />
-        </Route>
+        {isAuthenticated() &&
+          <Route path='/board/:id'>
+            <HomePage />
+          </Route>
+        }
       </Switch>
     </BrowserRouter>
 
