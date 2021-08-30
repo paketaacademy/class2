@@ -13,7 +13,7 @@ export default function InputContainer({ id, type }) {
       <Collapse in={!open}>
         <ContainerAdd
           elevation={0}
-          onClick={() => setOpen(!open)}
+          onClick={() => setOpen(true)}
         >
           <Typography>
             {type === 'card' ? '+ Adicionar um cartão' : '+ Adicionar uma lista'}
