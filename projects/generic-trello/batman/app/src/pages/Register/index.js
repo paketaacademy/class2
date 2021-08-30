@@ -56,7 +56,7 @@ export default function SignUp() {
         window.location = "/"
       }, 2500);
     }).catch(err => {
-      setResAPI(err)
+      setResAPI(err.message)
       setSeverity('error')
       setOpen(true)
     })
