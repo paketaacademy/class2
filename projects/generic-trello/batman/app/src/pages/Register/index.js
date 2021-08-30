@@ -1,4 +1,4 @@
-import React , { useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import { Link } from 'react-router-dom'
 import Snackbar from '@material-ui/core/Snackbar'
-import MuiAlert from '@material-ui/lab/Alert'
+import Alert from '@material-ui/lab/Alert'
 import './style'
 import { PaperDiv, StyledAvatar, Form, SubmitButton } from './style.js'
 
@@ -31,7 +31,7 @@ export default function SignUp() {
   const handleChange = e => {
     inputs[e.target.name] = e.target.value
     setInputs(inputs)
-   
+
   }
 
   const [open, setOpen] = useState(false)
@@ -41,21 +41,20 @@ export default function SignUp() {
     firstName: '',
     lastName: '',
     email: '',
-    password: ''    
+    password: ''
   })
 
-  const Alert = props => {
-    return <MuiAlert elevation={6} variant="filled" {...props} />
-  }
-  
+
+
   const handleSubmit = e => {
     e.preventDefault()
     axios.post('http://localhost:3030/register', inputs).then(response => {
-
-      setResAPI(response)
+      setResAPI(response.data.message)
       setSeverity('success')
       setOpen(true)
-
+      setTimeout(() => {
+        window.location = "/"
+      }, 2500);
     }).catch(err => {
       setResAPI(err)
       setSeverity('error')
@@ -83,7 +82,7 @@ export default function SignUp() {
         <Form onSubmit={handleSubmit} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
-              <TextField 
+              <TextField
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
