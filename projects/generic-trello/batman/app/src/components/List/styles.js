@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   flex: 0 0 320px;
-  background-color: rgb(250 250 200);
+  background-color: rgb(250, 250, 200);
   height: 475px;
   overflow-y: scroll;
   border-radius: 10px;
@@ -50,10 +50,9 @@ export const Header = styled.div`
 `
 
 export const Title = styled.h1`
-  font-weight: 500;
   font-size:16px;
-  padding: 0 10px;
-  font-family: cursive;
+  font-weight: 700;
+  padding: 8px 16px;
   text-transform: uppercase;
 `
 

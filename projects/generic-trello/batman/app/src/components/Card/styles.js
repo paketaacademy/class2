@@ -4,7 +4,7 @@ export const Container = styled.div`
   position: relative;
   background: rgb(238 221 130);
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 24px;
   padding: 5px;
   cursor: pointer;
 `
@@ -20,8 +20,8 @@ export const P = styled.p`
 `
 
 export const Image = styled.img`
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 2px;
   margin-left: 250px;
 `
