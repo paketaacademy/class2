@@ -8,6 +8,23 @@ export const Container = styled.div`
   padding: 5px;
   cursor: pointer;
 `
+export const Button = styled.button`
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: rgb(218 165 32);
+  border: 0;
+  cursor: pointer;
+  margin-top: 30px;
+  &:hover{
+    background: rgb(238 221 130);
+  }
+  position: absolute;
+  top: -16px;
+  right: 5px;
+  text-align: center;
+`
+
 export const Header = styled.div`
   position: absolute; 
   top: -16px;
