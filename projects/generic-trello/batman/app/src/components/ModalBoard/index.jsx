@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { AddBoard, StyledModal, TxtField, Form } from './styles'
 import { MdAdd } from "react-icons/md"
 import axios from 'axios'
-import { getToken } from '../../services/auth'
+import { getToken } from '../../Services/auth'
 
 export const ModalBoard = () => {
   const [open, setOpen] = useState(false)

@@ -4,7 +4,7 @@ import { Container, Label, Header, P, Image, Button } from './styles'
 import BoardContext from '../Board/context'
 import { green } from '@material-ui/core/colors'
 import axios from 'axios'
-import { getToken } from '../../services/auth'
+import { getToken } from '../../Services/auth'
 import { MdClear } from 'react-icons/md'
 
 export default function Card({ data, index, listIndex }) {
