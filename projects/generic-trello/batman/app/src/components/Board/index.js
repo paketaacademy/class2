@@ -30,6 +30,8 @@ export default function Board() {
         const responseAboutListData = response.data
         setLists(responseAboutListData)
         setLoad(true)
+      }).catch(err=>{
+        console.log(err.message)
       })
   }, [])
 
