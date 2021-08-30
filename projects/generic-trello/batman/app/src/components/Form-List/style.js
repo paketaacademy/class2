@@ -8,6 +8,13 @@ export const FormBox = styled.form`
   height: 350px;
   text-align: center;
   padding: 10px;
+  margin-top: 110px;
+  margin-left: 470px;
+
+  @media screen and (max-width: 415px) and (min-width: 340px) { 
+    margin-top: 150px;
+    margin-left: 45px;
+  }
 `
 
 export const Title = styled.p`
@@ -16,4 +23,4 @@ export const Title = styled.p`
 
 export const TextList = styled(TextField)`
   width: 200px;
-  `
+`
