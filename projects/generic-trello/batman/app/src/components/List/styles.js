@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   flex: 0 0 320px;
-  background-color: rgb(250 250 200);
+  background-color: rgb(250, 250, 200);
   height: 475px;
   overflow-y: scroll;
   border-radius: 10px;
@@ -23,16 +23,16 @@ export const Container = styled.div`
   }
 `
 export const Header = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 42px;`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 42px;
+`
 
 export const Title = styled.h1`
-  font-weight: 500;
   font-size:16px;
-  padding: 0 10px;
-  font-family: cursive;
+  font-weight: 700;
+  padding: 8px 16px;
   text-transform: uppercase;
  `
 export const Button = styled.button`

@@ -65,18 +65,19 @@ export default function Board() {
 
   return (
     <BoardContext.Provider value={{ lists, move }}>
-      <ButtonNew type="button" onClick={handleClickOpenList}>
-        <MdAdd size={24} color='#fff' />
-      </ButtonNew>
-      <Modal
-        open={openList}
-        onClose={handleCloseList}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
-        <FormList open={openList} idBoard={id} handleClose={handleClose} />
-      </Modal>
       <Container>
+
+        <ButtonNew type="button" onClick={handleClickOpenList}>
+          <MdAdd size={24} color='#fff' />
+        </ButtonNew>
+        <Modal
+          open={openList}
+          onClose={handleCloseList}
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+        >
+          <FormList open={openList} idBoard={id} handleClose={handleClose} />
+        </Modal>
         {lists.map((list, index) => <List key={list.title} index={index} data={list} idList={list._id} />)}
       </Container>
     </BoardContext.Provider>
