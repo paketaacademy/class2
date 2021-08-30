@@ -1,3 +1,6 @@
+import styled from "styled-components"
+import { Button } from "@material-ui/core"
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 
 export const SubmitButton = styled(Button)`
   margin-left: 60px;
