@@ -27,37 +27,18 @@ export default function List({ data, idList: listIndex }) {
   }, [urlCards, setCards])
 
   const [open, setOpen] = React.useState(false)
-  const [openList, setOpenList] = useState(false)
 
-  const handleClickOpenList = () => {
-    setOpenList(true)
-  }
-
-  const handleCloseList = () => {
-    setOpenList(false)
+  const handleClose = () => {
+    setOpen(false)
   }
 
   const handleClickOpen = () => {
     setOpen(true)
   }
 
-  const handleClose = () => {
-    setOpen(false)
-  }
 
   return (
     <>
-      <ButtonNew type="button" onClick={handleClickOpenList}>
-        <MdAdd size={24} color='#fff' />
-      </ButtonNew>
-      <Modal
-        open={openList}
-        onClose={handleCloseList}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
-        <FormList open={openList} idBoard={data.idBoard} handleClose={handleClose} />
-      </Modal>
       <Container done={true}>
 
         <Header>
