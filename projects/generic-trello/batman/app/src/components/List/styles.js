@@ -29,53 +29,45 @@ export const Header = styled.div`
     height: 42px;`
 
 export const Title = styled.h1`
-      font-weight: 500;
-      font-size:16px;
-      padding: 0 10px;
-      font-family: cursive;
-      text-transform: uppercase;
-    `
-
-
+  font-weight: 500;
+  font-size:16px;
+  padding: 0 10px;
+  font-family: cursive;
+  text-transform: uppercase;
+ `
 export const Button = styled.button`
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: rgb(218 165 32);
-      border: 0;
-      cursor: pointer;
-      margin-top: 30px;
-      margin-right: 10px;
-      &:hover{
-        background: rgb(238 221 130);
-      }
-    }
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgb(218 165 32);
+  border: 0;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-right: 10px;
+  &:hover{
+    background: rgb(238 221 130);
   }
 `
 export const ButtonNew = styled.button`
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: rgb(218 165 32);
-      border: 0;
-      cursor: pointer;
-      margin-top: 20px;
-      margin-right: 10px;
-      &:hover{
-        background: rgb(238 221 130);
-      }
-      display: block;
-      position: fixed;
-
-    }
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgb(218 165 32);
+  border: 0;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 10px;
+  &:hover{
+    background: rgb(238 221 130);
   }
+  display: block;
+  position: fixed;
 `
 
 export const Ul = styled.ul`
-    margin-top: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+  margin-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   @media screen and (max-width: 800px) and (min-width: 416px) { 
     height: 422px;

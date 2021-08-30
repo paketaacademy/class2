@@ -18,7 +18,6 @@ export const Home = () => {
     axios.get(urlProfile, { headers: { "auth-token": getToken() } })
       .then(response => {
         const responseAboutUserData = response.data
-        console.log(responseAboutUserData)
         setUserData({
           user: `${responseAboutUserData.firstName} ${responseAboutUserData.lastName}`,
           email: responseAboutUserData.email
@@ -34,7 +33,6 @@ export const Home = () => {
       }
     }).then(response => {
       const responseAboutUserBoards = response.data
-      console.log(responseAboutUserBoards)
       setBoards(responseAboutUserBoards)
     })
   }, [])
