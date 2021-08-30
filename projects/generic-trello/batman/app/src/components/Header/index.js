@@ -1,6 +1,5 @@
 import React from "react"
-import { Container, Image, Title } from './styles.js'
-import ExitToAppIcon from '@material-ui/icons/ExitToApp'
+import { Container, Image, Title, Exit } from './styles.js'
 import { logout } from '../../services/auth'
 
 export default function Header() {
@@ -15,9 +14,9 @@ export default function Header() {
       <Image src="https://image.flaticon.com/icons/png/128/280/280772.png" alt="Icone do Batman"></Image>
       <Title>Bat-Trello</Title>
       
-     <ExitToAppIcon
+     <Exit
         onClick={handleLogout}>
-      </ExitToAppIcon>
+      </Exit>
     </Container>
 
   )

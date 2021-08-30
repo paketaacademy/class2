@@ -7,7 +7,7 @@ import Dialog from '@material-ui/core/Dialog'
 import FormList from '../Form-List'
 import axios from 'axios'
 import { getToken } from '../../services/auth'
-import Modal from '@material-ui/core/Modal';
+import Modal from '@material-ui/core/Modal'
 
 export default function List({ data, idList: listIndex }) {
 
