@@ -46,10 +46,9 @@ export const Home = () => {
     e.preventDefault()
     axios.delete(`http://localhost:3030/board/${id}`, { headers: { "auth-token": getToken() } })
       .then(response => {
-        console.log(response)
         window.location.reload()
       }).catch((err) => {
-        console.log(err)
+
       })
   }
 
@@ -62,7 +61,6 @@ export const Home = () => {
           <p>{item.description}</p>
         </BoardCtn>
         <Button onClick={(event) => handleDelete(event, item._id)} key={index} >
-          {console.log(item._id)}
           <MdClear size={12} color='#fff' />
         </Button>
       </>
