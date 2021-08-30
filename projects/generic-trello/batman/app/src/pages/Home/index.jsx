@@ -2,8 +2,9 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { getToken } from '../../services/auth.js'
 import Header from '../../components/Header'
-import { BoardCtn, Container, UserBoards, UserDatas } from './styles'
+import { BoardCtn, Container, UserBoards, UserDatas, Button } from './styles'
 import { ModalBoard } from '../../components/ModalBoard/index.jsx'
+import { MdClear } from 'react-icons/md'
 
 export const Home = () => {
   const [userData, setUserData] = useState({
@@ -37,16 +38,34 @@ export const Home = () => {
     })
   }, [])
 
-  const onClick = (e, id) => {
+  const handleClick = (e, id) => {
     window.location = `/board/${id}`
+  }
+
+  const handleDelete = (e, id) => {
+    e.preventDefault()
+    axios.delete(`http://localhost:3030/board/${id}`, { headers: { "auth-token": getToken() } })
+      .then(response => {
+        console.log(response)
+        window.location.reload()
+      }).catch((err) => {
+        console.log(err)
+      })
   }
 
 
   const renderBoards = (item, index) => {
     return (
-      <BoardCtn onClick={(event) => onClick(event, item._id)} key={index}>
-        <h2>{item.title}</h2>
-      </BoardCtn>
+      <>
+        <BoardCtn onClick={(event) => handleClick(event, item._id)} key={index}>
+          <h2>{item.title}</h2>
+          <p>{item.description}</p>
+        </BoardCtn>
+        <Button onClick={(event) => handleDelete(event, item._id)} key={index} >
+          {console.log(item._id)}
+          <MdClear size={12} color='#fff' />
+        </Button>
+      </>
     )
   }
 
