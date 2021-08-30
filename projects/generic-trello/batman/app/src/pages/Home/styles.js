@@ -16,6 +16,21 @@ export const Container = styled.div`
   }
 `
 
+export const Button = styled.button`
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: rgb(218 165 32);
+  border: 0;
+  cursor: pointer;
+  margin-top: 30px;
+  &:hover{
+    background: rgb(238 221 130);
+  }
+  text-align: center;
+  margin-right: 25px;
+`
+
 export const UserBoards = styled.div`
   display: flex;
   flex-direction: row;
