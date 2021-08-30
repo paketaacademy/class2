@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Header, Title, Button, Ul, ButtonNew } from './styles'
-import { MdAdd } from 'react-icons/md'
+import { MdAdd, MdClear } from 'react-icons/md'
 import Card from '../Card'
 import Form from '../Form'
 import Dialog from '@material-ui/core/Dialog'
@@ -35,12 +35,29 @@ export default function List({ data, idList: listIndex }) {
     setOpen(true)
   }
 
+  const handleDelete = (e) => {
+    e.preventDefault()
+    axios.delete(`http://localhost:3030/list`, { headers: { "auth-token": getToken() } , data:{ listId: data._id } })
+      .then(response => {
+        console.log(response)
+        window.location.reload()
+      }).catch((err) => {
+        console.log(err)
+      })
+  }
+
+
 
   return (
     <>
+
       <Container done={true}>
 
         <Header>
+          <Button type='button' onClick={handleDelete} idlist={data._id} >
+            {console.log(data._id)}
+            <MdClear size={24} color='#fff' />
+          </Button>
 
           <Title>{data.title}</Title>
           {true && (
