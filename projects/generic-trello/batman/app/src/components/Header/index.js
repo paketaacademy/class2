@@ -20,8 +20,6 @@ export default function Header() {
         <Exit
           onClick={handleLogout} />
       </div>
-
     </Container>
-
   )
 }

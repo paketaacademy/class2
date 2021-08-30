@@ -32,6 +32,7 @@ export const Label = styled.span`
   border-radius: 5px;
   display: inline-block;
   background: ${props => props.color};
+  margin-top: 16px;
 
   ${props => props.isDragging && css`
   @media screen and (max-width: 339px) and (min-width: 228px) {

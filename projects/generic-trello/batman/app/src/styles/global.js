@@ -5,6 +5,7 @@ export default createGlobalStyle`
 
   html, body, #root{
     margin: auto;
+    height: auto;
   }
 
   body{
