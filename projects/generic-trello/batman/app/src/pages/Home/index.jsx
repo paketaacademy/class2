@@ -61,7 +61,7 @@ export const Home = () => {
           <p>{item.description}</p>
         </BoardCtn>
         <Button onClick={(event) => handleDelete(event, item._id)} key={index} >
-          <MdClear size={12} color='#fff' />
+          <MdClear size={15} />
         </Button>
       </>
     )

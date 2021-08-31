@@ -3,10 +3,10 @@ import { Button, TextField } from "@material-ui/core"
 import Modal from "react-modal"
 
 export const AddBoard = styled(Button)`
-  background-color: ${(props) => props.bgcolor || "rgb(255, 235, 80)"};
+  background-color: ${(props) => props.bgcolor || "rgb(255, 235, 00)"};
   color: ${(props) => props.fontcolor || "rgb(0, 0, 0)"};
   &:hover{
-    background-color: ${(props) => props.hovercolor || "rgb(255, 235, 00)"}
+    background-color: ${(props) => props.hovercolor || "rgb(255, 235, 80)"};
   }
 `
 
@@ -19,6 +19,7 @@ export const StyledModal = styled(Modal)`
   border-radius: 4px;
   outline: none;
   padding: 20px;
+  height: 290px;
   
   .actions-buttons{
     display: flex;

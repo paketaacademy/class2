@@ -9,66 +9,26 @@ export const Container = styled.div`
   cursor: pointer;
 `
 export const Button = styled.button`
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   border-radius: 10px;
-  background: rgb(218 165 32);
+  background-color: rgb(218 165 32);
+  color: rgb(54 54 54);
   border: 0;
   cursor: pointer;
-  margin-top: 30px;
+  position: relative;
+  padding: 0;
+  top: 8px;
+  left: 260px;
+  text-align: center;
   &:hover{
     background: rgb(238 221 130);
   }
-  position: absolute;
-  top: -16px;
-  right: 5px;
-  text-align: center;
-`
-
-export const Header = styled.div`
-  position: absolute; 
-  top: -16px;
-  left: 0; 
 `
 
 export const P = styled.p`
   font-weight: 500;
   line-height: 15px;
-`
+  word-break: break-word;
 
-export const Image = styled.img`
-  width: 20px;
-  height: 20px;
-  border-radius: 2px;
-  margin-left: 250px;
-`
-
-export const Label = styled.span`
-  width: 50px;
-  height: 10px;
-  border-radius: 5px;
-  display: inline-block;
-  background: ${props => props.color};
-  margin-top: 16px;
-
-  ${props => props.isDragging && css`
-  @media screen and (max-width: 339px) and (min-width: 228px) {
-    .img--card{
-      margin-left: 200px;
-    }
-  `}
-  
-  
-  ${props => props.isDragging && css` 
-    border: 1px dashed rgba(0,0,0,0.3 );
-    padding-top: 31px;
-    background: rgb(238 232 170);
-    box-shadow: none;
-
-    P, 
-    .img--card, 
-    Header {
-      opacity: 0;
-    }
-  `}
 `

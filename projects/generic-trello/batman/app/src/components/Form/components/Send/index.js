@@ -1,5 +1,4 @@
 import React from 'react'
-import DeleteIcon from '@material-ui/icons/Delete'
 import SaveIcon from '@material-ui/icons/Save'
 import { SubmitButton } from './style.js' 
 
@@ -19,13 +18,6 @@ export default function Send(props) {
         onClick={handleClick}
       >
         Salvar
-      </SubmitButton>
-      <SubmitButton
-        variant="contained"
-        size="small"
-        startIcon={<DeleteIcon />}
-      >
-        Cancelar
       </SubmitButton>
     </>
   )
