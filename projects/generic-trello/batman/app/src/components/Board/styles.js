@@ -9,4 +9,5 @@ export const Container = styled.div`
   overflow: auto;
   padding-left: 10px;
   max-width: 1280px;
+  
 `

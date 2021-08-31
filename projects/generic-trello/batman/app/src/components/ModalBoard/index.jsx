@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AddBoard, StyledModal, TxtField, Form } from './styles'
+import { AddBoard, StyledModal, TxtField, Form, Div, CreateButton, } from './styles'
 import { MdAdd } from "react-icons/md"
 import axios from 'axios'
 import { getToken } from '../../Services/auth'
@@ -64,19 +64,13 @@ export const ModalBoard = () => {
             multiline
             required
           />
-          <div className="actions-buttons">
-            <div className="create-button-container">
-              <AddBoard variant="contained" bgcolor="rgb(255, 255, 255)" hovercolor="rgb(240, 240, 240)" type="submit">
+          <Div>
+            <CreateButton>
+              <AddBoard variant="contained"  type="submit">
                 Criar
               </AddBoard>
-            </div>
-            <div className="cancel-button-container">
-              <AddBoard variant="contained" bgcolor="rgb(255, 124, 124)" hovercolor="rgb(250, 89, 89)" onClick={closeModal} fontcolor="rgb(255, 255, 255)">
-                Cancelar
-              </AddBoard>
-            </div>
-
-          </div>
+            </CreateButton>
+        </Div>
         </Form>
       </StyledModal>
     </>

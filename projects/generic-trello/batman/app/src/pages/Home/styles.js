@@ -33,7 +33,7 @@ export const Button = styled.button`
 
 export const UserBoards = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-flow: wrap;
 `
 
 export const UserDatas = styled.div`
@@ -66,7 +66,11 @@ export const BoardCtn = styled.div`
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
   border-radius: 4px;
+  max-width: 150px;
+  min-width: 150px;
   text-transform: capitalize;
+  word-break: break-word;
+  
   &:hover{
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
   }
