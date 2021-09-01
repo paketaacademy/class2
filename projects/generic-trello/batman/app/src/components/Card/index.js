@@ -1,8 +1,7 @@
 import React, { useRef, useContext } from 'react'
 import { useDrag, useDrop } from 'react-dnd'
-import { Container, Label, Header, P, Image, Button } from './styles'
+import { Container, P, Button } from './styles'
 import BoardContext from '../Board/context'
-import { green } from '@material-ui/core/colors'
 import axios from 'axios'
 import { getToken } from '../../Services/auth'
 import { MdClear } from 'react-icons/md'
@@ -48,14 +47,10 @@ export default function Card({ data, index, listIndex }) {
   return (
     <Container ref={ref} isDragging={isDragging} >
       <Button type='button' onClick={handleDelete} key={data._id} >
-            <MdClear size={12} color='#fff' />
+            <MdClear size={15}/>
       </Button>
-      <Header>
-        <Label key={"green"} color={"green"} />
-      </Header>
       <P contenteditable="true">{data.title}</P>
       <P contentEditable="true">{data.description}</P>
-      {data.users && <Image src={data.users} alt='people image' />}
     </Container>
 
   )

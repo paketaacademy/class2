@@ -4,11 +4,10 @@ import { useParams } from "react-router-dom"
 import List from '../List'
 import { Container } from './styles'
 import BoardContext from './context'
-import produce from 'immer'
 import { getToken } from '../../Services/auth'
 import Modal from '@material-ui/core/Modal'
 import { MdAdd } from 'react-icons/md'
-import { ButtonNew } from '../List/styles'
+import { ButtonNew } from './styles'
 import FormList from '../Form-List'
 
 export default function Board() {
@@ -67,11 +66,11 @@ export default function Board() {
 
   return (
     <BoardContext.Provider value={{ lists, move }}>
-      <Container>
-
         <ButtonNew type="button" onClick={handleClickOpenList}>
-          <MdAdd size={24} color='#fff' />
+          <MdAdd size={20} color='rgb(54 54 54)' />
+          Adicionar Lista
         </ButtonNew>
+      <Container>
         <Modal
           open={openList}
           onClose={handleCloseList}
