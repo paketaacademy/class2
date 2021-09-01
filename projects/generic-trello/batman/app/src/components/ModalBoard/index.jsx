@@ -33,7 +33,8 @@ export const ModalBoard = () => {
   return (
     <>
       <AddBoard variant="contained" onClick={openModal}>
-        <MdAdd size={30} />
+        <MdAdd size={20} />
+        Adicionar Board
       </AddBoard>
       <StyledModal
         isOpen={open}

@@ -16,19 +16,21 @@ export const Container = styled.div`
   }
 `
 
-export const Button = styled.button`
-  width: 20px;
-  height: 20px;
+export const Button = styled.button` 
+  width: 15px;
+  height: 15px;
   border-radius: 10px;
-  background: rgb(218 165 32);
+  background-color: rgb(218 165 32);
+  color: rgb(54 54 54);
   border: 0;
   cursor: pointer;
   margin-top: 30px;
+  position: relative;
+  right: 45px;
+  padding: 0;
   &:hover{
     background: rgb(238 221 130);
   }
-  text-align: center;
-  margin-right: 25px;
 `
 
 export const UserBoards = styled.div`
@@ -59,7 +61,9 @@ export const UserDatas = styled.div`
 `
 
 export const BoardCtn = styled.div`
+  width: 223px;
   margin: 16px;
+  margin-left: 0;
   background-color: rgb(250, 250, 100);
   padding: 6px 16px;
   cursor: pointer;

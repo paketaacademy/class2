@@ -3,9 +3,8 @@ import TextField from '@material-ui/core/TextField'
 
 export const FormContainer = styled.form` 
   background-color: rgb(238 221 130);
-  border-radius: 10px;
   width: 250px;
-  height: 350px;
+  height: 330px;
   text-align: center;
   padding: 10px;
 `

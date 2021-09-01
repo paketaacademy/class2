@@ -7,6 +7,9 @@ export const PaperDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid;
+  padding: 20px;
+  box-shadow: 5px 5px 5px 5px rgb(79 79 79);
 `
 export const StyledAvatar = styled(Avatar)`
   margin: 5px;

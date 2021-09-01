@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Header, Title, Button, Ul, ButtonNew } from './styles'
-import { MdAdd, MdClear } from 'react-icons/md'
+import { Container, Header, Title, Button, Ul } from './styles'
+import { MdAdd } from 'react-icons/md'
+import DeleteIcon from '@material-ui/icons/Delete'
 import Card from '../Card'
 import Form from '../Form'
 import Dialog from '@material-ui/core/Dialog'
-import FormList from '../Form-List'
 import axios from 'axios'
 import { getToken } from '../../Services/auth'
-import Modal from '@material-ui/core/Modal'
 
 export default function List({ data, idList: listIndex }) {
 
@@ -47,25 +46,25 @@ export default function List({ data, idList: listIndex }) {
       })
   }
 
-
-
   return (
     <>
 
       <Container done={true}>
 
         <Header>
-          <Button type='button' onClick={handleDelete} idlist={data._id} >
-            {console.log(data._id)}
-            <MdClear size={24} color='#fff' />
-          </Button>
 
           <Title>{data.title}</Title>
-          {true && (
-            <Button type='button' onClick={handleClickOpen} >
-              <MdAdd size={24} color='#fff' />
-            </Button>
-          )}
+          <div>
+            {true && (
+              <Button className='teste' type='button' onClick={handleClickOpen} >
+                <MdAdd size={24} />
+              </Button>
+            )}
+            <Button type='button' onClick={handleDelete} idlist={data._id} >
+              {console.log(data._id)}
+              <DeleteIcon/>
+            </Button>   
+          </div>  
           <Dialog
             open={open}
             onClose={handleClose}

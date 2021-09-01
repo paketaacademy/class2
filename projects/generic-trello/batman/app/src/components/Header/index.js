@@ -15,7 +15,7 @@ export default function Header() {
       <Link to="/home">
         <Image src="https://image.flaticon.com/icons/png/128/280/280772.png" alt="Icone do Batman" title="Bat Trello" />
       </Link>
-      <Title>Bat-Trello</Title>
+      <Title>BAT-TELLO</Title>
       <div title="Sair">
         <Exit
           onClick={handleLogout} />

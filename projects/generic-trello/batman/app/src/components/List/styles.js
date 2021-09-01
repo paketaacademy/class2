@@ -3,11 +3,12 @@ import styled from 'styled-components'
 export const Container = styled.div`
   flex: 0 0 320px;
   background-color: rgb(250, 250, 200);
-  height: 475px;
+  height: 440px;
   overflow-y: scroll;
   border-radius: 10px;
   margin-left: 50px;
-  
+  margin-top: 50px;
+
 
   @media screen and (max-width: 800px) and (min-width: 416px) { 
     height: 422px;
@@ -55,33 +56,20 @@ export const Title = styled.h1`
   font-weight: 700;
   padding: 8px 16px;
   text-transform: uppercase;
+  word-break: break-word;
+
 `
 
 export const Button = styled.button`
-  width: 42px;
-  height: 42px;
+  margin: 5px;
+  color: rgb(54 54 54);
+  padding: 0;
+  width: 30px;
+  height: 30px;
   border-radius: 10px;
   background: rgb(218 165 32);
   border: 0;
   cursor: pointer;
-  margin-top: 30px;
-  margin-right: 10px;
-  &:hover{
-    background: rgb(238 221 130);
-  }
-`
-export const ButtonNew = styled.button`
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  background: rgb(184 134 11);
-  border: 0;
-  cursor: pointer;
-  margin-top: 15px;
-  margin-right: 10px;
-  display: block;
-  position: fixed;
-
   &:hover{
     background: rgb(238 221 130);
   }

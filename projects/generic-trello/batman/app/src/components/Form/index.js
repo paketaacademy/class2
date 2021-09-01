@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { getToken } from '../../Services/auth'
-import SelectLabel from './components/Label'
 import SelectMembers from './components/Members'
 import Send from './components/Send'
 import { FormContainer, Title, Text } from './style'
@@ -31,8 +30,6 @@ export default function BasicTextFields({ idlist, handleClose }) {
         handleClose()
         window.location.reload()
       })
-
-
   }
 
   return (
@@ -42,7 +39,6 @@ export default function BasicTextFields({ idlist, handleClose }) {
         <Text onChange={handleChange} id="standard-basic" label="Título do Cartão" name="title" />
         <Text onChange={handleChange} id="standard-basic" label="Descrição" name="description" />
         <SelectMembers />
-        <SelectLabel />
         <Send type="submit" />
       </FormContainer>
     </>
