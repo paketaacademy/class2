@@ -8,8 +8,7 @@ export const Container = styled.div`
   height: calc(100% - 80px);
   overflow: auto;
   padding-left: 10px;
-  max-width: 1280px;
-`
+  max-width: 1280px;`
 
 export const ButtonNew = styled.button`
   width: 160px;
@@ -34,3 +33,4 @@ export const ButtonNew = styled.button`
     background: rgb(238 221 130);
   }
 `
+

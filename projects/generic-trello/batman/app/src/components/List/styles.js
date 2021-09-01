@@ -6,7 +6,9 @@ export const Container = styled.div`
   height: 440px;
   overflow-y: scroll;
   border-radius: 10px;
+  margin-left: 50px;
   margin-top: 50px;
+
 
   @media screen and (max-width: 800px) and (min-width: 416px) { 
     height: 422px;
