@@ -13,6 +13,7 @@ import { depositYupValidation } from "../validations/depositValidations"
 import { withdrawValidation } from "../middlewares/withdrawValidation"
 import { withdrawYupValidation } from "../validations/withdrawValidations"
 import { Withdraw } from "../controllers/WalletController/withdraw"
+import { ConsultBalance } from "../controllers/WalletController/consultBalance"
 
 const router = Router()
 
@@ -27,5 +28,6 @@ router.post('/login', loginValidation(loginYupValidation), userLogin.login)
 
 router.patch('/deposit', depositValidation(depositYupValidation), authMiddlewares, Deposit.deposit)
 router.patch('/withdraw', withdrawValidation(withdrawYupValidation), authMiddlewares, Withdraw.withdraw)
+router.get('/consult-balance', authMiddlewares, ConsultBalance.consult)
 
 export { router }

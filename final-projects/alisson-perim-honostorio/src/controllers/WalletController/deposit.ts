@@ -21,7 +21,7 @@ export const Deposit = {
       await findWallet.updateOne({ balance: newBalance })
       return res
         .status(200)
-        .send({ message: "The balance has updated with success" })
+        .send({ message: "Successful deposit, your balance has updated." })
     } catch (error) {
       return res
         .status(400)
