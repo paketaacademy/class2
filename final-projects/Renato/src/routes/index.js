@@ -16,6 +16,8 @@ import { validateEquipment } from "../middlewares/equipments-validate.js"
 import { equipmentValidationSchema } from "../validation/equipment-validation.js"
 import equipmentsRegisterController from "../controllers/equipments/register.js"
 import equipmentGetController from "../controllers/equipments/get.js"
+import equipmentPatchController from "../controllers/equipments/patch.js"
+import equipmentDeleteController from "../controllers/equipments/delete.js"
 
 
 const routes = Router()
@@ -30,5 +32,7 @@ routes.delete('/soldiers/:id', verifyToken, soldierDeleteController.deleteSoldie
 
 routes.post('/register/equipments', verifyToken, validateEquipment(equipmentValidationSchema), equipmentsRegisterController.creatEquipment)
 routes.get('/equipments/:id', verifyToken, equipmentGetController.getEquipment)
+routes.patch('/equipments/:id', verifyToken, equipmentPatchController.patchEquipment)
+routes.delete('/equipment/:id', verifyToken, equipmentDeleteController.deleteEquipment)
 
 export default routes

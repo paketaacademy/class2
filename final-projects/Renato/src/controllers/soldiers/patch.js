@@ -34,7 +34,6 @@ const soldierPatchController = {
         .send({
           message: `An error has occurred ${error}.`
         })
-
     }
   }
 }
