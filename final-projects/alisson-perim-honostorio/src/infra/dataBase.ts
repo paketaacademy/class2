@@ -15,4 +15,5 @@ mongoose.connect(MONGO, () => {
   "Connected to DB."
 })
 
-export { mongoose as Mongoose, app }
+export { mongoose as Mongoose }
+export { app }

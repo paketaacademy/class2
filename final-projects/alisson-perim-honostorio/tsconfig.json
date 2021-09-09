@@ -9,5 +9,9 @@
   },
   "include": [
     "src/**/*.ts"
+  ],
+  "typeRoots": [
+    "src/types/index.ts",
+    "node_modules/@types"
   ]
 }

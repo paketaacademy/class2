@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express"
 
-export const userValidation = (schema) => {
+export const loginValidation = (schema) => {
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
       const validate = await schema.validate(req.body)

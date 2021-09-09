@@ -1,7 +1,14 @@
-import { IUser } from "../../interface/IUser"
-import { Mongoose } from "../dataBase"
+import { Schema, model, Model } from "mongoose"
 
-const User = new Mongoose.Schema<IUser>({
+export interface IUser {
+  _id?: string,
+  firstName: string,
+  lastName: string,
+  email: string,
+  password: string
+}
+
+const User: Schema = new Schema<IUser>({
   firstName: {
     type: String,
     required: true,
@@ -19,9 +26,11 @@ const User = new Mongoose.Schema<IUser>({
   },
   password: {
     type: String,
-    required: true,
-    match: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+    required: true
+    //match: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
   }
-}, { collection: 'Users' })
+})
 
-export const userModel = Mongoose.model<IUser>('Users', User, 'Users')
+interface userModel extends Omit<IUser, "_id">, Document { }
+
+export const UserModel: Model<userModel> = model('Users', User, 'Users')

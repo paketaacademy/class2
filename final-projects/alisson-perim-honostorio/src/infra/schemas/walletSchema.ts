@@ -1,6 +1,11 @@
-import { Mongoose } from "../dataBase"
+import { Schema, model } from "mongoose"
 
-export const Wallet = new Mongoose.Schema({
+export interface IWallet {
+  userId: string,
+  balance: number
+}
+
+export const Wallet: Schema = new Schema<IWallet>({
   userId: {
     type: String,
     required: true
@@ -12,4 +17,6 @@ export const Wallet = new Mongoose.Schema({
   }
 })
 
-export const walletModel = Mongoose.model("Wallet", Wallet, "Wallet")
+
+
+export const walletModel = model<IWallet>("Wallet", Wallet, "Wallet")
