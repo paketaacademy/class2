@@ -3,8 +3,8 @@ import cors from 'cors'
 
 app.use(cors())
 
-const { DOOR } = process.env
+const { PORT } = process.env
 
-app.listen(DOOR, () => {
+app.listen(PORT, () => {
   console.log('Server is on')
 })
