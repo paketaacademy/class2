@@ -3,11 +3,11 @@ import { Mongoose } from "../../index.js"
 
 const equipmentsRegisterController = {
   async creatEquipment(req, res) {
-    const { kit, name, description } = req.body
+    const { name, description } = req.body
 
     const Equipments = Mongoose.model('equipments', equipmentSchema)
     try {
-      const findEquipment = await Equipments.findOne({ kit })
+      const findEquipment = await Equipments.findOne({ name })
       if (findEquipment) {
         return res
           .status(409)
@@ -15,7 +15,7 @@ const equipmentsRegisterController = {
             message: 'Existing equipment.'
           })
       }
-      const equipment = new Equipments({ kit, name, description })
+      const equipment = new Equipments({ name, description })
       await equipment.save()
       res
         .status(201)

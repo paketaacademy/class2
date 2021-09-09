@@ -1,10 +1,6 @@
 import { Mongoose } from "../index.js"
 
 const equipmentSchema = new Mongoose.Schema({
-  kit: {
-    type: String,
-    required: true
-  },
   name: {
     type: String,
     required: true
