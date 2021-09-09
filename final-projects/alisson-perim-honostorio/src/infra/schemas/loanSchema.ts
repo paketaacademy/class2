@@ -4,7 +4,7 @@ export interface ILoan {
   walletId: string,
   value: number,
   installments: number,
-  installmentToPay: number,
+  installmentsToPay: number,
   valueOfInstallment: number
 }
 
@@ -21,7 +21,7 @@ const Loan: Schema = new Schema<ILoan>({
     type: Number,
     required: true
   },
-  installmentToPay: {
+  installmentsToPay: {
     type: Number,
     required: true
   },

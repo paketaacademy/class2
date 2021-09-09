@@ -38,7 +38,7 @@ export const HireLoan = {
 
       const maxLoan = userSalary * 0.3
 
-      if (maxLoan <= value) {
+      if (maxLoan < value) {
         return res
           .status(422)
           .send({ message: `Your max value to hire, at this moment, is ${maxLoan.toFixed(2)}` })
@@ -46,7 +46,7 @@ export const HireLoan = {
 
       const valueOfInstallment = (value / installments).toFixed(2)
 
-      const newLoan: ILoan = await new loanModel({ walletId: findWallet._id, value, installments, installmentToPay: installments, valueOfInstallment }).save()
+      const newLoan: ILoan = await new loanModel({ walletId: findWallet._id, value, installments, installmentsToPay: installments, valueOfInstallment }).save()
       findWallet.hasLoan = true
       findWallet.balance += value
       await findWallet.save()

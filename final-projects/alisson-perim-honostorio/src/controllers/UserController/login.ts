@@ -10,7 +10,7 @@ export const userLogin = {
     const { SECRET } = process.env
     const { email, password } = req.body
     try {
-      const user = await UserModel.findOne({ where: { email } })
+      const user = await UserModel.findOne({ email })
       if (!user) {
         return res
           .status(422)
