@@ -33,6 +33,6 @@ routes.delete('/soldiers/:id', verifyToken, soldierDeleteController.deleteSoldie
 routes.post('/register/equipments', verifyToken, validateEquipment(equipmentValidationSchema), equipmentsRegisterController.creatEquipment)
 routes.get('/equipments/:id', verifyToken, equipmentGetController.getEquipment)
 routes.patch('/equipments/:id', verifyToken, equipmentPatchController.patchEquipment)
-routes.delete('/equipment/:id', verifyToken, equipmentDeleteController.deleteEquipment)
+routes.delete('/equipments/:id', verifyToken, equipmentDeleteController.deleteEquipment)
 
 export default routes
