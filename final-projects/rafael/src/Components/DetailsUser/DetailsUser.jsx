@@ -1,12 +1,12 @@
 import React from "react"
-import { RowUser, ColumnUser } from './style.js'
+import { RowUser, ColumnUser, UserName, NameLogin } from './StyleDetailsUser.js'
 
 const Detailsuser = ({ name, user, created }) => {
   return(
     <RowUser>
       <ColumnUser>
-        <span>{name}</span>
-        <span>@{user}</span>
+        <UserName>{name}</UserName>
+        <NameLogin>@{user}</NameLogin>
       </ColumnUser>
       <ColumnUser>
         Joined {created}

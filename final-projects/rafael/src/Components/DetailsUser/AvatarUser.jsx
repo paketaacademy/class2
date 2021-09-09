@@ -1,5 +1,5 @@
 import React from "react"
-import { UserAvatar } from './style.js'
+import { UserAvatar } from './StyleAvatarUser.js'
 
 const AvatarUser = ({ name, url }) => {
   return (

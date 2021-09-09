@@ -9,16 +9,15 @@ export const PageContainer = styled.div`
   padding: 0 20px;
   display: flex;   
   flex-direction: column;
-  align-items: center;
- 
+  align-items: center; 
+  font-size: 14px;;
 `
 
 export const Box = styled.div`   
   width: 600px;
   display: flex;   
   flex-direction: row;  
-  align-items: flex-start;
-  margin: 10px;
+  align-items: flex-start;  
   border: 1px solid #d6d6d6;  
   border-radius: 10px;
   padding: 15px;
@@ -28,9 +27,17 @@ export const SearchBox = styled(Paper)`
   min-width: 600px;
   padding: 2px 4px;
   display: flex;
+  align-items: center;  
+  margin-bottom: 15px;
+`
+
+export const MessageApi = styled.div`
+  max-width: 600px;
+  padding: 2px 4px;
+  display: flex;
   align-items: center;
-  width: 450px;
-  margin-bottom: 5px;
+  margin-top: 15px;
+  color: tomato;
 `
 
 export const MessageNull = styled.div`

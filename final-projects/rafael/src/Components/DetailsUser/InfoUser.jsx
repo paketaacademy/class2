@@ -1,5 +1,5 @@
 import React from "react"
-import { BoxBio } from './style.js'
+import { BoxBio } from './StyleInfoUser.js'
 
   const InfoUser = ({info}) => {
   return(

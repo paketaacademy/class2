@@ -1,5 +1,5 @@
 import React from "react"
-import { SocialRow, SocialColumn } from './style.js'
+import { SocialRow, SocialColumn } from './StyleSocialUser.js'
 
 const Socialuser = ({ repos, followers, following }) => {
   return (
