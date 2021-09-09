@@ -1,20 +1,20 @@
 import React from "react"
 import { SocialRow, SocialColumn } from './style.js'
 
-const Socialuser = () => {
+const Socialuser = ({ repos, followers, following }) => {
   return (
     <SocialRow>
       <SocialColumn>
         <strong>Repos</strong>
-        8
+        {repos}
       </SocialColumn>
       <SocialColumn>
         <strong>Followers</strong>
-        3938
+        {followers}
       </SocialColumn>
       <SocialColumn>
         <strong>Following</strong>
-        9
+        {following}
       </SocialColumn>
     </SocialRow>
   )

@@ -40,7 +40,7 @@ export const SocialRow = styled.div`
   flex-direction: row;
   
   justify-content: space-between; 
-  border: 1px solid #7c7c7c;
+  border: 1px solid #d6d6d6;
   border-radius: 10px;
   padding: 20px 30px;
 `
