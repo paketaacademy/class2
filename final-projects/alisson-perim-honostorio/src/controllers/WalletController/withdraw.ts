@@ -22,7 +22,8 @@ export const Withdraw = {
 
       const withdrawBalance = findWallet.balance - amount
 
-      await findWallet.updateOne({ balance: withdrawBalance })
+      findWallet.balance = withdrawBalance
+      await findWallet.save()
 
       return res
         .status(200)

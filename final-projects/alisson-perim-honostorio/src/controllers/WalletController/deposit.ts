@@ -18,7 +18,8 @@ export const Deposit = {
           .send({ message: `The amount to deposit can't be 0.00` })
       }
       const newBalance = findWallet.balance + amount
-      await findWallet.updateOne({ balance: newBalance })
+      findWallet.balance = newBalance
+      await findWallet.save()
       return res
         .status(200)
         .send({ message: "Successful deposit, your balance has updated." })
