@@ -32,6 +32,9 @@ import ModifyWeapon from "../controllers/equipaments/weapon/patch.js"
 import DeleteWeapon from "../controllers/equipaments/weapon/delete.js"
 import GetWeapon from "../controllers/equipaments/weapon/get.js"
 import GetArmy from "../controllers/users/army.js"
+import GetSiegeWeapon from "../controllers/equipaments/siege-weapons.js/get.js"
+import SiegeWeapon from "../controllers/equipaments/siege-weapons.js/post.js"
+import DeleteSiegeWeapon from "../controllers/equipaments/siege-weapons.js/delete.js"
 
 
 const routes = Router()
@@ -45,6 +48,13 @@ routes.use(cors(corsOpition))
 routes.post('/register', ValidateUser(RegisterValidation), Register.UserRegister)
 routes.post('/login', ValidateUser(LoginValidation), Login.UserLogin)
 routes.get('/army', verifyToken, GetArmy.Army)
+
+routes.get('/all-siege-weapons', verifyToken, GetSiegeWeapon.GetAllSiegeWeapon)
+routes.get('/siege-weapons', verifyToken, GetSiegeWeapon.GetOneSiegeWeapon)
+routes.post('/siege-weapons', verifyToken, SiegeWeapon.CreateSiegeWeapon)
+routes.delete('/siege-weapons', verifyToken, DeleteSiegeWeapon.DelSiegeWeapon)
+routes.patch('/siege-weapons', verifyToken, ModifyWeapon.ModWeapon)
+
 
 routes.post('/weapons', verifyToken, Weapon.CreateWeapon)
 routes.patch('/weapons', verifyToken, ModifyWeapon.ModWeapon)

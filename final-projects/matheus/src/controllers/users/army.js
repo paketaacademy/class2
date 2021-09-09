@@ -15,27 +15,23 @@ const GetArmy = {
     const SMModel = await Mongoose.model('sword-master', SMSchema, 'sword-master' )
 
     try{
-      const foundArchers = await ArcherModel.find({ owner: owner })
-      const foundKnight = await KnightModel.find({ owner: owner })
-      const foundVillager = await VillagerModel.find({ owner: owner })
-      const foundSM = await SMModel.find({ owner: owner })
-      
-      
+      const numerOfKnights = await KnightModel.count()
+      const numberOfArchers = await ArcherModel.count()
+      const numberOfSM = await SMModel.count()
+      const numberOfVilagers = await VillagerModel.count()
+      const TotalArmy = numberOfSM + numberOfArchers + numberOfVilagers + numerOfKnights 
 
-      const number = ArcherModel.aggregate([{ $group:{ owner:{ owner: owner },count:{$sum:1} } }])
-      console.log(number)
       return res
       .status(200)
       .send({
-        "oi":number,
-        "Your villagers": foundVillager,
-        "Your Sword Masters": foundSM,
-        "Your Knights": foundKnight,
-        "Your Archers": foundArchers
+        "Quantity of Archers": numberOfArchers,
+        "Quantity of Knights": numerOfKnights,
+        "Quantity of Sword Masters": numberOfSM,
+        "Quantity of Villagers": numberOfVilagers,
+        "The quantity of soldiers in your Army is": TotalArmy
       })
 
     }catch(error){
-      console.log(error)
       return res
       .status(400)
       .send({
