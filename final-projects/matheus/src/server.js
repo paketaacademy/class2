@@ -1,7 +1,7 @@
 import app from './index.js'
 import cors from 'cors'
 
-const DOOR = 3030
+const DOOR = process.env.DOOR
 
 app.use(cors())
 

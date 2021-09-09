@@ -10,8 +10,8 @@ app.use(routes)
 dotenv.config()
 
 
-const DB = "mongodb+srv://dungeon:dungeon@cluster0.qzotv.mongodb.net/finalProject?retryWrites=true&w=majority"
-mongoose.connect(DB, ()=> console.log('connect to database'))
+const DB = process.env.DB
+mongoose.connect(DB, ()=> console.log(`connect to database`))
 
 
 export { mongoose as Mongoose }

@@ -9,7 +9,6 @@ dotenv.config()
 const Login ={
   async UserLogin(req, res){
     const { email, password } = req.body
-    const SECRET = "GoodSaveTheQueen"
     const User = Mongoose.model('users', userSchema, 'users')
 
     try{
@@ -29,7 +28,7 @@ const Login ={
             message: "Wrong e-mail our password"
           })
         }
-      const token = jwt.sign({ _id: user._id }, SECRET, {
+      const token = jwt.sign({ _id: user._id }, process.env.SECRET, {
           expiresIn: 2592000
         })
       
