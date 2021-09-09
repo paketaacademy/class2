@@ -17,6 +17,8 @@ import { ConsultBalance } from "../controllers/WalletController/consultBalance"
 import { validation } from "../middlewares/validation/validation"
 import { loanYupValidation } from "../validations/loanValidations"
 import { HireLoan } from "../controllers/LoanController/hireLoan"
+import loanAggregate from "../service/loanService"
+import { InstallmentsToPay } from "../controllers/LoanController/installmentToPay"
 
 const router = Router()
 
@@ -34,5 +36,6 @@ router.patch('/withdraw', withdrawValidation(withdrawYupValidation), authMiddlew
 router.get('/consult-balance', authMiddlewares, ConsultBalance.consult)
 
 router.post('/hire-loan', validation(loanYupValidation), authMiddlewares, HireLoan.hireLoan)
+router.get('/installments-to-pay', authMiddlewares, InstallmentsToPay.installmentsToPay)
 
 export { router }
