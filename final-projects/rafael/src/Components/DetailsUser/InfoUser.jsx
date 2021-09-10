@@ -4,7 +4,7 @@ import { BoxBio } from './StyleInfoUser.js'
   const InfoUser = ({info}) => {
   return(
     <BoxBio>
-      {info}
+      {info ? info : 'This profile has no bio'}
     </BoxBio>
   )
 }

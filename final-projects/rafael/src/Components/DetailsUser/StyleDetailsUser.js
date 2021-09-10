@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const RowUser = styled.div`
-  min-width: 400px;
+  min-width: 200px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

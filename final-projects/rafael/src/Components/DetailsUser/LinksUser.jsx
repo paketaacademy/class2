@@ -11,7 +11,7 @@ const LinksUser = ({ city, twitter, gitHub, workplace }) => {
       <ColumnDetails>
         <DetailRow>
           <LocationOnIcon />
-          <InfoRow>{city}</InfoRow>
+          <InfoRow>{city ? city : 'Not Available'}</InfoRow>
         </DetailRow>
         <DetailRow>
           <LinkIcon />
@@ -21,11 +21,11 @@ const LinksUser = ({ city, twitter, gitHub, workplace }) => {
       <ColumnDetails>
         <DetailRow>
           <TwitterIcon />
-          <InfoRow>{twitter}</InfoRow>
+          <InfoRow>{twitter ? twitter : 'Not Available'}</InfoRow>
         </DetailRow>
         <DetailRow>
           <HomeWorkIcon />
-          <InfoRow>{workplace}</InfoRow>
+          <InfoRow>{workplace ? workplace : 'Not Available'}</InfoRow>
         </DetailRow>
       </ColumnDetails>
     </BoxDetails>

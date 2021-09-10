@@ -5,8 +5,8 @@ const Detailsuser = ({ name, user, created }) => {
   return(
     <RowUser>
       <ColumnUser>
-        <UserName>{name}</UserName>
-        <NameLogin>@{user}</NameLogin>
+        <UserName>{name ? name : 'Not Available'}</UserName>
+        <NameLogin>@{user ? user : 'Not Available'}</NameLogin>
       </ColumnUser>
       <ColumnUser>
         Joined {created}

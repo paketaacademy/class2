@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import SearchIcon from '@material-ui/icons/Search'
 import Button from '@material-ui/core/Button'
 import { PageContainer, Box, SearchUser, SearchBox, IconBox, MessageNull, MessageApi } from "./style"
@@ -21,9 +21,15 @@ function Page() {
     setNameUser(e.target.value)
   }
 
-  const handleClick = () => {
-    if (nameUser) {      
-      setParam(nameUser)
+  useEffect(() => {
+    setParam(nameUser)
+  }, [nameUser])
+
+
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (param) {      
       setParamNull('')
       dataLoading()
     } else {
@@ -87,11 +93,10 @@ function Page() {
     )
   }
 
-  console.log('param', param)
   return (
     <PageContainer>
       <Menu />
-      <SearchBox component="form">
+      <SearchBox component="form" onSubmit={handleClick}>
         <IconBox aria-label="search">
           <SearchIcon />
         </IconBox>
@@ -100,7 +105,7 @@ function Page() {
           inputProps={{ 'aria-label': 'Search GitHub username...' }}
           onChange={handleChange}
         />
-        <Button variant="contained" color="primary" onClick={handleClick} >
+        <Button variant="contained" color="primary" type="submit" >
           Search
         </Button>
       </SearchBox>
