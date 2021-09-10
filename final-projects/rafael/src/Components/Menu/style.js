@@ -5,6 +5,12 @@ export const Container = styled.div`
   min-width: 600px;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 600px) {
+    min-width: 400px;
+  }
+  @media (max-width: 400px) {
+    min-width: 300px;
+  }
 `
 
 export const Title = styled.h4`

@@ -1,20 +1,20 @@
 import React from "react"
-import { SocialRow, SocialColumn } from './StyleSocialUser.js'
+import { SocialRow, SocialColumn, SocialTitle, SocialDesc } from './StyleSocialUser.js'
 
 const Socialuser = ({ repos, followers, following }) => {
   return (
     <SocialRow>
       <SocialColumn>
-        <strong>Repos</strong>
-        {repos}
+        <SocialTitle>Repos</SocialTitle>
+        <SocialDesc>{repos}</SocialDesc>
       </SocialColumn>
       <SocialColumn>
-        <strong>Followers</strong>
-        {followers}
+        <SocialTitle>Followers</SocialTitle>
+        <SocialDesc>{followers}</SocialDesc>
       </SocialColumn>
       <SocialColumn>
-        <strong>Following</strong>
-        {following}
+        <SocialTitle>Following</SocialTitle>
+        <SocialDesc>{following}</SocialDesc>
       </SocialColumn>
     </SocialRow>
   )

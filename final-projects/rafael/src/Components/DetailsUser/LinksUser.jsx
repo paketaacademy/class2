@@ -8,26 +8,26 @@ import { BoxDetails, ColumnDetails, DetailRow, LinkGit, InfoRow } from './StyleL
 const LinksUser = ({ city, twitter, gitHub, workplace }) => {
   return (
     <BoxDetails>
-      <ColumnDetails>
-        <DetailRow>
+      <DetailRow>
+        <ColumnDetails>
           <LocationOnIcon />
           <InfoRow>{city ? city : 'Not Available'}</InfoRow>
-        </DetailRow>
-        <DetailRow>
+        </ColumnDetails>
+        <ColumnDetails>
+          <TwitterIcon style={{margin: '0px'}}/>
+          <InfoRow>{twitter ? twitter : 'Not Available'}</InfoRow>
+        </ColumnDetails>
+      </DetailRow>
+      <DetailRow>
+        <ColumnDetails>
           <LinkIcon />
           <LinkGit href={gitHub} target="_blank">{gitHub}</LinkGit>
-        </DetailRow>
-      </ColumnDetails>
-      <ColumnDetails>
-        <DetailRow>
-          <TwitterIcon />
-          <InfoRow>{twitter ? twitter : 'Not Available'}</InfoRow>
-        </DetailRow>
-        <DetailRow>
+        </ColumnDetails>
+        <ColumnDetails>
           <HomeWorkIcon />
           <InfoRow>{workplace ? workplace : 'Not Available'}</InfoRow>
-        </DetailRow>
-      </ColumnDetails>
+        </ColumnDetails>
+      </DetailRow>
     </BoxDetails>
   )
 }

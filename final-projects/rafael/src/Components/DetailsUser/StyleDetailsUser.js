@@ -1,11 +1,18 @@
 import styled from 'styled-components'
 
 export const RowUser = styled.div`
-  min-width: 200px;
+  min-width: 250px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;    
+  align-items: flex-start;  
+  @media (max-width: 400px) {
+    width: 200px;
+    flex-direction: column;
+    margin: 10px 0;
+    align-items: center;
+    text-align: center;
+  }  
 `
 
 export const ColumnUser = styled.div`
@@ -13,14 +20,21 @@ export const ColumnUser = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin: 10px 0;
+  @media (max-width: 400px) {
+    margin: 0;
+ 
+  }
 `
 
 export const UserName = styled.span`
   font-weight: bold;
-  font-size: 16px;  
+  font-size: 18px;  
+  @media (max-width: 400px) {
+    font-size: 16px;
+  }
 `
 
 export const NameLogin = styled.span`
-  font-size: 14px;
+  margin: 10px 0;
   
 `

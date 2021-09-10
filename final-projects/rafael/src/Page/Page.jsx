@@ -42,11 +42,7 @@ function Page() {
     fetch(
       `https://api.github.com/users/${param}`,
       {
-        method: 'get',
-        // headers: {
-        //   'User-Agent': `${param}`
-        //   // Authorization: `${param}`
-        // }       
+        method: 'get'   
       }
     )
       .then(async response => {
@@ -59,6 +55,10 @@ function Page() {
       })
   }
 
+  const months = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul","Ago","Set","Out","Nov","Dez"];
+  let dateReceived = new Date(detailUser.created_at);
+  let formattedDate = ((dateReceived.getDate() + " " + months[(dateReceived.getMonth())] + " " + dateReceived.getFullYear()));
+  
   const conditionView = () => {
     if (detailUser && detailUser.name != null) {
       return (
@@ -84,7 +84,7 @@ function Page() {
           <AvatarUser name={detailUser.name} url={detailUser.avatar_url} />
         </div>
         <div>
-          <Detailsuser name={detailUser.name} user={detailUser.login} created={detailUser.created_at} />
+          <Detailsuser name={detailUser.name} user={detailUser.login} created={formattedDate} />
           <InfoUser info={detailUser.bio} />
           <Socialuser repos={detailUser.public_repos} followers={detailUser.followers} following={detailUser.following} />
           <LinksUser city={detailUser.location} twitter={detailUser.twitter_username} gitHub={detailUser.html_url} workplace={detailUser.company} />
