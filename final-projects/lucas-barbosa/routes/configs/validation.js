@@ -6,7 +6,7 @@ import * as yup from 'yup'
     password: yup.string().min(5, 'Password must be more than 5 characters').required('Inform your password'),
   })
   
-  export const employeesSchema = yup.object().shape({
+  export const employeeSchema = yup.object().shape({
     Name: yup.string().trim().min(2, 'Name must have more than 2 characters').required('Enter the name field'),
     NetSalary: yup.string().trim().required('Enter the net salary field'),
     GrossSalary: yup.string().trim().required('Enter the Gross Salary Field'),
