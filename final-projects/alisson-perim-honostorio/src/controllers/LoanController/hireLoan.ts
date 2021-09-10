@@ -46,7 +46,7 @@ export const HireLoan = {
 
       const valueOfInstallment = (value / installments).toFixed(2)
 
-      const newLoan: ILoan = await new loanModel({ walletId: findWallet._id, value, installments, installmentsToPay: installments, valueOfInstallment }).save()
+      const newLoan: ILoan = await new loanModel({ walletId: findWallet._id, value, installments, installmentsToPay: installments, valueOfInstallment, isActive: true }).save()
 
       findWallet.hasLoan = true
       findWallet.balance += value

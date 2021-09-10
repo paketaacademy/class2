@@ -27,8 +27,13 @@ export const PayInstallment = {
           .send({ message: `Incorrect value` })
       }
 
-      loan.installmentsToPay--
-      loan.save()
+      --loan.installmentsToPay
+      if (loan.installmentsToPay === 0) {
+        wallet.hasLoan = false
+        loan.isActive = false
+        await wallet.save()
+      }
+      await loan.save()
       return res
         .status(200)
         .send({ message: `Installment payed with success` })

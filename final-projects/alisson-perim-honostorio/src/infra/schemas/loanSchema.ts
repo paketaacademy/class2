@@ -5,7 +5,8 @@ export interface ILoan {
   value: number,
   installments: number,
   installmentsToPay: number,
-  valueOfInstallment: number
+  valueOfInstallment: number,
+  isActive: boolean
 }
 
 const Loan: Schema = new Schema<ILoan>({
@@ -27,6 +28,10 @@ const Loan: Schema = new Schema<ILoan>({
   },
   valueOfInstallment: {
     type: Number,
+    required: true
+  },
+  isActive: {
+    type: Boolean,
     required: true
   }
 })
