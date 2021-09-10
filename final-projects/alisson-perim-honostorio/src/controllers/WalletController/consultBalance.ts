@@ -14,7 +14,7 @@ export const ConsultBalance = {
 
       return res
         .status(200)
-        .send({ balance: `${findWallet.balance}` })
+        .send({ balance: `${findWallet.balance.toFixed(2)}` })
     } catch (error) {
       return res
         .status(400)
