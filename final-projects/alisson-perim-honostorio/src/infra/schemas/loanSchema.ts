@@ -34,6 +34,10 @@ const Loan: Schema = new Schema<ILoan>({
     type: Boolean,
     required: true
   }
-})
+},
+  {
+    timestamps: true
+  }
+)
 
 export const loanModel = model<ILoan>("Loan", Loan, "Loan")
