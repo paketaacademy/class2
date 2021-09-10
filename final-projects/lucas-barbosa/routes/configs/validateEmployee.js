@@ -1,5 +1,5 @@
 import XLSX from 'xlsx'
-export const validateAll = (schema) => {
+export const validateEmployees = (schema) => {
   
   try{
 

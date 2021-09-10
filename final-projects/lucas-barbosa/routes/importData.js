@@ -1,8 +1,8 @@
 import app from "./configs/index.js"
 import { employeesSchema } from './configs/validation.js'
-import { validateAll } from "./configs/validate.js"
+import { validateEmployees } from "./configs/validateEmployee.js"
 
-app.post('/import', validateAll(employeesSchema), async (req, res) => {
+app.post('/import', validateEmployees(employeesSchema), async (req, res) => {
   
   const { dataJsonValid, dataJsonInvalid } = req.files
   
