@@ -25,8 +25,6 @@ function Page() {
     setParam(nameUser)
   }, [nameUser])
 
-
-
   const handleClick = (e) => {
     e.preventDefault();
     if (param) {      

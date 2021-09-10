@@ -2,20 +2,20 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  min-width: 600px;
+  min-width: 37.5rem;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 600px) {
-    min-width: 400px;
+  @media (max-width: 37.5rem) {
+    min-width: 25rem;
   }
-  @media (max-width: 400px) {
-    min-width: 300px;
+  @media (max-width: 25rem) {
+    min-width: 18.75rem;
   }
 `
 
 export const Title = styled.h4`
-  font-size: 12px;
-  margin: 0 10px;
+  font-size: 0.75rem;
+  margin: 0 0.625rem;
 `
 
 export const BoxTheme = styled.div`

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const BoxBio = styled.div`
-  margin: 10px 0 20px 0;
-  @media (max-width: 400px) {
-    margin: 20px 0;
+  margin: 0.625rem 0 1.25rem 0;
+  @media (max-width: 25rem) {
+    margin: 1.25rem 0;
   }
 `

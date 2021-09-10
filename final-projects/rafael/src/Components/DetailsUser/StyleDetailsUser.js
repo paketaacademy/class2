@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
 export const RowUser = styled.div`
-  min-width: 250px;
+  min-width: 15.625rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;  
-  @media (max-width: 400px) {
-    width: 200px;
+  @media (max-width: 25rem) {
+    width: 12.5rem;
     flex-direction: column;
-    margin: 10px 0;
+    margin: 0.625rem 0;
     align-items: center;
     text-align: center;
   }  

@@ -2,15 +2,15 @@ import styled from 'styled-components'
 import Avatar from '@material-ui/core/Avatar'
 
 export const UserAvatar = styled(Avatar)`
-  min-width: 100px;
-  min-height: 100px;
-  margin: 5px 15px 0 0;
-  @media (max-width: 600px) {
-    margin: 5px 0;
+  min-width: 6.25rem;
+  min-height: 6.25rem;
+  margin: 0.313rem 0.938rem 0 0;
+  @media (max-width: 37.5rem) {
+    margin: 0.313rem 0;
   }
-  @media (max-width: 400px) {
-    min-width: 80px;
-    min-height: 80px;
-    margin: 5px 0;
+  @media (max-width: 25rem) {
+    min-width: 5rem;
+    min-height: 5rem;
+    margin: 0.313rem 0;
   }
 `
