@@ -17,6 +17,7 @@ import loanAggregate from "../service/loanService"
 import { InstallmentsToPay } from "../controllers/LoanController/installmentToPay"
 import { payInstallmentYupValidation } from "../validations/payInstallmentValidation"
 import { PayInstallment } from "../controllers/LoanController/payInstallment"
+import { InstallmentActive } from "../controllers/LoanController/installmentActive"
 
 const router = Router()
 
@@ -36,5 +37,6 @@ router.get('/consult-balance', authMiddlewares, ConsultBalance.consult)
 router.post('/hire-loan', validation(loanYupValidation), authMiddlewares, HireLoan.hireLoan)
 router.get('/installments-to-pay', authMiddlewares, InstallmentsToPay.installmentsToPay)
 router.post('/pay-installment', validation(payInstallmentYupValidation), authMiddlewares, PayInstallment.payInstallment)
+router.get('/consult-loan', authMiddlewares, InstallmentActive.InstallmentActive)
 
 export { router }
