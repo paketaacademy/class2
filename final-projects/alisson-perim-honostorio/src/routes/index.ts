@@ -18,6 +18,7 @@ import { InstallmentsToPay } from "../controllers/LoanController/installmentToPa
 import { payInstallmentYupValidation } from "../validations/payInstallmentValidation"
 import { PayInstallment } from "../controllers/LoanController/payInstallment"
 import { InstallmentActive } from "../controllers/LoanController/installmentActive"
+const swaggerFile = require("../swagger-output.json")
 
 const router = Router()
 
