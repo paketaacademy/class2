@@ -23,6 +23,7 @@ import { vehicleValidationSchema } from "../validation/vehicle-validation.js"
 import vehicleRegisterController from "../controllers/vehicles/register.js"
 import vehicleGetController from "../controllers/vehicles/get.js"
 import vehiclePatchController from "../controllers/vehicles/patch.js"
+import vehicleDeleteController from "../controllers/vehicles/delete.js"
 
 
 const routes = Router()
@@ -44,5 +45,6 @@ routes.post('/register/vehicles', verifyToken, validateVehicle(vehicleValidation
 routes.get('/vehicles/:id', verifyToken, vehicleGetController.getVehicle)
 routes.get('/vehicles', verifyToken, vehicleGetController.getAllVehicle)
 routes.patch('/vehicles/:id', verifyToken, vehiclePatchController.patchEquipment)
+routes.delete('/vehicles/:id', verifyToken, vehicleDeleteController.deleteVehicle)
 
 export default routes
