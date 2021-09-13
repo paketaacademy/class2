@@ -10,16 +10,28 @@ export const Withdraw = {
 
       if (!findWallet) {
         return res
-          .status(400)
+          .status(422)
           .send({ message: `This user hasn't a wallet` })
+      }
+
+      if(typeof amount !== 'number'){
+        return res
+          .status(422)
+          .send({message: `Please insert a number to do your withdraw`})
+      }
+
+      if(amount % 1 !== 0){
+        return res
+          .status(422)
+          .send({message: `The amount to do a withdraw need to be a integer number`})
       }
 
       if (findWallet.balance < amount) {
         return res
-          .status(400)
-          .send('Your balance is lass than your withdraw')
+          .status(409)
+          .send('Error - Your withdraw is higgher than your balance')
       }
-
+      
       const withdrawBalance = findWallet.balance - amount
 
       findWallet.balance = withdrawBalance

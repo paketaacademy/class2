@@ -9,14 +9,14 @@ export const InstallmentsToPay = {
       const findWallet = await walletModel.findOne({ userId })
       if (!findWallet) {
         return res
-          .status(400)
+          .status(422)
           .send({ message: "This user hasn't a wallet" })
       }
 
       const findLoan = await loanModel.findOne({ walletId: findWallet._id })
       if (!findLoan) {
         return res
-          .status(400)
+          .status(422)
           .send({ message: "This user hasn't a loan" })
       }
 

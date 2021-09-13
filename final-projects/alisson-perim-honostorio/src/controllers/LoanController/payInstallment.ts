@@ -10,15 +10,21 @@ export const PayInstallment = {
       const wallet = await walletModel.findOne({ userId })
       if (!wallet) {
         return res
-          .status(400)
+          .status(422)
           .send({ message: `This user hasn't a wallet` })
       }
 
       const loan = await loanModel.findOne({ walletId: wallet._id })
       if (!loan) {
         return res
-          .status(400)
+          .status(422)
           .send({ message: `This user hasn't a loan` })
+      }
+
+      if(typeof installmentValue !== 'number'){
+        return res
+          .status(422)
+          .send({message: `Please insert a number to do your deposit`})
       }
 
       if (loan.valueOfInstallment !== installmentValue) {

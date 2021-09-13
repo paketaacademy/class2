@@ -8,7 +8,7 @@ export const ConsultBalance = {
       const findWallet = await walletModel.findOne({ userId })
       if (!findWallet) {
         return res
-          .status(400)
+          .status(422)
           .send({ message: `This user hasn't a wallet` })
       }
 

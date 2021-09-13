@@ -14,7 +14,7 @@ export const userLogin = {
       if (!user) {
         return res
           .status(422)
-          .send({ message: `User not founded in our database` })
+          .send({ message: `User not founded` })
       }
 
       const validatePassword = await bcrypt.compare(password, user.password)
@@ -25,11 +25,16 @@ export const userLogin = {
       }
 
       const token = jwt.sign({ id: user._id }, SECRET, { expiresIn: 10800 })
-      delete user.password
+
+      const userLogged = {
+        id: user._id,
+        name: `${user.firstName} ${user.lastName}`,
+        email: `${user.email}`,
+      }
       return res
         .status(202)
         .json({
-          user,
+          userLogged,
           token
         })
     } catch (error) {

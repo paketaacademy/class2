@@ -25,7 +25,9 @@ export const createUser = {
         .send({ message: `User registered with success` })
 
     } catch (error) {
-      throw new Error(`Error - ${error}`)
+      return res
+        .status(400)
+        .send({message: `Unable to register`})
     }
   }
 }

@@ -7,17 +7,33 @@
   },
   "host": "localhost:3030",
   "basePath": "/",
-  "tags": [],
+  "tags": [
+    "register",
+    "login",
+    "deposit",
+    "withdraw",
+    "consult-balance",
+    "hire-loan",
+    "installments-to-pay",
+    "pay-installment",
+    "consult-loan"
+  ],
   "schemes": [
     "http"
   ],
-  "consumes": [],
-  "produces": [],
+  "consumes": [
+    "application/json; charset=utf-8"
+  ],
+  "produces": [
+    "application/json"
+  ],
   "paths": {
-    "/users": {
+    "/register": {
       "post": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "register"
+        ],
+        "description": "Route that will register a new user",
         "parameters": [
           {
             "name": "obj",
@@ -26,28 +42,43 @@
               "type": "object",
               "properties": {
                 "firstName": {
-                  "example": "any"
+                  "example": "Paketa"
                 },
                 "lastName": {
-                  "example": "any"
+                  "example": "Academy"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "paketa@academy.com"
                 },
                 "password": {
-                  "example": "any"
+                  "example": "pakETA@123"
                 }
               }
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "422": {
+            "description": "This email is already in use.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Unable to register",
+            "content": "application/json"
+          },
+          "201": {
+            "description": "User registered with success",
+            "content": "application/json"
+          }
+        }
       }
     },
     "/login": {
       "post": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "login"
+        ],
+        "description": "Dedicated route to login a user",
         "parameters": [
           {
             "name": "obj",
@@ -56,22 +87,33 @@
               "type": "object",
               "properties": {
                 "email": {
-                  "example": "any"
+                  "example": "paketa@academy.com"
                 },
                 "password": {
-                  "example": "any"
+                  "example": "pakETA@123"
                 }
               }
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "422": {
+            "description": "User not founded / Wrong password",
+            "content": "application/json"
+          },
+          "202": {
+            "description": "User logged in",
+            "content": "application/json"
+          }
+        }
       }
     },
     "/deposit": {
       "patch": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "deposit"
+        ],
+        "description": " Route dedicated to do a deposit",
         "parameters": [
           {
             "name": "obj",
@@ -80,19 +122,38 @@
               "type": "object",
               "properties": {
                 "amount": {
-                  "example": "any"
+                  "example": 100.00
                 }
               }
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "422": {
+            "description": "This user hasn't a wallet",
+            "content": "application/json"
+          },
+          "409": {
+            "description": "The amount to deposit can't be 0.00",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Succesful deposit, your balance has updated",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occured",
+            "content": "application/json"
+          }
+        }
       }
     },
     "/withdraw": {
       "patch": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "withdraw"
+        ],
+        "description": "Route dedicated to do withdraw",
         "parameters": [
           {
             "name": "obj",
@@ -101,27 +162,61 @@
               "type": "object",
               "properties": {
                 "amount": {
-                  "example": "any"
+                  "example": 100.00
                 }
               }
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "422": {
+            "description": "This user hasn't a wallet",
+            "content": "application/json"
+          },
+          "409": {
+            "description": "Error - Your withdraw is higgher than your balance",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Succesful withdraw, your balance has updated",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occured",
+            "content": "application/json"
+          }
+        }
       }
     },
     "/consult-balance": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "consult-balance"
+        ],
+        "description": "Route dedicated to consult the user balance",
         "parameters": [],
-        "responses": {}
+        "responses": {
+          "422": {
+            "description": "This user hasn't a wallet",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "The use balance",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occured",
+            "content": "application/json"
+          }
+        }
       }
     },
     "/hire-loan": {
       "post": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "hire-loan"
+        ],
+        "description": "Route dedicated to the user hires a loan",
         "parameters": [
           {
             "name": "obj",
@@ -130,32 +225,85 @@
               "type": "object",
               "properties": {
                 "value": {
-                  "example": "any"
+                  "example":  600.00
                 },
                 "installments": {
-                  "example": "any"
+                  "example": 6
                 },
-                "userSalary": {
-                  "example": "any"
+                "grossSalary": {
+                  "example": 1500.00
+                },
+                "netSalary": {
+                  "example": 1250.00
                 }
               }
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "422": [
+            {
+              "description": "The number of installments",
+              "content": "application/json" 
+            },
+            {
+              "description": "This user can't hire a loan",
+              "content": "application/json"
+            },
+            {
+              "description": "Please insert a valid value to the salary",
+              "content": "application/json"
+            },
+            {
+              "description": "The value you want to loan isn't available",
+              "content": "application/json"
+            }
+          ],
+          "200": {
+            "description": "Loan hired with success",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occured",
+            "content": "application/json"
+          }
+        }
       }
     },
     "/installments-to-pay": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "installments-to-pay"
+        ],
+        "description": "Route dedicated to verify the installments open to pay",
         "parameters": [],
-        "responses": {}
+        "responses": {
+          "422": [
+            {
+              "description": "This user hasn't a wallet",
+              "content": "application/json"
+            },
+            {
+              "description": "This user hasn't a loan",
+              "content": "application/json"
+            }
+          ],
+          "200": {
+            "description": "instalments to pay",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occured",
+            "content": "application/json"
+          }
+        }
       }
     },
     "/pay-installment": {
       "post": {
-        "tags": [],
+        "tags": [
+          "pay-installment"
+        ],
         "description": "",
         "parameters": [
           {
@@ -165,28 +313,69 @@
               "type": "object",
               "properties": {
                 "installmentValue": {
-                  "example": "any"
+                  "example": 100.00
                 }
               }
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "422": [
+            {
+              "description": "This user hasn't a wallet",
+              "content": "application/json"
+            },
+            {
+              "description": "This user hasn't a loan",
+              "content": "application/json"
+            },
+            {
+              "description": "Incorrect value of installment",
+              "content": "application/json"
+            }
+          ],
+          "200": {
+            "description": "Installment payed with success",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occured",
+            "content": "application/json"
+          }
+        }
       }
     },
     "/consult-loan": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "consult-loan"
+        ],
+        "description": "Rote dedicated to the consult the loan active in his account",
         "parameters": [],
-        "responses": {}
+        "responses": {
+          "422": [
+            {
+              "description": "This user hasn't a wallet",
+              "content": "application/json"
+            },
+            {
+              "description": "This user hasn't a loan",
+              "content": "application/json"
+            },
+            {
+              "description": "Incorrect value of installment",
+              "content": "application/json"
+            }
+          ],
+          "200": "Return the loan active in his account"
+        }
       }
     }
   },
   "definitions": {},
   "informações": {
-    "título": "Minha API",
-    "descrição": "Descrição"
+    "título": "API-Bank-Services",
+    "descrição": "API that gives access to bank-related services, like create account, login, deposit, withdra, contract loan, pay installments and consult loan active"
   },
   "esquemas": [
     "http"

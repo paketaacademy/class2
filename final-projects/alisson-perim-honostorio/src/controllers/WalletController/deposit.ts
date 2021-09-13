@@ -12,11 +12,25 @@ export const Deposit = {
           .status(422)
           .send({ message: `This user hasn't a wallet` })
       }
+
+      if(typeof amount !== 'number'){
+        return res
+          .status(422)
+          .send({message: `Please insert a number to do your deposit`})
+      }
+
+      if(amount % 1 !== 0){
+        return res
+          .status(422)
+          .send({message: `The amount to do a deposit need to be a integer number`})
+      }
+
       if (amount < 0.01) {
         return res
-          .status(400)
+          .status(409)
           .send({ message: `The amount to deposit can't be 0.00` })
       }
+     
       const newBalance = findWallet.balance + amount
       findWallet.balance = newBalance
       await findWallet.save()

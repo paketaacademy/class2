@@ -18,6 +18,7 @@ import { InstallmentsToPay } from "../controllers/LoanController/installmentToPa
 import { payInstallmentYupValidation } from "../validations/payInstallmentValidation"
 import { PayInstallment } from "../controllers/LoanController/payInstallment"
 import { InstallmentActive } from "../controllers/LoanController/installmentActive"
+import swaggerUi from 'swagger-ui-express'
 const swaggerFile = require("../swagger-output.json")
 
 const router = Router()
@@ -27,8 +28,9 @@ const corsOption = {
 }
 
 router.use(cors(corsOption))
+router.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
-router.post('/users', validation(userYupValidations), createUser.create)
+router.post('/register', validation(userYupValidations), createUser.create)
 router.post('/login', validation(loginYupValidation), userLogin.login)
 
 router.patch('/deposit', validation(depositYupValidation), authMiddlewares, Deposit.deposit)
