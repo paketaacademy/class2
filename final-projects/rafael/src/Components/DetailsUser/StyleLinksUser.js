@@ -32,7 +32,8 @@ export const DetailRow= styled.div`
 export const ColumnDetails  = styled.div`
   width: 15.625rem;  
   display: flex;
-  align-items: center;     
+  align-items: center;  
+  margin-right: 0.625rem;
 `
 
 export const LinkGit = styled.a`

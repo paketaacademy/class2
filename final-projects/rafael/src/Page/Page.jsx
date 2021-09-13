@@ -58,7 +58,7 @@ function Page() {
   let formattedDate = ((dateReceived.getDate() + " " + months[(dateReceived.getMonth())] + " " + dateReceived.getFullYear()));
   
   const conditionView = () => {
-    if (detailUser && detailUser.name != null) {
+    if (detailUser && detailUser.html_url != null) {
       return (
         <>
           {viewerUser()}
