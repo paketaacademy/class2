@@ -11,35 +11,27 @@ from "./styled"
 
 export default function Footer() {
     return(
-        <Container>
-            
-            <Header>
-                <div>
-                    <img src={Image} />
-                </div>
-                <div>
-                    
+        <Container>            
+            <Header>                
+                    <Img src={Image} />                
+                <div>                    
                     <H1>Insure</H1>
                 </div>
                 <Icones>
                     <FacebookIcon color="action"/>
                     <TwitterIcon color="action" />
                     <PinterestIcon color="action" />
-                    <InstagramIcon color="action" />
-                    
-                </Icones>
-               
+                    <InstagramIcon color="action" />                    
+                </Icones>               
             </Header>
             <Hr />  
-            <List>
-                
+            <List>                
                     <Ul>
                         <Title><Li>OUR COMPANY</Li></Title>
                         <Li>HOW WE WORK</Li>
                         <Li>WHY INSURE?</Li>
                         <Li>VIEW PLANS</Li>
                         <Li>REVIEWS</Li>
-
                     </Ul>
                     
                     <Ul>
@@ -49,8 +41,7 @@ export default function Footer() {
                         <Li>PRIVACY POLiCY</Li>
                         <Li>COOKIES</Li>                    
                     </Ul>
-                
-                
+                                
                 <Ul>
                     <Title><Li>CONTACT </Li></Title>
                     <Li>SALES</Li>
@@ -58,6 +49,7 @@ export default function Footer() {
                     <Li>LIVE CHAT</Li>                    
                 </Ul>
                 <Ul>
+
                     <Title><Li>OTHERS </Li></Title>   
                     <Li>CARERS</Li>
                     <Li>PRESS</Li>

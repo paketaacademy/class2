@@ -1,12 +1,10 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-      width: 100%;
+    width: 100%;
     margin-top: 110px;
-  //background: radial-gradient(circle, rgba(92,39,251,1) 0%, rgba(112,71,247,1) 100%);
-  background-color: rgb(250 250 250);
-  
-  
+    background-color: rgb(250 250 250);
+   
   @media (max-width: 1000px) {
     padding: 70px 30px;
   }
@@ -18,25 +16,21 @@ export const Title = styled.h4`
 
 export const Icones = styled.div`
     display: flex;
-    margin-left: 500px;
+    margin-left: 440px;
     padding: 10px;
-    padding-left: 10px;
+    padding-left: 35px;
 `
-export const Header = styled.div`
 
-height: 25px;
+export const Header = styled.div`
+  height: 25px;
   padding: 30px;
   display: flex;
   margin-left: 170px;
-  margin: initial;
-  
-  /* justify-content: space-between;
-  align-items: center;   */
-
+  margin: initial; 
 `
 
 export const H1 = styled.h1`
-      margin-left: 60px;
+  margin-left: 80px;
   width: auto;
   margin-right: auto;
   font-size: 20px;  
@@ -47,9 +41,9 @@ export const H1 = styled.h1`
 `
 
 export const Hr = styled.hr`
-      width: 910px;
-      margin-left: 60px;
     color: rgb(205 205 207);
+    width: 910px;
+    margin-left: 60px;    
 `
 
 export const List = styled.div`
@@ -72,7 +66,9 @@ export const Li = styled.li`
 export const Span = styled.span``
 
 export const Img = styled.img`
-margin-top: -110px;
-    margin-left: -80px;
+
     position: absolute;
+    margin-top: -20px;
+    margin-left: -30px;
+    width: 440px;
 `

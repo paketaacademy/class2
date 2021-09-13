@@ -9,11 +9,11 @@ export const Hr = styled.hr`
 `
 
 export const Title = styled.h1`
-      margin-left: 85px;
+    margin-left: 85px;
 `
 
 export const Img = styled.img`
-width: 50px;
+    width: 50px;
 `
 export const H2 = styled.h2``
 
@@ -23,7 +23,7 @@ export const P = styled.p`
 `
 
 export const Ul = styled.ul`
- list-style: none;
+    list-style: none;
     -webkit-box-pack: justify;
     justify-content: space-between;
     display: -webkit-box;
@@ -33,6 +33,6 @@ export const Ul = styled.ul`
 `
 
 export const Li = styled.li`
-line-height: 2;
+    line-height: 2;
     font-size: 16px;
 `

@@ -5,7 +5,7 @@ import People from "./icones/icon-people-first.svg"
 import {
      Hr, Title,  Img, H2, P , Ul , Li
 }
-    from "./styled"
+from "./styled"
 
 export default function Different() {
     return (
@@ -15,7 +15,7 @@ export default function Different() {
             <>
                 <Ul>
                     <Li>
-                        <Img src={Snappy} alt="" />
+                        <Img src={Snappy} alt="Icon snappy process" />
                         <H2>Snappy Process </H2>
                         <P>Our application process can be completed in <br />
                             minutes, not hours. Don´t get stuck filling in <br />
@@ -23,8 +23,8 @@ export default function Different() {
                         </P>
                     </Li>
                     <Li>
-                        <Img src={affordable} alt="" />
-                        <H2>Affordablw Preces </H2>
+                        <Img src={affordable} alt="Icon affordable preces" />
+                        <H2>Affordable Preces </H2>
                         <P>
                             We don´t want you woeying about high monthly <br />
                             costs. Our prices may be low. But we still offer <br />
@@ -32,7 +32,7 @@ export default function Different() {
                         </P>
                     </Li>
                     <Li>
-                        <Img src={People} alt="" />
+                        <Img src={People} alt="Icon people first" />
                         <H2>People First </H2>
                         <P>
                             Our plans aren´t full of conditions and clauses <br />

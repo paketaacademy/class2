@@ -7,13 +7,16 @@ export const WorkButton = styled.button`
     padding: 15px;
     cursor: pointer;
     border-color: white;
-    margin-left: 300px;
-    margin-top: 30px;
-    
+    margin-left: 370px;
+    margin-top: 25px;    
+`
+
+export const H1 = styled.h1`
+    margin-top: 0px;
 `
 
 export const Div = styled.div`
-background-color: rgb(44 38 64);
+    background-color: rgb(44 38 64);
     display: flex;
     max-height: 400px;
     color: white;
@@ -22,9 +25,13 @@ background-color: rgb(44 38 64);
     margin-left: 94px;
     padding: 60px;
     height: 100px;
-
 `
 
 export const Img = styled.img`
-
+    z-index: 1;
+    width: 510px;
+    margin-left: -422px;
+    position: absolute;
+    margin-top: -55px;
+    height: 215px;
 `

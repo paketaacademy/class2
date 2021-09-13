@@ -12,8 +12,7 @@ export const SubmitButton = styled.button`
 export const Container = styled.div`
     background-color: rgb(44 38 64);
     display: flex;
-    max-height: 400px;
-    
+    max-height: 400px;    
     
 `
 

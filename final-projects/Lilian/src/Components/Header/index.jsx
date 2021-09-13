@@ -1,13 +1,14 @@
 import React from "react"
 import Link from '@material-ui/core/Link'
-import { Container, Title, ViewButton , P } from './styled.js'
+import { 
+    Container, Title, ViewButton , P 
+} from './styled.js'
 
 export default function header() {
     const preventDefault = (event) => event.preventDefault();
     return (
         <Container>
-                <Title>INSURE</Title>  
-            
+                <Title>INSURE</Title>              
             <div>            
                 <Link
                     component="button"
@@ -36,8 +37,7 @@ export default function header() {
                 </Link>
                 <Link href="#" onClick={preventDefault} >
                     <ViewButton variant="outlined">VIEW PLANS</ViewButton>
-                </Link>
-            
+                </Link>            
             </div>
         </Container>
     )

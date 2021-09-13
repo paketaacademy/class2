@@ -3,9 +3,8 @@ import Link from '@material-ui/core/Link'
 import Image from "./img/image-intro-desktop.jpg"
 import ImageRight from "./img/bg-pattern-intro-right-desktop.svg"
 import ImageLeft from "./img/bg-pattern-intro-left-desktop.svg"
-import { SubmitButton , Container , Text , Hr , DivImage , Img , ImgRight , ImgLeft 
-    , H1
-
+import { 
+    SubmitButton , Container , Text , Hr , DivImage , Img , ImgRight , ImgLeft , H1
 } from './styled'
 
 export default function Main() {
@@ -30,24 +29,14 @@ export default function Main() {
                      <ImgLeft src={ImageLeft} /> 
             </div>             
                               
-            </Text>
+            </Text>           
 
-            
-
-            <DivImage>
-               
-                <Img src={Image} alt="family" />
-                
+            <DivImage>               
+                <Img src={Image} alt="family" />                
                 <div>
                     <ImgRight src={ImageRight} />
-                </div>
-                
-
-                
-            </DivImage>
-
-            
-                
+                </div>                   
+            </DivImage>                  
 
         </Container>
     )
