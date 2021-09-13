@@ -6,37 +6,21 @@ import { validateEmployees } from "./configs/validateEmployee.js"
 
 app.post('/import', validateEmployees(employeeSchema), async (req, res) => {
   
-  const { dataJsonValid, dataJsonInvalid } = req.files
+  const { dataJsonProcessed, dataJsonInvalidsProcessed } = req.files
   
-  try {    
-
-    const dataJsonProcessed = []
-    for(let i = 0; i < dataJsonValid.length; i++){
-      const data = dataJsonValid[i]
-
-      const date = data.HiredAt[2] == '/' ? data.HiredAt.split('/').reverse().join('-') : data.HiredAt.split('/').join('-')
-      const netSalary = data.NetSalary.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
-      const grossSalary = data.GrossSalary.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
-      
-      dataJsonProcessed.push({
-        ...data,
-        HiredAt: date,
-        NetSalary: netSalary,
-        GrossSalary: grossSalary
-      })
-    }
+  try {
 
     const numberEmployeesSaved = dataJsonProcessed.length
 
     if(numberEmployeesSaved === 0){
-      return res.status(400).send({ "No employees were saved, check the errors below for correction:": dataJsonInvalid })
+      return res.status(400).send({ "No employees were saved, check the errors below for correction:": dataJsonInvalidsProcessed })
     }
 
     const Employees = Mongoose.model('employees', employeesSchema, 'employees')
 
     saveEmployees(dataJsonProcessed, Employees)
 
-    return res.status(200).send({ "Amount of Employees saved": numberEmployeesSaved, "Invalid employees to save": dataJsonInvalid })
+    return res.status(201).send({ "Amount of Employees saved": numberEmployeesSaved, "Invalid employees to save": dataJsonInvalidsProcessed })
   } catch (err) {
     res.status(400).send({ message: `Error: ${err}` })
   }  
