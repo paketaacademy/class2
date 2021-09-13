@@ -8,7 +8,7 @@
 <ul>
   <li>Api do GitHub</li>
   <li>React</li>
-  <li>Styled-components</li>
+  <li>Styled Components</li>
   <li>Material-Ui</li>
 </ul>
 

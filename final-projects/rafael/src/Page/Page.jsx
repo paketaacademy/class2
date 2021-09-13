@@ -29,9 +29,11 @@ function Page() {
     e.preventDefault();
     if (param) {      
       setParamNull('')
-      dataLoading()
-    } else {
-      setParamNull('Enter a name to perform the search!')
+      dataLoading() 
+      document.querySelector('#content').value = ''     
+      setNameUser('')
+    } else {      
+      setParamNull('Enter a name to perform the search!')      
     }
   }
 
@@ -46,7 +48,7 @@ function Page() {
       .then(async response => {
         const data = await response.json()
         setDetailUser(data)
-        setLoading(false)
+        setLoading(false)        
       })
       .catch(err => {
         setDetailUser(err.message)
@@ -58,7 +60,14 @@ function Page() {
   let formattedDate = ((dateReceived.getDate() + " " + months[(dateReceived.getMonth())] + " " + dateReceived.getFullYear()));
   
   const conditionView = () => {
-    if (detailUser && detailUser.html_url != null) {
+    if(paramNull){
+      return(
+        <>
+          {searchNull()}
+        </>
+      )
+    }
+    else if (detailUser && detailUser.html_url != null) {
       return (
         <>
           {viewerUser()}
@@ -66,13 +75,35 @@ function Page() {
       )
     } else if (detailUser && detailUser.message !== '') {
       return (
-        <MessageApi>{detailUser.message}</MessageApi>
+        <>
+          {viewerMessage()}
+        </>
       )
     } else {
       return (
-        <span></span>
+        <>
+          {viewerNull()}
+        </>
       )
     }
+  }  
+
+  const searchNull = () => {
+    return (
+      <MessageNull>{paramNull}</MessageNull>
+    )
+  }
+
+  const viewerNull = () => {
+    return (
+      <span></span>
+    )
+  }
+
+  const viewerMessage = () => {
+    return (
+      <MessageApi>{detailUser.message}</MessageApi>
+    )
   }
 
   const viewerUser = () => {
@@ -99,6 +130,7 @@ function Page() {
           <SearchIcon />
         </IconBox>
         <SearchUser
+          id='content'
           placeholder="Search GitHub username..."
           inputProps={{ 'aria-label': 'Search GitHub username...' }}
           onChange={handleChange}
@@ -107,7 +139,6 @@ function Page() {
           Search
         </Button>
       </SearchBox>
-      <MessageNull>{paramNull}</MessageNull>
       {loading ? 'Loading...' : conditionView()}
     </PageContainer>
   )
