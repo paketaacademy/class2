@@ -1,10 +1,11 @@
-import app from "./configs/index.js"
-import saveEmployees from "./services/saveEmployees.js"
+import app from './configs/index.js'
+import tokenValidation from './configs/validateToken.js'
+import saveEmployees from './services/saveEmployees.js'
 import { Mongoose, employeesSchema } from './configs/mongo.js'
 import { employeeSchema } from './configs/validation.js'
-import { validateEmployees } from "./configs/validateEmployee.js"
+import { validateEmployees } from './configs/validateEmployee.js'
 
-app.post('/import', validateEmployees(employeeSchema), async (req, res) => {
+app.post('/import', tokenValidation, validateEmployees(employeeSchema), async (req, res) => {
   
   const { dataJsonProcessed, dataJsonInvalidsProcessed } = req.files
   
