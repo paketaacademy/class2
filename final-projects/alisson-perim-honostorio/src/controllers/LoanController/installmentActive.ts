@@ -21,11 +21,11 @@ export const InstallmentActive = {
       }
 
       const loanObj = {
-        "Date of contract loan": new Date().toLocaleString(),
-        "Value of loan": loan.value.toFixed(2),
-        "Installments contracted": loan.installments,
-        "Installments to pay": loan.installmentsToPay,
-        "Value of installment": loan.valueOfInstallment
+        date_hired_loan: loan.createdAt,
+        value_of_loan: loan.value.toFixed(2),
+        installments_hired: loan.installments,
+        installments_to_pay: loan.installmentsToPay,
+        value_of_installment: loan.valueOfInstallment
       }
       return res
         .status(200)

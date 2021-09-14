@@ -6,7 +6,9 @@ export interface ILoan {
   installments: number,
   installmentsToPay: number,
   valueOfInstallment: number,
-  isActive: boolean
+  isActive: boolean,
+  createdAt?: Date,
+  updatedAt?: Date
 }
 
 const Loan: Schema = new Schema<ILoan>({

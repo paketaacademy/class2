@@ -344,8 +344,11 @@
             "schema": {
               "type": "object",
               "properties": {
-                "installmentValue": {
+                "paymentValue": {
                   "example": 100.00
+                },
+                "installmentsToPay": {
+                  "example": 2
                 }
               }
             }

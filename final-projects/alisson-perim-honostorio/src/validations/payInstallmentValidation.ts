@@ -1,5 +1,6 @@
 import * as yup from "yup"
 
 export const payInstallmentYupValidation = yup.object().shape({
-  installmentValue: yup.number().min(0.00).required("The value os the installment you want to pay is necessary")
+  paymentValue: yup.number().min(0.00).required("The total value of the installments you want to pay is necessary"),
+  installmentsToPay: yup.number().min(0).required("The amount of installments you want to pay is necessary")
 })

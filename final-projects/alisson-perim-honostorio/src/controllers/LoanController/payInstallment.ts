@@ -5,7 +5,7 @@ import { walletModel } from "../../infra/schemas/walletSchema"
 export const PayInstallment = {
   async payInstallment(req: Request, res: Response) {
     const userId = req.user.id
-    const { installmentValue } = req.body
+    const { paymentValue, installmentsToPay } = req.body
     try {
       const wallet = await walletModel.findOne({ userId })
       if (!wallet) {
@@ -21,19 +21,21 @@ export const PayInstallment = {
           .send({ message: `This user hasn't a loan` })
       }
 
-      if(typeof installmentValue !== 'number'){
+      if(typeof paymentValue !== 'number' || typeof installmentsToPay !== 'number'){
         return res
           .status(422)
-          .send({message: `Please insert a number to do your deposit`})
+          .send({message: `Please insert a number to pay a installment`})
       }
 
-      if (loan.valueOfInstallment !== installmentValue) {
+      const totalToPay = installmentsToPay * loan.valueOfInstallment
+
+      if (paymentValue !== totalToPay) {
         return res
           .status(400)
           .send({ message: `Incorrect value` })
       }
 
-      --loan.installmentsToPay
+      loan.installmentsToPay -= installmentsToPay
       if (loan.installmentsToPay === 0) {
         wallet.hasLoan = false
         loan.isActive = false
@@ -42,7 +44,7 @@ export const PayInstallment = {
       await loan.save()
       return res
         .status(200)
-        .send({ message: `Installment payed with success` })
+        .send({ message: `Installment(s) payed with success` })
     } catch (error) {
       return res
         .status(400)

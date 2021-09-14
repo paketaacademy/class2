@@ -5,7 +5,7 @@ import { ILoan, loanModel } from "../../infra/schemas/loanSchema"
 export const HireLoan = {
   async hireLoan(req: Request, res: Response) {
     const userId = req.user.id
-    const { value, installments, grossSalaray, netSalary } = req.body
+    const { value, installments, grossSalary, netSalary } = req.body
     switch (installments) {
       case 6:
         break
@@ -30,7 +30,7 @@ export const HireLoan = {
           .send({ message: "This user can't hire a loan" })
       }
 
-      if( typeof grossSalaray !== 'number' || typeof netSalary !== 'number'){
+      if( typeof grossSalary !== 'number' || typeof netSalary !== 'number'){
         return res
           .status(422)
           .send({message: "Please insert a valid value to the salary"})
@@ -42,12 +42,12 @@ export const HireLoan = {
           .send({ message: `This user already has a loan in his wallet, can't hire another one` })
       }
 
-      const maxLoan = grossSalaray * 0.3
+      const maxLoan = grossSalary * 0.3
 
       if (maxLoan < value) {
         return res
           .status(422)
-          .send({ message: `Your max value to hire, at this moment, is ${maxLoan.toFixed(2)}` })
+          .send({ message: `Your max value to hire, at this moment, is ${Math.floor(maxLoan)}` })
       }
 
       const valueOfInstallment = (value / installments).toFixed(2)
