@@ -1,0 +1,128 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Final project",
+    "description": "Program that receives data through an Excel spreadsheet, reads and processes the information and the correct lines are recorded in the database, returning the errors and where are the lines that have some invalid field."
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": ["Base URL"],
+  "schemes": [
+    "http"
+  ],
+  "consumes": "multipart/form-data",
+  "produces": [],
+  "paths": {
+    "/register": {
+      "post": {
+        "tags": ["Register"],
+        "description": "User registration",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "example": "sWRjKt2p"
+                },
+                "name": {
+                  "example": "Lucas Barbosa"
+                },
+                "email": {
+                  "example": "lucas@hotmail.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Registration successful",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Error: (error description)",
+            "content": "application/json"
+          },
+          "409": {
+            "description": "E-mail already registered",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": ["Login"],
+        "description": "User Authentication in the System",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "lucas@hotmail.com"
+                },
+                "password": {
+                  "example": "sWRjKt2p"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Login successfully",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Invalid email or password",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/import": {
+      "post": {
+        "tags": ["File upload"],        
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "file",
+            "in": "formData",          
+            "description": "XLSX file upload for data processing",
+            "required": true,
+            "type": "file"          
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Number of Employees saved: (number), Invalid employees to save: (description of errors and their lines)",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "No employees were saved, check the errors below for correction: (description of errors and their lines)",
+            "content": "application/json"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "informações": {
+    "título": "Final project",
+    "descrição": "Program that receives data through an Excel spreadsheet, reads and processes the information and the correct lines are recorded in the database, returning the errors and where are the lines that have some invalid field."
+  },
+  "esquemas": [
+    "http"
+  ]
+}
