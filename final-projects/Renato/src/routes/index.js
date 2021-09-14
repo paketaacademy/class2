@@ -27,6 +27,7 @@ import vehicleDeleteController from "../controllers/vehicles/delete.js"
 import { validatePlatoon } from "../middlewares/platoon-validate.js"
 import { platoonValidationSchema } from "../validation/platoon-validation.js"
 import platoonRegisterController from "../controllers/platoon/register.js"
+import platoonPatchController from "../controllers/platoon/patch.js"
 
 
 const routes = Router()
@@ -51,5 +52,7 @@ routes.patch('/vehicles/:id', verifyToken, vehiclePatchController.patchEquipment
 routes.delete('/vehicles/:id', verifyToken, vehicleDeleteController.deleteVehicle)
 
 routes.post('/register/platoon', verifyToken, validatePlatoon(platoonValidationSchema), platoonRegisterController.creatEquipment)
+routes.patch('/platoon/:id', verifyToken, platoonPatchController.patchPlatoon)
+
 
 export default routes

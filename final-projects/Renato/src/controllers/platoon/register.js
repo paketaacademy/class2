@@ -6,7 +6,6 @@ const platoonRegisterController = {
   async creatEquipment(req, res) {
     const { namePlatoon, platoonCommander, soldiers } = req.body
     const soldierId = req.body
-    console.log(soldierId)
 
     const Soldiers = Mongoose.model ('soldiers', soldierSchema)
     const Platoons = Mongoose.model('platoons', platoonSchema)
