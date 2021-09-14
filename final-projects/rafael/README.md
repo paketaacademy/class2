@@ -16,8 +16,8 @@
 
 <ol>
   <li>Clonar o repositório</li>
-  <li>Utilizar um aplicativo que te de acesso a linha de comando(exemplo.: cmd, powerShell, git Bash, terminal do visual studio, entre outros) nele ir até a pasta raiz do projeto, e rodar o seguinte comando <strong>npm i</strong></li>
-  <li>Apos fazer o passo anterior, no mesmo aplicativo/terminal, rodar o comando <strong>npm start</strong></li>  
+  <li>Utilizar um aplicativo que te de acesso a linha de comando(exemplo.: cmd, PowerShell, Git Bash, terminal do Visual Studio, ou qualquer outro de sua preferência) nele ir até a pasta raiz do projeto, e "rodar" o seguinte comando <strong>npm i</strong></li>
+  <li>Apos fazer o passo anterior, no mesmo aplicativo/terminal, "rodar" o comando <strong>npm start</strong></li>  
 </ol>
 
-<p>Seguindo os passos, ai é só utilizar a aplicação.</p>
+<p>Após realizar os passos anteriores, é só utilizar a aplicação.</p>
