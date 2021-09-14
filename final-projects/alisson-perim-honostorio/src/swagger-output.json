@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "REST API",
-    "description": ""
+    "description": "A simple API to provide some Bank Services, like deposit, withdraw and hire loan "
   },
   "host": "localhost:3030",
   "basePath": "/",
@@ -116,6 +116,11 @@
         "description": " Route dedicated to do a deposit",
         "parameters": [
           {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
             "name": "obj",
             "in": "body",
             "schema": {
@@ -156,6 +161,11 @@
         "description": "Route dedicated to do withdraw",
         "parameters": [
           {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
             "name": "obj",
             "in": "body",
             "schema": {
@@ -194,7 +204,13 @@
           "consult-balance"
         ],
         "description": "Route dedicated to consult the user balance",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          }
+        ],
         "responses": {
           "422": {
             "description": "This user hasn't a wallet",
@@ -218,6 +234,11 @@
         ],
         "description": "Route dedicated to the user hires a loan",
         "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "obj",
             "in": "body",
@@ -276,7 +297,13 @@
           "installments-to-pay"
         ],
         "description": "Route dedicated to verify the installments open to pay",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          }
+        ],
         "responses": {
           "422": [
             {
@@ -306,6 +333,11 @@
         ],
         "description": "",
         "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
           {
             "name": "obj",
             "in": "body",
@@ -351,7 +383,13 @@
           "consult-loan"
         ],
         "description": "Rote dedicated to the consult the loan active in his account",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          }
+        ],
         "responses": {
           "422": [
             {
