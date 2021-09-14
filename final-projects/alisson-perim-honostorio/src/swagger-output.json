@@ -2,8 +2,9 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "REST API",
-    "description": "A simple API to provide some Bank Services, like deposit, withdraw and hire loan "
+    "title": "Bank-related Services API",
+    "description": "A simple API to provide some Bank Services, like deposit, withdraw and hire loan ",
+    "TermsOfService": "http://localhost:3030/terms"
   },
   "host": "localhost:3030",
   "basePath": "/",
@@ -28,6 +29,25 @@
     "application/json"
   ],
   "paths": {
+    "/terms": {
+      "get": {
+        "tags": [
+          "responsability"
+        ],
+        "description": "That route contain the responsability of the developer and his contact",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Bead request",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Message",
+            "content": "application/json"
+          }
+        }
+      }
+    },
     "/register": {
       "post": {
         "tags": [
@@ -327,7 +347,7 @@
       }
     },
     "/pay-installment": {
-      "post": {
+      "patch": {
         "tags": [
           "pay-installment"
         ],

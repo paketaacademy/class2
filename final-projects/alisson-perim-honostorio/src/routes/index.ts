@@ -19,6 +19,7 @@ import { payInstallmentYupValidation } from "../validations/payInstallmentValida
 import { PayInstallment } from "../controllers/LoanController/payInstallment"
 import { InstallmentActive } from "../controllers/LoanController/installmentActive"
 import swaggerUi from 'swagger-ui-express'
+import { Terms } from "../controllers/Terms"
 const swaggerFile = require("../swagger-output.json")
 
 const router = Router()
@@ -29,6 +30,7 @@ const corsOption = {
 
 router.use(cors(corsOption))
 router.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+router.get('/terms', Terms.termsOfService)
 
 router.post('/register', validation(userYupValidations), createUser.create)
 router.post('/login', validation(loginYupValidation), userLogin.login)

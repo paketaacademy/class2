@@ -22,6 +22,7 @@ export const InstallmentActive = {
 
       const loanObj = {
         date_hired_loan: loan.createdAt,
+        date_updated_loan: loan.updatedAt,
         value_of_loan: loan.value.toFixed(2),
         installments_hired: loan.installments,
         installments_to_pay: loan.installmentsToPay,
