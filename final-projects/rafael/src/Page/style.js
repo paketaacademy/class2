@@ -43,12 +43,14 @@ export const SearchBox = styled(Paper)`
   display: flex;
   align-items: center;  
   margin-bottom: 0.938rem;
+  display: flex;
   @media (max-width: 37.5rem) {
     width: 25rem;
   }
   @media (max-width: 25rem) {
     width: 18.75rem;
     font-size: 0.75rem;
+    flex-direction: column;
   }
 `
 
@@ -80,6 +82,12 @@ export const IconBox = styled(IconButton)`
   padding: 0.625rem;
 `
 
+export const ContenteSearch = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+`
+
 export const SearchBtn = styled.button`
   text-align: center;
   width: 15%;
@@ -98,6 +106,7 @@ export const SearchBtn = styled.button`
     width: 20%;
   }
   @media (max-width: 25rem) {  
-    width: 20%;
+    margin: 5px;
+    width: 90%;
   }
 `

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import SearchIcon from '@material-ui/icons/Search'
-import { PageContainer, Box, SearchUser, SearchBtn, SearchBox, IconBox, MessageNull, MessageApi } from "./style"
+import { PageContainer, Box, SearchUser, SearchBtn, ContenteSearch, SearchBox, IconBox, MessageNull, MessageApi } from "./style"
 import Menu from "../Components/Menu/Menu"
 import AvatarUser from '../Components/DetailsUser/AvatarUser'
 import LinksUser from "../Components/DetailsUser/LinksUser"
@@ -21,20 +21,20 @@ function Page() {
   }
 
   useEffect(() => {
-    document.getElementById('content').focus(); 
+    document.getElementById('content').focus();
     setParam(nameUser)
   }, [nameUser])
 
   const handleClick = (e) => {
     e.preventDefault();
-    if (param) {      
+    if (param) {
       setParamNull('')
-      dataLoading() 
-      document.querySelector('#content').value = '' 
-      document.getElementById('content').focus();    
+      dataLoading()
+      document.querySelector('#content').value = ''
+      document.getElementById('content').focus();
       setNameUser('')
-    } else {      
-      setParamNull('Enter a name to perform the search!')      
+    } else {
+      setParamNull('Enter a name to perform the search!')
     }
   }
 
@@ -43,26 +43,26 @@ function Page() {
     fetch(
       `https://api.github.com/users/${param}`,
       {
-        method: 'get'   
+        method: 'get'
       }
     )
       .then(async response => {
         const data = await response.json()
         setDetailUser(data)
-        setLoading(false)        
+        setLoading(false)
       })
       .catch(err => {
         setDetailUser(err.message)
       })
   }
 
-  const months = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul","Ago","Set","Out","Nov","Dez"];
+  const months = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
   let dateReceived = new Date(detailUser.created_at);
   let formattedDate = ((dateReceived.getDate() + " " + months[(dateReceived.getMonth())] + " " + dateReceived.getFullYear()));
-  
+
   const conditionView = () => {
-    if(paramNull){
-      return(
+    if (paramNull) {
+      return (
         <>
           {searchNull()}
         </>
@@ -87,7 +87,7 @@ function Page() {
         </>
       )
     }
-  }  
+  }
 
   const searchNull = () => {
     return (
@@ -127,15 +127,17 @@ function Page() {
     <PageContainer>
       <Menu />
       <SearchBox component="form" onSubmit={handleClick}>
-        <IconBox aria-label="search">
-          <SearchIcon />
-        </IconBox>
-        <SearchUser
-          id='content'
-          placeholder="Search GitHub username..."
-          inputProps={{ 'aria-label': 'Search GitHub username...' }}
-          onChange={handleChange}
-        />
+        <ContenteSearch>
+          <IconBox aria-label="search">
+            <SearchIcon />
+          </IconBox>
+          <SearchUser
+            id='content'
+            placeholder="Search GitHub username..."
+            inputProps={{ 'aria-label': 'Search GitHub username...' }}
+            onChange={handleChange}
+          />
+        </ContenteSearch>
         <SearchBtn variant="contained" color="primary" type="submit" >
           Search
         </SearchBtn>

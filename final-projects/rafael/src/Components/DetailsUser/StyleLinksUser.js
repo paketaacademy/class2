@@ -43,5 +43,4 @@ export const LinkGit = styled.a`
 
 export const InfoRow = styled.span`
   margin-left: 0.625rem;  
-  /* margin-top: 0.188rem;     */
 `
