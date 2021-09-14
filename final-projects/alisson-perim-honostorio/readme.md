@@ -16,5 +16,5 @@
   4. Ao efetuar o clone você deve abrir a pasta do projeto direto no VScode
   5. Quando estiver com o projeto aberto você deve apertar `Ctrl + '`, irá aparecer um terminal, algo como o cmd do windows, você deve digitar `npm i` e apertar `Enter`, isso fara com que todas as dependências necessárias sejam instaladas
   6. Você deve criar um arquivo na raiz do projeto com o nome .env e copiar todos os dados do arquivo .env.sample para o arquivo .env
-  6. Ao finalizar a instalação de todas as dependências você deve digitar nesse mesmo terminal `npm start`, o VScode irá fazer o start da API, se tudo correr bem, e não faltar nenhuma dependência irá aparecer no terminal *Server is running*, caso haja algum erro, repita o passo 5
-  7. Agora é só você abrir o seu navegador padrão e digitar http://localhost/3030/doc você será redicionado(a) para a página do swagger, lá estão presentes todas as rotas da API e todos os dados necessários para utilizar cada rota
+  7. Ao finalizar a instalação de todas as dependências você deve digitar nesse mesmo terminal `npm start`, o VScode irá fazer o start da API, se tudo correr bem, e não faltar nenhuma dependência irá aparecer no terminal *Server is running*, caso haja algum erro, repita o passo 5
+  8. Agora é só você abrir o seu navegador padrão e digitar http://localhost/3030/doc você será redicionado(a) para a página do swagger, lá estão presentes todas as rotas da API e todos os dados necessários para utilizar cada rota
