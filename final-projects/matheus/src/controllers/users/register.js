@@ -35,7 +35,7 @@ const Register = {
       return res
       .status(400)
       .send({
-        message:"Sorry, can't this user"
+        message:"Sorry, can't create this user"
       })
     }
   }

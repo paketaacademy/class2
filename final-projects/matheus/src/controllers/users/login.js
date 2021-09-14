@@ -45,7 +45,7 @@ const Login ={
       return (res
       .status(400)
       .send({
-        message:'Sorry, something goes wrong'
+        message:'Sorry, something went wrong'
       })
       )
     }
