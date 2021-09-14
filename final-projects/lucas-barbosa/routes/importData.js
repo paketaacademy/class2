@@ -21,7 +21,7 @@ app.post('/import', tokenValidation, validateEmployees(employeeSchema), async (r
 
     saveEmployees(dataJsonProcessed, Employees)
 
-    return res.status(201).send({ "Amount of Employees saved": numberEmployeesSaved, "Invalid employees to save": dataJsonInvalidsProcessed })
+    return res.status(201).send({ "Number of Employees saved": numberEmployeesSaved, "Invalid employees to save": dataJsonInvalidsProcessed })
   } catch (err) {
     res.status(400).send({ message: `Error: ${err}` })
   }  
