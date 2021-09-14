@@ -3,7 +3,7 @@ import SoldierSchema from "../../models/army/soldier.js"
 
 const GetSoldier = {
   async GetOneSoldier(req, res) {
-    const { soldierId } = req.body
+    const soldierId = req.params.id
     const SoldierModel = Mongoose.model('soldier', SoldierSchema, 'soldier')
 
     try {

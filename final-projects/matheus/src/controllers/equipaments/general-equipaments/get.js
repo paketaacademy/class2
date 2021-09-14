@@ -3,7 +3,7 @@ import EquipamentsSchema from "../../../models/equipaments/equipments-schema.js"
 
 const GetEquipaments ={
   async GetOneEquipaments(req, res){
-    const { equipamentsId } = req.body
+    const equipamentsId = req.params.id
 
     const EquipModel = await Mongoose.model('equipaments', EquipamentsSchema, 'equipaments')
 
@@ -13,7 +13,7 @@ const GetEquipaments ={
         return res
         .status(404)
         .send({
-          message: 'Sorry Armor not found'
+          message: 'Sorry Equipament not found'
         })
       }
 
@@ -25,7 +25,7 @@ const GetEquipaments ={
       return res
       .status(400)
       .send({
-        message: 'Something went wrong with your armor'
+        message: 'Something went wrong with your equipament'
       })
     }
   },
@@ -36,7 +36,7 @@ const GetEquipaments ={
 
     try{
       const foundEquip = await EquipModel.find({ owner: owner })
-      if(!foundEquip || foundEquip.length == 0){
+      if(!foundEquip){
         return res
         .status(404)
         .send({
@@ -62,7 +62,7 @@ const GetEquipaments ={
 
     try{
       const foundEquip = await EquipModel.find({})
-      if(!foundEquip || foundEquip.length == 0){
+      if(!foundEquip){
         return res
         .status(404)
         .send({

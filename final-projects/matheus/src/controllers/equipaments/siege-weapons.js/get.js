@@ -3,9 +3,9 @@ import SiegeWeaponsSchema from "../../../models/equipaments/siege-weapons.js"
 
 const GetSiegeWeapon = {
   async GetOneSiegeWeapon(req, res){
-    const { siegeWeaponId } = req.body
+    const siegeWeaponId = req.params.id
     
-    const SWeaponModel = Mongoose.model('siege-weapon', SiegeWeaponsSchema, 'siege-weapon')
+    const SWeaponModel = Mongoose.model('siegeWeapon', SiegeWeaponsSchema, 'siegeWeapon')
 
     try{
       const foundSWeapon = await SWeaponModel.findOne({ _id: siegeWeaponId })
@@ -18,7 +18,7 @@ const GetSiegeWeapon = {
       }
       
       return res
-      .status(201)
+      .status(200)
       .send(foundSWeapon)
 
     }catch(error){
@@ -45,7 +45,7 @@ const GetSiegeWeapon = {
       }
       
       return res
-      .status(201)
+      .status(200)
       .send(foundSWeapons)
 
     }catch(error){
@@ -58,7 +58,7 @@ const GetSiegeWeapon = {
   },
   async GetAllSiegeWeapon(req, res){
     
-    const SWeaponModel = Mongoose.model('siege-weapon', SiegeWeaponsSchema, 'siege-weapon')
+    const SWeaponModel = Mongoose.model('siegeWeapon', SiegeWeaponsSchema, 'siegeWeapon')
 
     try{
       const foundSWeapons = await SWeaponModel.find({})
@@ -71,7 +71,7 @@ const GetSiegeWeapon = {
       }
       
       return res
-      .status(201)
+      .status(200)
       .send(foundSWeapons)
 
     }catch(error){

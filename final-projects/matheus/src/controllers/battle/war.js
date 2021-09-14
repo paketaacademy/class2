@@ -20,13 +20,7 @@ const SetWar = {
       const findKnight = await SoldierModel.find({ typeSoldier: { $in: 'knight' } })
       const findVillager = await SoldierModel.find({ typeSoldier: { $in: 'villager' } })
       const findSM = await SoldierModel.find({ typeSoldier: { $in: 'sword master' } })
-      if(!findArcher || !findKnight || !findVillager || !findSM){
-        return res
-        .status(404)
-        .send({
-          message:"Sorry your army has to be completed"
-        })
-      }
+      
       if (quantSiegeWeaponEngland > findSiegeWeapon.length) {
         return res
           .status(400)
@@ -39,28 +33,28 @@ const SetWar = {
         return res
           .status(400)
           .send({
-            message: "Sorry you don't have that mutch Archers"
+            message: "Sorry, you don't have that mutch Archers"
           })
       }
       if (quantEnglandVillager > findVillager.length) {
         return res
           .status(400)
           .send({
-            message: "Sorry you don't have that mutch Villager"
+            message: "Sorry, you don't have that mutch Villager"
           })
       }
       if (quantEnglandKnight > findKnight.length) {
         return res
           .status(400)
           .send({
-            message: "Sorry you don't have that mutch Knight"
+            message: "Sorry, you don't have that mutch Knight"
           })
       }
       if (quantEnglandSwordMaster > findSM.length) {
         return res
           .status(400)
           .send({
-            message: "Sorry you don't have that mutch Sword Master"
+            message: "Sorry, you don't have that mutch Sword Master"
           })
       }
 

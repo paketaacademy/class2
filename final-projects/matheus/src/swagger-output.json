@@ -5,7 +5,7 @@
     "title": "REST API",
     "description": ""
   },
-  "host": "localhost: 3030",
+  "host": "localhost:3030",
   "basePath": "/",
   "tags": [
     "users",
@@ -113,7 +113,7 @@
         "tags": [
           "soldiers"
         ],
-        "description": "This is a route to create a soldier for your army",
+        "description": "Route to create a soldier for your army",
         "parameters": [
           {
             "name": "auth-token",
@@ -131,7 +131,7 @@
                 },
                 "ability": {
                   "example": {
-                    "super shot":"30% chance of a critical shot"
+                    "super shot": "30% chance of a critical shot"
                   }
                 },
                 "strength": {
@@ -157,7 +157,8 @@
                 },
                 "idEquipaments": {
                   "example": [
-                    "6140a7543d4009117c02fef6", "6140a7bd78a5ec30a5472ce2"
+                    "6140a7543d4009117c02fef6",
+                    "6140a7bd78a5ec30a5472ce2"
                   ]
                 }
               }
@@ -169,11 +170,14 @@
             "description": "Access denied",
             "content": "application/json"
           },
-          "400":{
-            "description": "Enter with a valid type of soldier // Sorry, something went wrong with your Soldier",
+          "400": {
+            "description": [
+              "Enter with a valid type of soldier",
+              "Sorry, something went wrong with your Soldier"
+            ],
             "content": "application/json"
           },
-          "201":{
+          "201": {
             "description": "Created Soldier",
             "content": "application/json"
           }
@@ -222,11 +226,11 @@
           }
         }
       },
-      "get": {
+      "patch": {
         "tags": [
           "soldiers"
         ],
-        "description": "Route that will get soldier by ID",
+        "description": "Route to modify your soldier that was created",
         "parameters": [
           {
             "name": "auth-token",
@@ -240,7 +244,39 @@
               "type": "object",
               "properties": {
                 "soldierId": {
-                  "example": "any"
+                  "example": "613f845dd6a949b4d1c7291f"
+                },
+                "typeSoldiers": {
+                  "example": "knight"
+                },
+                "ability": {
+                  "example": {
+                    "power spear": "your spear turs 360º, dealing damage within 2m radius"
+                  }
+                },
+                "strength": {
+                  "example": "15"
+                },
+                "dexterity": {
+                  "example": "10"
+                },
+                "constitution": {
+                  "example": "18"
+                },
+                "intelligence": {
+                  "example": "9"
+                },
+                "wisdom": {
+                  "example": "10"
+                },
+                "lifePoints": {
+                  "example": "35"
+                },
+                "mount": {
+                  "example": "horse"
+                },
+                "idEquipaments": {
+                  "example": "613f974c7910feb155597da1"
                 }
               }
             }
@@ -250,12 +286,31 @@
           "401": {
             "description": "Access denied",
             "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, Soldier not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": [
+              "Sorry, something went wrong",
+              "Enter with a valid type of soldier"
+            ],
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Modifyd Soldier",
+            "content": "application/json"
           }
         }
-      },
-      "patch": {
-        "tags": [],
-        "description": "",
+      }
+    },
+    "/soldiers/{id}": {
+      "get": {
+        "tags": [
+          "soldiers"
+        ],
+        "description": "Route that will get the soldier by ID",
         "parameters": [
           {
             "name": "auth-token",
@@ -263,51 +318,27 @@
             "required": true
           },
           {
-            "name": "obj",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "soldierId": {
-                  "example": "any"
-                },
-                "typeSoldiers": {
-                  "example": "any"
-                },
-                "ability": {
-                  "example": "any"
-                },
-                "strength": {
-                  "example": "any"
-                },
-                "dexterity": {
-                  "example": "any"
-                },
-                "constitution": {
-                  "example": "any"
-                },
-                "intelligence": {
-                  "example": "any"
-                },
-                "wisdom": {
-                  "example": "any"
-                },
-                "lifePoints": {
-                  "example": "any"
-                },
-                "mount": {
-                  "example": "any"
-                },
-                "idEquipaments": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
           "401": {
             "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, Soldier not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, something went wrong",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Soldier",
             "content": "application/json"
           }
         }
@@ -315,8 +346,10 @@
     },
     "/all-soldiers": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "soldiers"
+        ],
+        "description": "Route that will get all Soldiers",
         "parameters": [
           {
             "name": "auth-token",
@@ -327,6 +360,18 @@
         "responses": {
           "401": {
             "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, Soldier not found in our Database",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, something went wrong",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Soldiers",
             "content": "application/json"
           }
         }
@@ -334,8 +379,10 @@
     },
     "/user/soldiers": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "soldiers"
+        ],
+        "description": "Route that will get all Soldiers creted by the user",
         "parameters": [
           {
             "name": "auth-token",
@@ -346,6 +393,18 @@
         "responses": {
           "401": {
             "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, thers no soldier in our database, our you don't create one yeat",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, something went wrong",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Soldiers",
             "content": "application/json"
           }
         }
@@ -353,8 +412,10 @@
     },
     "/category/soldiers": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "soldiers"
+        ],
+        "description": "Routes that will get the soldiers bay category",
         "parameters": [
           {
             "name": "auth-token",
@@ -366,14 +427,28 @@
           "401": {
             "description": "Access denied",
             "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, thers no soldier in our database",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, something went wrong",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Soldiers",
+            "content": "application/json"
           }
         }
       }
     },
     "/war": {
       "post": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "war"
+        ],
+        "description": "Route you define your army, and the amount of allied and enemy soldiers and send them to war",
         "parameters": [
           {
             "name": "auth-token",
@@ -387,37 +462,37 @@
               "type": "object",
               "properties": {
                 "quantFranceArcher": {
-                  "example": "any"
+                  "example": "4"
                 },
                 "quantFranceVillager": {
-                  "example": "any"
+                  "example": "2"
                 },
                 "quantFranceKnight": {
-                  "example": "any"
+                  "example": "3"
                 },
                 "quantFranceSwordMaster": {
-                  "example": "any"
+                  "example": "2"
                 },
                 "quantSiegeWeaponFrance": {
-                  "example": "any"
+                  "example": "2"
                 },
                 "battlePalce": {
-                  "example": "any"
+                  "example": "Azincourt"
                 },
                 "quantEnglandArcher": {
-                  "example": "any"
+                  "example": "3"
                 },
                 "quantEnglandVillager": {
-                  "example": "any"
+                  "example": "2"
                 },
                 "quantEnglandKnight": {
-                  "example": "any"
+                  "example": "3"
                 },
                 "quantEnglandSwordMaster": {
-                  "example": "any"
+                  "example": "3"
                 },
                 "quantSiegeWeaponEngland": {
-                  "example": "any"
+                  "example": "2"
                 }
               }
             }
@@ -426,6 +501,21 @@
         "responses": {
           "401": {
             "description": "Access denied",
+            "content": "application/json"
+          },
+          "400": {
+            "description": [
+              "Sorry, something went wrong",
+              "Sorry, you don't have that mutch Siege Weapons",
+              "Sorry, you don't have that mutch Archers",
+              "Sorry, you don't have that mutch Villager",
+              "Sorry, you don't have that mutch Knight",
+              "Sorry, you don't have that mutch Sword Master"
+            ],
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Battle",
             "content": "application/json"
           }
         }
@@ -433,8 +523,10 @@
     },
     "/battle-registers": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "war"
+        ],
+        "description": "Route that will get the user's entire war history",
         "parameters": [
           {
             "name": "auth-token",
@@ -445,6 +537,198 @@
         "responses": {
           "401": {
             "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, you don't have any battles yeat",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, something went wrong",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Battle Register",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/battle-register/{id}": {
+      "get": {
+        "tags": [
+          "war"
+        ],
+        "description": "Route that you can get the battle history from their ID",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, battles not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, something went wrong",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Battle Register",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/siege-weapons": {
+      "post": {
+        "tags": [
+          "siege weapons"
+        ],
+        "description": "Route to create a Siege Weapon for your army",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "siegeWeapon": {
+                  "example": "Catapulta"
+                },
+                "siegeWeaponCharacteristics": {
+                  "example": {
+                    "power": "destruction",
+                    "range": "5km"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, somenthing went wrong with your Siege Weapons",
+            "content": "application/json"
+          },
+          "201": {
+            "description": "New Siege Weapons",
+            "content": "application/json"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "siege weapons"
+        ],
+        "description": "Route to modify a Siege Weapon",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "siegeWeaponId": {
+                  "example": "613fa3c24c1b968c0d20184e"
+                },
+                "siegeWeapon": {
+                  "example": "siege tower"
+                },
+                "siegeWeaponCharacteristics": {
+                  "example": {
+                    "invasion": "allow your soldiers to invade a wall"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, Siege Weapons not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, somenthing went wrong with your Siege Weapons",
+            "content": "application/json"
+          },
+          "201": {
+            "description": "Siege Weapons modify",
+            "content": "application/json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "siege weapons"
+        ],
+        "description": "Route to delete a Siege Weapon",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "siegeWeaponId": {
+                  "example": "6140e75cd8e3b016e11ee6f0"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, Siege Weapons not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, somenthing went wrong with your Siege Weapons",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Siege Weapons deleted",
             "content": "application/json"
           }
         }
@@ -452,8 +736,10 @@
     },
     "/user/siege-weapons": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "siege weapons"
+        ],
+        "description": "Route that will get all Siege Weapons creted by the user",
         "parameters": [
           {
             "name": "auth-token",
@@ -464,6 +750,18 @@
         "responses": {
           "401": {
             "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, thers no Siege Weapons in our database",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, something went wrong with your Siege Weapons",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Siege Weapons",
             "content": "application/json"
           }
         }
@@ -471,8 +769,10 @@
     },
     "/all-siege-weapons": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "siege weapons"
+        ],
+        "description": "Route that will get all Siege Weapons",
         "parameters": [
           {
             "name": "auth-token",
@@ -483,15 +783,29 @@
         "responses": {
           "401": {
             "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, thers no Siege Weapons in our database",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, somenthing went wrong with your Siege Weapons",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Siege Weapons",
             "content": "application/json"
           }
         }
       }
     },
-    "/siege-weapons": {
+    "/siege-weapons/{id}": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "siege weapons"
+        ],
+        "description": "Route that will get the Siege Weapons by ID",
         "parameters": [
           {
             "name": "auth-token",
@@ -499,117 +813,27 @@
             "required": true
           },
           {
-            "name": "obj",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "siegeWeaponId": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
           "401": {
             "description": "Access denied",
             "content": "application/json"
-          }
-        }
-      },
-      "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [
-          {
-            "name": "auth-token",
-            "in": "header",
-            "required": true
           },
-          {
-            "name": "obj",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "siegeWeapon": {
-                  "example": "any"
-                },
-                "siegeWeaponCharacteristics": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Access denied",
+          "404": {
+            "description": "Sorry, Siege Weapons not found",
             "content": "application/json"
-          }
-        }
-      },
-      "delete": {
-        "tags": [],
-        "description": "",
-        "parameters": [
-          {
-            "name": "auth-token",
-            "in": "header",
-            "required": true
           },
-          {
-            "name": "obj",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "siegeWeaponId": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Access denied",
+          "400": {
+            "description": "Sorry, somenthing went wrong with your Siege Weapons",
             "content": "application/json"
-          }
-        }
-      },
-      "patch": {
-        "tags": [],
-        "description": "",
-        "parameters": [
-          {
-            "name": "auth-token",
-            "in": "header",
-            "required": true
           },
-          {
-            "name": "obj",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "siegeWeaponId": {
-                  "example": "any"
-                },
-                "siegeWeapon": {
-                  "example": "any"
-                },
-                "siegeWeaponCharacteristics": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Access denied",
+          "200": {
+            "description": "Siege Weapons",
             "content": "application/json"
           }
         }
@@ -617,8 +841,10 @@
     },
     "/equipaments": {
       "post": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "equipaments"
+        ],
+        "description": "Route to create a Equipament for your Army",
         "parameters": [
           {
             "name": "auth-token",
@@ -632,10 +858,13 @@
               "type": "object",
               "properties": {
                 "equipaments": {
-                  "example": "any"
+                  "example": "shild"
                 },
                 "description": {
-                  "example": "any"
+                  "example": {
+                    "size": "large",
+                    "material": "wood, with a borde made from iron"
+                  }
                 }
               }
             }
@@ -644,13 +873,23 @@
         "responses": {
           "401": {
             "description": "Access denied",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, somenthing went wrong",
+            "content": "application/json"
+          },
+          "201": {
+            "description": "Equipament created",
             "content": "application/json"
           }
         }
       },
       "patch": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "equipaments"
+        ],
+        "description": "Route to modify a Equipament",
         "parameters": [
           {
             "name": "auth-token",
@@ -664,13 +903,16 @@
               "type": "object",
               "properties": {
                 "equipamentsId": {
-                  "example": "any"
+                  "example": "6140d6e1ad23e63147c3744d"
                 },
                 "equipaments": {
-                  "example": "any"
+                  "example": "big f**** sword"
                 },
                 "description": {
-                  "example": "any"
+                  "example": {
+                    "size": "giant",
+                    "material": "pure iron"
+                  }
                 }
               }
             }
@@ -679,13 +921,27 @@
         "responses": {
           "401": {
             "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, Equipament not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, somenthing went wrong",
+            "content": "application/json"
+          },
+          "201": {
+            "description": "Equipament modify",
             "content": "application/json"
           }
         }
       },
       "delete": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "equipaments"
+        ],
+        "description": "Route to delete a Equipament",
         "parameters": [
           {
             "name": "auth-token",
@@ -699,44 +955,66 @@
               "type": "object",
               "properties": {
                 "equipamentsId": {
-                  "example": "any"
+                  "example": "6140ec9349f3789dadb455e0"
                 }
               }
             }
+          }
+        ],
+        "responses": {
+            "401": {
+              "description": "Access denied",
+              "content": "application/json"
+            },
+            "404": {
+              "description": "Sorry, Equipament not found",
+              "content": "application/json"
+            },
+            "400": {
+              "description": "Sorry, somenthing went wrong",
+              "content": "application/json"
+            },
+            "200": {
+              "description": "Equipament deleted",
+              "content": "application/json"
+            }
+        }
+      }
+    },
+    "/equipaments/{id}": {
+      "get": {
+        "tags": [
+          "equipaments"
+        ],
+        "description": "Route that will get the Equipament by the ID",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
           "401": {
             "description": "Access denied",
             "content": "application/json"
-          }
-        }
-      },
-      "get": {
-        "tags": [],
-        "description": "",
-        "parameters": [
-          {
-            "name": "auth-token",
-            "in": "header",
-            "required": true
           },
-          {
-            "name": "obj",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "equipamentsId": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Access denied",
+          "404": {
+            "description": "Sorry, Equipament not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, somenthing went wrong",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Equipament",
             "content": "application/json"
           }
         }
@@ -744,8 +1022,10 @@
     },
     "/all-equipaments": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "equipaments"
+        ],
+        "description": "Route that will get all Equipaments",
         "parameters": [
           {
             "name": "auth-token",
@@ -757,14 +1037,28 @@
           "401": {
             "description": "Access denied",
             "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, Equipament not found",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, somenthing went wrong",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Equipaments",
+            "content": "application/json"
           }
         }
       }
     },
     "/user/equipaments": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "equipaments"
+        ],
+        "description": "Route that will get all the equipaments created by the user",
         "parameters": [
           {
             "name": "auth-token",
@@ -775,6 +1069,18 @@
         "responses": {
           "401": {
             "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, Equipament not found, our you don't create any equipaments yeat",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, somenthing went wrong",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Equipaments",
             "content": "application/json"
           }
         }
