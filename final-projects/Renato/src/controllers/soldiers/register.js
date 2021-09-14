@@ -3,7 +3,7 @@ import { Mongoose } from "../../index.js"
 
 const soldierRegisterController = {
   async creatSoldier(req, res) {
-    const { name, age, cpf, bloodType, militarRank } = req.body
+    const { name, age, cpf, bloodType, militarRank, equipment } = req.body
     const Soldiers = Mongoose.model('soldiers', soldierSchema)
 
     try {
@@ -15,7 +15,7 @@ const soldierRegisterController = {
             message: 'Existing soldier.'
           })
       }
-      const soldier = new Soldiers({ name, age, cpf, bloodType, militarRank })
+      const soldier = new Soldiers({ name, age, cpf, bloodType, militarRank, equipment })
       await soldier.save()
       res
         .status(201)

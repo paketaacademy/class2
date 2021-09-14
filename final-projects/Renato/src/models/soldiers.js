@@ -20,7 +20,11 @@ const soldierSchema = new Mongoose.Schema({
   militarRank: {
     type: String,
     required: true
-  }
+  },
+  equipment: {
+    type: Array,
+    required: true
+  },
 }, { collection: 'soldiers' }
 )
 

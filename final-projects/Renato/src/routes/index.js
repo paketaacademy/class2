@@ -1,4 +1,5 @@
 import { Router } from "express"
+import cors from "cors"
 import verifyToken from "../middlewares/verify-token.js"
 import userRegister from "../controllers/user/register.js"
 import { validateUsers } from "../middlewares/users-validate.js"
@@ -30,9 +31,26 @@ import platoonRegisterController from "../controllers/platoon/register.js"
 import platoonPatchController from "../controllers/platoon/patch.js"
 import platoonGetController from "../controllers/platoon/get.js"
 import platoonDeleteController from "../controllers/platoon/delete.js"
-
+import { validateLanding } from "../middlewares/landing-validate.js"
+import { landingValidationSchema } from "../validation/landing-validation.js"
+import landingRegisterController from "../controllers/landing/register.js"
+import landingPatchController from "../controllers/landing/patch.js"
+import landingGetController from "../controllers/landing/get.js"
+import landingDeleteController from "../controllers/landing/delete.js"
+import Terms from "../controllers/Terms-Of-Services/get.js"
+import swaggerUi from 'swagger-ui-express'
+import { createRequire } from "module"
+const require = createRequire(import.meta.url)
+const swaggerFile = require("../swagger-output.json")
 
 const routes = Router()
+const corsOption = {
+  exposedHeaders: 'authorization',
+}
+routes.use(cors(corsOption))
+
+routes.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+routes.get('/terms', Terms.TermsOfServices)
 
 routes.post('/register', validateUsers(userValidationSchema), userRegister.creatUser)
 routes.post('/login', validateLogin(loginValidationSchema), userLogin.loginUser)
@@ -53,10 +71,16 @@ routes.get('/vehicles', verifyToken, vehicleGetController.getAllVehicle)
 routes.patch('/vehicles/:id', verifyToken, vehiclePatchController.patchEquipment)
 routes.delete('/vehicles/:id', verifyToken, vehicleDeleteController.deleteVehicle)
 
-routes.post('/register/platoon', verifyToken, validatePlatoon(platoonValidationSchema), platoonRegisterController.creatEquipment)
-routes.get('/platoon/:id', verifyToken, platoonGetController.getPlatoon)
-routes.get('/platoon', verifyToken, platoonGetController.getAllPlatoon)
-routes.patch('/platoon/:id', verifyToken, platoonPatchController.patchPlatoon)
-routes.delete('/platoon/:id', verifyToken, platoonDeleteController.deletePlatoon)
+routes.post('/register/platoons', verifyToken, validatePlatoon(platoonValidationSchema), platoonRegisterController.creatEquipment)
+routes.get('/platoons/:id', verifyToken, platoonGetController.getPlatoon)
+routes.get('/platoons', verifyToken, platoonGetController.getAllPlatoon)
+routes.patch('/platoons/:id', verifyToken, platoonPatchController.patchPlatoon)
+routes.delete('/platoons/:id', verifyToken, platoonDeleteController.deletePlatoon)
+
+routes.post('/register/landing', verifyToken, validateLanding(landingValidationSchema), landingRegisterController.creatLanding )
+routes.get('/landings/:id', verifyToken, landingGetController.getLanding)
+routes.get('/landings', verifyToken, landingGetController.getAllLandings)
+routes.patch('/landings/:id', verifyToken, landingPatchController.patchLanding)
+routes.delete('/landings/:id', verifyToken, landingDeleteController.deleteLanding)
 
 export default routes
