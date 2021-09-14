@@ -7,7 +7,7 @@ const SiegeWeapon = {
 
     const owner = req.user._id
     
-    const SWeaponModel = await Mongoose.model('siege-weapon', SiegeWeaponsSchema, 'siege-weapon')
+    const SWeaponModel = await Mongoose.model('siegeWeapon', SiegeWeaponsSchema, 'siegeWeapon')
 
     try{
       const newSWeapon = await SWeaponModel.create({ siegeWeapon, siegeWeaponCharacteristics, owner })
@@ -17,11 +17,10 @@ const SiegeWeapon = {
       .send(newSWeapon)
 
     }catch(error){
-      console.log(error)
       return res
       .status(400)
       .send({
-        message:'Somenthing went wrong with your weapon'
+        message:'Sorry, somenthing went wrong with your Siege Weapons'
       })
     }
   }

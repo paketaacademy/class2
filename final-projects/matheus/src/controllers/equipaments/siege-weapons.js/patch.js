@@ -3,19 +3,19 @@ import SiegeWeaponsSchema from "../../../models/equipaments/siege-weapons.js"
 
 const ModifySiegeWeapon = {
   async ModSiegeWeapon(req, res){
-    const { idSiegeWeapon, siegeWeapon, siegeWeaponCharacteristics } = req.body
+    const { siegeWeaponId, siegeWeapon, siegeWeaponCharacteristics } = req.body
 
     const owner = req.user._id
     
-    const SWeaponModel = await Mongoose.model('siege-weapon', SiegeWeaponsSchema, 'siege-weapon')
+    const SWeaponModel = await Mongoose.model('siegeWeapon', SiegeWeaponsSchema, 'siegeWeapon')
 
     try{
-      const foundSWeapon = await SWeaponModel.findOne({ _id: idSiegeWeapon })
+      const foundSWeapon = await SWeaponModel.findOne({ _id: siegeWeaponId })
       if(!foundSWeapon){
         return res
         .status(404)
         .send({
-          message:"Sorry, weapon not found"
+          message:"Sorry, Siege Weapons not found"
         })
       }
 
@@ -26,11 +26,10 @@ const ModifySiegeWeapon = {
       .send(sWeaponmodify)
 
     }catch(error){
-      console.log(error)
       return res
       .status(400)
       .send({
-        message:'Somenthing went wrong with your weapon'
+        message:'Sorry, somenthing went wrong with your Siege Weapons'
       })
     }
   }

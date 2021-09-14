@@ -13,5 +13,5 @@ const SiegeWeaponsSchema = Mongoose.Schema({
     type: String,
     required: true
   }
-}, { collection: 'siege-weapon' })
+}, { collection: 'siegeWeapon' })
 export default SiegeWeaponsSchema

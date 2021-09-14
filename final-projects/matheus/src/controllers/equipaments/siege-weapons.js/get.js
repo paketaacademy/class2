@@ -3,17 +3,17 @@ import SiegeWeaponsSchema from "../../../models/equipaments/siege-weapons.js"
 
 const GetSiegeWeapon = {
   async GetOneSiegeWeapon(req, res){
-    const { idSiegeWeapon } = req.body
+    const { siegeWeaponId } = req.body
     
-    const SWeaponModel = await Mongoose.model('siege-weapon', SiegeWeaponsSchema, 'siege-weapon')
+    const SWeaponModel = Mongoose.model('siege-weapon', SiegeWeaponsSchema, 'siege-weapon')
 
     try{
-      const foundSWeapon = await SWeaponModel.findOne({ _id: idSiegeWeapon })
+      const foundSWeapon = await SWeaponModel.findOne({ _id: siegeWeaponId })
       if(!foundSWeapon){
         return res
         .status(404)
         .send({
-          message:"Sorry, weapon not found"
+          message:"Sorry, Siege Weapons not found"
         })
       }
       
@@ -22,18 +22,17 @@ const GetSiegeWeapon = {
       .send(foundSWeapon)
 
     }catch(error){
-      console.log(error)
       return res
       .status(400)
       .send({
-        message:'Somenthing went wrong with your weapon'
+        message:'Sorry, somenthing went wrong with your Siege Weapons'
       })
     }
   },
-  async GetAllSiegeWeapon(req, res){
+  async GetByOwnerSiegeWeapon(req, res){
     const owner = req.user._id
     
-    const SWeaponModel = await Mongoose.model('siege-weapon', SiegeWeaponsSchema, 'siege-weapon')
+    const SWeaponModel = Mongoose.model('siegeWeapon', SiegeWeaponsSchema, 'siegeWeapon')
 
     try{
       const foundSWeapons = await SWeaponModel.find({ owner: owner })
@@ -41,7 +40,7 @@ const GetSiegeWeapon = {
         return res
         .status(404)
         .send({
-          message:"Sorry, thers no weapons in our database"
+          message:"Sorry, thers no Siege Weapons in our database"
         })
       }
       
@@ -50,13 +49,37 @@ const GetSiegeWeapon = {
       .send(foundSWeapons)
 
     }catch(error){
-      console.log(error)
       return res
       .status(400)
       .send({
-        message:'Somenthing went wrong with your weapon'
+        message:'Sorry, somenthing went wrong with your Siege Weapons'
       })
     }
-  }
-}
+  },
+  async GetAllSiegeWeapon(req, res){
+    
+    const SWeaponModel = Mongoose.model('siege-weapon', SiegeWeaponsSchema, 'siege-weapon')
+
+    try{
+      const foundSWeapons = await SWeaponModel.find({})
+      if(!foundSWeapons){
+        return res
+        .status(404)
+        .send({
+          message:"Sorry, thers no Siege Weapons in our database"
+        })
+      }
+      
+      return res
+      .status(201)
+      .send(foundSWeapons)
+
+    }catch(error){
+      return res
+      .status(400)
+      .send({
+        message:'Sorry, somenthing went wrong with your Siege Weapons'
+      })
+    }
+}}
 export default GetSiegeWeapon
