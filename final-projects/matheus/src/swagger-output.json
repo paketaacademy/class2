@@ -1,0 +1,792 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost: 3030",
+  "basePath": "/",
+  "tags": [
+    "users",
+    "soldiers",
+    "war",
+    "equipaments",
+    "siege weapons"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json; charset=utf-8"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/register": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "description": "Route to create a new user",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "example": "123456"
+                },
+                "firstName": {
+                  "example": "Paketa"
+                },
+                "lastName": {
+                  "example": "Academy"
+                },
+                "email": {
+                  "example": "paketa.academy@gmail.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Sorry, this email is alredy registered",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, can't create this user",
+            "content": "application/json"
+          },
+          "201": {
+            "description": "User saved successfully",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "description": "Dedicated route to login a user",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "paketa.academy@gmail.com"
+                },
+                "password": {
+                  "example": "123456"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Email not found / Wrong password",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, something went wrong",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Login successfully",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/soldiers": {
+      "post": {
+        "tags": [
+          "soldiers"
+        ],
+        "description": "This is a route to create a soldier for your army",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "typeSoldiers": {
+                  "example": "Archer"
+                },
+                "ability": {
+                  "example": {
+                    "super shot":"30% chance of a critical shot"
+                  }
+                },
+                "strength": {
+                  "example": "10"
+                },
+                "dexterity": {
+                  "example": "15"
+                },
+                "constitution": {
+                  "example": "9"
+                },
+                "intelligence": {
+                  "example": "13"
+                },
+                "wisdom": {
+                  "example": "15"
+                },
+                "lifePoints": {
+                  "example": "25"
+                },
+                "mount": {
+                  "example": "horse"
+                },
+                "idEquipaments": {
+                  "example": [
+                    "6140a7543d4009117c02fef6", "6140a7bd78a5ec30a5472ce2"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "400":{
+            "description": "Enter with a valid type of soldier // Sorry, something went wrong with your Soldier",
+            "content": "application/json"
+          },
+          "201":{
+            "description": "Created Soldier",
+            "content": "application/json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "soldiers"
+        ],
+        "description": "Route to delete soldirs by ID",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "soldierId": {
+                  "example": "613f93e38064c462f38b61d4"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Sorry, Soldier not found in Database",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Sorry, something went wrong",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Soldier deleted",
+            "content": "application/json"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "soldiers"
+        ],
+        "description": "Route that will get soldier by ID",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "soldierId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      },
+      "patch": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "soldierId": {
+                  "example": "any"
+                },
+                "typeSoldiers": {
+                  "example": "any"
+                },
+                "ability": {
+                  "example": "any"
+                },
+                "strength": {
+                  "example": "any"
+                },
+                "dexterity": {
+                  "example": "any"
+                },
+                "constitution": {
+                  "example": "any"
+                },
+                "intelligence": {
+                  "example": "any"
+                },
+                "wisdom": {
+                  "example": "any"
+                },
+                "lifePoints": {
+                  "example": "any"
+                },
+                "mount": {
+                  "example": "any"
+                },
+                "idEquipaments": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/all-soldiers": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/user/soldiers": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/category/soldiers": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/war": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "quantFranceArcher": {
+                  "example": "any"
+                },
+                "quantFranceVillager": {
+                  "example": "any"
+                },
+                "quantFranceKnight": {
+                  "example": "any"
+                },
+                "quantFranceSwordMaster": {
+                  "example": "any"
+                },
+                "quantSiegeWeaponFrance": {
+                  "example": "any"
+                },
+                "battlePalce": {
+                  "example": "any"
+                },
+                "quantEnglandArcher": {
+                  "example": "any"
+                },
+                "quantEnglandVillager": {
+                  "example": "any"
+                },
+                "quantEnglandKnight": {
+                  "example": "any"
+                },
+                "quantEnglandSwordMaster": {
+                  "example": "any"
+                },
+                "quantSiegeWeaponEngland": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/battle-registers": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/user/siege-weapons": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/all-siege-weapons": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/siege-weapons": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "siegeWeaponId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      },
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "siegeWeapon": {
+                  "example": "any"
+                },
+                "siegeWeaponCharacteristics": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "siegeWeaponId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      },
+      "patch": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "siegeWeaponId": {
+                  "example": "any"
+                },
+                "siegeWeapon": {
+                  "example": "any"
+                },
+                "siegeWeaponCharacteristics": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/equipaments": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "equipaments": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      },
+      "patch": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "equipamentsId": {
+                  "example": "any"
+                },
+                "equipaments": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "equipamentsId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      },
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "equipamentsId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/all-equipaments": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/user/equipaments": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Access denied",
+            "content": "application/json"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "informações": {
+    "título": "Minha API",
+    "descrição": "Descrição"
+  },
+  "esquemas": [
+    "http"
+  ]
+}
