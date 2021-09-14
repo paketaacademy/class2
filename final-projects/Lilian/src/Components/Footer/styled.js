@@ -29,15 +29,14 @@ export const Header = styled.div`
   margin: initial; 
 `
 
-export const H1 = styled.h1`
+export const H1 = styled.h2`
   margin-left: 80px;
   width: auto;
   margin-right: auto;
   font-size: 20px;  
   color: rgb(82 81 84);
   width: 260px;
-  font-family: 'DM Serif Display', serif;
-  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap');
+ 
 `
 
 export const Hr = styled.hr`
@@ -55,15 +54,13 @@ export const List = styled.div`
 
 export const Ul = styled.ul`
     list-style: none;
+    font-weight: 600;
 `
 
 export const Li = styled.li`
-      line-height: 2;
-    font-size: 16px;
-
+    line-height: 2;
+    font-size: 16px; 
 `
-
-export const Span = styled.span``
 
 export const Img = styled.img`
 

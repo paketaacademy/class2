@@ -7,13 +7,14 @@ export const SubmitButton = styled.button`
     width: 150px;
     cursor: pointer;
     border-color: white;
+    margin-top: 10px;
 `
 
 export const Container = styled.div`
     background-color: rgb(44 38 64);
     display: flex;
-    max-height: 400px;    
-    
+    max-height: 400px;
+    margin: 18px;    
 `
 
 export const Text = styled.div`
@@ -23,11 +24,10 @@ export const Text = styled.div`
     padding: 50px;
     max-width: 500px;
     margin-left: 100px;
-
 `
 
 export const H1 = styled.h1`
-    font-weight: revert;
+    font-weight: revert;    
 `
 
 export const Hr = styled.hr`
@@ -36,8 +36,7 @@ export const Hr = styled.hr`
 `
 
 export const DivImage = styled.div`
-    display: flex;
-    
+    display: flex;    
 `
 
 export const Img = styled.img`
@@ -46,7 +45,6 @@ export const Img = styled.img`
     z-index: 1;
     margin-bottom: -40px;
     position: absolute;
-
 `
 
 export const ImgRight = styled.img`
@@ -55,10 +53,9 @@ export const ImgRight = styled.img`
     position: absolute;
     height: 300px;
     width: 270px;
-    margin-left: 90px;
-    height: 350px;
+    margin-left: 65px;
+    height: 335px;
     width: 450px;
-
 `
 
 export const ImgLeft = styled.img`
@@ -67,5 +64,9 @@ export const ImgLeft = styled.img`
     height: 300px;
     margin-block: 10px;
     margin-inline: -150px;
-    margin-top: -40px;
+    margin-top: -40px; 
+`
+
+export const P = styled.p`
+    color: rgb(207 206 210);
 `

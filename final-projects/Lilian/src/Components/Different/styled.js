@@ -8,15 +8,14 @@ export const Hr = styled.hr`
     margin-top: 150px;
 `
 
-export const Title = styled.h1`
+export const Title = styled.h4`
     margin-left: 85px;
+    font-size: 30px;  
 `
 
 export const Img = styled.img`
     width: 50px;
 `
-export const H2 = styled.h2``
-
 
 export const P = styled.p`
     color: rgb(208 205 207);

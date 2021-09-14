@@ -3,7 +3,7 @@ import affordable from "./icones/icon-affordable-prices.svg"
 import Snappy from "./icones/icon-snappy-process.svg"
 import People from "./icones/icon-people-first.svg"
 import {
-     Hr, Title,  Img, H2, P , Ul , Li
+     Hr, Title,  Img,  P , Ul , Li
 }
 from "./styled"
 
@@ -11,12 +11,12 @@ export default function Different() {
     return (
         <>
             <Hr />
-            <Title>We`re different </Title>
+            <Title>We're different </Title>
             <>
                 <Ul>
                     <Li>
                         <Img src={Snappy} alt="Icon snappy process" />
-                        <H2>Snappy Process </H2>
+                        <h3>Snappy Process </h3>
                         <P>Our application process can be completed in <br />
                             minutes, not hours. Don´t get stuck filling in <br />
                             tedious forms. <br />
@@ -24,7 +24,7 @@ export default function Different() {
                     </Li>
                     <Li>
                         <Img src={affordable} alt="Icon affordable preces" />
-                        <H2>Affordable Preces </H2>
+                        <h3>Affordable Preces </h3>
                         <P>
                             We don´t want you woeying about high monthly <br />
                             costs. Our prices may be low. But we still offer <br />
@@ -33,7 +33,7 @@ export default function Different() {
                     </Li>
                     <Li>
                         <Img src={People} alt="Icon people first" />
-                        <H2>People First </H2>
+                        <h3>People First </h3>
                         <P>
                             Our plans aren´t full of conditions and clauses <br />
                             to prevent payouts. We make sure you´re <br />

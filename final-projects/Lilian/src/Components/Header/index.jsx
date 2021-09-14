@@ -8,7 +8,7 @@ export default function header() {
     const preventDefault = (event) => event.preventDefault();
     return (
         <Container>
-                <Title>INSURE</Title>              
+                <Title>INSURE</Title>                          
             <div>            
                 <Link
                     component="button"

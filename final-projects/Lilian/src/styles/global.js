@@ -6,8 +6,13 @@ export default createGlobalStyle`
     margin: auto;
     height: auto;
 
-    h1{
-        font-family: 'DM Serif Display', serif;
+    h2, Title{
+      font-family: 'Krona One', sans-serif;
     }
+
+    h4 {
+      font-family: 'Coustard', serif;
+    }
+
   }`
 

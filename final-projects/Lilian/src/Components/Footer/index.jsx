@@ -15,7 +15,7 @@ export default function Footer() {
             <Header>                
                     <Img src={Image} />                
                 <div>                    
-                    <H1>Insure</H1>
+                    <H1>INSURE</H1>
                 </div>
                 <Icones>
                     <FacebookIcon color="action"/>

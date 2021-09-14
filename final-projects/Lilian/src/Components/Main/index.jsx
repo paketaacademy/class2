@@ -4,7 +4,7 @@ import Image from "./img/image-intro-desktop.jpg"
 import ImageRight from "./img/bg-pattern-intro-right-desktop.svg"
 import ImageLeft from "./img/bg-pattern-intro-left-desktop.svg"
 import { 
-    SubmitButton , Container , Text , Hr , DivImage , Img , ImgRight , ImgLeft , H1
+    SubmitButton , Container , Text , Hr , DivImage , Img , ImgRight , ImgLeft , H1 , P
 } from './styled'
 
 export default function Main() {
@@ -17,11 +17,11 @@ export default function Main() {
                 Humanizing <br />
                 your insurance.
                 </H1>
-                <p>
+                <P>
                 Get your life insurance coverage easier and faster. We blend our expertise <br />
                 and technology to help you find the plan that´s right for you. Ensure you <br />
                 and your loved ones are protected.
-                </p>
+                </P>
                 <Link href="#" onClick={preventDefault} >
                     <SubmitButton variant="outlined">VIEW PLANS</SubmitButton>
                 </Link>  
