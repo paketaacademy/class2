@@ -57,7 +57,6 @@ export const MessageApi = styled.div`
   padding: 0.125rem 0.25rem;
   display: flex;
   align-items: center;
-  margin-top: 0.938rem;
   color: tomato;
   @media (max-width: 37.5rem) {
     max-width: 25rem;
@@ -68,16 +67,37 @@ export const MessageApi = styled.div`
 `
 
 export const MessageNull = styled.div`
-  color: red;
+  color: tomato;
   font-size: 0.875rem;
 `
 
 export const SearchUser = styled(InputBase)`
-  margin-left: 0.625rem;
   flex: 1;
   background: transparent;
 `
 
 export const IconBox = styled(IconButton)`
   padding: 0.625rem;
+`
+
+export const SearchBtn = styled.button`
+  text-align: center;
+  width: 15%;
+  padding: 0.625rem 0;
+  background: #1976d2;
+  color: #fff;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0.063rem 0.063rem 0.188rem #7c7c7c;
+  margin-right: 0.938rem;
+  :hover{
+    background: #115293;
+  }
+  @media (max-width: 37.5rem) {
+    width: 20%;
+  }
+  @media (max-width: 25rem) {  
+    width: 20%;
+  }
 `

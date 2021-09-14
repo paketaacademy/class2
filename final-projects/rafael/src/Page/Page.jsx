@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import SearchIcon from '@material-ui/icons/Search'
-import Button from '@material-ui/core/Button'
-import { PageContainer, Box, SearchUser, SearchBox, IconBox, MessageNull, MessageApi } from "./style"
+import { PageContainer, Box, SearchUser, SearchBtn, SearchBox, IconBox, MessageNull, MessageApi } from "./style"
 import Menu from "../Components/Menu/Menu"
 import AvatarUser from '../Components/DetailsUser/AvatarUser'
 import LinksUser from "../Components/DetailsUser/LinksUser"
@@ -22,6 +21,7 @@ function Page() {
   }
 
   useEffect(() => {
+    document.getElementById('content').focus(); 
     setParam(nameUser)
   }, [nameUser])
 
@@ -30,7 +30,8 @@ function Page() {
     if (param) {      
       setParamNull('')
       dataLoading() 
-      document.querySelector('#content').value = ''     
+      document.querySelector('#content').value = '' 
+      document.getElementById('content').focus();    
       setNameUser('')
     } else {      
       setParamNull('Enter a name to perform the search!')      
@@ -135,9 +136,9 @@ function Page() {
           inputProps={{ 'aria-label': 'Search GitHub username...' }}
           onChange={handleChange}
         />
-        <Button variant="contained" color="primary" type="submit" >
+        <SearchBtn variant="contained" color="primary" type="submit" >
           Search
-        </Button>
+        </SearchBtn>
       </SearchBox>
       {loading ? 'Loading...' : conditionView()}
     </PageContainer>

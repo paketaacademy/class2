@@ -1,4 +1,4 @@
-<h1 align="center">Projeto Final - Paketá Academy/h1>
+<h1 align="center">Projeto Final - Paketá Academy</h1>
 <h4 align="center">Rafael Jesus do Prado</h4>
 
 <p>No projeto foi desenvolvido uma página de "busca", que retorna os principais dados dos usuários do GitHub, nele se faz a pesquisa pelo nome de usuário no GitHub</p>
