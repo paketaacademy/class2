@@ -19,6 +19,10 @@ export const Title = styled.h1`
 
   @media screen and (max-width: 770px) and (min-width: 280px) {
     font-size: 2.5em;
+    text-align: center;
+  }
+  @media screen and (max-width: 1025px) and (min-width: 771px) {
+    text-align: center;
   }
 `
 export const Description = styled.h2`
@@ -38,7 +42,19 @@ export const Description = styled.h2`
     font-weight: lighter;
     margin-left: 0;
     padding: 0;
-    margin-top: 2em;
-    font-size: 1.7rem;
+    margin-top: 1em;
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+
+    span{
+      display: block;
+      text-align: center;
+    }
   }
+  @media screen and (max-width: 1025px) and (min-width: 771px) {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-top: -1em;
+    }
 `
