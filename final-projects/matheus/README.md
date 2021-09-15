@@ -1,6 +1,6 @@
 # Projeto Final Paketa Academy
 
-## Mudando Cursos da Guerra dos 100 anos##
+## Mudando Cursos da Guerra dos 100 anos
 Esse projeto se baseia na criação de uma API com rotas que te permitem criar soldados para apoiar o exercito ingles sendo eles **ARCHER (arqueiro)**,**VILLAGER (aldeão, peão)**, **KNIGHT (cavaleiro)** e **SWORD MASTER (espadachim)**, onde te possibilita atribuir suas características tais quais **HABILIDADE**, **FORÇA**, **DESTREZA**, até se possuem montaria. Também permitem que você crie equipamentos gerais **(EQUIPAMENTS)** como **ESPADAS**, **ESCUDOS**, **ETC** e armas de cerco **(SIEGE WEAPONS)** tipo **CATAPULTA**.
 Assim que você criar seu exercito você pode definir quantos deles irão para batalha e determinar a quantidade de soldado frances inimigo e em que lugar acontecerá essa batalha. Esse registro ficará salvo possibilitando que você consulte seu histórico, ou buscando um histórico especifico.
 
