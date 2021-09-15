@@ -6,7 +6,29 @@ const soldierGetController = {
     const soldierId = req.params.id
     const Soldiers = await Mongoose.model('soldiers', soldierSchema)
     try {
-      const foundSoldiers = await Soldiers.findById(soldierId)
+      const foundSoldier = await Soldiers.findById(soldierId)
+      if (!foundSoldier) {
+        return res
+          .status(404)
+          .send({
+            message: 'There is no such soldier.'
+          })
+      }
+      return res
+        .status(200)
+        .send(foundSoldier)
+    } catch (error) {
+      return res
+        .status(400)
+        .send({
+          message: `An error has occurred ${error}.`
+        })
+    }
+  },
+  async getAllSoldiers(req, res) {
+    const AllSoldiers = await Mongoose.model('soldiers', soldierSchema)
+    try {
+      const foundSoldiers = await AllSoldiers.find()
       if (!foundSoldiers) {
         return res
           .status(404)
@@ -21,7 +43,7 @@ const soldierGetController = {
       return res
         .status(400)
         .send({
-          message: `An error has occurred ${error}.`
+          message: `An error has occurred ${error}`
         })
     }
   }

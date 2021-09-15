@@ -44,7 +44,7 @@ const landingGetController = {
       return res
         .status(400)
         .send({
-          message: `An error has ocorrued ${error}`
+          message: `An error has occurred ${error}`
         })
     }
   }

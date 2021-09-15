@@ -7,12 +7,34 @@ const equipmentGetController = {
     const equipments = await Mongoose.model('equipments', equipmentSchema)
 
     try {
-      const foundEquipments = await equipments.findById(equipmentId)
-      if (!foundEquipments) {
+      const foundEquipment = await equipments.findById(equipmentId)
+      if (!foundEquipment) {
         return res
           .status(404)
           .send({
             message: 'There is no such equipment.'
+          })
+      }
+      return res
+        .status(200)
+        .send(foundEquipment)
+    } catch (error) {
+      return res
+        .status(400)
+        .send({
+          message: `An error has occurred ${error}`
+        })
+    }
+  },
+  async getAllEquipments(req, res) {
+    const AllEquipments = await Mongoose.model('equipments', equipmentSchema)
+    try {
+      const foundEquipments = await AllEquipments.find()
+      if (!foundEquipments) {
+        return res
+          .status(404)
+          .send({
+            message: 'There is no such equipments.'
           })
       }
       return res
@@ -22,7 +44,7 @@ const equipmentGetController = {
       return res
         .status(400)
         .send({
-          message: `An error has ocorrued ${error}`
+          message: `An error has occurred ${error}`
         })
     }
   }

@@ -57,11 +57,13 @@ routes.post('/login', validateLogin(loginValidationSchema), userLogin.loginUser)
 
 routes.post('/register/soldiers', verifyToken, validateSoldier(soldierValidationSchema), soldierRegisterController.creatSoldier)
 routes.get('/soldiers/:id', verifyToken, soldierGetController.getSoldier)
+routes.get('/soldier', verifyToken, soldierGetController.getAllSoldiers)
 routes.patch('/soldiers/:id', verifyToken, soldierPatchController.patchSoldier)
 routes.delete('/soldiers/:id', verifyToken, soldierDeleteController.deleteSoldier)
 
 routes.post('/register/equipments', verifyToken, validateEquipment(equipmentValidationSchema), equipmentsRegisterController.creatEquipment)
 routes.get('/equipments/:id', verifyToken, equipmentGetController.getEquipment)
+routes.get('equipments', verifyToken, equipmentGetController.getAllEquipments)
 routes.patch('/equipments/:id', verifyToken, equipmentPatchController.patchEquipment)
 routes.delete('/equipments/:id', verifyToken, equipmentDeleteController.deleteEquipment)
 

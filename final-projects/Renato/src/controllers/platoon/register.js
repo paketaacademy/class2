@@ -27,7 +27,6 @@ const platoonRegisterController = {
           message: 'Soldier registered in another platoon'
         })
       } 
-
       const platoon = new Platoons({ namePlatoon, platoonCommander, soldiers })
       await platoon.save()
       res

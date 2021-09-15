@@ -22,7 +22,7 @@ const vehicleGetController = {
       return res
         .status(400)
         .send({
-          message: `An error has ocorrued ${error}`
+          message: `An error has occurred ${error}`
         })
     }
   },
@@ -45,7 +45,7 @@ const vehicleGetController = {
       return res
         .status(400)
         .send({
-          message: `An error has ocorrued ${error}`
+          message: `An error has occurred ${error}`
         })
     }
   }

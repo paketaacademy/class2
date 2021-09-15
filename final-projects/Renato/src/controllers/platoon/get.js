@@ -34,7 +34,7 @@ const platoonGetController = {
         return res
           .status(404)
           .send({
-            message: 'There is no such vehicle.'
+            message: 'There is no such platoon.'
           })
       }
       return res
@@ -44,7 +44,7 @@ const platoonGetController = {
       return res
         .status(400)
         .send({
-          message: `An error has ocorrued ${error}`
+          message: `An error has occurred ${error}`
         })
     }
   }

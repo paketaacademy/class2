@@ -17,7 +17,7 @@ const landingDeleteController = {
       return res
         .status(200)
         .send({
-          message: `Platoon deleted from database ${deleteLanding}.`
+          message: `Landing deleted from database ${deleteLanding}.`
         })
     } catch (error) {
       return res

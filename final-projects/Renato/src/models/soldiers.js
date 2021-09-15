@@ -24,7 +24,7 @@ const soldierSchema = new Mongoose.Schema({
   equipment: {
     type: Array,
     required: true
-  },
+  }
 }, { collection: 'soldiers' }
 )
 
