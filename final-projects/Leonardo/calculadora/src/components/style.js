@@ -9,6 +9,7 @@ export const Container = styled.div`
     padding-bottom: 20px;
     width: 30%;
 `
+
 export const TitleContent = styled.div`
     display: flex;
     justify-content: flex-start;
@@ -32,6 +33,7 @@ export const ResultContent = styled.div`
     color: #fff;
     padding: 10px 0;
 `
+
 export const BoxNumber = styled.div`    
     align-items: center;
     display:flex;
@@ -115,8 +117,8 @@ export const ButtonCalcDel = styled.button`
     width: 20%;
     height: 20px;
     :before {
-    content: "DEL";
-}
+        content: "DEL";
+    }   
     @media(max-width:720px){
         padding: 0.3rem;
         :before {
@@ -139,7 +141,7 @@ export const ButtonCalcReset = styled.button`
     height: 20px;
     :before {
             content: "CLEAR";
-        } 
+    } 
     @media(max-width:720px){
         padding: 0.3rem;
         :before {

@@ -1,19 +1,20 @@
 import React, { useState } from 'react'
-import { Container, ButtonCalc, ButtonCalcDel, ButtonCalcEqual, ButtonCalcReset, BoxNumber, TitleContent, Title, Screen, OperationScreen, ResultScreen, ResultContent, NumberRow } from './style.js'
+import { Container, ButtonCalc, ButtonCalcDel, ButtonCalcEqual, 
+         ButtonCalcReset, BoxNumber, TitleContent, Title, Screen, 
+         OperationScreen, ResultScreen, ResultContent, NumberRow } from './style.js'
 import { evaluate } from 'decimal-eval'
 
 const Calculator = () => {
 
-  const [valorTela, setValorTela] = useState('')
-  const [resultado, setResultado] = useState(0)
-  const [acumulador, setAcumulador] = useState(0)
-  const [operado, setOperado] = useState(false)
+  const [screenValue, setScreenValue] = useState('')
+  const [result, setResult] = useState(0)
+  const [operator, setOperator] = useState(false)
 
-  const Tela = (valor, res) => {
+  const Tela = (value, res) => {
     return (
       <Screen>
         <OperationScreen>
-          <span>{valor}</span>
+          <span>{value}</span>
         </OperationScreen>
         <ResultScreen>
           <span>{res}</span>
@@ -22,47 +23,45 @@ const Calculator = () => {
     )
   }
 
-  const addDigitoTela = (digito) => {
-    if ((digito === '+' || digito === '-' || digito === '/' || digito === '*') && operado) {
-      setOperado(false)
-      setValorTela(resultado + digito)
+  const digitScreenAdd = (digit) => {
+    if ((digit === '+' || digit === '-' || digit === '/' || digit === '*') && operator) {
+      setOperator(false)
+      setScreenValue(result + digit)
       return
     }
 
-    if (operado) {
-      setValorTela(digito)
-      setOperado(false)
+    if (operator) {
+      setScreenValue(digit)
+      setOperator(false)
       return
     }
-    const valorDigitadoTela = valorTela + digito
-      setValorTela(valorDigitadoTela)
+    const digitValueScreen = screenValue + digit
+      setScreenValue(digitValueScreen)
   }
 
-  const limparMemoria = () => {
-    setOperado(false)
-    setValorTela('')
-    setResultado(0)
-    setAcumulador(0)
+  const cleanMemory = () => {
+    setOperator(false)
+    setScreenValue('')
+    setResult(0)
     return
   }
 
-  const Operacao = (oper) => {
+  const operatorButton = (oper) => {
 
     if (oper === 'bs') {
-      let vtela = valorTela
-      vtela = vtela.substring(0, (vtela.length - 1))
-      setValorTela(vtela)
-      setOperado(false)
+      let vscreen = screenValue
+      vscreen = vscreen.substring(0, (vscreen.length - 1))
+      setScreenValue(vscreen)
+      setOperator(false)
       return
     }
     try {
-      const result = evaluate(valorTela)
-      setAcumulador(result)
-      setResultado(result)
-      setOperado(true)
+      const result = evaluate(screenValue)
+      setResult(result)
+      setOperator(true)
     }
     catch (e) {
-      setResultado('ERROR')
+      setResult('ERROR')
     }
   }
 
@@ -72,36 +71,36 @@ const Calculator = () => {
         <Title>Calc</Title>
       </TitleContent>
       <ResultContent>
-        {Tela(valorTela, resultado)}
+        {Tela(screenValue, result)}
       </ResultContent>
       <BoxNumber>
         <NumberRow>
-          <ButtonCalc onClick={() => addDigitoTela('7')}>7</ButtonCalc>
-          <ButtonCalc onClick={() => addDigitoTela('8')}>8</ButtonCalc>
-          <ButtonCalc onClick={() => addDigitoTela('9')}>9</ButtonCalc>
-          <ButtonCalcDel onClick={() => Operacao('bs')}></ButtonCalcDel>
+          <ButtonCalc onClick={() => digitScreenAdd('7')}>7</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('8')}>8</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('9')}>9</ButtonCalc>
+          <ButtonCalcDel onClick={() => operatorButton('bs')}></ButtonCalcDel>
         </NumberRow>
         <NumberRow>
-          <ButtonCalc onClick={() => addDigitoTela('4')}>4</ButtonCalc>
-          <ButtonCalc onClick={() => addDigitoTela('5')}>5</ButtonCalc>
-          <ButtonCalc onClick={() => addDigitoTela('6')}>6</ButtonCalc>
-          <ButtonCalc onClick={() => addDigitoTela('+')}>+</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('4')}>4</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('5')}>5</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('6')}>6</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('+')}>+</ButtonCalc>
         </NumberRow>
         <NumberRow>
-          <ButtonCalc onClick={() => addDigitoTela('1')}>1</ButtonCalc>
-          <ButtonCalc onClick={() => addDigitoTela('2')}>2</ButtonCalc>
-          <ButtonCalc onClick={() => addDigitoTela('3')}>3</ButtonCalc>
-          <ButtonCalc onClick={() => addDigitoTela('-')}>-</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('1')}>1</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('2')}>2</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('3')}>3</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('-')}>-</ButtonCalc>
         </NumberRow>
         <NumberRow>
-          <ButtonCalc onClick={() => addDigitoTela('.')}>.</ButtonCalc>
-          <ButtonCalc onClick={() => addDigitoTela('0')}>0</ButtonCalc>
-          <ButtonCalc onClick={() => addDigitoTela('/')}>/</ButtonCalc>
-          <ButtonCalc onClick={() => addDigitoTela('*')}>*</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('.')}>.</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('0')}>0</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('/')}>/</ButtonCalc>
+          <ButtonCalc onClick={() => digitScreenAdd('*')}>*</ButtonCalc>
         </NumberRow>
         <NumberRow>
-          <ButtonCalcReset onClick={() => limparMemoria('')}></ButtonCalcReset>
-          <ButtonCalcEqual onClick={() => Operacao('=')}>=</ButtonCalcEqual>
+          <ButtonCalcReset onClick={() => cleanMemory('')}></ButtonCalcReset>
+          <ButtonCalcEqual onClick={() => operatorButton('=')}>=</ButtonCalcEqual>
         </NumberRow>
       </BoxNumber>
     </Container>
