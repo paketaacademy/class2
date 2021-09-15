@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "Final project",
-    "description": "Program that receives data through an Excel spreadsheet, reads and processes the information and the correct lines are recorded in the database, returning the errors and where are the lines that have some invalid field."
+    "description": "Program that receives data through an Excel spreadsheet, reads and processes the information and the correct lines are recorded in the database, returning the errors and where are the lines that have some invalid field. **IMPORTANT:** The XLSX file needs to be located at the root of the project, sample I left two files, the data-example and the data-example-with-1000-lines."
   },
   "host": "localhost:3000",
   "basePath": "/",
