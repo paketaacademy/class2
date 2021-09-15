@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "REST API",
-    "description": ""
+    "title": "Final Project API - Changing Courses of the Hundred Years' War",
+    "description": "This API contains routes that allow the creation of soldiers to support the English army, being them ARCHER, VILLAGER, KNIGHT or SWORD MASTER, and allows you to attribute their characteristics such as SKILL, STRENGTH, DEXTERITY, among others, even if they have a mount. They also allow you to create general equipment like SWORDS, SHIELD, ETC and siege weapons like CATAPULT, remembering that you need 4 times more Villagers than siege weapons to be able to control them.Once you create your army you can define how many of them will go into battle and determine the amount of enemy French soldiers and where this battle will take place. The data of this battle will be saved allowing you to consult your history, or searching for a specific history"
   },
   "host": "localhost:3030",
   "basePath": "/",
@@ -113,7 +113,7 @@
         "tags": [
           "soldiers"
         ],
-        "description": "Route to create a soldier for your army",
+        "description": "Route to create a soldier for your army, being them ARCHER, VILLAGER, KNIGHT or SWORD MASTER",
         "parameters": [
           {
             "name": "auth-token",
@@ -506,6 +506,7 @@
           "400": {
             "description": [
               "Sorry, something went wrong",
+              "Sorry, you need more Villagers to operate this many of Siege Weapons",
               "Sorry, you don't have that mutch Siege Weapons",
               "Sorry, you don't have that mutch Archers",
               "Sorry, you don't have that mutch Villager",
@@ -1089,8 +1090,8 @@
   },
   "definitions": {},
   "informações": {
-    "título": "Minha API",
-    "descrição": "Descrição"
+    "título": "Projeto Final API Mudando o Curso da Guerra dos Cem Anos",
+    "descrição": "Esse projeto se baseia na criação de uma API com rotas que te permitem criar soldados para apoiar o exercito ingles sendo eles ARCHER (arqueiro), VILLAGER (aldeão, peão), KNIGHT (cavaleiro) e SWORD MASTER (espadachim), onde te possibilita atribuir suas características tais quais HABILIDADE, FORÇA, DESTREZA, até se possuem montaria. Também permitem que você crie equipamentos gerais (EQUIPAMENTS) como ESPADAS, ESCUDOS, ETC e armas de cerco(SIEGE WEAPONS) tipo CATAPULTA, lembrando que você precisa de 4 vezes mais Villagers do que armas de cerco para poder controla-las. Assim que você criar seu exercito você pode definir quantos deles irão para batalha e determinar a quantidade de soldado frances inimigo e em que lugar acontecerá essa batalha. Esse registro ficará salvo possibilitando que você consulte seu histórico, ou buscando um histórico especifico."
   },
   "esquemas": [
     "http"

@@ -1,7 +1,6 @@
 import { Mongoose } from "../../index.js"
 import SoldierSchema from "../../models/army/soldier.js"
 import SumArmy from "../../services/quantity-army.js"
-import FranceArmy from "../../services/france-army.js"
 import BattleSchema from "../../models/battle/battle-register.js"
 import SiegeWeaponsSchema from "../../models/equipaments/siege-weapons.js"
 
@@ -26,6 +25,13 @@ const SetWar = {
           .status(400)
           .send({
             message: "Sorry you don't have that mutch Siege Weapons"
+          })
+      }
+      if(parseInt(quantSiegeWeaponEngland) > (4 * parseInt(quantEnglandVillager))){
+        return res
+          .status(400)
+          .send({
+            message: "Sorry, you need more Villagers to operate this many of Siege Weapons"
           })
       }
 
