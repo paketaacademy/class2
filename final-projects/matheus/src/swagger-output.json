@@ -157,8 +157,7 @@
                 },
                 "idEquipaments": {
                   "example": [
-                    "6140a7543d4009117c02fef6",
-                    "6140a7bd78a5ec30a5472ce2"
+                    "61420641ab89269c5e63769c"
                   ]
                 }
               }
@@ -201,7 +200,7 @@
               "type": "object",
               "properties": {
                 "soldierId": {
-                  "example": "613f93e38064c462f38b61d4"
+                  "example": "61420696ab89269c5e6376a3"
                 }
               }
             }
@@ -244,7 +243,7 @@
               "type": "object",
               "properties": {
                 "soldierId": {
-                  "example": "613f845dd6a949b4d1c7291f"
+                  "example": "61420699ab89269c5e6376a6"
                 },
                 "typeSoldiers": {
                   "example": "knight"
@@ -465,7 +464,7 @@
                   "example": "4"
                 },
                 "quantFranceVillager": {
-                  "example": "2"
+                  "example": "8"
                 },
                 "quantFranceKnight": {
                   "example": "3"
@@ -483,7 +482,7 @@
                   "example": "3"
                 },
                 "quantEnglandVillager": {
-                  "example": "2"
+                  "example": "4"
                 },
                 "quantEnglandKnight": {
                   "example": "3"
@@ -492,7 +491,7 @@
                   "example": "3"
                 },
                 "quantSiegeWeaponEngland": {
-                  "example": "2"
+                  "example": "1"
                 }
               }
             }
@@ -658,7 +657,7 @@
               "type": "object",
               "properties": {
                 "siegeWeaponId": {
-                  "example": "613fa3c24c1b968c0d20184e"
+                  "example": "61420647ab89269c5e63769e"
                 },
                 "siegeWeapon": {
                   "example": "siege tower"
@@ -709,7 +708,7 @@
               "type": "object",
               "properties": {
                 "siegeWeaponId": {
-                  "example": "6140e75cd8e3b016e11ee6f0"
+                  "example": "6142064aab89269c5e6376a0"
                 }
               }
             }
@@ -904,7 +903,7 @@
               "type": "object",
               "properties": {
                 "equipamentsId": {
-                  "example": "6140d6e1ad23e63147c3744d"
+                  "example": "61420641ab89269c5e63769c"
                 },
                 "equipaments": {
                   "example": "big f**** sword"
@@ -956,7 +955,7 @@
               "type": "object",
               "properties": {
                 "equipamentsId": {
-                  "example": "6140ec9349f3789dadb455e0"
+                  "example": "6142063fab89269c5e63769a"
                 }
               }
             }

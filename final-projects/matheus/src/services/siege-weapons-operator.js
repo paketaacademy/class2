@@ -1,5 +1,5 @@
 const Operators = (quantO, quantSW) =>{
-  if ((4 % parseInt(quantO)) < parseInt(quantSW)){
+  if ((Math.trunc(parseInt(quantO) / 4)) < parseInt(quantSW)){
     return true
   }
 }
