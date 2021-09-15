@@ -42,7 +42,6 @@ export const BoxNumber = styled.div`
     width: 70%;
 `
 
-
 export const Screen = styled.div`
     display:flex;
     height: 90px;
@@ -69,14 +68,7 @@ export const ResultScreen = styled.div`
 
 export const ContentButtonOperation = styled.div` 
     padding: 15px; 
-    background-color: #171a33;
-    @media(max-width:1000px){
-        width: 25%;
-    }   
-    @media(max-width:800px){
-        width: 20%;
-        text-align: left;
-    }     
+    background-color: #171a33;   
 `
 
 export const ContentButtonResult = styled.div` 
@@ -91,10 +83,12 @@ export const NumberRow = styled.div`
     align-items: center;
     justify-content: space-around;
     padding: 0.3rem;
+    
 `
 
 export const ButtonCalc = styled.button`
     background-color: #fff;
+    font-weight: 750;
     outline: none;
     display: flex;
     align-items: center;
@@ -103,12 +97,16 @@ export const ButtonCalc = styled.button`
     padding: 1rem;
     width: 20%;
     height: 20px;
+    @media(max-width:720px){
+        padding: 0.3rem;
+    }
 `
 
 export const ButtonCalcDel = styled.button`
     background-color: #666b9a;
     outline: none;
     color: #fff;
+    font-weight: 750;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,10 +114,21 @@ export const ButtonCalcDel = styled.button`
     padding: 1rem;
     width: 20%;
     height: 20px;
+    :before {
+    content: "DEL";
+}
+    @media(max-width:720px){
+        padding: 0.3rem;
+        :before {
+            content: "←";
+        }   
+    }
 `
 
 export const ButtonCalcReset = styled.button`
     background-color: #666b9a;
+    color: #fff;
+    font-weight: 750;
     outline: none;
     display: flex;
     align-items: center;
@@ -128,16 +137,30 @@ export const ButtonCalcReset = styled.button`
     padding: 1rem;
     width: 45%;
     height: 20px;
+    :before {
+            content: "CLEAR";
+        } 
+    @media(max-width:720px){
+        padding: 0.3rem;
+        :before {
+            content: "CE";
+        } 
+    } 
 `
 
 export const ButtonCalcEqual = styled.button`
     background-color: #e40714;
     outline: none;
     display: flex;
+    color: #fff;
+    font-weight: 750;
     align-items: center;
     justify-content: center;
     border-radius: 5%;
     padding: 1rem;
     width: 45%;
-    height: 20px;
+    height: 20px;    
+    @media(max-width:720px){
+        padding:0.3rem;
+    } 
 `

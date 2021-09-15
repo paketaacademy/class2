@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, ButtonCalc, ButtonCalcDel, ButtonCalcEqual, ButtonCalcReset, BoxNumber, TitleContent, Title, Screen, OperationScreen, ResultScreen, ResultContent, ContentButtonOperation, ContentButtonResult, NumberRow } from './style.js'
+import { Container, ButtonCalc, ButtonCalcDel, ButtonCalcEqual, ButtonCalcReset, BoxNumber, TitleContent, Title, Screen, OperationScreen, ResultScreen, ResultContent, NumberRow } from './style.js'
 import { evaluate } from 'decimal-eval'
 
 const Calculator = () => {
@@ -22,23 +22,6 @@ const Calculator = () => {
     )
   }
 
-  const Btn = (label, onclick, color) => {
-    return (
-
-      <ContentButtonOperation>
-        <button onClick={onclick}>{label}</button>
-      </ContentButtonOperation>
-    )
-  }
-
-  const BtnRes = (label, onclick, color) => {
-    return (
-      <ContentButtonResult>
-        <button onClick={onclick}>{label}</button>
-      </ContentButtonResult>
-    )
-  }
-
   const addDigitoTela = (digito) => {
     if ((digito === '+' || digito === '-' || digito === '/' || digito === '*') && operado) {
       setOperado(false)
@@ -52,7 +35,7 @@ const Calculator = () => {
       return
     }
     const valorDigitadoTela = valorTela + digito
-    setValorTela(valorDigitadoTela)
+      setValorTela(valorDigitadoTela)
   }
 
   const limparMemoria = () => {
@@ -96,7 +79,7 @@ const Calculator = () => {
           <ButtonCalc onClick={() => addDigitoTela('7')}>7</ButtonCalc>
           <ButtonCalc onClick={() => addDigitoTela('8')}>8</ButtonCalc>
           <ButtonCalc onClick={() => addDigitoTela('9')}>9</ButtonCalc>
-          <ButtonCalcDel onClick={() => Operacao('bs')}>DEL</ButtonCalcDel>
+          <ButtonCalcDel onClick={() => Operacao('bs')}></ButtonCalcDel>
         </NumberRow>
         <NumberRow>
           <ButtonCalc onClick={() => addDigitoTela('4')}>4</ButtonCalc>
@@ -117,7 +100,7 @@ const Calculator = () => {
           <ButtonCalc onClick={() => addDigitoTela('*')}>*</ButtonCalc>
         </NumberRow>
         <NumberRow>
-          <ButtonCalcReset onClick={() => limparMemoria('')}>RESET</ButtonCalcReset>
+          <ButtonCalcReset onClick={() => limparMemoria('')}></ButtonCalcReset>
           <ButtonCalcEqual onClick={() => Operacao('=')}>=</ButtonCalcEqual>
         </NumberRow>
       </BoxNumber>
