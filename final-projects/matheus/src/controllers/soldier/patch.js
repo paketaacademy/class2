@@ -32,7 +32,6 @@ const ModifySoldier = {
         .status(200)
         .send(updateSoldier)
     } catch (error) {
-      console.log(error)
       return res
         .status(400)
         .send({

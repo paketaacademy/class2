@@ -17,7 +17,6 @@ const Equipaments ={
       .send(newEquipaments)
     
     }catch(error){
-      console.log(error)
       return res
       .status(400)
       .send({
