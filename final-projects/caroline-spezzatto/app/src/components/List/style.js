@@ -2,8 +2,16 @@ import styled, { css } from 'styled-components'
 
 export const ContainerHeaderList = styled.div`
   margin-left: 10em;
+
+  @media screen and (max-width: 770px) and (min-width: 280px) {
+    margin-left: 2em;
+    margin-top: 5em;
+    display: inline-flex;
+    justify-content: space-between;
+  }
 `
 export const InputSearch = styled.input`
+  /* margin-top: 2em; */
   margin-bottom: 1em;
   border-radius: 0.2em;
   border: none;
@@ -13,9 +21,15 @@ export const InputSearch = styled.input`
   background-color: rgb(207 207 207);
   outline: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url('../../Image/icon.png');
 
   &:hover{
     background-color: rgb(250 250 250);
+  }
+
+  @media screen and (max-width: 770px) and (min-width: 280px) {
+    font-size: 1.5rem;
+    width: 19em;
   }
 `
 export const ButtonOrder = styled.button`
@@ -34,6 +48,10 @@ export const ButtonOrder = styled.button`
 
   &:hover{
     box-shadow: 0 0 1.5em 1.5em rgb(207 207 207) inset;
+  }
+
+  @media screen and (max-width: 770px) and (min-width: 280px) {
+    font-size: 1.5rem;
   }
 `
 export const Container = styled.div`
@@ -55,6 +73,13 @@ export const Container = styled.div`
   transition: all 200ms ease-in;
   transform: scale(1.1);
   }
+
+  @media screen and (max-width: 770px) and (min-width: 280px) {
+    margin: 2em 2em 0;
+    width: 42em;
+    height: 18em;
+    display: inline-block;
+  }
 `
 export const Image = styled.img`
   width: 5em;
@@ -63,6 +88,10 @@ export const Image = styled.img`
   background-color: rgb(79 79 79);
   border-radius: 1em;
   margin-right: 1em;
+
+  @media screen and (max-width: 770px) and (min-width: 280px) {
+    display: none;
+  }
 `
 export const ContainerInfos = styled.div`
 
@@ -75,6 +104,9 @@ export const ListWorkplace = styled.div`
   color: rgb(142 205 211);
   font-weight: bold;
   font-size: 1rem;
+  @media screen and (max-width: 770px) and (min-width: 280px) {
+    font-size: 1.5rem;
+  }
 `
 export const ListNew = styled.div`
   ${({isNegative}) => isNegative && css `
@@ -86,6 +118,9 @@ export const ListNew = styled.div`
     font-weight: bold;
     margin: 0 1em;
   `}
+  @media screen and (max-width: 770px) and (min-width: 280px) {
+    font-size: 1.5rem;
+  }
 `
 export const ListFeatured = styled.div`
   ${({isNegative}) => isNegative && css `
@@ -96,16 +131,27 @@ export const ListFeatured = styled.div`
     padding: 0 0.5em;
     font-weight: bold;
   `}
+  @media screen and (max-width: 770px) and (min-width: 280px) {
+    font-size: 1.5rem;
+  }
 `
 export const ListOpportunity = styled.div`
   padding-bottom: 0.5em;
   font-weight: bold;
   font-size: 1.3rem;
+  @media screen and (max-width: 770px) and (min-width: 280px) {
+    font-size: 2.2rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
 `
 export const Infos = styled.div`
   color: rgb(207 207 207);
   font-family: monospace;
   font-size: 1rem;
+  @media screen and (max-width: 770px) and (min-width: 280px) {
+    font-size: 1.5rem;
+  }
 `
 export const Technologys = styled.p`
   margin-left: auto;
@@ -115,4 +161,10 @@ export const Technologys = styled.p`
   font-weight: bold;
   border-radius: 0.1em;
   padding: 0.1em 0.3em;
+
+  @media screen and (max-width: 770px) and (min-width: 280px) {
+    margin-left: 0;
+    font-size: 1.5rem;
+    margin-top: 1em;
+  }
 `
