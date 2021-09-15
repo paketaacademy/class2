@@ -40,7 +40,7 @@ No caso desse projeto basta copiar o conteudo do **.env.semple** no arquivo **.e
 ##npm start
 Agora no seu terminal execute o comando **npm start** para rodar o servidor local, se tudo correr bem essa será a resposta obtida:
 
-<img src="./imagens/terminal.PNG" alt="Response from terminal">
+<img src="./imagens/terminal.PNG" alt="Terminal response">
 
 ##Swagger
 Para entender melhor as rotas do projeto, acesse o **http://localhost:3030/doc/** com o servidor local em execução e confira a documentação da API

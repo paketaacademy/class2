@@ -3,6 +3,7 @@ import SoldierSchema from "../../models/army/soldier.js"
 import SumArmy from "../../services/quantity-army.js"
 import BattleSchema from "../../models/battle/battle-register.js"
 import SiegeWeaponsSchema from "../../models/equipaments/siege-weapons.js"
+import Operators from "../../services/siege-weapons-operator.js"
 
 
 const SetWar = {
@@ -20,6 +21,14 @@ const SetWar = {
       const findVillager = await SoldierModel.find({ typeSoldier: { $in: 'villager' } })
       const findSM = await SoldierModel.find({ typeSoldier: { $in: 'sword master' } })
       
+
+      if(Operators(quantFranceVillager, quantSiegeWeaponFrance)){
+        return res
+          .status(400)
+          .send({
+            message: "Sorry, you need more France Villagers to operate this many of Siege Weapons"
+          })
+      }
       if (quantSiegeWeaponEngland > findSiegeWeapon.length) {
         return res
           .status(400)
@@ -27,11 +36,11 @@ const SetWar = {
             message: "Sorry you don't have that mutch Siege Weapons"
           })
       }
-      if(parseInt(quantSiegeWeaponEngland) > (4 * parseInt(quantEnglandVillager))){
+      if(Operators(quantEnglandVillager, quantSiegeWeaponEngland)){
         return res
           .status(400)
           .send({
-            message: "Sorry, you need more Villagers to operate this many of Siege Weapons"
+            message: "Sorry, you need more England Villagers to operate this many of Siege Weapons"
           })
       }
 
