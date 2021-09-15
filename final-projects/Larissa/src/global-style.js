@@ -5,7 +5,7 @@ const globalStyle = createGlobalStyle`
     line-height: normal;
     margin: 0;
     padding: 0;
-    background-color:black;
+    background-color: #2e2f34;
     overflow-x: hidden;
   }
 

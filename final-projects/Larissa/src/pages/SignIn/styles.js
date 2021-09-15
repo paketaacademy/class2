@@ -1,31 +1,20 @@
 import styled from "styled-components"
 
 export const Login = styled.div`
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 240px;
-    margin: auto; 
-`
-
-export const SignUp = styled.div`
     width: 240px;
 `
 
 export const TextField = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
     background-color: white;
     border-radius: 30px;
     height: 45px;
+    width: 100%;
     margin-top:20px;
 `
 
-export const Box_email = styled.input`
-
+export const BoxEmail = styled.input`
     background-color: transparent;
     width: 100%;
     outline-width: 0;
@@ -35,7 +24,7 @@ export const Box_email = styled.input`
     margin-right: 10px;
 `
 
-export const Box_password = styled.input`
+export const BoxPassword = styled.input`
     background-color: transparent;
     width: 100%;
     outline-width: 0;
@@ -43,21 +32,61 @@ export const Box_password = styled.input`
     font-size:15px;
     margin-left: 10px;
     margin-right: 10px;
+`
+
+export const CheckBox = styled.div`
+    font-size: 13px;
+    margin-right: 80px;
+    padding: 0.3rem;
+`
+
+export const Connected = styled.input`
+    margin: 8px;
+    font-size: 13px;
+    background: ${props => (props.check ? 'salmon' : 'papayawhip')}; 
+`
+
+export const Text = styled.label`
+    font-size: 13px;
+    @media (max-width:800px){
+            font-size: 75%;
+    }
+`
+
+export const ButtonContent=styled.div`
+    width: 100%;
 `
 
 export const Submit = styled.button`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:240px;
+    width:100%;
     background-color: #00ce65;
     color: #EFF2F5;
     height: 45px;
     border-radius: 30px;
     font-size: 13px;
     border:none;
-    margin-top: 15px;
+    outline-width: 0; 
     :hover {
     cursor: pointer;
     }
 `
+
+export const LoginFooter = styled.div`
+    color: gray;
+    font-size: 13px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    :hover {
+        color: white;
+        cursor: pointer;
+    }
+`
+
+
+
+
+
+
+
+

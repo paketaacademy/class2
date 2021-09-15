@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { SignUp, Typography, TextField, Box_email, Box_password, Login, Submit } from './styled.js'
+import React, { useState } from "react"
+import { Login, SignUp, TextField, Box_email, Box_password, Submit } from './styled.js'
 
 function Register() {
     const [name, setName] = useState("")
@@ -10,7 +10,6 @@ function Register() {
     return (
         <Login>
             <SignUp>
-                <Typography> REGISTER</Typography>
                 <TextField>
                     <Box_email type="text"
                         placeholder="Enter Your Username"
@@ -40,7 +39,6 @@ function Register() {
                 <Submit>
                     OK
                 </Submit>
-
             </SignUp>
         </Login>
     )

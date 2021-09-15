@@ -1,67 +1,46 @@
-import React, { useState } from 'react'
-import { Text,CheckBox,Page, Picture, Submit, Logo, Login_right, Title_App, Connected, TextField, SignIn, Typography, Box_email, Box_password, Link1,Heading } from './styled.js'
-import Picture2 from './logo-spotify-icon.png'
-import {Link} from 'react-router-dom'
+import React, { useState } from "react"
+import { Login, TextField, BoxEmail, BoxPassword, CheckBox, Connected, Text, ButtonContent, Submit, LoginFooter } from "./styles.js"
 
-function Login() {
+function SignIn() {
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
     const [show, setShow] = useState(false)
 
     return (
-        <Page>
+        <Login>
+            <TextField>
+                <BoxEmail type="text"
+                    placeholder="Enter Your Username"
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                />
+            </TextField>
 
-            <Logo>
-                <Picture src={Picture2} />
-                <Title_App>Spotify</Title_App>
-            </Logo>
+            <TextField>
+                <BoxPassword
+                    placeholder="Enter Your Password"
+                    type={show ? "text" : "password"}
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                />
+            </TextField>
 
-            <Login_right>
-                <SignIn>
-                    <Heading>
-                    <Typography>SIGN IN</Typography>
-                    <Link to='/Register'>
-                    <Typography>SIGN UP</Typography>
-                    </Link>
-                    </Heading>
+            <CheckBox>
+                <Connected type="checkbox" id="Connected" name="Connected" />
+                <Text for="Connected">stay signed in</Text>
+            </CheckBox>
 
-                    <TextField>
-                        <Box_email type="text"
-                            placeholder="Enter Your Username"
-                            value={name}
-                            onChange={e => setName(e.target.value)}
-                        />
-                    </TextField>
-
-                    <TextField>
-                        <Box_password
-                            placeholder="Enter Your Password"
-                            type={show ? "text" : "password"}
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                        />
-                    </TextField>
-
-                </SignIn>
-
-                    <CheckBox>
-                    <Connected type="checkbox" id="Connected" name="Connected"
-                        checked/>
-                    <Text for="Connected">stay signed in</Text>
-                    </CheckBox>
-
+            <ButtonContent>
                 <Submit>
                     SIGN IN
                 </Submit>
+            </ButtonContent>
 
-                <Link1 href="#" >
-                    {"Forgot Password?"}
-                </Link1>
-
-            </Login_right>
-
-        </Page>
+            <LoginFooter>
+                Forgot Password?
+            </LoginFooter>
+        </Login>
     )
 }
 
-export default Login
+export default SignIn
