@@ -25,13 +25,28 @@ export const Ul = styled.ul`
     list-style: none;
     -webkit-box-pack: justify;
     justify-content: space-between;
-    display: -webkit-box;
-    max-width: 1000px;
+    display: flex;
+    max-width: 100%;
     padding: 30px;
-    margin-left: 65px;
+    justify-content: center;
+
+    @media (max-width: 1000px){
+        width: 100%;
+
+    }
+    @media (max-width: 600px){
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 export const Li = styled.li`
     line-height: 2;
     font-size: 16px;
+    width: 30%;
+
+    @media (max-width: 800px){
+        padding: 10px;
+
+    }
 `

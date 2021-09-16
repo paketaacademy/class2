@@ -3,9 +3,9 @@ import affordable from "./icones/icon-affordable-prices.svg"
 import Snappy from "./icones/icon-snappy-process.svg"
 import People from "./icones/icon-people-first.svg"
 import {
-     Hr, Title,  Img,  P , Ul , Li
+    Hr, Title, Img, P, Ul, Li
 }
-from "./styled"
+    from "./styled"
 
 export default function Different() {
     return (
