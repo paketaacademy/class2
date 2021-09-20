@@ -1,0 +1,1216 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Record of activities and military employment",
+    "description": "This API has the function of registering military equipment and personnel, as well as simulating a troop landing service."
+  },
+  "host": "localhost: 3000",
+  "basePath": "/",
+  "tags": [
+    "equipments",
+    "landings",
+    "platoons",
+    "soldiers",
+    "login",
+    "register"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json; charset=utf-8"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/terms": {
+      "get": {
+        "tags": [
+          "responsabilitiy"
+        ],
+        "description": "Route that contains the terms of responsibility of the api and the contact of its creators",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "200": {
+            "description": "Message",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "register"
+        ],
+        "description": "Route for registering users who may have access to the military system",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "example": "123456"
+                },
+                "userName": {
+                  "example": "Renato"
+                },
+                "cpf": {
+                  "example": "11111111122"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Registration performed successfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "409": {
+            "description": "Existing user.",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "login"
+        ],
+        "description": "Dedicated route to login a user",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userName": {
+                  "example": "Renato"
+                },
+                "cpf": {
+                  "example": "11111111122"
+                },
+                "password": {
+                  "example": "123456"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Login successfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "userName or CPF not registered.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "Invalid password.",
+            "content": "application/json"
+          },
+          "500": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/register/soldiers": {
+      "post": {
+        "tags": [
+          "soldiers"
+        ],
+        "description": "Route to Register Soldiers",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "age": {
+                  "example": "any"
+                },
+                "cpf": {
+                  "example": "any"
+                },
+                "bloodType": {
+                  "example": "any"
+                },
+                "militarRank": {
+                  "example": "any"
+                },
+                "equipment": {
+                  "name": "obj",
+                  "in": "body",
+                  "schema": {
+                    "type": "array",
+                    "properties": {
+                      "equipmentId": {
+                        "example": "613a5397d2e4097d12353bd6"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Registration perfomed sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "401": {
+            "description": "Existing soldier.",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/soldiers/{id}": {
+      "get": {
+        "tags": [
+          "soldiers"
+        ],
+        "description": "Route to select a specific soldier through his id",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "There is no such soldier.",
+            "content": "application/json"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "soldiers"
+        ],
+        "description": "Route to update soldiers' data",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "age": {
+                  "example": "any"
+                },
+                "militarRank": {
+                  "example": "any"
+                },
+                "equipment": {
+                  "name": "obj",
+                  "in": "body",
+                  "schema": {
+                    "type": "array",
+                    "properties": {
+                      "equipmentId": {
+                        "example": "613a5397d2e4097d12353bd6"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "soldiers"
+        ],
+        "description": "Route to delete soldier via id",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Soldier not found in database.",
+            "content": "application/json"
+          }
+        }
+      },
+      "/soldiers": {
+        "get": {
+          "tags": [
+            "soldiers"
+          ],
+          "description": "Route to select all soldiers from the database",
+          "parameters": [
+            {
+              "name": "authorization",
+              "in": "header",
+              "required": true
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Request sucessfully.",
+              "content": "application/json"
+            },
+            "400": {
+              "description": "An error has occurred.",
+              "content": "application/json"
+            },
+            "404": {
+              "description": "There is no such soldiers.",
+              "content": "application/json"
+            }
+          }
+        }
+      }
+    },
+    "/register/equipments": {
+      "post": {
+        "tags": [
+          "equipments"
+        ],
+        "description": "Route for registration of military equipment for personal use",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Registration performed successfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Existing equipment.",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/equipments/{id}": {
+      "get": {
+        "tags": [
+          "equipments"
+        ],
+        "description": "Route to select a specific equipment through its id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "There is no such equipment.",
+            "content": "application/json"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "equipments"
+        ],
+        "description": "Route to update a specific item of equipment through its id",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "equipments"
+        ],
+        "description": "Route to delete a specific item of equipment through its id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Equipment deleted from database.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Equipment not found in database.",
+            "content": "application/json"
+          }
+        }
+      },
+      "/equipments": {
+        "get": {
+          "tags": [
+            "equipments"
+          ],
+          "description": "Route to select all equipments from the database",
+          "parameters": [
+            {
+              "name": "authorization",
+              "in": "header",
+              "required": true
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Request sucessfully.",
+              "content": "application/json"
+            },
+            "400": {
+              "description": "An error has occurred.",
+              "content": "application/json"
+            },
+            "404": {
+              "description": "There is no such equipments.",
+              "content": "application/json"
+            }
+          }
+        }
+      }
+    },
+    "/register/vehicles": {
+      "post": {
+        "tags": [
+          "vehicles"
+        ],
+        "description": "Route to Register a Military Vehicle",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "weight": {
+                  "example": "any"
+                },
+                "lenght": {
+                  "example": "any"
+                },
+                "width": {
+                  "example": "any"
+                },
+                "height": {
+                  "example": "any"
+                },
+                "crew": {
+                  "example": "any"
+                },
+                "armor": {
+                  "example": "any"
+                },
+                "armament": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Registration performed successfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "409": {
+            "description": "Existing vehicle.",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/vehicles/{id}": {
+      "get": {
+        "tags": [
+          "vehicles"
+        ],
+        "description": "Route to select a specific military vehicle via its id",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "There is no such vehicle.",
+            "content": "application/json"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "vehicles"
+        ],
+        "description": "Route to update a specific vehicle via its id",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "example": "any"
+                },
+                "weight": {
+                  "example": "any"
+                },
+                "lenght": {
+                  "example": "any"
+                },
+                "width": {
+                  "example": "any"
+                },
+                "height": {
+                  "example": "any"
+                },
+                "crew": {
+                  "example": "any"
+                },
+                "armor": {
+                  "example": "any"
+                },
+                "armament": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "vehicles"
+        ],
+        "description": "Route to delete a specific vehicle through its id",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Vehicle deleted from database.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Vehicle not found in database.",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/vehicles": {
+      "get": {
+        "tags": [
+          "vehicles"
+        ],
+        "description": "Route to select all vehicles from the database",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "There is no such vehicle.",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/register/platoons": {
+      "post": {
+        "tags": [
+          "platoons"
+        ],
+        "description": "Route for platoon registration, in which the commander's id as well as the soldiers' id will be informed",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "namePlatoon": {
+                  "example": "any"
+                },
+                "platoonCommander": {
+                  "name": "obj",
+                  "in": "body",
+                  "schema": {
+                    "type": "array",
+                    "properties": {
+                      "soldierId": {
+                        "example": "any"
+                      }
+                    }
+                  }
+                },
+                "soldiers": {
+                  "name": "obj",
+                  "in": "body",
+                  "schema": {
+                    "type": "array",
+                    "properties": {
+                      "soldierId": {
+                        "example": "any"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Registration performed successfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "409": {
+            "description": "Soldier registered in another platoon.",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/platoons/{id}": {
+      "get": {
+        "tags": [
+          "platoons"
+        ],
+        "description": "Route to select a specific platoon via its id.",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "There is no such platoon.",
+            "content": "application/json"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "platoons"
+        ],
+        "description": "Route to update a specific platoon via its id.",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "platoonCommander": {
+                  "name": "obj",
+                  "in": "body",
+                  "schema": {
+                    "type": "array",
+                    "properties": {
+                      "soldierId": {
+                        "example": "any"
+                      }
+                    }
+                  }
+                },
+                "soldiers": {
+                  "name": "obj",
+                  "in": "body",
+                  "schema": {
+                    "type": "array",
+                    "properties": {
+                      "soldierId": {
+                        "example": "any"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "platoons"
+        ],
+        "description": "Route to delete a specific squad through its id.",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Platoon deleted from database.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Platoon not found in database.",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/platoons": {
+      "get": {
+        "tags": [
+          "platoons"
+        ],
+        "description": "Route to select all database platoons.",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "There is no such platoon.",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/register/landing": {
+      "post": {
+        "tags": [
+          "landings"
+        ],
+        "description": "Route to record data regarding the disembarkation of troops.",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "namePlatoon": {
+                  "name": "obj",
+                  "in": "body",
+                  "schema": {
+                    "type": "array",
+                    "properties": {
+                      "platoonId": {
+                        "example": "any"
+                      }
+                    }
+                  }
+                },
+                "nameVehicle": {
+                  "name": "obj",
+                  "in": "body",
+                  "schema": {
+                    "type": "array",
+                    "properties": {
+                      "vehicleId": {
+                        "example": "any"
+                      }
+                    }
+                  }
+                },
+                "landingPlace": {
+                  "example": "any"
+                },
+                "arrivalTime": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Registration performed successfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Existing platoon.",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/landings/{id}": {
+      "get": {
+        "tags": [
+          "landings"
+        ],
+        "description": "Route to select a specific landing via its id.",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "There is no such landings.",
+            "content": "application/json"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "landings"
+        ],
+        "description": "Route to update a specific landing via its id.",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "namePlatoon": {
+                  "name": "obj",
+                  "in": "body",
+                  "schema": {
+                    "type": "array",
+                    "properties": {
+                      "platoonId": {
+                        "example": "any"
+                      }
+                    }
+                  }
+                },
+                "nameVehicle": {
+                  "name": "obj",
+                  "in": "body",
+                  "schema": {
+                    "type": "array",
+                    "properties": {
+                      "platoonId": {
+                        "example": "any"
+                      }
+                    }
+                  }
+                },
+                "landingPlace": {
+                  "example": "any"
+                },
+                "arrivalTime": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "landings"
+        ],
+        "description": "Route to delete a specific landing place registered in the database.",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Landing deleted from database.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "Landing not found in database.",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/landings": {
+      "get": {
+        "tags": [
+          "landings"
+        ],
+        "description": "Route to select all landings registered in the database",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request sucessfully.",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "An error has occurred.",
+            "content": "application/json"
+          },
+          "404": {
+            "description": "There is no such landings.",
+            "content": "application/json"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "informações": {
+    "título": "Final Project Paketa Academy",
+    "descrição": "Web Service for registration of troops, landing equipment",
+    "TermsOfService": "http://localhost:3000/terms"
+  },
+  "esquemas": [
+    "http"
+  ]
+}
